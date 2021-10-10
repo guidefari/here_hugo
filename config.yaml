@@ -39,5 +39,4 @@ menu:
 Permalinks:
   posts: '/:filename/'
 
-ignoreErrors: ["error-missing-instagram-accesstoken"]
 ...

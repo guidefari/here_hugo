@@ -27,9 +27,6 @@ description: Here is a demo of all shortcodes available in Hugo.
 
 {{< vimeo id="146022717" >}}
 
-## Instagram
-
-{{< instagram BWNjjyYFxVx >}}
 
 ## Callouts
 
