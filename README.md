@@ -8,3 +8,5 @@
   - [ ] Album?
 - [ ] Add spotify link to socials
 - [ ] mixcloud, youtube - preserved for when I start to make content again
+- [ ] [generate OG Image automatically](https://flaviocopes.com/canvas-node-generate-image/)
+- [ ] look into hugo SEO
