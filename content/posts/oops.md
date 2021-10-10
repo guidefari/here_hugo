@@ -1,8 +1,8 @@
 ---
 date: "2021-02-10"
-category: ["notes", "oop"]
+tags: ["notes", "oop"]
 title: "OOP basics"
-tags: "A summary of some object orientation notes"
+description: "A summary of some object orientation notes"
 ---
 
 # Definitions
