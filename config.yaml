@@ -4,24 +4,22 @@ languageCode: en-us
 title: guide fari
 theme: archie
 copyright: © guide fari
+# code highlight
 pygmentsstyle: monokai
 pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
-paginate: 3
+paginate: 10
 params:
   mode: auto
   useCDN: false
-  subtitle: 'Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)'
+  subtitle: 'software engineering, music, & everything between'
   social:
     - name: GitHub
       icon: github
-      url: 'https://github.com/athul/archie'
-    - name: Twitter
-      icon: twitter
-      url: 'https://twitter.com/athulcajay/'
-    - name: GitLab
-      icon: gitlab
-      url: 'https://gitlab.com/athul/'
+      url: 'https://github.com/txndai'
+    - name: LinkedIn
+      icon: linkedin
+      url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
 menu:
   main:
     - name: Home
