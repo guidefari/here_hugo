@@ -10,6 +10,7 @@ pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
 paginate: 10
 params:
+  # mode can be auto or toggle
   mode: auto
   useCDN: false
   subtitle: 'software engineering, music, & everything between'
@@ -19,6 +20,9 @@ params:
       url: 'https://github.com/txndai'
     - name: LinkedIn
       icon: linkedin
+      url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
+    - name: Spotify
+      icon: spotify
       url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
 menu:
   main:
