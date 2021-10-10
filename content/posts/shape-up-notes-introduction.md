@@ -9,8 +9,8 @@ summary: "Ryan Singer shares how the Basecamp team builds software"
 ---
 
 1. Shape Up notes - introduction (You're here)
-2. [Shape Up - The shaping process](https://www.goosebumps.co.zw/shape-up-notes-shaping)
-3. [Shape Up - writing the pitch](https://goosebumps.co.zw//shape-up-notes-writing-pitch)
+2. [Shape Up - The shaping process]({{<ref shape-up-notes-shaping>}})
+3. [Shape Up - writing the pitch]({{<ref shape-up-notes-writing-pitch>}})
 
 
 ---

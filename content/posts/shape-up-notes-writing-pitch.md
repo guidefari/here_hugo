@@ -6,8 +6,8 @@ summary: "Summary of the ingredients that make up a pitch"
 ---
 ---
 
-1. [Shape Up notes - introduction](https://goosebumps.co.zw/shape-up-notes-introduction)
-2. [Shape Up - The shaping process](https://goosebumps.co.zw/shape-up-notes-shaping) 
+1. [Shape Up notes - introduction]({{<ref shape-up-notes-introduction>}})
+2. [Shape Up - The shaping process]({{<ref shape-up-notes-shaping>}})
 3. Shape Up - writing the pitch (You're here)
 
 ---

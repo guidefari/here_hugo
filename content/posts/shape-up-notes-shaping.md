@@ -6,9 +6,9 @@ summary: "Summary of Part 1 of the book"
 ---
 ---
 
-1. [Shape Up notes - introduction](shape-up-notes-introduction.md)
+1. [Shape Up notes - introduction]({{<ref shape-up-notes-introduction>}})
 2. Shape Up - The shaping process (You're here)
-3. [Shape Up - writing the pitch](https://goosebumps.co.zw//shape-up-notes-writing-pitch)
+3. [Shape Up - writing the pitch]({{<ref shape-up-notes-writing-pitch>}})
 
 ---
 
