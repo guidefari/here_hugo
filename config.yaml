@@ -1,0 +1,43 @@
+---
+baseURL: '/'
+languageCode: en-us
+title: guide fari
+theme: archie
+copyright: © guide fari
+pygmentsstyle: monokai
+pygmentscodefences: true
+pygmentscodefencesguesssyntax: true
+paginate: 3
+params:
+  mode: auto
+  useCDN: false
+  subtitle: 'Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)'
+  social:
+    - name: GitHub
+      icon: github
+      url: 'https://github.com/athul/archie'
+    - name: Twitter
+      icon: twitter
+      url: 'https://twitter.com/athulcajay/'
+    - name: GitLab
+      icon: gitlab
+      url: 'https://gitlab.com/athul/'
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: All posts
+      url: /posts
+      weight: 2
+    - name: About
+      url: /about
+      weight: 3
+    - name: Tags
+      url: /tags
+      weight: 4
+Permalinks:
+  posts: '/:filename/'
+
+ignoreErrors: ["error-missing-instagram-accesstoken"]
+...
