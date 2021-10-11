@@ -5,7 +5,8 @@ description: experimenting with Hugo shortcodes - implementing a way to embed sp
 tags: [til, hugo]
 ---
 
-[src](https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242) shortcode
+- [src](https://gist.github.com/j-un/e7d0b3118556479392bd2269f7059242) shortcode
+- hugo shortcode [docs](https://gohugo.io/content-management/shortcodes/)
 
 ## snippet of the shortcode in use
 ```html
