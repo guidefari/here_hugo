@@ -26,18 +26,15 @@ params:
       url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
 menu:
   main:
-    - name: Home
-      url: /
-      weight: 1
     - name: All posts
       url: /posts
-      weight: 2
+      weight: 1
     - name: About
       url: /about
-      weight: 3
+      weight: 2
     - name: Tags
       url: /tags
-      weight: 4
+      weight: 3
 Permalinks:
   posts: '/:filename/'
 
