@@ -17,3 +17,4 @@ hugo new posts/helpful-hugo-commands.md
 
 # tutorials & misc
 - Flavio: [start blog with hugo](https://flaviocopes.com/start-blog-with-hugo/)
+- [themes](https://themes.gohugo.io/)
