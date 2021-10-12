@@ -1,7 +1,7 @@
 ---
 title: "TIL Some Markdown"
 date: 2021-10-12T09:06:49+02:00
-tags: [til, markdown]
+tags: [til, markdown, nextjs, firebase]
 description: some new tricks learnt from Wes Bos' Mastering Markdown
 ---
 
@@ -49,6 +49,14 @@ var x = 100
 |row 1|column 2 - center aligned|
 |row 2 - left aligned|column 2|
 
+# cloud firestore
+trying to change `Cloud Firestore` rules from [Brave Browser][brave] will result in error `Error saving rules - An unknown error occurred
+`. Using chrome fixes this error
+
+## links from the web
+- add [sass support][sass] to nextjs
 
 
 [1]: https://tomcritchlow.com/2019/09/23/workshops/
+[sass]: https://nextjs.org/docs/basic-features/built-in-css-support#sass-support
+[brave]: https://brave.com/
