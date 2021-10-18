@@ -1,5 +1,5 @@
 ---
-baseURL: '/'
+baseURL: 'https://guidefari.com'
 languageCode: en-us
 title: guide fari
 theme: archie
