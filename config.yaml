@@ -21,9 +21,6 @@ params:
     - name: LinkedIn
       icon: linkedin
       url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
-    - name: Spotify
-      icon: spotify
-      url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
 menu:
   main:
     - name: All posts
