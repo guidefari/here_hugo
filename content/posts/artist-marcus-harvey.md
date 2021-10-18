@@ -1,5 +1,5 @@
 ---
-title: "Artist Marcus Harvey"
+title: "Artist - Marcus Harvey"
 date: 2021-10-18T20:31:21+02:00
 tags: [music, artist, ep, release_radar, playlist, chill]
 description: Marcus Harvey released some new goodies 🔥
