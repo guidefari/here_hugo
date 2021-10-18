@@ -2,7 +2,7 @@
 title: "Helpful Hugo Commands"
 date: 2021-10-12T09:07:11+02:00
 tags: [hugo, cmd]
-summary: useful hugo commands & links
+description: useful hugo commands & links
 ---
 
 
