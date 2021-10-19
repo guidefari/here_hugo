@@ -1,9 +1,12 @@
 ---
 title: "Backend What I've Been Up To"
 date: 2021-10-19T09:48:35+02:00
+description: summary of the backend work I've been doing in the last few weeks
+tags: [backend, retro]
 ---
 
-# backend - what i’ve been up to
+- just finished a [firebase & nextjs project](/dataecho-retro).
+<!-- TODO: link to the retro here -->
 - been reading accelerate 
     * getting exposed to the *why* of iaas & dev ops
 * design patterns. 

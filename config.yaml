@@ -21,6 +21,7 @@ params:
     - name: LinkedIn
       icon: linkedin
       url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
+  customcss: ["css/mystyle.css"]
 menu:
   main:
     - name: All posts
