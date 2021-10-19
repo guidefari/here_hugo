@@ -18,7 +18,7 @@ tags: [retro, freelance ,firebase ,fullstack ,project]
 * i like to think i somewhat improved on my context switching. with the use of workana, and well separated task lists, plus project specific notes to refer to. 
 * difference between client-only/focused architecture & server side firebase (`admin-sdk`) became clearer.
   * Shaun even mentioned this in today's backend sync
-* my initial estimate for how long the project would take was way way off. 
+* my initial estimate for how long the project would take was *way way* off. 
 * when outsourcing work, you’re better off getting the entity you’re outsourcing to on a separate contract with your client. that way you’re not responsible for people management, or their deadlines etc. 
 ## what i liked 
 * first production project with firebase! 

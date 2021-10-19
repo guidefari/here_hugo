@@ -6,10 +6,9 @@ tags: [backend, retro]
 ---
 
 - just finished a [firebase & nextjs project](/dataecho-retro).
-<!-- TODO: link to the retro here -->
 - been reading accelerate 
     * getting exposed to the *why* of iaas & dev ops
-* design patterns. 
+* design patterns, interesting time to pick them up, easier to understand now that I have more hours of actual coding under my belt.
     * lovely [resource](https://youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc) shared by [Dan](https://github.com/Thunder-Chief)
 * bored of the [azure course](https://docs.microsoft.com/en-us/learn/certifications/azure-fundamentals/), so i’m moving on from there
 * considering node for a few weeks
@@ -22,7 +21,7 @@ tags: [backend, retro]
 
 * set up a hugo blog that ive been playing with(this site), exposing me to a bit of golang 
 
-## from shaun
+## from shaun, the wizard 🧙‍♂️
 * aws is first preference, all the way
 * gcp only if you’re using firebase and frontend stuff
 * dynamo db 
