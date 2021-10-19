@@ -8,9 +8,11 @@ tags: [retro, freelance ,firebase ,fullstack ,project]
 - [Live site](https://dataecho.org/)
 
 
-**start date:**
-**end date:**
-**hours spent:** 60
+**start date:** 01 July 2021 (initial chats started mid-June)
+
+**end date:** 18 Oct 2021
+
+**time commitment:** 60hr
 
 # what i learnt
 * i like to think i somewhat improved on my context switching. with the use of workana, and well separated task lists, plus project specific notes to refer to. 
