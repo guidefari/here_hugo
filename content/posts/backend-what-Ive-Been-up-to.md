@@ -1,0 +1,27 @@
+---
+title: "Backend What I've Been Up To"
+date: 2021-10-19T09:48:35+02:00
+---
+
+# backend - what i’ve been up to
+- been reading accelerate 
+    * getting exposed to the *why* of iaas & dev ops
+* design patterns. 
+    * lovely [resource](https://youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc) shared by [Dan](https://github.com/Thunder-Chief)
+* bored of the [azure course](https://docs.microsoft.com/en-us/learn/certifications/azure-fundamentals/), so i’m moving on from there
+* considering node for a few weeks
+    * get more backend experience with node before experimenting with golang?
+    * Bakani has suggested i look into nest. 
+    > it uses decorators like in Angular to do some of the trivial stuff like generating swagger documentation. That for me is the biggest win 
+
+    > And there's better architecture for your code because you separate features into modules etc 
+
+
+* set up a hugo blog that ive been playing with(this site), exposing me to a bit of golang 
+
+## from shaun
+* aws is first preference, all the way
+* gcp only if you’re using firebase and frontend stuff
+* dynamo db 
+* a comment on design patterns - reactive extensions 
+  * rx, observer pattern, angular’s basically been built on it. 
