@@ -29,6 +29,11 @@ tags: [backend, retro]
 * a comment on design patterns - reactive extensions 
   * rx, observer pattern, angular’s basically been built on it. 
 
+# looking forward
+- [Terraform](https://learn.hashicorp.com/collections/terraform/azure-get-started)
+- [Graph QL](https://www.apollographql.com/docs/tutorial/client/)
+- [Intro to node v2](https://frontendmasters.com/courses/node-js-v2/)
+
 ### some resources
 {{<spotifyembed episode 5HgAzFd9ZUVDjebM2BZ1C4 "100%" 232 >}}
 {{<spotifyembed episode 0P9h3edCt6RfxV9q7MuFM4 "100%" 232 >}}

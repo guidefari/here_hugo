@@ -13,3 +13,4 @@
 - [x] look into hugo SEO
 - [ ] re-write footer
 - [ ] find a way to add tags on the homepage posts
+- [ ] transfer obsidian publish items
