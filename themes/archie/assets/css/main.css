@@ -54,14 +54,11 @@ a:hover {
 }
 
 ul {
-  list-style: none;
+  list-style-type: square;
   padding-left: 2ch;
 }
-ul li {
-  text-indent: -2ch;
-}
-ul > li::before {
-  content: '* ';
+ul.tags {
+  list-style: none;
   font-weight: bold;
 }
 
@@ -143,10 +140,16 @@ header {
 header .main {
   font-size: 1.5rem;
 }
-h1, h2, h3, h4, h5, h6 {
+
+
+h4, h5, h6 {
   font-size: 1.2rem;
   margin-top: 2em;
 }
+
+h1 {line-height: initial; font-size: 2.3rem;}
+h2 {font-size: 1.75rem;}
+h3 { font-size: 1.45rem;}
 
 h1::before { color: var(--maincolor); content: '# '; }
 h2::before { color: var(--maincolor); content: '## '; }
