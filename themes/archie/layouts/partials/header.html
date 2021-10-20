@@ -7,17 +7,20 @@
 		{{ if eq $paginator.PageNumber 1 }}
 			<title>{{ .Title }}</title>
 			<meta name="description" content="{{ .Site.Params.subtitle }}" />
+			<link rel="canonical" href="{{ .Permalink }}" />
 		{{ else }}
 			<title>{{ .Title }} | Page {{ $paginator.PageNumber }}</title>
 			<meta name="description" content="This is page {{ $paginator.PageNumber }} of our content." />
+			<link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/" />
 		{{ end }}
 	{{ else }}
 		{{ if .Params.seoTitle }}
 			<title>{{ .Params.seoTitle }}</title>
 		{{ else }}
 			<title>{{ .Title }}</title>
-		{{ end }}
-		<meta name="description" content="{{ .Description }}" />
+			{{ end }}
+			<meta name="description" content="{{ .Description }}" />
+			<link rel="canonical" href="{{ .Permalink }}" />
 	{{ end}}
 
 	{{- if isset .Site.Params "favicon" -}}
