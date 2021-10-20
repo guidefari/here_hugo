@@ -90,6 +90,11 @@ ul.tags {
   font-weight: bold;
 }
 
+strong {
+  color: var(--maincolor);
+  font-size: 1.05em;
+}
+
 /* Images */
 img {
   border: 3px solid #ececec;

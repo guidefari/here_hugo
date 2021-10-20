@@ -160,3 +160,11 @@ a:hover {
   background: royalblue;
   color: whitesmoke ;
 }
+
+blockquote strong {
+  color: var(--bordercl);
+}
+
+strong {
+  color: var(--darkMaincolor);
+}
