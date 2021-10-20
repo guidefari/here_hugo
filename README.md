@@ -1,5 +1,5 @@
 # todo
-- [ ] go through every imported article and make sure it's displaying properly on the frontend
+- [x] go through every imported article and make sure it's displaying properly on the frontend
 - [ ] make sure no `.md` files imported have `html` in them. most notorious is the anchor tags
 - [ ] create useful artifacts.
   - [ ] TIL
@@ -9,4 +9,5 @@
 - [ ] Add spotify link to socials
 - [ ] mixcloud, youtube - preserved for when I start to make content again
 - [ ] [generate OG Image automatically](https://flaviocopes.com/canvas-node-generate-image/)
-- [ ] look into hugo SEO
+- [x] look into hugo SEO
+- [ ] re-write footer
