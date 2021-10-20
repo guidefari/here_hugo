@@ -1,24 +1,28 @@
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{{- $title := ( .Title ) -}}
-	{{- $siteTitle := ( .Site.Title ) -}}
-	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} | Home </title>
-	{{- else -}}
-	<title>{{ $title }} - {{ $siteTitle }}</title>
-	{{- end -}}
+
+	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
+
+	{{ if .IsHome }}
+		{{ if eq $paginator.PageNumber 1 }}
+			<title>{{ .Title }}</title>
+			<meta name="description" content="{{ .Site.Params.subtitle }}" />
+		{{ else }}
+			<title>{{ .Title }} | Page {{ $paginator.PageNumber }}</title>
+			<meta name="description" content="This is page {{ $paginator.PageNumber }} of our content." />
+		{{ end }}
+	{{ else }}
+		{{ if .Params.seoTitle }}
+			<title>{{ .Params.seoTitle }}</title>
+		{{ else }}
+			<title>{{ .Title }}</title>
+		{{ end }}
+		<meta name="description" content="{{ .Description }}" />
+	{{ end}}
 
 	{{- if isset .Site.Params "favicon" -}}
 	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
 	{{- end -}}
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
-	{{ with .OutputFormats.Get "rss" -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-	{{ end -}}
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
