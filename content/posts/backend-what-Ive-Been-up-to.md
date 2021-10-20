@@ -41,3 +41,5 @@ tags: [backend, retro]
 **yet to look into**:
 - [Fundamentals of software architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
 - [Software architecture: the hard parts](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/)
+#### to-do
+  - [ ] look into choreography(event-based) vs orchestration(comman-based)
