@@ -1,8 +1,8 @@
 ---
 title: "I'm Fascinated by Design"
 date: 2021-10-19T10:19:54+02:00
-description: Good design is a fundamental layer of multiple disciples
-tldr: Good design is a fundamental layer of multiple disciples, because of this, I think it's important to make time to understand the principles of good design
+description: Good design is a fundamental layer of multiple disciplines, because of this, I think it's important to make time to understand the principles of good design
+tldr: Good design is a fundamental layer of multiple disciplines, because of this, I think it's important to make time to understand the principles of good design
 tags: [thoughts, design, ux, wip]
 ---
 
