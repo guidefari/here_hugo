@@ -21,6 +21,7 @@ I'm exploring `sagas` on backend, & frontend, via [redux](https://redux.js.org/)
 >  `Redux-saga` is a **middlewear** that helps us get a more async looking style of code
 
 > our sagas are split into 2 categories, **watchers** & **workers**.
+
 - this is just convention, not necessarily the only way to do it.
 - **watcher sagas see every action that is dispatched to the redux store, if it matches the action they are told to handle, they assign it to their worker saga**
   - *is this a form of orchestration? as seen & explained in the first backend video*
