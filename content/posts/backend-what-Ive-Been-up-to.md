@@ -6,7 +6,7 @@ tags: [backend, retro]
 ---
 
 - just finished a [firebase & nextjs project](/dataecho-retro).
-- been reading accelerate 
+- been reading [accelerate](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) 
     * getting exposed to the *why* of iaas & dev ops
 * design patterns, interesting time to pick them up, easier to understand now that I have more hours of actual coding under my belt.
     * lovely [resource](https://youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc) shared by [Dan](https://github.com/Thunder-Chief)
@@ -28,3 +28,11 @@ tags: [backend, retro]
 * dynamo db 
 * a comment on design patterns - reactive extensions 
   * rx, observer pattern, angular’s basically been built on it. 
+
+### some resources
+{{<spotifyembed episode 5HgAzFd9ZUVDjebM2BZ1C4 "100%" 232 >}}
+{{<spotifyembed episode 0P9h3edCt6RfxV9q7MuFM4 "100%" 232 >}}
+
+**yet to look into**:
+- [Fundamentals of software architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/)
+- [Software architecture: the hard parts](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/)
