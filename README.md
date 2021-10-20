@@ -14,3 +14,4 @@
 - [ ] re-write footer
 - [ ] find a way to add tags on the homepage posts
 - [ ] transfer obsidian publish items
+- [ ] 404 page
