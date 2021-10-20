@@ -31,7 +31,10 @@ pre {
   padding: 1em;
 }
 blockquote {
-  border-color: blue;
+  border-color: var(--darkMaincolor);
+}
+blockquote::before{
+  color:var(--darkMaincolor);
 }
 
 h1,
