@@ -1,5 +1,5 @@
 ---
-title: "Backend What I've Been Up To"
+title: "Backend - What I've Been Up To"
 date: 2021-10-19T09:48:35+02:00
 description: summary of the backend work I've been doing in the last few weeks
 tags: [backend, retro]
@@ -14,6 +14,7 @@ tags: [backend, retro]
 * considering node for a few weeks
     * get more backend experience with node before experimenting with golang?
     * Bakani has suggested i look into nest. 
+    
     > it uses decorators like in Angular to do some of the trivial stuff like generating swagger documentation. That for me is the biggest win 
 
     > And there's better architecture for your code because you separate features into modules etc 
