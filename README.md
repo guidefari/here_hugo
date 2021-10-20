@@ -11,3 +11,4 @@
 - [ ] [generate OG Image automatically](https://flaviocopes.com/canvas-node-generate-image/)
 - [x] look into hugo SEO
 - [ ] re-write footer
+- [ ] find a way to add tags on the homepage posts
