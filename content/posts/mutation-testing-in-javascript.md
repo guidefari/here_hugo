@@ -16,3 +16,5 @@ tags: [testing, notes]
 
 > just because all the tests are passing, and all the code is covered, doesn’t mean we should put 100% faith in those tests.   
 
+## more resources
+- [Coverage Is Not Strongly Correlated with Test Suite Effectiveness](https://neverworkintheory.org/2021/09/24/coverage-is-not-strongly-correlated-with-test-suite-effectiveness.html)
