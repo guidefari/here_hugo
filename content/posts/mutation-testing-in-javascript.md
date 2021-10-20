@@ -7,7 +7,10 @@ tags: [testing, notes]
 * this was research as per [Ryan](https://github.com/rollingryan)’s suggestions
 - [x] look at how it’s done in frontend 
   * [Stryker Mutator](https://stryker-mutator.io/) 
-  * **resource:** [mutation testing in javascript](https://youtu.be/3JIDM3Es8Mc)
+  
+{{<youtube 3JIDM3Es8Mc >}}
+
+
 
 
 > it’s a way of testing your tests, by breaking your code   
