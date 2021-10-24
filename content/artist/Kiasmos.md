@@ -1,7 +1,7 @@
 ---
 title: "Kiasmos"
 date: 2021-10-24T17:45:13+02:00
-description: Fancy a new artist to listen to?😎
+description: Two Icelandic heavyweights
 tags: [music, artist, curated, ambient, techno, neo_classical]
 tldr: you'll like this if you enjoy Stimming, Bonobo, Jon Hopkins, Nils Frahm, Rival Consoles, Christian Löffler
 ---
