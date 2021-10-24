@@ -1,0 +1,68 @@
+<head>
+	<meta charset="utf-8" />
+
+	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
+
+	{{ if .IsHome }}
+		{{ if eq $paginator.PageNumber 1 }}
+			<title>{{ .Title }}</title>
+			<meta name="description" content="{{ .Site.Params.subtitle }}" />
+			<link rel="canonical" href="{{ .Permalink }}" />
+		{{ else }}
+			<title>{{ .Title }} | Page {{ $paginator.PageNumber }}</title>
+			<meta name="description" content="This is page {{ $paginator.PageNumber }} of our content." />
+			<link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/" />
+		{{ end }}
+	{{ else }}
+		{{ if .Params.seoTitle }}
+			<title>{{ .Params.seoTitle }}</title>
+		{{ else }}
+			<title>{{ .Title }}</title>
+			{{ end }}
+			<meta name="description" content="{{ .Description }}" />
+			<link rel="canonical" href="{{ .Permalink }}" />
+	{{ end}}
+
+	{{- if isset .Site.Params "favicon" -}}
+	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+	{{- end -}}
+
+	{{- template "_internal/opengraph.html" . -}}
+	{{- template "_internal/twitter_cards.html" . -}}
+	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
+		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	{{- else if (isset .Site.Params "social") -}}
+		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	{{ end }}
+	{{ if .Site.Params.useCDN | default false -}}
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	{{- else -}}
+	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
+        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
+	{{ end }}
+
+	{{ $style := resources.Get "css/main.css" | fingerprint }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
+		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint }}
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
+	{{ end }}
+	
+	<!-- Custom CSS style get applied last -->
+	{{- if isset .Site.Params "customcss" }}
+		{{ range .Site.Params.customCSS }}
+		{{ $customstyle := resources.Get . | fingerprint }}
+		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+		{{ end }}
+	{{- end -}}
+	{{- range .Site.Params.customJS }}
+	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+	<script src="{{ . }}"></script>
+	{{- else }}
+	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+	{{- end }}
+	{{- end }}
+</head>

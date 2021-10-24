@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{{ $styles := resources.Get "css/mystyle.css" | postCSS }}
+
+{{ if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+{{ else }}
+  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+{{ end }}
+
+<header>
+	<div class="main">
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	</div>
+	<nav>
+		{{ range .Site.Menus.main }}
+		<a href="{{ .URL }}">{{ .Name }}</a>
+		{{ end }}
+		{{ if eq .Site.Params.mode "toggle" -}}
+        | <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
+		<script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
+		{{ end }}
+	</nav>
+</header>
