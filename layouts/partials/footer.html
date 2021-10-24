@@ -1,5 +1,4 @@
-<footer>
-<hr>
+<footer class="mt-6 flex">
 {{- range $index, $key := .Site.Params.Social -}}
 <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
 {{- end -}}
