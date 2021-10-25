@@ -7,6 +7,8 @@ tags: [backend, node, notes]
 
 {{<youtube wqhNoDE6pb4>}}
 
+ - [my repo](https://github.com/txndai/nest-rest-api)
+
 - Controller describes the endpoints & grabs the params from the url.
   - then calls a service method, that's where we handle anything to do with our data.
 - **why is it recommended for the controller to use a DTO while a service can use an interface?**
