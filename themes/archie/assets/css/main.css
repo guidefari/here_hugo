@@ -1,18 +1,18 @@
 /* Markdown */
-:root{
---maincolor: red;
---bordercl:rebeccapurple;
---callouctcolor:dodgerblue;
---hovercolor:navy;
---darkMaincolor: #50fa7b;
+:root {
+  --maincolor: red;
+  --bordercl: rebeccapurple;
+  --callouctcolor: dodgerblue;
+  --hovercolor: navy;
+  --darkMaincolor: #50fa7b;
 }
 html {
   color: #232333;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 16px;
   line-height: 1.6em;
 }
-body{
+body {
   display: block;
   margin: 8px;
 }
@@ -26,7 +26,7 @@ body{
 }
 
 p {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   line-height: 1.5;
 }
 
@@ -37,38 +37,38 @@ hr {
 }
 
 /* blockquote */
-blockquote{
+blockquote {
   font-size: 1.2rem;
-  margin:50px auto;
-  font-style:italic;
+  margin: 50px auto;
+  font-style: italic;
   color: #555555;
-  padding:1.2em 30px 1.2em 3.5rem;
-  border-left:8px solid #78C0A8 ;
-  line-height:1.6;
+  padding: 1.2em 30px 1.2em 3.5rem;
+  border-left: 8px solid #78c0a8;
+  line-height: 1.6;
   position: relative;
-  background:#EDEDED;
+  background: #ededed;
 }
 
-blockquote::before{
-  font-family:Arial;
+blockquote::before {
+  font-family: Arial;
   content: "\201C";
-  color:var(--maincolor);
-  font-size:4em;
+  color: var(--maincolor);
+  font-size: 4em;
   position: absolute;
   left: 10px;
-  top:-10px;
+  top: -10px;
 }
 
-blockquote::after{
-  content: '';
+blockquote::after {
+  content: "";
 }
 
-blockquote span{
-  display:block;
-  color:#333333;
+blockquote span {
+  display: block;
+  color: #333333;
   font-style: normal;
   font-weight: bold;
-  margin-top:1em;
+  margin-top: 1em;
 }
 /* end blockquote */
 a {
@@ -77,8 +77,8 @@ a {
   text-decoration: none;
 }
 a:hover {
-    background-color: var(--hovercolor);
-    color: #fff;
+  background-color: var(--hovercolor);
+  color: #fff;
 }
 
 ul {
@@ -124,13 +124,13 @@ figure h4 {
   margin-bottom: 1em;
 }
 figure h4::before {
-  content: '↳ ';
+  content: "↳ ";
 }
 
 /* Code blocks */
 code {
   background-color: #f1f1f1;
-  padding: .1em .2em;
+  padding: 0.1em 0.2em;
 }
 
 pre {
@@ -168,28 +168,56 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 1em 0;
+  padding: 1rem 0;
+  font-size: 1.8rem;
 }
 
 header .main {
-  font-size: 1.5rem;
+  font-size: 4rem;
 }
 
-
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 1.2rem;
   margin-top: 2em;
 }
 
-h1 {line-height: initial; font-size: 2.3rem;}
-h2 {font-size: 1.75rem;}
-h3 { font-size: 1.45rem;}
+h1 {
+  line-height: initial;
+  font-size: 2.3rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.45rem;
+}
 
-h1::before { color: var(--maincolor); content: '# '; }
-h2::before { color: var(--maincolor); content: '## '; }
-h3::before { color: var(--maincolor); content: '### '; }
-h4::before { color: var(--maincolor); content: '#### '; }
-h5::before { color: var(--maincolor); content: '##### '; }
-h6::before { color: var(--maincolor); content: '###### '; }
+h1::before {
+  color: var(--maincolor);
+  content: "# ";
+}
+h2::before {
+  color: var(--maincolor);
+  content: "## ";
+}
+h3::before {
+  color: var(--maincolor);
+  content: "### ";
+}
+h4::before {
+  color: var(--maincolor);
+  content: "#### ";
+}
+h5::before {
+  color: var(--maincolor);
+  content: "##### ";
+}
+h6::before {
+  color: var(--maincolor);
+  content: "###### ";
+}
 
 .meta {
   color: #999;
@@ -215,7 +243,6 @@ article .title {
   margin-bottom: 1em;
 }
 
-
 /* Callout */
 .callout {
   background-color: var(--callouctcolor);
@@ -224,7 +251,7 @@ article .title {
 }
 
 .callout p {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   margin: 0;
 }
 
@@ -238,32 +265,32 @@ article .title {
 }
 
 .site-description {
-display: flex;
-justify-content: space-between;
+  font-size: 2.8rem;
+  /* color: var(--darkMaincolor); */
 }
-.tags li::before{
+.tags li::before {
   content: "🏷 ";
 }
-.tags a{
-  border-bottom: 3px solid var(--maincolor); 
+.tags a {
+  border-bottom: 3px solid var(--maincolor);
 }
-.tags a:hover{
-  color:white;
-  background-color: var(--hovercolor); 
+.tags a:hover {
+  color: white;
+  background-color: var(--hovercolor);
 }
-svg{
+svg {
   max-height: 15px;
 }
-.soc:hover{
+.soc:hover {
   color: white;
 }
-.draft-label{ 
-    color: var(--bordercl);
-    text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 4px;
-    margin-left: 6px;
-    background-color: #f9f2f4;
+.draft-label {
+  color: var(--bordercl);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 6px;
+  background-color: #f9f2f4;
 }
 .highlight {
   position: relative;
@@ -286,51 +313,51 @@ svg{
   top: 0;
 }
 
-.highlight pre code[class=language-javaScript]::before,
+.highlight pre code[class="language-javaScript"]::before,
 .highlight pre code[class="language-js"]::before {
-content: "js";
-background: #f7df1e;
-color: black;
+  content: "js";
+  background: #f7df1e;
+  color: black;
 }
-.highlight pre code[class*='language-yml']::before,
-.highlight pre code[class*='language-yaml']::before {
-content: 'yaml';
-background: #f71e6a;
-color: white;
+.highlight pre code[class*="language-yml"]::before,
+.highlight pre code[class*="language-yaml"]::before {
+  content: "yaml";
+  background: #f71e6a;
+  color: white;
 }
-.highlight pre code[class*='language-shell']::before,
-.highlight pre code[class*='language-bash']::before,
-.highlight pre code[class*='language-sh']::before {
-content: 'shell';
-background: green;
-color:white
+.highlight pre code[class*="language-shell"]::before,
+.highlight pre code[class*="language-bash"]::before,
+.highlight pre code[class*="language-sh"]::before {
+  content: "shell";
+  background: green;
+  color: white;
 }
-.highlight pre code[class*='language-json']::before{
-content: 'json';
-background: dodgerblue;
- color: #000000 
+.highlight pre code[class*="language-json"]::before {
+  content: "json";
+  background: dodgerblue;
+  color: #000000;
 }
-.highlight pre code[class*='language-python']::before,
-.highlight pre code[class*='language-py']::before {
-content: 'py';
-background: blue;
-color: yellow ;
+.highlight pre code[class*="language-python"]::before,
+.highlight pre code[class*="language-py"]::before {
+  content: "py";
+  background: blue;
+  color: yellow;
 }
-.highlight pre code[class*='language-css']::before{
-content: 'css';
-background: cyan;
-color: black ;
+.highlight pre code[class*="language-css"]::before {
+  content: "css";
+  background: cyan;
+  color: black;
 }
-.highlight pre code[class*='language-go']::before{
-content: 'Go';
-background: cyan;
-color: royalblue ;
+.highlight pre code[class*="language-go"]::before {
+  content: "Go";
+  background: cyan;
+  color: royalblue;
 }
-.highlight pre code[class*='language-md']::before,
-.highlight pre code[class*='language-md']::before{
-content: 'Markdown';
-background: royalblue;
-color: whitesmoke ;
+.highlight pre code[class*="language-md"]::before,
+.highlight pre code[class*="language-md"]::before {
+  content: "Markdown";
+  background: royalblue;
+  color: whitesmoke;
 }
 
 /* table */
@@ -339,13 +366,52 @@ table {
   border-collapse: collapse;
 }
 
-table th{
+table th {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
   font-size: large;
 }
 
-table td{
+table td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
+}
+
+.header-and-description-wrapper {
+  padding: 0.5rem 0.7rem;
+}
+
+/* sm */
+@media (min-width: 640px) {
+  /* .tablet\:text-center { */
+  /* text-align: center; */
+  /* } */
+}
+
+/* md */
+@media (min-width: 768px) {
+  /* .tablet\:text-center { */
+  /* text-align: center; */
+  /* } */
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  /* .laptop\:text-center { */
+  /* text-align: center; */
+  /* } */
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  /* .desktop\:text-center { */
+  /* text-align: center; */
+  /* } */
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  /* .desktop\:text-center { */
+  /* text-align: center; */
+  /* } */
 }
