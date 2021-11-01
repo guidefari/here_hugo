@@ -10,3 +10,4 @@ tags: [career, strategy]
 - [Lead dev](https://leaddev.com/)
 - [react typescript cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
 - [Derek Sivers](https://sive.rs/)
+- [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
