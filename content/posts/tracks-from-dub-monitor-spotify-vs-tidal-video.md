@@ -49,3 +49,33 @@ surprisingly has Deadmau5/[testpilot](https://www.youtube.com/watch?v=rcekJiPkkC
 # Erika - Hexagon Cloud
 **Gardeners** sounds totally club friendly🙌
 {{<spotifyembed album 2tlObN7vBVTWbtMHAstupV>}}
+
+
+# Varg - Nordic Flora Series, Pt. 3: Gore-Tex City
+{{<spotifyembed album 02y1isyvMiP2I0no5y14aU >}}
+
+# **Bonus playlist** - Negative Space
+[`playlist`, `work-friendly`]
+
+spotify curated **ambient dub techno** playlist. 
+{{<spotifyembed playlist 37i9dQZF1DX4wG1zZBw7hm>}}
+
+# Shifted - Crossed Paths
+[`album` `work-friendly`]
+
+I feel like an older video has had me check out this track before 🤔 **Colour Of the Fall** sounds nice.
+{{<spotifyembed album 1wCosbw60JG2kfnQjC9X48 >}}
+
+# Talker - Battle Standards
+`EP`
+
+{{<spotifyembed album 7m2t8NrZkBs1JjpdiFufqe>}}
+
+# Answer Code Request - Gens
+`Album`
+
+digging the vibe from **Sphera**
+{{<spotifyembed album 65jWxoQoScJBOOOJiotvVZ >}}
+
+
+# SHXCXCHCXSH - SsSsSsSsSsSsSsSsSsSsSsSsSsSsSs
