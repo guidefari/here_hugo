@@ -159,6 +159,7 @@ The man, the [myth](https://www.discogs.com/artist/798219-The-Tuss), the [legend
 # Hobo - Iron Triangle
 [`Album`, `2012`]
 
+**Blackwell** is a strong opening track, sets a solid first impression.
 {{<spotifyembed album 2rUVJhLH7ilcub0yoVlpz0>}}
 
 ---
