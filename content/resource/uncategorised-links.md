@@ -11,3 +11,4 @@ tags: [career, strategy]
 - [react typescript cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
 - [Derek Sivers](https://sive.rs/)
 - [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
+- [Stevey's Google Platforms Rant](https://gist.github.com/chitchcock/1281611)
