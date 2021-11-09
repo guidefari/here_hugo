@@ -12,3 +12,4 @@ tags: [career, strategy]
 - [Derek Sivers](https://sive.rs/)
 - [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
 - [Stevey's Google Platforms Rant](https://gist.github.com/chitchcock/1281611)
+- [Rapid Mac Setup for Frontend Development](https://zellwk.com/blog/rapid-mac-setup/)
