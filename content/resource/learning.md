@@ -11,3 +11,4 @@ tags: [learning]
 
 # hugo
 - [seo friendly tutorials for hugo developers](https://moonbooth.com/)
+- [Golang tutorials](https://tutorialedge.net/course/golang/), from beginner to advanced
