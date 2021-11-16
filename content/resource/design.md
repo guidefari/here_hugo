@@ -11,3 +11,7 @@ tags: [design]
 # icons
 - [heroicons](https://heroicons.dev/)
 - [feather icons](https://feathericons.com/)
+
+# stock images
+- [unsplash](https://unsplash.com/): now this one I always forget the name of😂
+- [pexels](https://www.pexels.com/)
