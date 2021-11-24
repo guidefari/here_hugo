@@ -2,7 +2,7 @@
 title: "Martin Fowler"
 date: 2021-10-28T10:29:36+02:00
 description: 
-tags: [microservices, devops]
+tags: [microservices, devops, architecture]
 ---
 
 # microservices
@@ -10,6 +10,11 @@ tags: [microservices, devops]
 - [main guide](https://martinfowler.com/microservices/)
 - [microservice testing](https://martinfowler.com/articles/microservice-testing/)
 - [micro frontends](https://martinfowler.com/articles/micro-frontends.html): long read, maybe 40 minute commitment, but a good read, worth a second read.
+## event driven architecture
+{{<youtube STKCRSUsyP0>}}
+- [accompanying article](https://www.martinfowler.com/articles/201701-event-driven.html)
+- [CQRS](https://www.martinfowler.com/bliki/CQRS.html)
+
 
 # continuous delivery
 - [infrastructure as code](https://martinfowler.com/bliki/InfrastructureAsCode.html)
