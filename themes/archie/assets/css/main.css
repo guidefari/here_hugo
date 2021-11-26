@@ -234,6 +234,7 @@ footer {
   font-size: 2.5rem;
   display: flex;
   width: -webkit-fill-available;
+  width: 100%;
   justify-content: space-between;
   box-sizing: border-box;
 }
