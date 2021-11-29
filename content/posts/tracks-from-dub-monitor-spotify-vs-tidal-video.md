@@ -2,7 +2,7 @@
 title: "Tracks From Dub Monitor Spotify vs Tidal Video"
 date: 2021-11-01T14:34:37+02:00
 description: this is the music that was used to make statistical analysis of which platform offers more techno music.
-tags: [music, playlist, techno, dub_techno, ambient, dnb]
+tags: [music, curated, playlist, techno, dub_techno, ambient, dnb]
 tldr: A large portion of the techno I listen to is influenced by Taylor's curation, you may find something you like too, fellow techno head.
 ---
 
