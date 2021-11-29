@@ -13,3 +13,4 @@ tags: [career, strategy]
 - [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
 - [Rapid Mac Setup for Frontend Development](https://zellwk.com/blog/rapid-mac-setup/)
 - [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
+- for books: [InformIT](https://www.informit.com/)
