@@ -13,3 +13,13 @@ tags: [learning]
 # hugo
 - [seo friendly tutorials for hugo developers](https://moonbooth.com/)
 - [Golang tutorials](https://tutorialedge.net/course/golang/), from beginner to advanced
+
+# graphql
+- [graphql guide](https://graphql.guide/)
+
+# vim
+- [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
+
+# books
+- [InformIT](https://www.informit.com/)
+- [MIT press](https://mitpress.mit.edu/topics/computer-science)
