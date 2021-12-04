@@ -23,3 +23,7 @@ tags: [learning]
 # books
 - [InformIT](https://www.informit.com/)
 - [MIT press](https://mitpress.mit.edu/topics/computer-science)
+
+# go
+- frontend masters: [go for javascript developers](https://frontendmasters.com/courses/go-for-js-devs/)
+- [reference](https://www.golangprograms.com/golang-package-examples.html)
