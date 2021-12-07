@@ -20,4 +20,4 @@ tags: [til, pnpm, monorepo]
 
 ## dcx gotcha
 - node_modules for `shared/storybook` have to be installed 'manually', using `npm`. 
-  - I suspect this is because of the aliasing in the folder?
+  - I suspect this is because of the aliasing in `shared/storybook/.storybook.main.js`?
