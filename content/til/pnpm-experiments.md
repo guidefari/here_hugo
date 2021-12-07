@@ -5,6 +5,9 @@ description: A little handy tool for running scripts in your monorepo
 tags: [til, pnpm, monorepo]
 ---
 
+# what
+{{<youtube hiTmX2dW84E>}}
+
 # where
 - [pnpm website](https://pnpm.io/)
 
