@@ -1,7 +1,7 @@
 ---
 date: "2021-12-08"
 title: "Fast Dub Techno"
-tags: ['music', 'curated', 'techno', 'deep', 'dub', 'dub_techno']
+tags: ['music', 'curated', 'techno', 'deep', 'dub', 'dub_techno', 'playlist']
 ---
 
 - Recent, & relevant shares, I think of these as 'staples': 
