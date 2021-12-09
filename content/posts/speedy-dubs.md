@@ -5,8 +5,5 @@ description: more upbeat dub techno & friends
 tags: ['music', 'curated', 'techno', 'deep', 'dub', 'dub_techno', 'playlist']
 ---
 
-- Recent, & relevant shares, I think of these as 'staples': 
-	{{<spotifyembed album 3dQcknWb1G439u0whEtJCQ>}}
-	{{<spotifyembed album 7qE9k9dvJP4q4rnVlCZStd>}}
-	{{<spotifyembed track 4eEsyrxExdqBmJThG8674k>}}
-	{{<spotifyembed track 2EmbDyIKs2yLYJD5sOPt3g>}}
+
+{{<spotifyembed playlist 4b6UtFKJjhwV6ddNrVacVY>}}
