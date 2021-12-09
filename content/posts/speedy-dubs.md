@@ -1,6 +1,7 @@
 ---
 date: "2021-12-08"
-title: "Fast Dub Techno"
+title: "speedy dubs"
+description: more upbeat dub techno & friends
 tags: ['music', 'curated', 'techno', 'deep', 'dub', 'dub_techno', 'playlist']
 ---
 

@@ -27,3 +27,5 @@ tags: [learning]
 # go
 - frontend masters: [go for javascript developers](https://frontendmasters.com/courses/go-for-js-devs/)
 - [reference](https://www.golangprograms.com/golang-package-examples.html)
+
+{{<youtube SonwZ6MF5BE>}}

@@ -17,3 +17,5 @@ tags: [communication]
 ### References:
 * good [references for monotasking](https://www.softwaremeadows.com/posts/the_50-10_time_box_revising_pomodoro_for_software_development/) at the bottom of this article
   * also shares tips on pomodoro in practice
+* Den Delimarsky - [How I work](https://den.dev/how-i-work/)
+* [working with Isaac](https://github.com/hepwori/wwi/)

@@ -29,6 +29,7 @@ my name is Guide.
 	- I treat writing as a second brain, using it as a way to store information, & free up more space in my actual brain for processing.
 	- so, it's a part of my constantly evolving note taking system, let's see if this sticks.
 	- also influenced by [scaling yourself](https://www.hanselman.com/blog/scott-hanselmans-complete-list-of-productivity-tips) thoughts shared by [Scott Hanselman](https://www.hanselman.com/about)
+	- Also put together well by [Zain Rizvi](https://www.zainrizvi.io/#why-i-write)
 	- {{<youtube V4NJo2Mfvrc>}}
 
 ## digital garden
