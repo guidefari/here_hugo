@@ -12,4 +12,7 @@ tags: [career, strategy, music]
 - [Derek Sivers](https://sive.rs/)
 - [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
 - [Rapid Mac Setup for Frontend Development](https://zellwk.com/blog/rapid-mac-setup/)
-- [Hardwax](https://hardwax.com/): for music
+
+# music
+- [Hardwax](https://hardwax.com/)
+- [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
