@@ -26,7 +26,7 @@ my name is Guide.
 - a way to start structuring & sharing my longform & random thoughts, so the topics will vary a lot.
 - this is literally my notebook. that said, assume everything is a work in progress.
 - I write notes as a way to structure my thoughts, & to help me think. 
-	- I treat writing as a second brain, using it as a way to store information, & free up more space in my actual brain for processing.
+	- I treat writing as a [second brain]({{<ref tiago-forte>}}), using it as a way to store information, & free up more space in my actual brain for processing.
 	- so, it's a part of my constantly evolving note taking system, let's see if this sticks.
 	- also influenced by [scaling yourself](https://www.hanselman.com/blog/scott-hanselmans-complete-list-of-productivity-tips) thoughts shared by [Scott Hanselman](https://www.hanselman.com/about)
 	- Also put together well by [Zain Rizvi](https://www.zainrizvi.io/#why-i-write)

@@ -2,7 +2,7 @@
 title: "Tiago Forte"
 date: 2021-12-10T18:32:43+02:00
 description: This man has well put together resources on the why & how of a second brain.
-tldr: bits I've found useful from Tiago.
+tldr: bits about building a second brain I've found useful from Tiago.
 tags: [second-brain]
 ---
 
@@ -12,6 +12,18 @@ Mini podcast series, with short & digestable insights on the 10 principles of bu
 There's also a second season, going over some myths about building a second brain.
 
 {{<spotifyembed show 40O0Lbp5ockSt0qSogo6q1>}}
+
+## the principles
+1. Borrowed creativity
+2. The capture habit
+3. Idea recycling
+4. Projects over categories
+5. Slow burns: stop completing your work via "heavy lifts"
+6. Start with abundance. I feel this one is closely related to close burns
+7. Intermediate packets: making small contained & digestible units of work that can be re-used/transformed in the future.
+8. You only know what you make: don't just passively learn, put to action what you're learning
+9. Make things easier for your future self (Progressive summarization)
+10. Keep your ideas moving
 
 # articles
 ## [Progressive Summarization](https://fortelabs.co/blog/progressive-summarization-a-practical-technique-for-designing-discoverable-notes/)

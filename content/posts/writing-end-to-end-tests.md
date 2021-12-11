@@ -1,7 +1,7 @@
 ---
 title: "Writing End to End Tests"
 date: 2021-12-11T15:30:02+02:00
-description: 
+description: more retrospective notes from the last freelance project I did.
 tags: [freelance, testing, cypress, retro, sigma, frontend]
 ---
 this is a continuation of [dataecho retro]({{<ref dataecho-retro>}}).
