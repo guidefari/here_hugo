@@ -15,7 +15,7 @@ Mobile editing is where it kinda sucks, they're accessible & editable within dro
 
 Quick capture on mobile is handled by [Simplenote](https://simplenote.com/). the notes are cloud synced, and it's usable when offline too, and the app launches like a rocket, which is ideal when I need to write down a million dollar idea before it disappears from my head.
 
-I can then open Simplenote in the browser(desktop) & copy paste into the dropbox synced folder, using Obsidian, and simultaneously delete the file from Simplenote, keeping things tidy & single-source-of-truth friendly👌.
+I can then open Simplenote in the browser(desktop) & copy paste into the dropbox synced folder, using Obsidian, and simultaneously delete the file from Simplenote, keeping things tidy & single-source-of-truth friendly 👌.
 
 ## plus side
 The plus side to this more 'manual' system is it allows me to regularly review & interact with my quick capture notes, as a somewhat forgetful person, it helps keep some thoughts fresh in my mind.

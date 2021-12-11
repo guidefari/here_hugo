@@ -6,6 +6,7 @@ tags: [retro, freelance ,firebase ,fullstack ,project]
 ---
 
 - [Live site](https://dataecho.org/)
+- [part 2]({{<ref writing-end-to-end-tests>}}) of these notes.
 
 
 **start date:** 01 July 2021 (initial chats started mid-June)
