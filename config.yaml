@@ -1,5 +1,5 @@
 ---
-baseURL: 'https://guidefari.com'
+baseURL: "https://guidefari.com"
 languageCode: en-us
 title: guide fari
 theme: archie
@@ -16,14 +16,14 @@ params:
   # mode can be auto or toggle
   mode: auto
   useCDN: false
-  subtitle: 'software engineering, music, & everything between'
+  subtitle: "software engineering, music, & everything between"
   social:
     - name: GitHub
       icon: github
-      url: 'https://github.com/txndai'
+      url: "https://github.com/txndai"
     - name: LinkedIn
       icon: linkedin
-      url: 'https://www.linkedin.com/in/guide-fari-8b0063176/'
+      url: "https://www.linkedin.com/in/guide-fari-8b0063176/"
   customcss: ["css/mystyle.css"]
   favicon: "favicon.png"
 menu:
@@ -38,6 +38,9 @@ menu:
       url: /tags
       weight: 3
 Permalinks:
-  posts: '/:filename/'
-
-...
+  posts: "/:filename/"
+  album: "/:filename/"
+  artist: "/:filename/"
+  resource: "/:filename/"
+  til: "/:filename/"
+  track: "/:filename/"
