@@ -46,3 +46,6 @@ There's also a second season, going over some myths about building a second brai
 - Archive: Inactive items from the other 3 categories. this is where shit goes to die😂forgetting is not a bad thing, it liberates the mind.
 
 > Access the results of your past thinking
+
+# also see
+- Overview of [my note taking system]({{<ref 2021-note-setup>}}) as at Dec 2021
