@@ -3,10 +3,10 @@ title: "2021 Note Setup"
 date: 2021-12-11T18:44:56+02:00
 description: Obsidian, icloud Notes, Hugo, Git
 tldr: evolving the way I capture my ideas, with the goal of simplifying it further.
-tags: [obsidian, notes, git, hugo]
+tags: [obsidian, notes, git, hugo, second-brain]
 ---
 
-evolving from this ['old']({{<ref the-way-my-notes-are-setup>}}) setup.
+- evolving from this ['old']({{<ref the-way-my-notes-are-setup>}}) setup.
 
 ## main editor
 - VS Code: for the terminal so I can use hugo archetypes to quickly create new files, + to handle version control.
