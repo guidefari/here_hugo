@@ -19,7 +19,7 @@ There's also a second season, going over some myths about building a second brai
 3. Idea recycling
 4. Projects over categories
 5. Slow burns: stop completing your work via "heavy lifts"
-6. Start with abundance. I feel this one is closely related to close burns
+6. Start with abundance. I feel this one is closely related to slow burns
 7. Intermediate packets: making small contained & digestible units of work that can be re-used/transformed in the future.
 8. You only know what you make: don't just passively learn, put to action what you're learning
 9. Make things easier for your future self (Progressive summarization)
