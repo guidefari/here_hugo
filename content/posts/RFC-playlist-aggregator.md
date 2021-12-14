@@ -15,10 +15,10 @@ It's tedious & distracting to have to continuously shift across the many, smalle
 compose playlists using playlists.
 
 # what
-the service should be able to take the state of many smaller playlists & propagate any actions to the main **aggregated** playlist
+the service should be able to take the state of many **smaller playlists** & propagate any actions to the main **aggregated playlist**
 - I'm thinking comparisons of playlists' state, will be done with data that's been stored in a non-relational DB
-- meaning if I add a track to *smaller playlist 1* & a few tracks to *smaller playlist 2*, & those two playlists are being **watched** by *big aggregated playlist1*, those tracks should be added to the *big aggregated playlist*
-- delete is a little tricky, because what happens if the *big aggregated playlist* already had some tracks, that aren't in any of the smaller playlists. I want the *aggregated* playlist to also be standalone, one I can add tracks to individually.
+- meaning if I add a track to **smaller playlist 1** & a few tracks to **smaller playlist 2**, & those two playlists are being **watched** by **big aggregated playlist1**, those tracks should be added to the **big aggregated playlist**
+- delete is a little tricky, because what happens if the **big aggregated playlist** already had some tracks, that aren't in any of the smaller playlists. I want the **aggregated** playlist to also be standalone, one I can add tracks to & manage individually.
 
 
 # tech stack I'd like to use
