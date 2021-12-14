@@ -26,3 +26,9 @@ the service should be able to take the state of many **smaller playlists** & pro
 - AWS (this is the area I need help with)
 - [Spotify API](https://developer.spotify.com/console/playlists/)
   - [working with playlists](https://developer.spotify.com/documentation/general/guides/working-with-playlists/)
+
+## notes
+- Spotify has no event sourcing API.
+- Polling for changes
+- Batch processing
+- how is sourcing of watcher playlist & source playlists going to be done?
