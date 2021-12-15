@@ -20,6 +20,10 @@ tags: [learning]
 # vim
 - [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
 
+# iOS
+- this video links to some high quality looking resources
+{{<youtube y2rSZjU64PA>}}
+
 # books
 - [InformIT](https://www.informit.com/)
 - [MIT press](https://mitpress.mit.edu/topics/computer-science)

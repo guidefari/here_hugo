@@ -7,6 +7,7 @@ tags: [design]
 
 - [ui design daily](https://www.uidesigndaily.com/)
 - [dribbble](https://dribbble.com/)
+- [My figma resources]({{<ref figma>}})
 
 # icons
 - [heroicons](https://heroicons.dev/)
