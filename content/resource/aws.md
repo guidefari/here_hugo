@@ -17,7 +17,10 @@ tags: [aws, backend]
 - aws iac examples
 
 # resources
-* podcast - [AWS.fm](https://aws.fm/episodes)
-* [AWS](https://aws.amazon.com/certification/?nc2=sb_ce_co) - there's some practice questions & some learning resources here too, I think
+* [AWS](https://aws.amazon.com/certification/?nc2=sb_ce_co)
+  - [ ] Review the solution architecture exam blueprint
 * [a cloud guru](https://acloudguru.com/)
 * [tutorialsdojo](https://tutorialsdojo.com/)
+- [ ] find an online course
+- [ ] do the labs
+- [ ] subscribe to some sort of practice questions, & practice exams 
