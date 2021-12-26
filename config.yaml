@@ -44,3 +44,4 @@ Permalinks:
   resource: "/:filename/"
   til: "/:filename/"
   track: "/:filename/"
+  book: "/:filename/"
