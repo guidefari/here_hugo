@@ -13,6 +13,8 @@ These tracks have been put together keeping an mind an idea you had a direct inf
 > * it helps you appreciate the spaciousness of dub techno by not drowning you in it
 
 So, some of the tracks may not necessarily be dub techno, but I'd fit them into a dub techno set. Such as the Skudge track, that's Swedish Electronic/Techno, but I think it would play well with dubs.
+
+I've divided the highlights below into **intro tracks**(some may be slightly less than 130bpm), & **mid set** or **peak** tracks.
 # intro/outro tracks
 {{<spotifyembed track 0w7CR3poTq1XGmWfbpeObK>}}
 {{<spotifyembed track 7GHZ5i0umDBSRo4RxuGkJ2>}}
