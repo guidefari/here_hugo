@@ -1,6 +1,6 @@
 ---
 date: "2021-06-01"
-tags: ["Music", "Curation"]
+tags: [Music, Curation, spotify]
 title: "Interesting Spotify Tools"
 description: "Tailored for music curation. - Interesting Spotify tools I've found to help manage your library, & gain better insight on its structure."
 ---

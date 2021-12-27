@@ -25,3 +25,4 @@ tags: [career, strategy, music]
 # music
 - [Hardwax](https://hardwax.com/)
 - [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
+- [FL](https://www.frankylen.com/): DJ website he's got a well branded online presence. streaming on multiple platforms like I used to. using his website as the main aggregation point.

@@ -2,7 +2,7 @@
 title: "Evergreen"
 date: 2021-11-29T08:57:28+02:00
 description: evergreen bits from around the web
-tags: [reading]
+tags: [reading, platform]
 ---
 
 # links
