@@ -1,0 +1,16 @@
+<!--
+Parameters:
+    album
+    track
+    width - (Optional) width
+    height - (Optional) height
+-->
+
+{{ if .IsNamedParams }}
+<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album={{.Get "album"}}/size=large/bgcol=333333/linkcol=2ebd35/tracklist=false/track={{.Get "track"}}/transparent=true/" seamless>
+</iframe>
+
+    {{ else }}
+    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album={{ .Get 0}}/size=large/bgcol=333333/linkcol=2ebd35/tracklist=false/track={{.Get 1}}/transparent=true/" seamless>
+    </iframe>
+{{ end }}

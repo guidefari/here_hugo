@@ -1,0 +1,16 @@
+<!--
+Parameters:
+    album
+    width - (Optional) width
+    height - (Optional) height
+-->
+
+{{ if .IsNamedParams }}
+<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album={{.Get "album"}}/size=large/bgcol=333333/linkcol=2ebd35/tracklist=false/transparent=true/" seamless>
+</iframe>
+    {{ else }}
+    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album={{ .Get 0}}/size=large/bgcol=333333/linkcol=2ebd35/tracklist=false/transparent=true/" seamless>
+    </iframe>
+{{ end }}
+
+<iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=2035271842/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://colloboh.bandcamp.com/album/entity-relation-ep">Entity Relation EP by Colloboh</a></iframe>
