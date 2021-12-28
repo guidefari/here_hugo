@@ -95,7 +95,6 @@ ul.tags {
 
 strong {
   color: var(--maincolor);
-  font-size: 1.05em;
 }
 
 /* Images */
@@ -162,7 +161,7 @@ pre code {
   margin-right: auto;
   padding: 0 1rem;
   word-wrap: break-word;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
 }
 
 /* Header */
@@ -179,22 +178,26 @@ header .main {
   font-size: 4rem;
 }
 
-h4,
-h5,
-h6 {
-  font-size: 1.2rem;
-  margin-top: 2em;
-}
-
 h1 {
   line-height: initial;
-  font-size: 2.3rem;
+  font-size: 3.815rem;
 }
 h2 {
-  font-size: 1.75rem;
+  font-size: 3.052rem;
 }
 h3 {
-  font-size: 1.45rem;
+  font-size: 2.441rem;
+}
+h4 {
+  font-size: 1.953rem;
+}
+
+h5 {
+  font-size: 1.563rem;
+}
+
+h6 {
+  font-size: 1.25rem;
 }
 
 h1::before {
@@ -311,7 +314,7 @@ article .title {
   background: black;
   border-radius: 0 0 0.25rem 0.25rem;
   color: white;
-  font-size: 12px;
+  font-size: 1.25rem;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
   position: absolute;
