@@ -10,6 +10,7 @@ tags: [career, strategy, music]
 - [Lead dev](https://leaddev.com/)
 - [react typescript cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
 - [Derek Sivers](https://sive.rs/)
+  - [Berklee](https://sive.rs/berklee)
 - [SIDEBITS: Milosz Danczak's blog](https://blog.sidebits.tech/)
 - [Rapid Mac Setup for Frontend Development](https://zellwk.com/blog/rapid-mac-setup/)
 - [Jason Lengstorf: Use Airbnb like a pro](https://www.lengstorf.com/use-airbnb-like-a-pro/) 
