@@ -13,3 +13,16 @@ tags: [podcast, wealth, money, strategy]
 
 - Having more than you need is the easiest way to become wealthy
 - and by far the easiest way to stay wealthy, is not to need much.
+
+### Minimum Viable Audience
+- [Seth Godin - The minimum viable audience](https://seths.blog/2019/03/the-minimum-viable-audience-2/)
+- [Seth Godin - In Search of the minimum viable audience](https://seths.blog/2017/07/in-search-of-the-minimum-viable-audience/)
+
+> You need to ask yourself two simple questions.
+> - Who is it for?
+> - What value does it bring to them?
+> [Yura Namchoom - Building The Minimum Viable Audience As An Artist](https://yuranamchoom.com/building-the-minimum-viable-audience-as-an-artist/)
+
+- [Minimum Viable Audience: A New Way to Find A Profitable Market](https://guerric.co.uk/minimum-viable-audience/)
+## Related
+{{<youtube gxYt--CFXK0>}}
