@@ -2,7 +2,7 @@
 title: "Inspired Money Derek Sivers"
 date: 2021-12-27T13:22:36+02:00
 description: You might find this podcast useful👇
-tags: [podcast, wealth, money]
+tags: [podcast, wealth, money, strategy]
 ---
 
 {{<spotifyembed episode 0ahF9HUcFz2Wt6atQmQ4TV "100%" 232 >}}
