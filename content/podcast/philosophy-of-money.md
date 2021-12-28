@@ -16,7 +16,8 @@ tags: [podcast, money, wealth]
 * **Durability**: "it's not going to corrode over time." gold for example
 * **Recognizability**: "each trading party can verify its authenticity"
 * **Portability**: "you wanna be able to move it across space"
-* **Scarcity**: "when demand outstrips supply"
+* **Scarcity**: "when demand outstrips supply". 
+  * bitcoin is the first fixed supply of money there has ever been. 21 mil
 
 ---
 
