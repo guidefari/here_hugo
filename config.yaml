@@ -45,3 +45,4 @@ Permalinks:
   til: "/:filename/"
   track: "/:filename/"
   book: "/:filename/"
+  podcast: "/:filename/"
