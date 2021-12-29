@@ -9,13 +9,14 @@ author = "Guide Fari"
 # allow me to introduce myself 🎵
 my name is Guide. 
 - Frontend Engineer [@sigma](https://sigmadigital.io/).
-- Passionate Music curator
-- Driven by a curious mind
-- Strategic thinker
+- Passionate [Music curator]({{<ref "content#curated-music">}})
+- Driven by a [curious mind]({{<ref content>}})
+- [Strategic thinker]({{<ref "tags/strategy">}})
 
 # Useful links
 - An overview on how I [communicate]({{<ref communications-readme>}}) when working.
 - Here's what I'm up to [now]({{<ref now>}})
+- [Content]({{<ref content>}}) on the site
 
 
 # why does this site exist?

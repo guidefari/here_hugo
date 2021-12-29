@@ -29,3 +29,6 @@ as a tool for learning, & structuring my thoughts, this is a crucial part of my 
 another crucial part of my daily life, I have been actively [curating]({{<ref "/tags/curated" >}}) music since almost as far back as memory can take me.
 
 it's become slightly more systemic & efficient, & I'm always looking for ways to improve on it. I enjoy this so much.
+
+# near future
+- Studying towards Associate [AWS Solutions Architect]({{<ref "resource/aws">}})
