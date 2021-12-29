@@ -21,9 +21,12 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 - A good framework for this is [Harold Garfinkel's "breaching experiments"](https://wiredcosmos.com/sociology-in-action-the-breaching-experiment/)
 	- [ ] search "Breaching experiments" on Youtube & you'll find lots of videos
 - the idea of interventionism is a big theme throughout this book, the end of each chapter is accompanied with some sort of experiment, to put to the test, or illustrate in the real world, what was being spoken about. 
+## intervention example
+> “How about distributing sounds and music via Spotify in order to gain firsthand experience of its aggregators while also programming bots, or software scripts, that would listen to this music, thus short-circuiting the system?”
+
+## interventionism expanded on
 > “What if we were to complement interviews, document analysis, and overt observation of the front end of Spotify with experimental, covert access to its back end in order to compare and verify the information given and to confront interlocutors with the results?”
 
-> “How about distributing sounds and music via Spotify in order to gain firsthand experience of its aggregators while also programming bots, or software scripts, that would listen to this music, thus short-circuiting the system?”
 
 #### it's no coincidence that big tech companies invest in their own social research
 > “One reason why some research currently seems to lack determination in confronting the critical ethical, political, and ideological issues of digital media is that research is also regularly enlisted by macroactors. It is not accidental that Facebook, Google, Microsoft, Intel, and Spotify all invest in social research. ”
@@ -54,7 +57,8 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 > “The first financing round (Series A) of about $20 million coincided with Spotify’s public launch in 2008. Subsequently, larger amounts of capital have been injected, typically at an interval of twelve to eighteen months.”
 
 ### Product: Early spotify
-- Spotify's early architecture distributed music using P2P until spring 2014.
+- Spotify's early architecture distributed music using **`P2P`** until spring 2014.
+  - another common [**P2P**](https://networkencyclopedia.com/peer-to-peer-network-p2p/) use-case is to download torrent files
 - The initial strategy was to distribute free music, supported by ads
 	- This proved to be very tricky when it came to launching the service in the US. royalties chats
 	- Daniel Ek seemed almost 'anti-subscription', & essentially got strong-armed into it
