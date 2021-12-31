@@ -2,7 +2,7 @@
 title: "Content"
 date: 2021-12-29T10:40:00+02:00
 description: An overview of the content & resources on this site
-tldr: Allow me to walk you through what you can find on this site. A navbar isn't effective enough to navigate you around all the content here, this page is much more effective at guiding you around the content
+tldr: Allow me to walk you through what you can find on this site. A navbar isn't effective enough to show you around all the content here
 tags: [nav, ux]
 ---
 
