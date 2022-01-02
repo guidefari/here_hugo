@@ -16,8 +16,9 @@ tags: [aws, backend]
 
 ### resources
 {{<youtube nt1-ZIX_s5U>}}
-* [AWS](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+* [AWS solutions architect homepage](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
   - [ ] Review the solution architecture [exam blueprint](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf)
+  - [ ] [Sample questions](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Sample-Questions.pdf)
 * [a cloud guru](https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02-4KYV)
 * [tutorialsdojo](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-exam-video-course/)
 * [exampro](https://www.exampro.co/aws-exam-solutions-architect-associate): I think most of this course is on freecodecamp youtube.

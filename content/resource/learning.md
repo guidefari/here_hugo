@@ -2,7 +2,7 @@
 title: "Learning"
 date: 2021-10-28T11:56:44+02:00
 description: learning platforms & courses I have an interest in
-tags: [learning]
+tags: [learning, go, ux, graphql, architecture, vim, testing, music]
 ---
 
 ### grow with google
@@ -16,6 +16,7 @@ tags: [learning]
 
 # graphql
 - [graphql guide](https://graphql.guide/)
+- [Apollo GQL](https://www.apollographql.com/docs/tutorial/client/)
 
 # vim
 - [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
@@ -31,5 +32,29 @@ tags: [learning]
 # go
 - frontend masters: [go for javascript developers](https://frontendmasters.com/courses/go-for-js-devs/)
 - [reference](https://www.golangprograms.com/golang-package-examples.html)
+- [Building lambda functions with go](https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html)
+- [visualizing concurrency in go](https://divan.dev/posts/go_concurrency_visualize/)
+- [codewars](https://www.codewars.com/)
+- [experimenting with the spotify api](https://github.com/txndai/go-spotify), made use of [this Go wrapper for the spotify api](https://github.com/zmb3/spotify)
+- {{<youtube l9rMdKO1Vto>}}
+- {{<youtube x_yCX4kSchY>}}
 
 {{<youtube SonwZ6MF5BE>}}
+
+# design patterns
+{{<youtube _BpmfnqjgzQ>}}
+
+# redux
+- [sigma duxedo](https://www.npmjs.com/package/@sigmadigital/duxedo?activeTab=readme)
+
+# testing
+- [Mocking asynchronous functions with Jest](https://blog.jimmydc.com/mock-asynchronous-functions-with-jest/)
+- {{<youtube OVNjsIto9xM>}}
+# auth
+- [NextAuth.js](https://next-auth.js.org/)
+
+# ux
+- [Enterprise UX: essential resources to design complex data tables](https://stephaniewalter.design/blog/essential-resources-design-complex-data-tables)
+
+# music
+- [How to Protect Yourself as a Songwriter or Producer](https://djbooth.net/features/2021-08-26-protect-your-music-songwriter-producer-amuse)
