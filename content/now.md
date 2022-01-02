@@ -7,7 +7,7 @@ tags: [communication, strategy]
 ---
 
 # intro
-The idea of a [now](https://nownownow.com/about) page was introduced to me by [Derek Sivers](https://sive.rs/now). There's many lovely [examples](https://nownownow.com/) on the web on how these pages look.
+The idea of a [now](https://nownownow.com/about) page was introduced to me by [Derek Sivers](https://sive.rs/now). There's many lovely [examples](https://nownownow.com/) on the web of how these pages look.
 
 ---
 
