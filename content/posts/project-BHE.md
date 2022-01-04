@@ -8,12 +8,12 @@ tags: [freelance, frontend]
 # Background
 - Client was an agency
 	- Website was done for their client
-- The client needed a way to market their cleaning services, as well as play the role of *first point of entry* into the sales tunnel for new customers.
+- The client needed a way to market their products
 
 #### Links
-- [Live Site](https://yaniclean.co.uk/)
-- [Source Code](https://github.com/txndai/yani-clean)
-- [Figma design](https://www.figma.com/file/iTbQbo5SBvvMQQ5Y8Co176/Yani-Clean?node-id=0%3A1)
+- [Live Site](https://bts-stoic-davinci.netlify.app/)
+- [Source Code](https://github.com/bhe-technical-services/site)
+- [Figma design](https://www.figma.com/file/zckbFc5ZmqzWE3yukOpiZ8/BTS?node-id=0%3A1)
 
 #### Duties
 - solely responsible for the website
@@ -22,10 +22,6 @@ tags: [freelance, frontend]
 	- development
 
 #### Technology used
-- [NextJS](https://nextjs.org/)
+- [Gatsby](https://www.gatsbyjs.com/)
 - [Netlify](https://www.netlify.com/)
 - [Tailwind](https://tailwindcss.com/)
-
-#### Lessons learned
-- deploying NextJS on netlify was a bit of a challenge, this project taught me to appreciate [Vercel](https://vercel.com) as my default for hosting NextJS projects.
-- spent quite a bit of time researching how to handle forms in JAMstack.
