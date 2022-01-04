@@ -2,7 +2,7 @@
 title: "Project DIFTK"
 date: 2021-12-11T20:05:41+02:00
 description: DIFTK highlights
-tags: [volunteer, frontend]
+tags: [volunteer, frontend, freelance]
 ---
 
 # Background
