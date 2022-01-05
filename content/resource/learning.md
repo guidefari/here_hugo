@@ -19,7 +19,7 @@ tags: [learning, go, ux, graphql, architecture, vim, testing, music]
 - [Apollo GQL](https://www.apollographql.com/docs/tutorial/client/)
 
 # vim
-- [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
+- [My vim resources]({{<ref vim>}})
 
 # iOS
 - this video links to some high quality looking resources
