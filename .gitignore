@@ -6,3 +6,4 @@
 .idea/**/shelf
 node_modules
 content/.obsidian
+**/.DS_Store
