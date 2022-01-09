@@ -23,6 +23,8 @@ tags: [career, strategy, music]
 > - The location needs to be within walking distance of both good restaurants and coffee shops with wifi
 > - Having a washing machine in the unit is ideal since I only have 5 days’ worth of clothing (in a pinch, I can do without this)
 
+- [Inkdrop](https://www.inkdrop.app/): another markdown note taking app
+
 # music
 - [Hardwax](https://hardwax.com/)
 - [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
