@@ -2,7 +2,7 @@
 title: "A quick lesson in design - Dark Patterns"
 date: 2022-01-09T21:15:16+02:00
 description: A mini rant & quick lesson in design
-tags: [design]
+tags: [design, ux, psychology]
 tldr: dark patterns are subtle & predatory designs that are geared against you, the product user.
 ---
 
@@ -67,3 +67,4 @@ It’s predatory, & subtle, that’s my beef with it. rant over😂
 {{<youtube cjMbtDcHL7k>}}
 - [Refactoring UI](https://www.refactoringui.com/)
 - [Don’t make me think](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515)
+- [Neurodesign reading list](https://uxplanet.org/the-neurodesign-reading-list-b8e115bdca73)
