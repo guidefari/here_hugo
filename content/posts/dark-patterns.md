@@ -24,37 +24,38 @@ Examples of variants:
 So when you put the two together, it means your design file can contain the following: 
 - Primary Button, Secondary Button
 - Primary Progress Loader, Secondary Progress loader
-- Same thing for the snackbar.
+- Same thing for the snackbar
 
 ## Differences between a primary & secondary button
-There are a couple of ’things’(idk what else to call them, I’ll give examples) that are used in design to establish hierarchy. listed below
+There are a couple of ’things’ (idk what else to call them, I’ll give examples) that are used in design to establish hierarchy. listed below
 - Font size
 - Bold text vs regular text
 - Color
 - Borders
 
-Good visual hierarchy is what allows you(person browsing the internet) to instinctively navigate around the site, it highlights the important bits. 
+Good visual hierarchy is what allows you (person browsing the internet) to instinctively navigate around the site, it highlights the important bits. 
 
-Refactoring UI has a whole chapter named “Hierarchy” is everything.
+Refactoring UI has a whole chapter named “Hierarchy is everything".
 > Visual hierarchy refers to how important the elements in an interface appear in relation to one another
 
 
 
 So, a primary button is usually brighter & bolder than a secondary or tertiary button. 
 
-Psychology plays in too
+### Psychology plays in too
+
 Humans adapt. The brain is lazy. A lot of what we do is decided by the subconscious brain. It’s no different when browsing the internet or using your phone. 
 
 # Tying it all together
 Right, now back to the image I clipped above.
 
-I mostly opt out of marketing, targeting, & analytics cookies etc. anything that raises privacy concerns, & I like to think you’re the same too, but the primary button on that modal is not really in your best interest. Pushing all cookies(including functionally unnecessary ones) onto you.
+I mostly opt out of marketing, targeting, & analytics cookies etc. anything that raises privacy concerns, & I like to think you’re the same too, but the primary button on that modal is not really in your best interest. Pushing all cookies (including functionally unnecessary ones) onto you.
 
 “Accept All Cookies” is the primary button, the button you’re more likely to subconsciously click.
 
 You’re more likely to click that because
 1. The subconscious plays a big role when you’re using digital products. As you’re going through user flows, if they’re designed well, you should just breeze through the different screens without feeling too confused.
-2. If you assume positive intent, you'd expect that the primary action(what to do about the cookies) is in your best interest(to customise)
+2. If you assume positive intent, you'd expect that the primary action (what to do about the cookies) is in your best interest(to customise)
    
 this is basically what they’re doing
 {{<youtube 1t3KCZiutxU>}}
