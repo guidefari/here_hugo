@@ -27,7 +27,7 @@ So when you put the two together, it means your design file can contain the foll
 - Same thing for the snackbar
 
 ## Differences between a primary & secondary button
-There are a couple of ’things’ (idk what else to call them, I’ll give examples) that are used in design to establish hierarchy. listed below
+There are a couple of styles that are used in design to establish hierarchy. listed below
 - Font size
 - Bold text vs regular text
 - Color
@@ -56,6 +56,8 @@ I mostly opt out of marketing, targeting, & analytics cookies etc. anything that
 You’re more likely to click that because
 1. The subconscious plays a big role when you’re using digital products. As you’re going through user flows, if they’re designed well, you should just breeze through the different screens without feeling too confused.
 2. If you assume positive intent, you'd expect that the primary action (what to do about the cookies) is in your best interest(to customise)
+3. And to quote [Kapil](https://www.linkedin.com/in/kapil-narotam-848330178/): 
+   > "I'd even go on to say, the usually safer button or our go to button that we normally would click is always placed on the right"
    
 this is basically what they’re doing
 {{<youtube 1t3KCZiutxU>}}
