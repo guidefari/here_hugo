@@ -18,7 +18,9 @@ tldr: Random bits of security related knowledge I want to keep together.
 
 - SOC: [Security operations centre](https://www.mcafee.com/enterprise/en-us/security-awareness/operations/what-is-soc.html)
 
-- CnC (Command & Control server): related to botnet, 
+- CnC (Command & Control server): related to botnet,
+
+-  [MSP (Managed Service Provider)](https://www.acronis.com/en-us/articles/msp/)
 # youtube stuff
 ### Attackers with good operations security
 {{<youtube zXmZnU2GdVk>}}
