@@ -32,6 +32,7 @@ my name is Guide.
 	- also influenced by [scaling yourself](https://www.hanselman.com/blog/scott-hanselmans-complete-list-of-productivity-tips) thoughts shared by [Scott Hanselman](https://www.hanselman.com/about)
 	- Also put together well by [Zain Rizvi](https://www.zainrizvi.io/#why-i-write)
 	- {{<youtube V4NJo2Mfvrc>}}
+  - {{<youtube NKHF5VZmCig>}}
 
 ## digital garden
 - Tom Critchlow on [building a digital garden](https://tomcritchlow.com/2019/02/17/building-digital-garden/): I especially like this one.
