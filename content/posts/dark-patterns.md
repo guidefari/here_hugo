@@ -72,3 +72,4 @@ It’s predatory, & subtle, that’s my beef with it. rant over😂
 - [Don’t make me think](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515)
 - [Neurodesign reading list](https://uxplanet.org/the-neurodesign-reading-list-b8e115bdca73)
 - [The rise of user hostile software](https://den.dev/blog/user-hostile-software/)
+{{<youtube udYiXZ8PcDY>}}
