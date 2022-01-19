@@ -5,6 +5,10 @@ description: reflection on some of the lessons learnt from the densely packed bo
 tags: [retro, spotify, book]
 ---
 
+### Housekeeping
+- The original book notes live [here]({{<ref spotify-teardown>}})
+
+
 ## Utilitarian use of music
 Since 2013, Spotify has been marketing music with a utilitarian approach. You can tell from the names of their playlists.
 This was already seen in Songza, in 2012.

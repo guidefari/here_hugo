@@ -22,3 +22,17 @@ tags: [vim, learning]
 - there's 3 options to **exit insert mode**, `<esc>`, `Ctrl + C`, and `Ctrl + [` 
 - `w` & `b` are compadres
 - use these keys, plus the movements & yankind & pasting stuff I've learnt till they feel like second nature.
+
+### new commands
+{{<youtube gSHf_b6AWKc>}}
+
+- `a` puts you into insert mode, think of it as 'append after where I am'.
+- `Shift + i` will take you to the beginning of a line
+- `Shift + a` will take you to the end of a line
+- `/` puts you into search mode, use `n` & `Shift + n` to get around
+- 🤯 `*` will automatically take you to the next occurence of a word.`#` does the opposite. also, you can use `n` or `Shift + n` to go through your search.
+- `$` takes you to end of line.
+
+### misc
+- groovebox colorscheme for vim
+- maybe start to keep my dotfiles in one place? or continue with configs first till it feels comfy
