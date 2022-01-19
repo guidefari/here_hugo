@@ -36,3 +36,13 @@ tags: [aws, backend]
 7. SQS
 
 - aws infrastructure as code examples
+
+---
+
+## 2022-01-19 (Wed)
+{{<youtube c_WNBmEc6EE>}}
+
+### S3
+- has different access tiers
+- buckets are **private** by default
+- Encryption in transit, achieved via SSL/TLS
