@@ -440,3 +440,9 @@ table td {
   /* text-align: center; */
   /* } */
 }
+
+ul.pagination {
+  margin-top: 4rem;
+  font-size: 2rem;
+  text-align: center;
+}
