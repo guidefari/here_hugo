@@ -27,6 +27,7 @@ tags: [career, strategy, music]
 - [Git Submodules](https://blog.bitsrc.io/how-to-utilize-submodules-within-git-repos-5dfdd1c62d09)
 - [everyone meditates](https://allthingsforthewin.com/everybody-meditates/)
 - [Python script to find short twitter usernames](https://den.dev/blog/find-short-twitter-username/)
+- [Generate SVG assets](https://haikei.app/)
 # music
 - [Hardwax](https://hardwax.com/)
 - [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
