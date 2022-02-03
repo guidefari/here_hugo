@@ -56,3 +56,5 @@ tags: [planning, frontend, react, redux, graphql]
 
 ## persistent layout in nextjs
 - [Adam Wathan](https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/)
+- [Tomas Gil](https://tomasgildev.com/posts/next-persistent-layout-typescript)
+- [Katsiaryna (Kate) Lupachova](https://dev.to/ramonak/nextjs-dashboard-layout-with-typescript-and-styled-components-3ld6)
