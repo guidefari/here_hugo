@@ -43,6 +43,6 @@ my favourites from the new release
 # related playlists 
 - [portable sunsets]({{<ref portable-sunsets>}})
 - [gig openers & closers]({{<ref gig-openers-and-closers>}}) 
-- [texture]({{<ref texture>}})
+- [texture]({{<ref "playlist/texture">}})
 
 

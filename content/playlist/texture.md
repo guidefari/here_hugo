@@ -7,3 +7,6 @@ tags: [music, playlist, curated, techno]
 ---
 
 {{<spotifyembed playlist 1yQ7fmfaWujhoZrEzozuA1>}}
+
+## related
+- [Max Cooper]({{<ref "artist/Max-Cooper">}})
