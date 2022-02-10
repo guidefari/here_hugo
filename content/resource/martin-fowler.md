@@ -2,7 +2,7 @@
 title: "Martin Fowler"
 date: 2021-10-28T10:29:36+02:00
 description: 
-tags: [microservices, devops, architecture]
+tags: [microservices, devops, architecture, backend]
 ---
 
 # microservices
@@ -13,6 +13,7 @@ tags: [microservices, devops, architecture]
 ## event driven architecture
 {{<youtube STKCRSUsyP0>}}
 - [accompanying article](https://www.martinfowler.com/articles/201701-event-driven.html)
+  - [event sourcing vs event driven architecture (not Martin, but related)](https://codeopinion.com/event-sourcing-vs-event-driven-architecture/)
 - [CQRS](https://www.martinfowler.com/bliki/CQRS.html)
 
 
