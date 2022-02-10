@@ -395,6 +395,10 @@ table td {
   /* text-align: center; */
     html {font-size:107%; }
     footer {font-size:110%;}
+
+  .content {
+    max-width: 90vw;
+  }
 }
 
 /* md */
