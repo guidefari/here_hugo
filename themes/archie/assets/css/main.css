@@ -394,8 +394,7 @@ table td {
 @media (min-width: 640px) {
   /* .tablet\:text-center { */
   /* text-align: center; */
-    html {font-size:107%; }
-    footer {font-size:110%;}
+    html, footer {font-size:110%;}
 
   .content {
     max-width: 90vw;
