@@ -52,3 +52,9 @@ Make your branch first then:
 ```bash
 git push --set-upstream origin <branch-you-just-created>
 ```
+
+# Quickly checkout to previous branch
+
+```bash
+git checkout -
+```
