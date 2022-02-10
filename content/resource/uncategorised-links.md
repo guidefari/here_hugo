@@ -28,6 +28,7 @@ tags: [career, strategy, music]
 - [everyone meditates](https://allthingsforthewin.com/everybody-meditates/)
 - [Python script to find short twitter usernames](https://den.dev/blog/find-short-twitter-username/)
 - [Generate SVG assets](https://haikei.app/)
+- [UserZoom](https://www.userzoom.com/plan-userzoom/) - platform where you can find ux testers amongst a whole bunch of other stuffs
 # music
 - [Hardwax](https://hardwax.com/)
 - [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
