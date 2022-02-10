@@ -85,6 +85,7 @@ a:hover {
 ul {
   list-style-type: square;
   padding-left: 2ch;
+  font-family: 'Fira Sans', sans-serif;
 }
 ul.tags {
   list-style: none;
