@@ -135,8 +135,9 @@ code {
 
 pre {
   background-color: #ececec;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 1em;
+  width: 100%;
 }
 
 .highlight pre ::selection {
