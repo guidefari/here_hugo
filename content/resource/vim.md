@@ -32,6 +32,7 @@ tags: [vim, learning]
 - `/` puts you into search mode, use `n` & `Shift + n` to get around
 - 🤯 `*` will automatically take you to the next occurence of a word.`#` does the opposite. also, you can use `n` or `Shift + n` to go through your search.
 - `$` takes you to end of line.
+- `y s a {` - allows you to **surround** **around** `{`
 
 ### misc
 - groovebox colorscheme for vim
