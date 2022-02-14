@@ -58,3 +58,10 @@ git push --set-upstream origin <branch-you-just-created>
 ```bash
 git checkout -
 ```
+
+# Housekeeping - prune branches that don't exist on origin
+- [read more](https://www.codeleaks.io/git-prune-command-to-clean-up-local-branches/)
+
+```bash
+git fetch --prune
+```
