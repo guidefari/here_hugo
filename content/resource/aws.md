@@ -23,8 +23,12 @@ tags: [aws, backend]
 * [tutorialsdojo](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-exam-video-course/)
 * [exampro](https://www.exampro.co/aws-exam-solutions-architect-associate): I think most of this course is on freecodecamp youtube.
 * [practice tests udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams-saa-c02/)
+* [more practice exams](https://www.udemy.com/course/practice-exams-aws-certified-solutions-architect-associate/?couponCode=FEB_22_GET_STARTED)
 * [well architected white paper](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) - **a must read**, apparently
 {{<youtube Ia-UEYYR44s>}}
+
+## Helpful youtube playlist
+{{<youtube 10JKpg-eqZU>}}
 
 ### stuff to look into from Shaun, for hr
 1. AWS Lambda 
