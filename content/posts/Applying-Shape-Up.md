@@ -6,6 +6,13 @@ tldr: I only work on 1 'other' project at a time, outside of my daily work commi
 tags: [strategy, project_management]
 ---
 
+## What?
+- [Shape Up](https://basecamp.com/shapeup) is a book from Basecamp, written by [Ryan Singer](https://feltpresence.com/). The book basically outlines the principles and process that have been followed by Basecamp over the years, and that company is known to be a lean machine (relatively small team for their revenue), and they're a customer focused team. 
+
+> Stop Running in Circles and Ship Work that Matters
+
+- [my book notes]({{<ref shape-up-notes-introduction>}})
+
 ## Some points from Shape up
 One of the biggest takeaways from Shape Up, is how the teams would go into [6 week cycles](https://basecamp.com/shapeup/0.3-chapter-01#six-week-cycles) of uninterrupted work. 
 - A project is [shaped]({{<ref shape-up-notes-shaping>}}), [appetite]({{<ref "shape-up-notes-introduction#appetite">}}) is decided, then work starts.
@@ -24,5 +31,5 @@ One of the biggest takeaways from Shape Up, is how the teams would go into [6 we
 ## wearing many hats
 - As I'm in a 6 week cycle of making open source contributions to [pro-search](https://pro-search.io), I'm also passively shaping up the next project, a migration for [DIFTK](https://doit4thekidz.org). Collecting the resources I'll need, & doing general alignment with [Terry]. This will probably be a small batch cycle.
 - [You can't really schedule shaping work](https://basecamp.com/shapeup/1.1-chapter-02#two-tracks)
-- Also have [Dataecho] work at the back of my mind, have to shape up a cycle, this one will be interesting as I have a new teammate to work with, [Vic](https://www.linkedin.com/in/victor-janhi-3a5962b7/) :)
+- Also have [Dataecho](http://dataecho.org/) work at the back of my mind, have to shape up a cycle, this one will be interesting as I have a new teammate to work with, [Vic](https://www.linkedin.com/in/victor-janhi-3a5962b7/) :)
   - Another project I'm passively shaping up, collecting feedback from the client, and will then get to how workload will be split, plus the appetite.
