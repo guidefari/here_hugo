@@ -2,7 +2,7 @@
 title: "Dub Techno Staples"
 date: 2022-02-14T07:55:08+02:00
 description: there’s a reason why people always mention Deepchord, Fluxion etc when we talk about dub techno
-tldr: their music is so bloody good, and I definitely recommend a listen as you come across their music.
+tldr: their music is so bloody good, and I definitely recommend a listen as you come across it.
 tags: [music, playlist, curated, dub_techno, ambient]
 ---
 
