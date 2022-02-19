@@ -50,3 +50,12 @@ tags: [aws, backend]
 - has different access tiers
 - buckets are **private** by default
 - Encryption in transit, achieved via SSL/TLS
+
+## DynamoDB
+- [The What, Why, and When of Single-Table Design](https://www.alexdebrie.com/posts/dynamodb-single-table/)
+- {{<youtube KYy8X8t4MB8>}}
+- **GSI**: Global Secondary Indexes. A way to further partition your data, to make for more efficient queries. [docs here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html). Useful as your access patterns get more complex.
+- **Index Overloading:** 
+- **RCU**: Read Capacity Units
+- **WCU**: Write Capacity Units
+  - [Read/Write Capacity docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html)
