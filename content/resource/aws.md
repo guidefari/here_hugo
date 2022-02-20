@@ -51,11 +51,17 @@ tags: [aws, backend]
 - buckets are **private** by default
 - Encryption in transit, achieved via SSL/TLS
 
-### DynamoDB
+## DynamoDB
 
 > The main reason for using a single table in DynamoDB is to retrieve multiple, heterogenous item types using a single request.
 > [src](https://www.alexdebrie.com/posts/dynamodb-single-table/)
 
+- {{<youtube KYy8X8t4MB8>}}
+- **GSI**: Global Secondary Indexes. A way to further partition your data, to make for more efficient queries. [docs here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html). Useful as your access patterns get more complex.
+- **Index Overloading:** 
+- **RCU**: Read Capacity Units
+- **WCU**: Write Capacity Units
+  - [Read/Write Capacity docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html)
 #### The downsides of single table design
 Taken from the [source](https://www.alexdebrie.com/posts/dynamodb-single-table/) of the quote above.
 1. It can be **difficult to add new access patterns**
