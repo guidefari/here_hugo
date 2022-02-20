@@ -1,7 +1,7 @@
 ---
 title: "Aws"
 date: 2021-11-29T09:11:21+02:00
-description: 
+description: AWS notes & resources
 tags: [aws, backend]
 ---
 
@@ -50,3 +50,16 @@ tags: [aws, backend]
 - has different access tiers
 - buckets are **private** by default
 - Encryption in transit, achieved via SSL/TLS
+
+### DynamoDB
+
+> The main reason for using a single table in DynamoDB is to retrieve multiple, heterogenous item types using a single request.
+> [src](https://www.alexdebrie.com/posts/dynamodb-single-table/)
+
+#### The downsides of single table design
+Taken from the [source](https://www.alexdebrie.com/posts/dynamodb-single-table/) of the quote above.
+1. It can be **difficult to add new access patterns**
+1. **Difficulty of analytics**
+
+### Cloudfront
+- Regional edge cache
