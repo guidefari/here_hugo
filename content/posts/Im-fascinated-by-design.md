@@ -16,6 +16,10 @@ may be a bit of a reach here, but i feel like my natural, unforced interest in t
     * Adam Wathan & Steve Schoger make a good illustration of this
 * I want to read martin fowler’s refactoring, but in my experience, refactoring code is a form of continuous improvement on the overall design of your code.
 * don’t even get me started on the pleasant ux you’re given by Apple products.
+* product design/development
+
+> Design is not just what it looks like and feels like. Design is how it works.
+> **Steve Jobs**
 
 # books
 - [Don't make me think](https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515)
@@ -29,7 +33,7 @@ A typical UX checklist when developing a digital product (by no means a conclusi
 **loosely related:** [ux myths](https://uxmyths.com/)
 I hope this demonstrates why I think you can't make a *'good'* UI, without a well thought out UX to back it up.
 
-# def
+# definitions
 - digital product: think anything that might have a UI component to it, examples include:
   - video games
   - web app
