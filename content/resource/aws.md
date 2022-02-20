@@ -67,5 +67,9 @@ Taken from the [source](https://www.alexdebrie.com/posts/dynamodb-single-table/)
 1. It can be **difficult to add new access patterns**
 1. **Difficulty of analytics**
 
+#### to read
+- [ ] [NoSQL Design for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-general-nosql-design.html#bp-general-nosql-design-concepts) - docs from AWS
+- [x] [Faux-SQL or NoSQL? Examining four DynamoDB Patterns in Serverless Applications](https://www.alexdebrie.com/posts/dynamodb-patterns-serverless/#faux-sql)
+
 ### Cloudfront
 - Regional edge cache
