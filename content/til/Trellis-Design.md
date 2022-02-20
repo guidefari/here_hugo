@@ -11,5 +11,11 @@ Always fun to learn from experienced designers. What I like about 'design' as a 
  ## Ducati
  A topic that's been somewhat frequent is that of design languages (or whatever term you would use to group together products of a similar aesthetic), a week or two ago, [Ronny](https://ronnypries.de/about-2/) shared [Bauhaus/Modernist style](https://swissincss.com/)(common in static posters & books), and now I've just learnt about the Trellis design, and Ducati is well known for that.
 
- I also happened to see a very beautiful Ducati out in the wild today, I stopped the car for a bit, so I could stare and appreciate it:)
+
+### On a personal note
+ I also happened to see a very beautiful [Ducati](https://duckduckgo.com/?q=ducati+diavel&iax=images&ia=images) out in the wild today, I stopped the car for a bit, so I could stare and appreciate it:)
  It's nice to be able to finally point out what it is about their design that I like so much.
+
+ # Source & related stuff
+{{<youtube VJzxgJLxCUk>}}
+{{<youtube 48WsRAgZiqA>}}
