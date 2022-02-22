@@ -27,6 +27,7 @@ these are the points that stuck out for one reason or another:
 - Drive architectures using data: see how your architecture decisions affect your workload(s).
 - Improve through game days: "Test how your architecture and processes perform by regularly scheduling game days to simulate events in production".
 
+---
 
 # Operational Excellence
 > The ability to support development & run workloads effectively, gain insight into their operation... continuously improve process & procedures to **deliver business value**
@@ -38,6 +39,14 @@ these are the points that stuck out for one reason or another:
 - **Anticipate failure:** test your failure scenarios & validate their impact.
 - **Learn from all operational failures**
 
+## Best practices
+- Organization 
+- Prepare
+- Operate
+- Evolve
+
 #### side note - [AWS leadership principles](https://www.amazon.jobs/en/principles)
 
-- [bookmark](https://docs.aws.amazon.com/wellarchitected/latest/framework/oe-definition.html) ie where I'm at rn.
+---
+
+- [bookmark](https://docs.aws.amazon.com/wellarchitected/latest/framework/sec-security.html)
