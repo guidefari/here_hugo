@@ -41,3 +41,4 @@ tldr: Random bits of security related knowledge I want to keep together.
   - includes study & practice tips too, to especially get you prepared & hireable for that first job in security.
   - 3 things he Neal says you ought to do: **1. free INE cert**; **2. look for free/cheap hands on education**: things like hackthebox, tryhackme, ctftime; **3. make friends in the industry**
   - OSCP, CEH, these certs are the language that recruitment speaks, essentially gatekeeper certs. there's no pressure to rush to this, especially if you're good at what you do.
+  - [r/hacking wiki](https://old.reddit.com/r/hacking/wiki/index) - packed packed collection of resources.
