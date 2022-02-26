@@ -8,11 +8,12 @@ tags: [ux, curated]
 
 Shazam is a tool that's deeply embedded in my curating efforts.
 
-shazam works using the microphone, listening out for sounds in your physical space.
+Shazam works using the microphone, listening out for sounds in your physical space.
 
-now, that's a problem because a lot of my time listening to music is in my headphones, meaning no shazam. ios music recognition solves this by also recording the playback going through your bluetooth hardware. 
+Now, that's a problem because a lot of my time listening to music is in my headphones, meaning no shazam. ios music recognition solves this by also recording the playback going through your bluetooth hardware. 
 
-meaning you can shazam music in your headphones without needing to disconnect bluetooth & play it out loud. 
+Meaning you can shazam music in your headphones without needing to disconnect bluetooth & play it out loud. 
+Go to `Settings > Control Center` & make sure `Music Recognition` is on
 
 
 #curated #ux
