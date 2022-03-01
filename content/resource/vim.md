@@ -38,3 +38,7 @@ tags: [vim, learning]
 - groovebox colorscheme for vim
 - maybe start to keep my dotfiles in one place? or continue with configs first till it feels comfy
 - [vim-galor](https://github.com/mhinz/vim-galore)(repo) - All things vim. maybe a good starting point when setting up neovim again?
+
+### configure nvim, packer, lua
+plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
+{{<youtube qb6fPgZMRF4>}}
