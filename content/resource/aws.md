@@ -16,6 +16,7 @@ tags: [aws, backend]
 
 ### resources
 {{<youtube nt1-ZIX_s5U>}}
+* [AWS Educate](https://aws.amazon.com/education/awseducate/)
 * [AWS solutions architect homepage](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
   - [ ] Review the solution architecture [exam blueprint](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf)
   - [ ] [Sample questions](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Sample-Questions.pdf)
