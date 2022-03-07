@@ -42,3 +42,4 @@ tags: [vim, learning]
 ### configure nvim, packer, lua
 plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
 {{<youtube qb6fPgZMRF4>}}
+- Make sure to `PackerSync` after copying configs from git or the other machine:)
