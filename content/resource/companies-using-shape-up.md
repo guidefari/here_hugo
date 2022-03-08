@@ -3,7 +3,6 @@ title: "Companies Using Shape Up"
 date: 2021-12-11T19:17:26+02:00
 description: A list of companies that follow principles from Basecamp's Shape up
 tags: [strategy]
-draft: true
 ---
 
 1. [Tensure](https://tensure.io/)
