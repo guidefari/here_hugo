@@ -11,7 +11,7 @@ pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
 paginate: 10
 # Your Google analytics code.
-googleAnalytics: "G-SMHKFGRGVW"
+googleAnalytics: "G-QNKPVT1XN3"
 params:
   # mode can be auto or toggle
   mode: auto
