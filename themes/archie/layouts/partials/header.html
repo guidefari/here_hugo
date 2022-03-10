@@ -63,4 +63,9 @@
 	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 	{{- end }}
 	{{- end }}
+
+	<!-- Google analytics - using Hugo built in partial -->
+	{{ if not .Site.IsServer }}
+		{{ template "_internal/google_analytics_async.html" . }}
+	{{ end }}
 </head>
