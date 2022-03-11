@@ -15,3 +15,5 @@ draft: true
   - outline the stuff learnt in that video
     - sample error etc
     - maybe also look into the other videos, like methods of sampling. Interesting because Accelerate wrote quite extensively about their sampling methods.
+- also make sure to watch the sampling video.
+{{<youtube be9e-Q-jC-0>}}
