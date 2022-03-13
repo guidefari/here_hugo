@@ -8,4 +8,5 @@ tags: [music, artist, curated, deep_house, glitch]
 
 {{<spotifyembed playlist 2LGkjKEs1sBlzbRxIM0HNf>}}
 
-The playlist includes a Glitch dub remix from Fka Mash, pure bliss.
+- The playlist includes a Glitch dub remix from Fka Mash, pure bliss.
+- Hyperion is a heavy, dance floor ready tune!
