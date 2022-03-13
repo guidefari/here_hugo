@@ -1,8 +1,8 @@
 ---
 title: "Eddvin"
 date: 2022-03-13T19:45:46+02:00
-description: Some deep deep dubs, incl remixes from Dwson & Shervaan Bergsteedt
-tldr: Eddvin is definitely artist to look out for. Already with some solid releases under his belt.
+description: Some deep deep dubs, incl remixes from Dwson, Shervaan Bergsteedt, & Sand Isle
+tldr: Eddvin is definitely artist to look out for. Already with some solid, smooth releases under his belt.
 tags: [music, artist, curated, deep_house, dub]
 ---
 
