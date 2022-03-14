@@ -12,12 +12,13 @@ my name is Guide.
 - Love a good product, which has led to a natural inclination towards [UX]({{<ref "tags/ux">}}) & [design]({{<ref "tags/design">}}) in general.
 - [Strategic thinker]({{<ref "tags/strategy">}}), and mindful of the intersection between business impact & technology.
 - Passionate [Music curator]({{<ref "content#curated-music">}})
-- Driven by a [curious mind]({{<ref content>}})
+- Driven by a [curious mind]({{<ref content>}}).
 
-# Useful links
+---
+
+- Here's what I'm up to [now]({{<ref now>}}).
 - An overview on how I [communicate]({{<ref communications-readme>}}) when working.
-- Here's what I'm up to [now]({{<ref now>}})
-- [Content]({{<ref content>}}) on the site
+- A walkthrough of the [content]({{<ref content>}}) on this site.
 
 
 # why does this site exist?
