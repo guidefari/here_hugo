@@ -32,3 +32,6 @@ it's become slightly more systemic & efficient, & I'm always looking for ways to
 
 # Pro-Search
 - Have had the honor of making some contributions to [Pro-Search](https://pro-search.io), an [open source app](https://github.com/bhekanik/pro-search) started by [Bhekani](https://github.com/bhekanik).
+
+## Reading
+- [My book notes]({{<ref book>}})
