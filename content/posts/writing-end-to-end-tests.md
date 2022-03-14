@@ -12,7 +12,7 @@ writing end to end tests can save you time at the end of a project
 
 [sigma](https://sigmadigital.io/) & [syntaxfm](https://syntax.fm/show/112/the-freelance-client-lifecycle-part-1) have definitely played a big role highlighting the importance of end to end testing for your applications. it's the professional thing to do.
 
-you aren’t  bound to the slow feedback on UI from the client. you’ve got proof that your work meets the acceptance criteria of the project. 
+you aren’t  bound to the slow feedback on UI from the client. you’ve got proof & **confidence** that your work meets the acceptance criteria of the project. 
 
 like right now, feedback has been very unstructured, and for sure, they’re all bugs I have to address. you ultimately can’t control your client, without risking creating a hostile environment. so it’s better to give the client one less responsibility. 
 
