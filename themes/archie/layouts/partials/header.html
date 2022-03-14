@@ -66,6 +66,14 @@
 
 	<!-- Google analytics - using Hugo built in partial -->
 	{{ if not .Site.IsServer }}
-		{{ template "_internal/google_analytics_async.html" . }}
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNKPVT1XN3"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-QNKPVT1XN3');
+		</script>
 	{{ end }}
 </head>
