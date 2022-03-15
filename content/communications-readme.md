@@ -20,7 +20,7 @@ Discord is my main chat app. *unrelated but related joke, a rude teenager said t
 
 - **Online (green)**: I'm chatty catty, if we're working on a project together, you'll get a reasonably quick reply from me when in this state.
 - **Idle (orange)**: Either means I got my phone on me, or have discord open in the background. Usually available for casual, async chat, when in this mode.
-- **Do Not Disturn (red)**: I'm in focus mode, usually 1 hour long pomodoros. Very unlikely to get a response until I'm out of this mode
+- **Do Not Disturn (red)**: I'm in focus mode, usually 1 hour long pomodoros. Very unlikely to get a response until I'm out of this mode. Also, discord is most likely completely closed.
 - **Unavailable (greyed out)**: Discord is most likely to be closed on all devices when I'm in this state, with no notifications.
 
 ### References:
