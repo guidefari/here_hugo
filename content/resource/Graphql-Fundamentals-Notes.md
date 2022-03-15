@@ -11,8 +11,32 @@ tags: [graphql, backend, notes]
 
 ## What's happening in `index.js` ?
 
-## Root query in `schema.js`
-your entry point when querying a graph. this is where the traversal starts.
+```js
+const express = require("express")
+const { graphqlHTTP } = require("express-graphql")
+
+const schema = require("./schema/schema")
+const app = express()
+
+// express-graphql middlewear
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    graphiql: true,
+    schema,
+  })
+)
+
+app.listen(4000, () => {
+  console.log("lift off")
+})
+
+```
+
+- Meaning you can access the Graphiql UI @`localhost:4000/graphql`
+
+### Root query in `schema.js`
+- your entry point when querying a graph. this is where the traversal starts.
 
 ## Types
 - **Scalar types:** Single data type, similar to what primitives would be, in other languages. String, int, Float, Bool, ID
@@ -65,4 +89,45 @@ const UserType = new GraphQLObjectType({
         return _.filter(hobbiesData, { userId: parent.id })
         },
     },
+```
+
+## What mutations look like
+- These also exist in `schema.js`
+- Exported alongside the `RootQuery`
+
+
+### Mutation object snippet
+
+```js
+const Mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    createUser: {
+      type: UserType,
+      args: {
+        name: { type: GraphQLString },
+        age: { type: GraphQLInt },
+        profession: { type: GraphQLString },
+      },
+
+      resolve(parent, args) {
+        let user = {
+          name: args.name,
+          age: args.age,
+          profession: args.profession,
+        }
+
+        return user
+      },
+    },
+  }
+})
+```
+- All mutation definitions live in a single `Mutation` object, specifically under the `fields` key.
+
+```js
+module.exports = new GraphQLSchema({
+  query: RootQuery,
+  mutation: Mutation,
+})
 ```
