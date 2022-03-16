@@ -65,3 +65,10 @@ git checkout -
 ```bash
 git fetch --prune
 ```
+
+# Get Origin URL
+- I was in a feature branch, and needed to do PR things, but was too lazy to go through GitHub UI to try and figure out where the repo is. Figured commandline would be a lot quicker to find my way around, and it was :)
+
+```bash
+git config --get remote.origin.url
+```
