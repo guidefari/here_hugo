@@ -8,7 +8,7 @@ tags: [aws, backend, course, notes, nextjs]
 # [Link](https://www.udemy.com/course/aws-appsync-amplify-with-react-graphql-course/) to the course
 - **Disclaimer, most of these notes will be direct quotes from Paulo Dichone, the course instructor**
 - The final [repo](https://github.com/pdichone/amplify-appsync-blog-course), for reference along the way.
-- [my repo]()
+- [my repo](https://github.com/txndai/amplify-course)
 - [notes - graphql fundamentals]({{<ref graphql-fundamentals-notes>}})
 
 

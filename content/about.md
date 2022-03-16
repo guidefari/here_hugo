@@ -39,4 +39,3 @@ my name is Guide.
 ## digital garden
 - Tom Critchlow on [building a digital garden](https://tomcritchlow.com/2019/02/17/building-digital-garden/): I especially like this one.
 - [Joel Hooks on digital garden](https://joelhooks.com/digital-garden)
-
