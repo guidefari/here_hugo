@@ -42,3 +42,10 @@ Don't you just love some helpful documentation?
 
 - [Amplify](https://docs.amplify.aws/)
 - Appsync
+
+## Wed 16 March 2022
+- Made Appsync API using AWS console
+
+> the resolver is the entity between the schema, & the datasource.
+- worth remembering that you can use multiple AWS datasources with Appsync.
+- App sync resolvers make use of `Velocity Template Language (VTL)` - just an FYI, not that it's been learnt in this course:)
