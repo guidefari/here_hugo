@@ -68,3 +68,36 @@ setPosts(postData.data.listPosts.items)
 
 ```
 This is how easy it is to get data into your app when you use Amplify:)
+
+### Auth with Cognito
+ ```bash
+amplify add auth
+```
+
+- Updated the API to have Public & Private access, using Cognito user pool for auth.
+
+```bash
+amplify update api
+```
+- What our schema now looks like, with the auth (`@auth(...)) directive specifying that an owner has full access to `Posts`, and the `public` can only `read`.
+```graphql
+type Post @model 
+@auth(
+  rules: [
+    {allow: owner, ownerField: "username"},
+    {allow: public, operations: [read]}
+  ]
+){
+  id: ID!
+  title: String!
+  content: String!
+  username: String 
+  coverImage: String
+}
+```
+
+### Saving images with S3
+```bash
+amplify add storage
+amplify add hosting
+``` 
