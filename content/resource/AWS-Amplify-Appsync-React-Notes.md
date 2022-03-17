@@ -49,3 +49,6 @@ Don't you just love some helpful documentation?
 > the resolver is the entity between the schema, & the datasource.
 - worth remembering that you can use multiple AWS datasources with Appsync.
 - App sync resolvers make use of `Velocity Template Language (VTL)` - just an FYI, not that it's been learnt in this course:)
+- Used [`Amplify CLI`](https://docs.amplify.aws/cli/) to create A `GraphQL` api (accessible via [AppSync](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html)), that makes use of [DynamoDB](https://aws.amazon.com/dynamodb/).
+
+## Thur 17 March 2022
