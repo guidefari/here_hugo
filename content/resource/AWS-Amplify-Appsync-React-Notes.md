@@ -41,7 +41,7 @@ tags: [aws, backend, course, notes, nextjs]
 Don't you just love some helpful documentation?
 
 - [Amplify](https://docs.amplify.aws/)
-- Appsync
+- [Appsync](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html)
 
 ## Wed 16 March 2022
 - Made Appsync API using AWS console
@@ -101,3 +101,20 @@ type Post @model
 amplify add storage
 amplify add hosting
 ``` 
+
+### Mock API
+- [docs](https://docs.amplify.aws/cli/usage/mock/)
+>In order to quickly test and debug without pushing all changes in your project to the cloud, Amplify supports Local Mocking and Testing for certain categories including API (AWS AppSync), Storage (Amazon DynamoDB and Amazon S3), and Functions (AWS Lambda).
+
+- Big big time saver:)
+
+## AppSync subsciptions
+- Some real time goodness. Be weary of this as it is expensive on memory. don't use it where it's not necessary
+- [docs](https://docs.aws.amazon.com/appsync/latest/devguide/aws-appsync-real-time-data.html) - what does amplify datastore version of this look like?
+
+```graphql
+type Subscription {
+  newOnCreatePost: Post @aws_subscribe(mutations: ["createPost"])
+  #newOnUpdatedPost: Post @aws_subscribe(mutations: ["updatePost"])
+}
+```
