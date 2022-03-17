@@ -52,3 +52,19 @@ Don't you just love some helpful documentation?
 - Used [`Amplify CLI`](https://docs.amplify.aws/cli/) to create A `GraphQL` api (accessible via [AppSync](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html)), that makes use of [DynamoDB](https://aws.amazon.com/dynamodb/).
 
 ## Thur 17 March 2022
+- Query data in Nextjs app using an `Amplify` generated Graphql query, and `API` imported from `Amplify`
+
+```js
+import { API } from "aws-amplify"
+import { listPosts } from "../src/graphql/queries.ts"
+
+async function fetchPosts() {
+const postData = await API.graphql({
+    query: listPosts,
+})
+
+setPosts(postData.data.listPosts.items)
+}
+
+```
+This is how easy it is to get data into your app when you use Amplify:)
