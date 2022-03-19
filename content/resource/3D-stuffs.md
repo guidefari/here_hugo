@@ -15,6 +15,7 @@ What I've gathered so far is to help illustrate what's possible with 3D on the w
 # Misc
 - [Awwwards 3D sites](https://www.awwwards.com/websites/3d/)
 - Josh Comeau - [Animation articles](https://www.joshwcomeau.com/tutorials/animation/)
+- {{<youtube deg8bOoziaE>}}
 
 ## Tech
 - WebGL
