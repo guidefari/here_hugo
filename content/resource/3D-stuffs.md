@@ -3,7 +3,7 @@ title: "3D Stuffs"
 date: 2022-03-19T08:49:17+02:00
 description: Poking around the web looking for 3D stuffs
 tldr: Poking around the web looking for 3D stuffs
-tags: [3d]
+tags: [3d, resource]
 ---
 
 ## A word

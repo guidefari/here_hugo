@@ -1,8 +1,8 @@
 ---
-title: "Aws"
+title: "AWS"
 date: 2021-11-29T09:11:21+02:00
 description: AWS notes & resources
-tags: [aws, backend]
+tags: [aws, backend, resource]
 ---
 
 

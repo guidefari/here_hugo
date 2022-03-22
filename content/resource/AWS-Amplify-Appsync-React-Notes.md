@@ -2,7 +2,7 @@
 title: "AWS Amplify Appsync React Notes"
 date: 2022-03-10T11:34:39+02:00
 description: Some notes from udemy course "AWS AppSync & Amplify with React & GraphQL"
-tags: [aws, backend, course, notes, nextjs]
+tags: [aws, backend, course, notes, nextjs, resource]
 ---
 
 # [Link](https://www.udemy.com/course/aws-appsync-amplify-with-react-graphql-course/) to the course

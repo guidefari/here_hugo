@@ -2,7 +2,7 @@
 title: "Martin Fowler"
 date: 2021-10-28T10:29:36+02:00
 description: 
-tags: [microservices, devops, architecture, backend]
+tags: [microservices, devops, architecture, backend, resource]
 ---
 
 # microservices

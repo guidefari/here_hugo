@@ -2,7 +2,7 @@
 title: "Design"
 date: 2021-10-28T12:03:16+02:00
 description: I always 'misplace' design resources
-tags: [design]
+tags: [design, resource]
 ---
 
 - [ui design daily](https://www.uidesigndaily.com/)

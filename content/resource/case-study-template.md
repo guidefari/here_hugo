@@ -2,7 +2,7 @@
 title: "Case Study Template"
 date: 2021-09-14T16:11:19+02:00
 description: reusable template for writing case studies.
-tags: [notes]
+tags: [notes, resource]
 ---
 
 From [Josh Comeau](https://www.joshwcomeau.com/effective-portfolio/)

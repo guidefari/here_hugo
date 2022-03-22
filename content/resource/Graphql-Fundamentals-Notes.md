@@ -2,7 +2,7 @@
 title: "Graphql Fundamentals Notes"
 date: 2022-03-10T13:13:17+02:00
 description: 
-tags: [graphql, backend, notes]
+tags: [graphql, backend, notes, resource]
 ---
 
 # Links

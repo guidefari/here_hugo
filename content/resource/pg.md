@@ -2,7 +2,7 @@
 title: "Paul Graham"
 date: 2022-01-27T14:47:44+02:00
 description: Some Paul Graham essays & videos
-tags: [strategy, reading]
+tags: [strategy, reading, resource]
 ---
 
 Some of his essays are also talks, where applicable, I'll link to both

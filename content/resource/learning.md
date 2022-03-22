@@ -2,7 +2,7 @@
 title: "Learning"
 date: 2021-10-28T11:56:44+02:00
 description: learning platforms & courses I have an interest in
-tags: [learning, go, ux, graphql, architecture, vim, testing, music]
+tags: [learning, go, ux, graphql, architecture, vim, testing, music, resource]
 ---
 
 ### grow with google

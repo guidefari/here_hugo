@@ -2,7 +2,7 @@
 title: "Mixing & Mastering"
 date: 2021-12-28T16:23:07+02:00
 description: Audio mastering learning resources
-tags: [book, notes, strategy]
+tags: [book, notes, strategy, resource]
 ---
 
 ### Audio book: The Future of Mastering - Loudness in the Age of Music Streaming

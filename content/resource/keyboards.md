@@ -2,7 +2,7 @@
 title: "Keyboards"
 date: 2021-11-29T09:11:21+02:00
 description: Links to some keyboards
-tags: []
+tags: [resource]
 ---
 
 ### Logitech MX

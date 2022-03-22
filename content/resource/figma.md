@@ -2,7 +2,7 @@
 title: "Figma"
 date: 2021-12-15T19:22:11+02:00
 description: Figma related links
-tags: [figma, design, ui]
+tags: [figma, design, ui, resource]
 ---
 
 # Who's behind figma

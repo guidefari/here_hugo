@@ -2,7 +2,7 @@
 title: "Basic Landing Page Framework"
 date: 2021-12-13
 description: Bare minimum information that you should communicate on a landing page
-tags: [frontend, ui, ux]
+tags: [frontend, ui, ux, resource]
 ---
 
 # Value proposition

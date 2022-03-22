@@ -2,7 +2,7 @@
 title: "Nestjs"
 date: 2021-10-28T10:30:46+02:00
 description: nestjs resources
-tags: [backend, tutorials]
+tags: [backend, tutorials, resource]
 ---
 
 ## tutorials
