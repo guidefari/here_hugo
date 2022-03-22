@@ -7,6 +7,7 @@ tags: [music, track, curated, dnb, minimal]
 
 ## An old favourite
 Essential, definitely some of the foundational sounds to the drum n bass I love today. It is aging like fine wine.
+I remember doing a lot of practice sessions with this album, during my early days of playing the genre, fun times.
 
 Also, such a strong track to open the album with, really sets good tone. The whole album is worth a listen, really.
 
