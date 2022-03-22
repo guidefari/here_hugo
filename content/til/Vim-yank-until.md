@@ -1,7 +1,7 @@
 ---
 title: "Vim - How to Change, Yank, or Delete Until"
 date: 2022-03-22T21:17:07+02:00
-description: I've been learning vim for some weeks now, & while editing some text, I thought
+description: I've been learning vim for some weeks now, & while editing some text, I thought "hey, how do I delete all this text before the comma?"
 tldr: I learnt some new vim ninja moves, how to yank, change, or delete until a thing.
 tags: [til, vim]
 ---
