@@ -16,3 +16,10 @@ tags: [design, resource]
 # stock images
 - [unsplash](https://unsplash.com/): now this one I always forget the name of😂
 - [pexels](https://www.pexels.com/)
+
+# Generators ⚡
+- [Haikei](https://haikei.app/)
+> [Haikei](https://haikei.app/) is a web app to generate unique SVG shapes, backgrounds, and patterns – ready to use with your design tools and workflow.
+
+# Stuff (idk what to call this yet)
+- [Freebie Supply](https://freebiesupply.com/free-figma/page/5/)
