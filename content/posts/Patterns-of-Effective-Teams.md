@@ -2,14 +2,17 @@
 title: "Dan North - Patterns of Effective Teams"
 date: 2022-03-24T18:10:11+02:00
 description: Notes from an insightful talk by Dan North
-tldr: Notes from an insightful talk by Dan North
-tags: [notes, management, leadership]
-draft: true
+tldr: Notes from an insightful talk by Dan North, highly recommend you watch the talk before, or after reading.
+tags: [notes, management, leadership, agile]
 ---
 
-## the video
+# src
 {{<youtube vs7VEsQzKY>}}
+- [Software, Faster](https://universities.leanpub.com/softwarefaster) - Leanpub book
 
+---
+
+## Let's get cracking
 * Again, mention of “effective != productive”. We want effective teams, not productive teams.. As seen in [Software that fits in your head](https://youtu.be/4Y0tOi7QWqM)
     * Why the separation: you don’t just want productive engineers & productive teams, you want people that are “really really good at understanding the heart of the problem, and solving just for that”
 
@@ -67,7 +70,7 @@ You've made it this far, you deserve a joke.
 
 ---
 
-# Interactions between teams
+## Interactions between teams
 So far, the two models we've looked at apply when looking at interaction within teams. Now let's step out and look at interactions across teams.
 
 ---
@@ -79,4 +82,36 @@ Your typical cross-functional team will have people that build the product, and 
 
 That’s where Near & Far coaching comes in, you have specialists that are embedded in the teams (**Near**), and those that aren't (**Far**).
 
-The specialists that are **near** are more involed in the day to day, and will spin back to the **far** specialists, sort of reporting back on what's happening.
+The specialists that are **near** are more involed in the day to day, and will spin back to the **far** specialists (the **mothership**, as Dan calls it), sort of reporting back on what's happening.
+
+The **mothership's** job is to stay current, learn stuff, and the specialists embedded in the team have the job of implementing those ideas from the **mothership**, with a secondary role of **coaching** the teams.
+
+# Warm Welcome
+Something we can all get started with right away. You only get one time to make a good first impression, and when someone joins a team, warm welcome is about making their joining as smooth as possible. Lay out the red carpet for them. 
+
+Once you feel very welcome, you want to pay it forward.
+
+# Sieze the Day
+Lots of standups go kind of like this
+> Yesterday I did this, today I'm doing this, I haven't got any blockers.
+
+We've largely missed the point of standup.
+
+> Standup is a coordination exercise at the beginning of the day.
+
+The question to answer during standup
+> What is the best possible today we can have
+
+> Do you have any news that will make my day better or different?
+
+- *This section on standup is very thin notes, note to self to dive deeper into this*
+- *I remember [this article](https://www.martinfowler.com/articles/itsNotJustStandingUp.html) being a good read - worth a revisit*
+
+
+> You don't measure the workers, you measure the work items
+We're measuring the flow of work through the system. This is something [sigma](https://sigmadigital.io) leadership does really well, imo.
+
+# Hack day
+Not a Hackathon. But instead a day where we're not going to do the regular job. Hack day with a theme, for example:
+- Bug crushing day
+- Perf & throughput days
