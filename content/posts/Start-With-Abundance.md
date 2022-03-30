@@ -31,5 +31,8 @@ If you pay close attention, you can start to tell that each playlist can be look
 Because I already collected resources in the past, and organised them, I have a lot to choose from when I can't spontaneously come up with a theme for a mix & curate the tunes. I've got a large, well organised backlog to choose from, meaning I just have to show up.
 
 # src
-1. [Projects over categories](https://open.spotify.com/episode/2QZXtj4RZr5cuIrBHJ9OjX?si=9fc68dbd958849bd)
-2. [Start with abundance](https://open.spotify.com/episode/0M6GJzznqWuKA3aileOuEg?si=09d55d12521e4661)
+These reflections were inspired by [The building a second brain podcast](https://open.spotify.com/show/40O0Lbp5ockSt0qSogo6q1?si=d3b3bc24109e421c).
+
+## Start with these
+{{<spotifyembed episode 2QZXtj4RZr5cuIrBHJ9OjX>}}
+{{<spotifyembed episode 0M6GJzznqWuKA3aileOuEg>}}
