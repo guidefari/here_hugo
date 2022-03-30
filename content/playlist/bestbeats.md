@@ -9,14 +9,10 @@ tags: [music, playlist, curated, deep_house]
 ## Disclaimer
 Some of these mixes aren't actually from best beats tv.
 
-
-
 # Shervaan Bergsteedt
 - Shervaan & Soulcentric in one mix🙌🏾 timeless favourite.
 {{<youtube H9elQVdCng8>}}
-
 {{<youtube np8VKuNInmc>}}
-
 {{<youtube ptuiK2lg1dI>}}
 {{<youtube copjhQldzEg>}}
 {{<youtube _7A6a1yiXU0>}}
