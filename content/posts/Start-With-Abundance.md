@@ -31,7 +31,8 @@ If you pay close attention, you can start to tell that each playlist can be look
 Because I already collected resources in the past, and organised them, I have a lot to choose from when I can't spontaneously come up with a theme for a mix & curate the tunes. I've got a large, well organised backlog to choose from, meaning I just have to show up.
 
 # src
-These reflections were inspired by [The building a second brain podcast](https://open.spotify.com/show/40O0Lbp5ockSt0qSogo6q1?si=d3b3bc24109e421c).
+- These reflections were inspired by [The building a second brain podcast](https://open.spotify.com/show/40O0Lbp5ockSt0qSogo6q1?si=d3b3bc24109e421c).
+- I have more notes on the topic of [organising knowledge work]({{<ref  "tags/second-brain">}}).
 
 ## Start with these
 {{<spotifyembed episode 2QZXtj4RZr5cuIrBHJ9OjX>}}
