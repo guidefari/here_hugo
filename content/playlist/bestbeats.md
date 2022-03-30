@@ -6,11 +6,10 @@ tldr: Some of my favourite deep house sounds from Bestbeats.tv over the years. S
 tags: [music, playlist, curated, deep_house]
 ---
 
-- Shervaan Bergsteedt
-- 2lani
-- Soulcentric
-- Soul b2b shervaan
-- plus other liked ones on youtube
+## Disclaimer
+Some of these mixes aren't actually from best beats tv.
+
+
 
 # Shervaan Bergsteedt
 - Shervaan & Soulcentric in one mix🙌🏾 timeless favourite.
