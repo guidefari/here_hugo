@@ -32,7 +32,7 @@ Because I already collected resources in the past, and organised them, I have a 
 
 # src
 - These reflections were inspired by [The building a second brain podcast](https://open.spotify.com/show/40O0Lbp5ockSt0qSogo6q1?si=d3b3bc24109e421c).
-- I have more notes on the topic of [organising knowledge work]({{<ref  "tags/second-brain">}}).
+- I have more notes on the topic of [organising knowledge work]({{<ref "/tags/second-brain">}}).
 
 ## Start with these
 {{<spotifyembed episode 2QZXtj4RZr5cuIrBHJ9OjX>}}
