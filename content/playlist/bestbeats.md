@@ -16,6 +16,7 @@ Some of these mixes aren't actually from best beats tv.
 {{<youtube ptuiK2lg1dI>}}
 {{<youtube copjhQldzEg>}}
 {{<youtube _7A6a1yiXU0>}}
+{{<youtube VZlShJ5pwRU>}}
 
 ## 2lani The Warrior
 {{<youtube XtPLaEA2Xk8>}}
