@@ -18,6 +18,11 @@
 				{{ range $paginator.Pages }}
 				<section class="list-item">
 					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<div class="home-tag-wrapper">
+						{{ range .Params.tags }}
+							<a class="home-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+							{{ end }}
+					</div>
 					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 					<br><div class="description">
 						{{ if isset .Params "description" }}
@@ -26,7 +31,7 @@
 						{{ .Summary }}&hellip;
 						{{ end }}
 					</div>
-					<a href="{{ .RelPermalink }}">Read more ⟶</a>
+					<hr/>
 				</section>
 				{{ end }}
 				{{ template "partials/paginator.html" . }}

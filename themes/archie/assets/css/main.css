@@ -276,16 +276,28 @@ article .title {
   font-style: italic;
   font-weight: bold;
 }
-.tags li::before {
+.tags li::before, .home-tag::before {
   content: "🏷 ";
 }
-.tags a {
+.tags a{
   border-bottom: 3px solid var(--maincolor);
 }
-.tags a:hover {
+.tags a:hover{
   color: white;
   background-color: var(--hovercolor);
 }
+
+.home-tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-tag {
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.25rem;
+  margin-right: 1.25rem;
+}
+
 .soc:hover {
   color: white;
 }
