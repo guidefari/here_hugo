@@ -16,7 +16,7 @@ body {
 }
 
 hr {
-  border-top: 3px dotted blue;
+  border-top: 3px dotted #30BCED;
 }
 code {
   background-color: lightblue;
