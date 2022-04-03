@@ -4,7 +4,7 @@ body {
 }
 
 ::-moz-selection {
-  background: blue;
+  background: #30bced;
   color: #fff;
   text-shadow: none;
 }
