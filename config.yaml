@@ -44,3 +44,4 @@ Permalinks:
   book: "/:filename/"
   podcast: "/:filename/"
   playlist: "/:filename/"
+  mix: "/:filename/"
