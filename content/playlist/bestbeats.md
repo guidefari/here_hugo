@@ -54,5 +54,8 @@ I heard a track by Olaf Stuut in this mix. Fka Mash might be the person who intr
 ## Ralf GUM & Sir LSG
 {{<youtube VlThBaqmriA>}}
 
+## Enosoul
+{{<youtube mXFZI5iRpT0>}}
+
 ## Super fun putting this together
 Haven't listened to a lot of these mixes in years, so this has been a lovely nostalgic trip:)
