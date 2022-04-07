@@ -18,3 +18,7 @@ Love love love these mixes, downtempo goodness
 - {{<youtube 6HZtBABfScE>}}
 - {{<youtube DmJeUgzEomo>}}
 - {{<youtube So44fh-SbGI>}}
+
+## ❄️ 2022 uploads
+{{<youtube 0Fxb5q0vbvk>}}
+{{<youtube cZkSq8jy0WI>}}
