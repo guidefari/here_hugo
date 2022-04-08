@@ -54,7 +54,7 @@ Man I could make a completely separate post just to cover the music Adrian has s
 
 {{<spotify album 75ymqIhT7JBEktj4VkxPgs>}}
 
-Good music is truly timeless, for a 1997 album, this still sounds very fresh.
+Good music is truly timeless, for a 1997 album, this still sounds very fresh. A blend of jazz, earthy techno, & drum'n'bass.
 
 ## Telefone Tel Aviv
 After listening to the the Telefone Tel Aviv version of Stimming's Judith Maria, I went on to binge more of the remixer's tracks, and I was not disappointed.
