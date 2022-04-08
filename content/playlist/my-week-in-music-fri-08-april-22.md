@@ -51,6 +51,7 @@ Calibre been a staple in my dnb playlists for years now, and boy does he keep de
 
 ## Some tunes from Adrian
 Man I could make a completely separate post just to cover the music Adrian has shared with me in the last few months. This week, I listened to the album People, Places, & things. Love the drumming in this. 
+- [Buy People, Places, & things](https://archivereleases.bandcamp.com/album/people-places-and-things)
 
 {{<spotify album 75ymqIhT7JBEktj4VkxPgs>}}
 
