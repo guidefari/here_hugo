@@ -6,6 +6,8 @@ Parameters:
     height - (Optional) height
 -->
 
+<!-- This is the new file -->
+
 {{ if .IsNamedParams }}
 <iframe src="https://open.spotify.com/embed/{{ .Get "type" }}/{{ .Get "id" }}"
     width="{{ default "100%" (.Get "width") }}"
