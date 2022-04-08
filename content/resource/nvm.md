@@ -22,3 +22,12 @@ Talking about globally installed modules, too lazy to look into all this now;) B
      $ nvm use system
      $ npm uninstall -g a_module
 ```
+
+## Installed nvm but terminal isn't picking it up
+
+Add this to your `.zshrc`
+```
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+- [read more here](https://github.com/nvm-sh/nvm/blob/master/README.md#troubleshooting-on-macos)
