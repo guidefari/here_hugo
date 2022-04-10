@@ -21,3 +21,7 @@ this man has been on a roll. this new EP is a solid example of that
 #### Bop, Synkro - Movere
 - a more recent track, with a lovely *mechanical* sound
 {{<spotifyembed track 2EnNKSBxgYkzNI1BmOsmjC>}}
+
+## Synkro@Mixmag
+Powerhouse of a mix. Similar vibes to Bop
+{{<youtube AqDLNR9zZas>}}
