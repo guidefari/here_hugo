@@ -74,3 +74,17 @@ Taken from the [source](https://www.alexdebrie.com/posts/dynamodb-single-table/)
 
 ### Cloudfront
 - Regional edge cache
+
+## DevOps
+
+> DevOps is the combination of **cultural philosophies**, practices, and tools that increases an organization’s ability to **deliver applications and services at high velocity**: evolving and improving products at a faster pace than organizations using **traditional software development and infrastructure management processes**. This speed enables organizations to better serve their customers and compete more effectively in the market.
+> [src](https://aws.amazon.com/education/awseducate/)
+
+### Blue/Green deployment
+Can also be referred to as `A/B deployment` where two identical hardware environments, where 1 remains idle, & the other is active & serving end users.
+- [ ] How can this be achieved on AWS?
+
+#### Questions to answer from the labs
+- what is continuous delivery & its benefits
+- CodeCommit & MFA
+- IAM - need to do a deep dive on this
