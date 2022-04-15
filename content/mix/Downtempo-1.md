@@ -2,7 +2,7 @@
 title: "DJ Mix - Downtempo 1"
 date: 2022-04-05T08:04:58+02:00
 description: Here's a mix for you...
-tags: [music, playlist, curated, mix, dj]
+tags: [music, playlist, curated, mix, dj, goosebumps]
 ---
 
 # Youtube
