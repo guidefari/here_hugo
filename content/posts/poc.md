@@ -56,5 +56,7 @@ I would strongly recommend documenting these questions & answers. As with any go
 ### On code quality
 I think on most occasions, your PoC code doesn't have to be production grade. Feel free to cut some corners and leave some code smells in, as long as you're aware of them, and communicate them if need be. PoC is usually still exploratory stage of development, so it's okay to limit time and effort invested where you can.
 
+> Make it work, make it right, make it fast
+
 # Conclusion
 How it's conducted is ultimately very contextual, and therefore can look pretty different from PoC to PoC, but I hope this post has shed some light on what it is, and the heuristics you can use to your favour when thinking of how to apply PoCs to your work.
