@@ -23,3 +23,6 @@ tags: [design, resource]
 
 # Stuff (idk what to call this yet)
 - [Freebie Supply](https://freebiesupply.com/free-figma/page/5/)
+
+# Repos
+- [Design resources for devs](https://github.com/bradtraversy/design-resources-for-developers)

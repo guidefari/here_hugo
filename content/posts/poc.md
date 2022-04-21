@@ -1,7 +1,7 @@
 ---
 title: "on Proof of Concepts"
 date: 2022-04-18T11:52:16+02:00
-description: Some thoughts, explanations, retro, & opinions on PoCs.
+description: Some observations I've made on Proof of Concepts, and how they fit into the software development lifecycle.
 tldr: It’s a software development testing methodology.
 tags: [retro, notes, culture]
 ---
