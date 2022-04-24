@@ -7,6 +7,9 @@ description: "Git commands that I always have to google"
 
 the rest of the cheatsheet can be found [here](https://guide-cheatsheet.netlify.app/). Forked from [Scott Spence](https://scottspence.com/posts) :).
 
+# Learn Git
+- [Think Like (a) Git](https://think-like-a-git.net/)
+
 # delete branch
 #### delete branch locally
 
