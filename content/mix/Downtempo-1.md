@@ -1,11 +1,12 @@
 ---
-title: "DJ Mix - Downtempo 1"
+title: "DJ Mix - Goosebumps mix #27"
 date: 2022-04-05T08:04:58+02:00
-description: Here's a mix for you...
+description: Here's a mix for you...Some downtempo
 tags: [music, playlist, curated, mix, dj, goosebumps]
+aliases: ['gb27']
 ---
 
-# Youtube
+# Downtempo deep house (70-90bpm)
 {{<youtube mhQvUgNEbRM>}}
 
 # Download
@@ -34,3 +35,7 @@ First 3 tracks are from [Ektoplast's EP, Ether](https://talparec.bandcamp.com/al
 I've listened to some really good downtempo mixes over the years, some notable favourites:
 - [Riyoon]({{<ref riyoon>}})
 - [Toby2shoes](https://soundcloud.com/toby2shoes/slowness)
+
+## Shameless plug
+> I've started working on the 2nd installment of this theme, and boy am I excited. That Jalan Jalan track is timeless, I've played it in quite a few mixes.
+{{<spotify playlist 6k7L1UFS9ssG00iBwpCfGJ>}}
