@@ -3,6 +3,7 @@ title: "Mobile First Styling"
 date: 2021-10-26T18:26:32+02:00
 description: Styling is 'easier' if you use a mobile first approach.
 tags: [frontend, tailwind, styling]
+aliases: [mfs]
 ---
 
 I first came across this way of thinking about styles from Adam Wathan. Style for the mobile layout first, and `extend` your styles to accomodate for the larger breakpoints. the arguement is that it's easier to expand a small design into a bigger layout than it is to do the opposite, extending *desktop first* styles to accomodate for mobile & other smaller screens.
