@@ -175,3 +175,6 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 - [Jonathan Sterne](https://sterneworks.org/about/)
 - [Jeremy Wade Morris](http://jeremywademorris.com/?page_id=6)
 - [Patrick Vonderau](https://patrickvonderau.com/)
+
+# Related
+{{<youtube pkXrny5QZLU>}}
