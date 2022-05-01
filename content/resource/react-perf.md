@@ -1,5 +1,5 @@
 ---
-title: "React Perf"
+title: "React Performance"
 date: 2022-04-18T14:04:27+02:00
 description: Resources to help you write more performant react
 tldr: Resources to help you write more performant react
