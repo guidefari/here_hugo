@@ -19,7 +19,8 @@ aliases: [tailwind, frontend]
 
 # Util
 1. [tailwind play](https://play.tailwindcss.com/) - New tool from Tailwind Labs.
-1. [generate tailwind color palette](https://javisperez.github.io/tailwindcolorshades/#/)
+2. [generate tailwind color palette](https://javisperez.github.io/tailwindcolorshades/#/)
+3. [Tailwind generators](https://www.tailwindtoolbox.com/generators)
 
 # Repos & docs
 1. [NextJS + Tailwind](https://tailwindcss.com/docs/guides/nextjs)
