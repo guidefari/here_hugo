@@ -28,7 +28,7 @@ it('SHOULD throw an error', async () => {
     })
 ```
 
-for some reason (that I haven't figured out yet), the catch block in the snippet above wasn't executing
+for some reason (that I haven't figured out yet), the catch block in the snippet above wasn't executing.
 
 
 ### the error you jest gives you
@@ -37,7 +37,7 @@ for some reason (that I haven't figured out yet), the catch block in the snippet
 (node:33041) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 ```
 
-### how I fixed it
+## how I fixed it
 ```ts
 it('SHOULD throw an error', async () => {
       const mockNavigator = jest
@@ -57,5 +57,34 @@ it('SHOULD throw an error', async () => {
 	
 ```
 
-## conclusion
+## copyToClipboard
+```ts
+interface ClipboardStatus {
+  message: string
+  severity: 'success' | 'error'
+}
+
+export default function copyToClipboard(text: string): ClipboardStatus {
+  let result: ClipboardStatus
+
+  try {
+    navigator.clipboard.writeText(text)
+    result = {
+      message: 'Link copied to clipboard.',
+      severity: 'success',
+    }
+  } catch (err) {
+    result = {
+      message: 'Error copying link, please try again.',
+      severity: 'error',
+    }
+  }
+
+  return result
+}
+
+```
+
+
+# conclusion
 - Jest somehow has to handle, or expect the error for it not to chew your head off.
