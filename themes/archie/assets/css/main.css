@@ -426,14 +426,20 @@ table td {
     max-width: 800px;
   }
 
+  
   /* .laptop\:text-center { */
-  /* text-align: center; */
-  /* } */
-}
-
-/* xl */
-@media (min-width: 1280px) {
-  /* .desktop\:text-center { */
+    /* text-align: center; */
+    /* } */
+  }
+  
+  /* xl */
+  @media (min-width: 1280px) {
+    h1, h2, h3, h4, h5 {
+      position: relative;
+      left: -8rem;
+      width: calc(100% + 8rem);
+    }
+    /* .desktop\:text-center { */
   /* text-align: center; */
   /* } */
 }
