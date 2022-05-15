@@ -27,7 +27,7 @@ All these playlists are tunes that can be converted to a well curated mix. And t
 ## Mixes organised as projects
 If you pay close attention, you can start to tell that each playlist can be looked at as a mini project.
 
-## Helps alleviate 'writer's block'
+## Helps alleviate *writer's block*
 Because I already collected resources in the past, and organised them, I have a lot to choose from when I can't spontaneously come up with a theme for a mix & curate the tunes. I've got a large, well organised backlog to choose from, meaning I just have to show up.
 
 # src
