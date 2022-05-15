@@ -33,4 +33,4 @@ As you can see, the messages app remained untouched, and the Apple Music icon wa
 If the dock is full, and that last spot is taken up by an App that's not developed by Apple, it will get replaced by Apple Music.
 
 ### Then again
-All of these patterns could be data backed, sensible defaults🤷🏽‍♂️Apple is good at that.
+This pattern could be a data backed, sensible default🤷🏽‍♂️Apple is good at that.
