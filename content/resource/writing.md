@@ -3,7 +3,7 @@ title: "Writing"
 date: 2022-05-10T09:23:24+02:00
 description: Some resources that have had a noticeable impact on my writing
 tldr: Some resources that have had a noticeable impact on my writing
-tags: [resource]
+tags: [resource, second-brain]
 ---
 
 # Stuff I've found useful
