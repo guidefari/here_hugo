@@ -92,6 +92,23 @@ ul.tags {
   font-weight: bold;
 }
 
+.single-tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.single-tag {
+  list-style: none;
+}
+
+.single-tag a {
+  border: var(--bordercl);
+  border-style: dashed;
+  margin-right: 1rem;
+  padding: 0.75rem;
+}
+
 strong {
   color: var(--maincolor);
 }

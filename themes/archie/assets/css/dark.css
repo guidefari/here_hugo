@@ -168,3 +168,8 @@ blockquote strong {
 strong {
   color: var(--darkMaincolor);
 }
+
+.single-tag a {
+  border: var(--darkMaincolor);
+  border-style: dashed;
+}
