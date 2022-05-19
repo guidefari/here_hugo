@@ -6,6 +6,7 @@ tags: [career, strategy, music]
 ---
 
 
+# Dev stuff
 - [Career Ladders](https://career-ladders.dev/)
 - [Lead dev](https://leaddev.com/)
 - [react typescript cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
@@ -32,6 +33,8 @@ tags: [career, strategy, music]
 - [Front Matter](https://frontmatter.codes/) - Headless CMS running in VS Code
 - [Gitpod](https://www.gitpod.io/) - Spin up fresh, automated dev environments
 for each task, in the cloud, in seconds.
+- [Plasmo Framework](https://docs.plasmo.com/) - A way to quickly build browser extensions
+
 # music
 - [Hardwax](https://hardwax.com/)
 - [Silent servant interview](https://thequietus.com/articles/21074-interview-silent-servant)
