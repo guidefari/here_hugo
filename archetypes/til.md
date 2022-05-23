@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "TIL: {{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til]
