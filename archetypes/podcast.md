@@ -5,5 +5,5 @@ description: You might find this podcast useful👇
 tags: [podcast]
 ---
 
-{{<spotifyembed episode id "100%" 232 >}}
+{{<spotify episode id "100%" 232 >}}
 

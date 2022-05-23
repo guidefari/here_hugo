@@ -5,4 +5,4 @@ description: More curated sounds :)
 tags: [music, album, curated]
 ---
 
-{{<spotifyembed album id>}}
+{{<spotify album id>}}

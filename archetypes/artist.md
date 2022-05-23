@@ -5,4 +5,5 @@ description: Fancy a new artist to listen to?😎
 tags: [music, artist, curated]
 ---
 
-{{<spotifyembed playlist id>}}
+{{<spotify playlist id>}}
+

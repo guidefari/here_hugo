@@ -5,4 +5,4 @@ description: Here's a playlist for you...
 tags: [music, playlist, curated]
 ---
 
-{{<spotifyembed playlist id>}}
+{{<spotify playlist id>}}

@@ -5,4 +5,4 @@ description: Curated sounds 🧘‍♂️
 tags: [music, track, curated]
 ---
 
-{{<spotifyembed track id>}}
+{{<spotify track id>}}
