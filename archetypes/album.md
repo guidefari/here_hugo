@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Album: {{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: More curated sounds :)
 tags: [music, album, curated]

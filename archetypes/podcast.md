@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Podcast: {{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: You might find this podcast useful👇
 tags: [podcast]
