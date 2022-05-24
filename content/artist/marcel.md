@@ -9,8 +9,14 @@ Around the time I first started listening to Marcel is when I was now really ser
 
 There's two albums of his that have a timeless sound for me.
 
-# Phantom Studies with Ben Klock
+# Phantom Studies with [Ben Klock](https://benklock.bandcamp.com/)
 {{<bandcampalbum 1262028722>}}
 
 # Test File
 {{<bandcampalbum 809922882>}}
+
+## While you're here
+You might as well check out an EP by Ben Klock, get to know the other half of Phantom studies
+
+# Ben Klock's [Before One EP](https://benklock.bandcamp.com/album/before-one)
+{{<bandcampalbum 2571881127>}}
