@@ -19,4 +19,4 @@ tags: [music, curated]
 ## Mixed bag
 - Warp records
 - Hypnus
-- 
+- Ostgut Ton 
