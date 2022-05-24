@@ -24,8 +24,6 @@ I listened to a podcast that interviewed Stimming a few days ago, so he's still 
 
 There’s limited incentive to do so now. The work you put in vs the reward don’t make sense.
 
-{{<tweet itssonido 1497526480137601024>}}
-
 ## Playlists
 Because streaming platforms pay per stream is so shit, you need wicked volumes for the income to make a dent, & one of the most effective ways to get those volumes is by getting your tracks onto the editorial playlists with massive audiences.
 

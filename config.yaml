@@ -45,4 +45,3 @@ Permalinks:
   podcast: "/:filename/"
   playlist: "/:filename/"
   mix: "/:filename/"
-# ignoreErrors: ["error-remote-getjson"]
