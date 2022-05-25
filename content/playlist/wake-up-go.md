@@ -2,23 +2,18 @@
 title: "Playlist: Wake Up and Go-Go!"
 date: 2022-05-25T02:55:04+02:00
 description: The get ready for work playlist. Words & Curation from Sindiso:)
+tldr: My wake up playlist is filled with a mixture of uplifting, awe inspiring and at its worst, a song that expresses my desperate need for connection; not only a connection to other human beings but also to the grand planner, the cosmical hand that placed us in our people’s paths.
 tags: [music, playlist, curated]
 ---
 
+### Stream on Spotify
 {{<spotify playlist 66Mk9RKupWr8x0Kc23q5f4>}}
 
+---
 
-If you read that title and didn’t break out into the intro:
+**The roller coaster playlist works for me as I awake to my many, many emotions and recently I realised that in there is a mix of existential dread and I had to combat some of those feels by being mindful of the music that I listen to, especially in the morning. The beginning of the day can be the best time to get your mind right to tackle the day and people.**
 
-**"Jitterbug, Jitterbug, jitterbug"**
 
-We cannot be friends!
-
-Even though the song talks about being a simp with a lack of boundaries, I cannot help it, anytime it plays, the infectious hook gets me in all sorts of a happy mood and I can deal with tasks at hand and in this case, lifing. 
-
-My wake up playlist is filled with a mixture of uplifting, awe inspiring and at its worst, a song that expresses my desperate need for connection; not only a connection to other human beings but also to the grand planner, the cosmical hand that placed us in our people’s paths.
-
-The roller coaster playlist works for me as I awake to my many, many emotions and recently I realised that in there is a mix of existential dread and I had to combat some of those feels by being mindful of the music that I listen to, especially in the morning. The beginning of the day can be the best time to get your mind right to tackle the day and people.
 Now to breakdown the vibey tunes that get me right. 
 
 ## Tinko Tinko – Obongjayar
@@ -117,6 +112,8 @@ This is one of my mother’s faves and I’d be damned not to listen to it as I 
 {{<youtube pIgZ7gMze7A>}}
 
 Ending with this song was perfect because of the full circle moment of admitting, “I am a simp” and spending as much time with my baby brings me joy, even though the first song was all about respecting yourself not to stay in a relationship that is not mutually beneficial. Fact, if you are a simp, find another simp, the pouring into each other is beautiful.
+
+I cannot help it, anytime it plays, the infectious hook gets me in all sorts of a happy mood and I can deal with tasks at hand and in this case, lifing. 
 
 
 ---
