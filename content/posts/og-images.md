@@ -119,3 +119,4 @@ I also use hugo archetypes to quickly scaffold markdown files with pre-filled de
 - {{<youtube WYTjd3yl5-g>}}
 - [Hugo frontmatter](https://gohugo.io/content-management/front-matter#readout)
 - [Hugo archetypes](https://gohugo.io/content-management/archetypes)
+- [URL encode text](https://onlinetexttools.com/url-encode-text)
