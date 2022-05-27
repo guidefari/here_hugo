@@ -4,6 +4,7 @@ date: 2022-05-16T09:33:07+02:00
 description: Here's a playlist for you...Some minimal techno, garage, IDM, and friends.
 tldr: The bandcamp links are where you can buy the tracks if you want the uncompressed music files.
 tags: [music, playlist, curated]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Crates%20%26%20stuff']
 ---
 
 ## Testpilot has been active for a long long time

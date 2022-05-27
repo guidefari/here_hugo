@@ -3,6 +3,7 @@ title: "My Week in Music Fri 08 April 22"
 date: 2022-04-09T00:13:02+02:00
 description: Some fresh finds from the week:)
 tags: [music, playlist, curated]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=My%20Week%20in%20Music%20Fri%2008%20April%2022']
 ---
 
 This week I’ve been an absolute potato in the morning, but I noticed one thing that would consistently bring my energy to the right levels, and bring the day to a start, and that was good music.
