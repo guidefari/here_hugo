@@ -2,7 +2,7 @@
 title: "Stimming"
 date: 2022-05-23T19:28:36+02:00
 description: More curated sounds :)
-tags: [music, album, curated, house, techno]
+tags: [music, album, curated, house, techno, dj]
 ---
 
 {{<bandcampalbum 954556846>}}

@@ -3,7 +3,7 @@ title: "Best Beats TV Favourites"
 date: 2022-03-24T23:31:27+02:00
 description: Some of my favourite deep house sounds from Bestbeats.tv over the years
 tldr: Some of my favourite deep house sounds from Bestbeats.tv over the years. Some of them are recent favourites too.
-tags: [music, playlist, curated, deep_house]
+tags: [music, playlist, curated, deep_house, dj]
 ---
 
 ## Disclaimer
