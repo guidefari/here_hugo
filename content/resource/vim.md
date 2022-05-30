@@ -43,3 +43,7 @@ tags: [vim, learning]
 plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
 {{<youtube qb6fPgZMRF4>}}
 - Make sure to `PackerSync` after copying configs from git or the other machine:)
+
+
+### Navigating around a file 
+- `Shift + G` - Takes you to end of file
