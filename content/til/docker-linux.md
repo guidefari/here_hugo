@@ -26,7 +26,9 @@ I followed that up with [Brian Holt's Complete Intro to Containers (feat. Docker
 ### [Docker system prune](https://docs.docker.com/engine/reference/commandline/system_prune/)
 > Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes.
 
-Okay but how does it determine what's unused?
+**Okay but how does it determine what's unused?**
+
+> unused in this context means "the container isn't running"
 
 ---
 
