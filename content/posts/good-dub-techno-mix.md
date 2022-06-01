@@ -27,6 +27,18 @@ Ronny explains it really well in the video below - bit of a long one, but a must
 
 {{<youtube N98XIKgjRlM>}}
 
-# Some examples of such mixes
+# Practical tip to take away
+**TLDR: making a focused & well curated playlist in preparation for a set makes it easier to manage energy**
+
+I spent time curating a playlist for a minimal dnb set, and it was made of old favourites, that I knew the sound & energy of, pretty well. 
+
+When playing the set, it felt a lot easier to manage the energy on the fly. I was confindently going in & out of tracks as I felt fit.
+
+>Whatever it takes to help you become more confident 🙂
+>
+> [Ronny](https://www.youtube.com/c/RonnyPries)
+
+
+## Some examples of such mixes
 - [Move D]({{<ref move-d>}})
 - [St. Concrete @Tresor 2020](https://soundcloud.com/altstadt-echo/st-concrete-opening-set-before-dj-deep-tresorglobus-berlin)
