@@ -51,8 +51,11 @@ In a nutshell, it's self indulgent research, I'm trying to make life easier for 
 # Bandcamp
 *disclaimer: Bandcamp UX is generally quirky & can feel a little dated. But I still can't help but love it & its flaws. Has a minimalist, "here for the music & not much else" feeling to it.*
 
+![bandcamp share](https://res.cloudinary.com/hokaspokas/image/upload/c_thumb,w_200,g_face/v1654055557/here-hugo/IMG_5598_sd1dyq.png)
+
 - Can't share to instagram stories, as it only shares link text
-- no visual element to their sharing
+- No visual element to their sharing
+- Uses default Apple share screen
 
 # Soundcloud
 {{<youtube HsppB26lZRI>}}
