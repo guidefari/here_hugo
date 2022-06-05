@@ -2,7 +2,7 @@
 title: "My Week in Music #6"
 date: 2022-06-05T19:37:04+02:00
 description: Some highlights from the last 7 days or so
-tags: [music, playlist, curated]
+tags: [music, playlist, curated, house, experimental, dub, ambient]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=My%20Week%20in%20Music%20%236']
 ---
 # Artists
@@ -56,3 +56,6 @@ This one been on repeat for a few weeks now;)
 ## The end of Noisia
 I'm yet to listen to the full album
 {{<spotify track 1dQABNmfSapQdTid5khR82>}}
+
+# Shameless plug
+Here's a note I updated, it's titled ["Using Contrast in a DJ mix"]({{<ref good-dub-techno-mix>}})
