@@ -8,11 +8,11 @@ author = "Guide Fari"
 
 # allow me to introduce myself 🎵
 my name is Guide. 
-- Frontend Engineer [@sigma](https://sigmadigital.io/).
+- Frontend Engineer [@Flexperto](https://flexperto.com/en/).
 - Love a good product, which has led to a natural inclination towards [UX]({{<ref "tags/ux">}}) & [design]({{<ref "tags/design">}}) in general.
 - [Strategic thinker]({{<ref "tags/strategy">}}), and mindful of the intersection between business impact & technology.
 - Passionate [Music curator]({{<ref "content#curated-music">}})
-- Driven by a [curious mind]({{<ref content>}}).
+- Writing about [software, music, & related topics]({{<ref content>}}).
 
 ---
 
