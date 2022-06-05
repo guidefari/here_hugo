@@ -44,7 +44,15 @@ John Tejada's latest release [Sleepwalker](https://johntejada.bandcamp.com/album
 Adrian always shares dope shit, he recently put me on [Ways by Xyla](https://xylasf.bandcamp.com/album/ways). Love the drums in that album. Future classic for me
 >  Echoes of sweaty rave anthems and classic IDM head trips can be heard strewn throughout Ways’ serpentine compositions, awash in deep ambient swirls and intriguingly twisted samples.
 
+## [Birds on the dancefloor](https://mulemusiq.bandcamp.com/album/birds-on-the-dancefloor)
+This one been on repeat for a few weeks now;)
+![](https://f4.bcbits.com/img/a0954555971_10.jpg)
+
 # Highlighted track(s)
 ## [Muslimgauze - The gulf between us](https://boomkat.com/products/gulf-between-us-f0cb3743-6c16-49d8-871c-ac3e797577f0)
 {{<spotify track 62Sg0uHQIx1fFSs1d9fwZB>}}
 [1997 release](https://boomkat.com/products/gulf-between-us-f0cb3743-6c16-49d8-871c-ac3e797577f0) that still sounds no more than a day old. Nice blend of dub and tribal elements. I found it in [this playlist that Ronny shared](https://open.spotify.com/playlist/0NluoTf4azl4CtBhAErU2r?si=1f21e46b54b64e76)
+
+## The end of Noisia
+I'm yet to listen to the full album
+{{<spotify track 1dQABNmfSapQdTid5khR82>}}
