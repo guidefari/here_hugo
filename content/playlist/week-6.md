@@ -57,5 +57,10 @@ This one been on repeat for a few weeks now;)
 I'm yet to listen to the full album
 {{<spotify track 1dQABNmfSapQdTid5khR82>}}
 
+## Datasette
+![](https://f4.bcbits.com/img/a3735302191_10.jpg)
+> Just seen someone describe datassette music as ambient glitch electronica, lol. Quite an accurate one tbh
+- [Stream/buy here](https://datassette.bandcamp.com/track/187-lighthouse)
+
 # Shameless plug
 Here's a note I updated, it's titled ["Using Contrast in a DJ mix"]({{<ref good-dub-techno-mix>}})
