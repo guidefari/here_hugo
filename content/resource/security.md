@@ -21,6 +21,8 @@ tldr: Random bits of security related knowledge I want to keep together.
 - CnC (Command & Control server): related to botnet,
 
 -  [MSP (Managed Service Provider)](https://www.acronis.com/en-us/articles/msp/)
+
+- [deep packet inspection](https://digitalguardian.com/blog/what-deep-packet-inspection-how-it-works-use-cases-dpi-and-more)
 # youtube stuff
 ### Attackers with good operations security
 {{<youtube zXmZnU2GdVk>}}
