@@ -6,3 +6,5 @@ tags: [resource]
 draft: true
 ---
 
+- Book notes
+- Now
