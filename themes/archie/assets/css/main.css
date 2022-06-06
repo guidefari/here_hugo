@@ -1,9 +1,9 @@
 /* Markdown */
 :root {
-  --maincolor: red;
-  --bordercl: rebeccapurple;
+  --maincolor: #F5D547;
+  --bordercl: #F5D547;
   --callouctcolor: dodgerblue;
-  --hovercolor: navy;
+  --hovercolor: #02394A;
   --darkMaincolor: #5C8001;
 }
 html {
@@ -13,6 +13,7 @@ html {
   font-size: 125%;
 }
 body {
+  background-color: #799496;
   display: grid;
   grid-template-rows: 0fr 1fr 0fr;
   margin: 8px;
@@ -238,7 +239,7 @@ h6::before {
 }
 
 .meta {
-  color: #999;
+  color: #ACC196;
   letter-spacing: -0.5px;
 }
 
