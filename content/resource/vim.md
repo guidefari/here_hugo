@@ -43,6 +43,8 @@ tags: [vim, learning]
 plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
 {{<youtube qb6fPgZMRF4>}}
 - Make sure to `PackerSync` after copying configs from git or the other machine:)
+- [Vim bootstrap](https://vim-bootstrap.com/) - a way to generate a `.vimrc`
+- [vimcolorschemes](https://vimcolorschemes.com/)
 
 
 ### Navigating around a file 
