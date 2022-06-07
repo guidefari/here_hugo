@@ -31,6 +31,7 @@ This is playlist #2 from a friend, check out [the first one from Sindiso]({{<ref
 {{<youtube 7oNf1doKi68>}}
 
 {{<youtube fVjj4260CHg>}}
+    - I dig this
 
 {{<youtube FSQYPqTSSE4>}}
 
@@ -43,7 +44,33 @@ This is playlist #2 from a friend, check out [the first one from Sindiso]({{<ref
 {{<youtube WBbdfebWTGQ>}}
 
 {{<youtube dt8awhDWIPk>}}
+    - oof! what a strong closing track
 
 > AND THAT'S ALL FOR NOW FOLKS
 > 
 > I had a hard time choosing these picks but hopefully you can get a look into the window of type beats that make up my world. Captain Roddy Out!
+
+# Editorial note
+If you enjoyed these tunes, you're in luck my friend, there's a lot more similar stuff to share.
+
+Starting with FlyloFM, a radio from GTA V, hosted by Flying Lotus, featuring alternative hip hop, and dance music,
+- Flylo
+
+Next up, I also put together a "type beats" playlist over on youtube, it's a short and sweet one.
+{{<youtube "?list=PLy64tqMRKcJRg1nqf3Nc4GXSbPaEyt0OI">}}
+
+Next up, there's some artists that I'd like to draw your attention to, that are of a similar nature. Definitely recommend you explore their sounds
+- [Knxwledge](https://www.youtube.com/results?search_query=knxwledge)
+- [Jonwayne](https://www.youtube.com/results?search_query=jonwayne)
+- [Kaytranada](https://www.youtube.com/results?search_query=kaytranada)
+- [Zikomo](https://www.youtube.com/results?search_query=zikomo)
+
+
+## Some Spotify playlists
+{{<spotify playlist 5yD8kZZcf1S3zBfsRf3oDG>}}
+
+{{<spotify playlist 59rqNsdIJCpYEVilxdNh7d>}}
+
+## from Adrian
+
+{{<spotify playlist 5AeTwiFk7Uytle3hZmyovc>}}
