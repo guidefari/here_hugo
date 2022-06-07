@@ -18,11 +18,19 @@
 				{{ end }}
 			</div>
 		</div>
+		{{ if isset .Params "description" }}
+		<div class="tldr">
+			<strong>description:</strong>
+			{{ .Params.description }}
+			<hr/>
+		</div>
+		{{ end }}
 		{{ if isset .Params "tldr" }}
 		<div class="tldr">
 			<strong>tl;dr:</strong>
 			{{ .Params.tldr }}
-		</div>{{ end }}
+		</div>
+		{{ end }}
 
 		<section class="body">
 			{{ .Content }}

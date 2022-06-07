@@ -473,3 +473,7 @@ ul.pagination {
   font-size: 2rem;
   text-align: center;
 }
+
+.post-tags {
+  margin-bottom: 2rem;
+}
