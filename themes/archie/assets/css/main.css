@@ -11,6 +11,7 @@ html {
   font-family: "Jetbrains Mono", monospace;
   line-height: 1.6;
   font-size: 125%;
+  font-weight: 600;
 }
 body {
   background-color: #799496;
