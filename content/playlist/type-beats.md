@@ -3,7 +3,7 @@ title: "Playlist: Type Beats"
 date: 2022-06-07T06:21:11+02:00
 description: Here's a playlist for you...Some hip hop instrumentals, curated & shared by Rodwell
 tags: [music, playlist, curated, hip-hop, instrumental]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Playlist%3A%20Type%20Beats']
 ---
 
 This is playlist #2 from a friend, check out [the first one from Sindiso]({{<ref wake-up-go>}})!

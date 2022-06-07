@@ -4,6 +4,7 @@ date: 2022-05-25T02:55:04+02:00
 description: The get ready for work playlist. Words & Curation by Sindiso:)
 tldr: My wake up playlist is filled with a mixture of uplifting, awe inspiring and at its worst, a song that expresses my desperate need for connection; not only a connection to other human beings but also to the grand planner, the cosmical hand that placed us in our people’s paths.
 tags: [music, playlist, curated]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Playlist%3A%20Wake%20Up%20and%20Go-Go!']
 ---
 
 ### Stream on Spotify
