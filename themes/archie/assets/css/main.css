@@ -5,6 +5,7 @@
   --callouctcolor: dodgerblue;
   --hovercolor: #02394A;
   --darkMaincolor: #5C8001;
+  --accentText: #ACC196
 }
 html {
   color: #232333;
@@ -239,7 +240,7 @@ h6::before {
 }
 
 .meta {
-  color: #ACC196;
+  color: var(--accentText);
   letter-spacing: -0.5px;
 }
 
@@ -260,7 +261,7 @@ footer {
 }
 
 time {
-  color: grey;
+  color: var(--accentText);
   font-size: 0.8rem;
 }
 
