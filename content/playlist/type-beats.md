@@ -71,6 +71,9 @@ Next up, there's some artists that I'd like to draw your attention to, that are 
 
 {{<spotify playlist 59rqNsdIJCpYEVilxdNh7d>}}
 
+{{<spotify playlist 0UkoqUzx7t1gsKqXOKJgK5>}}
+
+
 ## from Adrian
 
 {{<spotify playlist 5AeTwiFk7Uytle3hZmyovc>}}
