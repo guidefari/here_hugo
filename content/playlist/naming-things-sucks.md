@@ -3,7 +3,7 @@ title: "Naming Things Sucks"
 date: 2022-01-21T17:40:21+02:00
 description: Here's a playlist for you...
 tldr: I struggled with giving this post/playlist a title, jeez man. If you like a sound, I strongly recommend you listen to the full project.
-tags: [music, playlist, curated, ambient, dub, glitch, dnb, hip_hop, lofi]
+tags: [music, playlist, curated, ambient, dub, glitch, dnb, hip-hop, lofi]
 ---
 
 ### some notable finds this week
