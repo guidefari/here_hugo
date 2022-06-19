@@ -98,6 +98,7 @@ ul.tags {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
+  line-height: 3.55;
 }
 
 .single-tag {
