@@ -39,3 +39,10 @@ my name is Guide.
 ## digital garden
 - Tom Critchlow on [building a digital garden](https://tomcritchlow.com/2019/02/17/building-digital-garden/): I especially like this one.
 - [Joel Hooks on digital garden](https://joelhooks.com/digital-garden)
+
+## How to Build a site like this one
+- [Hugo static site generator](https://gohugo.io/)
+- [Flavio Copes Hugo tutorial](https://flaviocopes.com/start-blog-with-hugo/)
+- [Flavio Copes Book: How to Build a blog](https://flaviocopes.com/page/book-blog/)
+
+If you get stuck at any point, feel free to reach out to me via email.
