@@ -19,6 +19,9 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Design%20Resour
 Steve Schoger's refactoring UI videos are very complementary to the book. Watch all of them, there aren't that many
 {{<youtube "playlist?list=PLDVpvW8ghDr9tasku_YvuTy_l0xPUtOHE">}}
 
+### The science of great UI
+{{<youtube nx1tOOc_3fU>}}
+
 # icons
 - [heroicons](https://heroicons.dev/)
 - [feather icons](https://feathericons.com/)
