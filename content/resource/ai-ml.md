@@ -11,3 +11,10 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=AI%20%26%20ML%2
 - [Race After Technology](https://www.goodreads.com/book/show/42527493-race-after-technology)
 - [Spotify Teardown](https://www.goodreads.com/book/show/39644202-spotify-teardown?ac=1&from_search=true&qid=OfQFa6FYuU&rank=2) - I really enjoyed this one
 - [Weapons of Math Destruction](https://www.goodreads.com/book/show/28186015-weapons-of-math-destruction) - I'm yet to read this :)
+
+#### Generative AI
+- Step 1: AI + Art
+- ...
+- ...
+- Final step: Profit
+{{<youtube AkKx4Fn02iM>}}
