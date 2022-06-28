@@ -25,6 +25,8 @@ Steve Schoger's refactoring UI videos are very complementary to the book. Watch 
 # icons
 - [heroicons](https://heroicons.dev/)
 - [feather icons](https://feathericons.com/)
+- [flaticon](https://www.flaticon.com/free-icons/spotify)
+- [icons8](https://icons8.com/)
 
 # stock images
 - [unsplash](https://unsplash.com/): now this one I always forget the name of😂
