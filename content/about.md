@@ -45,4 +45,4 @@ my name is Guide.
 - [Flavio Copes Hugo tutorial](https://flaviocopes.com/start-blog-with-hugo/)
 - [Flavio Copes Book: How to Build a blog](https://flaviocopes.com/page/book-blog/)
 
-If you get stuck at any point, feel free to reach out to me via email.
+If you get stuck at any point, feel free to reach out to me via [email](mailto:yo@guidefari.com).
