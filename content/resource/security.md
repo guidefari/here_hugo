@@ -45,3 +45,6 @@ tldr: Random bits of security related knowledge I want to keep together.
   - OSCP, CEH, these certs are the language that recruitment speaks, essentially gatekeeper certs. there's no pressure to rush to this, especially if you're good at what you do.
   - [r/hacking wiki](https://old.reddit.com/r/hacking/wiki/index) - packed packed collection of resources.
   - [AWS Cybersecurity Awareness training](https://learnsecurity.amazon.com/)
+  
+- [Hacksplaining: Web Security for Developers](https://www.hacksplaining.com/)
+> The best protection against being hacked is well-informed developers. Make your development team into security experts today.
