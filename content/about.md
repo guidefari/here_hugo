@@ -6,7 +6,7 @@ aliases = ["about-us","about-hugo","contact"]
 author = "Guide Fari"
 +++
 
-# allow me to introduce myself 🎵
+## allow me to introduce myself 🎵
 my name is Guide. 
 - Frontend Engineer [@Flexperto](https://flexperto.com/en/).
 - Love a good product, which has led to a natural inclination towards [UX]({{<ref "tags/ux">}}) & [design]({{<ref "tags/design">}}) in general.

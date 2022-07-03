@@ -18,7 +18,7 @@ body {
   background-color: #799496;
   display: grid;
   grid-template-rows: 0fr 1fr 0fr;
-  margin: 8px;
+  margin: 0px;
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
@@ -178,7 +178,7 @@ pre code {
   margin-bottom: 4em;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   word-wrap: break-word;
 }
 
@@ -437,6 +437,10 @@ table td {
   /* .tablet\:text-center { */
   /* text-align: center; */
   /* } */
+  .content {
+    padding: 0 1rem;
+  }
+  
 }
 
 /* lg */
