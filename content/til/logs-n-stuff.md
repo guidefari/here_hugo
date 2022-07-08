@@ -8,3 +8,6 @@ draft: true
 ---
 
 ## use `cat` to create and write into a file
+
+## Modifying folder `git config`
+- `./git/config` - notice how this file has no extension
