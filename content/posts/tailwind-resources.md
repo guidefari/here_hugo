@@ -2,8 +2,9 @@
 date: "2020-09-23"
 tags: [web, tailwind]
 title: "Tailwind Resources"
-summary: "A bunch of sites/resources I constantly reach out to for inspiration when using tailwind, which is like all the time"
-aliases: [tailwind, frontend]
+description: "A bunch of sites/resources I constantly reach out to for inspiration when using tailwind, which is like all the time"
+aliases: [tailwind]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Resources']
 ---
 
 # Components

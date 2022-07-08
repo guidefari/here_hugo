@@ -1,9 +1,9 @@
 ---
-title: "Opening Set"
+title: "DJing: Opening Set"
 date: 2022-03-13T22:06:11+02:00
 description: My love affair with the Opening set. I want to be the DJ you think of when you think "I need a good opener for this event"
-tldr: I want to be the DJ you think of when you think "I need a good opener for this event"
 tags: [music, curated,dj]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=DJing%3A%20Opening%20Set']
 ---
 
 Over time, I've come to realise that this is probably my favourite part of a well curated party, from both sides of the deck.
