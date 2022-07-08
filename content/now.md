@@ -13,10 +13,10 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 
 # what I'm up to
 - working towards being a well rounded software engineer.
-- given that I'm pretty confident with my frontend skill now(2 years active experience as of **Dec '21**), I'm putting more efforts into backend work, & general, evergreen engineering knowledge.
+- given that I'm pretty confident with my frontend skill now(2 years active experience as of **Dec '21**), I'm putting more efforts into backend/cloud work, & general, evergreen engineering knowledge.
 {{<youtube Bx17ywo-5nM>}}
 
-## frontend engineering work for Sigma
+## frontend engineering work for Flexperto
 Surrounded by very talented people I learn from everyday.
 
 ## writing
@@ -27,11 +27,34 @@ another crucial part of my daily life, I have been actively [curating]({{<ref "/
 
 it's become slightly more systemic & efficient, & I'm always looking for ways to improve on it. I enjoy this so much.
 
+- Recording and uploading [DJ mixes]({{<ref mix>}}) every other Sunday, at sunset.
+
 # AWS
 - Studying towards Associate [AWS Solutions Architect]({{<ref "resource/aws">}})
+- Going through [a course by Adrian Cantrill](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02)
 
-# Pro-Search
-- Have had the honor of making some contributions to [Pro-Search](https://pro-search.io), an [open source app](https://github.com/bhekanik/pro-search) started by [Bhekani](https://github.com/bhekanik).
 
 ## Reading
 - [My book notes]({{<ref book>}})
+
+# Consulting for Dataecho
+- Product consulting & bringing [their webapp](https://dataecho.org/) to reality
+
+### Duties includes
+- Planning
+- Architecture
+- Quality control
+- UX research & design
+- Feature grooming for the dev & design team (3 devs including me, 1 designer)
+- Project management
+
+---
+
+# Past
+# Pro-Search
+- Have had the honor of making some contributions to [Pro-Search](https://pro-search.io), an [open source app](https://github.com/bhekanik/pro-search) started by [Bhekani](https://github.com/bhekanik).
+
+- **July 8 '22 update**: I haven't contributed here in a while
+
+## Frontend Engineering For Sigma
+- Jan 2021 - June 2022
