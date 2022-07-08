@@ -14,7 +14,7 @@ I love playing opening sets. I often joke that "that gives me the excuse to play
 The music is usually the chill, lower tempo variation of whatever the event is. Easy going, intimate vibes, before the place is too packed. A lot of the music I listen to also fits right into opening sets. Mood setting music.
 
 ## Experiencing Opening Sets as a patron
-I also enjoy being on the other side, watch how other DJ's open a party. Feel G recently did a killer opening set for a [Headspace](https://www.mixcloud.com/HeadspaceZimbabwe/) party a few weeks ago, and he had one of the longest set times 😉
+I also enjoy being on the other side, watch how other DJ's open a party. Feel G recently did a killer opening set for a [Headspace](https://www.mixcloud.com/HeadspaceZimbabwe/) party a few weeks ago, and he played for at least 30 minutes to an hour more than the other DJ's :)
 
 ## I'm DJ'ing again
 - Recorded a practice session this weekend, lots of fun. Preview of the sounds coming, dub techno, ambient, minimal, dub techno - kicked back sounds.
