@@ -34,6 +34,7 @@ tags: [career, strategy, music]
 - [Gitpod](https://www.gitpod.io/) - Spin up fresh, automated dev environments
 for each task, in the cloud, in seconds.
 - [Plasmo Framework](https://docs.plasmo.com/) - A way to quickly build browser extensions
+- [AutoRegex](https://www.autoregex.xyz/)
 
 # music
 - [Hardwax](https://hardwax.com/)
