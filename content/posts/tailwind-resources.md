@@ -11,13 +11,14 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 1. [Tailblocks](https://mertjf.github.io/tailblocks/)
 2. [tailwindcomponents](https://tailwindcomponents.com/)
 3. [Tailwind-Elements](https://tailwind-elements.com/)
-4. [Meraki UI](https://merakiui.com)
-5. [Awesome tailwind](https://github.com/aniftyco/awesome-tailwindcss)
-6. [kutty](https://kutty.netlify.app/docs/) - this has [header components](https://kutty.netlify.app/components/headers/) with nice hamburger menu. I was once upon a time too lazy to write my own navbar up to the standards I like😅
-7.  [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
-8.  [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
-9.  [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
-10. [DaisyUI](https://daisyui.com/)
+4. [Wickedblocks.dev](https://wickedblocks.dev/)
+5. [Meraki UI](https://merakiui.com)
+6. [Awesome tailwind](https://github.com/aniftyco/awesome-tailwindcss)
+7. [kutty](https://kutty.netlify.app/docs/) - this has [header components](https://kutty.netlify.app/components/headers/) with nice hamburger menu. I was once upon a time too lazy to write my own navbar up to the standards I like😅
+8.  [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
+9.  [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
+10. [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
+11. [DaisyUI](https://daisyui.com/)
 
 # Util
 1. [tailwind play](https://play.tailwindcss.com/) - New tool from Tailwind Labs.
