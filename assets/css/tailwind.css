@@ -16,6 +16,7 @@
         border-top: 3px dotted var(--bordercl);
         margin: 1em 0;
       }
+
   }
 
 @layer components {
