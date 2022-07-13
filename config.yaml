@@ -2,7 +2,7 @@
 baseURL: "https://guidefari.com"
 languageCode: en-us
 title: Guide Fari
-theme: archie
+# theme: archie
 copyright: © Guide Fari
 enableRobotsTXT: true
 # code highlight
