@@ -9,9 +9,8 @@
 }
 html {
   color: #232333;
-  font-family: "Jetbrains Mono", monospace;
   line-height: 1.6;
-  font-size: 125%;
+  /* font-size: 125%; */
   font-weight: 600;
 }
 body {
@@ -36,11 +35,6 @@ p {
   font-family: "Jetbrains Mono", monospace;
 }
 
-hr {
-  border: 0;
-  border-top: 3px dotted var(--bordercl);
-  margin: 1em 0;
-}
 
 /* blockquote */
 blockquote {
@@ -154,25 +148,6 @@ code {
   padding: 0.1em 0.2em;
 }
 
-pre {
-  background-color: #ececec;
-  overflow-x: scroll;
-  padding: 1em;
-  width: 100%;
-}
-
-.highlight pre ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: inherit;
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: 100%;
-  padding: 0;
-}
-
 /* Containers */
 .content {
   margin-bottom: 4em;
@@ -245,30 +220,11 @@ h6::before {
   letter-spacing: -0.5px;
 }
 
-/* Footer */
-footer {
-  margin: auto;
-  padding: 1rem;
-  display: flex;
-  width: -webkit-fill-available;
-  width: 100%;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
 
-/* Common */
-.title h1 {
-  margin-bottom: 0;
-}
 
 time {
   color: var(--accentText);
   font-size: 0.8rem;
-}
-
-/* Posts */
-article .title {
-  margin-bottom: 1em;
 }
 
 /* Callout */
@@ -291,10 +247,6 @@ article .title {
   color: var(--callouctcolor);
 }
 
-.site-description {
-  font-style: italic;
-  font-weight: bold;
-}
 .tags li::before, .home-tag::before {
   content: "🏷 ";
 }
@@ -425,7 +377,7 @@ table td {
 @media (min-width: 640px) {
   /* .tablet\:text-center { */
   /* text-align: center; */
-    html, footer {font-size:110%;}
+    /* html, footer {font-size:110%;} */
 
   .content {
     max-width: 90vw;

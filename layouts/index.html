@@ -4,7 +4,7 @@
 	<body>
 		<section class="header-and-description-wrapper">
 			{{ partial "head.html" . }}
-			<div class="site-description">
+			<div class="font-extrabold my-5 italic md:text-2xl lg:text-3xl">
 				{{- if isset .Site.Params "subtitle" -}}
 				<p>{{ .Site.Params.Subtitle | markdownify }}</p>
 				{{- end -}}
@@ -16,14 +16,9 @@
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
-				<section class="list-item">
-					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-					<div class="home-tag-wrapper">
-						{{ range .Params.tags }}
-							<a class="home-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-							{{ end }}
-					</div>
-					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+				<section class="py-5">
+					<h1 class="text-4xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<time class="text-yellow-300">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 					<br><div class="description">
 						{{ if isset .Params "description" }}
 						{{ .Description }}
@@ -31,7 +26,6 @@
 						{{ .Summary }}&hellip;
 						{{ end }}
 					</div>
-					<hr/>
 				</section>
 				{{ end }}
 				{{ template "partials/paginator.html" . }}

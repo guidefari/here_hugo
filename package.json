@@ -1,0 +1,24 @@
+{
+  "name": "here_hugo",
+  "version": "1.0.0",
+  "description": "- [ ] 404 page",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
+    "watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/txndai/here_hugo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/txndai/here_hugo/issues"
+  },
+  "homepage": "https://github.com/txndai/here_hugo#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}

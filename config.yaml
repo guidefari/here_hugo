@@ -30,7 +30,7 @@ params:
     - name: Youtube
       icon: youtube
       url: "https://twitter.com/guidefari"
-  customcss: ["css/mystyle.css"]
+  # customcss: ["css/style.css"]
   favicon: "favicon.png"
 menu:
   main:
