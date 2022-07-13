@@ -2,7 +2,7 @@
 baseURL: "https://guidefari.com"
 languageCode: en-us
 title: Guide Fari
-theme: archie
+# theme: archie
 copyright: © Guide Fari
 enableRobotsTXT: true
 # code highlight
@@ -30,7 +30,7 @@ params:
     - name: Youtube
       icon: youtube
       url: "https://twitter.com/guidefari"
-  customcss: ["css/mystyle.css"]
+  # customcss: ["css/style.css"]
   favicon: "favicon.png"
 menu:
   main:

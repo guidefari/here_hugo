@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ if isset .Data "Term" }}
+<div class="text-5xl my-10">Tagged - <strong>{{ .Data.Term }}</strong></div>
+{{ else }}
+<div class="text-5xl my-10">All articles</div>
+{{ end }}
+
+<ul class="posts">
+	{{- range .Data.Pages -}}
+		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+		<section class="py-5">
+			<h2 class="text-3xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+			<time class="text-yellow-300">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+			<br><div class="description">
+				{{ if isset .Params "description" }}
+				{{ .Description }}
+				{{ else }}
+				{{ .Summary }}&hellip;
+				{{ end }}
+			</div>
+			<hr/>
+		</section>
+		{{- end -}}
+		{{- end -}}
+	</ul>
+	<h1><a href="{{"/content"}}">View All Content Types</a></h1>
+{{ end }}

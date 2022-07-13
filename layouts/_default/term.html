@@ -1,15 +1,15 @@
 {{ define "main" }}
 {{ if isset .Data "Term" }}
-<h1>Tagged - <strong>{{ .Data.Term }}</strong></h1>
+<div class="text-5xl my-10">Tagged - <strong>{{ .Data.Term }}</strong></div>
 {{ else }}
-<h1 class="page-title">All articles</h1>
+<div class="text-5xl my-10">All articles</div>
 {{ end }}
 
 <ul class="posts">
 	{{- range .Data.Pages -}}
 		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-		<section class="list-item">
-			<h2 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+		<section class="py-5">
+			<h2 class="text-3xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
 			<div class="home-tag-wrapper">
 				{{ range .Params.tags }}
 					<a class="home-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
@@ -28,5 +28,7 @@
 		{{- end -}}
 		{{- end -}}
 	</ul>
-	<h1><a href="{{"/content"}}">View All Content Types</a></h1>
+	<section>
+		<h4><a href="{{"/tags"}}">All tags</a></h4>
+	</section>
 {{ end }}

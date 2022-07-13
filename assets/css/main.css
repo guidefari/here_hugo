@@ -9,16 +9,12 @@
 }
 html {
   color: #232333;
-  font-family: "Jetbrains Mono", monospace;
   line-height: 1.6;
-  font-size: 125%;
+  /* font-size: 125%; */
   font-weight: 600;
 }
 body {
   background-color: #799496;
-  display: grid;
-  grid-template-rows: 0fr 1fr 0fr;
-  margin: 0px;
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
@@ -36,11 +32,6 @@ p {
   font-family: "Jetbrains Mono", monospace;
 }
 
-hr {
-  border: 0;
-  border-top: 3px dotted var(--bordercl);
-  margin: 1em 0;
-}
 
 /* blockquote */
 blockquote {
@@ -85,14 +76,6 @@ a:hover {
   color: #fff;
 }
 
-ul {
-  list-style-type: square;
-  padding-left: 2ch;
-}
-ul.tags {
-  list-style: none;
-  font-weight: bold;
-}
 
 .single-tags {
   display: flex;
@@ -152,25 +135,6 @@ figure h4::before {
 code {
   background-color: #f1f1f1;
   padding: 0.1em 0.2em;
-}
-
-pre {
-  background-color: #ececec;
-  overflow-x: scroll;
-  padding: 1em;
-  width: 100%;
-}
-
-.highlight pre ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: inherit;
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  font-size: 100%;
-  padding: 0;
 }
 
 /* Containers */
@@ -245,30 +209,11 @@ h6::before {
   letter-spacing: -0.5px;
 }
 
-/* Footer */
-footer {
-  margin: auto;
-  padding: 1rem;
-  display: flex;
-  width: -webkit-fill-available;
-  width: 100%;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
 
-/* Common */
-.title h1 {
-  margin-bottom: 0;
-}
 
 time {
   color: var(--accentText);
   font-size: 0.8rem;
-}
-
-/* Posts */
-article .title {
-  margin-bottom: 1em;
 }
 
 /* Callout */
@@ -291,10 +236,6 @@ article .title {
   color: var(--callouctcolor);
 }
 
-.site-description {
-  font-style: italic;
-  font-weight: bold;
-}
 .tags li::before, .home-tag::before {
   content: "🏷 ";
 }
@@ -412,20 +353,12 @@ table td {
   border: 1px solid #dfe2e5;
 }
 
-.header-and-description-wrapper {
-  padding: 0.5rem 0.7rem;
-}
-
-.social-links svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
 
 /* sm */
 @media (min-width: 640px) {
   /* .tablet\:text-center { */
   /* text-align: center; */
-    html, footer {font-size:110%;}
+    /* html, footer {font-size:110%;} */
 
   .content {
     max-width: 90vw;

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Jetbrains Mono", monospace;
+    }
+
+    iframe {
+        margin: 1rem 0;
+    }
+
+    hr {
+        border: 0;
+        border-top: 3px dotted var(--bordercl);
+        margin: 1em 0;
+      }
+  }
+
+@layer components {
+    .social-links svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

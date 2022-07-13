@@ -1,0 +1,36 @@
+<footer class="social-links flex p-4 space-x-2 max-w-md w-full flex-wrap mx-auto justify-center">
+    <a href="mailto:yo@guidefari.com" target="_blank">
+      {{- partial "mail.svg" . -}}
+    </a>
+    <a href="https://github.com/txndai" target="_blank">
+      {{- partial "github.svg" . -}}
+    </a>
+    <a href="https://www.linkedin.com/in/guide-fari-8b0063176/" target="_blank">
+      {{- partial "linkedin.svg" . -}}
+    </a>
+    <a href="https://twitter.com/guidefari" target="_blank">
+      {{- partial "twitter.svg" . -}}
+    </a>
+    <a
+      href="https://www.youtube.com/channel/UCXLiPJsFfPpwJZIF-3QvzXQ"
+      target="_blank"
+    >
+      {{- partial "youtube.svg" . -}}
+    </a>
+    <a href="https://www.instagram.com/guidefari/" target="_blank">
+      {{- partial "instagram.svg" . -}}
+    </a>
+    <a
+      href="https://open.spotify.com/user/gqbaqx445507dgzjms78u1kkz?si=3fb6283823f54186"
+      target="_blank"
+    >
+      {{- partial "spotify.svg" . -}}
+    </a>
+    <a href="https://bandcamp.com/guidefari" target="_blank">
+      {{- partial "bandcamp.svg" . -}}
+    </a>
+  <!-- {{- range $index, $key := .Site.Params.Social -}}
+<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
+{{- end -}} -->
+  <!-- {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}  -->
+</footer>
