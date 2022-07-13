@@ -19,26 +19,4 @@
   }
 
 @layer components {
-    pre {
-        max-width: 97vw;
-      overflow-x: auto;
-      font-size: .875em;
-      line-height: 1.7142857;
-      margin-top: 1.7142857em;
-      margin-bottom: 1.7142857em;
-      padding: 0.8571429em 1.1428571em
-      }
-
-      
-      .highlight pre ::selection {
-        background: rgba(255, 255, 255, 0.2);
-        color: inherit;
-      }
-      
-      pre code {
-        background-color: transparent;
-        color: inherit;
-        font-size: 100%;
-        padding: 0;
-      }
 }

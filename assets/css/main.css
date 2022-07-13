@@ -15,9 +15,6 @@ html {
 }
 body {
   background-color: #799496;
-  display: grid;
-  grid-template-rows: 0fr 1fr 0fr;
-  margin: 0px;
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
@@ -79,14 +76,6 @@ a:hover {
   color: #fff;
 }
 
-ul {
-  list-style-type: square;
-  padding-left: 2ch;
-}
-ul.tags {
-  list-style: none;
-  font-weight: bold;
-}
 
 .single-tags {
   display: flex;

@@ -12,7 +12,7 @@
 		</section>
 		<div class="content">
 			
-			<main class="list">
+			<main >
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
