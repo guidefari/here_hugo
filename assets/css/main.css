@@ -353,14 +353,6 @@ table td {
   border: 1px solid #dfe2e5;
 }
 
-.header-and-description-wrapper {
-  padding: 0.5rem 0.7rem;
-}
-
-.social-links svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
 
 /* sm */
 @media (min-width: 640px) {

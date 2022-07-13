@@ -1227,6 +1227,11 @@ hr {
   margin-bottom: 0;
 }
 
+.social-links svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1252,6 +1257,11 @@ hr {
   margin-bottom: 1.25rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1260,11 +1270,6 @@ hr {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
 }
 
 .mb-5 {
@@ -1344,6 +1349,11 @@ hr {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .text-4xl {
