@@ -17,9 +17,17 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Notes%3A%20How%
 > human hired to push their mission forward. – Kent C Dodds
 > (https://kcd.im/biz)
 
+> The more your tests represent how your software is used, the more confidence they can give you.
+
+> Think less about the code you're testing, and more about the use cases
 
 # Links
 - [ ] [Slides from the talk](https://github.com/kentcdodds/practically-testing-slides)
 - [ ] [How to add testing to an existing project](https://kentcdodds.com/blog/how-to-add-testing-to-an-existing-project)
 - [ ] [your IDE as a presentation tool](https://staltz.com/your-ide-as-a-presentation-tool.html)
 - [ ] [Scenarios: Should I write a test or fix a bug?](https://kentcdodds.com/blog/should-i-write-a-test-or-fix-a-bug)
+
+## Other videos
+{{<youtube _pnW-JjmyXE>}}
+
+- [ ] {{<youtube pvBHyip4peo>}}
