@@ -34,7 +34,7 @@ params:
   favicon: "favicon.png"
 menu:
   main:
-    - name: About
+    - name: Start Here
       url: /about
       weight: 1
     - name: Content Nav
