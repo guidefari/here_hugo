@@ -51,3 +51,4 @@ Permalinks:
   podcast: "/:filename/"
   playlist: "/:filename/"
   mix: "/:filename/"
+  note: "/:filename/"
