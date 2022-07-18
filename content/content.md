@@ -13,6 +13,7 @@ tags: [nav, ux]
 - [Book notes]({{<ref book>}})
 - [Podcast notes]({{<ref podcast>}})
 - [General Resources]({{<ref resource>}})
+- [All sorts of notes]({{<ref "tags/notes">}})
 
 # Curated Music
 - [All music]({{<ref "tags/music/">}})
