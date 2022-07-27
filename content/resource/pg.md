@@ -24,6 +24,8 @@ random snippets from it:
 - [how to work hard](http://www.paulgraham.com/hwh.html) - read this while on a long bus trip. I'd read a few paragraphs, stop, reflect, daydream, & repeat. was fun:)
 - [A project of one's own](http://paulgraham.com/own.html) - ever notice that a lot of people in tech are likely to have side projects they're super excited about? this essay breaks that down well.
 - [The other half of "Artists ship"](http://paulgraham.com/artistsship.html) - an essay on the cost of 'process' & 'checks' in an org
+- [Maker's schedule, Manager's schedule](http://paulgraham.com/makersschedule.html) 
+- [Good & Bad procrastination](http://paulgraham.com/procrastination.html)
 
 
 ## Talks & videos
