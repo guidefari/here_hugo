@@ -5,6 +5,7 @@ description: Some notes from the learn with Cantrill course
 tags: [resource, aws, notes]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Course%20Notes%3A%20AWS%20Solutions%20Architect%20Cantrill']
 ---
+# [Link to course](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02)
 
 ## AWS Accounts
 - All IAM accounts start with no access
