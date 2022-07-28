@@ -3,7 +3,7 @@ title: "Bash It"
 date: 2022-03-19T11:20:25+02:00
 description: Some bash scripts I always find myself looking for
 tldr: Some bash scripts I always find myself looking for
-tags: [bash, cmd, resource]
+tags: [bash, cmd, resource, linux]
 ---
 
 ## Check all ports in use
@@ -27,3 +27,10 @@ lsof -i:443
 
 # Misc
 - [How to Securely Erase a Disk and File using the Linux shred Command](https://www.freecodecamp.org/news/securely-erasing-a-disk-and-file-using-linux-command-shred/)
+
+## Write a new environment variable
+
+```bash
+  export MY_NEW_VAR="My New Var"
+```
+[src](https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/)
