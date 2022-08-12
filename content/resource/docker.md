@@ -16,3 +16,23 @@ export POSTGRES_PASSWORD='password'
 // use it later
 docker run -e POSTGRES_PASSWORD -e POSTGRES_USER ...
  ```
+
+# Logs
+```bash
+  docker logs infrastructure-rabbitmq-1
+#   or
+  docker logs d3387e01e7cd
+```
+
+# List containers
+```bash
+docker ps
+# or
+docker container ls -a
+```
+
+# Remove specific container
+```bash
+docker rm d3387e01e7cd
+```
+- `docker stop` also works with **container id**
