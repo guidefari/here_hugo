@@ -53,8 +53,9 @@ This is playlist #2 from a friend, check out [the first one from Sindiso]({{<ref
 # Editorial note
 If you enjoyed these tunes, you're in luck my friend, there's a lot more similar stuff to share.
 
-Starting with FlyloFM, a radio from GTA V, hosted by Flying Lotus, featuring alternative hip hop, and dance music,
-- Flylo
+Starting with [FlyloFM](https://youtu.be/NjkGN8b2ClM), a radio from GTA V, hosted by Flying Lotus, featuring alternative hip hop, and dance music,
+
+{{<youtube NjkGN8b2ClM>}}
 
 Next up, I also put together a "type beats" playlist over on youtube, it's a short and sweet one.
 {{<youtube "?list=PLy64tqMRKcJRg1nqf3Nc4GXSbPaEyt0OI">}}
