@@ -36,3 +36,8 @@ docker container ls -a
 docker rm d3387e01e7cd
 ```
 - `docker stop` also works with **container id**
+
+# Get into container shell/terminal
+```bash
+docker exec [container-id or name] [shell - can be bash or ash]
+```

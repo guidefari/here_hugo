@@ -37,8 +37,6 @@ Track #4, **Cold**, is where this album captured my attention, the first time I 
 
 Every track after that manages to make me dance, without fail.
 
-I just realised this was also shared last week, but truth be told it's been on repeat for those 2 weeks. timeless record.
-
 **Narcisuss** opening chords remind me of a popular hip hop beat I've been failing to find😅
 
 # Curated Tracks
