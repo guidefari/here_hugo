@@ -46,3 +46,10 @@ The mobile experience is also gets the job done well
 
 # What would collaboration ideally look like for you?
 - Shoot me an [email](mailto:yo@guidefari.com?subject=Collaboration%20UX%20Feedback), or [tweet](https://twitter.com/guidefari) - any feedback would go a long way😄
+
+# Context
+{{<youtube BmgL1SRfUyc>}}
+> TLDR:
+> - "I have music in different places but want one single app for all my music that supports all services/sources"
+>
+> [Johannes](https://twitter.com/schickling)
