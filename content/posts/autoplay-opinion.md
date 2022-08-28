@@ -4,6 +4,7 @@ date: 2022-02-20T21:57:47+02:00
 description: I switch off autoplay on all my streaming services. Youtube, Spotify, Netflix etc
 tldr: I switch off autoplay on all my streaming services. Youtube, Spotify, Netflix etc
 tags: [ux, design, tweet]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Autoplay%20Opinion']
 ---
 
 ## I like being given a moment to breathe
