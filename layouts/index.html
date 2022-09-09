@@ -4,7 +4,7 @@
 	<body>
 		<section class="header-and-description-wrapper">
 			{{ partial "head.html" . }}
-			<div class="font-extrabold my-5 italic md:text-2xl lg:text-3xl">
+			<div class="my-5 italic font-extrabold md:text-2xl lg:text-3xl">
 				{{- if isset .Site.Params "subtitle" -}}
 				<p>{{ .Site.Params.Subtitle | markdownify }}</p>
 				{{- end -}}
@@ -17,7 +17,7 @@
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<section class="py-5">
-					<h1 class="text-4xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<h1 class="mb-5 text-4xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
 					<time class="text-yellow-300">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 					<br><div class="description">
 						{{ if isset .Params "description" }}
@@ -31,6 +31,5 @@
 				{{ template "partials/paginator.html" . }}
 			</main>
 		</div>
-		{{ partial "footer.html" . }}
 	</body>
 </html>
