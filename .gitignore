@@ -8,3 +8,4 @@ node_modules
 content/.obsidian
 **/.DS_Store
 **/.hugo_build.lock
+assets/css/style.css
