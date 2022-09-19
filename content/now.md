@@ -11,31 +11,23 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 
 ---
 
-# what I'm up to
-- working towards being a well rounded software engineer.
-- given that I'm pretty confident with my frontend skill now(2 years active experience as of **Dec '21**), I'm putting more efforts into backend/cloud work, & general, evergreen engineering knowledge.
+## Topics I'm currently obsessed with 
+- Software Architecture
+- UX
+- Cloud, infra, devops
+- How teams build & deliver software; product development - a natural extension of the devops topic tbh
 {{<youtube Bx17ywo-5nM>}}
 
 ## frontend engineering work for Flexperto
 Surrounded by very talented people I learn from everyday.
-
-## writing
-as a tool for learning, & structuring my thoughts, this is a crucial part of my daily life
 
 # curating music
 another crucial part of my daily life, I have been actively [curating]({{<ref "/tags/curated" >}}) music since almost as far back as memory can take me.
 
 it's become slightly more systemic & efficient, & I'm always looking for ways to improve on it. I enjoy this so much.
 
-- Recording and uploading [DJ mixes]({{<ref mix>}}) every other Sunday, at sunset.
-
-# AWS
-- Studying towards Associate [AWS Solutions Architect]({{<ref "resource/aws">}})
-- Going through [a course by Adrian Cantrill](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02)
-
-
-## Reading
-- [My book notes]({{<ref book>}})
+- Recording and uploading [DJ mixes]({{<ref mix>}}) ~~every other Sunday, at sunset~~.
+- Building & writing on [goosebumps.fm](https://goosebumps.fm)
 
 # Consulting for Dataecho
 - Product consulting & bringing [their webapp](https://dataecho.org/) to reality
