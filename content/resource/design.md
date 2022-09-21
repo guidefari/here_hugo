@@ -23,6 +23,7 @@ Steve Schoger's refactoring UI videos are very complementary to the book. Watch 
 {{<youtube nx1tOOc_3fU>}}
 
 # icons
+- [iconic.app](https://iconic.app/) - Keen to check this one out next time I need an icon
 - [heroicons](https://heroicons.dev/)
 - [feather icons](https://feathericons.com/)
 - [flaticon](https://www.flaticon.com/free-icons/spotify)
