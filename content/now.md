@@ -14,8 +14,14 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 ## Topics I'm currently obsessed with 
 - Software Architecture
 - UX
-- Cloud, infra, devops
+- Cloud, infra, devops, security
 - How teams build & deliver software; product development - a natural extension of the devops topic tbh
+  - Team Topologies
+- Typescript
+- Testing
+- Domain Driven Design
+- Project Management
+- Agile
 {{<youtube Bx17ywo-5nM>}}
 
 ## frontend engineering work for Flexperto
