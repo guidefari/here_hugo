@@ -42,3 +42,6 @@ Steve Schoger's refactoring UI videos are very complementary to the book. Watch 
 
 # Repos
 - [Design resources for devs](https://github.com/bradtraversy/design-resources-for-developers)
+
+# Fonts
+- [fontshare](https://www.fontshare.com/) - there's some really nice free fonts on here
