@@ -24,6 +24,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Networking%20re
 # Subnetting
 
 # Encryption
+- BK has a good resource on [cryptography](https://justreflections.bhekani.com/p/simple-cryptography-for-the-rest-of-us-just-reflections-issue-25-968207).
 
 ## Symmetric
 
