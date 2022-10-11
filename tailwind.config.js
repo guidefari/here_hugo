@@ -40,7 +40,7 @@ module.exports = {
               color: '#232333',
             },
             strong: {
-              color: '#232333',
+              color: 'khaki',
             },
           },
         },
