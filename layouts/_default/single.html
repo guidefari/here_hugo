@@ -2,8 +2,8 @@
 <main>
 	<article>
 		<div class="">
-			<h1 class=" text-5xl my-8">{{ .Title }}</h1>
-			<div class="meta text-yellow-300">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
+			<div >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 			<div class="post-tags">
 				{{ if ne .Type "page" }}
 				{{ if gt .Params.tags 0 }}

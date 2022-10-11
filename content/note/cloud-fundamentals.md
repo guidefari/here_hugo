@@ -1,7 +1,7 @@
 ---
 title: "Cloud Fundamentals"
 date: 2022-10-11T07:42:35+02:00
-description: 
+# description: 
 tags: [aws]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cloud%20Fundamentals']
 ---
