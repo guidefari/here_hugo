@@ -37,11 +37,14 @@ p {
 blockquote {
   margin: 50px auto;
   font-style: italic;
-  color: #555555;
   padding: 1.2em 30px 1.2em 3.5rem;
   border-left: 8px solid #78c0a8;
   position: relative;
-  background: #ededed;
+  background: #222526;
+}
+
+blockquote code {
+  background-color: #02394A;
 }
 
 blockquote::before {

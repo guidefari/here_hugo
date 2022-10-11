@@ -13,10 +13,11 @@
 
     hr {
         border: 0;
-        border-top: 3px dotted var(--bordercl);
+        border-top: 3px dotted #02394A;
         margin: 1em 0;
       }
 
+      
   }
 
 @layer components {

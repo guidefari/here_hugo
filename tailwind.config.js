@@ -37,7 +37,7 @@ module.exports = {
               color: '#a0aec0',
             },
             blockquote: {
-              color: '#232333',
+              color: '#CCC7B8',
             },
             strong: {
               color: 'khaki',
