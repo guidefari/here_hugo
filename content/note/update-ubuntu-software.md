@@ -18,3 +18,9 @@ In case you need to confirm package name before updating
 ```bash
 apt list --installed
 ```
+
+# View upgradeable packages
+
+```bash
+apt list --upgradable
+```
