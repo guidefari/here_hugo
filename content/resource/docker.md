@@ -41,3 +41,18 @@ docker rm d3387e01e7cd
 ```bash
 docker exec [container-id or name] [shell - can be bash or ash]
 ```
+
+# Common flags
+
+- `-it` is short for interactive
+
+# Misc
+- Alpine is like a bare bones linux
+- `docker image prune` will clear up a bunch of space for you. But you'd have to rebuild images & such.
+
+**TIL: difference between attach & exec**:
+> - `attach` isn't for running an extra thing in a container, it's for attaching to the running process.
+> - `docker exec` is specifically for running new things in a already started container, be it a shell or some other process.
+> [src](https://stackoverflow.com/questions/30960686/difference-between-docker-attach-and-docker-exec)
+
+- [This](https://iximiuz.com/en/posts/containers-101-attach-vs-exec/) could make for a good read
