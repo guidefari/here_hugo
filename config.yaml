@@ -41,7 +41,7 @@ menu:
       url: /content
       weight: 2
 Permalinks:
-  posts: "/:filename/"
+  post: "/:filename/"
   album: "/:filename/"
   artist: "/:filename/"
   resource: "/:filename/"

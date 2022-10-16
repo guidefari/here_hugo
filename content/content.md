@@ -8,7 +8,7 @@ tags: [nav, ux]
 
 
 # Software & Stuff
-- [General posts]({{<ref posts>}})
+- [General posts]({{<ref post>}})
 - [Today I Learnt]({{<ref til>}})
 - [Book notes]({{<ref book>}})
 - [Podcast notes]({{<ref podcast>}})
