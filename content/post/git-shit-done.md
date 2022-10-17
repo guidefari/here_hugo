@@ -2,6 +2,7 @@
 date: "2020-09-23"
 tags: ["web", "git"]
 title: "Git Shit Done"
+aliases: [git]
 description: "Git commands that I always have to google"
 ---
 
@@ -74,4 +75,10 @@ git fetch --prune
 
 ```bash
 git config --get remote.origin.url
+```
+
+# Interactive Rebase
+
+```bash
+git rebase -i HEAD~3
 ```
