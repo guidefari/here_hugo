@@ -33,6 +33,14 @@ A document that presents a shaped project idea for consideration at the betting 
 ### Shape
 Make an abstract project idea more concrete by defining key elements of the solution before betting on it.
 
+### Team Topologies
+They follow a microteam approach. When implementing:
+- 1 or 2 devs
+- 1 designer
+
+When shaping, things are a little different. It's usually an async process, carried out by the more senior team members, eg just Jason & DHH. <br> 
+This is because decisions at this stage will have downstream implications on the future of the product
+
 ## summary
 > This book is a guide to how we do product development at Basecamp. It’s also a toolbox full of techniques that you can apply in your own way to your own process.
 
