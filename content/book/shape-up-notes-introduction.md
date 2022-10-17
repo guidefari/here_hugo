@@ -1,6 +1,6 @@
 ---
 date: "2020-12-02"
-tags: ["notes"]
+tags: [agile]
 title: "Introduction to Shape Up"
 summary: "Ryan Singer shares how the Basecamp team builds software"
 ---

@@ -1,6 +1,6 @@
 ---
 date: "2020-12-16"
-tags: ["notes"]
+tags: [agile, writing]
 title: "Shape Up - writing the pitch"
 summary: "Summary of the ingredients that make up a pitch"
 ---
