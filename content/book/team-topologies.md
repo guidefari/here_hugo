@@ -9,13 +9,13 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A
 - [Get the book here](https://itrevolution.com/team-topologies/)
 
 # 1.0 Four Different Types of Teams
-1. Stream aligned teams: organised around value streams, delivering value to a customer. As Jeff Bezos says, this kind of team should have “line of sight to a customer”
+1. **Stream aligned teams**: organised around value streams, delivering value to a customer. As Jeff Bezos says, this kind of team should have “line of sight to a customer”
 
 **These other teams make the stream aligned teams go faster**
 
-1. Enabling team: these help manage scarcity. Eg there aren’t a lot of security engineers, user researchers, super good infrastructure okes going around. Enabling teams then act as consultants to the other teams
-1. Complicated subsystem team - think PhD math people working on a complex bit of the product
-1. Platform Team - platform & platform 2.0 from [ING bank]({{<ref ing-bank>}}) pretty interesting
+1. **Enabling team**: these help manage scarcity. Eg there aren’t a lot of security engineers, user researchers, super good infrastructure okes going around. Enabling teams then act as consultants to the other teams
+1. **Complicated subsystem team** - think PhD math people working on a complex bit of the product
+1. **Platform Team** - platform & platform 2.0 from [ING bank]({{<ref ing-bank>}}) pretty interesting
 
 ## Team first thinking
  - The team is the means of delivery
