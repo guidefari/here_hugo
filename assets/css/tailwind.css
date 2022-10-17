@@ -16,6 +16,10 @@
         border-top: 3px dotted #02394A;
         margin: 1em 0;
       }
+
+      strong {
+        @apply text-yellow-200
+      }
   }
 
 @layer components {
