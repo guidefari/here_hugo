@@ -8,6 +8,10 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Course%20Notes%
 # Links
 - [Course](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c03)
 - [Github Repo](https://github.com/acantril/aws-sa-associate-saac03)
+- Apple notes also has some handwritten stuff
+- AWS tag on this site has rest of notes
+- currently working through [networking Fundamentals]({{< ref cloud-networking>}})
+- source of truth for which notes are supposed to exist is my progress on the video platform. sometimes can go ahead and write notes on stuff I haven't watched though
 
 ## AWS Accounts
 - All IAM accounts start with no access
