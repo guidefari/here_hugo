@@ -43,6 +43,7 @@ Designed to overcome IPv4 shortages of addresses. The Router (NAT device) mainta
 - BK has a good resource on [cryptography](https://justreflections.bhekani.com/p/simple-cryptography-for-the-rest-of-us-just-reflections-issue-25-968207).
 - [Practical networking - cryptography](https://www.practicalnetworking.net/series/cryptography/cryptography)
 - There's encryption at rest, and also in transit. the latter is what I'll focus on
+- Good further reading, [SSL & TLS](https://kinsta.com/knowledgebase/tls-vs-ssl/)
 
 ## Symmetric
 - encrypts & decrypts using the same private key. this makes sense for encryption at rest
@@ -55,3 +56,14 @@ Designed to overcome IPv4 shortages of addresses. The Router (NAT device) mainta
 - I encrypt data with my recipient's public key, I send it across the network, receiver decrypts with their mathematically linked private key (i.e the only key that can decrypt this message). 
 - **Message Signing** is another advantage asymmetric encryption brings. read [Using Asymmetric Keys](https://www.practicalnetworking.net/series/cryptography/using-asymmetric-keys/) for more insight
 - Compared to symmetric encryption, asymmetric is more expensive on resources
+
+# DDoS
+- Usually carried out by a Botnet
+- **Application Layer Attack:** exploit the fact requests are **cheap for clients**, but **computationally expensive for servers to deliver**
+- **Protocol Attack:** aka **SYN Floods**. Botnet generates a **huge number of spoofed SYN's**, and the **server sends back SYN-ACK's** (to non-existent, spoofed IPs). The server then waits for **ACK's** which will never happen
+- **Volumetric/Amplification attack:** similar to an application layer attack, exploits where a response is significantly larger than the request. Such as making spoofed requests to DNS
+
+# DNS
+- DNS root servers. 13 of these servers exist. managed independently.
+- IANA has info on the TLDs (.com, .au, .uk etc). Registries have more information about 
+  - root zone -> name servers hosting the TLD zones. these TLD zones are run by registries that manage these TLDs -> name servers with the records for specific domains

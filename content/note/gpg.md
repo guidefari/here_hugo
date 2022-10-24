@@ -4,6 +4,7 @@ date: 2022-09-14T03:35:38+02:00
 description: 
 tags: []
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+draft: true
 ---
 
 # WTF is a GPG repository key?
