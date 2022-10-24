@@ -41,7 +41,17 @@ Designed to overcome IPv4 shortages of addresses. The Router (NAT device) mainta
 
 # Encryption
 - BK has a good resource on [cryptography](https://justreflections.bhekani.com/p/simple-cryptography-for-the-rest-of-us-just-reflections-issue-25-968207).
+- [Practical networking - cryptography](https://www.practicalnetworking.net/series/cryptography/cryptography)
+- There's encryption at rest, and also in transit. the latter is what I'll focus on
 
 ## Symmetric
+- encrypts & decrypts using the same private key. this makes sense for encryption at rest
+- **key exchange problem:** one of the major drawbacks of Symmetric encryption is the Secret Key used to encrypt and decrypt must exist in two different locations. Which begs the question, how do we get the key securely from one party to the other?
+- with symmetric encryption, the algorithm is publicly known. the only variable between each encrypted conversation is the Secret Key.
 
 ## Asymmetric
+- uses public key & private key
+- The asymmetric keys are mathematically linked. What one key encrypts, only the other can decrypt — and vice versa.
+- I encrypt data with my recipient's public key, I send it across the network, receiver decrypts with their mathematically linked private key (i.e the only key that can decrypt this message). 
+- **Message Signing** is another advantage asymmetric encryption brings. read [Using Asymmetric Keys](https://www.practicalnetworking.net/series/cryptography/using-asymmetric-keys/) for more insight
+- Compared to symmetric encryption, asymmetric is more expensive on resources

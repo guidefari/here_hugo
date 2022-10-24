@@ -7,7 +7,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Course%20Notes%
 ---
 # Links
 - [Course](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c03)
-- [Github Repo](https://github.com/acantril/aws-sa-associate-saac03)
+- [Github Repo](https://github.dev/acantril/aws-sa-associate-saac03)
 - Apple notes also has some handwritten stuff
 - AWS tag on this site has rest of notes
 - currently working through [networking Fundamentals]({{< ref cloud-networking>}})
