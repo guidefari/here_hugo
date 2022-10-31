@@ -5,16 +5,17 @@
   --callouctcolor: dodgerblue;
   --hovercolor: #02394A;
   --darkMaincolor: #5C8001;
-  --accentText: #ACC196
+  --accentText: #ACC196;
+  --text: #C8C2B7;
 }
 html {
-  color: #232333;
+  color: #C8C2B7;
   line-height: 1.6;
   /* font-size: 125%; */
   font-weight: 600;
 }
 body {
-  background-color: #799496;
+  background-color: #1A2F38;
   position: relative;
   min-height: 100vh;
   box-sizing: border-box;
@@ -63,7 +64,6 @@ blockquote::after {
 
 blockquote span {
   display: block;
-  color: #333333;
   font-style: normal;
   font-weight: bold;
   margin-top: 1em;
@@ -184,27 +184,27 @@ h6 {
 
 h1::before {
   color: var(--maincolor);
-  content: "# ";
+  /* content: "# "; */
 }
 h2::before {
   color: var(--maincolor);
-  content: "## ";
+  /* content: "## "; */
 }
 h3::before {
   color: var(--maincolor);
-  content: "### ";
+  /* content: "### "; */
 }
 h4::before {
   color: var(--maincolor);
-  content: "#### ";
+  /* content: "#### "; */
 }
 h5::before {
   color: var(--maincolor);
-  content: "##### ";
+  /* content: "##### "; */
 }
 h6::before {
   color: var(--maincolor);
-  content: "###### ";
+  /* content: "###### "; */
 }
 
 .meta {

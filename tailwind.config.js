@@ -6,41 +6,26 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            color: '#232333',
+            color: '#C8C2B7',
             a: {
               color: 'var(--maincolor)',
               '&:hover': {
-                color: '#E4CC7D',
+                color: 'white',
+                backgroundColor: 'inherit',
               },
               borderBottom: 'none',
               fontWeight: 700
             },
             li: {
               listStyleType: 'square',
+            color: '#C8C2B7',
             },
-            h1: {
-              color: '#232333',
-            },
-            h2: {
-              color: '#232333',
-            },
-            h3: {
-              color: '#232333',
-            },
-            h4: {
-              color: '#232333',
-            },
-            h5: {
-              color: '#a0aec0',
-            },
-            h6: {
-              color: '#a0aec0',
-            },
+            '--tw-prose-headings': '#C8C2B7',
             blockquote: {
               color: '#CCC7B8',
             },
             strong: {
-              color: 'khaki',
+              color: '#C8C2B7',
             },
           },
         },
