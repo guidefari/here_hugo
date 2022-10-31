@@ -12,6 +12,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20WIP%20Limi
 To understand how WIP limits can be helpful, we need a bit more context of the bigger picture. The idea comes from [lean management practices](https://www.simplilearn.com/what-is-lean-management-article), and these can, and have been used succesfully by software engineering teams.
 - WIP limits are a way to "drive process (improvement) and increase throughput". I've heard other authors ([Team Topologies]({{<ref tt-jl>}})) refer to this as "optimising for flow of value through the system"
 - Can also be thought of as a way to identify bottlenecks in your system
+- Optimising for flow of value works best in an environment that focuses on [team-first thinking]({{<ref "team-topologies#team-first-thinking">}}), as opposed to optimising individuals' output.
 
 - Implementing WIP limits in isolation is not going to be helpful: 
 > we’re not just asking teams whether they are good at limiting their WIP and have processes in place to do so. We’re also asking if their WIP limits **make obstacles to higher flow visible**, and if teams **remove these obstacles through process improvement**, leading to improved throughput. WIP limits are no good if they don’t lead to improvements that increase flow.
