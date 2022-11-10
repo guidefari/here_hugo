@@ -1,6 +1,6 @@
 ---
 date: "2020-12-08"
-tags: [agile]
+tags: [agile, basecamp]
 title: "Shape Up - The shaping process"
 summary: "Summary of Part 1 of the book"
 ---

@@ -3,7 +3,7 @@ title: "Applying Shape Up"
 date: 2022-02-07T06:07:48+02:00
 description: I read shape up a year or two ago, and I'm applying some of the principles taught, in how I manage my own workload. I only work on 1 'other' project at a time, outside of my daily work commitments
 tldr: I only work on 1 'other' project at a time, outside of my daily work commitments.
-tags: [strategy, project_management]
+tags: [strategy, project_management, basecamp]
 ---
 
 ## What?
