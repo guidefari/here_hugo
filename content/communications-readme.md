@@ -56,9 +56,6 @@ I endorse this statement 100%. I don't have slack on my phone, so when I'm AFK w
 - I love sim racing, I'm currently playing Dirt Rally 2
 
 
-
-link to the nesting doc
-
 # Related reading
 * good [references for monotasking](https://www.softwaremeadows.com/posts/the_50-10_time_box_revising_pomodoro_for_software_development/) at the bottom of this article
   * also shares tips on pomodoro in practice
