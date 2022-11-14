@@ -23,3 +23,7 @@ aliases: [labels, record-labels]
 - Ostgut Ton 
 - Ilian Tape
 - hyperdub
+- Livity sounds
+- Astral Industries - I especially like the artwork
+- https://110100100.global
+- https://www.makesenserecords.com/ - they have a super cool 3D platform to explore the music
