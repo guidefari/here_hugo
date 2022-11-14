@@ -41,7 +41,8 @@ This is pretty much my M.O.
 > “In building teams, it’s important that people have an area where they can do work, collaborate, and feel safe before showing a wider audience of stakeholders.”
 
 ## Martin Fowler describes the same thing here
-{{<youtube "https://youtu.be/Avs70dZ3Vlk?t=1072">}}
+- start at 18 minutes
+{{<youtube Avs70dZ3Vlk>}}
 
 ## Flow & Purpose
 > I was in flow state. I love coding. It’s truly hard for me to rip myself away when I get going on a project.
