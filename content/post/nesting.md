@@ -1,5 +1,5 @@
 ---
-title: "Nesting- Embracing PJ’s"
+title: "Nesting - Embracing PJ’s"
 date: 2022-10-03T04:25:34+02:00
 description: I tend to do some of my most impactful/meaningful work whilst in PJ’s. In fact, I can confidently say I’ve generated more revenue in that outfit than any other.
 tags: [productivity]
