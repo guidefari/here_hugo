@@ -25,7 +25,7 @@ aliases: [how-i-work]
 
 
 # Flow state & uninterrupted time
-- I'm most effective with large blocks of uninterrupted time, because of that, it may seem like I'm not a fan of meetings, and will opt for async communication as default
+- I'm most effective with large blocks of uninterrupted time, because of that, it may seem like I'm not a fan of meetings, and will opt for async communication as default. This seems to work well when paired with ad-hoc meetings
 - I do not like to multi-task, context switching is expensive for me as it takes quite some effort for me to transition into a task. While I have gotten better at it, I still tend to stay away. That's why I like to start and take tasks to completion before taking on new stuff.
 ## Notifications off by default
 * Notifications are off by default, I mostly work in pomodoro sessions, meaning I don't respond to messages in real time. I like to [make an optimum environment for sustained periods of flow state]({{<ref nesting>}}).
@@ -36,7 +36,7 @@ aliases: [how-i-work]
 ### Meetings
 - This also means I don't expect myself to write much code on meeting heavy days like Wednesdays, because I know meetings sap quite a bit of energy out of me, and fragment the day into unusable time chunks for me.
 
-
+### Downtime
 > I believe in “clean” downtime, as in: time off where you go firmly offline work-wise. Make sure you spend enough of your vacation days this way; it’s valuable, healthy, and important.
 > - [Isaac Hepworth](https://github.com/hepwori/wwi/)
 
