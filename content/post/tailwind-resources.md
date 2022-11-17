@@ -7,6 +7,14 @@ aliases: [tailwind]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Resources']
 ---
 
+# Articles, Talks & stuff
+- [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
+- ["Semantic" CSS](https://adamwathan.me/2014/11/10/semantic-css/)
+- [In defence of utility first CSS](https://www.dotconferences.com/2019/12/sarah-dayan-in-defense-of-utility-first-css) - Lovely Talk by Sarah Dayan
+
+## Introduction to Atomic CSS ft Sarah Dayan
+{{<youtube PcrzsCdoFoY>}} <br/><br/>
+
 # Components
 1. [Tailblocks](https://mertjf.github.io/tailblocks/)
 2. [tailwindcomponents](https://tailwindcomponents.com/)
@@ -15,7 +23,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 5. [Flowbite Blocks - Tailwind UI components](https://flowbite.com/blocks/)
 6. [Meraki UI](https://merakiui.com)
 7. [Awesome tailwind](https://github.com/aniftyco/awesome-tailwindcss)
-8. [kutty](https://kutty.netlify.app/docs/) - this has [header components](https://kutty.netlify.app/components/headers/) with nice hamburger menu. I was once upon a time too lazy to write my own navbar up to the standards I like😅
+8. [kutty](https://kutty.netlify.app/docs/)
 9.  [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
 10. [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
 11. [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
@@ -28,11 +36,3 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 
 # Repos & docs
 1. [NextJS + Tailwind](https://tailwindcss.com/docs/guides/nextjs)
-
-# Articles, Talks & stuff
-- [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
-- ["Semantic" CSS](https://adamwathan.me/2014/11/10/semantic-css/)
-- [In defence of utility first CSS](https://www.dotconferences.com/2019/12/sarah-dayan-in-defense-of-utility-first-css) - Lovely Talk by Sarah Dayan
-
-## Introduction to Atomic CSS ft Sarah Dayan
-{{<youtube PcrzsCdoFoY>}}
