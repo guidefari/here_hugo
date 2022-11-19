@@ -1,9 +1,9 @@
 ---
-title: "TIL: Ts Enum vs Obj"
+title: "TIL: Typescript Enum vs Obj"
 date: 2022-11-19T12:10:18+02:00
 description: In some(most?) cases, it may be preferential to use objects over enums. esp when building a lib
 tags: [til, typescript]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Typescript%20Enum%20vs%20Obj']
 ---
 
 - [Stackblitz](https://stackblitz.com/edit/typescript-beoogv?embed=1&file=index.ts&hideExplorer=1&theme=dark) with the code
@@ -31,3 +31,8 @@ showColor('blue')
 showColor(Colors.Green)
 // evaluates to green
 ```
+## Some videos
+{{<youtube JfcLkoBirZo>}}
+
+
+{{<youtube 0fTdCSH_QEU>}}
