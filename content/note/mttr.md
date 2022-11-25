@@ -11,7 +11,7 @@ To paraphrase John Allspaw:
 > it’s more important to have good monitoring of your system, so that you are aware when an error occurs and therefore act on it. A lot of systems fail without the relevant parties ever being aware that something's wrong.
 
 - The MTTR > MTBF idea is true for most types of failures.
-- The more complex a system is, the more difficult it is to predict failures, hence why it becomes more important to be able to be notified off failures, & recover quickly
+- The more complex a system is, the more difficult it is to predict failures, making it more important to be notified of failures, & recover quickly from there
 - Worth noting, MTTR is one of the key metrics used in State of Devops reports, & the book [Accelerate]({{<ref accelerate>}}), when measuring some stats from high performing vs low performing teams.
 
 {{<youtube 5AGEv0sAw6g>}}
