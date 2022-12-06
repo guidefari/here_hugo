@@ -5,6 +5,10 @@ title: "Music for coding"
 aliases: [m4p]
 description: "Distraction-free(mostly) playlists, albums, & livesets that wont get in the way of concentrated work."
 ---
+# Update
+
+This post/playlist aggregation is now maintained on the music curation site, [goosebumps.fm](https://www.goosebumps.fm/curated/code-friendly).
+
 If you need to quickly reach out for music that's entertaining, but won't be a distracting whilst working, this is the place to find that. Playlists are in no particular order. the playlists with no curator credited are in-house curated.
 
 # Websites
@@ -13,7 +17,8 @@ If you need to quickly reach out for music that's entertaining, but won't be a d
 
 # Bandcamp
 
-[shipwreck detective - Live at Man vs Machine](https://shipwreckdetective.bandcamp.com/album/live-at-man-vs-maschine) - "An hour and nine-minute performance recorded live in one take for Man vs Maschine - an online global streaming festival created during the COVID-19 pandemic to showcase and connect through experimental music."
+- [shipwreck detective - Live at Man vs Machine](https://shipwreckdetective.bandcamp.com/album/live-at-man-vs-maschine) - "An hour and nine-minute performance recorded live in one take for Man vs Maschine - an online global streaming festival created during the COVID-19 pandemic to showcase and connect through experimental music."
+-
 
 # Spotify
 
