@@ -16,7 +16,6 @@ aliases:
 ## Deep House
 
 * Stay true sounds
-* Just move records
 * All Day I Dream: I remember bingeing their releases for quite a while, fun times. I still enjoy the nostalgic feeling some of their releases still give me. Their sound head heavy influence on the direction of the [Portable Sunsets]({{<ref portable-sunsets>}}) playlist.
 * Oh So Coy & Rogue Decibels
 
@@ -35,5 +34,5 @@ aliases:
 * hyperdub
 * Livity sounds
 * Astral Industries - I especially like the artwork
-* https://110100100.global
-* https://www.makesenserecords.com/ - they have a super cool 3D platform to explore the music
+* <https://110100100.global>
+* <https://www.makesenserecords.com/> - they have a super cool 3D platform to explore the music

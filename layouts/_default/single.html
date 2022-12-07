@@ -22,7 +22,6 @@
 		<div class="tldr">
 			<strong>description:</strong>
 			{{ .Params.description }}
-			<hr/>
 		</div>
 		{{ end }}
 		{{ if isset .Params "tldr" }}
@@ -31,6 +30,7 @@
 			{{ .Params.tldr }}
 		</div>
 		{{ end }}
+		<hr/>
 
 		<article class="prose lg:prose-xl">
 			{{ .Content }}
