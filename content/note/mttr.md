@@ -2,8 +2,8 @@
 title: "MTTR > MTBF"
 date: 2022-11-25T08:01:50+02:00
 description: Optimising Mean Time To Recovery is more important than trying to minimise Mean Time Between Failures.
-tags: [monitoring, devops, cloud]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+tags: [monitoring, devops, cloud, agile]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=MTTR%20%3E%20MTBF']
 ---
 
 To paraphrase John Allspaw:
@@ -19,8 +19,8 @@ To paraphrase John Allspaw:
 ## Other takeaways from the Infrastructure As Code video
 
 - Immuatble server, rebuilt on each config change. Less likely to have a snowflake server if you keep on rebuilding it.
-  - A snowflake server is one that people avoid touching, in fear of messing things up.
-  - What we're after is a phoenix server, one you can confidently destroy & rebuild. It allows you to lean into the strengths of deploying in the cloud. Create & destroy as you need, as opposed to long lived servers that are never rebuilt.
+  - A **snowflake server** is one that people avoid touching, in fear of messing things up.
+  - What we're after is a **phoenix server**, one you can confidently destroy & rebuild. It allows you to lean into the strengths of deploying in the cloud. Create & destroy as you need, as opposed to long lived servers that are never rebuilt.
 - No ssh'ing into the server to change configs
 - small changes rather than batches: results in less errors, easier rollback, less risk
 - Keep services available continuously. No going down for maintenance
