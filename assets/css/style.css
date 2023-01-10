@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -355,13 +355,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -417,6 +410,20 @@ video {
   height: auto;
 }
 
+:root {
+  --maincolor: #F5D547;
+  --bordercl: #F5D547;
+  --callouctcolor: dodgerblue;
+  --hovercolor: #02394A;
+  --darkMaincolor: #5C8001;
+  --accentText: #ACC196;
+  --text: #C8C2B7;
+}
+
+a {
+  color: var(--maincolor);
+}
+
 html {
   font-family: "Jetbrains Mono", monospace;
 }
@@ -427,8 +434,14 @@ iframe {
 
 hr {
   border: 0;
-  border-top: 3px dotted var(--bordercl);
+  border-top: 3px dotted ;
   margin: 1em 0;
+}
+
+strong {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(254 240 138 / var(--tw-text-opacity));
 }
 
 *, ::before, ::after {
@@ -607,7 +620,7 @@ hr {
 }
 
 .prose {
-  color: #232333;
+  color: #C8C2B7;
   max-width: 65ch;
 }
 
@@ -626,7 +639,8 @@ hr {
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)):hover {
-  color: #E4CC7D;
+  color: white;
+  background-color: inherit;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
@@ -634,8 +648,8 @@ hr {
 }
 
 .prose :where(strong):not(:where([class~="not-prose"] *)) {
-  color: #232333;
-  font-weight: 600;
+  color: #C8C2B7;
+  font-weight: 700;
 }
 
 .prose :where(a strong):not(:where([class~="not-prose"] *)) {
@@ -655,6 +669,7 @@ hr {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
   padding-left: 1.625em;
+  color: #C8C2B7;
 }
 
 .prose :where(ol[type="A"]):not(:where([class~="not-prose"] *)) {
@@ -719,7 +734,7 @@ hr {
 .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
   font-weight: 500;
   font-style: italic;
-  color: #232333;
+  color: #CCC7B8;
   border-left-width: 0.25rem;
   border-left-color: var(--tw-prose-quote-borders);
   quotes: "\201C""\201D""\2018""\2019";
@@ -737,7 +752,7 @@ hr {
 }
 
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
-  color: #232333;
+  color: var(--tw-prose-headings);
   font-weight: 800;
   font-size: 2.25em;
   margin-top: 0;
@@ -751,7 +766,7 @@ hr {
 }
 
 .prose :where(h2):not(:where([class~="not-prose"] *)) {
-  color: #232333;
+  color: var(--tw-prose-headings);
   font-weight: 700;
   font-size: 1.5em;
   margin-top: 2em;
@@ -765,7 +780,7 @@ hr {
 }
 
 .prose :where(h3):not(:where([class~="not-prose"] *)) {
-  color: #232333;
+  color: var(--tw-prose-headings);
   font-weight: 600;
   font-size: 1.25em;
   margin-top: 1.6em;
@@ -779,7 +794,7 @@ hr {
 }
 
 .prose :where(h4):not(:where([class~="not-prose"] *)) {
-  color: #232333;
+  color: var(--tw-prose-headings);
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -936,7 +951,7 @@ hr {
 
 .prose {
   --tw-prose-body: #374151;
-  --tw-prose-headings: #111827;
+  --tw-prose-headings: #C8C2B7;
   --tw-prose-lead: #4b5563;
   --tw-prose-links: #111827;
   --tw-prose-bold: #111827;
@@ -989,8 +1004,8 @@ hr {
 .prose :where(li):not(:where([class~="not-prose"] *)) {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  style: square;
   list-style-type: square;
+  color: #C8C2B7;
 }
 
 .prose :where(ol > li):not(:where([class~="not-prose"] *)) {
@@ -1072,14 +1087,6 @@ hr {
 
 .prose :where(.prose > :last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
-}
-
-.prose :where(h5):not(:where([class~="not-prose"] *)) {
-  color: #a0aec0;
-}
-
-.prose :where(h6):not(:where([class~="not-prose"] *)) {
-  color: #a0aec0;
 }
 
 .prose-sm :where(.prose > ul > li p):not(:where([class~="not-prose"] *)) {
@@ -1232,6 +1239,25 @@ hr {
   height: 2.5rem;
 }
 
+.single-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-tags > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.single-tags {
+  line-height: 2;
+}
+
+.single-tag {
+  list-style: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1300,8 +1326,16 @@ hr {
   display: none;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .max-w-md {
@@ -1332,6 +1366,12 @@ hr {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded {
@@ -1398,6 +1438,14 @@ hr {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @media (min-width: 768px) {

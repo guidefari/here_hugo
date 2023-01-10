@@ -10,7 +10,7 @@
 				<nav class="nav">
 					<ul class="single-tags">
 						{{ range .Params.tags }}
-						<li class="single-tag"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+						<li class="single-tag"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a></li>
 						{{ end }}
 					</ul>
 				</nav>

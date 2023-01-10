@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --maincolor: #F5D547;
+        --bordercl: #F5D547;
+        --callouctcolor: dodgerblue;
+        --hovercolor: #02394A;
+        --darkMaincolor: #5C8001;
+        --accentText: #ACC196;
+        --text: #C8C2B7;
+      }
+    
+    a {
+        color: var(--maincolor);
+    }
+    
     html {
         font-family: "Jetbrains Mono", monospace;
     }
@@ -26,5 +40,16 @@
     .social-links svg {
         width: 2.5rem;
         height: 2.5rem;
+    }
+
+    .single-tags {
+        display: flex;
+        flex-wrap: wrap;
+        @apply space-x-4;
+        line-height: 2;
+    }
+    
+    .single-tag {
+        list-style: none;
     }
 }

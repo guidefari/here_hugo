@@ -1,5 +1,5 @@
 /* Markdown */
-:root {
+/* :root {
   --maincolor: #F5D547;
   --bordercl: #F5D547;
   --callouctcolor: dodgerblue;
@@ -7,7 +7,7 @@
   --darkMaincolor: #5C8001;
   --accentText: #ACC196;
   --text: #C8C2B7;
-}
+} */
 html {
   color: #C8C2B7;
   line-height: 1.6;
@@ -79,24 +79,6 @@ a:hover {
   color: #fff;
 }
 
-
-.single-tags {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  line-height: 3.55;
-}
-
-.single-tag {
-  list-style: none;
-}
-
-.single-tag a {
-  border: var(--bordercl);
-  border-style: dashed;
-  margin-right: 1rem;
-  padding: 0.75rem;
-}
 
 strong {
   color: var(--maincolor);
