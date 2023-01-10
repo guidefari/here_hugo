@@ -421,7 +421,23 @@ video {
 }
 
 a {
-  color: var(--maincolor);
+  border-bottom: 3px solid var(--maincolor);
+  color: inherit;
+  text-decoration: none;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  background-color: var(--maincolor);
 }
 
 html {
@@ -633,18 +649,18 @@ strong {
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
-  color: var(--maincolor);
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
   font-weight: 700;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)):hover {
-  color: white;
-  background-color: inherit;
+  background-color: var(--maincolor);
+  color: black;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
-  border-bottom: none;
+  border-bottom: 3px solid var(--maincolor);
 }
 
 .prose :where(strong):not(:where([class~="not-prose"] *)) {
@@ -1425,11 +1441,6 @@ strong {
 
 .italic {
   font-style: italic;
-}
-
-.text-yellow-300 {
-  --tw-text-opacity: 1;
-  color: rgb(253 224 71 / var(--tw-text-opacity));
 }
 
 .outline {

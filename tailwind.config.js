@@ -3,18 +3,20 @@ module.exports = {
   content: ['content/**/*.md', 'layouts/**/*.html'],
   theme: {
     extend: {
+      
       typography: {
         DEFAULT: {
           css: {
             color: '#C8C2B7',
             a: {
-              color: 'var(--maincolor)',
+              color: 'white',
               '&:hover': {
-                color: 'white',
-                backgroundColor: 'inherit',
+                color: 'black',
+                backgroundColor: 'var(--maincolor)',
               },
-              borderBottom: 'none',
-              fontWeight: 700
+              borderBottom: '3px solid var(--maincolor)',
+              fontWeight: 700,
+              textDecoration: 'none',
             },
             li: {
               listStyleType: 'square',

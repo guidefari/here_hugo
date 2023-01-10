@@ -14,8 +14,15 @@
       }
     
     a {
-        color: var(--maincolor);
+        border-bottom: 3px solid var(--maincolor);
+        color: inherit;
+        text-decoration: none;
+        @apply text-white transition duration-100 ease-in hover:text-black;
     }
+    a:hover {
+        background-color: var(--maincolor);
+        
+      }
     
     html {
         font-family: "Jetbrains Mono", monospace;

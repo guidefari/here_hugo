@@ -1,16 +1,16 @@
 {{ define "main" }}
 {{ if isset .Data "Term" }}
-<div class="text-5xl my-10">Tagged - <strong>{{ .Data.Term }}</strong></div>
+<div class="my-10 text-5xl">Tagged - <strong>{{ .Data.Term }}</strong></div>
 {{ else }}
-<div class="text-5xl my-10">All articles</div>
+<div class="my-10 text-5xl">All articles</div>
 {{ end }}
 
 <ul class="posts">
 	{{- range .Data.Pages -}}
 		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
 		<section class="py-5">
-			<h2 class="text-3xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-			<time class="text-yellow-300">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+			<h2 class="mb-5 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+			<time >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 			<br><div class="description">
 				{{ if isset .Params "description" }}
 				{{ .Description }}

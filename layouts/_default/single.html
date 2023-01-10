@@ -3,7 +3,7 @@
 	<article>
 		<div class="">
 			<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
-			<div >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<time >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 			<div class="post-tags">
 				{{ if ne .Type "page" }}
 				{{ if gt .Params.tags 0 }}
@@ -19,18 +19,16 @@
 			</div>
 		</div>
 		{{ if isset .Params "description" }}
-		<div class="tldr">
-			<strong>description:</strong>
+		<!-- <div class="tldr">
 			{{ .Params.description }}
-		</div>
+		</div> -->
 		{{ end }}
 		{{ if isset .Params "tldr" }}
 		<div class="tldr">
-			<strong>tl;dr:</strong>
 			{{ .Params.tldr }}
 		</div>
 		{{ end }}
-		<hr/>
+		<!-- <hr/> -->
 
 		<article class="prose lg:prose-xl">
 			{{ .Content }}
