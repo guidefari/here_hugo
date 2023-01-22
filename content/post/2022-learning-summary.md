@@ -73,4 +73,4 @@ I wrote about [dark patterns]({{<ref dark-patterns>}})
 
 - [Saying no, increased focus](https://fs.blog/focus-to-win/), reduced involvement in multiple projects in fly at once.
 - [Applying shape up]({{<ref applying-shape-up>}})
-- [How to read]({{<ref reading>}})
+- [How to read]({{<ref "note/reading">}})
