@@ -31,7 +31,7 @@ module.exports = {
               color: '#CCC7B8',
             },
             strong: {
-              color: '#C8C2B7',
+              color: 'white',
               fontWeight: 700,
             },
           },
