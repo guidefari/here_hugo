@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
     "watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "yarn watch"
+    "dev": "concurrently \"hugo serve\" \"npm run watch\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/txndai/here_hugo#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
+    "concurrently": "^7.6.0",
     "tailwindcss": "^3.1.6"
   }
 }
