@@ -6,8 +6,13 @@ tldr: very early draft, structuring a note I'd like to start filling up at some 
 tags: [book, notes, backend, DDD]
 ---
 
+# Nice summary
+
+{{<youtube 8Z5IAkWcnIw>}}
+
 ## There's no DDD without Domain Experts
-You need to be committed to building a team around them, and having constructive conversations with them. 
+
+You need to be committed to building a team around them, and having constructive conversations with them.
 
 ## Strategic Design
 
@@ -20,3 +25,7 @@ You need to be committed to building a team around them, and having constructive
 
 ## Tactical Design
 
+---
+
+{{<youtube 9xveNg4zhJA>}}
+{{<youtube gxgKgMvPH9I>}}
