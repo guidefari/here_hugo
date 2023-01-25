@@ -7,6 +7,12 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Common%20React%
 ---
 
 
+## Who this note is not for
+
+In my experience, If you're working in a greenfield environment, modern tooling, with an end-to-end type safe stack, this won't apply to you too much.
+
+It's likely a thing you won't have to think much about, your editor will scream at you for this sort of thing.
+
 ### Looping through Data from API
 
 It's very common to map over values coming in from an api to render stuff.
