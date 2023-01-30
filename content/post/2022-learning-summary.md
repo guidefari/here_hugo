@@ -2,7 +2,7 @@
 title: "2022 Learning Summary"
 date: 2023-01-09T12:56:40+02:00
 description: Such a wide array of topics. It was a fun year for learning
-tags: [learning, podcast, product, architecture, ux, leadership]
+tags: [learning, podcast, product, architecture, ux, leadership, architecture]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=2022%20Learning%20Summary']
 ---
 
