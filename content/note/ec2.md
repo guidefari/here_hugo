@@ -20,6 +20,13 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 - **Terminated** - can't reverse this.
 - can go from running to stopped & vice versa
 
+# Instance types
+
+- On demand
+- Reserved - these have a time commitment. gives 30-70% discount. Various payment options - no upfront, all upfront, partial upfront
+- Spot - cheap, meant for short lived instances, few hours to a few days. they use bid pricing
+- Dedicated - not sharing memory/cpu
+
 # Amazon Machine Image (AMI)
 
 # Connecting to EC2
