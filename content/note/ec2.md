@@ -12,6 +12,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 - Uses VPC networking
 - AZ resilient. Instance fails if AZ fails
 - Can use local on-host storage, or Elastic Block Store (Network storage)
+- EC2 has a soft limit of 20 instances per region
 
 ## Instance lifecycle
 
@@ -33,3 +34,21 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 
 - Windows uses RDP - **Port 3389**
 - Linux uses SSH - **Port 22** - using key pairs
+
+# Auto scaling groups
+
+- They use launch configurations, these specify the usual EC2 launch stuff.
+  - AMI + instance type
+  - EC2 user data
+  - EBS volumes
+  - Security Groups
+  - SSH keypair
+
+- ASG is usually put behind a load balancer
+- Can scale based on:
+  - **cloudwatch alarms**
+  - target average CPU usage
+  - number of requests on the ELB per instance
+  - average network in
+  - average network out
+  - custom metric, such as number of users connected to application

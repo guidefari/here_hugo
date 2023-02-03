@@ -35,7 +35,8 @@ On a related note, check out [Cloudtrail]({{<ref cloudtrail>}})
 - Comes with many pre-defined metrics
 - Custom metrics are a thing
 - With **High resolution metrics** (only available with custom metrics) you can track at 1sec, 5sec, 10sec, 30sec, multiples of 60sec
-- Metrics - CPU, memory, disk utilization (list isn't exhaustive ofc.)
+- Metrics - "**CPUUtilization**, a set of disk Read and Write metrics, and a set of NetworkIn and NetworkOut metrics. But, **EC2 doesn't provide metrics related to OS-level memory usage or disk usage metrics**."
+  - [Here's a good explanation](https://stackoverflow.com/questions/57369025/why-memory-utilization-of-ec2-instance-is-not-default-metric-of-amazon-cloudwatc) of why memory or disk usage aren't default cloudwatch metrics.
 
 ---
 
