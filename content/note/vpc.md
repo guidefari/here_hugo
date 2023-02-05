@@ -7,6 +7,8 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20VPC%20bas
 ---
 
 - VPC's are regionally resilient
+- min CIDR -> /28 -> 16 IP addresses
+- Max CIDR -> /16 -> 65 536 IP addresses
 
 # Default VPC
 
@@ -17,3 +19,10 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20VPC%20bas
 # Custom VPC
 
 - By default, these are isolated & private
+
+# Some VPC components
+
+- Internet Gateways
+- Route tables
+- NACL
+- Security Groups

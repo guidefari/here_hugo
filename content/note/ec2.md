@@ -28,7 +28,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 - Spot - cheap, meant for short lived instances, few hours to a few days. they use bid pricing
 - Dedicated - not sharing memory/cpu
 
-# Amazon Machine Image (AMI)
+# [Amazon Machine Image (AMI)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 
 # Connecting to EC2
 
@@ -52,3 +52,10 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
   - average network in
   - average network out
   - custom metric, such as number of users connected to application
+
+# Sto*rage*
+
+- EFS - file level storage service, that can provide a shared file system
+- EBS - virtual hard disk. 1 EC2 -> 1 EBS
+- [EFS vs EBS](https://www.geeksforgeeks.org/difference-between-amazon-ebs-and-amazon-efs/)
+- Elasticache - managed caching service for Memcached & redis

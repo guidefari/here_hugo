@@ -88,3 +88,13 @@ Can also be referred to as `A/B deployment` where two identical hardware environ
 - what is continuous delivery & its benefits
 - CodeCommit & MFA
 - IAM - need to do a deep dive on this
+
+# [Kinesis](https://aws.amazon.com/kinesis/)
+
+With Amazon Kinesis, you can ingest real-time data such as video, audio, application logs, website clickstreams, and IoT telemetry data for machine learning, analytics, and other applications.
+
+# Redshift
+
+- Data warehousing, mostly for Business intelligence
+- Single AZ
+- Operates as a cluster by default, I think. Not charged for leader node hours, only the compute node is billed.
