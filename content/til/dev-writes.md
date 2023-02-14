@@ -1,7 +1,7 @@
 ---
 title: Dev Writes
 date: 2023-02-14T21:51:36+02:00
-description: A little map to help you get started with writing
+description: An actionable map to help you get started with writing
 tags: [writing, documentation, strategy]
 aliases: [writing]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dev%20Writes']
@@ -91,3 +91,4 @@ You made it this far, here's a [meme about external cognition](https://www.insta
 ## Further resources
 
 - [Beth Aitman - Writing Effective documentation](https://youtu.be/R6zeikbTgVc)
+- [A guide for developers who want to become better writers by Jonathan Bossenger](https://www.youtube.com/watch?v=ToAovW0QzmQ)
