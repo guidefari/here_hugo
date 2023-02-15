@@ -7,22 +7,30 @@ aliases: [writing]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dev%20Writes']
 ---
 
-## Who this is for
+# Who this is for
 
 Mainly geared towards software engineers, but I think the principles shared will be useful for all knowledge workers.
+
+# Actionable steps
+
+- Get a Cross Platform, Quick Capture App. I use [Apple notes](https://www.icloud.com/notes), [Reminders](https://www.icloud.com/reminders), and [Notion](https://www.notion.so/)
+- A way to persist & publish notes. Preferably somewhere with your own domain name. I use [Hugo](https://gohugo.io/), [Github](https://github.com/txndai/here_hugo), and [Netlify](https://www.netlify.com/)
+- [Google Technical Writing course](https://developers.google.com/tech-writing) is a good first resource
+- Iterate your process. Eliminate friction
+- Immerse yourself in the world of writing for a few weeks, learn from podcasts, youtube, books, courses. That way you can start to build a system that works for you.
 
 ## Overview of underlying concepts/ideas
 
 > [Personal Knowledge Management (PKM). - the practice of capturing the ideas and insights we encounter in our daily life, whether from personal experience, from books and articles, or from our work, and cultivating them over time to produce more creative, higher quality work.](https://fortelabs.com/blog/a-complete-guide-to-tagging-for-personal-knowledge-management/)
 
 - My site is a [digital Garden](https://tomcritchlow.com/2019/02/17/building-digital-garden/). This post is a great example of a [riff](https://readwise.io/reader/shared/01gryj3r9wj5dakkck8bd6s79v), or [Scott Hanselman's **scale yourself**™️ idea](https://youtu.be/FS1mnISoG7U)
-  - Closely linked to second brain
+  - Closely linked to [second brain]({{<ref "/tags/second-brain">}})
 - I strongly suggest [writing in public](https://www.swyx.io/learn-in-public). As a [strategic move](https://tomcritchlow.com/2022/08/29/blogging-agency/), and a means of learning via engagement & feedback from peers.
 - Eliminate friction where possible. Try make it swift and painless to go from idea to something written down.
 
-⚠️ **The idea isn't that you pick up all these habits at once, but rather expose you to a wide array of strategies and hacks that have worked for me. pick what works for you, modify it to suit your needs, and discard the rest**
+> ⚠️ **The idea isn't that you pick up all these habits at once, but rather expose you to a wide array of strategies and hacks that have worked for me. pick what works for you, modify it to suit your needs, and discard the rest**
 
-# Quick Capture
+## Quick Capture
 
 The most convenient place to quickly jot down something. Can be An app on your phone, physical notebook, tablet. This is where you go when an idea pops into your head, or writing meeting notes.
 
@@ -76,17 +84,10 @@ You made it this far, here's a [meme about external cognition](https://www.insta
 - [Building A Second Brain]({{<ref Tiago-Forte>}}) - By Tiago Forte and David Perell. I've learnt a ton about writing from these gentlemen.
 - [Write of Passage](https://open.spotify.com/show/2Vbl6BWtqesc2Rf5YAJYnt)
 
-# Shameless plug
+## Shameless plug
 
 - My process hasn't changed much over the years. [Here's what it looked like in 2020]({{<ref the-way-my-notes-are-setup.md>}}).
 - [And in December 2021]({{<ref 2021-note-setup>}}). The set up hasn't changed much since, I've gone back to Notion for private notes that need a URL.
-
-# Actionable steps
-
-- Cross Platform Quick Capture App
-- A way to persist & publish notes. Preferably somewhere with your own domain name
-- [Google Technical Writing course](https://developers.google.com/tech-writing) is a good first resource
-- Iterate. Eliminate Friction
 
 ## Further resources
 
