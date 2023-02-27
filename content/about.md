@@ -15,7 +15,7 @@ my name is Guide.
 - Love a good product, which has led to a natural inclination towards [UX]({{<ref "tags/ux">}}) & [design]({{<ref "tags/design">}}) in general.
 - Passionate [Music curator]({{<ref "content#curated-music">}})
 - Writing about [software, music, & related topics]({{<ref content>}}).
-- Business minded engineer, seeking to be “really good at understanding the heart of the problem, and solving just for that”. I try to be pragmatic in my approach to work.
+- Software consultant at heart, seeking to be [“really good at understanding the heart of the problem, and solving just for that”](https://youtu.be/lvs7VEsQzKY?t=178). I try to be pragmatic in my approach to all work.
 - Continuous improvement of my skill is part of what I bring to the table as a professional
 
 ---
