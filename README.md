@@ -26,3 +26,14 @@
   <link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
  {{ end }}
 ```
+
+# Raw HTML in your markdown
+
+add this to `config.yaml`
+
+```yaml
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+```
