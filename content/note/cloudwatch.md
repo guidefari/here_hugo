@@ -17,7 +17,7 @@ Cloudwatch is one name used for:
 
 1. Cloudwatch logs
 2. Cloudwatch Metrics
-3. Cloudwatch Events - Trigger an event based on a condition, or on a schedule. eg if an EC2 instance is terminated, that would generate an event that can be used to trigger something else
+3. Cloudwatch Events (This is now [EventBridge](https://aws.amazon.com/eventbridge/)) - Trigger an event based on a condition, or on a schedule. eg if an EC2 instance is terminated, that would generate an event that can be used to trigger something else
 4. Cloudwatch Alarms - Triggers notifications based on metrics in breach of a defined threshold
 5. Cloudwatch Dashboards - create custom dashboards from cloudwatch metrics
 
