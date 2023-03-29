@@ -52,3 +52,4 @@ Permalinks:
   playlist: "/:filename/"
   mix: "/:filename/"
   note: "/:filename/"
+  tweet: "/:filename/"
