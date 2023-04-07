@@ -1,78 +1,22 @@
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-
-	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
-
-	{{ if .IsHome }}
-		{{ if eq $paginator.PageNumber 1 }}
-			<title>{{ .Title }}</title>
-			<meta name="description" content="{{ .Site.Params.subtitle }}" />
-			<link rel="canonical" href="{{ .Permalink }}" />
-		{{ else }}
-			<title>{{ .Title }} | Page {{ $paginator.PageNumber }}</title>
-			<meta name="description" content="This is page {{ $paginator.PageNumber }} of our content." />
-			<link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/" />
+<header>
+	<div class="flex space-x-5">
+		<a title="Home" href="{{ .Site.BaseURL }}">
+			<svg class="w-10 h-10" data-darkreader-inline-stroke="" fill="none" stroke="currentColor" style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+		</a>
+		<a title="goosebumps.fm" href="https://goosebumps.fm" target="_blank">
+			<svg class="w-10 h-10" data-darkreader-inline-stroke="" fill="none" stroke="currentColor" style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+		</a>
+		<a title="email" href="mailto:yo@guidefari.com" target="_blank">
+			{{- partial "mail.svg" . -}}
+		  </a>
+	</div>
+	<nav>
+		{{ range .Site.Menus.main }}
+		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
-	{{ else }}
-		{{ if .Params.seoTitle }}
-			<title>{{ .Params.seoTitle }}</title>
-		{{ else }}
-			<title>{{ .Title }}</title>
-			{{ end }}
-			<meta name="description" content="{{ .Description }}" />
-			<link rel="canonical" href="{{ .Permalink }}" />
-	{{ end}}
-
-	<link rel="icon" type="image/png" href="/favicon.png" />
-
-	{{- template "_internal/opengraph.html" . -}}
-	{{- template "_internal/twitter_cards.html" . -}}
-	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
-		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	{{- else if (isset .Site.Params "social") -}}
-		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
-	{{ end }}
-	{{ if .Site.Params.useCDN | default false -}}
-		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-	{{- else -}}
-	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
-        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
-	{{ end }}
-
-	{{ $style := resources.Get "css/main.css" | fingerprint }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
-
-	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
-	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}"> 
-
-	
-	
-	<!-- Custom CSS style get applied last -->
-	{{- if isset .Site.Params "customcss" }}
-		{{ range .Site.Params.customCSS }}
-		{{ $customstyle := resources.Get . | fingerprint }}
-		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+		{{ if eq .Site.Params.mode "toggle" -}}
+        | <a id="dark-mode-toggle" onclick="toggleTheme()" href=""></a>
+		<script src="{{ .Site.BaseURL }}js/themetoggle.js"></script>
 		{{ end }}
-	{{- end -}}
-	{{- range .Site.Params.customJS }}
-	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
-	<script src="{{ . }}"></script>
-	{{- else }}
-	<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
-	{{- end }}
-	{{- end }}
-
-	<!-- Google analytics - using Hugo built in partial -->
-	{{ if not .Site.IsServer }}
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNKPVT1XN3"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-QNKPVT1XN3');
-		</script>
-	{{ end }}
-</head>
+	</nav>
+</header>
