@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-	{{ partial "header.html" . }}
+<html class="p-4">
+	{{ partial "head.html" . }}
 	<body>
-		<section class="header-and-description-wrapper">
-			{{ partial "head.html" . }}
+		<section >
+			{{ partial "header.html" . }}
 			<div class="my-5 italic font-extrabold md:text-2xl lg:text-3xl">
 				{{- if isset .Site.Params "subtitle" -}}
 				<p>{{ .Site.Params.Subtitle | markdownify }}</p>
