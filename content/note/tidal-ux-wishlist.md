@@ -41,6 +41,7 @@ From the book "Your Music and People by Derek Sivers"
 - Sometimes pressing the `3 dots` or `more` icon, the UI completely freezes. Until the network request has been responded to, I assume. This only happens when in poor network conditions.
 
 # Search bar
+<!-- TODO: record video illustrating this -->
 
 - Hitting the keyboard shortcut will only take you to the search bar, it doesn't automatically highlight the old contents of the search bar too.
 - This often results in me having to press another keyboard shortcut to highlight all content before I start to type my text
