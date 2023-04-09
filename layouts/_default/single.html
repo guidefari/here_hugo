@@ -4,6 +4,7 @@
 		<div class="">
 			<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
 			<time >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+			<!-- <h5 id="wordcount"> {{ .WordCount }} Words </h5> -->
 			<div class="post-tags">
 				{{ if ne .Type "page" }}
 				{{ if gt .Params.tags 0 }}

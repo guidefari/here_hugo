@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html class="p-4">
-	{{ partial "head.html" . }}
-	<body>
-		<section >
-			{{ partial "header.html" . }}
-			<div class="my-5 italic font-extrabold md:text-2xl lg:text-3xl">
-				{{- if isset .Site.Params "subtitle" -}}
-				<p>{{ .Site.Params.Subtitle | markdownify }}</p>
-				{{- end -}}
-			</div>
-		</section>
-		<div class="content">
-			
-			<main >
-				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
-				<section class="py-5">
-					<h1 class="mb-5 text-4xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
-					<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-					<br><div class="description">
-						{{ if isset .Params "description" }}
-						{{ .Description }}
-						{{ else }}
-						{{ .Summary }}&hellip;
-						{{ end }}
-					</div>
-				</section>
-				{{ end }}
-				{{ template "partials/paginator.html" . }}
-			</main>
-		</div>
-	</body>
+  {{ partial "head.html" . }}
+  <body class="mx-auto prose max-w-7xl lg:prose-xl">
+    {{partial "hero.html"}}
+
+    <h1>Orientation</h1>
+    <ul>
+      <li>
+        Welcome to my
+        <a href='{{ref . "digital-garden"}}'>digital garden</a>.
+      </li>
+      <li>Here's what I'm up to <a href='{{ref . "now"}}'>now</a>.</li>
+    </ul>
+    {{partial "content-arcs.html"}}
+
+    <!-- <div class="content">
+      <main>
+        {{ $pages := where .Site.RegularPages "Type" "in"
+        .Site.Params.mainSections }} {{ $paginator := .Paginate (where $pages
+        "Params.hidden" "ne" true) }} {{ range $paginator.Pages }}
+        <section class="py-5">
+          <h1 class="mb-5 text-4xl">
+            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+          </h1>
+          <time
+            >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }}
+            <span class="draft-label">DRAFT</span> {{ end }}</time
+          >
+          <br />
+          <div class="description">
+            {{ if isset .Params "description" }} {{ .Description }} {{ else }}
+            {{ .Summary }}&hellip; {{ end }}
+          </div>
+        </section>
+        {{ end }} {{ template "partials/paginator.html" . }}
+      </main>
+    </div> -->
+  </body>
 </html>

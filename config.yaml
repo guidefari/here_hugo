@@ -12,6 +12,7 @@ pygmentscodefencesguesssyntax: true
 paginate: 10
 # Your Google analytics code.
 googleAnalytics: "G-QNKPVT1XN3"
+enableGitInfo: true
 params:
   # mode can be auto or toggle
   mode: auto
@@ -32,14 +33,14 @@ params:
       url: "https://twitter.com/guidefari"
   # customcss: ["css/style.css"]
   favicon: "favicon.png"
-menu:
-  main:
-    - name: Start Here
-      url: /about
-      weight: 1
-    - name: Content Nav
-      url: /content
-      weight: 2
+# menu:
+  # main:
+    # - name: Start Here
+    #   url: /about
+    #   weight: 1
+    # - name: Content Nav
+    #   url: /content
+    #   weight: 1
 Permalinks:
   post: "/:filename/"
   album: "/:filename/"
@@ -53,3 +54,14 @@ Permalinks:
   mix: "/:filename/"
   note: "/:filename/"
   tweet: "/:filename/"
+
+frontmatter:
+  date:
+  - date
+  - publishDate
+  - lastmod
+  lastmod:
+  - :git
+  - lastmod
+  - date
+  - publishDate

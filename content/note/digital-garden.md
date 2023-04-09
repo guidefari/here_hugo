@@ -1,30 +1,10 @@
-+++
-title = "About"
-description = "why does this site exist?"
-date = "2021-10-20"
-aliases = ["about-us","about-hugo","contact"]
-author = "Guide Fari"
-+++
-
-## allow me to introduce myself 🎵
-
-my name is Guide.
-
-- Frontend Engineer [@Flexperto](https://flexperto.com/en/).
-- Previously [@sigma](https://sigmadigital.io/).
-- Love a good product, which has led to a natural inclination towards [UX]({{<ref "tags/ux">}}) & [design]({{<ref "tags/design">}}) in general.
-- Passionate [Music curator]({{<ref "content#curated-music">}})
-- Writing about [software, music, & related topics]({{<ref content>}}).
-- Software consultant at heart, seeking to be [“really good at understanding the heart of the problem, and solving just for that”](https://youtu.be/lvs7VEsQzKY?t=178). I try to be pragmatic in my approach to all work.
-- Continuous improvement of my skill is part of what I bring to the table as a professional
-
 ---
-
-- Here's what I'm up to [now]({{<ref now>}}).
-- An overview on how I [communicate]({{<ref communications-readme>}}) when working.
-- A walkthrough of the [content]({{<ref content>}}) on this site.
-
-# why does this site exist?
+title: "Digital Garden"
+date: 2023-04-07T12:36:05+02:00
+description: Answering the question "Why does this site exist?"
+tags: []
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+---
 
 > as Scott Hanselman says, email is where keystrokes goes to die
 > I often have thoughts that I want to share with more than one person, this makes it easier to do that.

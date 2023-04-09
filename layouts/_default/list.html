@@ -9,7 +9,7 @@
 	{{- range .Data.Pages -}}
 		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
 		<section class="py-5">
-			<h2 class="mb-5 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+			<h2 class="mt-4 mb-2 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
 			<time >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
 			<br><div class="description">
 				{{ if isset .Params "description" }}
@@ -18,7 +18,7 @@
 				{{ .Summary }}&hellip;
 				{{ end }}
 			</div>
-			<hr/>
+			<!-- <hr/> -->
 		</section>
 		{{- end -}}
 		{{- end -}}

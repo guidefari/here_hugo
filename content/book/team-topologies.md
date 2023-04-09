@@ -49,3 +49,11 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A
 - establishes and clarifies team responsibilities. no ambiguity in who owns what
 - promotes good kind of collaboration between teams
 - plans and budgets for cross-team enablers - think guilds; bringing people together from all over the organisation
+
+# Related reading
+- [Engineering management for the rest of us]({{<ref engineering-management>}})
+- [Introduction to Shape Up]({{<ref shape-up-notes-introduction>}}) - an alternative to scrum, popularised by [37signals](https://37signals.com/)
+- [Cognitive load theory]({{<ref cognitive-load-theory>}})
+- [ING Bank's approach to structuring teams & work]({{<ref ing-bank>}})
+- [Thoughtworks' James Lewis on Team topologies]({{<ref tt-jl>}})
+- [Podcast: Reckoning with the force of Conway's Law]({{<ref conways-law>}})

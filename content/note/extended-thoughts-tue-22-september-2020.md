@@ -1,6 +1,6 @@
 ---
 date: "2020-09-22"
-tags: ["log"]
+tags: [log, journal]
 title: "Extended Thoughts(Tuesday 22 September)"
 desctiption: "Notes on Cal Newport's 'Deep Work', my 'Ambient' playlist, Frontend Happy Hour, Syntaxfm & more 🤷?"
 ---
