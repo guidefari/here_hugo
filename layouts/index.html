@@ -2,17 +2,7 @@
 <html class="p-4">
   {{ partial "head.html" . }}
   <body class="mx-auto prose max-w-7xl lg:prose-xl">
-    {{partial "hero.html"}}
-
-    <h1>Orientation</h1>
-    <ul>
-      <li>
-        Welcome to my
-        <a href='{{ref . "digital-garden"}}'>digital garden</a>.
-      </li>
-      <li>Here's what I'm up to <a href='{{ref . "now"}}'>now</a>.</li>
-    </ul>
-    {{partial "content-arcs.html"}}
+    {{partial "hero.html"}} {{partial "content-arcs.html"}}
 
     <!-- <div class="content">
       <main>
