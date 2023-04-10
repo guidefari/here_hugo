@@ -23,3 +23,4 @@ I often open Pull Requests immediately when I start on a task. this allows for:
 # related reading
 - This note was prompted by an [article](https://martinfowler.com/articles/ship-show-ask.html) by [Rouan Wilsenach](https://www.rouanw.com/)
 - [Kent Beck's Thinking About Code Review](https://tidyfirst.substack.com/p/thinking-about-code-review/)
+{{<spotify episode 0be2Y9f2DViT47ozJTW1JS>}}
