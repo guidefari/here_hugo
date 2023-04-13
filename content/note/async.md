@@ -9,6 +9,8 @@ images: ['https://res.cloudinary.com/hokaspokas/image/upload/v1678788842/here-hu
 ![If you're reading this I'm working async](https://res.cloudinary.com/hokaspokas/image/upload/v1678788842/here-hugo/SCR-20230314-gpt_mikbhh.png)
 
 * I prefer to work async by default, sync only when necessary - such as pair programming, debugging, brainstorm sessions, helping unblock someone
+* If we're sharing a backlog, it's very likely that I'll be sync with you even during my 'async' hours,
+ just part of collaboration, right😉
 * this may sometimes mean my work hours are not the same as yours, so please don’t feel pressured to respond to my queries outside of your work hours.
 * True insight comes when I'm not in a sync environment. This means I often take notes while walking, gyming, shower, and many other places outside of the usual work environment. It's easier to connect and put thoughts together after letting things ponder for a bit.
 * Async by default creates artifacts (written documents, diagrams, and other illustrative stuff) that others can refer to in the future, preserving institutional knowledge & context beyond one or a few people's heads
