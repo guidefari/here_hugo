@@ -19,9 +19,11 @@ images: ['https://res.cloudinary.com/hokaspokas/image/upload/v1678788842/here-hu
 
 # What is working async
 
-- 30-60 minute [pomodoro sessions](https://todoist.com/productivity-methods/pomodoro-technique)
+- 60 - 90 minute [pomodoro sessions](https://todoist.com/productivity-methods/pomodoro-technique)
   - Sometimes much longer
-- Slack closed, opened at an hourly interval
+- 20 - 30 minute rest
+- Repeat
+- Slack closed, opened at the end of each pomodoro
   - This is why I won't be responding immediately
 
 # Why do I do it
