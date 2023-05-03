@@ -24,7 +24,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 6. [Meraki UI](https://merakiui.com)
 7. [Awesome tailwind](https://github.com/aniftyco/awesome-tailwindcss)
 8. [kutty](https://kutty.netlify.app/docs/)
-9.  [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
+9. [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
 10. [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
 11. [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
 12. [DaisyUI](https://daisyui.com/)
@@ -36,3 +36,4 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 
 # Repos & docs
 1. [NextJS + Tailwind](https://tailwindcss.com/docs/guides/nextjs)
+2. [Tailwind Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet) - shared by [Tyler](https://www.tylerpillay.co.za/) 🦾
