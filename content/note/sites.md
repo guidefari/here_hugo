@@ -1,7 +1,7 @@
 ---
 title: "Sites"
 date: 2023-03-26T10:46:00+02:00
-description: Ongoing sources of inspiration
+description: Ongoing sources of inspiration, some blogs I like, etc
 tags: [design, ux]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 ---
@@ -14,6 +14,9 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 love the colors, and typography here
 - [Flavio Copes](https://flaviocopes.com/)
 - [Tom Critchlow](https://tomcritchlow.com/)
+- [Jamie Tanna](https://www.jvt.me/)
+- [Carol.gg](https://carol.gg/) - I like the design and feel of this site.
+
 
 > **A common theme here is that I seem to enjoy good typography**
 >
