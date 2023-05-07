@@ -73,3 +73,8 @@ The quote above is another thing I’ve heard Derek say. From the book **Anythin
 
 > Avoid overthinking. When you’re happy with the work and you’re moved to share it with a friend, it might be time to share it with the world as well.
 >
+
+# Get the books
+- [The Creative Act: A Way of Being](https://www.amazon.com/Creative-Act-Way-Being/dp/0593652886)
+- [Anything You Want: 40 lessons for a new kind of entrepreneur](https://sive.rs/a)
+- [Hell Yeah or No](https://sive.rs/n)
