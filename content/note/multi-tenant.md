@@ -20,3 +20,7 @@ draft: true
 - SLA, Availability, Fault tolerance
 
 - Monitoring, Observability, Telemetry
+
+- security & integration patterns
+{{<youtube j7Sqt8GpYl0>}}
+– This is one of many videos I have on the topic
