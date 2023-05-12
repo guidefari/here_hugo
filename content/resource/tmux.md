@@ -6,25 +6,10 @@ tags: [resource]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resource%3A%20Tmux']
 ---
 
-# Vertical split
-- ``
-
-# Create new Window
-
-# Move to next Window
-What can general navigation look like
-
-# How to have alacritty open tmux on launch
-
-# [vim]({{<ref vim>}})
-
-# dashboard
-- Adrian shared some stuff
-
-# fzzy & improved file navigation
-
-# zsh auto complete
-
-# tmux auto save session
-I restart my laptop a lot. this is a need, save me time going forward.
-And VS code has gotten me to used to this experience, I want it in my terminal too :)
+# Key Concepts
+- Leader key: the prefix of keypress combination you need to hit to get tmux's attention. This can be reconfigured to match preference
+- Vertical split: `prefix + %`
+- Create new Window: `prefix + c`
+- Move to next Window: `prefix + n`
+- Attach to existing session: `tmux attach-session -t {session_id}`
+- [vim]({{<ref vim>}})
