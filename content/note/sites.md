@@ -17,7 +17,8 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 - [Carol.gg](https://carol.gg/) - I like the design and feel of this site.
 - [37signals](https://37signals.com/)
 - [Derek Sivers](https://sive.rs/)
-- [goosebumps.fm](https://www.goosebumps.fm/curated/inspo): a collection of some music related sites I love.
+- [goosebumps.fm](https://www.goosebumps.fm/curated/inspo) - a collection of some music related sites I love.
+- [Robert Heaton](https://robertheaton.com/)-  this dude is a great storyteller
 
 ### Reflections
 > A common theme here is that I seem to enjoy good typography
