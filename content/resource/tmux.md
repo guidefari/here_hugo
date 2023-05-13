@@ -13,3 +13,6 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resource%3A%20T
 - Move to next Window: `prefix + n`
 - Attach to existing session: `tmux attach-session -t {session_id}`
 - [vim]({{<ref vim>}})
+- Windows
+- Panes
+- Sessions
