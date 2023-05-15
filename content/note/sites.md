@@ -18,7 +18,9 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 - [37signals](https://37signals.com/)
 - [Derek Sivers](https://sive.rs/)
 - [goosebumps.fm](https://www.goosebumps.fm/curated/inspo) - a collection of some music related sites I love.
-- [Robert Heaton](https://robertheaton.com/)-  this dude is a great storyteller
+- [Robert Heaton](https://robertheaton.com/) - this dude is a great storyteller
+- [Andy Matuschak](https://andymatuschak.org/) has rabbit-hole worthy [notes](https://notes.andymatuschak.org/About_these_notes). His site has been a recommended read countless times at this point, and for good reason.
 
 ### Reflections
-> A common theme here is that I seem to enjoy good typography
+- A common theme here is that I seem to enjoy good typography
+- Sites that are primarily used as a second brain also resonate quite deep
