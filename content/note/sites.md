@@ -19,7 +19,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 - [Derek Sivers](https://sive.rs/)
 - [goosebumps.fm](https://www.goosebumps.fm/curated/inspo) - a collection of some music related sites I love.
 - [Robert Heaton](https://robertheaton.com/) - this dude is a great storyteller
-- [Andy Matuschak](https://andymatuschak.org/) has rabbit-hole worthy [notes](https://notes.andymatuschak.org/About_these_notes). His site has been a recommended read countless times at this point, and for good reason.
+- [Andy Matuschak](https://andymatuschak.org/) has rabbit-hole worthy [notes](https://notes.andymatuschak.org/About_these_notes). His site has been a recommended read countless times at this point, and for good reason. [Here are some key takeaways from his site](/andy). [Big thanks to Brie for the recommendation](https://twitter.com/zebriez/status/1657056237979324416?s=20)
 - [Andre's](https://github.com/ahoendgen) [ctrxdmp](https://crtxdmp.com/)
 
 ### Reflections
