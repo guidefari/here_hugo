@@ -16,4 +16,4 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Lessons%20from%
 - If you're writing and learning in public, [you are the primary audience by default](https://notes.andymatuschak.org/z8AfCaQJdp852orumhXPxHb3r278FHA9xZN8J). don't mix the process of writing 'publishable' work, and notes for yourself, those are two different caps. Very similar idea to Martin Fowler's workflows of refactoring.
 
 # Related reading
-while we're on the topic of atomic notes, the structure that Andy describes is similar to [how Tom Critchlow thinks about riffs](https://tomcritchlow.com/2023/02/10/riffs/). The big differences seem to be the motivation, but the execution shares similar principles.
+while we're on the topic of [atomic & evergreen notes](https://notes.andymatuschak.org/z4SDCZQeRo4xFEQ8H4qrSqd68ucpgE6LU155C), the structure that Andy describes is similar to [how Tom Critchlow thinks about riffs](https://tomcritchlow.com/2023/02/10/riffs/). The big differences seem to be the motivation, but the execution shares similar principles.
