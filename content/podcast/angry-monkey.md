@@ -44,3 +44,5 @@ excerpt from a text I sent:
 > The war of art should be re-titled “Resistance” 😂random thought I had earlier. that’s the core topic of the book, for me at least
 
 - [Why Small Habits Make a Big Difference](https://fs.blog/habits-james-clear/)
+
+> [If you wait until you’re motivated, you’ve already lost. If you let motivation dictate your actions, inertia conspires to keep you in place.**Action creates progress. Progress creates momentum. Momentum creates motivation.**](https://twitter.com/farnamstreet/status/1658804726069182465)
