@@ -36,3 +36,11 @@ This is a way of closing open loops, and staying mindful about your days
 - small wins is about practicing the executive function muscle
 - a quick example: instead of letting the dishes 'soak' after use, clean that shit up when you're done, lol.
 - you generally feel good and capable of more as you accumulate these small wins
+
+# related reading
+- a big part of the narrative in this episode reminded me of [The War of Art](https://stevenpressfield.com/books/the-war-of-art/).
+
+excerpt from a text I sent:
+> The war of art should be re-titled “Resistance” 😂random thought I had earlier. that’s the core topic of the book, for me at least
+
+- [Why Small Habits Make a Big Difference](https://fs.blog/habits-james-clear/)
