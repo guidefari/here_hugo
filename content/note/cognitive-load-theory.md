@@ -1,5 +1,5 @@
 ---
-title: "Team Topologies: Cognitive Load Theory"
+title: "Cognitive Load Theory"
 date: 2022-10-17T08:50:21+02:00
 description: How can this theory can be a helpful heuristic for effective team design
 tags: [psychology, learning, agile]
