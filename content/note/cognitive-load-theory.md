@@ -41,3 +41,6 @@ aliases: [clt, cognitive-load]
 {{<youtube DUlFxffjDFo>}}
 
 - This is a full presentation on cognitive load theory, and other stuff around managing information overload, & how we learn.
+
+# Related reading
+- Shared by Andre - [Cognitive Load Developer's Handbook 🧠](https://github.com/zakirullin/cognitive-load)
