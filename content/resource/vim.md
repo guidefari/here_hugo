@@ -49,3 +49,4 @@ plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
 
 ### Navigating around a file 
 - `Shift + G` - Takes you to end of file
+- `:!rm %` - to delete the current file. as seen https://stackoverflow.com/questions/16678661/how-can-i-delete-the-current-file-in-vim

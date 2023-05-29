@@ -82,3 +82,7 @@ git config --get remote.origin.url
 ```bash
 git rebase -i HEAD~3
 ```
+
+# Git Under The Hood
+- structure of the .git folder - the important files and the role they play
+- the different types of git objects
