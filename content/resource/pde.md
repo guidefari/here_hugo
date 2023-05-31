@@ -1,16 +1,59 @@
 ---
-title: "Vim"
-date: 2022-01-03T14:20:41+02:00
-description: Useful vim resources 
-tags: [vim, learning]
+title: "Personal Development Environment"
+date: 2023-05-31T05:18:59+02:00
+description: My personalised IDE setup
+tags: [resource]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+aliases: [vim, tmux]
 ---
 
-# links
+# Why
+- Putting together these bells & whistles teaches me how different programming languages work, how other people build and distribute software. A world that's slightly different from my day job in web dev. So there's learning interest
+- An environment where vim motions are a first class citizen
+
+# Tools
+- nvim - used nvchad as base config
+- lua is the scripting language used to config & setup the neovim env
+- tmux for session management
+- lazy git
+- mason
+
+# todo
+- tmux resurrect
+- ensure I'm well setup for react & typescript
+
+
+# Tmux notes
+
+{{<youtube DzNmUNvnB04>}}
+
+
+## Key Concepts
+- `Prefix`: keypress combination you need to hit to get tmux's attention. This can be reconfigured to match preference
+- Vertical split: `prefix + %`
+- Move around panes `prefix + ->` or `<-`
+- Attach to existing session: `tmux attach-session -t {session_id}`
+- [vim]({{<ref vim>}})
+- Panes
+- Sessions
+
+## Move around windows
+- Create new Window: `prefix + c`
+- Move to next Window: `prefix + n`
+- Move to previous Window: `prefix + a`
+- You can also use window number to jump to a specific window. this is where renaming windows is helpful. `prefix + 0`
+- Close window: `prefix + &`
+
+---
+
+# Vim notes
+
+## links
 - [4 week plan to master vim](https://peterxjang.com/blog/how-to-learn-vim-a-four-week-plan.html)
 - [Cheatsteet](https://vimsheet.com/)
 
 
-# videos
+## videos
 {{<youtube wlR5gYd6um0>}}
 {{<youtube H3o4l4GVLW0>}}
 
@@ -43,7 +86,7 @@ tags: [vim, learning]
 plus [nightfox](https://github.com/EdenEast/nightfox.nvim) theme.
 {{<youtube qb6fPgZMRF4>}}
 - Make sure to `PackerSync` after copying configs from git or the other machine:)
-- [Vim bootstrap](https://vim-bootstrap.com/) - a way to generate a `.vimrc`
+- [Vim bootstrap](https://vim-bootstrap.com/) - a way to generate a `.vimrc`. This is an alternative to lua, useful if you want to keep things super simple.
 - [vimcolorschemes](https://vimcolorschemes.com/)
 
 
