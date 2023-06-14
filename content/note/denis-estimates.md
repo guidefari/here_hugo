@@ -4,6 +4,7 @@ date: 2023-06-14T06:38:52+02:00
 description: Communicating our understanding of the problem and Forecasting completion of the solution
 tags: [process, product]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Denis%20Estimates']
+aliases: [den]
 ---
 In a recent newsletter titled ["Roadmaps don't create a product; Releases do"](https://craftingtechteams.substack.com/p/roadmaps-dont-create-a-product-releases), Denis mentioned 
 
@@ -29,3 +30,6 @@ and he shared a few tactics in each category.
 - separating waste from the core functionality
 - releasing incrementally polished iterations, where each increment is done (rather than 7 different parts and only number 8 is the first version of "done")
 - setting strict deadlines for launching a severily under-polished MVP (static pages, limited functionality, manual data manipulation)
+
+# Related reading
+I can't help but think being a more product minded engineer will help one to provide higher quality estimates. I round up a few articles [here](/product-engineer).
