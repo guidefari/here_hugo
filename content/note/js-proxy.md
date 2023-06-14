@@ -1,7 +1,7 @@
 ---
 title: "Javascript Proxy 101"
 date: 2023-06-02T05:15:29+02:00
-description: Some notes on JS proxies
+description: Someone gave me 5 minutes to do a sales pitch on the subject
 tags: [design]
 images:
   [
@@ -89,3 +89,5 @@ You might not use them everyday, but knowing they exist & understanding them to 
 - [6 Ways to Implement Metaprogramming in JavaScript with Proxies](https://www.codemotion.com/magazine/frontend/javascript/implement-metaprogramming-javascript-proxies/)
 - [Exploring the Power of JavaScript Proxies and Reflect API](https://soshace.com/exploring-the-power-of-javascript-proxies-and-reflect-api/)
 - [repo](https://github.com/txndai/proxy)
+- [JavaScript Getter and Setter](https://www.programiz.com/javascript/getter-setter)
+- [Javascript.info - Property getters and setters](https://javascript.info/property-accessors)
