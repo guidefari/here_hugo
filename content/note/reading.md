@@ -29,7 +29,7 @@ Charlie Munger
 > When you lose interest give it 5 more pages. Then skim the next chapter. If you’re still not interested put it down. It’s the authors job to keep your attention.
 >
 
-## levels to this shit
+## levels to this
 
 > Not everything needs to be read with the same intensity. Some books only deserve a skim, while others deserve your complete attention. How much effort you put in relates to what you’re reading and why you’re reading it.
 >
