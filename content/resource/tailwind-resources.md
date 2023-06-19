@@ -28,6 +28,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 10. [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
 11. [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
 12. [DaisyUI](https://daisyui.com/)
+13. [How to Create a Fixed Sidebar with Tailwind CSS](https://www.kindacode.com/snippet/how-to-create-a-fixed-sidebar-with-tailwind-css/)
 
 # Util
 1. [tailwind play](https://play.tailwindcss.com/) - New tool from Tailwind Labs.
