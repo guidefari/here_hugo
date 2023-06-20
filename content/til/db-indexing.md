@@ -22,10 +22,11 @@ Database indexing is a way to reduce lookup time of a database.
 
 
 ## Types of indexes
-* b-tree
-* b+tree
+* B-tree
+* Function-based
 * BRIN
 * GiST
+* Clustered/Non-clustered index
 
 # Related reading
 {{<youtube Jemuod4wKWo>}}
