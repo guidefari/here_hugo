@@ -32,7 +32,7 @@ Charlie Munger
 ## levels to this
 
 > Not everything needs to be read with the same intensity. Some books only deserve a skim, while others deserve your complete attention. How much effort you put in relates to what you’re reading and why you’re reading it.
->
+
 - 4 levels you can work with
     1. Entertainment
     2. Citing
