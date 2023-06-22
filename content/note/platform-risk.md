@@ -33,12 +33,19 @@ All of these are subject to platform risk. You can't de-risk yourself 100% & tha
 
 Content creators also face platform risk when it comes to distribution of content, but that's another post, I digress..
 
-## My own Platform Risk
+## Example of my platform Risk
+Spotify is my main tool for curation, I have hundreds of playlists on there, and about 9 750 liked songs at the time of writing.
+Music disappears off Spotify a lot of the time, which means I'm at risk of my beloved collection eroding over time.
+
 A big chunk of the experience on [goosebumps.fm](https://goosebumps.fm) is reliant on the Spotify API, & I don't like that.
 
-I'm hosting more of my own mp3's in the form of DJ mixes & podcasts, as opposed to track previews powered by the Spotify API.
+A few mitigation strategies:
+- I'm recording and hosting more of my own mp3's in the form of DJ mixes & podcasts, as opposed to track previews powered by the Spotify API.
+- Using more than one music streaming service (I don't keep secondary accounts active all year)
+- My favourite: building an offline collection of lossless music, via [bandcamp](https://bandcamp.com)
 
 # Related reading
 - [Startup illustrated - platform risk](https://www.startupillustrated.com/Archive/Platform-Risk)
 - [Why it’s OK for startups to have platform risk](https://medium.com/lightspeed-venture-partners/why-its-ok-for-startups-to-have-platform-risk-a3d70866cf13)
 - [IndieWeb](https://indieweb.org/) - promoting independent & distributed ownership of intellectual property
+- [Killed By Google](https://killedbygoogle.com/)
