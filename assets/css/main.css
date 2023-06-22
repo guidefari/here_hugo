@@ -368,7 +368,7 @@ table td {
   @media (min-width: 1280px) {
     h1, h2, h3, h4, h5 {
       position: relative;
-      left: -8rem;
+      left: -4rem;
       width: calc(100% + 8rem);
     }
     /* .desktop\:text-center { */

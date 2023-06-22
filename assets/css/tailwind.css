@@ -41,6 +41,10 @@
       strong {
         @apply font-bold text-yellow-200;
       }
+
+      .index-image {
+        @apply object-cover w-full rounded-md sm:h-32 sm:w-32 hover:ring-2 ring-yellow-300;
+      }
   }
 
 @layer components {
