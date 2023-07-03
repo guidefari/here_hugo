@@ -1,31 +1,42 @@
 ---
-title: "Multi Tenant"
+title: "Some Patterns of Multi-Tenant SaaS"
 date: 2023-04-29T23:05:50+02:00
 description: 
 tags: [architecture]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 draft: true
 ---
+I've had the pleasure of working on some multi-tenant products, and noticed some concerns repeat themselves.
 
-- architecture patterns
+## Disclaimer
+- There's no one blueprint for SaaS architecture. Sure there's patterns, but those are just tools for thinking.
 
-- onboarding
-
-- various AWS resrouces in my youtube
-
-- Compliance - SOC 2, HIPAA, GDPR
-
+# Management
+- Metrics
+- Analytics
+- Billing
+- Provisioning
+- Compliance - SOC 2, HIPAA, GDPR etc. Depending on the countries and industries you serve, you have to be aware of any compliance requirements.
 - PII
 
-- SLA, Availability, Fault tolerance
+# Application
+- Isolation
+- Partitioning
+- Deployment
+- Routing
+- UI whitelabelling (doing an E2E PoC on this would be cool)
 
-- Monitoring, Observability, Telemetry
+# Tenancy
+- Identity
+- Onboarding (preferably automated)
+- Tiering
 
-- security & integration patterns
-{{<youtube j7Sqt8GpYl0>}}
-– This is one of many videos I have on the topic
+# Silos vs Pools
+- Silo is a fully isolated environment, services being run and hosted for one tenant only
+- Pool is the other side of this, shared resources
 
 # Reading list
+{{<youtube j7Sqt8GpYl0>}}
 - [ ] [Approaches to implementing multi-tenancy in SaaS applications](https://developers.redhat.com/articles/2022/05/09/approaches-implementing-multi-tenancy-saas-applications#)
 - [ ] [Multi-Tenancy Trends in SaaS Applications](https://frontegg.com/blog/multi-tenancy-trends-in-saas-applications)
 - [ ] [Multi tenant Architecture for a SaaS Application on AWS](https://www.clickittech.com/saas/multi-tenant-architecture/)
