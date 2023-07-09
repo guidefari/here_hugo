@@ -13,7 +13,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 - [monobooth](https://moonbooth.com/hugo/) - love the colors, and typography here
 - [Flavio Copes](https://flaviocopes.com/)
 - [Tom Critchlow](https://tomcritchlow.com/)
-- [Jamie Tanna](https://www.jvt.me/)
+- [Jamie Tanna](https://www.jvt.me/) - very very cool blog! Jamie is an advocate for an independent web, he's put together a very cool site. [repo](https://gitlab.com/tanna.dev/jvt.me)
 - [Carol.gg](https://carol.gg/) - I like the design and feel of this site.
 - [37signals](https://37signals.com/)
 - [Derek Sivers](https://sive.rs/)
