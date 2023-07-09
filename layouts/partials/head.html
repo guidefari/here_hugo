@@ -1,6 +1,12 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
+	<meta name="color-scheme" content="dark">
+
+	{{ $style := resources.Get "css/main.css" | fingerprint }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
+	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}"> 
 
 	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
 
@@ -39,13 +45,6 @@
 	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
         <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
 	{{ end }}
-
-	{{ $style := resources.Get "css/main.css" | fingerprint }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
-
-	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
-	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}"> 
-
 	
 	
 	<!-- Custom CSS style get applied last -->
