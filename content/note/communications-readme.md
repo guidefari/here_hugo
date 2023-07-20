@@ -2,7 +2,7 @@
 title: "How I work"
 date: 2021-12-08T09:56:52+02:00
 description: My values, and how that translates to my preferred ways of working & communicating
-tags: [communication, productivity]
+tags: [communication, productivity, process]
 aliases: [how-i-work]
 ---
 
