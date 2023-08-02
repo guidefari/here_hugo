@@ -2,7 +2,7 @@
 title: "On Refactoring"
 date: 2023-04-10T23:36:28+02:00
 description: Some musings & observations on refactoring
-tags: [process, resource]
+tags: [process, resource, dx, architecture]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20Refactoring']
 ---
 

@@ -2,7 +2,7 @@
 title: "Podcast: Software Design with John Ousterhout"
 date: 2023-04-02T07:35:49+02:00
 description: From the Legacy Code Rocks podcast
-tags: [podcast, design, refactoring]
+tags: [podcast, design, refactoring, dx, architecture]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Software%20Design%20with%20John%20Ousterhout']
 ---
 
