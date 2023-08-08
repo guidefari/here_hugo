@@ -20,7 +20,11 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 - [UX]({{<ref "/tags/ux">}})
 - [Agile & software delivery]({{<ref "/tags/agile">}}) - How teams build & deliver software; [product development]({{<ref "/tags/product">}}) - a natural extension of the [devops]({{<ref "/tags/devops">}}) topic tbh
   - [Team Topologies]({{<ref team-topologies>}})
-
+- [Writing](/tags/writing) - Trying to keep my friends
+accountable to their writing goals.
+Coupled with setting up customised plans to help you write more!
+reach out if you want help around this area
+  - You may be interested in [How Writing Boosts My Developer Career](https://www.offerzen.com/blog/writing-boosts-my-developer-career)
 
 
 # curating music

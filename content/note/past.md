@@ -33,13 +33,13 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Past%20Work']
   - Using NextJS, AWS, Go, & Terraform as our core stack
 - Education - I was an active contributor to all learning related channels in our comms server.
 
-# Pro-Search
+# [Pro-Search](https://pro-search.io)
 - Have had the honor of making some contributions to [Pro-Search](https://pro-search.io), an [open source app](https://github.com/bhekanik/pro-search) started by [Bhekani](https://github.com/bhekanik).
 - A Svelte project, introduced me to the simple design patterns encouraged by the framework
 
 - **July 8 '22 update**: I haven't contributed here in a while
 
-# Consulting for Dataecho
+# Consulting for [Dataecho](https://dataecho.org/)
 - Product consulting & bringing [their webapp](https://dataecho.org/) to reality
 
 **Duties included:**
@@ -50,7 +50,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Past%20Work']
 - Feature grooming for the dev & design team (3 devs including me, 1 designer)
 - Project management
 
-# Do It For The Kids
+# [Do It For The Kids](https://doit4thekidz.org)
 Started Dec 2019
 - Volunteer work
 - This was my first real world client for web work!
