@@ -10,6 +10,12 @@
 
 	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
 
+	{{ if not .Params.images }}
+	{{ $ogImage := printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
+		<meta property="og:image" content="{{ $ogImage }}">
+		<meta name="twitter:image" content="{{ $ogImage }}">
+	{{ end }}
+
 	{{ if .IsHome }}
 		{{ if eq $paginator.PageNumber 1 }}
 			<title>{{ .Title }}</title>
@@ -25,11 +31,6 @@
 			<title>{{ .Params.seoTitle }}</title>
 		{{ else }}
 			<title>{{ .Title }}</title>
-			{{ end }}
-			{{ if not .Params.images }}
-			{{ $ogImage := printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
-				<meta property="og:image" content="{{ $ogImage }}">
-				<meta name="twitter:image" content="{{ $ogImage }}">
 			{{ end }}
 			<meta name="description" content="{{ .Description }}" />
 			<link rel="canonical" href="{{ .Permalink }}" />
