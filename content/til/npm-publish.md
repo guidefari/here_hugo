@@ -3,7 +3,6 @@ title: "TIL: How to publish an npm package"
 date: 2023-08-13T08:20:19+02:00
 description: Also set up an automated way to do it, leveraging Github Actions. With changelogs & versioning
 tags: [til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 ---
 
 # Context
@@ -15,7 +14,10 @@ Quite happy with the workflow so far.
 - [My Repo](https://github.com/txndai/spotify-effect)
 - [npm package - (spotify-effect)](https://www.npmjs.com/package/spotify-effect?activeTab=readme)
 
-Now, onto how it's done.
+Now, onto how it's done. These are the main tools I used:
+- [Github Actions](https://github.com/features/actions)
+- [tsup](https://tsup.egoist.dev/): for bundling the typescript
+- [Changesets](https://github.com/changesets/changesets)
 
 # [Changesets](https://github.com/changesets/changesets)
 This tool does a lot of the publishing heavylifting.
