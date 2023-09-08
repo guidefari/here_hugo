@@ -5,10 +5,11 @@ description: Something I learnt today. Maybe more than one thing👾
 tags: [til, react, websockets]
 ---
 # Websockets
-
 - URL protocol used isn’t `http` or `https`, it is instead `ws://` or `wss://`
 - `wss://` is websockets over TLS, same way `https` is.
 - With http, the comms are one way in that server can only respond to an HTTP req initiated by the client, whereas with websockets, the server can also initiate comms
+  - 2 way TCP/IP connection between a client and a server
+  - full-duplex
 
 > In a WebSocket request, a client requests that once HTTP connection is established, the server should *Upgrade*
  to WebSocket connection, as defined in the *Connection*
@@ -18,7 +19,7 @@ tags: [til, react, websockets]
 
 ### Basic ws request example
 
-```jsx
+```bash
 GET ws://websocket.example.com/ HTTP/1.1
 Origin: http://example.com
 Connection: Upgrade
