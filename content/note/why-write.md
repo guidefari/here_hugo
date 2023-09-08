@@ -1,7 +1,7 @@
 ---
 title: "Why Write"
 date: 2023-09-08T03:36:23+02:00
-description: 
+description: Exploring how writing is a tactical and strategic skill for developers to hone.
 tags: [writing, strategy]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Why+Write']
 ---
@@ -180,3 +180,4 @@ I like to think of my writing as the equivalent of a university transcript - dis
 * [Example of a task for a lead developer](https://youtu.be/X3AHdo34gWM?t=1163)
 * [Flavio Copes - How to start a blog](https://www.freecodecamp.org/news/how-to-start-a-blog-book/) - Free eBook
 * [John Sonmez - Soft Skills](https://www.barnesandnoble.com/w/soft-skills-john-sonmez/1120626700)
+* [Why developers should write and how to overcome the obstacles](https://www.offerzen.com/blog/why-developers-write-overcome-obstacles)
