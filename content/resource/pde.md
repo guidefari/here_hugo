@@ -44,6 +44,9 @@ aliases: [vim, tmux]
 - You can also use window number to jump to a specific window. this is where renaming windows is helpful. `prefix + 0`
 - Close window: `prefix + &`
 
+## tmuxifier
+- `tmuxifier s here_hugo` - to load a session
+
 ---
 
 # Vim notes
