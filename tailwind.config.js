@@ -29,6 +29,9 @@ module.exports = {
             '--tw-prose-headings': '#C8C2B7',
             blockquote: {
               color: '#CCC7B8',
+              strong: {
+                color: 'white',
+              }
             },
             strong: {
               color: 'white',
