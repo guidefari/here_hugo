@@ -2,7 +2,7 @@
 title: "Book Notes: Accelerate"
 date: 2021-12-28T16:27:39+02:00
 description: "highlights, quotes, & other interesting bits from Accelerate"
-tags: [book, notes, agile, devops, leadership]
+tags: [book, notes, agile, devops, leadership, process]
 ---
 
 - [Get the book here](https://www.goodreads.com/book/show/35747076-accelerate)

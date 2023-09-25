@@ -2,7 +2,7 @@
 title: "Pitch → Shape → Kickoff -> Bet/Commit → Cooldown"
 date: 2023-03-21T17:43:50+02:00
 description: 
-tags: [planning, strategy, agile]
+tags: [planning, strategy, agile, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 ---
 

@@ -1,6 +1,6 @@
 ---
 date: "2020-12-16"
-tags: [agile, writing, basecamp]
+tags: [agile, writing, basecamp, process]
 title: "Shape Up - writing the pitch"
 summary: "Summary of the ingredients that make up a pitch"
 ---

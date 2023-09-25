@@ -2,7 +2,7 @@
 title: "Notes & Resource: Martin Fowler"
 date: 2021-10-28T10:29:36+02:00
 description: Various lessons and clippings from Martin Fowler.
-tags: [microservices, devops, architecture, backend, resource, notes]
+tags: [microservices, devops, architecture, backend, resource, notes, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Notes%20%26%20Resource%3A%20Martin%20Fowler']
 ---
 

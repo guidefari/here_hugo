@@ -2,7 +2,7 @@
 title: "Book Notes: Engineering Management For The Rest of Us"
 date: 2022-11-14T10:51:49+02:00
 description: "highlights, quotes, & other interesting bits from Engineering Management For The Rest of Us"
-tags: [book, notes, agile, leadership, culture]
+tags: [book, notes, agile, leadership, culture, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A%20Engineering%20Management%20For%20The%20Rest%20of%20Us']
 ---
 

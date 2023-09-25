@@ -2,7 +2,7 @@
 title: "Cognitive Load Theory"
 date: 2022-10-17T08:50:21+02:00
 description: How can this theory can be a helpful heuristic for effective team design
-tags: [psychology, learning, agile, dx, design]
+tags: [psychology, learning, agile, dx, design, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cognitive%20Load%20Theory']
 aliases: [clt, cognitive-load]
 ---

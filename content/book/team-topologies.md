@@ -2,7 +2,7 @@
 title: "Book Notes: Team Topologies"
 date: 2022-10-17T07:18:01+02:00
 description: "highlights, quotes, & other interesting bits from Team Topologies"
-tags: [book, notes, leadership, agile]
+tags: [book, notes, leadership, agile, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A%20Team%20Topologies']
 ---
 

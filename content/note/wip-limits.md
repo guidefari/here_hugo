@@ -2,7 +2,7 @@
 title: "On WIP Limits"
 date: 2022-10-31T14:42:50+02:00
 description: How WIP limits can help your team ship software faster, & more effectively
-tags: [agile, leadership]
+tags: [agile, leadership, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20WIP%20Limits']
 ---
 
@@ -25,6 +25,9 @@ To understand how WIP limits can be helpful, we need a bit more context of the b
 
 - [to quote Daniel Terhost-North](https://youtu.be/_mYlSMepTGw?t=620):
 > safely & sustainably reduce the lead time to thank you
+
+And as Paul used to say to us
+> Stop starting, and start finishing
 
 ### Why should you care about [Accelerate](https://itrevolution.com/ßbook/accelerate/)?
 - Written by the same people responsible for the annual [State of Devops reports](https://cloud.google.com/resources/state-of-devops), 4 years after they started publishing them, spent looking at the metrics of high performing vs low performing teams.

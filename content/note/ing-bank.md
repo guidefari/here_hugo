@@ -2,7 +2,7 @@
 title: "Team Topologies: ING Bank"
 date: 2022-10-11T08:18:49+02:00
 description: A case study of ING bank and their experiments with team topologies
-tags: [leadership, devops, agile, basecamp]
+tags: [leadership, devops, agile, basecamp, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Team%20Topologies%3A%20ING%20Bank']
 ---
 
