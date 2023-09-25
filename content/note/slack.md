@@ -34,7 +34,13 @@ With no slack, Team B goes into work cycles with full capacity committed to. You
 
 # How to implement slack
 
-- Team level: If your team routinely completes 15 - 23 story points per sprint, only commit to 15 story points per sprint. This is the way that’s been recommended by James Shore & Martin Fowler.
+## Team level
+If your team routinely completes 15 - 23 story points per sprint, only commit to 15 story points per sprint. This is the way that’s been recommended by James Shore & Martin Fowler.
+
+Another approach to apply at the team level, shared by [Bhekani](https://github.com/bhekanik):
+> In my current team we have something called self led initiatives. The idea is for **each engineer to spend 10% of their time working on something that’s not in our main roster but that is useful to the product that people want to work on**. This means people get the chance to deliver on objectives while still working on things that are interesting to them or things that bother them in the product. This has been quite a hit.
+
+## Individual level
 - One team member with no work assigned, rotates every sprint. This one is tricky though, depends a lot on the state of the product, and the experience level of your team. This is the [approach taken/recommended by Adam Wathan & Ben Orenstein](https://hackersincorporated.com/episodes/lessons-learned-in-2022-ish#t=8m27s)
 
 **Q**: _But what if dude that’s not assigned work doesn’t have find anything to do_
