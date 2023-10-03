@@ -85,3 +85,6 @@ WORKDIR /app/
 CMD ["air"]
 
 ```
+
+## Related Reading
+- [Develop a Go app with Docker compose](https://firehydrant.com/blog/develop-a-go-app-with-docker-compose/)
