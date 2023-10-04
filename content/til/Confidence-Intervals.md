@@ -3,7 +3,6 @@ title: "Confidence Intervals"
 date: 2022-03-07T20:17:29+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, ux]
-draft: true
 ---
 
 ## How I saw it being used
