@@ -47,3 +47,4 @@ And as Paul used to say to us
 - [Why limiting WIP is a crucial skill for Agile product development](https://lucidspark.com/blog/limiting-WIP-for-agile-development)
 - [My notes on delivery process](/tags/process)
 - [My barebones notes on the rest of the book]({{<ref accelerate>}})
+- John Cutler on [WIP, Multi-Tasking, Context Switching (Videos)](https://cutlefish.substack.com/p/wip-multi-tasking-context-switching)
