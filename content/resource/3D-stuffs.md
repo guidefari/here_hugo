@@ -16,6 +16,7 @@ What I've gathered so far is to help illustrate what's possible with 3D on the w
 - [Awwwards 3D sites](https://www.awwwards.com/websites/3d/)
 - Josh Comeau - [Animation articles](https://www.joshwcomeau.com/tutorials/animation/)
 - {{<youtube deg8bOoziaE>}}
+* [Make Sense Records](https://www.makesenserecords.com/) - super immersive 3D platform to explore the music. I still haven't explored it all!
 
 ## Tech
 - WebGL
