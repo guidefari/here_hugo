@@ -18,14 +18,6 @@ module.exports = {
               fontWeight: 700,
               textDecoration: 'none',
             },
-            li: {
-              listStyleType: 'square',
-              color: '#C8C2B7',
-            },
-            ol: {
-              listStyleType: 'decimal',
-              color: '#C8C2B7',
-            },
             '--tw-prose-headings': '#C8C2B7',
             blockquote: {
               color: '#CCC7B8',
