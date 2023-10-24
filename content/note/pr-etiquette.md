@@ -10,17 +10,18 @@ aliases: ['pr-et']
 # as an author
 The idea is to make a pull request easy on the reviewer. Another opportunity to reduce [irrelevant cognitive load](/cognitive-load-theory/#2-extraneous-irrelevant-load), and increase profit 💸.
 
-This is done by providing as much context as possible.
+**This is done by providing as much context as possible.**
 - Link to ticket
 - Link to designs
 - A summary of the work done. this can be a few bullet points
-- explicitly point out areas you want the reviewer to pay close attention to
-- steps to reproduce (if it’s a bugfix)
+- Explicitly point out areas you want the reviewer to pay close attention to
+- Steps to reproduce (if it’s a bugfix)
+- How to test - if you describe the happy path, the reviewer knows which areas to look out for error handling
 
 Michael Lynch has great articles about code review. He shares [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
 
 ## Naming Conventions
-Good naming conventions I've seen exist at branch level, and commit messages.
+I've seen naming conventions exist at branch level, and commit messages.
 
 When naming branches, usually the ticket number alone is enough. You can also prefix them to indicate the type of work being done
 eg `bug`, `hotfix`, `feat`, `chore` etc.
