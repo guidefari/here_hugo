@@ -10,7 +10,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=On+Prioritising
 - Asynchronous pull requests are part of your dev workflow.
 - To keep things simple, this applies as you’re working on a new feature
 - In a cross platform team (Dev, QA, Product/Design)
-- Your environment encourates [team first thinking](/team-topologies#team-first-thinking), as opposed to measuring individual developer output.
+- Your environment encourages [team first thinking](/team-topologies#team-first-thinking), as opposed to measuring individual developer output.
   - This is also a way to organise your teams for optimal throughput
   - Sets you up for a [good system wide flow, more effective than a local optimisation](https://youtube.com/watch?v=1aOItUyZ2wQ&t=600).
 
