@@ -41,5 +41,5 @@ images: ['https://res.cloudinary.com/hokaspokas/image/upload/v1678788842/here-hu
 - A more detailed note on [how I work]({{<ref communications-readme>}})
 - [Scott Hanselman's complete list of productivity tips](https://www.hanselman.com/blog/scott-hanselmans-complete-list-of-productivity-tips)
 - How to pair program async using the [ping pong method](/pppp)
-> [It’s annoying because this is a lesson I have to relearn every so often.
+> [this is a lesson I have to relearn every so often.
 > I learned that to do great work you need space. You need time. Away from people and notifications and messages, away from anything that can steal your attention.](https://www.robinrendle.com/notes/time-control/)
