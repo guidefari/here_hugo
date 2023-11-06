@@ -18,6 +18,8 @@ The idea is to make a pull request easy on the reviewer. Another opportunity to 
 - Steps to reproduce (if it’s a bugfix)
 - How to test - if you describe the happy path, the reviewer knows which areas to look out for error handling
 
+[Here's a template](https://gist.github.com/Tyler-The-Creator/7664546af0a3583693126c9a3dd6c043) you can refer to.
+
 Michael Lynch has great articles about code review. He shares [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
 
 # Naming Conventions
