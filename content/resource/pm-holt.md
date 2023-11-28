@@ -46,3 +46,18 @@ Keep it effective and efficient.
 
 ## On Preparation
 > [a lot of the work you do will never be visible to anyone, and that is okay](https://pm.holt.courses/lessons/communication/say-less)
+
+## How engaged are your typical readers?
+> [rarely a reader will take more than five minutes to read a doc. One to two is a pretty engaged reader. Five minutes is a highly engaged reader.](https://pm.holt.courses/lessons/technical-writing/applying-previous-principles)
+
+## Diagrams
+Well made diagrams allow you to organise & tell a story in a way very hard to do with words. Use these skillfully.
+
+## [Executive Summary](https://pm.holt.courses/lessons/technical-writing/executive-summaries)
+Start your docs with these. it places important details upfront.
+This is another effective way to do context setting.
+
+You can even use a hook to grab their attention. Is this clickbait? I think not,
+if you aren't actually bullshitting😆
+
+Stripe calls these sections **BLUF** - Bottom Line Up Front
