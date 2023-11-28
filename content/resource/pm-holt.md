@@ -70,8 +70,24 @@ Stripe calls these sections **BLUF** - Bottom Line Up Front
 ## No Agenda, no attenda
 For important meetings, send the agenda out beforehand.
 
-## Timeboxing
+## [Timeboxing](https://pm.holt.courses/lessons/meetings/meeting-prep)
 Timebox key topics to keep discussions from derailing or going on longer than they should.
 
 ## Come in with a decision made
-> Meetings where you make decisions by committee, where someone comes in, presents a bunch of info, and then asks, "What do you all think" suck. It always ends up with the loudest voices in the room dominating and frequently ends up with someone's opinion as the solution rather than the room's consensus. Don't do that. Instead, make a decision yourself. It's your meeting, do all the research, and come in with an opinion in your presentation. 
+> [Meetings where you make decisions by committee, where someone comes in, presents a bunch of info, and then asks, "What do you all think" suck. It always ends up with the loudest voices in the room dominating and frequently ends up with someone's opinion as the solution rather than the room's consensus. Don't do that. Instead, make a decision yourself. It's your meeting, do all the research, and come in with an opinion in your presentation.](https://pm.holt.courses/lessons/meetings/meeting-prep)
+
+## Own the flow of the meeting
+> [Generally, you want to control the flow of the meeting. People should regard you as being the meeting runner, and you should lean into that. A good rule of thumb is to not pass off the presentation to someone else when it can be avoided. Ask them to chime in, but you should be the one presenting.](https://pm.holt.courses/lessons/meetings/running-the-meeting)
+
+## Tangents
+These can be the most impactful part of a meeting. But can also be be
+a massive distraction of someone indulging themselves.
+Up to your discretion on which is which. 
+
+- Lean on agenda + timeboxing to steer the conversation back into control, if need be.
+- Another option is to request an async thread to be started to capture a tangent.
+
+> [Don't be afraid to interrupt anyone. Occasionally, they may push back and say, "This is important. Let's discuss now," but more often than not, they'll respect the agenda.](https://pm.holt.courses/lessons/meetings/running-the-meeting).
+
+Semi related is [inoculation theory](https://en.wikipedia.org/wiki/Inoculation_theory).
+> The idea is that if you know this thing is going to come up, address it first before the person can bring it up.
