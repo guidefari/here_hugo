@@ -42,4 +42,7 @@ Meetings that get derailed can be ineffective.
 Say less.
 
 ## Technical writing ia different from novels or essays
-Keep it effective and efficient
+Keep it effective and efficient.
+
+## On Preparation
+> [a lot of the work you do will never be visible to anyone, and that is okay](https://pm.holt.courses/lessons/communication/say-less)
