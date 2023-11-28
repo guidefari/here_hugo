@@ -1,9 +1,9 @@
 ---
-title: "Sites"
+title: "Blogroll"
 date: 2023-03-26T10:46:00+02:00
 description: Ongoing sources of inspiration, some blogs I like, etc
 tags: [design, ux]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Blogroll']
 ---
 
 - [Max Böck (mxb.dev)](https://mxb.dev/)
@@ -21,7 +21,16 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sites']
 - [Robert Heaton](https://robertheaton.com/) - this dude is a great storyteller
 - [Andy Matuschak](https://andymatuschak.org/) has rabbit-hole worthy [notes](https://notes.andymatuschak.org/About_these_notes). His site has been a recommended read countless times at this point, and for good reason. [Here are some key takeaways from his site](/andy). [Big thanks to Brie for the recommendation](https://twitter.com/zebriez/status/1657056237979324416?s=20)
 - [Andre's](https://github.com/ahoendgen) [ctrxdmp](https://crtxdmp.com/)
+- Gergely
+- Martin Fowler
+- Lead Dev
+- Julia Evans
+- Irrational Exuberance
+- Stay SaaSy
+- 
 
-### Reflections
+# Reflections
 - A common theme here is that I seem to enjoy good typography
 - Sites that are primarily used as a second brain also resonate quite deep
+
+## Also see [podroll](/podroll)
