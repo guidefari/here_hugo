@@ -41,7 +41,7 @@ Meetings that get derailed can be ineffective.
 ## Don't convince people who don't need convincing
 Say less.
 
-## Technical writing ia different from novels or essays
+## Technical writing is different from novels or essays
 Keep it effective and efficient.
 
 ## On Preparation
@@ -61,3 +61,17 @@ You can even use a hook to grab their attention. Is this clickbait? I think not,
 if you aren't actually bullshitting😆
 
 Stripe calls these sections **BLUF** - Bottom Line Up Front
+
+# Running effective meetings
+
+## Communicate your intention
+> [What do you want from the meeting? What do others need from it? What is success? What would be a waste of people's time?... It allows you to set an agenda. It also allows you to say, "We have an objective in this time slot, and we are getting off-topic."](https://pm.holt.courses/lessons/meetings/meeting-prep)
+
+## No Agenda, no attenda
+For important meetings, send the agenda out beforehand.
+
+## Timeboxing
+Timebox key topics to keep discussions from derailing or going on longer than they should.
+
+## Come in with a decision made
+> Meetings where you make decisions by committee, where someone comes in, presents a bunch of info, and then asks, "What do you all think" suck. It always ends up with the loudest voices in the room dominating and frequently ends up with someone's opinion as the solution rather than the room's consensus. Don't do that. Instead, make a decision yourself. It's your meeting, do all the research, and come in with an opinion in your presentation. 
