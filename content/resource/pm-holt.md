@@ -26,3 +26,20 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Pm+Holt']
 And on a related note
 
 > [By highlighting points of unknowns, you can invite your audience to help share the context you are looking for.](https://pm.holt.courses/lessons/communication/audience)
+
+## Context Setting
+> [You need to give your audience just enough context for them to be able to make a decision](https://pm.holt.courses/lessons/communication/say-less)
+
+Minimal viable context, if you may.
+
+> [If some of the people know it and it's important to your message, give a short summary and link to somewhere they can acquire more context.](https://pm.holt.courses/lessons/communication/say-less)
+
+## Reduce the surface area
+You want to keep your conversations focused, & on topic. Only share what is necessary
+Meetings that get derailed can be ineffective.
+
+## Don't convince people who don't need convincing
+Say less.
+
+## Technical writing ia different from novels or essays
+Keep it effective and efficient
