@@ -207,3 +207,22 @@ Sometimes, questions just can't be answered till the project starts. This is a g
 
 ### 9. Appendix
 ...Rest
+
+# Planning
+> [Without some sort of plan, you tend to suffer strongly from recency bias, where you tend to work on the things that you have been most recently thinking about, which is not always the most effective thing.](https://pm.holt.courses/lessons/planning/planning-tips)
+
+## Fit around your org
+You can bring your own spin to how you handle planning, but the whole point of planning is to drive organisation wide alignment, and simplify collaboration. With that said, make sure how you plan is aligned with the company's culture.
+
+Some like to think in quarters, some do 6 week sprints, and so on.
+
+## Follow company wide themes
+Similar advice to north star metrics. Some companies will explicitly publish themes for the season, sometimes you have to read the room.
+
+>[Stability, UX improvement, cost reduction](https://pm.holt.courses/lessons/planning/planning-tips)
+
+## Make projects completable
+Be specific. Explicitly set out a goal, or timebox a problem. 
+If it's a long project, make sure it has timelines.
+
+[**By the time something is on the roadmap, it should be researched**](https://pm.holt.courses/lessons/planning/planning-tips)
