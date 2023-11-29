@@ -91,3 +91,23 @@ Up to your discretion on which is which.
 
 Semi related is [inoculation theory](https://en.wikipedia.org/wiki/Inoculation_theory).
 > The idea is that if you know this thing is going to come up, address it first before the person can bring it up.
+
+# Metrics
+
+## Stats
+> [you should learn some basic stats as a PM. It will help you understand what is happening and be able to storytell with numbers better.](https://pm.holt.courses/lessons/metrics/stats-and-graphs)
+
+## Sampling
+A truly random sample is representative of the whole. Getting a truly random sample
+of your users to run experiments with, you'll get a better rounded view of what helps and what doesn't.
+
+> [Your NPS is always lower than you think, because customers who already churned aren’t answering the quiz. Neither are the disengaged people. Double selection bias. - Jason Cohen](https://twitter.com/asmartbear/status/1721432985663152301)
+
+Related - [The Uselessness of Net Promoter Score](https://madhurchadha.com/2021/06/24/problems-with-net-promoter-score/)
+
+## p-value
+> [A p-value can be thought of: "How confident are we in this statement."](https://pm.holt.courses/lessons/metrics/stats-and-graphs)
+
+## Graphs
+Similar to diagrams, use these only when relevant, and to drive a point home.
+Choose an appropriate one for the story you're trying to communicate.
