@@ -226,3 +226,6 @@ Be specific. Explicitly set out a goal, or timebox a problem.
 If it's a long project, make sure it has timelines.
 
 [**By the time something is on the roadmap, it should be researched**](https://pm.holt.courses/lessons/planning/planning-tips)
+
+## Prioritising
+Impact, risk, cost. this matrix can help a lot with prioritising.
