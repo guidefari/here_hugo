@@ -39,3 +39,4 @@ The customer support layer is responsible for triaging. At this point, their res
 # Related
 - [Learning from Incidents • Andrew Hatch • YOW! 2019](https://www.youtube.com/watch?v=TIL6UP9K-L4)
 - [Incident Review and Postmortem Best Practices - **Gergely Orosz**](https://newsletter.pragmaticengineer.com/p/incident-review-best-practices)
+- [Reducing the burden of incident response on your teams](https://www.youtube.com/watch?v=_XT3AkDMVoY)
