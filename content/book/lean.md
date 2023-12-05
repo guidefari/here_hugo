@@ -1,10 +1,14 @@
 ---
-title: "Implementing Lean"
+title: "Implementing Lean Software Development"
 date: 2023-10-03T08:18:18+02:00
-description: 
+description: Book Notes
 tags: [process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Implementing+Lean']
 ---
+
+### Get the book
+- [Implementing Lean Software Development: From Concept to Cash](https://www.oreilly.com/library/view/implementing-lean-software/0321437381/)
+
 
 ## Queueing theory
 Speaking to the impact of WIP limits.
@@ -24,3 +28,9 @@ and how that connects to the **flow of value through a system** that I've hear
 * Accelerate book & stuff from the SPACE framework
 * [Team Topologies](https://itrevolution.com/product/team-topologies/)' chapter on team first thinking
 * [Dan North on Value Stream mapping](/dn-flow)
+
+* helps break down what's happening around lead time. identifies the amount of time that a unit of work spends 'waiting to be picked up', vs 'being done' (the value adding activity)
+  * why lead time is a useful metric
+  * DORA & accelerate
+  * in software, work sitting in a queue, or WIP state, is liked to inventory in the manufacturing process
+* how queuing theory fits in
