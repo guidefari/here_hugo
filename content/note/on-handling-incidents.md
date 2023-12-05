@@ -63,3 +63,7 @@ incident response process. Like most things in tech, there's no "one size fits a
   - [Incident Review Practices](https://docs.google.com/spreadsheets/d/1GPINipdf-l2H05iKOUbpkrqwlZ61ZCJDnwY5iE8LtRM/edit#gid=0) - 
   Spreadsheet with aggregated survey results about how various teams handle incidents.
 - [Reducing the burden of incident response on your teams](https://www.youtube.com/watch?v=_XT3AkDMVoY)
+
+# Acknowledgements
+- [Bhekani](https://justreflections.bhekani.com/) for our initial chat about good incident response patterns
+- [Tyler](https://www.tylerpillay.co.za/) for a sanity check of the first draft
