@@ -8,7 +8,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Domain%20Driven
 ---
 
 # Ubiquitous Language
-A big idea in Domain Driven Design (DDD) is ubiquitous language.
+A big idea in Domain Driven Design (DDD) is [ubiquitous language](/ubiquitous-language).
 The books have entire chapters on the topic, but I'll try to summarise it and it's benefits below.
 
 **Definition**:
@@ -24,7 +24,10 @@ A shared language for use by domain experts and developers, that is used to expr
 - Even if you're not in an environment that explicitly uses DDD, you can introduce Ubiquitous Language:
   - Start a shared document, with the language you commonly use on your project, to make sure everyone's on the same page
 
+
 # Related reading
 - best place to start is [Vaughn Vernon's](https://vaughnvernon.com/) [Domain Driven Design Distilled](https://kalele.io/books/)
 - [Martin Fowler - UbiquitousLanguage](https://martinfowler.com/bliki/UbiquitousLanguage.html)
 - [Developing the ubiquitous language](https://thedomaindrivendesign.io/developing-the-ubiquitous-language/)
+- [Baking Domain Concepts Into Code - Paul Rayner - DDD Europe 2023](https://www.youtube.com/watch?v=o_vAjX2vHu8)
+- [Naming in DDD - Sepehr Namdar & Khaled Souf - DDD EU 2022](https://www.youtube.com/watch?v=KHgftXIlGsY)

@@ -1,9 +1,9 @@
 ---
-title: "Book Notes: DDDD and IDDD"
+title: "Book Notes: Domain Driven Design Distilled"
 date: 2022-02-17T09:06:17+02:00
 description: "highlights, quotes, & other interesting bits from Domain Driven Design Distilled and Implementing DDD by Vaughn Vernon"
 tldr: very early draft, structuring a note I'd like to start filling up at some point 🙂
-tags: [book, notes, backend, DDD]
+tags: [book, notes, backend, ddd]
 ---
 
 # Nice summary
@@ -21,9 +21,14 @@ You need to be committed to building a team around them, and having constructive
 - Bounded Context
 - Ubiquitous Language
 
-## Architecture patterns that allow for DDD
+# Highlights
 
-## Tactical Design
+### What is DDD
+> In short, DDD is primarily about modeling a Ubiquitous Language in an explicitly Bounded Context.
+
+### Bounded Context
+> a Bounded Context
+> is a semantic contextual boundary. This means that within the boundary each component of the software model has a specific meaning and does specific things.
 
 ---
 
