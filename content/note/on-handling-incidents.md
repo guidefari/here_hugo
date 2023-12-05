@@ -34,8 +34,6 @@ The problem is compounded by the [recency bias](https://en.wikipedia.org/wiki/Re
 Root cause analysis assumes a straightforward relationship between causes and effects, which is not always the case in software development.
 Focus on learning, instead.
 
-
-
 # Customer support
 Have a customer support layer. How this can look depends on your specific situation’s needs. Email address, an actual phone number to call (dedicated support team or direct to developers), a slack or discord channel
 
