@@ -28,7 +28,7 @@ An answer [Jason](https://www.jason.af/)'s question "What did you learn in 2022?
 
 # [Architecture]({{<ref "/tags/architecture">}})
 
-- [DDD]({{<ref "/book/ddd">}})
+- [DDD]({{<ref "/book/dddd">}})
 - [Various AWS bits]({{<ref "/resource/aws">}}), preparing for Solutions Architecture exam
 
 # Organisation Design
