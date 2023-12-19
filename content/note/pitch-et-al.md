@@ -1,5 +1,5 @@
 ---
-title: "Pitch → Shape → Kickoff -> Bet/Commit → Cooldown"
+title: "Pitch → Shape → Kickoff -> Commit → Cooldown"
 date: 2023-03-21T17:43:50+02:00
 description: 
 tags: [planning, strategy, agile, process]
