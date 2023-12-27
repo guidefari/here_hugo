@@ -6,6 +6,9 @@ tags: [resource, product]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 ---
 
+> Product-minded engineers have lots of interest in the product itself. They want to understand why decisions are made, how people use the product, and love to be involved in making product decisions. They are people who would likely make a good product manager, if they ever decide to give up the joy of engineering
+> - [Gergely Orosz: Growing as a mobile engineer](https://www.mobileatscale.com/growing.html)
+
 # Reading list
 - [Rise of the Product Engineer](https://memos.hawkhill.ventures/p/rise-of-the-product-engineer)
 - [The Product-Minded Software Engineer by Gergely Orosz](https://blog.pragmaticengineer.com/the-product-minded-engineer/)
