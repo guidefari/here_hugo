@@ -18,6 +18,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
     3. Keeping docs up to date
     4. Dan North’s Red carpet philosophy
     5. Trying to minimise the time/cost between a new dev joining the team, and being productive
+    6. [Stay Saasy - Optimize onboarding](https://staysaasy.com/management/2020/08/28/Optimize-Onboarding.html)
 2. What is DX
 3. Why does it matter
 4. Fast Feedback loops
