@@ -67,6 +67,7 @@ aliases: [vim, tmux]
 
 {{<youtube wlR5gYd6um0>}}
 {{<youtube H3o4l4GVLW0>}}
+{{<youtube zHTeCSVAFNY>}}
 
 ## note to self
 
