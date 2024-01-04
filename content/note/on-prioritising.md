@@ -2,7 +2,7 @@
 title: "On Prioritising"
 date: 2023-10-24T20:56:20+02:00
 description: Some heuristics on how to pick the highest value thing to work on when embedded in a product team.
-tags: [process, product]
+tags: [process, product, playbook]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=On+Prioritising+Your+Work']
 ---
 

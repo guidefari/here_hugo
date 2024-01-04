@@ -3,7 +3,7 @@ title: "Podcast Notes: Building A Second Brain"
 date: 2021-12-10T18:32:43+02:00
 description: This man has well put together resources on the why & how of a second brain.
 tldr: bits about building a second brain I've found useful from Tiago.
-tags: [second-brain]
+tags: [second-brain, writing]
 ---
 
 # podcast

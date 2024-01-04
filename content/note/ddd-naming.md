@@ -2,7 +2,7 @@
 title: "Domain Driven Design and naming"
 date: 2023-04-17T11:45:55+02:00
 description: Musings on what Domain Driven Design taught me about naming variables, methods etc in my code.
-tags: [design, ddd]
+tags: [design, ddd, playbook]
 aliases: [dddn]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Domain%20Driven%20Design%20and%20naming']
 ---

@@ -2,7 +2,7 @@
 title: "Start With Abundance"
 date: 2022-03-30T20:56:07+02:00
 description: Reflections on lessons taught by David Perell & Tiago Forte, and how I'm applying it in organising my knowledge work. In this example, we focus on how it's helping with my music organisation.
-tags: [second-brain, podcast, music, curating]
+tags: [second-brain, podcast, music, curating, writing]
 ---
 
 # Intro

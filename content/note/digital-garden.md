@@ -2,7 +2,7 @@
 title: "Digital Garden"
 date: 2023-04-07T12:36:05+02:00
 description: Answering the question "Why does this site exist?"
-tags: []
+tags: [writing, strategy, second-brain]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Digital%20Garden']
 ---
 

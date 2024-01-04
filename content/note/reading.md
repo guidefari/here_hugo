@@ -2,7 +2,7 @@
 title: "On Reading more effectively"
 date: 2022-10-15T03:42:20+02:00
 description: Some highlights snipped from fs.blog + a Youtube video at the end
-tags: [learning, reading]
+tags: [learning, reading, writing]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20Reading%20more%20effectively']
 ---
 

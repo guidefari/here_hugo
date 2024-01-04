@@ -2,7 +2,7 @@
 title: "Lessons from Andy Matuschak"
 date: 2023-05-15T16:06:32+02:00
 description:
-tags: []
+tags: [writing, second-brain]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Lessons%20from%20Andy%20Matuschak']
 ---
 
