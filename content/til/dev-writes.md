@@ -17,7 +17,7 @@ Mainly geared towards software engineers, but I think the principles shared will
 - A way to persist & publish notes. Preferably somewhere with your own domain name. I use [Hugo](https://gohugo.io/), [Github](https://github.com/txndai/here_hugo), and [Netlify](https://www.netlify.com/)
 - [Google Technical Writing course](https://developers.google.com/tech-writing) is a good first resource
 - Iterate your process. Eliminate friction
-- Immerse yourself in the world of writing for a few weeks, learn from podcasts, youtube, books, courses. That way you can start to build a system that works for you.
+- Immerse yourself in the world of [writing](/tags/writing) for a few weeks, learn from [podcasts](https://open.spotify.com/show/40O0Lbp5ockSt0qSogo6q1?si=a260c543573a4f53), [youtube](https://youtube.com/playlist?list=PLFxhXLgGkVzKCn23_g8qM19DMDgco8eNJ&si=mtJh20GNAi91eFAK), [books](https://www.freecodecamp.org/news/how-to-start-a-blog-book/), courses. That way you can start to build a system that works for you.
 
 ## Overview of underlying concepts/ideas
 
@@ -94,3 +94,4 @@ You made it this far, here's a [meme about external cognition](https://www.insta
 - [Beth Aitman - Writing Effective documentation](https://youtu.be/R6zeikbTgVc)
 - [A guide for developers who want to become better writers by Jonathan Bossenger](https://www.youtube.com/watch?v=ToAovW0QzmQ)
 - [The Documentation System: tutorials, how-to guides, technical reference and explanation.](https://documentation.divio.com/)
+- [Writing prompts](/prompts)
