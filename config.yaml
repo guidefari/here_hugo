@@ -2,7 +2,6 @@
 baseURL: "https://guidefari.com"
 languageCode: en-us
 title: Guide Fari
-# theme: archie
 copyright: © Guide Fari
 enableRobotsTXT: true
 # code highlight
@@ -21,7 +20,7 @@ params:
   social:
     - name: GitHub
       icon: github
-      url: "https://github.com/txndai"
+      url: "https://github.com/guidefari"
     - name: LinkedIn
       icon: linkedin
       url: "https://www.linkedin.com/in/guide-fari-8b0063176/"
