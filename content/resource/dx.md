@@ -53,7 +53,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 
 ## References
 
-1. LeeRob articles
+1. [LeeRob](https://leerob.io/blog/developer-experience-examples)
 2. [What is DX](https://leaddev.com/process/what-developer-experience-your-route-better-productivity#Echobox=1699956180)
 3. [DevEx: What Actually Drives Productivity](https://queue.acm.org/detail.cfm?id=3595878) - there's a few highlights in my readwise that could be good to cite.
 4. https://podcasts.apple.com/za/podcast/legacy-code-rocks/id1146634772?i=1000611333019
