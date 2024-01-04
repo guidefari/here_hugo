@@ -1,0 +1,6 @@
+{{ $pages := .Site.RegularPages }}
+<ul>
+    {{ range $pages }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Description }}</li>
+    {{ end }}
+</ul>
