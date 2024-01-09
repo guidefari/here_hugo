@@ -6,6 +6,8 @@ tldr: very early draft, structuring a note I'd like to start filling up at some 
 tags: [book, notes, backend, ddd]
 ---
 
+- [Book](https://www.goodreads.com/book/show/28602719-domain-driven-design-distilled)
+
 # Nice summary
 
 {{<youtube 8Z5IAkWcnIw>}}
@@ -21,16 +23,12 @@ You need to be committed to building a team around them, and having constructive
 - Bounded Context
 - Ubiquitous Language
 
-# Highlights
+## Core domain
+> Your organization can’t be the best at everything, so it had better choose carefully at what it must excel.
 
-### What is DDD
+## What is DDD
 > In short, DDD is primarily about modeling a Ubiquitous Language in an explicitly Bounded Context.
 
-### Bounded Context
-> a Bounded Context
-> is a semantic contextual boundary. This means that within the boundary each component of the software model has a specific meaning and does specific things.
-
----
-
-{{<youtube 9xveNg4zhJA>}}
-{{<youtube gxgKgMvPH9I>}}
+## Bounded Context
+> a Bounded Context is a semantic contextual boundary.
+> This means that within the boundary each component of the software model has a specific meaning and does specific things.
