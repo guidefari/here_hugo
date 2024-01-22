@@ -6,6 +6,11 @@ tags: [book, notes, design, refactoring]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tidy+First']
 ---
 
+- [buy the book here](https://www.amazon.com/Tidy-First-Personal-Exercise-Empirical/dp/1098151240)
+- [check his newsletter here](https://tidyfirst.substack.com/)
+
+---
+
 We'll start by exploring a few tactics that can help you tidy up your codebase.
 
 # Naming Variables & Constants
