@@ -1,9 +1,9 @@
 ---
-title: "Book Notes: Tidy First"
+title: "Book Notes: Tidy First?"
 date: 2024-01-04T23:05:19+02:00
 description: "highlights, quotes, & other interesting bits from Tidy First"
 tags: [book, notes, design, refactoring]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tidy+First']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tidy+First%3F']
 ---
 
 - [buy the book here](https://www.amazon.com/Tidy-First-Personal-Exercise-Empirical/dp/1098151240)
