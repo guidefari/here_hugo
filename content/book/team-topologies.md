@@ -47,6 +47,11 @@ Some literature on the topic:
 - [Platform stories from ING bank](/ing-bank)
 - [The Platform and Program Split at Uber](https://newsletter.pragmaticengineer.com/p/the-platform-and-program-split-at)
 
+### Thinnest Viable Platform
+
+- What’s the thinnest platform that could work?
+- If your org decides “we use AWS”, your thinnest viable platform can be something as small as a wiki page saying “these are the 5 AWS services that we use for ABCD”
+
 # Team interaction modes
 The book highlights that "Well defined interactions are key to effective teams"
 
@@ -62,26 +67,33 @@ Either not enough senior folk in the one team, or an improper mapping of **servi
 
 Anyway, onto the interaction mode that were recommended.
 
-## Collaboration
+## 1. Collaboration
 - 2 teams working together (or subsets of 2 teams). A useful constraint for managing dependencies is 
  > Constraint: A team should use collaboration mode with, at most, one other team at a time
 
  - Watch that this isn't happening too often though, as that's an indication of teams not having been sliced properly.
  - Communication & [coordination](https://cutlefish.substack.com/p/tbm-261-dependencies-in-faster-growing) overhead is something to look out for.
- - 
-## X-as-a-service
+
+## 2. X-as-a-service
 - 1 provides, 1 consumes.
 - Works best when the provider really takes into consideration the [developer experience](/dx).
 
-## Facilitating
+## 3. Facilitating
 - 1 team helps another
 
 > A combination of all three team interaction modes is likely needed for most medium-sized and large enterprises (and these modes are useful to introduce at smaller organizations sooner than many people expect).
 
-## Thinnest Viable Platform
+### Team interaction modes evolve over time
+- EG, an enabling team & stream aligned can go from collaboration to X-as-a-Service once patterns have been solidified
 
-- What’s the thinnest platform that could work?
-- If your org decides “we use AWS”, your thinnest viable platform can be something as small as a wiki page saying “these are the 5 AWS services that we use for ABCD”
+---
+
+### On Team boundaries
+> Techniques from domain-driven design (DDD) such as event storming and context mapping can help accelerate awareness of appropriate boundaries.
+
+> Use Awkwardness in Team Interactions to Sense Missing Capabilities and Misplaced Boundaries
+
+
 
 # Related reading
 
