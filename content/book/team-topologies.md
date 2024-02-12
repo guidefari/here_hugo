@@ -10,7 +10,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A
 
 # Team first thinking
  - The team is the means of delivery
- - design team for [cognitive load]({{<ref cognitive-load-theory>}}). Team has a maximum size, of about 8 people. This will also naturally limit the size of the software that the team has to be responsible for, while still understanding their domain pretty well
+ - design team for [cognitive load](/cognitive-load-theory). Team has a maximum size, of about 8 people. This will also naturally limit the size of the software that the team has to be responsible for, while still understanding their domain pretty well
  - Choosing boundaries for team ownership is a skill. Definitely not something that should be done by a manager with no technical awareness, as it impacts the architecture of your software - Conway’s law
 - On **Conway’s Law**: The way your teams are structured, dictates how your software architecture turns out.
     - Reverse Conway to mitigate worst effects
@@ -84,7 +84,7 @@ Anyway, onto the interaction mode that were recommended.
 > A combination of all three team interaction modes is likely needed for most medium-sized and large enterprises (and these modes are useful to introduce at smaller organizations sooner than many people expect).
 
 ### Team interaction modes evolve over time
-- EG, an enabling team & stream aligned can go from collaboration to X-as-a-Service once patterns have been solidified
+- EG, an enabling team & stream aligned can go from collaboration to X-as-a-Service once patterns have been solidified and a platform has been built
 
 ---
 
