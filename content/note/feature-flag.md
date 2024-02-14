@@ -2,7 +2,7 @@
 title: "Feature Flags"
 date: 2023-04-06T20:07:54+02:00
 description: Some things to think about when considering feature flags
-tags: [podcast, qa, agile, process]
+tags: [podcast, qa, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Feature%20Flags']
 ---
 

@@ -3,7 +3,7 @@ title: "Dan North - Patterns of Effective Teams"
 date: 2022-03-24T18:10:11+02:00
 description: Notes from an insightful talk by Dan North
 tldr: Notes from an insightful talk by Dan North, highly recommend you watch the talk before, or after reading.
-tags: [notes, management, leadership, agile, process]
+tags: [notes, management, leadership, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tech%20Talk%3A%20Patterns%20Of%20Effective%20Teams']
 ---
 

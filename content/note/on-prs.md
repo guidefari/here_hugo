@@ -2,7 +2,7 @@
 title: "Pull Requests & WIP"
 date: 2022-11-14T10:09:59+02:00
 description: I often open Pull Requests immediately when I start on a task.
-tags: [agile, process, refactoring, collaboration, communication]
+tags: [process, refactoring, collaboration, communication]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Pull%20Requests%20%26%20WIP']
 ---
 
