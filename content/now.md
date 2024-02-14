@@ -14,13 +14,11 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 # Daily
 - Software Engineering for [Zulzi](https://zulzi.com/)
   - Currently working on Checkers' [Sixty60](https://www.sixty60.co.za/about-sixty60.html) mobile team. Mostly React Native work
-- Trying to build an [http-client for the Spotify API](https://github.com/guidefari/spotify-effect) using [Effect-TS](https://www.effect.website/)
-  - I've been slacking on this🥲 in my defense, I've been onboarding onto sixty60.
+- Maintaining [Goosebumps](https://github.com/guidefari/nextgoose/) & [this blog](https://github.com/guidefari/here_hugo) as my sandbox for learning.
 
 ## Topics I'm currently obsessed with 
 - [Architecture]({{<ref "/tags/architecture">}}) - recently [AWS certified](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77) 😄. [Related notes here]({{<ref "/tags/aws">}})
 - [UX]({{<ref "/tags/ux">}})
-- [Agile & software delivery]({{<ref "/tags/agile">}})
 - [How teams build & deliver software](/tags/process)
 - [Product development]({{<ref "/tags/product">}}) - a natural extension of the [devops]({{<ref "/tags/devops">}}) topic tbh
   - [Team Topologies]({{<ref team-topologies>}})

@@ -6,24 +6,7 @@ tags: []
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 ---
 
-## Experience
-1. Full time: [Zulzi](#zulzi), Flexperto, Sigma
-2. Writing
-3. Personal: Goosebumps
-4. Freelance: This is where my professional career started. UI design & engineering for [Dataecho](https://www.dataecho.org/), [KBM](https://www.facebook.com/kbm.agency/), [Yani](https://www.figma.com/file/iTbQbo5SBvvMQQ5Y8Co176/Yani-Clean?type=design&node-id=0%3A1&mode=design&t=jmJI1Jp5abAHCz0U-1), [BHS](https://bts-stoic-davinci.netlify.app/), and a few clients
-5. Leadership: Hillside Dams Waterfront, Greenfingers
-6. Volunteer: DIFTK
-
-## Education
-1. Self Directed learning
-2. AWS
-3. CISCO
-4. Computer Science
-
----
-
-
-## Zulzi (Software Engineer - )
+## Zulzi (Software Engineer. June 2023 - Present)
 - Embedded in the [Checkers Sixty60](https://www.sixty60.co.za/) project
 - React Native, Typescript
 - Micro frontend architecture, multiple repos
@@ -32,11 +15,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 - This project has been a great case study for how socio-technical challenges can impact a product😅
 - Still taking any excuse to write: Architecture, Engineering strategy, documenting patterns
 
-## Writing
-
-## Goosebumps
-
-## Flexperto (Frontend Engineer - )
+## Flexperto (Frontend Engineer. May 2022 - May 2023)
 - Long term project was to convert a monolith php web app into React, all while keeping production up.
 - Built, battle tested, & documented migration strategies.
 - Documented patterns around our micro-frontend applications.
@@ -45,7 +24,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 - My knowledge of Linux, docker, bare metal, & cloud environments improved immensely as a result of working here.
 - I saw positive side effects from my writing efforts.
 
-## Sigma (Frontend Engineer - )
+## Sigma (Frontend Engineer. Jan 2021 - May 2022)
 - Bespoke software consultancy of about 20-30 employees.
 - Worked across multiple teams, and different technology stacks, including VB.Net, Angular, and React.
 - My time at sigma allowed me to demonstrate the ability to quickly adapt to the changing environments, & thrive within them.
@@ -55,4 +34,20 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 - Spent my last few months embedded in the internal Sigma Digital team. Using NextJS.
 - The most interesting assignment was building proof of concept projects, as part of architecture research.
 
+## Freelance (Dec 2019 - Jan 2021)
+- This is where my professional career started.
+- UI design & engineering for [Dataecho](https://www.dataecho.org/), [KBM](https://www.facebook.com/kbm.agency/), [Yani](https://www.figma.com/file/iTbQbo5SBvvMQQ5Y8Co176/Yani-Clean?type=design&node-id=0%3A1&mode=design&t=jmJI1Jp5abAHCz0U-1), [BHS](https://bts-stoic-davinci.netlify.app/), and a few other clients.
+- I've also done volunteer work for DIFTK
 
+## Leadership roles
+- Manager at Hillside Dams Waterfront.
+  - June 2018 - November 2019
+  - Ran operations for the venue & managed a rotating team of 7 - 10 people.
+- Research & Project Management with Greenfingers
+  - Learnt & taught farmers how to grow horticulture seedlings using a simple [hydroponic system](https://foodrevolution.org/blog/hydroponics/).
+
+## Education
+2. Maintaining [Goosebumps](https://github.com/guidefari/nextgoose/) & [this blog](https://github.com/guidefari/here_hugo) as my sandbox for learning.
+3. [AWS Certified Solutions Architect – Associate](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77/public_url)
+4. Once upon a time CISCO CCENT certified
+5. Did 4 semesters of Computer Science before the shift to self directed learning.
