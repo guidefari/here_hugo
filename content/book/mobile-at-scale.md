@@ -6,3 +6,7 @@ tags: [book, notes]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Mobile+at+Scale']
 ---
 
+# Performance
+- [ ] What metrics matter
+- [ ] How to do perf profiling on a react native app
+- [ ] How observability tooling can help you
