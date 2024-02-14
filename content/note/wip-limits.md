@@ -2,7 +2,7 @@
 title: "On WIP Limits"
 date: 2022-10-31T14:42:50+02:00
 description: How WIP limits can help your team ship software faster, & more effectively
-tags: [agile, leadership, process]
+tags: [leadership, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20WIP%20Limits']
 ---
 
