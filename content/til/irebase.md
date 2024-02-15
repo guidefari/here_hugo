@@ -7,12 +7,25 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Intera
 ---
 
 # what for
+
 used it to reword commit messages & commit bodies. I had messed up my conventional commits, and needed to tidy them up for our CI process. Not gonna lie, I was a little scared before I went into it, but it was no trouble at all.
 
-```bash
+```sh
 git rebase -i HEAD~3
 ```
+
+you have to force push when done with the changes.
+
+```sh
+git push -f
+```
+
 ## Some resources to help
+
 - [Hackernoon](https://hackernoon.com/beginners-guide-to-interactive-rebasing-346a3f9c3a6d)
 - [Medium](https://medium.com/fredwong-it/git-rebase-how-to-use-interactive-rebase-properly-34db370be995)
 - [Egghead video](https://egghead.io/lessons/git-reword-a-commit-with-git-rebase)
+
+## Related reading
+
+- [Safe force push](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/#safe-force-pushing)
