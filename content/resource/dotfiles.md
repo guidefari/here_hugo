@@ -8,8 +8,8 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Version%20Contr
 
 [Dotfiles](https://dotfiles.io/) are useful for all kinds of config on your machine.
 
-At some point, I spent so much time editing my dotfiles to personalise my [terminal](/pde).
-Inevitably, one has to change machines. Imagine having to lose all those hours of sweat, tears, & effort. Could never be me.
+At some point, I spent an uncomfortable amount of time editing my dotfiles to personalise my [terminal](/pde).
+Inevitably, I had to change machines. Imagine having to lose all those hours of sweat, tears, & effort. Could never be me.
 
 ### Enter [GNU stow](https://www.gnu.org/software/stow/) + a git repository
 
@@ -30,7 +30,7 @@ To illustrate, let's look at my `zsh` & `tmux` configs:
 - If I run `stow zsh` in the `~/dotfiles` directory, the symlink is created at `~/.zshrc`
 
 `~/dotfiles/tmux/.tmux.conf`
-- If I run `stow tmux` in the `~/dotfiles` directory, the symlink is created at `~/.tmux.conf`
+- Similarly, if I run `stow tmux` in the `~/dotfiles` directory, the symlink is created at `~/.tmux.conf`
 
 Also worth mentioning, your `dotfiles` directory has to be in the home directory for this to work, 
 ie `~/dotfiles`. Stow places the symlinks in the parent directory of where you run the command from.
