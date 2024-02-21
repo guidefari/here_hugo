@@ -3,7 +3,7 @@ title: "Version Controlled dotfiles"
 date: 2024-02-20T19:01:08+02:00
 description: Shout out GNU stow.
 tags: [resource, bash]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Stow']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Version%20Controlled%20dotfiles']
 ---
 
 [Dotfiles](https://dotfiles.io/) are useful for all kinds of config on your machine.
