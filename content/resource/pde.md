@@ -2,7 +2,7 @@
 title: "Personal Development Environment"
 date: 2023-05-31T05:18:59+02:00
 description: My personalised IDE setup
-tags: [resource]
+tags: [resource, bash]
 images:
   [
     "https://images-here-hugo.vercel.app/api/og-image?title=Personal+Development+Environment",
@@ -38,7 +38,7 @@ aliases: [vim, tmux]
 - Vertical split: `prefix + %`
 - Move around panes `prefix + ->` or `<-`
 - Attach to existing session: `tmux attach-session -t {session_id}`
-- [vim]({{<ref vim>}})
+- [vim](#vim-notes)
 - Panes
 - Sessions
 
