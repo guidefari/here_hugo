@@ -9,3 +9,5 @@ content/.obsidian
 **/.DS_Store
 **/.hugo_build.lock
 assets/css/style.css
+.obsidian
+**/.smart-connections
