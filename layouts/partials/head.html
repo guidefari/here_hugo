@@ -80,4 +80,8 @@
 		gtag('config', 'G-QNKPVT1XN3');
 		</script>
 	{{ end }}
+
+	{{ if .Params.noindex }}
+		<meta name="robots" content="noindex" /> 
+	{{ end }}
 </head>
