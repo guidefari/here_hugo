@@ -2,7 +2,7 @@
 title: "Code should communicate intent"
 date: 2024-03-19T06:50:23+02:00
 description: It's one thing to write code that does the thing. It's another to write code that tells the reader what it's doing
-tags: [design, dx]
+tags: [design, dx, refactoring, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Code%20should%20communicate%20intent']
 ---
 
@@ -31,6 +31,7 @@ Simplifying all of this **reduces the cost of maintaining the codebase**.
 # How it can be done
 - Descriptive naming. Well named types, interfaces, variables, & functions.
 - As a continuous effort. [Comprehension refactoring](https://martinfowler.com/articles/workflowsOfRefactoring/#comprehension) is a tactic I'd recommend in your day to day workflow.
+  - [Ping pong pair programming](/pppp) is a good way to build comprehension refactoring into your workflow. Fresh eyes on the code every few hours. I've enjoyed this in the past.
 - Tests
 	- These are a good opportunity to give someone the model to reason about the domain being tested
 	- > For tests to drive development they must do more than just test that code performs its required functionality: they must clearly express that required functionality to the reader. **Nat Pryce & Steve Freeman - Are your tests really driving your development?**
@@ -74,3 +75,14 @@ const rectangleWidth = 10;
 const area = calculateAreaOfRectangle(rectangleLength, rectangleWidth);
 
 ```
+## Good & Bad varies as context changes
+Gauging what good looks like will be subjective.
+
+A few questions that can help you ground your reasoning:
+- Programming language & framework of choice. What are the dogmas & known patterns? Tyler pointed out how single variable names in small, well scoped functions are a norm in Go.
+- Areas of expertise of everyone contributing to the codebase. A team of exclusively frontend devs is different to frontend + fullstack, or frontend + majority backend
+- Purpose of the code: is it a throw-away PoC or the foundation of a feature
+
+
+# Related reading
+- [Sandro Maglione on Complexity at Scale](https://www.sandromaglione.com/articles/scale-complexity-in-software-applications)

@@ -1,6 +1,5 @@
 {{ define "main" }}
 <main>
-	<article>
 		<div class="">
 			<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
 			<time >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
@@ -34,6 +33,5 @@
 		<article class="prose lg:prose-xl">
 			{{ .Content }}
 		</article>
-	</article>
 </main>
 {{ end }}
