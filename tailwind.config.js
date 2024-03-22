@@ -17,6 +17,9 @@ module.exports = {
               borderBottom: '3px solid var(--maincolor)',
               fontWeight: 700,
               textDecoration: 'none',
+              code: {
+                color: 'var(--hovercolor)',
+              },
             },
             '--tw-prose-headings': '#C8C2B7',
             blockquote: {
