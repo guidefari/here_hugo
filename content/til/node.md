@@ -2,7 +2,7 @@
 title: "TIL some Node"
 date: 2023-06-16T23:24:57+02:00
 description: Async event loop vs concurrency (threading)
-tags: [resource, design]
+tags: [resource, design, node]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%20some%20Node']
 ---
 

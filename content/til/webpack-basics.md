@@ -2,7 +2,7 @@
 title: "TIL: Webpack Basics"
 date: 2022-07-01T17:04:43+02:00
 description: We use webpack somewhat extensively at work, had to do a quick crash course to learn my way around. Now the config files don't scare me :)
-tags: [til, frontend]
+tags: [til, frontend, node]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Webpack%20Basics']
 ---
 
