@@ -1,12 +1,8 @@
 # todo
 
-- [ ] 404 page
-- checking push permission
-
-# Projects
-
-- Search with algolia
-- RSS feed
+- [ ] 404 page - amazing how I've lived so long without one.
+- [ ] Search. Maybe even a semantic search?
+- [ ] RSS feed
 
 # Post tags
 
