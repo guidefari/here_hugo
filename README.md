@@ -3,6 +3,7 @@
 - [ ] 404 page - amazing how I've lived so long without one.
 - [ ] Search. Maybe even a semantic search?
 - [ ] RSS feed
+  - https://gitlab.com/jgarr/blog/-/blob/main/layouts/_default/rss.xml
 
 # Post tags
 
