@@ -32,3 +32,7 @@ it’s what I use as my brain dump, or when I don’t have a laptop next to me b
 
 ## Obsidian experiments  
 I’ve been experimenting with bring it back into my workflow though (the messy bits I mentioned.)
+
+## Topics
+
+## What can I improve or double down on
