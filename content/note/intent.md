@@ -3,7 +3,7 @@ title: "Code should communicate intent"
 date: 2024-03-19T06:50:23+02:00
 description: It's one thing to write code that does the thing. It's another to write code that tells the reader what it's doing
 tags: [design, dx, refactoring, process, complexity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Intent']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Code%20should%20communicate%20intent']
 ---
 ### Acknowledgements
 
