@@ -31,6 +31,15 @@ This note attempts to help you identify areas of low cohesion, and tactics to im
 - Keep code as close as possible to where it's being used. Better explained by [Josh Comeau](https://www.joshwcomeau.com/react/file-structure/), and also [Swizec](https://swizec.com/blog/if-it-works-together-it-lives-together/)
 - Only abstract as far as you need, for right now's needs. It's good to keep future design in mind, but don't make stuff so abstract that someone joining your project today with no context suffers productivity
 
+## Dogmatic code has an influence on cohesion
+Libraries and languages will have their default and recommended ways of organising code. From folder structure, to file and module structure etc. I am generally for the idea of writing dogmatic code, it's especially helpful when working in teams, as it reduces the cost of onboarding new engineers.
+
+With that said, each project is unique. [Tyler](https://www.tylerpillay.co.za/) gives a good summary
+> I think documentation goes a long way here, for example the coding standards we had for Go were very different at Sigma compared to checkers. Whether it’s dogmatic or not, as long as the people in an organisation agree on the standards then it’s a good practice but this should be driven by what’s actually considered dogmatic
+
+
+
+
 # Related Reading
 - [Delightful React File/Directory Structure](https://www.joshwcomeau.com/react/file-structure/)
 - [Cognitive Load Theory](/clt)
