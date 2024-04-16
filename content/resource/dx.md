@@ -2,7 +2,7 @@
 title: "Resource: Dx"
 date: 2023-12-05T07:16:23+02:00
 description: Exploring the many ways to Improve Developer experience in organisations.
-tags: [resource, playbook, dx]
+tags: [resource, playbook, dx, complexity]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 ---
 
@@ -41,13 +41,13 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 10. What other areas of the sdlc can be worked on?
 11. Tools not limited to development, e.g., tools for comms (Slack, Teams, Discord, etc.)
 12. Effects of scrum/agile processes on DX
-    1.  "All software systems are sociotechnical systems"
+    1. "All software systems are sociotechnical systems"
 13. Collaboration between devs and QA
 14. How would you describe delivery efficiency? & how does improving developer experience help here?
     1. [Loom by John Cutler](https://www.loom.com/share/bfc646ce2c114cabbe9792616cb48f17?sid=ba8f1e77-a370-46cb-a491-252870594c5d) semi related to this topic
-15.  [Improving DX can reduce developer burnout](https://podcasts.apple.com/za/podcast/dev-interrupted/id1537003676?i=1000566944813)
-    1. devs actually want to ship. it feels good & has a restorative nature. 
-16.  On Finding out how to improve DX
+15. [Improving DX can reduce developer burnout](https://podcasts.apple.com/za/podcast/dev-interrupted/id1537003676?i=1000566944813)
+    1. devs actually want to ship. it feels good & has a restorative nature.
+16. On Finding out how to improve DX
     1. Talk to your devs. those closest to the work. they’re well aware of the friction
     2. Surveys & polls. keep these short & engaging. & actually action out stuff based off the feedback, if you don’t want to see engagement fizzle.
 
@@ -56,13 +56,14 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 1. [LeeRob](https://leerob.io/blog/developer-experience-examples)
 2. [What is DX](https://leaddev.com/process/what-developer-experience-your-route-better-productivity#Echobox=1699956180)
 3. [DevEx: What Actually Drives Productivity](https://queue.acm.org/detail.cfm?id=3595878) - there's a few highlights in my readwise that could be good to cite.
-4. https://podcasts.apple.com/za/podcast/legacy-code-rocks/id1146634772?i=1000611333019
-5. https://open.spotify.com/episode/4kvwFx913BZZl9Ggroz7W7?si=28e61ce4766647cb
-6. https://open.spotify.com/episode/7ommJx6HsS65WwHYIVcLPu?si=6d3e8b96539448ca
-7. https://podcasts.apple.com/za/podcast/thoughtworks-technology-podcast/id881136697?i=1000631830296
-8. https://podcasts.apple.com/za/podcast/corecursive-coding-stories/id1330329512?i=1000633456580
+4. <https://podcasts.apple.com/za/podcast/legacy-code-rocks/id1146634772?i=1000611333019>
+5. <https://open.spotify.com/episode/4kvwFx913BZZl9Ggroz7W7?si=28e61ce4766647cb>
+6. <https://open.spotify.com/episode/7ommJx6HsS65WwHYIVcLPu?si=6d3e8b96539448ca>
+7. <https://podcasts.apple.com/za/podcast/thoughtworks-technology-podcast/id881136697?i=1000631830296>
+8. <https://podcasts.apple.com/za/podcast/corecursive-coding-stories/id1330329512?i=1000633456580>
 9. {{< youtube dP8NmcEkxJI>}}
-   1.  worth taking notes on this vid.
+   1. worth taking notes on this vid.
 
 # Acknowledgements
+
 - Shot to [Tyler](https://www.tylerpillay.co.za/) for helping with this outline so far

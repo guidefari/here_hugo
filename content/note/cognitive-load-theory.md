@@ -2,7 +2,7 @@
 title: "Cognitive Load Theory"
 date: 2022-10-17T08:50:21+02:00
 description: How can this theory can be a helpful heuristic for effective team design
-tags: [psychology, learning, dx, design, process]
+tags: [psychology, learning, dx, design, process, complexity]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cognitive%20Load%20Theory']
 aliases: [clt, cognitive-load]
 ---
@@ -43,4 +43,5 @@ aliases: [clt, cognitive-load]
 - This is a full presentation on cognitive load theory, and other stuff around managing information overload, & how we learn.
 
 # Related reading
+
 - Shared by Andre - [Cognitive Load Developer's Handbook 🧠](https://github.com/zakirullin/cognitive-load)
