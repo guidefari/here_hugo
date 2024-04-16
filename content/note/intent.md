@@ -3,7 +3,7 @@ title: "Code should communicate intent"
 date: 2024-03-19T06:50:23+02:00
 description: It's one thing to write code that does the thing. It's another to write code that tells the reader what it's doing
 tags: [design, dx, refactoring, process, complexity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Code%20should%20communicate%20intent']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Intent']
 ---
 ### Acknowledgements
 
@@ -60,13 +60,13 @@ To change the second snippet to an array that looks like `[1, 2, 3, 4, 5, 6, 7, 
 - As a continuous effort. [Comprehension refactoring](https://martinfowler.com/articles/workflowsOfRefactoring/#comprehension) is a tactic I'd recommend in your day to day workflow.
   - [Ping pong pair programming](/pppp) is a good way to build comprehension refactoring into your workflow. Fresh eyes on the code every few hours. I've enjoyed this in the past.
 - **Tests**
- 	- These are a good opportunity to give someone the model to reason about the domain being tested
- 	- > For tests to drive development they must do more than just test that code performs its required functionality: they must clearly express that required functionality to the reader. **Nat Pryce & Steve Freeman - Are your tests really driving your development?**
- 	- this video does a really good job at illustrating how tests can be used to communicate intent. {{<youtube MWsk1h8pv2Q>}}
+  - These are a good opportunity to give someone the model to reason about the domain being tested
+  - > For tests to drive development they must do more than just test that code performs its required functionality: they must clearly express that required functionality to the reader. **Nat Pryce & Steve Freeman - Are your tests really driving your development?**
+  - this video does a really good job at illustrating how tests can be used to communicate intent. {{<youtube MWsk1h8pv2Q>}}
 - **Patterns**
- 	- Every codebase has some established patterns. Most times, the sensible thing to do is to lean into the pattern
- 	- This reduces cognitive load on future maintainers
- 	- **File Structure**: A general rule of thumb - [code that works together lives together](https://swizec.com/blog/if-it-works-together-it-lives-together/).
+  - Every codebase has some established patterns. Most times, the sensible thing to do is to lean into the pattern
+  - This reduces cognitive load on future maintainers
+  - **File Structure**: A general rule of thumb - [code that works together lives together](https://swizec.com/blog/if-it-works-together-it-lives-together/).
 
 # Examples
 
