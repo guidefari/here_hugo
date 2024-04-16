@@ -5,6 +5,11 @@ description: It's one thing to write code that does the thing. It's another to w
 tags: [design, dx, refactoring, process]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Code%20should%20communicate%20intent']
 ---
+### Acknowledgements
+Props to [Ibra](https://ibrathesheriff.com) & [Tyler](https://www.tylerpillay.co.za/) for being my sounding board and first editors for this one 👊🏽
+
+
+---
 
 It's one thing to write code that does the thing.
 It's another to write **code that tells the reader what it's doing** - which I think can hint at why it's doing what it's doing?
@@ -26,16 +31,38 @@ Code that communicates intent simplifies:
 - collaboration 
 - onboarding
 
-Simplifying all of this **reduces the cost of maintaining the codebase**.
+Simplifying all of this **reduces the cost of maintaining the codebase**. An example from Ibra: 
+
+```python
+item = 6
+
+# Bad
+if item in [1, 2, 3, 4, 5]:
+  return True
+else:
+  return False
+
+# Good
+arraySize = 5
+for num in range(1, arraySize + 1):
+  if item == num:
+    return True
+return False
+```
+To change the second snippet to an array that looks like `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`, I just change `arraySize` to 10
 
 # How it can be done
-- Descriptive naming. Well named types, interfaces, variables, & functions.
+- **Descriptive naming**. Well named types, interfaces, variables, & functions.
 - As a continuous effort. [Comprehension refactoring](https://martinfowler.com/articles/workflowsOfRefactoring/#comprehension) is a tactic I'd recommend in your day to day workflow.
   - [Ping pong pair programming](/pppp) is a good way to build comprehension refactoring into your workflow. Fresh eyes on the code every few hours. I've enjoyed this in the past.
-- Tests
+- **Tests**
 	- These are a good opportunity to give someone the model to reason about the domain being tested
 	- > For tests to drive development they must do more than just test that code performs its required functionality: they must clearly express that required functionality to the reader. **Nat Pryce & Steve Freeman - Are your tests really driving your development?**
 	- this video does a really good job at illustrating how tests can be used to communicate intent. {{<youtube MWsk1h8pv2Q>}}
+- **Patterns**
+	- Every codebase has some established patterns. Most times, the sensible thing to do is to lean into the pattern
+	- This reduces cognitive load on future maintainers
+	- **File Structure**: A general rule of thumb - [code that works together lives together](https://swizec.com/blog/if-it-works-together-it-lives-together/).
 
 # Examples
 
@@ -82,7 +109,8 @@ A few questions that can help you ground your reasoning:
 - Programming language & framework of choice. What are the dogmas & known patterns? Tyler pointed out how single variable names in small, well scoped functions are a norm in Go.
 - Areas of expertise of everyone contributing to the codebase. A team of exclusively frontend devs is different to frontend + fullstack, or frontend + majority backend
 - Purpose of the code: is it a throw-away PoC or the foundation of a feature
-
-
 # Related reading
 - [Sandro Maglione on Complexity at Scale](https://www.sandromaglione.com/articles/scale-complexity-in-software-applications)
+- [If it works together it lives together](https://swizec.com/blog/if-it-works-together-it-lives-together/)
+- [Delightful react folder structure](https://www.joshwcomeau.com/react/file-structure/)
+- [My notes on cohesion](/cohesion)
