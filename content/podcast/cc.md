@@ -1,5 +1,5 @@
 ---
-title: "Podcast: Aaron Dignam on complicated vs complex"
+title: "Podcast: Aaron Dignan on complicated vs complex"
 date: 2024-05-01T17:11:27+02:00
 description: You might find this podcast useful👇
 tags: [podcast]
