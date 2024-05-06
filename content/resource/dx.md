@@ -67,3 +67,19 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 # Acknowledgements
 
 - Shot to [Tyler](https://www.tylerpillay.co.za/) for helping with this outline so far
+
+---
+https://www.youtube.com/watch?v=YkOGZCYWT6w
+
+- you're trying to make it easy to:
+  - onboard
+  - build
+  - test
+  - debug
+
+- Flow state
+- Cognitive load
+- Feedback loops
+
+## How to get started
+- Talk to your devs. Surveys are helpful here
