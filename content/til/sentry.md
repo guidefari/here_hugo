@@ -19,3 +19,20 @@ From JD:
 - [Scopes](https://docs.sentry.io/platforms/javascript/enriching-events/scopes/)
 - [Transaction name](https://docs.sentry.io/platforms/javascript/enriching-events/transaction-name/)
 - [Tags](https://docs.sentry.io/platforms/javascript/enriching-events/tags/)
+
+## Q: What is an unhandled exception?
+A: When an error is thrown, but there's no code to catch it.
+
+### Gotcha?
+- An exception that you handle isn't sent to the dashboard 
+
+## Things I've found helpful
+- user ID tag
+- network requests prior to the crash
+- route/screen name
+- app version number
+
+## Recommended next steps
+- A great way to learn is hands on.
+- Set up sentry in a hobby project, they have a generous free tier, easy to setup, and you have nothing to lose.
+- As an added bonus, I get weekly reports on my NextJS API response times. For free
