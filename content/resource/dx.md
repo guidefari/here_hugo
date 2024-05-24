@@ -8,6 +8,14 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 
 **PS: this is a First Draft - brain dump of the sub topics I want to explore**
 
+> DX is multi-faceted. You're gonna have to measure a whole lot of quantitative, and qualitative metrics to get a full understanding of your dx
+> - [Jo Franchetti](https://www.youtube.com/watch?v=YkOGZCYWT6w)
+
+## Context
+This series of notes will likely focus on internal DX, as that's what I have most experience in.
+- Improving collaboration and productivity within your teams and the context of your company
+- Ensuring your technical practices are aligned with business objectives
+
 ### Topics
 
 1. Onboarding
@@ -71,15 +79,24 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 ---
 https://www.youtube.com/watch?v=YkOGZCYWT6w
 
+{{<youtube YkOGZCYWT6w>}}
+
 - you're trying to make it easy to:
   - onboard
   - build
   - test
   - debug
 
+## Guiding principles 
 - Flow state
+  - You know the feels here, being fully immersed & engaged in your work for a few hours.
+  - Your processes and company culture can have a huge impact on this. How often are your developers 'interrupted', and for what? It's good to regularly do cost benefit analysis on this
 - Cognitive load
 - Feedback loops
 
 ## How to get started
 - Talk to your devs. Surveys are helpful here
+
+## Side-note
+- Introspect on, & iterate your process/SDLC as you would your product, & business.
+  - This is where regular surveys with devs comes in
