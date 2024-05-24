@@ -31,7 +31,7 @@ There's also a second season, going over some myths about building a second brai
 
 ## [Progressive Summarization](https://fortelabs.co/blog/progressive-summarization-a-practical-technique-for-designing-discoverable-notes/)
 >
-> “How do I make what I’m consuming right now easily discoverable for my future self?”
+> How do I make what I’m consuming right now easily discoverable for my future self?
 >
 > src: [Progressive Summarization](https://fortelabs.co/blog/progressive-summarization-a-practical-technique-for-designing-discoverable-notes/)
 
