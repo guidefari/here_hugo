@@ -18,7 +18,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Feature%20Flags
 - feature flags can exist on the frontend, and backend
   - they're mostly seen on the frontend though
 - from a QA perspective, feature flags can be used to **mitigate risk**, especially when introducing new flows into a product
-  - achieved by allowing **gradual release**of new features
+  - achieved by allowing **gradual release** of new features
   - **limits blast radius** when releasing to prod
 - feature flags in your E2E tests - this is a consideration you have to keep in mind
 - they can increase speed of delivery
