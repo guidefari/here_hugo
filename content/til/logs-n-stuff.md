@@ -2,7 +2,7 @@
 title: "TIL: Logs N Stuff"
 date: 2022-07-08T10:01:01+02:00
 description: Something I learnt today. Maybe more than one thing👾Linux infra & logging stuff
-tags: [til, linux, logs, infrastructure, cloud, git, backend]
+tags: [til, linux, logs, infra, cloud, git, backend]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Logs%20N%20Stuff']
 ---
 
