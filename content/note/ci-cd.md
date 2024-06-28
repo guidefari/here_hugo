@@ -88,7 +88,7 @@ It was definitely helpful for getting closer to the solution
 - In the interest of simplicity & reducing number of tools and configs, I've replaced Prettier & ESlint with Biome.
   - I've been keeping an eye on this project since Rome days, seeing more and more people adopt it has given me confidence to switch over.
   - And also the fact that it's been around for a while
-- You should see some of the package.json diffs after people replace Prettier & ESlint with biome, lol. And the [performance](https://x.com/wojtekmaj91/status/1790846885332152538) tweets too.
+- You should see some of the [package.json diffs](https://x.com/JollyShopland/status/1806704410484969642) after people replace Prettier & ESlint with biome, lol. And the [performance](https://x.com/wojtekmaj91/status/1790846885332152538) tweets too.
 
 # Organising project code
 - My default right now is monorepos. I like co-locating related stuff
