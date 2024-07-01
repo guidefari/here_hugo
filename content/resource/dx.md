@@ -2,7 +2,7 @@
 title: "Resource: Dx"
 date: 2023-12-05T07:16:23+02:00
 description: Exploring the many ways to Improve Developer experience in organisations.
-tags: [resource, playbook, dx, complexity]
+tags: [resource, playbook, dx, complexity, culture]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 ---
 
@@ -10,6 +10,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
 
 > DX is multi-faceted. You're gonna have to measure a whole lot of quantitative, and qualitative metrics to get a full understanding of your dx
 > - [Jo Franchetti](https://www.youtube.com/watch?v=YkOGZCYWT6w)
+- That said, we'll be looking at both the technical, and cultural side of DX.
 
 ## Context
 This series of notes will likely focus on internal DX, as that's what I have most experience in.
@@ -100,3 +101,8 @@ https://www.youtube.com/watch?v=YkOGZCYWT6w
 ## Side-note
 - Introspect on, & iterate your process/SDLC as you would your product, & business.
   - This is where regular surveys with devs comes in
+
+# SDLC is part of DX
+The process of how something goes from idea to production has a big impact on DX.
+Some guiding principles, heuristics, questions:
+- 
