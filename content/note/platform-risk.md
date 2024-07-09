@@ -44,8 +44,12 @@ A few mitigation strategies:
 - Using more than one music streaming service (I don't keep secondary accounts active all year)
 - My favourite: building an offline collection of lossless music, via [bandcamp](https://bandcamp.com)
 
+## Cloud Computing vendor lock in
+- Pay attention to egress fees and proprietary tech
+
+{{<youtube 4Wa5DivljOM>}}
+
 # Related reading
-- [Startup illustrated - platform risk](https://www.startupillustrated.com/Archive/Platform-Risk)
 - [Why it’s OK for startups to have platform risk](https://medium.com/lightspeed-venture-partners/why-its-ok-for-startups-to-have-platform-risk-a3d70866cf13)
 - [IndieWeb](https://indieweb.org/) - promoting independent & distributed ownership of intellectual property
 - [Killed By Google](https://killedbygoogle.com/)
