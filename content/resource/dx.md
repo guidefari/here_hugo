@@ -45,7 +45,7 @@ This series of notes will likely focus on internal DX, as that's what I have mos
 7. Local experience
 8. Pull Request process
 9. Deploying
-    1. iteration velocity
+    1. iteration velocity increases with improved dx. Dev interuppted podcast or the substack will be good reference. accelerate is also a good source to reference
     2. Are there manual steps pre/during/post deployment that slow the process down?
 10. What other areas of the sdlc can be worked on?
 11. Tools not limited to development, e.g., tools for comms (Slack, Teams, Discord, etc.)
