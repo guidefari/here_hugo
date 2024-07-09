@@ -59,6 +59,7 @@ This series of notes will likely focus on internal DX, as that's what I have mos
 16. On Finding out how to improve DX
     1. Talk to your devs. those closest to the work. they’re well aware of the friction
     2. Surveys & polls. keep these short & engaging. & actually action out stuff based off the feedback, if you don’t want to see engagement fizzle.
+17. Motivation: for engineering, business, product. what will investing in our DX do for us?
 
 ## References
 

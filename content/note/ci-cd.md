@@ -101,3 +101,6 @@ It was definitely helpful for getting closer to the solution
 - Similar principles to how shadcn brings the source code directly into your codebase🔥
 - Learn more about it's why:
 {{<youtube dHfZiqVWVhk>}}
+
+## Related reading
+- [Platform risk](/platform-risk)
