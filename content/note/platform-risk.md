@@ -53,3 +53,5 @@ A few mitigation strategies:
 - [Why it’s OK for startups to have platform risk](https://medium.com/lightspeed-venture-partners/why-its-ok-for-startups-to-have-platform-risk-a3d70866cf13)
 - [IndieWeb](https://indieweb.org/) - promoting independent & distributed ownership of intellectual property
 - [Killed By Google](https://killedbygoogle.com/)
+- [ServerlessHorrors](https://serverlesshorrors.com/)
+

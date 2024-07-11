@@ -104,3 +104,4 @@ It was definitely helpful for getting closer to the solution
 
 ## Related reading
 - [Platform risk](/platform-risk)
+- [ServerlessHorrors](https://serverlesshorrors.com/)
