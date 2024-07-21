@@ -7,13 +7,6 @@ aliases: [tailwind]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Resources']
 ---
 
-# Articles, Talks & stuff
-- [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
-- ["Semantic" CSS](https://adamwathan.me/2014/11/10/semantic-css/)
-- [In defence of utility first CSS](https://www.dotconferences.com/2019/12/sarah-dayan-in-defense-of-utility-first-css) - Lovely Talk by Sarah Dayan
-
-## Introduction to Atomic CSS ft Sarah Dayan
-{{<youtube PcrzsCdoFoY>}} <br/><br/>
 
 # Components
 1. [Tailblocks](https://mertjf.github.io/tailblocks/)
@@ -38,3 +31,14 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 # Repos & docs
 1. [NextJS + Tailwind](https://tailwindcss.com/docs/guides/nextjs)
 2. [Tailwind Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet) - shared by [Tyler](https://www.tylerpillay.co.za/) 🦾
+
+# Articles, Talks & stuff
+- [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
+- ["Semantic" CSS](https://adamwathan.me/2014/11/10/semantic-css/)
+- [In defence of utility first CSS](https://www.dotconferences.com/2019/12/sarah-dayan-in-defense-of-utility-first-css) - Lovely Talk by Sarah Dayan
+
+## Introduction to Atomic CSS ft Sarah Dayan
+{{<youtube PcrzsCdoFoY>}} <br/><br/>
+
+{{<youtube g6wtyg3O4Fo>}}
+
