@@ -36,6 +36,9 @@ This series of notes will likely focus on internal DX, as that's what I have mos
 2. What is DX
    1. Why does it matter
 3. Fast Feedback loops
+    -  also go into detail about the different kinds of feedback loops
+    - technical: local dev, ci, 
+    - social: human interactions: dev to dev collab, dev to qa, dev to product, dev to design, dev to rest of company
 4. Types of cognitive load, and how you can reduce them
     1. How this ties into complexity
     2. this might be redundant. one of the core ideas of improving dx is reducing cognitive load associated with delivering customer value
@@ -60,6 +63,7 @@ This series of notes will likely focus on internal DX, as that's what I have mos
     1. Talk to your devs. those closest to the work. they’re well aware of the friction
     2. Surveys & polls. keep these short & engaging. & actually action out stuff based off the feedback, if you don’t want to see engagement fizzle.
 17. Motivation: for engineering, business, product. what will investing in our DX do for us?
+18. Tools: Daily communication & knowledge documentation 
 
 ## References
 
