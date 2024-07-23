@@ -39,6 +39,7 @@ This series of notes will likely focus on internal DX, as that's what I have mos
     -  also go into detail about the different kinds of feedback loops
     - technical: local dev, ci, 
     - social: human interactions: dev to dev collab, dev to qa, dev to product, dev to design, dev to rest of company
+    > [We want to reduce the number of people an engineer needs to talk to internally to get something done.](https://sst.dev/about/culture.html)
 4. Types of cognitive load, and how you can reduce them
     1. How this ties into complexity
     2. this might be redundant. one of the core ideas of improving dx is reducing cognitive load associated with delivering customer value
