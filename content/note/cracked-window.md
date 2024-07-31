@@ -8,10 +8,17 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Broken+Windows'
 
 Popularized by [Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/), this is a common piece of advice to guard against technical debt.
 
-# What to do about it - Boy Scout rule
+# What to do about it
+
+## Boy Scout rule
 As Martin Fowler & many have taught me, follow the boy scout rule
 > Make refactoring a part of your normal day to day workflow.
 > Leave something cleaner than you found it, even if it's just a little bit
+
+## Be pedantic about your quality bar
+{{<youtube "FhJfm-kzopc?t=547">}}
+
+---
 
 > [to rely solely on planned refactoring is suboptimal. probably even detrimental](https://twitter.com/guidefari/status/1790636267849281848)
 
