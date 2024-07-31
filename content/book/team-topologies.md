@@ -2,7 +2,7 @@
 title: "Book Notes: Team Topologies"
 date: 2022-10-17T07:18:01+02:00
 description: "highlights, quotes, & other interesting bits from Team Topologies"
-tags: [book, notes, leadership, process, playbook]
+tags: [book, notes, leadership, process, playbook, systems theory]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A%20Team%20Topologies']
 ---
 
@@ -57,8 +57,7 @@ The book highlights that "Well defined interactions are key to effective teams"
 
 > A team may have been told it is autonomous and self-organizing, but team members find they have to interact with many other teams in order to complete their work; and this feels frustrating.
 
-I felt this. Especially difficult
-This is usually a smell for unbalanced team are organisation.
+This is usually a smell for unbalanced teams in an organisation.
 Either not enough senior folk in the one team, or an improper mapping of **service/domain ownership -> team**.
 
 > What must be avoided is the need for all teams together

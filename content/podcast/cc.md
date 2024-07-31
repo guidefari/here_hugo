@@ -2,7 +2,7 @@
 title: "Podcast: Aaron Dignan on complicated vs complex"
 date: 2024-05-01T17:11:27+02:00
 description: A chat about organisational debt, and systems theory
-tags: [podcast]
+tags: [podcast, systems theory]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Complex+vs+Complicated']
 ---
 
