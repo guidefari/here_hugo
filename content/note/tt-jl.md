@@ -2,7 +2,7 @@
 title: "Team topologies with James Lewis"
 date: 2022-10-17T06:59:27+02:00
 description: Thoughtworks' James Lewis shares his experience & research on Team Topologies, software architecture, & complexity science
-tags: [leadership, process, complexity]
+tags: [leadership, process, complexity, systems theory]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Team%20topologies%20with%20James%20Lewis']
 ---
 
