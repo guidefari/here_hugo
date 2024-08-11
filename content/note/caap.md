@@ -68,3 +68,6 @@ I'd say you can do the same for your codebase health.
 
 - [Tidy, first?](/tidy-first)
 - [Notes tagged refactoring](/tags/refactoring)
+- Some books recommended by Sarah Drasner, via [Engineering Management for the rest of us](/engineering-management).
+  - The happiness advantage
+  - Drive by Daniel Pink
