@@ -41,3 +41,4 @@ This thought exercise can help identify how much you have to invest in your outa
 ## Related reading
 
 - [What can engineering leaders learn from one of the biggest IT disasters in history?](https://leaddev.com/process/5-lessons-crowdstrikes-global-outage)
+- [Platform risk](/platform-risk)
