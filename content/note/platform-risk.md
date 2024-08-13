@@ -47,8 +47,6 @@ A few mitigation strategies:
 ## Cloud Computing vendor lock in
 - Pay attention to egress fees and proprietary tech
 
-{{<youtube 4Wa5DivljOM>}}
-
 # Related reading
 - [Why it’s OK for startups to have platform risk](https://medium.com/lightspeed-venture-partners/why-its-ok-for-startups-to-have-platform-risk-a3d70866cf13)
 - [IndieWeb](https://indieweb.org/) - promoting independent & distributed ownership of intellectual property
@@ -58,3 +56,6 @@ A few mitigation strategies:
 - [Google VMware + UniSuper outage](https://cloud.google.com/blog/products/infrastructure/details-of-google-cloud-gcve-incident)
 
 {{<youtube 3GOAUyipnM4>}}
+
+{{<youtube 4Wa5DivljOM>}}
+
