@@ -2,7 +2,7 @@
 title: "Platform Risk"
 date: 2023-06-15T22:10:11+02:00
 description: Something to think about when engineering solutions.
-tags: [strategy, risk]
+tags: [strategy, risk, devops]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Platform%20Risk']
 ---
 
@@ -54,4 +54,7 @@ A few mitigation strategies:
 - [IndieWeb](https://indieweb.org/) - promoting independent & distributed ownership of intellectual property
 - [Killed By Google](https://killedbygoogle.com/)
 - [ServerlessHorrors](https://serverlesshorrors.com/)
+- [Retro on cloudstrike outage](/crowdstrike)
+- [Google VMware + UniSuper outage](https://cloud.google.com/blog/products/infrastructure/details-of-google-cloud-gcve-incident)
 
+{{<youtube 3GOAUyipnM4>}}
