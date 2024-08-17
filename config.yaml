@@ -52,6 +52,7 @@ Permalinks:
   playlist: "/:filename/"
   mix: "/:filename/"
   note: "/:filename/"
+  bliki: "/:filename/"
 
 frontmatter:
   date:
