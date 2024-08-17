@@ -7,7 +7,7 @@ images:
   ["https://images-here-hugo.vercel.app/api/og-image?title=An+Elegant+Puzzle"]
 ---
 
-# How the book is layed out
+## How the book is laid out
 
 - A collection of topic related essays, exploring the different puzzles that you have to solve when you find yourself managing software teams.
 - Grouped largely into:
@@ -81,4 +81,34 @@ A team's state exists on a continuum
 - **When innovating**, maintain enough [slack](/slack) into your team's schedule so they can build quality into their work.
   - Tactically, make sure the work your team is doing **is valued**. Quickest say to get defunded is to be viewed as the team that builds **science projects**.
 
+> you only get value from projects when they finish: to make progress, above all else, you must ensure that some of your projects finish.
+
 ### On long lived teams
+
+- Sustained productivity comes from high performing teams. Be weary of disassembling a high performing team.
+- Rather, preserve the team and move scope and projects between teams
+- This avoids re-gelling costs, and preserves system behaviour
+- If a team has 'too much slack', incrementally move responsibility to them
+- Another approach is loaning out an individual or two to an area that needs help. Emphasis on them retaining identity of their actual team.
+
+### During periods of high growth
+
+- Alternate between periods of rapid hiring and periods of consolidation & gelling.
+
+### Succession planning
+
+- At some point, you may find that your rate of learning has trailed.
+- This is when you can start looking for your next role
+
+> Succession planning is thinking through how the organization would function without you, documenting those gaps, and starting to fill them in.
+
+---
+
+# Tools
+
+## Intro to systems thinking
+
+Systems are combinations of stocks and flows:
+
+- Stocks: accumulations of resources.
+- Flows: streams that make stocks increase (inflows) or decrease (outflows).
