@@ -36,6 +36,7 @@ I woke up once and decided "it'd be nice to share something from my site on the 
 - Lost steam after a 3 or 4 week streak
 - Maybe the fact that I had no content plan ahead of time contributed to stopping. I just write what resonates, when it pops up.
 - And this initiative wasn’t really attached to any specific goal, or one that had been explicitly stated.
-- I did start conversations with a few new faces though, RE my writing. That's always fun
+- I did start conversations with a few new people though, RE my writing. That's always fun
   - None related to the posting though, one from twitter, one from google?
+  - In hindsight, this streak may have contributed to a few inbound leads.
 - Hate it or love it, this remains a useful tool for 'increasing your luck surface area'
