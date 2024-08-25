@@ -158,3 +158,26 @@ I like this thought exercise
 > A mild caveat: it’s better to rely on people you have some connection to instead of on conference talks and such, since there is a surprisingly large amount of misinformation out there.
 
 - Try to find the cheapest way to validate
+
+# Visions & strategies
+> Strategies are grounded documents which explain the trade-offs and actions that will be taken to address a specific challenge. Visions are aspirational documents that enable individuals who don’t work closely together to make decisions that fit together cleanly.
+
+Strategy docs:
+- A good one has these sections: diagnosis, policies, & actions.
+- The diagnosis is a theory describing the challenge at hand. It calls out the factors and constraints that define the challenge, and at its core is a very thorough problem statement
+- Policies define the general approach you'll take, and are often trade-offs between competing goals
+  - When you read bad guiding policies, you think, “so what?” because its found a way to justify entrenching the status quo.
+- Apply your guiding policies to get your actions.
+  - When you read good, coherent actions, you think, "This is going to be uncomfortable, but I think it can work." When you read bad ones, you think, "Ah, we got afraid of the consequences, and we aren’t really changing anything."
+
+> People sometimes describe strategy as artful or sophisticated, but I’ve found that the hardest part of writing a good strategy is pretty mundane. You must be honest about the constraints that are making the challenge difficult, which almost always include people and organizational aspects that are uncomfortable to acknowledge
+
+Vision docs:
+- If strategies describe the harsh trade-offs to overcome a particular challenge, visions describe a future in which those trade-offs are no longer mutually-exclusive.
+- Visions should be detailed, but the details are used to illustrate the dream vividly, not to prescriptively constrain its possibilities.
+- Remember to refresh these periodically. Once a year at least.
+
+
+Also see:
+- [Good strategy, Bad strategy](https://jlzych.com/2018/06/27/notes-from-good-strategy-bad-strategy/). This book's one's been on my reading list for a while.
+- [Writing strategies & visions](https://lethain.com/strategies-visions)
