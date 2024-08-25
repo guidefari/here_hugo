@@ -27,6 +27,8 @@ images:
   - Less than that (4 or less engineers) becomes a tech lead manager. Might uniquely leverage your strengths, but this can have limited growth opportunity on the managerial side.
   - 9+ has you moving from manager to being a coach and safety net for problems.
 
+> When I have a problem that I want to solve quickly and cheaply, I start thinking about process design. A problem I want to solve permanently and we have time to go slow? That’s a good time to evolve your culture
+
 ## Teams with fewer than 4 are not teams
 
 - Described as a leaky abstraction that functions indiscernibly from individuals.
@@ -45,15 +47,12 @@ images:
 - Never create empty teams (why?)
 - Teams should be 6-8 people, in their steady state
 
-### Side note
+### On Support
 
-- This topic exposed to me the idea of [two-tier on call support](/two-tier-on-call).
+- This chapter exposed to me the idea of [two-tier on call support](/two-tier-on-call).
   - Betterstack also has some [on call strategies](https://betterstack.com/community/guides/incident-management/on-call-templates/) to look at.
 
-## Keeping your teams high performing
-
-- When chatting about growing an org, we reach for hiring too often
--
+> One specific tool that I’ve found extremely helpful here is an ownership registry, which allows you to look up who owns what, eliminating the frequent “Who owns X?” variety of question
 
 ## The Four states of a team
 
@@ -63,6 +62,8 @@ A team's state exists on a continuum
 - Treading water: critical work gets done, but we can't pay down technical debt or begin new projects
 - Repaying debt: there's a snowball effect to this one. "Each piece of debt you repay leads to more time to repay more debt
 - Innovating: tech debt is sustainably low, team's mostly focused on satisfying new user needs
+
+When chatting about growing an org, we reach for hiring too often. Look at what state your team is in, and apply the relevant fix.
 
 ### On moving teams from one continuum to the other
 
@@ -75,6 +76,7 @@ A team's state exists on a continuum
   - Also set expectations with users.
   - Avoid getting resources from within the company. By nature, it's impossible for this kind of discussion to not become political
 - **When treading water**, [consolidate team efforts](/morale), finish more things, [limit WIP](/wip-limits).
+  - The idea is to reduce concurrent work until they can start repaying debt.
   - Tactically, you're also highlighting that productivity is viewed through the lens of a team, and not individuals.
 - **When repaying debt**, give more time and let things be. This stage is self-healing.
   - Tactically, find ways to support your users without disappearing into maintenance mode only.
@@ -90,6 +92,9 @@ A team's state exists on a continuum
 - This avoids re-gelling costs, and preserves system behaviour
 - If a team has 'too much slack', incrementally move responsibility to them
 - Another approach is loaning out an individual or two to an area that needs help. Emphasis on them retaining identity of their actual team.
+
+> most teams have dependencies on other teams... you can often slow a team down by 
+> shifting resources to it, because doing so creates new upstream constraints.
 
 ### During periods of high growth
 
@@ -112,3 +117,21 @@ Systems are combinations of stocks and flows:
 
 - Stocks: accumulations of resources.
 - Flows: streams that make stocks increase (inflows) or decrease (outflows).
+
+You can model the DORA metrics using stocks and flows. The metrics being Delivery lead time, change failure rate, time to recovery, and deployment frequency.
+
+- Pull requests (stock) are converted into ready commits based on our code review rate (flow).
+
+- Ready commits (stock) convert into deployed commits at deploy rate (flow).
+
+- Deployed commits (stock) convert into incidents at defect rate (flow).
+
+- Incidents (stock) are remediated into reverted commits at recovery rate (flow).
+- Reverted commits are debugged into new pull requests at debug rate.
+  - tbh I don't like the stock "reverted commits". I prefer fix foward as a default, revert only when absolutely necessary - depending on time crunch, serverity, and complexity of the issue.
+  - This means I read reverted commits as **patch commits**
+  - In contrast, there's an SRE lesson I was taught recently by [Dmitriy Ryaboy](https://www.youtube.com/watch?v=xAzb7Gtu2a8): in the time of crisis, it's 
+  not a good idea to try and understand deeply **why** things are broken before you fix. Just rollback/revert so you can restore service, then figure things out later.
+  Succintly said, "First restore the service, then fix the problem."
+
+
