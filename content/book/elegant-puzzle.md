@@ -196,3 +196,27 @@ Also see:
 
 > The two tests of an effective goal are whether someone who doesn’t know much about an area can get a feel for a goal’s degree of difficulty, and whether afterward they can evaluate if it was successfully achieved
 
+# On Migrations
+
+# Career Narratrives
+
+---
+> The good news is that both the stable eras and the transitions are great opportunities for growing yourself. Transitions are opportunities to raise the floor by building competency in new skills, and in stable periods you can raise the ceiling by developing mastery in the skills that the new era values.
+
+> It’s suggested that mature companies have more stable periods while startups have a greater propensity for change, but it’s been my experience that what matters most is the particular team you join. I’ve seen extremely static startups, and very dynamic teams within larger organizations.
+
+# Decentralised decision-making groups
+## Positive & negative freedoms
+
+# Presenting to senior leadership
+Again, some parallels to draw to the [lessons from Brian Holt](/pm-holt).
+
+# Communities of learning
+
+- Whitepapers, something I never thought to include in book club rotations! Def giving this a shot in future.
+
+# On Policies
+
+# Kill your heroes
+
+# Running a humane hiring process
