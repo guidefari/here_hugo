@@ -181,3 +181,18 @@ Vision docs:
 Also see:
 - [Good strategy, Bad strategy](https://jlzych.com/2018/06/27/notes-from-good-strategy-bad-strategy/). This book's one's been on my reading list for a while.
 - [Writing strategies & visions](https://lethain.com/strategies-visions)
+
+# Metrics & baselines
+
+> There is a moment in every company’s growth when top-level planning shifts from discussing specific projects to talking about goals. This happens recursively across each scope of leadership, as areas of accountability become too broad or complex for their leaders to consistently understand every project’s details
+
+- Bad goals are indistinguishable from numbers. e.g: "our p50 build time will be below 50 seconds"
+- Good goals are a composition of 4 kinds of numbers
+  - Target
+  - Baseline: to identify where we are today
+  - Trend: to describe the current velocity
+  - Timeframe: to set bounds for the change
+- Revised, that first goal would look like this "Our target build time is 30 seconds, compared to our current baseline of 50 seconds. Last quarter, we saw build times go from 40 seconds to our current baseline. We aim to achieve this improvement within the next quarter."
+
+> The two tests of an effective goal are whether someone who doesn’t know much about an area can get a feel for a goal’s degree of difficulty, and whether afterward they can evaluate if it was successfully achieved
+
