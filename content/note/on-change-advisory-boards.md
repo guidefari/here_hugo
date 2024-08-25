@@ -23,3 +23,5 @@ From what I can tell, these conclusions are coming from [primary research](https
   - Intra-team code reviews
 - Deployment pipeline to catch & reject bad changes
 - Having sensible-defaults defined can also be useful here.
+
+> [Finally, a related antipattern is the gatekeeper pattern. Having humans who perform gatekeeping activities creates very odd social dynamics, and is rarely a great use of a human’s time. When at all possible, build systems with sufficient isolation that you can allow most actions to go forward. And when they do occasionally fail, make sure that they fail with a limited blast radius.](/elegant-puzzle) - Will Larson - An Elegant Puzzle
