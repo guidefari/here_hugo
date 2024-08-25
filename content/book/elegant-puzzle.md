@@ -2,7 +2,7 @@
 title: "Will Larson's An Elegant Puzzle"
 date: 2024-08-17T11:43:42+02:00
 description: "highlights, quotes, & other interesting bits from An Elegant Puzzle - Systems of engineering management"
-tags: [book, notes]
+tags: [book, notes, leadership, management, culture]
 images:
   ["https://images-here-hugo.vercel.app/api/og-image?title=An+Elegant+Puzzle"]
 ---
@@ -298,6 +298,8 @@ This one is important. Similar to giving [feature flags](/feature-flag) an expir
 
 > When folks want you to commit to more work than you believe you can deliver, your goal is to provide a compelling explanation of how your team finishes work. Finishes is particularly important, as opposed to does, because **partial work has no value**
 
-# Kill your heroes
+# [Kill your heroes](https://lethain.com/doing-it-harder-and-hero-programming/)
 
-# Running a humane hiring process
+> Unless your problem is that people aren’t trying hard, the “work harder” mantra only breeds hero programmers whose heroic ways make it difficult for nonheroes to contribute meaningfully.
+
+# [Running a humane hiring process](https://lethain.com/running-humane-interview-process/)
