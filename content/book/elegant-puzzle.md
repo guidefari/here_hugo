@@ -134,4 +134,27 @@ You can model the DORA metrics using stocks and flows. The metrics being Deliver
   not a good idea to try and understand deeply **why** things are broken before you fix. Just rollback/revert so you can restore service, then figure things out later.
   Succintly said, "First restore the service, then fix the problem."
 
+  # On Product Management
+Interesting to see a lot of Will's remarks relate to [the lessons about product management from Brian Holt](/pm-holt).
 
+This sub-topic can be found [on his site](https://lethain.com/intro-product-management/).
+
+Will loosely groups product management activities into exploration, selection, & validation.
+
+> Product management is an iterative elimination tournament, with each round consisting of problem discovery, problem selection, and solution validation
+
+### Problem discovery
+- Surprisingly, this is a commonly skipped stage.
+  - Which can lead to inertia-led local optimization.
+
+### Problem selection
+
+I like this thought exercise
+
+> Consider different timeframes... What would you do if your company was going to run out of money in six months? What if there were no external factors forcing you to show results until two years out? Five years out?
+
+### Solution validation
+- As you try to learn from others that have walked a similar path:
+> A mild caveat: it’s better to rely on people you have some connection to instead of on conference talks and such, since there is a surprisingly large amount of misinformation out there.
+
+- Try to find the cheapest way to validate
