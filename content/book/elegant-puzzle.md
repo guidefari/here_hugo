@@ -205,8 +205,29 @@ Also see:
 
 > It’s suggested that mature companies have more stable periods while startups have a greater propensity for change, but it’s been my experience that what matters most is the particular team you join. I’ve seen extremely static startups, and very dynamic teams within larger organizations.
 
-# Decentralised decision-making groups
+# [Decentralised decision-making groups](https://lethain.com/scaling-consistency/)
+- In smaller orgs, it's easier for people to be aware of what everyone is working on
+and remember how they previously approached similar problems.
+- There's a hive mind, shared memory, which can help preserve quality
+- This does't scale as the org gets big. And when this problem becomes truly acute:
+> folks eventually reach for the same tool, adding a centralized, accountable group.
+- Comes in the flavor of "product reviews", & an "architecture group"
+  - Their mode of operation sits somewhere between **rigid gatekeepers** and **advisory** (focused on educating people towards consistency)
+
 ## Positive & negative freedoms
+> A positive freedom is the freedom to do something, for example the freedom to pick a programming language you prefer. A negative freedom is the freedom from things happening to you, for example the freedom not to be obligated to support additional programming languages, even if others would greatly prefer them.
+
+The idea of positive & negative freedom is very new to me, and I'm compelled to read more into the dynamics. When ready, [this](https://plato.stanford.edu/entries/liberty-positive-negative/) is a good place to start.
+
+## When designing these groups, think about:
+- How you expect this group to influence results
+- How you expect this group to interface/interact with the rest of the org
+- Size. 6 is usually a good amount. 10+ will make it difficult to even have a constructive chat
+- Time commitment for members. Is this their top priority? or are they still active on other projects
+- Length of contract. Is this permanent, or on a rotation basis?
+- Selection process. Transparent requirements + allowing people to apply is a good place to start
+
+*Read the [full note](https://lethain.com/scaling-consistency/) to see the failure modes of such groups*
 
 # Presenting to senior leadership
 Again, some parallels to draw to the [lessons from Brian Holt](/pm-holt).
