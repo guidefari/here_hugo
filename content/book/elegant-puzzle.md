@@ -198,7 +198,23 @@ Also see:
 
 # On Migrations
 
-# Career Narratrives
+# [Career Narratives](https://lethain.com/career-narratives/)
+- There's only so many internal positions to go around. Especially in smaller to mid-sized companies.
+- If everyone's gunning for the same position(s), it'll probably be suboptimal.
+- A different approach would be to figure out where you want your career to go, identify what skill gaps you have, and **use your current role to help fill those gaps**
+
+# Partnering with your manager as an IC
+Let them know:
+- What problems you're trying to solve
+- What you prefer to work on
+- Your professional goals.
+- Where you are between bored & challenged
+- Managers typically have a strong sense of the business' needs. That gives them the superpower of finding the intersection of your interests & the business' priorities!
+
+> Chasing the next promotion is at best a marker on a mass-produced treasure map, with every shovel and metal detector re-covering the same patch. Don’t go there. Go somewhere that’s disproportionately valuable to you because of who you are and what you want.
+
+Maintain this in a doc. Address it in 1:1s or async.
+- Check out the [career checkup template](https://lethain.com/career-checkup/).
 
 ---
 > The good news is that both the stable eras and the transitions are great opportunities for growing yourself. Transitions are opportunities to raise the floor by building competency in new skills, and in stable periods you can raise the ceiling by developing mastery in the skills that the new era values.
@@ -247,6 +263,19 @@ Again, some parallels to draw to the [lessons from Brian Holt](/pm-holt).
 - Provide pre-read material for a richer experience
 
 # On Policies
+
+### Work the policy, not the exception
+
+> I’ve come to believe that environments that tolerate frequent exceptions are not only susceptible to bias but are also inefficient
+
+> The fixed cost of creating and maintaining a policy is high enough that I generally don’t recommend writing policies that do little to constrain behavior. In fact, that’s a useful definition of bad policy.
+
+> When you roll out a policy, it’s quite helpful to declare a future time when you’ll refresh it, which ensures that you’ll have the time to fully evaluate your new policy before attempting revision.
+This one is important. Similar to giving [feature flags](/feature-flag) an expiry date😬
+
+## On Saying no
+
+> When folks want you to commit to more work than you believe you can deliver, your goal is to provide a compelling explanation of how your team finishes work. Finishes is particularly important, as opposed to does, because **partial work has no value**
 
 # Kill your heroes
 
