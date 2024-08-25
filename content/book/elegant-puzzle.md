@@ -232,9 +232,19 @@ The idea of positive & negative freedom is very new to me, and I'm compelled to 
 # Presenting to senior leadership
 Again, some parallels to draw to the [lessons from Brian Holt](/pm-holt).
 
+- Communication is company specific. Every company has it's on styles and patterns
+- Start with the conclusion
+- Frame why the topic matters. Tie it to business value
+- Make a clear ask
+- Be cosy with the details. Some executives test presenters by diving into the details
+
 # Communities of learning
 
 - Whitepapers, something I never thought to include in book club rotations! Def giving this a shot in future.
+- Be a facilitator, not a lecturer. People want to learn from each other more than they want to hear from a single presenter.
+- Brief presentations, long discussions - like a 1:2 ratio, respectively.
+- Bias for topics that are core to daily work
+- Provide pre-read material for a richer experience
 
 # On Policies
 
