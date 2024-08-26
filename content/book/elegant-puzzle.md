@@ -65,7 +65,7 @@ A team's state exists on a continuum
 
 When chatting about growing an org, we reach for hiring too often. Look at what state your team is in, and apply the relevant fix.
 
-### On moving teams from one continuum to the other
+### On moving teams from one state to the other
 
 - Consolidate your efforts, focus on one team at a time!
   I like this framing:
@@ -132,7 +132,8 @@ You can model the DORA metrics using stocks and flows. The metrics being Deliver
   - This means I read reverted commits as **patch commits**
   - In contrast, there's an SRE lesson I was taught recently by [Dmitriy Ryaboy](https://www.youtube.com/watch?v=xAzb7Gtu2a8): in the time of crisis, it's 
   not a good idea to try and understand deeply **why** things are broken before you fix. Just rollback/revert so you can restore service, then figure things out later.
-  Succintly said, "First restore the service, then fix the problem."
+  Succinctly said: 
+  > "First restore the service, then fix the problem."
 
   # On Product Management
 Interesting to see a lot of Will's remarks relate to [the lessons about product management from Brian Holt](/pm-holt).
@@ -292,6 +293,7 @@ Again, some parallels to draw to the [lessons from Brian Holt](/pm-holt).
 > The fixed cost of creating and maintaining a policy is high enough that I generally don’t recommend writing policies that do little to constrain behavior. In fact, that’s a useful definition of bad policy.
 
 > When you roll out a policy, it’s quite helpful to declare a future time when you’ll refresh it, which ensures that you’ll have the time to fully evaluate your new policy before attempting revision.
+
 This one is important. Similar to giving [feature flags](/feature-flag) an expiry date😬
 
 ## On Saying no
