@@ -30,16 +30,7 @@ params:
     - name: Youtube
       icon: youtube
       url: "https://twitter.com/guidefari"
-  # customcss: ["css/style.css"]
   favicon: "favicon.png"
-# menu:
-  # main:
-    # - name: Start Here
-    #   url: /about
-    #   weight: 1
-    # - name: Content Nav
-    #   url: /content
-    #   weight: 1
 Permalinks:
   post: "/:filename/"
   album: "/:filename/"
@@ -67,11 +58,14 @@ frontmatter:
 
 outputs:
   home:
-    - HTML
-    - RSS
+    - html
+    - rss
   section:
-    - HTML
-    - RSS
+    - html
+    - rss
   taxonomy:
-    - HTML
-    - RSS
+    - html
+    - rss
+  term:
+    - html
+    - rss

@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+
+<ul class="mb-10">
+    <li><a href="/index.xml">All Content</a></li>
+    <li><a href="/note/index.xml">Notes</a></li>
+    <li><a href="/podcast/index.xml">Podcast Notes</a></li>
+    <li><a href="/book/index.xml">Book Notes</a></li>
+    <li><a href="/resource/index.xml">General resources</a></li>
+</ul>
+
+<h2>Tag-specific feeds:</h2>
+{{/*  responsive 4 column grid  */}}
+<ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <li><a href="/tags/{{ $name | urlize }}/index.xml">{{ $name | title }}</a></li>
+    {{ end }}
+</ul>
+
+{{ end }}
