@@ -1,10 +1,10 @@
-<header>
+<header class="lg:sticky lg:top-4">
   <nav class="flex space-x-5">
-    <a title="Home" href="{{ .Site.BaseURL }}">
-      {{- partial "home.svg" . -}}
+    <a title="Home" href="{{ .Site.BaseURL }}" class="w-12 h-12 border-0 hover:bg-transparent">
+      <img src="/favicon.png" class="rounded-full" alt="Avatar" />
     </a>
-    <a title="email" href="mailto:yo@guidefari.com" target="_blank">
-      {{- partial "mail.svg" . -}}
+    <a title="rss" href="/rss" class="w-12 h-12 border-0 hover:bg-transparent">
+      {{- partial "rss.svg" . -}}
     </a>
   </nav>
 </header>
