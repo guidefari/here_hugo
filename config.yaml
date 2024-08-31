@@ -64,3 +64,14 @@ frontmatter:
   - lastmod
   - date
   - publishDate
+
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS

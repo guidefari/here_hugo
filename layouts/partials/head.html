@@ -84,4 +84,12 @@
 	{{ if .Params.noindex }}
 		<meta name="robots" content="noindex" /> 
 	{{ end }}
+
+	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - All Content" href="{{ "index.xml" | absURL }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - Notes" href="{{ "note/index.xml" | absURL }}">
+	{{ if .IsNode }}
+		{{ if eq .Data.Singular "tag" }}
+			<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - {{ .Title }} Tag" href="{{ .RelPermalink }}index.xml">
+		{{ end }}
+	{{ end }}
 </head>
