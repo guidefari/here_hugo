@@ -18,5 +18,6 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Energy%20Manage
 
 - [PG's Maker's Schedule, Manager's Schedule](http://www.paulgraham.com/makersschedule.html)
 - [Context switching strategies to preserve your focus](https://leaddev.com/process/context-switching-strategies-preserve-your-focus)
+- BK on [How I have time for everything](https://justreflections.bhekani.com/p/how-i-have-time-for-everything).
 
 {{<youtube XHRCTwvvGTU>}}
