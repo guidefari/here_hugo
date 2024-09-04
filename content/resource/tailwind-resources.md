@@ -23,6 +23,16 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 12. [DaisyUI](https://daisyui.com/)
 13. [How to Create a Fixed Sidebar with Tailwind CSS](https://www.kindacode.com/snippet/how-to-create-a-fixed-sidebar-with-tailwind-css/)
 
+## Component libraries shared by [BK](https://www.bhekani.com/)
+- [ui.aceternity.com](https://ui.aceternity.com/components)
+- [magicui.design](https://magicui.design/docs/components/marquee)
+- [syntaxui.com](https://syntaxui.com/)
+- [motion-primitives.com](https://motion-primitives.com/)
+- [animata.design](https://animata.design/)
+- [lukacho.com](https://ui.lukacho.com/)
+- [hyperui.dev](https://www.hyperui.dev/)
+
+
 # Util
 1. [tailwind play](https://play.tailwindcss.com/) - New tool from Tailwind Labs.
 2. [generate tailwind color palette](https://javisperez.github.io/tailwindcolorshades/#/)
