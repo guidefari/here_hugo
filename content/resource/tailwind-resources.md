@@ -16,15 +16,12 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Reso
 5. [Flowbite Blocks - Tailwind UI components](https://flowbite.com/blocks/)
 6. [Meraki UI](https://merakiui.com)
 7. [Awesome tailwind](https://github.com/aniftyco/awesome-tailwindcss)
-8. [kutty](https://kutty.netlify.app/docs/)
 9. [Kitwind](https://kitwind.io/products/kometa/components) - A whole bunch of components(130+), written as HTML, Vue, & React😎
-10. [Tails/Devdojo](https://devdojo.com/tailwindcss/components) - more components
 11. [TailwindUI](https://tailwindui.com/components) - HTML components, courtesy of Steve Schoger & Adam Wathan. Some free components here, but mostly paid stuff.
 12. [DaisyUI](https://daisyui.com/)
-13. [How to Create a Fixed Sidebar with Tailwind CSS](https://www.kindacode.com/snippet/how-to-create-a-fixed-sidebar-with-tailwind-css/)
 
 ## Component libraries shared by [BK](https://www.bhekani.com/)
-- [ui.aceternity.com](https://ui.aceternity.com/components)
+- [aceternity.com](https://ui.aceternity.com/components)
 - [magicui.design](https://magicui.design/docs/components/marquee)
 - [syntaxui.com](https://syntaxui.com/)
 - [motion-primitives.com](https://motion-primitives.com/)
