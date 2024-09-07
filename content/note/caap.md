@@ -35,10 +35,34 @@ The same philosophy can be applied to your codebase.
 
 Regularly interview, poll, & survey your developers in order to find pain points & desired features in their development workflow. Make sure to actually action out stuff based off the feedback if you don’t want to see engagement fizzle.
 
+# Feedback loops from machines
+
+Similar to regression testing your product, your codebase can be given the same treatment.
+
+The general idea here is to establish an acceptable quality threshold, & use static analysis to keep your code quality above desired thresholds at all times.
+
+Here's how I like to build code quality feedback loops into my workflow:
+
+- Github actions on push/PR to main
+  - Lint check
+  - Type checks - does it compile?
+- Notifications on mobile, that way any problem is surfaced early
+
 # Documentation
 
 - Architecture
 - How to fix common issues
+
+How I like to do it:
+
+- Keeping `.md` files in the codebase
+- Following the high cohesion folder structure, I like to have these markdown files closet to where they're relevant.
+
+> Documentation and self-service tooling are products, and they thrive under the same regime: sit down with some teams and watch them follow your instructions, then improve them.
+
+# Get the boring stuff right
+
+- Cohesive folder structure
 
 # Onboarding
 
