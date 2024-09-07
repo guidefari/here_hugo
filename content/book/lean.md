@@ -34,3 +34,5 @@ and how that connects to the **flow of value through a system** that I've hear
   * DORA & accelerate
   * in software, work sitting in a queue, or WIP state, is liked to inventory in the manufacturing process
 * how queuing theory fits in
+
+## [7 Wastes of Lean in Software Development](https://activecollab.com/blog/project-management/the-first-principle-of-lean-management-eliminate-waste)

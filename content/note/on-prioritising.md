@@ -20,9 +20,10 @@ This chat was brought up after we let some PR's get a little stale.
 
 Async pull requests are usually part of some Kanban-like flow, where work moves from the left to right of the board, meaning that after merging in that pull request, it’s usually time for QA, **meaning that work in QA, is closer to money than any open PR’s, or WIP that’s not yet ready for review.**
 
+## Zero defect strategy fits well into this mental model
+> **zero defects strategy** means that at any given time, the highest priority is to eliminate bugs before writing any new code.
 
-> We sell AC - Tim S.
-
+> We sell Acceptance Criteria - Tim S.
 I'd add: The AC has to solve a problem that your user has.
 
 ## Right to left

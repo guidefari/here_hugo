@@ -2,7 +2,7 @@
 title: "On Blackboxes & Open Garage Doors"
 date: 2024-08-11T23:15:55+02:00
 description: Another excerpt from a chat with Ibra & Victor.
-tags: [strategy]
+tags: [strategy, process]
 images: ["https://images-here-hugo.vercel.app/api/og-image?title=Blackboxes"]
 ---
 
@@ -31,6 +31,8 @@ This chat happened over 2 calls, each a month apart. During the first call, the 
 
 - I'm here to fit into my silo.
 - This is suboptimal, in my opinion.
+
+> [Handoffs are a dangerous part of the process. They open up the opportunity for information to get lost, tasks not be delegated properly, and previous or newly appointed assignees washing their hands of responsibility. It's crucial to reduce the number of handoffs in the flow and increase their quality as much as possible.](https://activecollab.com/blog/project-management/the-first-principle-of-lean-management-eliminate-waste)
 
 # Mode of operation: Open garage door
 
