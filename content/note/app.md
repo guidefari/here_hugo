@@ -9,7 +9,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Ambient%20Pair%
 
 The idea is to get into a channel, share your intentions for the work session, and get to it. The feeling of immediate accountability is usually enough motivation to get going.
 
-You can share your screens for occasional comments, or switch on the camera for a more social & real time feel. Or just silently sit in a room with mic & camera off, and chatting at a regular cadence.
+You can share your screens for occasional comments, or switch on the camera for a more social & real time feel. Or just silently sit in a room with mic & camera off, and chatting at a variable cadence.
 
 ## When is this useful
 - When you and 1 or 2 teammates are feeling low on energy, or struggling to concentrate
