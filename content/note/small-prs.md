@@ -14,8 +14,8 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Small+PRs']
 - Easier rollbacks and identification of issues
 - Works well when combined with markdown notes next to the code
 
-### Works well when combined with Microsoft’s zero defects methodology
-> **zero defects** meant that at any given time, the highest priority is to eliminate bugs before writing any new code
+### Works well when combined with [Microsoft’s zero defects](/zero-defect-strategy) methodology
+> [**zero defects** meant that at any given time, the highest priority is to eliminate bugs before writing any new code](/zero-defect-strategy)
 
 - With that said, each small PR should leave the pipelines green, with hopefully no breaking changes
 

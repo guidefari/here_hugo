@@ -46,7 +46,7 @@ How you refer to this will differ from team to team, and context - but the gener
 - Everytime I convert a JS file to TS, I learn so much about the domain knowledge. Typescript really helps to communicate intent & contracts between entities
   - This becomes very useful in a big codebase, where you could find yourself regularly exploring areas of the codebase for the first time
 
-# [Microsoft's zero defect methodology](https://readwise.io/reader/shared/01gv5748ynxtnb274mmwa0500t)
+# [Microsoft's zero defect methodology](/zero-defect-strategy)
 
 > **zero defects** meant that at any given time, the highest priority is to eliminate bugs before writing any new code.
 >
