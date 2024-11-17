@@ -197,28 +197,8 @@ Also see:
 
 > The two tests of an effective goal are whether someone who doesn’t know much about an area can get a feel for a goal’s degree of difficulty, and whether afterward they can evaluate if it was successfully achieved
 
-# On Migrations
-- Migrations are essential, and frustratingly frequent as your codebase ages and your business grows.
-- Most tools/processes only support about one order of magnitude of growth before becoming ineffecive.
-  - Rapid growth therefore makes migrations a way of life.
-- Migrations are usually the only available avenue to make meaningful progress on tech-debt.
-- They also occupy the awkward territory of reduced immediate contribution today
-in exchange for more capacity tomorrow.
-  - This makes them controversial to schedule
-- They also get more expensive to carry out as your system grows.
-
-## Running good migrations
-**De-risk** (trigger word, if you know you know💀)
-- As quick & cheaply as reasonably possible
-- Workshop it with one or two of the most challenged teams. Document, evolve, and migrate with them, so you can build a safe, repeatable playbook for the rest of the organisation.
-- Effective de-risking is essential, each team who endorses a migration is making a bet on you that you're going to get this thing done.
-
-**Enable**
-- On top of documentation, try to maximise on programmatic migration
-
-**Finish**
-> Starting but not finishing migrations often incurs significant technical debt, so your incentives and recognition structure should be careful to avoid perverse incentives.
-
+# [On Migrations](/migrations)
+- I put this section into [it's own atomic note](/migrations). I'm referencing it elsewhere.
 
 # [Career Narratives](https://lethain.com/career-narratives/)
 - There's only so many internal positions to go around. Especially in smaller to mid-sized companies.
