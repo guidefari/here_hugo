@@ -2,7 +2,7 @@
 title: "Exploring CI/CD options"
 date: 2024-06-28T11:38:54+02:00
 description: With a focus on solo hackers' TS & Go projects.
-tags: [cloud, aws, infra]
+tags: [cloud, aws, infra, sst]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Exploring+CI+CD']
 ---
 

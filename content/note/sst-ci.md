@@ -2,7 +2,7 @@
 title: "SST CI deployments with a custom domain name"
 date: 2024-09-07T10:37:10+02:00
 description: Going from deploying to prod via my laptop, to github actions.
-tags: [infra]
+tags: [infra, sst]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=SST+CI']
 ---
 

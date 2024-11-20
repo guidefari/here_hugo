@@ -2,7 +2,7 @@
 title: "TIL: Specify Sst Region"
 date: 2024-10-17T05:43:52+02:00
 description: Something I learnt today. Maybe more than one thing👾
-tags: [til]
+tags: [til, sst]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Specify+SST+Region']
 ---
 

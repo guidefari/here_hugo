@@ -2,13 +2,13 @@
 title: "Nextgoose -> gbfm"
 date: 2024-09-16T20:37:16+02:00
 description: Moving goosebumps from Vercel to SST
-tags: [infra]
+tags: [infra, sst]
 images: ["https://images-here-hugo.vercel.app/api/og-image?title=Gbfm+Sst"]
 ---
 
 # The next iteration of goosebumps is here
 
-- All in the same [repo](https://github.com/guidefari/gbfm), so you can check the [closed PRs](https://github.com/guidefari/gbfm).
+- All in the same [repo](https://github.com/guidefari/gbfm), so you can check the [closed PRs](https://github.com/guidefari/gbfm/pulls?q=is:pr+is:closed).
 - Learnt [some painful lessons](/sst-ci).
 - Still the same app, for now. Going for feature parity with before
 - Decision was based on lots of nits, & long term strategy alike
