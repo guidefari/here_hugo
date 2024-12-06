@@ -6,6 +6,7 @@ tags: [writing, second-brain]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Lessons%20from%20Andy%20Matuschak']
 ---
 
+- [Note writing systems](https://notes.andymatuschak.org/%C2%A7Note-writing_systems)
 - [Atomic notes](https://notes.andymatuschak.org/z4Rrmh17vMBbauEGnFPTZSK3UmdsGExLRfZz1)
 > [[Daily working log] captures ephemera throughout the day](https://notes.andymatuschak.org/z28QkpK3vRKQTacjFDfGYBhCXHqHuVWJzny9)
 - [Writing inbox](https://notes.andymatuschak.org/z5aJUJcSbxuQxzHr2YvaY4cX5TuvLQT7r27Dz) to capture transient & incomplete notes
