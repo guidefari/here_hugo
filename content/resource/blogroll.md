@@ -27,7 +27,8 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Blogroll']
 - Julia Evans
 - Irrational Exuberance
 - Stay SaaSy
-- 
+- [Julio Biason](https://blog.juliobiason.me/) - Browsing through this site felt like home.
+  - [tags on this site](https://blog.juliobiason.me/tags/)
 
 # Reflections
 - A common theme here is that I seem to enjoy good typography
