@@ -23,7 +23,7 @@ culture can be a bit of a buzzword, and is inherently a subjective term, but it 
 
 - [Book notes](https://www.softwaremeadows.com/devops/accelerate_notes_and_quotes/) by Charles Flatt
 
-## Summarised by [Gijis & Marcin]({{<ref ing-bank>}})
+## Summarised by [Gijs Meijer & Marcin Pakulnicki]({{<ref ing-bank>}})
 
 ---
 
