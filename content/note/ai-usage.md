@@ -11,11 +11,14 @@ images:
 [Prompted by Kyle Shevlin](https://kyleshevlin.com/ai/) this note is a living document to capture how I use AI.
 
 # Writing
-I've experimented with using AI chat to generate outlines for notes (grand total of 3 or 4 notes to date). Using AI for writing doesn't exactly give me a productivity boost, and I feel like it's in conflict of one of my guiding principles, ["writing for an audience of one"](/audience-of-one).
+I've experimented with using AI chat to generate outlines for notes (grand total of 2 or 3 notes to date). Using AI for writing doesn't exactly give me a productivity boost, and I feel like it's in conflict of one of my guiding principles, ["writing for an audience of one"](/audience-of-one).
 
 > [I believe we need to keep parts of the internet human. We need real voices in our digital world. I'm going to keep doing my part.](https://kyleshevlin.com/ai/)
 
 Theoretically, it's useful when writing podcast & book notes, cause I can ask questions about the specific points I want to capture, but again, I've only done this for like 2 notes.
+For this, check out:
+- [Summarize.tech](https://www.summarize.tech/) - useful for getting a summary of youtube videos
+- [Google Notebook](https://notebooklm.google/) - useful for prompting PDF documents
 
 I think I just prefer hand-written notes.
 # Programming
