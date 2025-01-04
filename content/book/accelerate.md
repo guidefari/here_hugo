@@ -7,7 +7,7 @@ tags: [book, notes, devops, leadership, process, systems theory]
 
 - [Get the book here](https://www.goodreads.com/book/show/35747076-accelerate)
 
-- difference between organisations taking on a maturity model vs a capabilities model
+- [difference between organisations taking on a maturity model vs a capabilities model](/maturity-vs-capability)
 
 ## culture & devops
 
