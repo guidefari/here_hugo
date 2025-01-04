@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html class="p-4">
-    {{- partial "head.html" . -}}
-    {{- partial "header.html" . -}}
-    <body>
-        <div class="content">
-            {{- block "main" . }}{{- end }}
-        </div>
-    </body>
+{{- partial "head.html" . -}}
+{{- partial "header.html" . -}}
+
+<body>
+    <div class=" content">
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>

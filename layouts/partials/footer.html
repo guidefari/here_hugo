@@ -1,36 +1,29 @@
-<footer class="social-links flex p-4 space-x-2 max-w-md w-full flex-wrap mx-auto justify-center">
-    <a href="mailto:yo@guidefari.com" target="_blank">
-      {{- partial "mail.svg" . -}}
-    </a>
-    <a href="https://github.com/txndai" target="_blank">
-      {{- partial "github.svg" . -}}
-    </a>
-    <a href="https://www.linkedin.com/in/guide-fari-8b0063176/" target="_blank">
-      {{- partial "linkedin.svg" . -}}
-    </a>
-    <a href="https://twitter.com/guidefari" target="_blank">
-      {{- partial "twitter.svg" . -}}
-    </a>
-    <a
-      href="https://www.youtube.com/channel/UCXLiPJsFfPpwJZIF-3QvzXQ"
-      target="_blank"
-    >
-      {{- partial "youtube.svg" . -}}
-    </a>
-    <a href="https://www.instagram.com/guidefari/" target="_blank">
-      {{- partial "instagram.svg" . -}}
-    </a>
-    <a
-      href="https://open.spotify.com/user/gqbaqx445507dgzjms78u1kkz?si=3fb6283823f54186"
-      target="_blank"
-    >
-      {{- partial "spotify.svg" . -}}
-    </a>
-    <a href="https://bandcamp.com/guidefari" target="_blank">
-      {{- partial "bandcamp.svg" . -}}
-    </a>
-  <!-- {{- range $index, $key := .Site.Params.Social -}}
-<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
-{{- end -}} -->
-  <!-- {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}  -->
+<footer class="pt-5 text-left border-t-2 group">
+  <div class="flex flex-wrap justify-center">
+    <div class="w-full px-3 grow-0 shrink-0 basis-auto lg:w-10/12">
+      <div class="grid items-center lg:grid-cols-2 gap-x-6">
+        <div class="mb-10 lg:mb-0">
+          <div class="text-2xl font-bold">
+            Subscribe to keep in touch.
+          </div>
+        </div>
+
+        <div class="mb-6 md:mb-0">
+          <div class="">
+            <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post"
+              target="popupwindow" class="flex flex-col justify-center md:justify-start md:flex-row">
+              <input type="email" name="email" id="bd-email"
+                class="block w-full px-4 py-2 m-0 mb-2 text-xl font-normal transition ease-in-out border border-gray-300 border-solid rounded form-control md:mb-0 md:mr-2 bg-clip-padding focus:outline-none"
+                placeholder="Enter your email" />
+              <button type="submit"
+                class="inline-block py-3 text-sm font-medium leading-snug text-white uppercase transition duration-150 ease-in-out rounded shadow-md px-7 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                data-mdb-ripple="true" data-mdb-ripple-color="light">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
