@@ -5,7 +5,7 @@ description: a living document to capture how I use AI.
 tags:
   - ai
 images:
-  - https://images-here-hugo.vercel.app/api/og-image?title=Ai+Usage
+  - https://images-here-hugo.vercel.app/api/og-image?title=My+AI+Usage
 ---
 
 [Prompted by Kyle Shevlin](https://kyleshevlin.com/ai/) this note is a living document to capture how I use AI.
