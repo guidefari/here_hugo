@@ -3,7 +3,7 @@ title: "GUI and CLI"
 date: 2024-12-22T09:02:45+02:00
 description: Graphics user interfaces and Command line interfaces have quite a bit in common.
 tags: [ux, design, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Gui+Tui']
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=GUI+and+CLI']
 ---
 
 ## Glossary
@@ -47,3 +47,4 @@ Been enjoying nerding out on this topic a bit. Here's a few interesting links I'
 - [User experience, CLIs, and breaking the world](https://uxdesign.cc/user-experience-clis-and-breaking-the-world-baed8709244f): Another one I have't read yet
 - [How we sold coffee from the terminal](https://www.youtube.com/watch?v=POlZS8PcyZw)
 - Dax [tweeted a bunch of stuff](https://www.google.com/search?q=site:twitter.com+thdxr+multiplexer) while building sst's multiplexer terminal ui.
+- [Data Science at the Command Line](https://datascienceatthecommandline.com/): Shared by Dandre, I'm yet to read this one.
