@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
     "watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "concurrently \"hugo serve\" \"npm run watch\""
+    "dev": "concurrently \"hugo server --navigateToChanged\" \"npm run watch\""
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/txndai/here_hugo#readme",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "concurrently": "^7.6.0",
-    "tailwindcss": "^3.1.6"
+    "@tailwindcss/typography": "^0.5.16",
+    "concurrently": "9.1.2",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {}
 }
