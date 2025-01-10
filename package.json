@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
     "watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "concurrently \"hugo server --navigateToChanged\" \"npm run watch\""
+    "dev": "concurrently \"hugo server --navigateToChanged --buildFuture\" \"npm run watch\""
   },
   "repository": {
     "type": "git",

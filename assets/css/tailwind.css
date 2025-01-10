@@ -14,7 +14,10 @@
       }
     
     a {
-        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in hover:text-black  hover:visited:bg-[var(--maincolor)]  visited:decoration-[var(--accentText)];
+        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in  visited:decoration-[var(--accentText)];
+        &:hover {
+            @apply text-black visited:text-[var(--accentText)];
+        }
     }
     .index-image {
       @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
@@ -23,16 +26,16 @@
     figure:has(a) figcaption {
         text-decoration: none;
         text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
-        background-image: linear-gradient(to right, var(--hovercolor) 50%, var(--maincolor) 50%);
+        background-image: linear-gradient(to right, var(--hovercolor) 50%, black 50%);
         background-position: 0;
         background-size: 200%;
         transition: all 0.4s;
-        @apply rounded-tl-sm rounded-br-sm;
+        @apply rounded-tl-sm rounded-br-sm text-lg leading-7 w-min;
     }
     figure:has(a):hover figcaption {
         background-position: -100%;
+        /* transform: skewX(-10deg); */
     }
-
     figcaption h4 {
       @apply left-0 mt-0;
     }
