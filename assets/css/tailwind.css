@@ -14,11 +14,29 @@
       }
     
     a {
-        border-bottom: 3px solid var(--maincolor);
-        color: inherit;
-        text-decoration: none;
-        @apply text-white transition duration-100 ease-in hover:text-black hover:bg-highlight;
+        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in hover:text-black  hover:visited:bg-[var(--maincolor)]  visited:decoration-[var(--accentText)];
     }
+    .index-image {
+      @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
+    }
+
+    figure:has(a) figcaption {
+        text-decoration: none;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+        background-image: linear-gradient(to right, var(--hovercolor) 50%, var(--maincolor) 50%);
+        background-position: 0;
+        background-size: 200%;
+        transition: all 0.4s;
+        @apply rounded-tl-sm rounded-br-sm;
+    }
+    figure:has(a):hover figcaption {
+        background-position: -100%;
+    }
+
+    figcaption h4 {
+      @apply left-0 mt-0;
+    }
+
     html {
         font-family: "Jetbrains Mono", monospace;
     }
@@ -33,13 +51,6 @@
         margin: 1em 0;
       }
 
-      .index-image {
-        @apply object-cover w-full rounded-md sm:h-32 sm:w-32 hover:ring-2 ring-yellow-300;
-      }
-
-      figcaption h4 {
-        @apply left-0 mt-0;
-      }
   }
 
 @layer components {
