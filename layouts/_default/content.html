@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $contentDir := "content" }}
+{{ $folders := readDir $contentDir }}
+
+
+<h3 class="mb-4 text-2xl font-bold">The different content folders</h3>
+
+<ul>
+    {{ range $folders }}
+    {{ if and .IsDir (not (hasPrefix .Name ".")) }}
+    <li>
+        <a href="/{{ .Name | urlize }}">{{ .Name }}</a>
+    </li>
+    {{ end }}
+    {{ end }}
+</ul>
+{{ end }}

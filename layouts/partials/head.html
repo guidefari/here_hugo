@@ -8,8 +8,6 @@
 	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
 	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}"> 
 
-	{{ $paginator := .Paginate (where .Site.RegularPages ".Params.post" "!=" false) }}
-
 	{{ if not .Params.images }}
 	{{ $ogImage := printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
 		<meta property="og:image" content="{{ $ogImage }}">
@@ -17,15 +15,9 @@
 	{{ end }}
 
 	{{ if .IsHome }}
-		{{ if eq $paginator.PageNumber 1 }}
-			<title>{{ .Title }}</title>
-			<meta name="description" content="{{ .Site.Params.subtitle }}" />
-			<link rel="canonical" href="{{ .Permalink }}" />
-		{{ else }}
-			<title>{{ .Title }} | Page {{ $paginator.PageNumber }}</title>
-			<meta name="description" content="This is page {{ $paginator.PageNumber }} of our content." />
-			<link rel="canonical" href="{{ .Permalink }}page/{{ $paginator.PageNumber }}/" />
-		{{ end }}
+		<title>{{ .Title }}</title>
+		<meta name="description" content="{{ .Site.Params.subtitle }}" />
+		<link rel="canonical" href="{{ .Permalink }}" />
 	{{ else }}
 		{{ if .Params.seoTitle }}
 			<title>{{ .Params.seoTitle }}</title>
@@ -69,7 +61,7 @@
 	{{- end }}
 
 	<!-- Google analytics - using Hugo built in partial -->
-	{{ if not .Site.IsServer }}
+	{{ if not hugo.IsServer }}
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNKPVT1XN3"></script>
 		<script>
