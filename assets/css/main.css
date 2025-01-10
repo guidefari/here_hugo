@@ -18,7 +18,6 @@ html {
 body {
   background-color: #1A2F38;
   position: relative;
-  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -119,7 +118,6 @@ code {
 
 /* Containers */
 .content {
-  margin-bottom: 4em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 0.5rem;

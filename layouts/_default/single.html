@@ -1,37 +1,41 @@
 {{ define "main" }}
 <main>
-		<div class="">
-			<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
-			<time >Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-			<!-- <h5 id="wordcount"> {{ .WordCount }} Words </h5> -->
-			<div class="post-tags">
-				{{ if ne .Type "page" }}
-				{{ if gt .Params.tags 0 }}
-				<nav class="nav">
-					<ul class="single-tags">
-						{{ range .Params.tags }}
-						<li class="single-tag"><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a></li>
-						{{ end }}
-					</ul>
-				</nav>
-				{{ end }}
-				{{ end }}
-			</div>
+	<div class="">
+		<h1 class="my-8 text-5xl ">{{ .Title }}</h1>
+		{{if .Date}}<time>Posted on {{ dateFormat "Jan 2, 2006" .Date }}</time>{{end}}
+		{{ if .Params.draft }} <p class="draft-label">DRAFT</p> {{ end }}
+		{{if .Params.publishDate}}
+		<time>Published on {{ dateFormat "Jan 2, 2006" .Params.publishDate }}</time>
+		{{end}}
+		<!-- <h5 id="wordcount"> {{ .WordCount }} Words </h5> -->
+		<div class="post-tags">
+			{{ if ne .Type "page" }}
+			{{ if gt .Params.tags 0 }}
+			<nav class="nav">
+				<ul class="single-tags">
+					{{ range .Params.tags }}
+					<li class="single-tag"><a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</nav>
+			{{ end }}
+			{{ end }}
 		</div>
-		{{ if isset .Params "description" }}
-		<!-- <div class="tldr">
+	</div>
+	{{ if isset .Params "description" }}
+	<!-- <div class="tldr">
 			{{ .Params.description }}
 		</div> -->
-		{{ end }}
-		{{ if isset .Params "tldr" }}
-		<div class="tldr">
-			{{ .Params.tldr }}
-		</div>
-		{{ end }}
-		<!-- <hr/> -->
+	{{ end }}
+	{{ if isset .Params "tldr" }}
+	<div class="tldr">
+		{{ .Params.tldr }}
+	</div>
+	{{ end }}
+	<!-- <hr/> -->
 
-		<article class="prose lg:prose-xl">
-			{{ .Content }}
-		</article>
+	<article class="prose lg:prose-xl">
+		{{ .Content }}
+	</article>
 </main>
 {{ end }}

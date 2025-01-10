@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html class="p-4">
+<html>
 {{- partial "head.html" . -}}
 {{- partial "header.html" . -}}
 
-<body>
-    <div class=" content">
+<body class="flex flex-col p-4 min-h-dvh">
+    <div class="flex-grow w-full content">
         {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}

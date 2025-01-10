@@ -20,4 +20,5 @@ description: "Tailored for music curation. - Interesting Spotify tools I've foun
 
 - [Genre finder](https://www.chosic.com/music-genre-finder/) - not spotify only, cool tool nonetheless
 - [spicetify-cli](https://github.com/khanhas/spicetify-cli) - "Commandline tool to customize Spotify client. Supports Windows, MacOS and Linux."
+- [Exportify](https://exportify.net/) - Export & analyse your Spotify Data 
 
