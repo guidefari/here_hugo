@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html class="p-4">
-  {{ partial "head.html" . }}
-  <body class="mx-auto prose max-w-7xl lg:prose-xl">
-    {{partial "hero.html"}} {{partial "content-arcs.html"}}
+{{ partial "head.html" . }}
 
-    <!-- <div class="content">
+<body class="flex flex-col mx-auto space-y-4 prose max-w-7xl lg:prose-xl">
+  {{partial "hero.html"}}
+  {{partial "content-arcs.html"}}
+  <br>
+  <br>
+  {{- partial "footer.html" . -}}
+
+
+  <!-- <div class="content">
       <main>
         {{ $pages := where .Site.RegularPages "Type" "in"
         .Site.Params.mainSections }} {{ $paginator := .Paginate (where $pages
@@ -26,5 +32,6 @@
         {{ end }} {{ template "partials/paginator.html" . }}
       </main>
     </div> -->
-  </body>
+</body>
+
 </html>

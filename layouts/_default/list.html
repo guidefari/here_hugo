@@ -7,21 +7,23 @@
 
 <ul class="posts">
 	{{- range .Data.Pages -}}
-		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-		<section class="py-5">
-			<h2 class="mt-4 mb-2 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-			<time >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-			<br><div class="description">
-				{{ if isset .Params "description" }}
-				{{ .Description }}
-				{{ else }}
-				{{ .Summary }}&hellip;
-				{{ end }}
-			</div>
-			<!-- <hr/> -->
-		</section>
-		{{- end -}}
-		{{- end -}}
-	</ul>
-	<h1><a href="{{"/content"}}">View All Content Types</a></h1>
+	{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+	<section class="py-5">
+		<h2 class="mt-4 mb-2 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+		<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
+			}}</time>
+		<br>
+		<div class="description">
+			{{ if isset .Params "description" }}
+			{{ .Description }}
+			{{ else }}
+			{{ .Summary }}&hellip;
+			{{ end }}
+		</div>
+		<!-- <hr/> -->
+	</section>
+	{{- end -}}
+	{{- end -}}
+</ul>
+<h1 class="my-6"><a href="{{" /content"}}">View All Content Types</a></h1>
 {{ end }}
