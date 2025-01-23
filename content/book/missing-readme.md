@@ -56,6 +56,20 @@ Similar to using boring technology to keep cognitive load low, follow convention
 
 I’m guilty of that last sentence. 💀
 
+---
+
+## Throw early, catch late
+- Throw exceptions as close to the error as possible
+- Propagate exceptions up the call stack until you reach the level of the program that's capable of handling the exception
+
+## Retry intelligently
+Exponential backoff (`(retry number)^2`) is good to a certain point. In a distributed system scenario, if all clients experience a blip at the same time, then use the same backoff strategy to retry, they'll issue requests at the same time.
+
+This results in a **thundering herd**! To handle this, add *jitter* - the client adds a random, bounded amount of time to the backoff. This adds an element of randomness, thus reducing th likelihood of a stampede.
+
+Not everything is supposed to be retried, sometimes it's best to let the software crash and let a human trigger the retry. e.g. when writing data, executing some business process, or something with side-effects.
+
+
 ## Evolving API’s
 - Forward compatibility & backward compatibility 
 
