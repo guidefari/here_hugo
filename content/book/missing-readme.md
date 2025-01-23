@@ -89,6 +89,13 @@ Non-exhaustive list of things to measure
 - Remote requests and responses - histograms
 - Resources pools - you can use guages for this
 
+---
+
+## Code review
+> Large reviews might need additional planning. If you get a review that’s going to take more than an hour or two to get through, create an issue to track the review itself.
+
+> Respect the scope of the change that’s being made. As you read, you’ll find ways to improve adjacent code and have ideas for new features; don’t insist that these changes be made as part of the existing review.
+
 
 ## Evolving API’s
 - Forward compatibility & backward compatibility 
