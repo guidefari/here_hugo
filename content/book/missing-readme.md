@@ -96,9 +96,25 @@ Non-exhaustive list of things to measure
 
 > Respect the scope of the change that’s being made. As you read, you’ll find ways to improve adjacent code and have ideas for new features; don’t insist that these changes be made as part of the existing review.
 
+## Rollout strategies
+> There are many rollout strategies: feature flags, circuit breakers, dark launches, canary deployments, and blue-green deployments
 
-## Evolving API’s
-- Forward compatibility & backward compatibility 
+This was my first time hearing about **dark launches**.
 
-- Note on protobuffs and `required`
-> Remember, `required` is forever
+> In a dark launch, an application proxy sits between the live traffic and the application. The proxy duplicates requests to the dark system. Responses to these identical requests from both systems are compared, and differences are recorded. Only the production system’s responses are sent to the users.
+
+## Design documents
+
+> Don’t wait on final approval before writing code. Spend time implementing prototypes and proof-of-concept “spikes” to increase confidence in the design and to give you a shorter path to production
+
+---
+
+## Career stuff - Working with managers
+
+> If your manager repeatedly cancels your 1:1s, you need to speak to them about it. Part of their job is to manage their team, and part of management is investing time with you. Being “too busy” is not an excuse
+
+> Try to have as few OKRs as possible; it’ll keep you focused. Between one and three OKRs per quarter is a sweet spot. More than five and you’re spreading yourself too thin.
+
+> You should never be surprised by your performance review feedback
+
+> Don’t take feedback at face value. Your manager is just one perspective (albeit an important one). Try to incorporate your manager’s feedback into your perspective rather than adopting your manager’s feedback outright. Ask yourself what gaps your manager has in their perspective, how their feedback fits with yours, what they know that you don’t, and so on.
