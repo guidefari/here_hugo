@@ -11,3 +11,6 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=API+Gateway+Pre
 > [Even if your API is hosted on a subdomain, e.g. http://api.example.com, the browser still sees it as a cross-origin request from http://example.com. You should move the API to http://example.com/api instead. By hosting under the same domain, you eliminate the need for preflight requests altogether.](https://x.com/theburningmonk/status/1877632427679432957)
 
 I don't use API Gateway, but this was interesting to know. I use Lambda Function URLs
+
+## Source
+- Subscribe to Yan Cui's newsletter - [The Burning Monk](https://theburningmonk.com/subscribe/)
