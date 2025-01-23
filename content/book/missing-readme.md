@@ -69,6 +69,26 @@ This results in a **thundering herd**! To handle this, add *jitter* - the client
 
 Not everything is supposed to be retried, sometimes it's best to let the software crash and let a human trigger the retry. e.g. when writing data, executing some business process, or something with side-effects.
 
+## Misc note about logging
+> Beware that changing log verbosity and configuration can eliminate race conditions and bugs because it slows down the application. If you enable verbose logging to debug an issue and discover a bug disappears, the logging change itself might be the reason.
+
+I'm yet to experience this, hopefully never. But it feels like the sort of thing that'd be useful to know on a random Tuesday evening a few years down the line.
+
+## Metrics
+There are 3 common metric types:
+1. Counters - Measure the number of times an event occurs. These only go up, or reset to 0 when a process restarts.
+2. Gauges - For point-in-time measurements
+3. Histograms - These break events into ranges based on their magnitude. They commonly measure the amount of time requests take, or data payload sizes.
+
+> Measurements are cheap; you should use them extensively.
+
+Non-exhaustive list of things to measure
+- CPU-intensive operations
+- I/O-intensive operations
+- Exceptions & errors - counters
+- Remote requests and responses - histograms
+- Resources pools - you can use guages for this
+
 
 ## Evolving API’s
 - Forward compatibility & backward compatibility 
