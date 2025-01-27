@@ -6,7 +6,7 @@
 {{ end }}
 
 <ul class="posts">
-	{{- range site.RegularPages -}}
+	{{- range .Data.Pages -}}
 	{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
 	<section class="py-5">
 		<h2 class="mb-5 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
