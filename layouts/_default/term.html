@@ -1,34 +1,36 @@
 {{ define "main" }}
 {{ if isset .Data "Term" }}
-<div class="text-5xl my-10">Tagged - <strong>{{ .Data.Term }}</strong></div>
+<div class="my-10 text-5xl">Tagged - <strong>{{ .Data.Term }}</strong></div>
 {{ else }}
-<div class="text-5xl my-10">All articles</div>
+<div class="my-10 text-5xl">All articles</div>
 {{ end }}
 
 <ul class="posts">
-	{{- range .Data.Pages -}}
-		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-		<section class="py-5">
-			<h2 class="text-3xl mb-5"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-			<div class="home-tag-wrapper">
-				{{ range .Params.tags }}
-					<a class="home-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-					{{ end }}
-			</div>
-			<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
-			<br><div class="description">
-				{{ if isset .Params "description" }}
-				{{ .Description }}
-				{{ else }}
-				{{ .Summary }}&hellip;
-				{{ end }}
-			</div>
-			<hr/>
-		</section>
-		{{- end -}}
-		{{- end -}}
-	</ul>
-	<section>
-		<h4><a href="{{"/tags"}}">All tags</a></h4>
+	{{- range site.RegularPages -}}
+	{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+	<section class="py-5">
+		<h2 class="mb-5 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+		<div class="home-tag-wrapper">
+			{{ range .Params.tags }}
+			<a class="home-tag" href="{{ " /tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+			{{ end }}
+		</div>
+		<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
+			}}</time>
+		<br>
+		<div class="description">
+			{{ if isset .Params "description" }}
+			{{ .Description }}
+			{{ else }}
+			{{ .Summary }}&hellip;
+			{{ end }}
+		</div>
+		<hr />
 	</section>
+	{{- end -}}
+	{{- end -}}
+</ul>
+<section>
+	<h4><a href="{{" /tags"}}">All tags</a></h4>
+</section>
 {{ end }}

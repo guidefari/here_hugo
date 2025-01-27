@@ -11,16 +11,18 @@
         --darkMaincolor: #5C8001;
         --accentText: #ACC196;
         --text: #C8C2B7;
-      }
-    
+    }
+
     a {
-        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in  visited:decoration-[var(--accentText)];
+        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in visited:decoration-[var(--accentText)];
+
         &:hover {
             @apply text-black visited:text-[var(--accentText)];
         }
     }
+
     .index-image {
-      @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
+        @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
     }
 
     figure:has(a) figcaption {
@@ -30,14 +32,16 @@
         background-position: 0;
         background-size: 200%;
         transition: all 0.4s;
-        @apply rounded-tl-sm rounded-br-sm text-lg leading-7 w-min;
+        @apply text-lg leading-7 rounded-tl-sm rounded-br-sm w-min;
     }
+
     figure:has(a):hover figcaption {
         background-position: -100%;
         /* transform: skewX(-10deg); */
     }
+
     figcaption h4 {
-      @apply left-0 mt-0;
+        @apply left-0 mt-0;
     }
 
     html {
@@ -50,11 +54,11 @@
 
     hr {
         border: 0;
-        border-top: 3px dotted ;
+        border-top: 3px dotted;
         margin: 1em 0;
-      }
+    }
 
-  }
+}
 
 @layer components {
     .social-links svg {
@@ -68,7 +72,7 @@
         @apply space-x-4;
         line-height: 2;
     }
-    
+
     .single-tag {
         list-style: none;
     }
