@@ -1,9 +1,9 @@
 ---
-title: "Gbfm Migration"
+title: "Goosebumps.fm Platform Migration"
 date: 2025-01-13T06:50:39+02:00
-description: 
-tags: [strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=gbfm+Migration']
+description: Reflections on my move from NextJS & Vercel to AWS via SST
+tags: [strategy, sst, infra, aws]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=GBFM+Migration']
 ---
 
 No migration is real until there’s codenames. This initiative was a migration from `nextgoose` -> `gbfm`. 
@@ -58,4 +58,6 @@ Going into this, I had a simple goal: **No breaking changes**. I didn’t quite 
 - Lessons learnt: 8/10
 
 # Key takeaways 
-> don’t go through a migration unless the return on investment is at least an order of magnitude
+> [don’t go through a migration unless the return on investment is at least an order of magnitude](/elegant-puzzle)
+
+- Migrations will always take longer than you plan for or expect.
