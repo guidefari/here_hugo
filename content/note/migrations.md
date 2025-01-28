@@ -27,3 +27,7 @@ in exchange for more capacity tomorrow.
 
 **Finish**
 > Starting but not finishing migrations often incurs significant technical debt, so your incentives and recognition structure should be careful to avoid perverse incentives.
+
+---
+
+[Read the rest of the book notes here. (Elegant Puzzle by Will Larson)](/elegant-puzzle)
