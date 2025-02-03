@@ -9,72 +9,68 @@
   --text: #C8C2B7;
 } */
 html {
-  color: #C8C2B7;
-  line-height: 1.6;
-  /* font-size: 125%; */
-  font-weight: 500;
+    color: #C8C2B7;
+    line-height: 1.6;
+    /* font-size: 125%; */
+    font-weight: 500;
 }
 
 body {
-  background-color: #1A2F38;
-  position: relative;
-  box-sizing: border-box;
+    background-color: #1A2F38;
+    position: relative;
+    box-sizing: border-box;
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::selection {
-  background: var(--maincolor);
-  color: #fff;
+    background: var(--maincolor);
+    color: #fff;
 }
 
 p {
-  font-family: "Jetbrains Mono", monospace;
+    font-family: "Jetbrains Mono", monospace;
 }
 
 
 /* blockquote */
 blockquote {
-  margin: 50px auto;
-  font-style: italic;
-  padding: 1.2em 30px 1.2em 3.5rem;
-  border-left: 8px solid #78c0a8;
-  position: relative;
-  background: #222526;
-}
-
-blockquote code {
-  background-color: #02394A;
+    margin: 50px auto;
+    font-style: italic;
+    padding: 1.2em 30px 1.2em 3.5rem;
+    border-left: 8px solid #78c0a8;
+    position: relative;
+    background: #222526;
 }
 
 blockquote::before {
-  font-family: Arial;
-  content: "\201C";
-  color: var(--maincolor);
-  font-size: 4em;
-  position: absolute;
-  left: 10px;
-  top: -10px;
+    font-family: Arial;
+    content: "\201C";
+    color: var(--maincolor);
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
 }
 
 blockquote::after {
-  content: "";
+    content: "";
 }
 
 blockquote span {
-  display: block;
-  font-style: normal;
-  font-weight: bold;
-  margin-top: 1em;
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
 }
 
 /* end blockquote */
 
 
 strong {
-  color: var(--maincolor);
+    color: var(--maincolor);
 }
 
 /* Images */
@@ -84,51 +80,51 @@ strong {
 } */
 
 figure {
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 0;
-  max-width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
 }
 
 figure img {
-  max-height: 500px;
+    max-height: 500px;
 }
 
 @media screen and (min-width: 600px) {
-  figure {
-    padding: 0 40px;
-  }
+    figure {
+        padding: 0 40px;
+    }
 }
 
 figure h4 {
-  font-size: 1rem;
-  margin: 0;
-  margin-bottom: 1em;
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1em;
 }
 
 figure h4::before {
-  content: "↳ ";
+    content: "↳ ";
 }
 
 /* Code blocks */
 code {
-  background-color: #f1f1f1;
-  padding: 0.1em 0.2em;
+    background-color: #f1f1f1;
+    padding: 0.1em 0.2em;
 }
 
 /* Containers */
 .content {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 0.5rem;
-  word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0.5rem;
+    word-wrap: break-word;
 }
 
 /* Header */
 header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 h1,
@@ -136,287 +132,287 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 3rem 0 1.38rem;
-  line-height: 1.3;
+    margin: 3rem 0 1.38rem;
+    line-height: 1.3;
 }
 
 h1 {
-  font-size: 3.052rem;
+    font-size: 3.052rem;
 }
 
 h2 {
-  font-size: 2.441rem;
+    font-size: 2.441rem;
 }
 
 h3,
 .site-description {
-  font-size: 1.953rem;
+    font-size: 1.953rem;
 }
 
 h4,
 header nav {
-  font-size: 1.563rem;
+    font-size: 1.563rem;
 }
 
 h5 {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 h6 {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 h1::before {
-  color: var(--maincolor);
-  /* content: "# "; */
+    color: var(--maincolor);
+    /* content: "# "; */
 }
 
 h2::before {
-  color: var(--maincolor);
-  /* content: "## "; */
+    color: var(--maincolor);
+    /* content: "## "; */
 }
 
 h3::before {
-  color: var(--maincolor);
-  /* content: "### "; */
+    color: var(--maincolor);
+    /* content: "### "; */
 }
 
 h4::before {
-  color: var(--maincolor);
-  /* content: "#### "; */
+    color: var(--maincolor);
+    /* content: "#### "; */
 }
 
 h5::before {
-  color: var(--maincolor);
-  /* content: "##### "; */
+    color: var(--maincolor);
+    /* content: "##### "; */
 }
 
 h6::before {
-  color: var(--maincolor);
-  /* content: "###### "; */
+    color: var(--maincolor);
+    /* content: "###### "; */
 }
 
 .meta {
-  color: var(--accentText);
-  letter-spacing: -0.5px;
+    color: var(--accentText);
+    letter-spacing: -0.5px;
 }
 
 
 
 time {
-  color: var(--accentText);
-  font-size: 0.8rem;
+    color: var(--accentText);
+    font-size: 0.8rem;
 }
 
 /* Callout */
 .callout {
-  background-color: var(--callouctcolor);
-  color: #fff;
-  padding: 1em;
+    background-color: var(--callouctcolor);
+    color: #fff;
+    padding: 1em;
 }
 
 .callout p {
-  margin: 0;
+    margin: 0;
 }
 
 .callout a {
-  border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #fff;
 }
 
 .callout a:hover {
-  background-color: #fff;
-  color: var(--callouctcolor);
+    background-color: #fff;
+    color: var(--callouctcolor);
 }
 
 .tags li::before,
 .home-tag::before {
-  content: "🏷 ";
+    content: "🏷 ";
 }
 
 .home-tag-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .home-tag {
-  padding: 0.25rem 0.75rem;
-  margin-bottom: 0.25rem;
-  margin-right: 1.25rem;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.25rem;
+    margin-right: 1.25rem;
 }
 
 .soc:hover {
-  color: white;
+    color: white;
 }
 
 .draft-label {
-  color: var(--bordercl);
-  text-decoration: none;
-  padding: 2px 4px;
-  border-radius: 4px;
-  margin-left: 6px;
-  background-color: #f9f2f4;
+    color: var(--bordercl);
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: #f9f2f4;
 }
 
 .highlight {
-  position: relative;
-  -webkit-overflow-scrolling: touch;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 .highlight pre code[class*="language-"] {
-  -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 .highlight pre code[class*="language-"]::before {
-  background: black;
-  border-radius: 0 0 0.25rem 0.25rem;
-  color: white;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
-  position: absolute;
-  right: 1rem;
-  text-align: right;
-  text-transform: uppercase;
-  top: 0;
+    background: black;
+    border-radius: 0 0 0.25rem 0.25rem;
+    color: white;
+    letter-spacing: 0.025rem;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 1rem;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0;
 }
 
 .highlight pre code[class="language-javaScript"]::before,
 .highlight pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
+    content: "js";
+    background: #f7df1e;
+    color: black;
 }
 
 .highlight pre code[class*="language-yml"]::before,
 .highlight pre code[class*="language-yaml"]::before {
-  content: "yaml";
-  background: #f71e6a;
-  color: white;
+    content: "yaml";
+    background: #f71e6a;
+    color: white;
 }
 
 .highlight pre code[class*="language-shell"]::before,
 .highlight pre code[class*="language-bash"]::before,
 .highlight pre code[class*="language-sh"]::before {
-  content: "shell";
-  background: green;
-  color: white;
+    content: "shell";
+    background: green;
+    color: white;
 }
 
 .highlight pre code[class*="language-json"]::before {
-  content: "json";
-  background: dodgerblue;
-  color: #000000;
+    content: "json";
+    background: dodgerblue;
+    color: #000000;
 }
 
 .highlight pre code[class*="language-python"]::before,
 .highlight pre code[class*="language-py"]::before {
-  content: "py";
-  background: blue;
-  color: yellow;
+    content: "py";
+    background: blue;
+    color: yellow;
 }
 
 .highlight pre code[class*="language-css"]::before {
-  content: "css";
-  background: cyan;
-  color: black;
+    content: "css";
+    background: cyan;
+    color: black;
 }
 
 .highlight pre code[class*="language-go"]::before {
-  content: "Go";
-  background: cyan;
-  color: royalblue;
+    content: "Go";
+    background: cyan;
+    color: royalblue;
 }
 
 .highlight pre code[class*="language-md"]::before,
 .highlight pre code[class*="language-md"]::before {
-  content: "Markdown";
-  background: royalblue;
-  color: whitesmoke;
+    content: "Markdown";
+    background: royalblue;
+    color: whitesmoke;
 }
 
 /* table */
 table {
-  border-spacing: 0;
-  border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 table th {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-  font-size: large;
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    font-size: large;
 }
 
 table td {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
 }
 
 
 /* sm */
 @media (min-width: 640px) {
-  /* .tablet\:text-center { */
-  /* text-align: center; */
-  /* html, footer {font-size:110%;} */
+    /* .tablet\:text-center { */
+    /* text-align: center; */
+    /* html, footer {font-size:110%;} */
 
-  .content {
-    max-width: 90vw;
-  }
+    .content {
+        max-width: 90vw;
+    }
 }
 
 /* md */
 @media (min-width: 768px) {
 
-  /* .tablet\:text-center { */
-  /* text-align: center; */
-  /* } */
-  .content {
-    padding: 0 1rem;
-  }
+    /* .tablet\:text-center { */
+    /* text-align: center; */
+    /* } */
+    .content {
+        padding: 0 1rem;
+    }
 
 }
 
 /* lg */
 @media (min-width: 1024px) {
-  .content {
-    max-width: 800px;
-  }
+    .content {
+        max-width: 800px;
+    }
 
 
-  /* .laptop\:text-center { */
-  /* text-align: center; */
-  /* } */
+    /* .laptop\:text-center { */
+    /* text-align: center; */
+    /* } */
 }
 
 /* xl */
 @media (min-width: 1280px) {
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    position: relative;
-    left: -4rem;
-    width: calc(100% + 8rem);
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        position: relative;
+        left: -4rem;
+        width: calc(100% + 8rem);
+    }
 
-  /* .desktop\:text-center { */
-  /* text-align: center; */
-  /* } */
+    /* .desktop\:text-center { */
+    /* text-align: center; */
+    /* } */
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
-  /* .desktop\:text-center { */
-  /* text-align: center; */
-  /* } */
+    /* .desktop\:text-center { */
+    /* text-align: center; */
+    /* } */
 }
 
 ul.pagination {
-  margin-top: 4rem;
-  font-size: 2rem;
-  text-align: center;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .post-tags {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
