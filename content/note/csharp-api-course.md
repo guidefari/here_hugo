@@ -24,3 +24,14 @@ if (app.Environment.IsDevelopment())
 ```
 
 My mental model of this right now is similar to `strict: true` in typescript projects.
+
+## Results class
+
+Use this for api responses.
+
+- `Results.Ok(employees)`
+- `Results.NotFound()` etc.
+
+## Parameter binding
+
+This one was magic for a bit
