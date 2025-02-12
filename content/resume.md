@@ -7,14 +7,18 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 noindex: true
 ---
 
-## Zulzi (Software Engineer. June 2023 - Present)
+## Littlefish (Software Engineer. Sept 2024 - Present)
+- Building a whitelabelled, multi-tenant SaaS
+- React
+- Dotnet
+- DX
+
+## Zulzi (Software Engineer. June 2023 - Aug 2024)
 - Embedded in the [Checkers Sixty60](https://www.sixty60.co.za/) project, part of a team working on the 2.0 app
 - React Native, Typescript
 - Micro frontend architecture, multiple repos
-- We've been building a multi-tenant digital commerce app for the [Shoprite Group](https://www.shopriteholdings.co.za/), starting with the Checkers as the first tenant
 - Mostly UI, Sometimes platform & DX
-- This project has been a great case study for how socio-technical challenges can impact a product😅
-- Still taking any excuse to write. Topics include Architecture, Engineering strategy, documenting patterns
+- This project was a great case study for how socio-technical challenges can impact a product😅
 
 ## Flexperto (Frontend Engineer. May 2022 - May 2023)
 - Long term project was to convert a monolith php web app into React, all while keeping production up.
@@ -23,6 +27,7 @@ noindex: true
 - It being an old codebase, refactoring was a big part of my day to day.
 - Wearing other hats besides frontend. I some backend work (MolecularJS & PHP), & build tooling improvements.
 - My knowledge of Linux, docker, bare metal, & cloud environments improved immensely as a result of working here.
+- Multi-tenant SaaS
 
 ### Achievements I'm proud of
 - Informally lead a team of 2-3 that was responsible for migrating a scheduling calendar from vanilla JS, to react.
