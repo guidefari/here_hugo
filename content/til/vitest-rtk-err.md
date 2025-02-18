@@ -5,9 +5,10 @@ description: Import order matters sometimes.
 tags: [til, testing]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Vitest+Rtk+Err']
 ---
-# 
 
-Import order is probably the issue here.
+I faced this error while trying to run a component test using vitest.
+
+Import order was the issue here.
 Ultimately, the fix was something like this:
 
 Changing from
@@ -21,3 +22,7 @@ To this
 import { renderWithProviders } from '@src/util'
 import Component from '@src/component'
 ```
+
+## More context
+
+- The contents of `renderWithProviders` can be found in [RTK documentation here](https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function).
