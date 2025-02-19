@@ -21,6 +21,12 @@ A few real world examples:
 | Amazon | Shop/Vendor | Buyer |
 | Spotify | Artist | Fan |
 
+## Local vs Global network effects
+- Local: More providers in a certain area make the product more useful for consumers in a certain area & vice versa. 
+e.g. a local bike sharing
+- Global: More providers make the product more useful for consumers, and vice versa.
+e.g. social media, communication platforms, e-commerce sites.
+
 
 ## A few different types of Network Effects
 1. **Direct** network effects: Every additional user makes the product better for all existing users. Most common. Social networks would fall in this category.
