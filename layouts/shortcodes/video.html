@@ -1,0 +1,36 @@
+
+{{/*  Source: https://gitlab.com/Roneo/hugo-shortcode-roneo-collection  */}}
+
+{{- $src := "" -}}
+{{- $caption := "" -}}
+{{- $poster := "" -}}
+{{- $class := "" -}}
+{{- $preload := "" -}}
+
+{{- if .IsNamedParams }}
+    {{- $src = .Get "src" -}}
+    {{- $caption = .Get "caption" -}}
+    {{- $poster = .Get "poster" -}}
+    {{- $class = .Get "class" -}}
+    {{- $preload = .Get "preload" | default "metadata" -}}
+{{- else }}
+    {{- $src = .Get 0 -}}
+    {{- $caption = .Get 1 -}}
+    {{- $poster = .Get 2 -}}
+    {{- $class = .Get 3 -}}
+    {{- $preload = .Get 4 | default "metadata" -}}
+{{- end }}
+
+{{ "<!-- Shortcode 'video.html' -->" | safeHTML }}
+
+<figure {{ with $class }}class="{{ . }}"{{ end }}>
+  <video playsinline controls class="player w-full" preload="{{ $preload }}" data-poster="{{ $poster }}">
+    {{ with $src }}<source src="{{ . | relURL }}">{{ end }}
+    <p>
+      Your browser does not support HTML5 video.
+      {{ with $src }}Here is <a href="{{ . | relURL }}">">a link to download the video</a>.{{ end }}
+    </p>
+  </video>
+  {{/*  <a href="{{ .Get "src"  }}" class="button small" download><i class="icon fas fa-download"></i></a>  */}}
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
