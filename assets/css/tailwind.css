@@ -13,12 +13,39 @@
         --text: #C8C2B7;
     }
 
-    a {
-        @apply text-white underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in visited:decoration-[var(--accentText)];
+    a,
+    .prose a {
+        @apply text-[var(--text)] underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in visited:decoration-[var(--accentText)];
 
         &:hover {
-            @apply text-black visited:text-[var(--accentText)];
+            @apply text-white visited:text-[var(--accentText)];
         }
+    }
+
+    .prose {
+        color: var(--text) !important;
+    }
+
+    .prose h1,
+    .prose h2,
+    .prose h3,
+    .prose h4,
+    .prose h5,
+    .prose h6 {
+        color: #C8C2B7;
+    }
+
+    .prose blockquote {
+        color: #CCC7B8;
+    }
+
+    .prose blockquote strong {
+        color: white;
+    }
+
+    .prose strong {
+        color: white;
+        font-weight: 700;
     }
 
     .index-image {
