@@ -31,8 +31,10 @@
     .prose h3,
     .prose h4,
     .prose h5,
-    .prose h6 {
-        color: #C8C2B7;
+    .prose h6,
+    .prose th,
+    .prose dt {
+        color: white;
     }
 
     .prose blockquote {
