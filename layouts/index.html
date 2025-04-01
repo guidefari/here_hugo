@@ -2,36 +2,20 @@
 <html class="p-4">
 {{ partial "head.html" . }}
 
-<body class="flex flex-col mx-auto space-y-4 prose max-w-7xl lg:prose-xl">
+
+<body class="flex flex-col justify-center w-full ">
+
   {{partial "hero.html"}}
-  {{partial "content-arcs.html"}}
+
+  <main class="flex flex-col mx-auto prose lg:prose-xl">
+    {{ $markdown := readFile "content/frontpage.md"}}
+    {{ $markdown | markdownify }}
+
+  </main>
   <br>
   <br>
   {{- partial "footer.html" . -}}
 
-
-  <!-- <div class="content">
-      <main>
-        {{ $pages := where .Site.RegularPages "Type" "in"
-        .Site.Params.mainSections }} {{ $paginator := .Paginate (where $pages
-        "Params.hidden" "ne" true) }} {{ range $paginator.Pages }}
-        <section class="py-5">
-          <h1 class="mb-5 text-4xl">
-            <a href="{{ .RelPermalink }}">{{.Title}}</a>
-          </h1>
-          <time
-            >{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }}
-            <span class="draft-label">DRAFT</span> {{ end }}</time
-          >
-          <br />
-          <div class="description">
-            {{ if isset .Params "description" }} {{ .Description }} {{ else }}
-            {{ .Summary }}&hellip; {{ end }}
-          </div>
-        </section>
-        {{ end }} {{ template "partials/paginator.html" . }}
-      </main>
-    </div> -->
 </body>
 
 </html>
