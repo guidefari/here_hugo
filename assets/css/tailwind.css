@@ -5,7 +5,6 @@
 @layer base {
     :root {
         --maincolor: #F5D547;
-        --bordercl: #F5D547;
         --callouctcolor: dodgerblue;
         --hovercolor: #02394A;
         --darkMaincolor: #5C8001;
@@ -15,10 +14,15 @@
 
     a,
     .prose a {
-        @apply text-[var(--text)] underline underline-offset-2 decoration-[var(--maincolor)] transition duration-100 ease-in visited:decoration-[var(--accentText)];
+        @apply no-underline text-[var(--maincolor)] visited:text-[var(--accentText)] relative transition duration-100 ease-in;
+        background-image: linear-gradient(var(--text), var(--text));
+        transition: background-size 0.3s ease-in-out;
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
 
         &:hover {
-            @apply text-white visited:text-[var(--accentText)];
+            background-size: 100% 2px;
         }
     }
 

@@ -1,13 +1,3 @@
-/* Markdown */
-/* :root {
-  --maincolor: #F5D547;
-  --bordercl: #F5D547;
-  --callouctcolor: dodgerblue;
-  --hovercolor: #02394A;
-  --darkMaincolor: #5C8001;
-  --accentText: #ACC196;
-  --text: #C8C2B7;
-} */
 html {
     line-height: 1.6;
     font-weight: 500;
@@ -243,7 +233,7 @@ time {
 }
 
 .draft-label {
-    color: var(--bordercl);
+    color: var(--maincolor);
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
