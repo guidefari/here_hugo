@@ -4,10 +4,16 @@
 {{- partial "header.html" . -}}
 
 <body class="flex flex-col p-4 min-h-dvh">
-    <div class="grow w-full content">
+    <div class="w-full grow content">
         {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}
 </body>
+{{ if .Store.Get "hasMermaid" }}
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
+{{ end }}
 
 </html>

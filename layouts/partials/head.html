@@ -6,26 +6,26 @@
 	{{ $style := resources.Get "css/main.css" | fingerprint }}
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
 	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
-	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}"> 
+	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}">
 
 	{{ if not .Params.images }}
 	{{ $ogImage := printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
-		<meta property="og:image" content="{{ $ogImage }}">
-		<meta name="twitter:image" content="{{ $ogImage }}">
+	<meta property="og:image" content="{{ $ogImage }}">
+	<meta name="twitter:image" content="{{ $ogImage }}">
 	{{ end }}
 
 	{{ if .IsHome }}
-		<title>{{ .Title }}</title>
-		<meta name="description" content="{{ .Site.Params.subtitle }}" />
-		<link rel="canonical" href="{{ .Permalink }}" />
+	<title>{{ .Title }}</title>
+	<meta name="description" content="{{ .Site.Params.subtitle }}" />
+	<link rel="canonical" href="{{ .Permalink }}" />
 	{{ else }}
-		{{ if .Params.seoTitle }}
-			<title>{{ .Params.seoTitle }}</title>
-		{{ else }}
-			<title>{{ .Title }}</title>
-			{{ end }}
-			<meta name="description" content="{{ .Description }}" />
-			<link rel="canonical" href="{{ .Permalink }}" />
+	{{ if .Params.seoTitle }}
+	<title>{{ .Params.seoTitle }}</title>
+	{{ else }}
+	<title>{{ .Title }}</title>
+	{{ end }}
+	<meta name="description" content="{{ .Description }}" />
+	<link rel="canonical" href="{{ .Permalink }}" />
 	{{ end}}
 
 	<link rel="icon" type="image/png" href="/favicon.png" />
@@ -33,24 +33,28 @@
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
-		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
-		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
 	{{ end }}
 	{{ if .Site.Params.useCDN | default false -}}
-		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+		rel="stylesheet">
 	{{- else -}}
 	{{ $fontstyle := resources.Get "css/fonts.css" | fingerprint }}
-        <link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
+	<link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
 	{{ end }}
-	
-	
+
+
 	<!-- Custom CSS style get applied last -->
 	{{- if isset .Site.Params "customcss" }}
-		{{ range .Site.Params.customCSS }}
-		{{ $customstyle := resources.Get . | fingerprint }}
-		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
-		{{ end }}
+	{{ range .Site.Params.customCSS }}
+	{{ $customstyle := resources.Get . | fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+	{{ end }}
 	{{- end -}}
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
@@ -63,25 +67,29 @@
 	<!-- Google analytics - using Hugo built in partial -->
 	{{ if not hugo.IsServer }}
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNKPVT1XN3"></script>
-		<script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNKPVT1XN3"></script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'G-QNKPVT1XN3');
-		</script>
+	</script>
 	{{ end }}
 
 	{{ if .Params.noindex }}
-		<meta name="robots" content="noindex" /> 
+	<meta name="robots" content="noindex" />
 	{{ end }}
 
-	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - All Content" href="{{ "index.xml" | absURL }}">
-	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - Notes" href="{{ "note/index.xml" | absURL }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - All Content" href="{{ " index.xml" |
+		absURL }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - Notes" href="{{ " note/index.xml" |
+		absURL }}">
 	{{ if .IsNode }}
-		{{ if eq .Data.Singular "tag" }}
-			<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - {{ .Title }} Tag" href="{{ .RelPermalink }}index.xml">
-		{{ end }}
+	{{ if eq .Data.Singular "tag" }}
+	<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} - {{ .Title }} Tag"
+		href="{{ .RelPermalink }}index.xml">
 	{{ end }}
+	{{ end }}
+
 </head>
