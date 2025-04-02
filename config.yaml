@@ -70,3 +70,8 @@ outputs:
   term:
     - html
     - rss
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
