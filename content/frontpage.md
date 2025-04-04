@@ -1,7 +1,7 @@
 # 🌍 Let me show you around
 - [Notes](/note): This is where stuff I write goes by default. I consider this slice of web real estate to be a [digital garden](/digital-garden).
 - [The reading list](/read): Newsletter that highlights things that I think are worth reading.
-- [Now](/now): Stuff I'm actively working on
+- [Now](/now): Stuff I'm actively working on.
 - [Book notes](/book): Derek Sivers [explains really well](https://sive.rs/bfaq) how I like to think of my book notes.
 - [Today I learned](/til): Fun fact, I first came across this format on [reddit](https://www.reddit.com/r/todayilearned/).
 
