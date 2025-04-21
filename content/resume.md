@@ -7,20 +7,27 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 noindex: true
 ---
 
-## Littlefish (Software Engineer. Sept 2024 - Present)
-- Building a whitelabelled, multi-tenant SaaS
-- React
-- Dotnet
-- DX
+## (Software Engineer Sept 2024 -> Present)
+#### [Littlefish](https://littlefishapp.com/)
 
-## Zulzi (Software Engineer. June 2023 - Aug 2024)
+- Building a whitelabelled, multi-tenant SaaS
+- Working across 3 frontend products using React
+  - Management Portal
+  - E-Commerce
+  - CRM
+- Core backend services in C#
+- GCP
+
+## (Software Engineer June 2023 -> Aug 2024)
+#### [Zulzi](https://zulzi.com/landing)
 - Embedded in the [Checkers Sixty60](https://www.sixty60.co.za/) project, part of a team working on the 2.0 app
 - React Native, Typescript
 - Micro frontend architecture, multiple repos
 - Mostly UI, Sometimes platform & DX
 - This project was a great case study for how socio-technical challenges can impact a product😅
 
-## Flexperto (Frontend Engineer. May 2022 - May 2023)
+## (Frontend Engineer. May 2022 -> May 2023)
+#### [Flexperto](https://flexperto.com/en/)
 - Long term project was to convert a monolith php web app into React, all while keeping production up.
 - Built, battle tested, & documented migration strategies.
 - Documented patterns around our micro-frontend applications.
@@ -29,13 +36,14 @@ noindex: true
 - My knowledge of Linux, docker, bare metal, & cloud environments improved immensely as a result of working here.
 - Multi-tenant SaaS
 
-### Achievements I'm proud of
+**Achievements I'm proud of while at flexperto**
 - Informally lead a team of 2-3 that was responsible for migrating a scheduling calendar from vanilla JS, to react.
   - This area of the codebase was over 5 years old, and we had to ensure feature parity & no regression
 - I managed work & studying, and became an [AWS Certified Solutions Architect – Associate](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77/public_url)
 - I saw positive side effects from my writing efforts.
 
-## Sigma (Frontend Engineer. Jan 2021 - May 2022)
+## (Frontend Engineer. Jan 2021 -> May 2022)
+#### [Sigma](https://sigmadigital.io/)
 - Bespoke software consultancy of about 20-30 employees.
 - Worked across multiple teams, and different technology stacks, including VB.Net, Angular, and React.
 - My time at sigma allowed me to demonstrate the ability to quickly adapt to the changing environments, & thrive within them.
@@ -45,8 +53,9 @@ noindex: true
 - Spent my last few months embedded in the internal [Sigma Digital](https://sigmadigital.io) team. Using NextJS.
 - The most interesting assignment was building proof of concept projects, as part of architecture research.
 
-## Freelance (Dec 2019 - Jan 2021)
-- This is where my professional career started.
+## Freelance (Dec 2019 -> Jan 2021)
+#### [Planetary Escape](http://planetaryescape.xyz)
+- Freelancing is where my professional career started.
 - UI design & engineering for [Dataecho](https://www.dataecho.org/), [KBM](https://www.facebook.com/kbm.agency/), [Yani](https://www.figma.com/file/iTbQbo5SBvvMQQ5Y8Co176/Yani-Clean?type=design&node-id=0%3A1&mode=design&t=jmJI1Jp5abAHCz0U-1), [BHS](https://bts-stoic-davinci.netlify.app/), and a few other clients.
 - I've also done volunteer work for [DIFTK](https://www.doit4thekidz.org/)
 
