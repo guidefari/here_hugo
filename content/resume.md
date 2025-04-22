@@ -7,6 +7,16 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 noindex: true
 ---
 
+# Tech Experience
+- **Programming languages**: React, Typescript, Go, C#, PHP
+- **Infra**: AWS, Azure, GCP, and self hosted VPS, Docker
+- **IaC**: [SST](https://sst.dev/), Github actions, [shell scripts](https://www.guidefari.com/tags/bash/)
+- **Developer Experience**: CI/CD pipelines, documentation, component libraries, util packages
+
+---
+
+# Work Experience
+
 ## (Software Engineer Sept 2024 -> Present)
 #### [Littlefish](https://littlefishapp.com/)
 
@@ -59,14 +69,16 @@ noindex: true
 - UI design & engineering for [Dataecho](https://www.dataecho.org/), [KBM](https://www.facebook.com/kbm.agency/), [Yani](https://www.figma.com/file/iTbQbo5SBvvMQQ5Y8Co176/Yani-Clean?type=design&node-id=0%3A1&mode=design&t=jmJI1Jp5abAHCz0U-1), [BHS](https://bts-stoic-davinci.netlify.app/), and a few other clients.
 - I've also done volunteer work for [DIFTK](https://www.doit4thekidz.org/)
 
-## Leadership roles
+---
+
+# Leadership roles
 - Manager at Hillside Dams Waterfront.
   - June 2018 - November 2019
   - Ran operations for the venue & managed a rotating team of 7 - 10 people.
 - Research & Project Management with Greenfingers
   - Learnt & taught farmers how to grow horticulture seedlings using a simple [hydroponic system](https://foodrevolution.org/blog/hydroponics/).
 
-## Education
+# Education
 2. Maintaining [Goosebumps](https://github.com/guidefari/nextgoose/) & [this blog](https://github.com/guidefari/here_hugo) as my sandbox for learning.
 3. [AWS Certified Solutions Architect – Associate](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77/public_url)
 4. Once upon a time CISCO CCENT certified
