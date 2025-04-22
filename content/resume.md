@@ -1,8 +1,4 @@
 ---
-title: "Resume"
-date: 2024-02-10T16:30:10+02:00
-description: 
-tags: []
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 noindex: true
 ---
