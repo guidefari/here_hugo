@@ -24,7 +24,11 @@ You need to be committed to building a team around them, and having constructive
 - Ubiquitous Language
 
 ## Core domain
-> Your organization can’t be the best at everything, so it had better choose carefully at what it must excel.
+> Your organization can’t be the best at everything, so it had better choose carefully at what it must excel. - DDDD
+
+> “Your organization will benefit most from software models that explicitly reflect its core competencies. The DDD tactical development tools can help you and your team design useful software that accurately models the business’s unique operations.”
+
+> *the* key strategic initiative of your organization, *is* called the Core Domain. A Core Domain is developed to distinguish your organization competitively from all others.
 
 ## What is DDD
 > In short, DDD is primarily about modeling a Ubiquitous Language in an explicitly Bounded Context.
@@ -32,3 +36,9 @@ You need to be committed to building a team around them, and having constructive
 ## Bounded Context
 > a Bounded Context is a semantic contextual boundary.
 > This means that within the boundary each component of the software model has a specific meaning and does specific things.
+
+## De-risk business
+In a rote about [platform risk](/platform-risk), I spoke about how identifying your core domain can be a way to mitigate the risk your business is exposed to.
+
+# Related reading
+- [Domain Model by Martin Fowler](https://martinfowler.com/eaaCatalog/domainModel.html)

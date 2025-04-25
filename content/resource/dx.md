@@ -112,3 +112,29 @@ https://www.youtube.com/watch?v=YkOGZCYWT6w
 The process of how something goes from idea to production has a big impact on DX.
 Some guiding principles, heuristics, questions:
 - 
+
+---
+
+## Stay SaaSy - Optimise onboarding
+I asked the authors:
+
+> I'm curious, why do you think [onboarding is one of the highest ROI periods](https://staysaasy.com/management/2020/08/28/Optimize-Onboarding.html)?
+
+# Response
+Onboarding is high ROI for many reasons, for example:
+* It sets a tempo for the job. People get in routines and if your routine is suboptimal to start, it can be hard to dig out of.
+* Things can get challenging around the first performance cycle if you don't start strong (e.g. within 12 months). A bad score there can impact morale and further change your course.
+* Then there's complex impacts like when yearly planning happens, e.g. your team might decide they need someone strong to help the team if you haven't started off very well. Then you can suddenly be sharing leadership of a team that hinders your development. First impressions matter!
+
+For all these reasons and more, starting strong is important.
+
+# Related reading
+[Patterns of Effective Teams • Dan North • GOTO 2017](https://www.youtube.com/watch?t=1623&v=lvs7VEsQzKY)
+
+
+---
+5 Jan 2024
+
+- DX is a high leverage activity. Simplifying onboarding is part of improving dx
+- the effect of man hours saved adds up, when multiplied. 
+- you want your devs to spend more time on things that actually matter, ie the product. And less time on ‘fighting’ their tooling, dev environment, and process
