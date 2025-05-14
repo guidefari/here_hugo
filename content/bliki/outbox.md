@@ -21,6 +21,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Outbox']
 
 ## Example 
 - ✅ When you have a moment, create a [demo repo](https://github.com/guidefari/outbox).
+{{<youtube qBCIrzJCICE>}}
 
 
 - Order service
