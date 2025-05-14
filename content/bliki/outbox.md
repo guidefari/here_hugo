@@ -13,13 +13,15 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Outbox']
 
 ## Benefits
 - More resilience against transmission failures. This pattern *guarantees delivery*
+- Improved UX for user facing actions. A user won't have to wait for all your system's *background* tasks to complete before getting some sort of feedback
 
 ## Misc notes
 - Having a complementary inbox on the consumer side feels like overkill for me 👀
 - A reliable message queue can simplify the implementation. SQS & Redis come to mind
 
 ## Example 
-- [ ] When you have a moment, create a demo repo.
+- ✅ When you have a moment, create a [demo repo](https://github.com/guidefari/outbox).
+
 
 - Order service
   - Outbox
