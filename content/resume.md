@@ -3,6 +3,18 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resume']
 noindex: true
 ---
 
+<!-- remember to remove the footer and update the header when making an export of this -->
+<!-- <header class="lg:sticky lg:top-4">
+  <nav class="flex space-x-5">
+    <a title="Home" href="https://guidefari.com" class="w-12 h-12 border-0 hover:bg-transparent">
+      <img src="/favicon.png" class="rounded-full" alt="Avatar" />
+    </a>
+    <a title="rss" href="https://guidefari.com/rss" class="w-12 h-12 border-0 hover:bg-transparent">
+      {{- partial "rss.svg" . -}}
+    </a>
+  </nav>
+</header> -->
+
 # Tech Experience
 - **Programming languages**: React, Typescript, Go, C#, PHP
 - **Infra**: AWS, Azure, GCP, and self hosted VPS, Docker
