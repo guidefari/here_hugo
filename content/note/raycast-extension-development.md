@@ -38,12 +38,16 @@ instead of cloning the whole thing.
 
 # Demos
 
-## Tmux sessioner
+## [Tmux sessioner](https://www.raycast.com/louishuyng/tmux-sessioner)
 {{<youtube OoOND8Cq4kM>}}
 
-## Close All Open Apps
+## [Close All Open Apps](https://www.raycast.com/guide/close-apps)
 
 {{<youtube cwjrNU1adIc>}}
+
+## [MacPorts](https://www.raycast.com/guide/macports)
+
+{{<youtube e3puuWJDZas>}}
 
 ## Conclusion
 Overall, I found the developer experience here to be pretty amazing. 
