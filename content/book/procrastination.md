@@ -35,14 +35,23 @@ Try to figure out why you’re struggling for motivation. The book shares these 
 
 ### Looking outside yourself
 Sometimes your head, heart, and hand could all be perfectly aligned, but you still find yourself procrastinating. There’s a chance that the system you’re operating in is the source. Worth exploring too
+
 ### A door to discovery
 Look at the activities you default to when you’re procrastinating. These seemingly distracting activities could be telling you something about your innate/genuine interests.
+
+Jason Fried on procrastination:
+
+> [Procrastination isn't a problem, it's a signal. Do you want to do this thing or not? The answer lies in how long you wait.](https://x.com/jasonfried/status/1961503638947598751)
+
+
 ## Personal example of a healthy reaction to procrastination
 Picture this: I’m supposed to be writing this note, but I find myself washing some dishes and making a cup of tea after writing 3 paragraphs.
 
 I quickly recognised it, and quickly acknowledged the source of friction. I haven’t been writing as often as I used to, meaning I feel a little out of practice. But once I accepted that the first couple of reps won’t be as smooth as peak, I was excited to get back to it!
 
-It’s lowkey “gentle-parenting yourself”, as my girlfriend once said.
+
 ## Related reading
 - [The war of art by Steven Pressfield](https://www.amazon.com/War-Art-Through-Creative-Battles/dp/1936891026)
 - [So you wanna de-bog yourself by Adam Mastroianni](https://www.experimental-history.com/p/so-you-wanna-de-bog-yourself)
+
+
