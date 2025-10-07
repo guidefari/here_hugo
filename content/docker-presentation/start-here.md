@@ -14,34 +14,42 @@ I watched both the v1 and [v2](https://frontendmasters.com/courses/complete-intr
 
 ## Series Overview
 
-### [Top Level Presentation doc](./shipping-mates-docker-in-depth/)
+### [Top Level Presentation doc](/docker-presentation/shipping-mates-docker-in-depth/)
+
 - Understanding what containers really are
 - The three pillars: chroot, namespaces, and cgroups
 - Container daemons and runtime ecosystems
 - Hands-on container crafting
 
-### [Anatomy of a Dockerfile](./anatomy-of-a-dockerfile/)
+### [Anatomy of a Dockerfile](/docker-presentation/anatomy-of-a-dockerfile/)
+
 - Essential Dockerfile instructions and best practices
 - Understanding layers and image optimization
 - Multi-stage builds for production
 - Security considerations and non-root users
 - CMD vs ENTRYPOINT patterns
+- [Container runtimes explained](/docker-presentation/container-runtimes/)
 
-### [Anatomy of a Docker Compose file](./anatomy-of-a-docker-compose-file/)
+### [Anatomy of a Docker Compose file](/docker-presentation/anatomy-of-a-docker-compose-file/)
+
 - When and why to use Docker Compose
 - Service orchestration and dependencies
 - Development vs production considerations
 - Real-world full-stack application example
 
 ### Hands-On Fundamentals
+
 **Demo Collection**: Practical exercises
-- **[chroot demo](./chroot-demo/)** - Building isolated environments
-- **[namespaces demo](./namespaces-demo/)** - Process isolation techniques
-- **[cgroups demo](./cgroups-demo/)** - Resource management and limits
-- **[Creating the environment: dockerception!](./creating-the-environment-dockerception/)**
+
+- **[chroot demo](/docker-presentation/chroot-demo/)** - Building isolated environments
+- **[namespaces demo](/docker-presentation/namespaces-demo/)** - Process isolation techniques
+- **[cgroups demo](/docker-presentation/cgroups-demo/)** - Resource management and limits
+- **[Creating the environment: dockerception!](/docker-presentation/creating-the-environment-dockerception/)**
 
 ### Part 5: Advanced Techniques & Best Practices
-**[braindump & snippets](./braindump-snippets/)**
+
+**[braindump & snippets](/docker-presentation/braindump-snippets/)**
+
 - Production-ready multi-stage builds
 - Container security and scanning
 - Performance optimization techniques
