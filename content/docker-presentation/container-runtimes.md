@@ -19,6 +19,10 @@ This video prompted this note.
 - Under the hood, containerd uses [`runc`](https://github.com/opencontainers/runc), which is the reference implementation of the OCI runtime spec. many others use this
 - [`crun`](https://github.com/containers/crun) is a faster and lighter alternative to runc, written in C.
 
+The word runtime is a bit elusive here. It captures a lot. Docker cli can be referred to as a runtime, but then dockerd is also a runtime, which uses containerd, also referred to as a runtime, which uses runc, also referred to as a runtime.
+
+So instead, I'd like to spend the rest of this note talking about container daemons.
+
 ---
 
 # Container Daemon
