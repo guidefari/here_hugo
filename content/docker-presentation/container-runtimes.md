@@ -16,8 +16,8 @@ This video prompted this note.
 - Docker too, uses containerd
 - Running `Docker build` constructs an [OCI](https://opencontainers.org/) artifact, also known as an image.
 - Any OCI compliant runtime can execute or run OCI images
-- Under the hood, containerd uses `runc`, which is the reference implementation of the OCI runtime spec. many others use this
-- `crun` is a faster and lighter alternative to runc, written in C.
+- Under the hood, containerd uses [`runc`](https://github.com/opencontainers/runc), which is the reference implementation of the OCI runtime spec. many others use this
+- [`crun`](https://github.com/containers/crun) is a faster and lighter alternative to runc, written in C.
 
 ---
 
@@ -45,7 +45,6 @@ Unlike a simple chroot which just changes the apparent root directory for a proc
 - **dockerd**: The Docker daemon (used by Docker)
 - **containerd**: A lightweight container runtime (used by Docker, Kubernetes)
 - **crio**: Container Runtime Interface for OCI (used by Kubernetes)
-and some I havent heard of before
 - **runc**: Low-level container runtime (used by many higher-level daemons)
 - **systemd-nspawn**: Container tool that's part of systemd
 
