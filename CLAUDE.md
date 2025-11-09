@@ -51,7 +51,7 @@ This is a Hugo static site generator blog with Tailwind CSS styling focused on s
 
 ### Key Features
 - Git-based frontmatter dates (lastmod from git history)
-- Custom permalinks structure (/:filename/ for clean URLs)
+- Custom permalinks structure (/:contentbasename/ for clean URLs)
 - RSS feeds for all sections
 - Multiple content archetypes with custom fields
 - Spotify, Bandcamp, and YouTube embeds via shortcodes
