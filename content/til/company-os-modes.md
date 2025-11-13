@@ -7,7 +7,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Company+OS+Mode
 ---
 
 John Cutler hosted an AMA session to discuss ["Understanding enabling constraints using shape up"](https://cutlefish.substack.com/p/tbm-386-understanding-enabling-constraints).
-The topic of how communication is handled within teams/companies came up. 
+We discussed how companies/teams approach communication & operations.
 
 Lately, I've been revisiting this topic frequently. Another source I'd recommend is [Charity Majors' interview on the Tuple youtube channel](https://youtu.be/7VUnf8VVB8w). (Expecting to publish my notes from this video soon👀)
 
@@ -16,7 +16,7 @@ Lately, I've been revisiting this topic frequently. Another source I'd recommend
 
 ---
 
-Some more analogies to expand on the quadrants:
+Some more analogies to explore the quadrants
 
 # Intentional + Implicit
 - Apprenticeship: "We pair new people with veterans. You learn by osmosis."
