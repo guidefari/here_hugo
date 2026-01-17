@@ -1,21 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="p-4">
-{{ partial "head.html" . }}
+  {{ partial "head.html" . }}
 
+  <body class="flex flex-col justify-center w-full">
+    {{partial "hero.html"}}
 
-<body class="flex flex-col justify-center w-full ">
-
-  {{partial "hero.html"}}
-
-  <main class="flex flex-col mx-auto prose lg:prose-xl">
-    {{ $markdown := readFile "content/frontpage.md"}}
-    {{ $markdown | markdownify }}
-
-  </main>
-  <br>
-  <br>
-  {{- partial "footer.html" . -}}
-
-</body>
-
+    <main class="flex flex-col mx-auto prose lg:prose-xl">
+      {{ $markdown := readFile "content/frontpage.md"}} {{ $markdown |
+      markdownify }}
+    </main>
+    <br />
+    <br />
+    {{- partial "footer.html" . -}} {{- partial "search.html" . -}}
+  </body>
 </html>

@@ -1,0 +1,130 @@
+<dialog
+  id="search-modal"
+  class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-zinc-900 p-0 rounded-none border-2 border-zinc-800 shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] w-full max-w-2xl focus:outline-none font-mono overflow-hidden"
+>
+  <div class="flex flex-col h-[500px]">
+    <div
+      class="flex items-center px-4 py-4 border-b-2 border-zinc-800 bg-zinc-950"
+    >
+      <svg
+        class="w-5 h-5 text-highlight"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+      <input
+        id="search-input"
+        type="text"
+        placeholder="SEARCH_CONTENT"
+        class="flex-1 bg-transparent border-none focus:ring-0 text-white placeholder-zinc-600 ml-3 text-xl uppercase tracking-wider"
+        autocomplete="off"
+      />
+      <div class="flex items-center space-x-2">
+        <kbd
+          class="hidden sm:inline-flex items-center px-2 py-1 border-2 border-zinc-800 rounded bg-zinc-900 text-[10px] font-bold text-zinc-500"
+        >
+          ESC
+        </kbd>
+      </div>
+    </div>
+    <div
+      id="search-results"
+      class="flex-1 overflow-y-auto p-4 space-y-2 bg-zinc-900"
+    >
+      <!-- Results will be injected here -->
+    </div>
+    <div
+      class="px-4 py-3 border-t-2 border-zinc-800 bg-zinc-950 flex justify-between items-center"
+    >
+      <span class="text-[10px] text-zinc-600 uppercase tracking-tighter"
+        >Powered by Pagefind</span
+      >
+      <div
+        class="flex items-center space-x-4 text-[10px] text-zinc-500 font-bold uppercase"
+      >
+        <span class="flex items-center"
+          ><kbd
+            class="mr-1 px-1 border border-zinc-700 bg-zinc-800 text-zinc-400"
+            >ENTER</kbd
+          >
+          SELECT</span
+        >
+        <span class="flex items-center"
+          ><kbd
+            class="mr-1 px-1 border border-zinc-700 bg-zinc-800 text-zinc-400"
+            >↑↓</kbd
+          >
+          NAVIGATE</span
+        >
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  #search-modal::backdrop {
+    animation: fade-in 0.2s ease-out;
+  }
+
+  #search-modal[open] {
+    animation: zoom-in 0.2s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoom-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Hide default dialog scrollbar if needed */
+  #search-modal {
+    scrollbar-gutter: stable;
+  }
+
+  /* Custom scrollbar for results */
+  #search-results::-webkit-scrollbar {
+    width: 4px;
+  }
+  #search-results::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #search-results::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 10px;
+  }
+
+  /* Pagefind highlight override */
+  #search-results mark {
+    background-color: transparent;
+    color: #f5d547;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+</style>
+
+{{ $searchJS := resources.Get "js/search.js" | minify | fingerprint }}
+<script src="{{ $searchJS.Permalink }}" defer></script>

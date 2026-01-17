@@ -4,9 +4,10 @@
   "description": "- [ ] 404 page",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
-    "watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "concurrently \"hugo server --navigateToChanged --buildFuture\" \"npm run watch\""
+    "build": "bunx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --gc --minify && bun pagefind --site public",
+    "watch": "bunx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
+    "dev": "concurrently \"hugo server --navigateToChanged --buildFuture\" \"bun run watch\" \"bun run search:dev\"",
+    "search:dev": "bun pagefind --site public --watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "concurrently": "9.1.2",
+    "pagefind": "^1.4.0",
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {}

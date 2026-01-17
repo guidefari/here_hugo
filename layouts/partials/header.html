@@ -1,10 +1,34 @@
 <header class="lg:sticky lg:top-4">
   <nav class="flex space-x-5">
-    <a title="Home" href="{{ .Site.BaseURL }}" class="w-12 h-12 border-0 hover:bg-transparent">
+    <a
+      title="Home"
+      href="{{ .Site.BaseURL }}"
+      class="w-12 h-12 border-0 hover:bg-transparent"
+    >
       <img src="/favicon.png" class="rounded-full" alt="Avatar" />
     </a>
     <a title="rss" href="/rss" class="w-12 h-12 border-0 hover:bg-transparent">
       {{- partial "rss.svg" . -}}
     </a>
+    <button
+      id="search-toggle"
+      title="Search (Cmd+K)"
+      class="flex items-center justify-center w-12 h-12 transition-colors border-0 rounded-full hover:bg-hovercolor"
+    >
+      <svg
+        class="w-6 h-6 text-highlight"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+    </button>
   </nav>
 </header>

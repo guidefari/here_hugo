@@ -5,7 +5,7 @@
 		{{if .Date}}<time>Posted on {{ dateFormat "Jan 2, 2006" .Date }}</time>{{end}}
 		{{ if .Params.draft }} <p class="draft-label">DRAFT</p> {{ end }}
 		<!-- <h5 id="wordcount"> {{ .WordCount }} Words </h5> -->
-		<div class="post-tags">
+		<div class="post-tags" data-pagefind-meta="tags">
 			{{ if ne .Type "page" }}
 			{{ if gt .Params.tags 0 }}
 			<nav class="nav">

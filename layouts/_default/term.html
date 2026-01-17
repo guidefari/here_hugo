@@ -1,8 +1,8 @@
 {{ define "main" }}
 {{ if isset .Data "Term" }}
-<div class="my-10 text-5xl">Tagged - <strong>{{ .Data.Term }}</strong></div>
+<h1 class="my-10 text-5xl"><strong>#{{ .Data.Term }}</strong></h1>
 {{ else }}
-<div class="my-10 text-5xl">All articles</div>
+<h1 class="my-10 text-5xl">All articles</h1>
 {{ end }}
 
 <ul class="posts">
