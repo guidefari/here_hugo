@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --maincolor: #F5D547;
-        --callouctcolor: dodgerblue;
-        --hovercolor: #02394A;
-        --darkMaincolor: #5C8001;
-        --accentText: #ACC196;
-        --text: #F0F4F5;
-    }
+  :root {
+    --maincolor: #f5d547;
+    --callouctcolor: dodgerblue;
+    --hovercolor: #02394a;
+    --darkMaincolor: #5c8001;
+    --accentText: #acc196;
+    --text: #f0f4f5;
+  }
 
-    a,
-    .prose a {
-        @apply no-underline text-[var(--maincolor)] visited:text-[var(--accentText)] relative transition duration-100 ease-in;
-        background-image: linear-gradient(var(--text), var(--text));
+  a,
+  .prose a {
+    @apply no-underline text-[var(--maincolor)] visited:text-[var(--accentText)] relative transition duration-100 ease-in;
+    /* Custom underline removed as per user request */
+    /* background-image: linear-gradient(var(--text), var(--text));
         transition: background-size 0.3s ease-in-out;
         background-position: 0% 100%;
         background-repeat: no-repeat;
@@ -23,90 +24,93 @@
 
         &:hover {
             background-size: 100% 2px;
-        }
-    }
+        } */
+  }
 
-    .prose {
-        color: var(--text) !important;
-    }
+  .prose {
+    color: var(--text) !important;
+  }
 
-    .prose h1,
-    .prose h2,
-    .prose h3,
-    .prose h4,
-    .prose h5,
-    .prose h6,
-    .prose th,
-    .prose dt {
-        color: white;
-    }
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose th,
+  .prose dt {
+    color: white;
+  }
 
-    .prose blockquote {
-        color: #CCC7B8;
-    }
+  .prose blockquote {
+    color: #ccc7b8;
+  }
 
-    .prose blockquote strong {
-        color: white;
-    }
+  .prose blockquote strong {
+    color: white;
+  }
 
-    .prose strong {
-        color: white;
-        font-weight: 700;
-    }
+  .prose strong {
+    color: white;
+    font-weight: 700;
+  }
 
-    .index-image {
-        @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
-    }
+  .index-image {
+    @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
+  }
 
-    figure:has(a) figcaption {
-        text-decoration: none;
-        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
-        background-image: linear-gradient(to right, var(--hovercolor) 50%, black 50%);
-        background-position: 0;
-        background-size: 200%;
-        transition: all 0.4s;
-        @apply text-lg leading-7 rounded-tl-sm rounded-br-sm w-min;
-    }
+  figure:has(a) figcaption {
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+    background-image: linear-gradient(
+      to right,
+      var(--hovercolor) 50%,
+      black 50%
+    );
+    background-position: 0;
+    background-size: 200%;
+    transition: all 0.4s;
+    @apply text-lg leading-7 rounded-tl-sm rounded-br-sm w-min;
+  }
 
-    figure:has(a):hover figcaption {
-        background-position: -100%;
-        /* transform: skewX(-10deg); */
-    }
+  figure:has(a):hover figcaption {
+    background-position: -100%;
+    /* transform: skewX(-10deg); */
+  }
 
-    figcaption h4 {
-        @apply left-0 mt-0;
-    }
+  figcaption h4 {
+    @apply left-0 mt-0;
+  }
 
-    html {
-        font-family: "Jetbrains Mono", monospace;
-    }
+  html {
+    font-family: "Jetbrains Mono", monospace;
+  }
 
-    iframe {
-        margin: 1rem 0;
-    }
+  iframe {
+    margin: 1rem 0;
+  }
 
-    hr {
-        border: 0;
-        border-top: 3px dotted;
-        margin: 1em 0;
-    }
-
+  hr {
+    border: 0;
+    border-top: 3px dotted;
+    margin: 1em 0;
+  }
 }
 
 @layer components {
-    .social-links svg {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
+  .social-links svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
-    .single-tags {
-        display: flex;
-        flex-wrap: wrap;
-        @apply space-x-4;
-        line-height: 2;
-    }
+  .single-tags {
+    display: flex;
+    flex-wrap: wrap;
+    @apply space-x-4;
+    line-height: 2;
+  }
 
-    .single-tag {
-        list-style: none;
-    }
+  .single-tag {
+    list-style: none;
+  }
 }

@@ -3,17 +3,23 @@
     <a
       title="Home"
       href="{{ .Site.BaseURL }}"
-      class="w-12 h-12 border-0 hover:bg-transparent"
+      class="flex items-center justify-center w-12 h-12 no-underline transition-all rounded-full hover:ring-2 hover:ring-highlight ring-offset-4 ring-offset-[#1A2F38]"
     >
       <img src="/favicon.png" class="rounded-full" alt="Avatar" />
     </a>
-    <a title="rss" href="/rss" class="w-12 h-12 border-0 hover:bg-transparent">
-      {{- partial "rss.svg" . -}}
+    <a
+      title="rss"
+      href="/rss"
+      class="flex items-center justify-center w-12 h-12 no-underline transition-all rounded-full hover:ring-2 hover:ring-highlight ring-offset-4 ring-offset-[#1A2F38]"
+    >
+      <div class="flex items-center justify-center w-8 h-8">
+        {{- partial "rss.svg" . -}}
+      </div>
     </a>
     <button
       id="search-toggle"
       title="Search (Cmd+K)"
-      class="flex items-center justify-center w-12 h-12 transition-colors border-0 rounded-full hover:bg-hovercolor"
+      class="flex items-center justify-center w-12 h-12 transition-all bg-transparent rounded-full hover:ring-2 hover:ring-highlight ring-offset-4 ring-offset-[#1A2F38]"
     >
       <svg
         class="w-6 h-6 text-highlight"
