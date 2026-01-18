@@ -1,5 +1,6 @@
 <dialog
   id="search-modal"
+  data-pagefind-path="{{ "pagefind/pagefind.js" | absURL }}"
   class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-zinc-900 p-0 rounded-none border-2 border-zinc-800 shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] w-full max-w-2xl focus:outline-none font-mono overflow-hidden"
 >
   <div class="flex flex-col h-[500px]">
@@ -39,6 +40,7 @@
       id="search-results"
       class="flex-1 p-4 space-y-2 overflow-y-auto bg-zinc-900"
     >
+      <div class="px-3 py-2 border-2 border-highlight/20 bg-highlight/5 text-highlight text-[9px] font-bold uppercase tracking-widest text-center mb-4">Still very WIP👀</div>
       <!-- Results will be injected here -->
     </div>
     <div

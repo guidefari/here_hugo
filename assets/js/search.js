@@ -8,13 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function initPagefind() {
     if (!pagefind) {
+      console.log("Initializing Pagefind...");
       try {
-        pagefind = await import("/pagefind/pagefind.js");
+        const pagefindPath =
+          searchModal.getAttribute("data-pagefind-path") ||
+          "/pagefind/pagefind.js";
+        console.log("Loading Pagefind from:", pagefindPath);
+
+        pagefind = await import(pagefindPath);
         await pagefind.options({
           excerptLength: 20,
         });
+        console.log("Pagefind loaded successfully");
       } catch (e) {
         console.error("Failed to load Pagefind", e);
+        searchResults.innerHTML = `<div class="p-4 text-center text-red-500 uppercase text-[10px] tracking-widest">Search failed to load. Check console.</div>`;
       }
     }
   }
