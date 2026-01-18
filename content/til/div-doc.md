@@ -1,12 +1,13 @@
 ---
-title: "Resource: Divio Documentation"
+title: "Documentation Archetypes"
 date: 2025-11-14T01:28:20+02:00
 description: The different types of documentation
 tags: [resource, writing]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Div+Doc"]
+images:
+  [
+    "https://images-here-hugo.vercel.app/api/og-image?title=Documentation+Archetypes",
+  ]
 ---
-
-# TIL: Different types of documentation
 
 I first came across this a few years ago, and just bookmarked the tab, and promised myself to come back and make note of it, as I found the concept useful at the time.
 
