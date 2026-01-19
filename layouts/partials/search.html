@@ -138,4 +138,4 @@
 </style>
 
 {{ $searchJS := resources.Get "js/search.js" | minify | fingerprint }}
-<script src="{{ $searchJS.Permalink }}" defer></script>
+<script src="{{ $searchJS.RelPermalink }}" defer></script>
