@@ -49,4 +49,4 @@ No LLMs were harmed in the building of this project 💀
 
 ## Links
 
-- [GitHub repo](https://github.com/guidefari/pulse)
+- [GitHub repo](https://github.com/planetaryescape/pulse)
