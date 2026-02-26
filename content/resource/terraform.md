@@ -12,6 +12,11 @@ once again, [freeCodeCamp & Andrew Brown from Exam Pro](https://www.youtube.com/
 
 {{<youtube SPcwo0Gq9T8>}}
 
+### Other resources
+
+- [Terraform Best Practices](https://www.terraform-best-practices.com/)
+- [Terraform: Up and Running, 3rd Edition](https://www.oreilly.com/library/view/terraform-up-and/9781098116736/)
+
 ---
 
 ## Imperative vs Declarative IaC Solutions
@@ -97,3 +102,35 @@ Configs are written in `HashiCorp Configuration Language (HCL)`
 - The Terraform registry has 1000+ providers
 
 ## Terraform Cloud
+
+- remote state management, CI/CD integration, and policy enforcement.
+- Terraform Cloud Workspaces
+  ├── VCS-driven → Triggered by Git commits
+  ├── CLI-driven → Triggered by local terraform commands
+  └── API-driven → Triggered by external systems/CI
+
+## Terraform lifecycle
+
+- `Code -> init -> plan & validate -> apply`
+
+## Visualising execution plans
+
+`terraform graph | dot -Tsvg > graph.svg`
+
+- [graph docs](https://developer.hashicorp.com/terraform/cli/commands/graph)
+
+## Resource Graph
+
+- A dependency graph is built from the terraform configurations. Terraform then walks through this graph to generate plans, refresh state, changesets, and more.
+
+```mermaid
+graph TD
+    A[Node A] --> B[Node B]
+    A[Node A] --> C[Node C]
+    B[Node B] --> D[Node D]
+    C[Node C] --> D[Node D]
+```
+
+## Resource schedulers
+
+TIL you can also use terraform to dynamically schedule provisioning of resources. 🔥
