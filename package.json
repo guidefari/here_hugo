@@ -6,8 +6,8 @@
   "scripts": {
     "build": "bunx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --gc --minify && bun pagefind --site public",
     "watch": "bunx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "concurrently \"hugo server --navigateToChanged --buildFuture\" \"bun run watch\" \"bun run search:dev\"",
-    "search:dev": "bun pagefind --site public --watch"
+    "dev": "hugo --gc && bun pagefind --site public && concurrently \"hugo server --navigateToChanged --buildFuture\" \"bun run watch\"",
+    "search:dev": "bun pagefind --site public"
   },
   "repository": {
     "type": "git",

@@ -160,3 +160,4 @@ With all this said, I'm not advocating for never changing your contracts, it's a
 - [S.O.L.I.D Principles in React](https://github.com/Safnaj/React-SOLID-Principles?tab=readme-ov-file#open-closed-principle)
 - [Effective Snapshot Testing](https://kentcdodds.com/blog/effective-snapshot-testing)
 - [Reading list #19](/read/19) has some stuff on snapshot testing, and testing in general.
+- Turns out I have [a note on SOLID](/solid) (I probably have not read this note since I wrote it in 2021)
