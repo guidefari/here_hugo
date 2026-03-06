@@ -104,10 +104,12 @@ Configs are written in `HashiCorp Configuration Language (HCL)`
 ## Terraform Cloud
 
 - remote state management, CI/CD integration, and policy enforcement.
-- Terraform Cloud Workspaces
-  ├── VCS-driven → Triggered by Git commits
-  ├── CLI-driven → Triggered by local terraform commands
-  └── API-driven → Triggered by external systems/CI
+
+**Terraform Cloud Workspaces**
+
+- VCS-driven → Triggered by Git commits
+- CLI-driven → Triggered by local terraform commands
+- API-driven → Triggered by external systems/CI
 
 ## Terraform lifecycle
 
