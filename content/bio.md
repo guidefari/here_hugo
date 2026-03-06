@@ -12,6 +12,13 @@ profile:
   website: "https://guidefari.com"
   linkedin: "https://www.linkedin.com/in/guide-fari-8b0063176/"
   github: "https://github.com/guidefari"
+portraits:
+  - label: "Photo"
+    src: "/images/portrait.jpg"
+    filename: "guide-fari-portrait.jpg"
+  - label: "Avatar"
+    src: "/images/portrait-cartoon.png"
+    filename: "guide-fari-cartoon.png"
 bio_options:
   - id: "short"
     label: "Short"
