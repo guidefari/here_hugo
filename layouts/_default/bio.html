@@ -1,0 +1,170 @@
+{{ define "main" }}
+{{ $profile := .Params.profile }}
+{{ $bioOptions := .Params.bio_options }}
+
+<main class="flex h-[calc(100dvh-5rem)] flex-col mx-auto w-full max-w-6xl px-4 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+  <div class="mb-5 shrink-0">
+    <h1 class="text-2xl font-bold text-white">{{ $profile.name }}</h1>
+    <p class="mt-1 text-sm text-accentText">
+      {{ $profile.role }} — copy-ready bios for any context
+    </p>
+  </div>
+
+  <section class="grid min-h-0 grow gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
+    <aside class="overflow-y-auto border border-white/10 bg-[#0F1F26] p-5">
+      <p class="text-xs uppercase tracking-[0.24em] text-accentText">
+        Bio Length
+      </p>
+      <div id="bio-length-options" class="mt-4 grid gap-2">
+        {{ range $index, $option := $bioOptions }}
+        <button
+          type="button"
+          class="bio-option border px-4 py-3 text-left transition"
+          data-bio-option="{{ $option.id }}"
+          aria-pressed="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
+        >
+          <span class="block font-semibold text-white"
+            >{{ $option.label }}</span
+          >
+          <span class="mt-0.5 block text-xs leading-5 text-accentText"
+            >{{ $option.use_case }}</span
+          >
+        </button>
+        {{ end }}
+      </div>
+
+    </aside>
+
+    <div class="flex min-h-0 flex-col border border-white/10 bg-[#0F1F26] p-5 sm:p-6">
+      <div
+        class="flex shrink-0 flex-col gap-4 border-b border-white/10 pb-4 sm:flex-row sm:items-start sm:justify-between"
+      >
+        <div>
+          <p class="text-xs uppercase tracking-[0.24em] text-accentText">
+            Rendered Bio
+          </p>
+          <h2 id="bio-title" class="mt-2 text-xl font-bold text-white"></h2>
+          <p
+            id="bio-use-case"
+            class="mt-1 text-xs leading-6 text-accentText"
+          ></p>
+        </div>
+
+        <button
+          id="copy-bio-button"
+          type="button"
+          class="inline-flex shrink-0 items-center gap-2 border border-highlight bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight transition hover:bg-highlight hover:text-black"
+        >
+          <span class="bio-copy-icon" aria-hidden="true">
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              ></path>
+            </svg>
+          </span>
+          <span class="bio-check-icon hidden" aria-hidden="true">
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </span>
+          <span id="copy-bio-label">Copy bio</span>
+        </button>
+      </div>
+
+      <div class="mt-5 min-h-0 grow overflow-y-auto">
+        <div
+          id="bio-body"
+          class="space-y-5 text-base leading-8 text-[#D7DDD4] whitespace-pre-line"
+        ></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  (() => {
+    const options = {{ $bioOptions | jsonify | safeJS }};
+    const buttons = Array.from(document.querySelectorAll('[data-bio-option]'));
+    const title = document.getElementById('bio-title');
+    const useCase = document.getElementById('bio-use-case');
+    const body = document.getElementById('bio-body');
+    const copyButton = document.getElementById('copy-bio-button');
+    const copyLabel = document.getElementById('copy-bio-label');
+    const copyIcon = copyButton.querySelector('.bio-copy-icon');
+    const checkIcon = copyButton.querySelector('.bio-check-icon');
+
+    if (!options.length) return;
+
+    let activeOption = options[0];
+    let copyTimeout;
+
+    const render = () => {
+      title.textContent = activeOption.label + ' bio';
+      useCase.textContent = activeOption.use_case;
+      body.textContent = activeOption.body;
+      body.parentElement.scrollTop = 0;
+
+      buttons.forEach((button) => {
+        const isActive = button.dataset.bioOption === activeOption.id;
+        button.setAttribute('aria-pressed', String(isActive));
+        button.classList.toggle('border-highlight', isActive);
+        button.classList.toggle('text-highlight', isActive);
+        button.classList.toggle('border-white/10', !isActive);
+      });
+    };
+
+    const setCopiedState = (copied) => {
+      copyIcon.classList.toggle('hidden', copied);
+      checkIcon.classList.toggle('hidden', !copied);
+      copyLabel.textContent = copied ? 'Copied!' : 'Copy bio';
+      copyButton.classList.toggle('bg-highlight', copied);
+      copyButton.classList.toggle('text-black', copied);
+      copyButton.classList.toggle('bg-highlight/10', !copied);
+      copyButton.classList.toggle('text-highlight', !copied);
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextOption = options.find((o) => o.id === button.dataset.bioOption);
+        if (!nextOption) return;
+        activeOption = nextOption;
+        render();
+        setCopiedState(false);
+        window.clearTimeout(copyTimeout);
+      });
+    });
+
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(activeOption.body);
+        setCopiedState(true);
+        window.clearTimeout(copyTimeout);
+        copyTimeout = window.setTimeout(() => setCopiedState(false), 1800);
+      } catch {
+        copyLabel.textContent = 'Copy failed';
+        window.clearTimeout(copyTimeout);
+        copyTimeout = window.setTimeout(() => setCopiedState(false), 1800);
+      }
+    });
+
+    render();
+  })();
+</script>
+{{ end }}

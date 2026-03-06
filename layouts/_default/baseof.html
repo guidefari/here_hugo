@@ -2,9 +2,9 @@
 <html>
   {{- partial "head.html" . -}} {{- partial "header.html" . -}}
 
-  <body class="flex flex-col p-4 min-h-dvh">
-    <div class="w-full grow content">{{- block "main" . }}{{- end }}</div>
-    {{- partial "footer.html" . -}} {{- partial "search.html" . -}}
+  <body class="flex flex-col p-4 {{ if .Params.hide_footer }}h-dvh overflow-hidden{{ else }}min-h-dvh{{ end }}">
+    <div class="w-full grow{{ if not .Params.full_width }} content{{ end }}">{{- block "main" . }}{{- end }}</div>
+    {{- if not .Params.hide_footer }}{{- partial "footer.html" . -}}{{ end -}} {{- partial "search.html" . -}}
   </body>
   {{ if .Store.Get "hasMermaid" }}
   <script type="module">
