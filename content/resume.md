@@ -72,7 +72,7 @@ experience:
     highlights:
       - "Bespoke software consultancy of about 20-30 employees"
       - "Worked across multiple teams and technology stacks — VB.Net, Angular, React"
-      - "Embedded in a [Hungerrush](http://hungerrush.com/) team updating UI of a VB.Net app to match their 2021 Design System"
+      - "Embedded in a [Hungerrush](https://www.hungerrush.com/) team updating UI of a VB.Net app to match their 2021 Design System"
       - "Built a re-usable React component library for [Quorum](https://www.quorumsoftware.com/products)"
       - "Spent final months embedded in the internal Sigma Digital team using Next.js"
       - "Built proof of concept projects as part of architecture research"
