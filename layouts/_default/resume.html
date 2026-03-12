@@ -1,0 +1,312 @@
+{{ define "main" }}
+{{ $skills := .Params.skills }}
+{{ $experience := .Params.experience }}
+{{ $consulting := .Params.consulting }}
+{{ $leadership := .Params.leadership }}
+{{ $education := .Params.education }}
+
+<div class="resume-page mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+  <div class="lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
+
+    <nav class="resume-toc hidden lg:block">
+      <div class="sticky top-24">
+        <p class="text-[0.6rem] uppercase tracking-[0.3em] text-white/30 mb-4">On this page</p>
+        <ul class="space-y-2">
+          <li><a href="#skills" class="resume-toc-link" data-section="skills">Tech Experience</a></li>
+          <li><a href="#experience" class="resume-toc-link" data-section="experience">Work Experience</a></li>
+          {{ if $consulting }}<li><a href="#consulting" class="resume-toc-link" data-section="consulting">Consulting</a></li>{{ end }}
+          {{ if $leadership }}<li><a href="#leadership" class="resume-toc-link" data-section="leadership">Leadership</a></li>{{ end }}
+          {{ if $education }}<li><a href="#education" class="resume-toc-link" data-section="education">Education</a></li>{{ end }}
+        </ul>
+        <div class="mt-6 pt-4 border-t border-white/5 space-y-1.5">
+          <a href="https://guidefari.com" class="resume-toc-ext">guidefari.com</a>
+          <a href="https://github.com/guidefari" class="resume-toc-ext">GitHub</a>
+          <a href="https://www.linkedin.com/in/guide-fari-8b0063176/" class="resume-toc-ext">LinkedIn</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header class="mb-10">
+        <h1 class="text-2xl font-bold text-white tracking-tight sm:text-3xl">Guide Fari</h1>
+        <p class="mt-1 text-sm text-accentText">Software Engineer</p>
+      </header>
+
+      <div class="resume-toc-mobile lg:hidden mb-8 border border-white/10 bg-[#0F1F26]">
+        <button id="toc-toggle" type="button" class="w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-[0.2em] text-accentText">
+          <span>On this page</span>
+          <svg class="toc-chevron h-3.5 w-3.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <ul id="toc-menu" class="hidden px-4 pb-3 space-y-1.5">
+          <li><a href="#skills" class="resume-toc-link" data-section="skills">Tech Experience</a></li>
+          <li><a href="#experience" class="resume-toc-link" data-section="experience">Work Experience</a></li>
+          {{ if $consulting }}<li><a href="#consulting" class="resume-toc-link" data-section="consulting">Consulting</a></li>{{ end }}
+          {{ if $leadership }}<li><a href="#leadership" class="resume-toc-link" data-section="leadership">Leadership</a></li>{{ end }}
+          {{ if $education }}<li><a href="#education" class="resume-toc-link" data-section="education">Education</a></li>{{ end }}
+        </ul>
+      </div>
+
+      <section id="skills" class="mb-12">
+        <h2 class="resume-section-title">Tech Experience</h2>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          {{ range $skills }}
+          <div class="resume-card">
+            <p class="text-xs uppercase tracking-[0.2em] text-accentText mb-2">{{ .category }}</p>
+            <p class="text-sm text-[#D7DDD4] leading-relaxed">{{ .items }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </section>
+
+      <section id="experience" class="mb-12">
+        <h2 class="resume-section-title">Work Experience</h2>
+        <div class="mt-6 space-y-0">
+          {{ range $experience }}
+          <div class="resume-timeline-item">
+            <div class="resume-timeline-dot"></div>
+            <div class="resume-timeline-content">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 class="text-base font-semibold text-white">
+                  {{ if .url }}<a href="{{ .url }}" class="hover:text-highlight transition-colors">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}
+                </h3>
+                <span class="text-xs text-accentText">{{ .role }}</span>
+              </div>
+              <p class="mt-0.5 text-xs text-white/40">{{ .dates }}</p>
+              {{ if .highlights }}
+              <ul class="mt-3 space-y-1.5">
+                {{ range .highlights }}
+                <li class="resume-highlight">{{ . | markdownify }}</li>
+                {{ end }}
+              </ul>
+              {{ end }}
+              {{ if .achievements }}
+              <div class="mt-4 border-l-2 border-highlight/30 pl-3">
+                <p class="text-xs uppercase tracking-[0.15em] text-highlight/70 mb-2">{{ .achievements_label | default "Achievements" }}</p>
+                <ul class="space-y-1.5">
+                  {{ range .achievements }}
+                  <li class="resume-highlight">{{ . | markdownify }}</li>
+                  {{ end }}
+                </ul>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </section>
+
+      {{ if $consulting }}
+      <section id="consulting" class="mb-12">
+        <h2 class="resume-section-title">Consulting</h2>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          {{ range $consulting }}
+          <div class="resume-card">
+            <h3 class="text-sm font-semibold text-white">
+              {{ if .url }}<a href="{{ .url }}" class="hover:text-highlight transition-colors">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}
+            </h3>
+            {{ if .description }}
+            <p class="mt-1.5 text-sm text-[#D7DDD4] leading-relaxed">{{ .description }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ if $leadership }}
+      <section id="leadership" class="mb-12">
+        <h2 class="resume-section-title">Leadership</h2>
+        <div class="mt-4 space-y-4">
+          {{ range $leadership }}
+          <div class="resume-card">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 class="text-sm font-semibold text-white">
+                {{ if .url }}<a href="{{ .url }}" class="hover:text-highlight transition-colors">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}
+              </h3>
+              {{ if .dates }}<span class="text-xs text-white/40">{{ .dates }}</span>{{ end }}
+            </div>
+            {{ if .description }}
+            <p class="mt-1.5 text-sm text-[#D7DDD4] leading-relaxed">{{ .description }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ if $education }}
+      <section id="education" class="mb-12">
+        <h2 class="resume-section-title">Education</h2>
+        <ul class="mt-4 space-y-2">
+          {{ range $education }}
+          <li class="resume-highlight text-sm">{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+
+    </main>
+  </div>
+</div>
+
+<style>
+  .resume-section-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: #F5D547;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(245, 213, 71, 0.2);
+  }
+
+  .resume-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0F1F26;
+    padding: 1rem 1.25rem;
+  }
+
+  .resume-toc-link {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    padding: 0.125rem 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .resume-toc-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .resume-toc-link.active {
+    color: #F5D547;
+    border-left-color: #F5D547;
+  }
+
+  .resume-toc-ext {
+    display: block;
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.25);
+    transition: color 0.15s;
+  }
+  .resume-toc-ext:hover {
+    color: #ACC196;
+  }
+
+  .resume-timeline-item {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .resume-timeline-item:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+  }
+
+  .resume-timeline-dot {
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    background: #F5D547;
+    border-radius: 50%;
+  }
+
+  .resume-timeline-content {
+    padding-top: 0;
+  }
+
+  .resume-highlight {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: #D7DDD4;
+  }
+  .resume-highlight::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: bold;
+  }
+
+  .toc-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  @media print {
+    .resume-toc, .resume-toc-mobile { display: none; }
+    .resume-page { max-width: 100%; padding: 0; }
+    .resume-card { border: 1px solid #ddd; background: white; }
+    .resume-section-title { color: #333; border-bottom-color: #333; }
+    .resume-highlight { color: #333; }
+    .resume-timeline-dot { background: #333; }
+    .resume-timeline-item { border-left-color: #ddd; }
+  }
+</style>
+
+<script>
+  (() => {
+    const tocLinks = Array.from(document.querySelectorAll('.resume-toc-link'));
+    const sections = tocLinks.map(link => document.getElementById(link.dataset.section)).filter(Boolean);
+
+    const setActive = (id) => {
+      tocLinks.forEach(l => {
+        l.classList.toggle('active', l.dataset.section === id);
+      });
+    };
+
+    const getActiveSection = () => {
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (scrollBottom >= docHeight - 30) {
+        return sections[sections.length - 1]?.id;
+      }
+
+      let current = sections[0]?.id;
+      const offset = window.innerHeight * 0.3;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= offset) {
+          current = section.id;
+        }
+      }
+      return current;
+    };
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const id = getActiveSection();
+          if (id) setActive(id);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    const id = getActiveSection();
+    if (id) setActive(id);
+
+    const toggle = document.getElementById('toc-toggle');
+    const menu = document.getElementById('toc-menu');
+    const chevron = toggle?.querySelector('.toc-chevron');
+
+    toggle?.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden');
+      chevron?.classList.toggle('open', !open);
+    });
+
+    menu?.addEventListener('click', (e) => {
+      if (e.target.closest('.resume-toc-link')) {
+        menu.classList.add('hidden');
+        chevron?.classList.remove('open');
+      }
+    });
+  })();
+</script>
+{{ end }}
