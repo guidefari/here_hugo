@@ -13,15 +13,18 @@ Alan Turing was on a quest to develop a machine that could compute any math prob
 
 > [Turing’s explanation of his machine was meant as a theoretical construct and not really something to implement physically](https://erik-engheim.medium.com/turing-machines-for-dummies-81e8e25471b2)
 
-For the sake of illustration though, I've commonly seen Turing machines have the following 'physical' properties attributed to them:
-- Infinite tape, divided into cells. Each can hold a symbol, or be blank for that matter.
-- A read/write head
-- State register
-- A finite table of rules
+For the sake of illustration, a Turing machine is usually described as:
 
-Key properties of a Turing machine:
-- Conditional branching (if statements, go to)
-- ~~Infinite~~ Arbitrary amount of memory. "You must be able to get as much memory as the problem needs"
+- A tape divided into cells, each holding a symbol or a blank value
+- A read/write head that can inspect and modify the current cell
+- A state register that tracks the machine's current state
+- A finite table of rules that tells the machine what to do next
+
+The important computational ideas underneath that model are:
+
+- Arbitrary memory
+- Some way to branch based on the current situation (`if else`)
+- Some way to preserve and update state
 
 ## Why TypeScript counts
 
@@ -30,12 +33,17 @@ Word on the street says anything that is Turing complete will eventually run Doo
 
 {{<youtube 0cXD1FGvRdA>}}
 
-## Why this is interesting but easy to overhype
+## What being Turing complete actually tells us
 
 > Anything which can be computed can be computed with a Turing machine.
 
 Needless to say, there's physical limitations to infinite memory. 
 Because of that, Turing completeness falls into Type 1 of the Chomsky Hierarchy, instead of Type 0.
+
+What matters here is not the exact machinery, but the capabilities it gives you:
+- memory
+- control flow
+- state transitions
 
 ## Other surprising examples
 
