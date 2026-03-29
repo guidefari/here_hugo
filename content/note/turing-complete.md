@@ -79,10 +79,12 @@ type Check = Six["length"]; // 6
 
 {{<youtube yhznYsjOhSU>}}
 
+- [Michigan TypeScript](https://www.youtube.com/@MichiganTypeScript)
+
 - on the **Infinite** property.
-  - Boolos, Burgess & Jeffrey (2002, p. 25) include the possibility of "there is someone stationed at each end to add extra blank squares as needed".
-  - Chomsky Hierarchy
-- Halting problem
+  - [Computability and Logic](https://books.google.com/books?vid=ISBN9780521543101) by George Boolos, John Burgess, and Richard Jeffrey. On p. 25 they include the possibility of "there is someone stationed at each end to add extra blank squares as needed".
+  - [Chomsky Hierarchy - Wikipedia](https://en.wikipedia.org/wiki/Chomsky_hierarchy)
+- [Halting Problem - Wikipedia](https://en.wikipedia.org/wiki/Halting_problem)
 
 ## References
 - [Turing Machine - Wikipedia](https://en.wikipedia.org/wiki/Turing_machine)
