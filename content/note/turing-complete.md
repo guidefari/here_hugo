@@ -24,6 +24,7 @@ Key properties of a Turing machine:
 - ~~Infinite~~ Arbitrary amount of memory. "You must be able to get as much memory as the problem needs"
 
 ## Why TypeScript counts
+
 One of the most interesting Syntax episodes for me. Dimitri Metropolis ran Doom inside the type system.
 Word on the street says anything that is Turing complete will eventually run Doom💀
 
@@ -37,12 +38,34 @@ Needless to say, there's physical limitations to infinite memory.
 Because of that, Turing completeness falls into Type 1 of the Chomsky Hierarchy, instead of Type 0.
 
 ## Other surprising examples
+
 I'm yet to read more into these, but at a glance, seems like
 
 - Minecraft
 - SQL
 - Excel
 - CSS: [Is CSS Turing Complete?](https://notlaura.com/is-css-turing-complete/) seems like a good read.
+
+## Snippets
+
+```ts
+type IsEven<N extends unknown[]> =
+  N extends []                          ? true  // base: empty array = 0, which is even
+  : N extends [unknown]                 ? false // base: one element = 1, which is odd
+  : N extends [unknown, unknown, ...infer Rest] ? IsEven<Rest> // peel off 2, recurse
+  : false;
+```
+
+
+```ts
+type Multiply<A extends unknown[], B extends unknown[]> =
+  A extends [unknown, ...infer Rest]
+    ? [...B, ...Multiply<Rest, B>]
+    : [];
+
+type Six = Multiply<[1,1], [1,1,1]>;
+type Check = Six["length"]; // 6
+```
 
 ## Related reading
 
@@ -54,4 +77,8 @@ I'm yet to read more into these, but at a glance, seems like
 - Halting problem
 
 ## References
-- https://brilliant.org/wiki/turing-machines/
+- [Turing Machine - Wikipedia](https://en.wikipedia.org/wiki/Turing_machine)
+- [Turing Machines for Dummies](https://erik-engheim.medium.com/turing-machines-for-dummies-81e8e25471b2)
+- [Turing Machines - Brilliant](https://brilliant.org/wiki/turing-machines/)
+- [You Can Run DOOM in TypeScript's Type System](https://www.youtube.com/watch?v=0cXD1FGvRdA)
+- [What Is Turing Complete? - Computerphile](https://www.youtube.com/watch?v=yhznYsjOhSU)
