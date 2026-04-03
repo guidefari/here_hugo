@@ -87,11 +87,6 @@ if [[ -f "$HOME/.zcompdump" && ( ! -f "$HOME/.zcompdump.zwc" || "$HOME/.zcompdum
 fi
 ```
 
-```zsh
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
-```
-
 `typeset -g` creates a global flag in zsh, and the `(( ... )) && return 0` check makes the loader a one-time guard. That means the Kiro integration is sourced only the first time I run `kiro-cli` in a shell, not on every prompt.
 
 The `builtin source` calls pull in Kiro’s generated shell hooks without going through my wrapper function again.
