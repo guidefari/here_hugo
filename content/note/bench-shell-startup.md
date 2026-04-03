@@ -53,6 +53,49 @@ I also tried lazy-loading Bun and terraform completion, but I removed that too f
 
 Interesting reminder about `.zprofile` and `zsh` hooks.
 
+---
+
+## Relevant diffs
+
+```zsh
+typeset -g _dotfiles_kiro_integration_loaded=0
+
+_dotfiles_load_kiro_integration() {
+  (( _dotfiles_kiro_integration_loaded )) && return 0
+  _dotfiles_kiro_integration_loaded=1
+
+  [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
+  [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+  [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"
+  [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+}
+
+kiro-cli() {
+  _dotfiles_load_kiro_integration
+  command kiro-cli "$@"
+}
+
+autoload -Uz compinit
+if [[ -f "$HOME/.zcompdump" ]]; then
+  compinit -C
+else
+  compinit
+fi
+
+if [[ -f "$HOME/.zcompdump" && ( ! -f "$HOME/.zcompdump.zwc" || "$HOME/.zcompdump" -nt "$HOME/.zcompdump.zwc" ) ]]; then
+  zcompile "$HOME/.zcompdump"
+fi
+```
+
+```zsh
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+```
+
+`typeset -g` creates a global flag in zsh, and the `(( ... )) && return 0` check makes the loader a one-time guard. That means the Kiro integration is sourced only the first time I run `kiro-cli` in a shell, not on every prompt.
+
+The `builtin source` calls pull in Kiro’s generated shell hooks without going through my wrapper function again.
+
 ## Sidenote: `compinit` cache
 
 `compinit` reads a generated dump file, `~/.zcompdump`, so zsh does not have to rediscover every completion definition on every shell launch.
