@@ -35,7 +35,7 @@ After gating those hooks, login-shell startup dropped to about `0.04-0.07s` from
 
 ## After
 
-Current warm timings are roughly `0.05s-0.06s` for both interactive and login shells, with the first shell in a batch sometimes landing around `0.17s-0.19s`.
+Current warm timings are roughly `0.04s-0.05s` for both interactive and login shells, with the first shell in a batch sometimes landing around `0.09s`.
 
 ## Benchmark timeline
 
@@ -52,3 +52,11 @@ I also tried lazy-loading Bun and terraform completion, but I removed that too f
 ## Takeaway
 
 Interesting reminder about `.zprofile` and `zsh` hooks.
+
+## Sidenote: `compinit` cache
+
+`compinit` reads a generated dump file, `~/.zcompdump`, so zsh does not have to rediscover every completion definition on every shell launch.
+
+I also compile that dump to `~/.zcompdump.zwc`, which just makes loading the generated cache cheaper.
+
+If the cache ever gets out of date, it is safe to delete `~/.zcompdump*`. Zsh will rebuild it the next time `compinit` runs.
