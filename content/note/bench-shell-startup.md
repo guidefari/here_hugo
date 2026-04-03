@@ -35,7 +35,7 @@ After gating those hooks, login-shell startup dropped to about `0.04-0.07s` from
 
 ## After
 
-Current timings are roughly `0.05s` for both interactive and login shells.
+Current warm timings are roughly `0.05s-0.06s` for both interactive and login shells, with the first shell in a batch sometimes landing around `0.17s-0.19s`.
 
 ## Benchmark timeline
 
