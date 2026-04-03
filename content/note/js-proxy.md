@@ -2,7 +2,7 @@
 title: "Javascript Proxy 101"
 date: 2023-06-02T05:15:29+02:00
 description: Someone gave me 5 minutes to do a sales pitch on the subject
-tags: [design]
+tags: [javascript]
 images:
   [
     "https://images-here-hugo.vercel.app/api/og-image?title=Javascript%20Proxy%20101",

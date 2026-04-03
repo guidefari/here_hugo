@@ -2,7 +2,7 @@
 title: "TIL: Cognitive Complexity"
 date: 2023-11-27T18:43:32+02:00
 description: Refactor this function to reduce its Cognitive Complexity
-tags: [til, design, complexity]
+tags: [til, software-design, complexity]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cognitive+Complexity']
 ---
 

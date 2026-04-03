@@ -2,7 +2,7 @@
 title: "Cohesion & Complexity"
 date: 2023-07-20T05:53:41+02:00
 description: WIP - publishing for early feedback😛
-tags: [tactical, psychology, design, dx, architecture, complexity]
+tags: [tactical, psychology, software-design, dx, architecture, complexity]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cohesion%20%26%20Complexity']
 ---
 

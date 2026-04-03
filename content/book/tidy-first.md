@@ -2,7 +2,7 @@
 title: "Book Notes: Tidy First?"
 date: 2024-01-04T23:05:19+02:00
 description: "highlights, quotes, & other interesting bits from Tidy First"
-tags: [book, notes, design, refactoring]
+tags: [book, notes, software-design, refactoring]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tidy+First%3F']
 ---
 
