@@ -1,6 +1,6 @@
 ---
 title: "Now"
-date: 2021-12-08T09:56:52+02:00
+date: 2026-04-25T10:00:00+02:00
 description: What I'm up to now
 tags: [communication, strategy]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Now']
@@ -10,33 +10,31 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 
 > Think of what you’d tell a friend you hadn’t seen in a year.
 
-# What I'm up to daily
-- Making white-labelled, multi-tenant software for banks at [Littlefish](https://littlefishapp.com/)
-- [This blog](https://github.com/guidefari/here_hugo), and too many side projects to list. 
-All as my sandbox for learning.
-- [The reading list newsletter](/read)
+# What I'm up to
 
-### Topics I'm currently obsessed with 
-- [Architecture](/tags/architecture) - recently [AWS certified](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77) 😄. [Related notes here](/tags/aws)
-- [UX](/tags/ux)
-- [How teams build & deliver software](/tags/process)
-- [Product development](/tags/product) - a natural extension of the [devops](/tags/devops) topic tbh
-  - [Team Topologies]({{<ref team-topologies>}})
-- [Writing](/tags/writing) - Trying to keep my friends
-accountable to their writing goals.
-Coupled with setting up customised plans to help you write more!
-reach out if you want help around this area
-  - You may be interested in [How Writing Boosts My Developer Career](https://www.offerzen.com/blog/writing-boosts-my-developer-career)
-- WIP concept: [Playbooks](/tags/playbook). [Ibra](https://ibrathesheriff.com/) planted this concept
-in my head, and has encouraged it.
+Hacking away on the [Sixty60](https://www.sixty60.co.za/) app during the day, open source at night.
 
-### Curating music
-A crucial part of my daily life, I have been actively [curating](/tags/curated) music since almost as far back as memory can take me.
+I'm still very interested in software design, systems thinking, architecture, software delivery, and all the little decisions that make codebases feel either calm or exhausting to work in.
 
-The process is both systemic & free-flowing, and it's so much fun for me! Crate digging in blog posts, DJ mixes, algorithms, rabbit-holes at 2AM on a Sunday morning, **lots** of recommendations from friends (this is the source of the highest quality music)
+This site is still my main place for thinking in public. I usually write when a topic keeps poking at me for long enough, or when I notice the same idea showing up across code, teams, tools, and product work.
 
-- Recording and uploading [DJ mixes]({{<ref mix>}}) ~~every other Sunday, at sunset~~.
-- Building & writing music content on [goosebumps.fm](https://goosebumps.fm)
+## Elsewhere
+
+- [Twitter](https://twitter.com/guidefari)
+- [Bluesky](https://bsky.app/profile/guidefari.com)
+- [Substack](https://substack.com/@guidefari)
+- [GitHub](https://github.com/guidefari)
+- [Goosebumps profile](https://goosebumps.fm/guidefari)
+- [LinkedIn](https://www.linkedin.com/in/guidefari/)
+
+## Reading List
+
+The [reading list](/read) still exists, but has definitely [slowed down](/update).
+## Music
+
+Music curation is still a constant in my life.
+
+I'm still collecting, sequencing, and chasing songs that feel alive. Crate digging through mixes, blog posts, old playlists, recommendation chains, and messages from friends is still one of my favourite forms of research. Building and writing music content on [goosebumps.fm](https://goosebumps.fm)
 
 ## Related reading
-- [Overview of my past work](/past)
+- [Overview of my past work](/resume)
