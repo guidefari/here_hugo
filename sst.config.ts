@@ -1,7 +1,7 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
-// const zoneDomain = "guidefari.com";
-// const wwwDomain = `www.${zoneDomain}`;
+const zoneDomain = "guidefari.com";
+const wwwDomain = `www.${zoneDomain}`;
 
 export default $config({
   app() {
@@ -17,10 +17,10 @@ export default $config({
   async run() {
     const site = new sst.cloudflare.StaticSiteV2("Site", {
       path: ".",
-      // domain: {
-      //   name: zoneDomain,
-      //   redirects: [wwwDomain],
-      // },
+      domain: {
+        name: zoneDomain,
+        redirects: [wwwDomain],
+      },
       notFound: "404",
       build: {
         command: "bun run build",
