@@ -1,16 +1,16 @@
 ---
-title: "Effective"
+title: "Effect-ts, in practice"
 date: 2026-02-04T09:09:29+02:00
 description: "Effect has been slowly infesting my Typescript codebases, let's explore why"
 tags: [typescript, software-design]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Effective"]
+images: ["https://images-here-hugo.vercel.app/api/og-image?title=Effect-ts%2C%20in%20practice"]
 ---
 
 ## Why I'm more willing to pay the cost now
 
 Effect has a learning curve, and can produce code that feels more verbose than usual.
 
-But the barrier to entry is lower than it used to be because of LLM's. The more expressive the type system is, the better the feedback loop. If a service is missing, a layer is wrong, or an error is unhandled, the compiler has something concrete to say.
+But the barrier to entry is lower now thanks to LLMs. More expressive types, better feedback loop. If a service is missing, a layer is wrong, or an error is unhandled, the compiler has something concrete to say.
 
 ## Dependencies stop being vibes
 
@@ -30,9 +30,9 @@ const DatabaseLive = Layer.succeed(Database, {
 });
 ```
 
-The service is just an identifier in the runtime's service map. The implementation lives in a `Layer`, and the program declares what it needs via the type system. This borrows some (favourable) ergonomics from a `C#` codebase
+The service is just an identifier in the runtime's service map. The implementation lives in a `Layer`, and the program declares what it needs via the type system. Borrows some (favourable) ergonomics from a `C#` codebase.
 
-The [invoicing app](https://github.com/guidefari/invoicing) is where this started clicking for me. The same invoice workflow can run against the live database with my customers and a dedicated testing database, juat swap the layer, nothing else changes.
+The [invoicing app](https://github.com/guidefari/invoicing) is where it clicked. The same workflow runs against my live customer database in prod, and a dedicated test database in tests. Swap the layer, nothing else changes.
 
 ```ts
 const DatabaseTest = Layer.succeed(Database, {
@@ -74,23 +74,11 @@ In natural language, this reads as:
 - can fail with `CustomerNotFound` or `PaymentDeclined`, 
 - needs a `Database`.  
 
-Errors bubble through the `E` channel automatically. if a helper deep in the call stack adds `RateLimited` to its errors, the union widens all the way up until somebody handles it. No silent escape route.
+Errors bubble through the `E` channel automatically. If a helper deep in the call stack adds `RateLimited` to its errors, the union widens all the way up until somebody handles it. No silent escape route.
 
-## Required Environment
+## catchTag beats try/catch
 
-The `R` channel is the one that took me a minute to appreciate. Forget to provide a layer and you don't get a runtime crash, you get a type error at the call site:
-
-```ts
-//        Type 'Database' is not assignable to type 'never'
-Effect.runPromise(createInvoice(input));
-//                ^^^^^^^^^^^^^^^^^^^^
-
-Effect.runPromise(createInvoice(input).pipe(Effect.provide(DatabaseLive)));
-```
-
-`runPromise` only accepts an effect with `R = never`. Missing services show up the same way missing function arguments do. This is the bit that makes the DI story actually pay off. The test layer and the live layer both satisfy the same constraint, and you can't ship a program that forgot one.
-
-`catchTag` is where modularity beats `try/catch`. Each handler narrows the error union by name, and what's left is still in the type:
+`catchTag` is where modularity wins. Each handler narrows the error union by name, and whatever you don't handle stays in the type:
 
 ```ts
 const program = createInvoice(input).pipe(
@@ -108,15 +96,31 @@ const program = createInvoice(input).pipe(
 return runtimeLive.runPromise(program);
 ```
 
-Compare to a `try/catch`: one catch block, manual `instanceof` checks, no help from the compiler if you forget a case or if a new error tag gets added later. With `catchTag`, drop a handler and the leftover error stays in the signature until something deals with it. Add a new tagged error upstream and every call site that doesn't handle it lights up.
+Compare to `try/catch`: one block, manual `instanceof` checks, no help from the compiler if you forget a case or if a new error tag shows up later.
 
-This forces you to deal with your program's known failure modes at compile time, instead of runtime. (`#shift-left` as the exec's would say😆) 
+With `catchTag`, drop a handler and the leftover error stays in the signature until something deals with it. Add a new tagged error upstream and every call site that doesn't handle it lights up.
+
+You deal with known failure modes at compile time instead of runtime. (`#shift-left`, as the exec's would say😆)
 
 ## The runtime is where layers actually run
 
-An `Effect` is a description, not an execution. Nothing happens until you hand it to a runtime. The runtime is the thing that owns the service map, the scheduler, the fiber supervisor, and the lifecycle of any resources your layers acquired (DB pools, HTTP clients, OTel exporters).
+An `Effect` is a description, not an execution. Nothing happens until you hand it to a runtime.
 
-For a one-off script, `Effect.runPromise(program.pipe(Effect.provide(MainLive)))` is enough. Effect builds an ad-hoc runtime, runs the program, tears it down. For a long-running app you want the runtime built once and reused:
+The runtime owns the service map, the scheduler, the fiber supervisor, and the lifecycle of any resources your layers acquired (DB pools, HTTP clients, OTel exporters).
+
+Before a runtime will accept a program, the `R` channel has to be empty. Forget a layer and you get a type error, not a 3am page:
+
+```ts
+//        Type 'Database' is not assignable to type 'never'
+Effect.runPromise(createInvoice(input));
+//                ^^^^^^^^^^^^^^^^^^^^
+
+Effect.runPromise(createInvoice(input).pipe(Effect.provide(DatabaseLive)));
+```
+
+Missing services show up the same way missing function arguments do. The test layer and the live layer satisfy the same constraint, so you can't ship a program that forgot one.
+
+For a one-off script, `Effect.runPromise(program.pipe(Effect.provide(MainLive)))` is enough. Effect builds an ad-hoc runtime, runs the program, tears it down. For a long-running app you want it built once and reused:
 
 ```ts
 import { ManagedRuntime, Layer } from "effect";
@@ -126,7 +130,9 @@ const MainLive = Layer.mergeAll(DatabaseLive, EmailLive, ConfigLive, LoggerLive)
 export const runtimeLive = ManagedRuntime.make(MainLive);
 ```
 
-`runtimeLive.runPromise(program)` then runs the program against the already-constructed service map. The DB pool opens once at startup, not per request. On shutdown you call `runtimeLive.dispose()` and every layer's release logic runs in order.
+`runtimeLive.runPromise(program)` then runs the program against an already-constructed service map. The DB pool opens once at startup, not per request.
+
+On shutdown you call `runtimeLive.dispose()` and every layer's release logic runs in order.
 
 Tests skip the long-lived runtime and provide a layer inline. The program is the same, only the layer changes:
 
@@ -156,11 +162,9 @@ const sendInvoice = (invoiceId: string) =>
   );
 ```
 
-Wrapping work in spans is straightforward, and sending those spans to a trace collector is also pretty straightforward. The program already has a runtime, services, and a composition model. Tracing fits into that instead of being bolted on later.
+Wrapping work in spans is straightforward, and shipping those spans to a trace collector is too. The program already has a runtime, services, and a composition model. Tracing fits in instead of getting bolted on later.
 
-## Where I'm using it
-
-Some repo's to check out
+## Some repo's to check out
 
 - [invoicing](https://github.com/guidefari/invoicing), the app I keep referencing
 - [gbfm](https://github.com/guidefari/gbfm), look inside `apps/vps`
