@@ -11,4 +11,7 @@ content/.obsidian
 assets/css/style.css
 .obsidian
 **/.smart-connections
+.sst
+.wrangler
 public
+.env
