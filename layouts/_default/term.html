@@ -13,7 +13,7 @@
 		<h2 class="article-list-heading text-3xl"><a class="article-list-title" href="{{ .RelPermalink }}">{{.Title}}</a></h2>
 		<div class="home-tag-wrapper">
 			{{ range .Params.tags }}
-			<a class="home-tag" href="{{ " /tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+			<a class="home-tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 			{{ end }}
 		</div>
 		<time class="article-list-date">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
@@ -29,6 +29,6 @@
 	{{- end -}}
 </ul>
 <section>
-	<h4><a href="{{" /tags"}}">All tags</a></h4>
+	<h4><a href="{{ "/tags" | relLangURL }}">All tags</a></h4>
 </section>
 {{ end }}
