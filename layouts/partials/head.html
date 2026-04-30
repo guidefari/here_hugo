@@ -8,30 +8,41 @@
 	{{ $tailwindStyles := resources.Get "css/style.css" | fingerprint}}
 	<link rel="stylesheet" type="text/css" href="{{ $tailwindStyles.Permalink }}">
 
-	{{ if not .Params.images }}
-	{{ $ogImage := printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
+	{{ $ogImage := "" }}
+	{{ if .Params.images }}
+		{{ $ogImage = index .Params.images 0 | absURL }}
+	{{ else }}
+		{{ $ogImage = printf "https://images-here-hugo.vercel.app/api/og-image?title=%s" (urlquery .Title) }}
+	{{ end }}
 	<meta property="og:image" content="{{ $ogImage }}">
 	<meta name="twitter:image" content="{{ $ogImage }}">
+
+	{{ $desc := "" }}
+	{{ if .IsHome }}
+		{{ $desc = .Site.Params.subtitle }}
+	{{ else if .Description }}
+		{{ $desc = .Description }}
+	{{ else if .Summary }}
+		{{ $desc = .Summary | plainify | truncate 160 }}
+	{{ else }}
+		{{ $desc = .Site.Params.subtitle }}
 	{{ end }}
 
 	{{ if .IsHome }}
 	<title>{{ .Title }}</title>
-	<meta name="description" content="{{ .Site.Params.subtitle }}" />
-	<link rel="canonical" href="{{ .Permalink }}" />
-	{{ else }}
-	{{ if .Params.seoTitle }}
+	{{ else if .Params.seoTitle }}
 	<title>{{ .Params.seoTitle }}</title>
 	{{ else }}
-	<title>{{ .Title }}</title>
+	<title>{{ .Title }} | {{ .Site.Title }}</title>
 	{{ end }}
-	<meta name="description" content="{{ .Description }}" />
+	<meta name="description" content="{{ $desc }}" />
 	<link rel="canonical" href="{{ .Permalink }}" />
-	{{ end}}
 
 	<link rel="icon" type="image/png" href="/favicon.png" />
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
+	{{- template "_internal/schema.html" . -}}
 	{{ if and (isset .Site.Params "social") (.Site.Params.useCDN | default false) -}}
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
