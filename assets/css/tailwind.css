@@ -35,12 +35,53 @@
 @utility single-tags {
   display: flex;
   flex-wrap: wrap;
-  @apply space-x-4;
-  line-height: 2;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  line-height: 1;
 }
 
 @utility single-tag {
   list-style: none;
+
+  & a {
+    position: relative;
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-highlight);
+    text-decoration: none;
+    isolation: isolate;
+  }
+
+  & a::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background-color: rgba(245, 213, 71, 0.12);
+    transform: skewY(-2.5deg);
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+    z-index: -1;
+  }
+
+  & a:hover::before,
+  & a:focus-visible::before {
+    background-color: var(--color-highlight);
+    transform: skewY(-1deg) translate(2px, -2px);
+    inset: 4px;
+  }
+
+  & a:hover,
+  & a:focus-visible {
+    color: #000;
+  }
+
+  & a:visited {
+    color: var(--color-highlight);
+  }
 }
 
 @utility article-list {
