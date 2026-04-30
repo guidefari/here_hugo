@@ -167,7 +167,5 @@ Some repo's to check out
 - [opensound](https://github.com/planetaryescape/opensound)
 - [Thanda's pokemon-app](https://github.com/guidefari/pokemon-app)
 
-Other people's, that I keep coming back to:
-
 - [lucas-barake/effect-monorepo](https://github.com/lucas-barake/effect-monorepo)
 - [overengineeringstudio/effect-utils](https://github.com/overengineeringstudio/effect-utils)
