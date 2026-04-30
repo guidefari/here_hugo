@@ -7,7 +7,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Fixed+Footer']
 ---
 
 ```html
-<div class="grid min-h-[100dvh] grid-rows-[auto_1fr_auto]">
+<div class="grid min-h-dvh grid-rows-[auto_1fr_auto]">
     <header/>
     <main>
         {children}

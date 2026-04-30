@@ -45,7 +45,7 @@ This is a Hugo static site generator blog with Tailwind CSS styling focused on s
 
 ### Theme and Styling
 - Custom Hugo theme in `/layouts/` with partials system
-- Tailwind CSS configuration in `tailwind.config.js` with custom color scheme
+- Tailwind CSS v4 configuration in `assets/css/tailwind.css` with custom color scheme
 - Dark mode support configured via `params.mode: auto` in config
 - Typography plugin for enhanced content styling
 

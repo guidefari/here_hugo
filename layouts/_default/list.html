@@ -5,21 +5,21 @@
 <h1 class="my-10 text-5xl">All articles</h1>
 {{ end }}
 
-<ul class="posts">
+<ul class="posts article-list">
 	{{- range .Data.Pages -}}
 	{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-	<section class="py-5">
-		<h2 class="mt-4 mb-2 text-3xl"><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-		<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
+	<li class="article-list-item">
+		<article>
+			<h2 class="article-list-heading text-3xl"><a class="article-list-title" href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+			<time class="article-list-date">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
 			}}</time>
-		<br>
-		<div class="description">
+			<div class="description article-list-description">
 			{{ if isset .Params "description" }}
 			{{ .Description }}
 			{{ end }}
-		</div>
-		<!-- <hr/> -->
-	</section>
+			</div>
+		</article>
+	</li>
 	{{- end -}}
 	{{- end -}}
 </ul>
