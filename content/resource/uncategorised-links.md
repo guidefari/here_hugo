@@ -35,6 +35,7 @@ tags: [career, strategy, music]
 for each task, in the cloud, in seconds.
 - [Plasmo Framework](https://docs.plasmo.com/) - A way to quickly build browser extensions
 - [AutoRegex](https://www.autoregex.xyz/)
+- [Mock API](https://jsoning.com/api/)
 
 # music
 - [Hardwax](https://hardwax.com/)
