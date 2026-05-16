@@ -1,11 +1,11 @@
 {{ define "main" }}
 <main>
   <div>
-    <p class="mb-2 text-sm font-bold tracking-widest uppercase text-accentText">Recommended media</p>
     <h1 class="my-4 text-5xl">{{ .Title }}</h1>
     <div class="flex flex-wrap gap-2 text-sm text-accentText">
-      {{ if .Date }}<time>Posted on {{ dateFormat "Jan 2, 2006" .Date }}</time>{{ end }}
-      {{ with .Params.creator }}<span>by {{ . }}</span>{{ end }}
+      {{ if .Date }}<time>{{ dateFormat "Jan 2, 2006" .Date }}</time>{{ end }}
+      {{ with .Params.creator }}<span>· via {{ . }}</span>{{ end }}
+      {{ with .Params.media_url }}<a href="{{ . }}" class="highlighted-link" target="_blank" rel="noopener">· ↗ source</a>{{ end }}
     </div>
 
     <div class="post-tags" data-pagefind-meta="tags">
@@ -23,11 +23,7 @@
 
   {{ partial "media-embed.html" . }}
 
-  {{ with .Params.media_url }}
-  <p><a class="highlighted-link" href="{{ . }}">Open original</a></p>
-  {{ end }}
-
-  {{ if .Content }}
+{{ if .Content }}
   <article class="prose lg:prose-xl">
     {{ .Content }}
   </article>
