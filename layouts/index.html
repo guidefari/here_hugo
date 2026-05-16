@@ -3,14 +3,16 @@
   {{ partial "head.html" . }}
 
   <body class="flex flex-col w-full">
-    {{partial "hero.html"}}
+    {{partial "hero.html"}} {{ partial "nav-chips.html" . }}
 
-    <main class="flex flex-col mx-auto prose lg:prose-xl">
-      {{ $markdown := readFile "content/frontpage.md"}} {{ $markdown |
+    <main class="flex flex-col mx-auto w-full">
+      {{ $markdown := readFile "content/frontpage.md"}} {{ with $markdown |
       markdownify }}
+      <div class="mx-auto prose lg:prose-xl">{{ . }}</div>
+      {{ end }}
     </main>
     <br />
     <br />
-    {{- partial "footer.html" . -}} {{- partial "search.html" . -}}
+    {{- partial "search.html" . -}}
   </body>
 </html>

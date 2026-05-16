@@ -1,0 +1,45 @@
+<nav aria-label="Site sections" class="mx-auto mb-10 nav-chips max-w-6xl lg:max-w-none lg:mx-0 lg:mb-0 lg:fixed lg:top-32 lg:left-6 lg:w-52 xl:left-10 xl:w-60 lg:z-10">
+  <ul class="flex flex-wrap gap-2 p-0 m-0 list-none lg:flex-col lg:gap-2 nav-chips__row nav-chips__row--primary">
+    {{- $primary := slice
+      (dict "label" "notes"        "href" "/note")
+      (dict "label" "til"          "href" "/til")
+      (dict "label" "reading list" "href" "/read")
+      (dict "label" "now"          "href" "/now")
+      (dict "label" "books"        "href" "/book")
+      (dict "label" "resources"    "href" "/resource")
+      (dict "label" "music"        "href" "/tags/music/")
+      (dict "label" "bliki"        "href" "/bliki")
+      (dict "label" "#tags"         "href" "/tags")
+      (dict "label" "rss"          "href" "/index.xml")
+    -}}
+    {{- range $primary }}
+      <li class="lg:w-full">
+        <a href="{{ .href }}" class="nav-chip lg:w-full lg:justify-start">
+          <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{{ .label }}</span><span class="nav-chip__bracket">]</span>
+        </a>
+      </li>
+    {{- end }}
+  </ul>
+
+  <div class="mt-6 nav-subscribe">
+    <div class="flex items-center gap-2 mb-2 text-xs nav-subscribe__label text-accentText/80">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-highlight animate-pulse"></span>
+      <span>~/subscribe</span>
+    </div>
+    <p class="mt-0 mb-3 text-sm text-text/75 max-w-md lg:max-w-none">
+      Notes + reading list in your inbox.
+    </p>
+    <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post"
+      target="popupwindow"
+      class="flex flex-col gap-2 sm:flex-row lg:flex-col max-w-md lg:max-w-none">
+      <label for="bd-email-nav" class="sr-only">Email address</label>
+      <input type="email" name="email" id="bd-email-nav" required
+        placeholder="you@domain.com"
+        class="w-full px-3 py-2 font-mono text-sm bg-transparent border rounded-sm border-text/40 text-text placeholder:text-text/40 focus:outline-none focus:border-highlight focus:ring-1 focus:ring-highlight" />
+      <button type="submit"
+        class="px-4 py-2 font-mono text-sm font-semibold tracking-wide uppercase transition border rounded-sm border-highlight bg-highlight text-black hover:bg-transparent hover:text-highlight focus:outline-none focus:ring-2 focus:ring-highlight whitespace-nowrap">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</nav>

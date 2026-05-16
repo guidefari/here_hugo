@@ -120,6 +120,82 @@
   color: var(--text);
 }
 
+@utility nav-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.4rem 0.75rem;
+  font-family: "Jetbrains Mono", monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  border: 1px solid color-mix(in oklab, var(--color-text) 30%, transparent);
+  border-radius: 2px;
+  background-color: color-mix(in oklab, var(--color-text) 4%, transparent);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+
+  & .nav-chip__bracket {
+    color: var(--color-highlight);
+    opacity: 0.7;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #000;
+    background-color: var(--color-highlight);
+    border-color: var(--color-highlight);
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 0 color-mix(in oklab, var(--color-highlight) 60%, transparent);
+  }
+
+  &:hover .nav-chip__bracket,
+  &:focus-visible .nav-chip__bracket,
+  &:hover .nav-chip__label,
+  &:focus-visible .nav-chip__label {
+    color: #000;
+    opacity: 1;
+  }
+
+  &:visited {
+    color: var(--color-text);
+  }
+}
+
+@utility nav-chip-sm {
+  position: relative;
+  font-family: "Jetbrains Mono", monospace;
+  color: var(--color-accentText);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &::before {
+    content: "./";
+    opacity: 0.5;
+    margin-right: 0.05rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-highlight);
+  }
+
+  &:visited {
+    color: var(--color-accentText);
+  }
+}
+
+@utility nav-chips {
+  & .nav-chips__prompt {
+    font-family: "Jetbrains Mono", monospace;
+  }
+}
+
 @utility highlighted-link {
   color: var(--color-highlight);
   text-decoration: none;
