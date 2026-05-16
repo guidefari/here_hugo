@@ -1,0 +1,13 @@
+{{- $type := .Params.media_type | default "link" -}}
+{{- $url := .Params.media_url -}}
+{{- if eq $type "youtube" -}}
+  {{- with .Params.youtube_id -}}
+    <div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;">
+      <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/{{ . }}" title="{{ $.Title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  {{- else -}}
+    {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Watch media</a></p>{{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Open media</a></p>{{- end -}}
+{{- end -}}

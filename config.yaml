@@ -45,6 +45,7 @@ Permalinks:
   mix: "/:contentbasename/"
   note: "/:contentbasename/"
   bliki: "/:contentbasename/"
+  media: "/:contentbasename/"
 
 frontmatter:
   date:

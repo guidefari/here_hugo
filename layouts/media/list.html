@@ -1,0 +1,36 @@
+{{ define "main" }}
+<header class="my-10">
+  <p class="mb-2 text-sm font-bold tracking-widest uppercase text-accentText">Watchlist</p>
+  <h1 class="text-5xl">Media I recommend</h1>
+  <p class="max-w-2xl mt-4 text-text/75">A stream of talks, videos, and other media worth your time. Some entries have notes; some are just a strong recommendation.</p>
+</header>
+
+<ul class="flex flex-col gap-3">
+  {{- range .Pages.ByDate.Reverse -}}
+  <li>
+    <a href="{{ .RelPermalink }}" class="flex gap-4 p-3 border rounded-sm border-text/20 bg-text/5 hover:bg-text/10 transition-colors group">
+      {{- if and (eq .Params.media_type "youtube") .Params.youtube_id -}}
+      <div class="flex-shrink-0 w-36 h-20 overflow-hidden rounded-sm bg-black">
+        <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/mqdefault.jpg" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      {{- else if .Params.images -}}
+      <div class="flex-shrink-0 w-36 h-20 overflow-hidden rounded-sm bg-black">
+        <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      {{- end -}}
+      <div class="flex flex-col justify-between min-w-0">
+        <div>
+          <p class="m-0 text-lg font-medium leading-snug group-hover:text-accentText transition-colors line-clamp-2">{{ .Title }}</p>
+          {{ with .Description }}<p class="mt-1 text-sm text-text/60 line-clamp-2">{{ . }}</p>{{ end }}
+        </div>
+        <div class="flex flex-wrap gap-2 mt-2 text-xs text-accentText/70">
+          <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
+          {{ with .Params.creator }}<span>· {{ . }}</span>{{ end }}
+          {{ if .RawContent }}<span>· has notes</span>{{ end }}
+        </div>
+      </div>
+    </a>
+  </li>
+  {{- end -}}
+</ul>
+{{ end }}

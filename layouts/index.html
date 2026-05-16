@@ -3,7 +3,9 @@
   {{ partial "head.html" . }}
 
   <body class="flex flex-col w-full">
-    {{partial "hero.html"}} {{ partial "nav-chips.html" . }}
+    <aside class="w-full max-w-6xl mx-auto lg:fixed lg:top-8 lg:bottom-8 lg:left-6 lg:z-10 lg:w-60 lg:max-w-none lg:mx-0 lg:overflow-y-auto xl:left-10">
+      {{partial "hero.html"}} {{ partial "nav-chips.html" . }}
+    </aside>
 
     <main class="flex flex-col mx-auto w-full">
       {{ $markdown := readFile "content/frontpage.md"}} {{ with $markdown |
