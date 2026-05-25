@@ -27,13 +27,7 @@ If a thing can only be in one of a small number of states, I want that modeled e
 I've spoken in the past about how [code should communicate intent](/intent), 
 and I think exhaustive pattern matching can be a useful tool for that!
 
-## In TypeScript, that can look like:
-
-- a `switch` over a discriminated union with an `assertNever` fallback
-- a matcher like `ts-pattern` ending in `.exhaustive()`
-- Effect's `Match` helpers over tagged unions
-
-# What this changes when code evolves
+# Code evolves in a _safer_ manner
 
 When a new case gets added to a union, I want the compiler to make that fact painful to ignore.
 
@@ -44,10 +38,10 @@ With exhaustive handling, I get a useful list of places that need a decision.
 
 I think this matters even more when LLMs are writing or editing code.
 
-LLMs do better when the system gives them tight feedback loops.
-If the domain is modeled as a finite set of explicit cases, and the compiler can point at the places where handling is incomplete
+LLMs can be lazy. They'll take the shortest path to something that looks done, and without tight feedback, "looks done" is often good enough to stop.
 
-This is good for humans too, obviously, but I think it is especially useful for LLM-assisted coding because so much of the quality depends on how quickly the system can say "that change is incomplete, here is where".
+Exhaustive handling changes that. When the domain is modeled as a finite set of explicit cases, the compiler becomes part of the feedback loop. Adding a new variant surfaces compile errors in the right places. The task isn't done until the compiler stops screaming.
+
 
 # Related reading
 
