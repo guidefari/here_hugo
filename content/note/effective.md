@@ -8,9 +8,8 @@ images: ["https://images-here-hugo.vercel.app/api/og-image?title=Effect-ts%2C%20
 
 ## Why I'm more willing to pay the cost now
 
-Effect has a learning curve, and can produce code that feels more verbose than usual.
-
-But the barrier to entry is lower now thanks to LLMs. More expressive types, better feedback loop. If a service is missing, a layer is wrong, or an error is unhandled, the compiler has something concrete to say.
+[Effect](https://effect.website/) has a learning curve, and can produce code that feels more verbose than usual.
+But the barrier to entry is lower now thanks to LLMs. More expressive types, better feedback loop.
 
 ## Dependencies stop being vibes
 
