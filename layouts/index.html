@@ -1,20 +1,8 @@
-<!doctype html>
-<html class="p-4">
-  {{ partial "head.html" . }}
-
-  <body class="flex flex-col w-full">
-    <aside class="w-full max-w-6xl mx-auto lg:fixed lg:top-8 lg:bottom-8 lg:left-6 lg:z-10 lg:w-60 lg:max-w-none lg:mx-0 lg:overflow-y-auto xl:left-10">
-      {{partial "hero.html"}} {{ partial "nav-chips.html" . }}
-    </aside>
-
-    <main class="flex flex-col mx-auto w-full">
-      {{ $markdown := readFile "content/frontpage.md"}} {{ with $markdown |
-      markdownify }}
-      <div class="mx-auto prose lg:prose-xl">{{ . }}</div>
-      {{ end }}
-    </main>
-    <br />
-    <br />
-    {{- partial "search.html" . -}}
-  </body>
-</html>
+{{ define "main" }}
+<main class="flex flex-col mx-auto w-full max-w-3xl px-2 lg:px-6 py-8">
+  {{ $markdown := readFile "content/frontpage.md" }}
+  {{ with $markdown | markdownify }}
+  <div class="mx-auto prose lg:prose-xl w-full">{{ . }}</div>
+  {{ end }}
+</main>
+{{ end }}
