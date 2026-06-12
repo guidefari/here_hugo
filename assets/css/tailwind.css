@@ -125,15 +125,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
-  padding: 0.4rem 0.75rem;
+  padding: 0.25rem 0.6rem;
   font-family: "Jetbrains Mono", monospace;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-text);
   text-decoration: none;
   border: 1px solid color-mix(in oklab, var(--color-text) 30%, transparent);
   border-radius: 2px;
   background-color: color-mix(in oklab, var(--color-text) 4%, transparent);
+  outline: none;
   transition:
     color 0.15s ease,
     background-color 0.15s ease,
@@ -160,6 +161,12 @@
   &:focus-visible .nav-chip__label {
     color: #000;
     opacity: 1;
+  }
+
+  &:focus-visible {
+    box-shadow:
+      inset 0 0 0 1px #000,
+      2px 2px 0 0 color-mix(in oklab, var(--color-highlight) 60%, transparent);
   }
 
   &:visited {
@@ -257,6 +264,10 @@
 }
 
 @layer utilities {
+  .prose :is(h1, h2, h3, h4) {
+    max-width: none;
+  }
+
   .prose {
     --tw-prose-body: var(--text);
     --tw-prose-headings: var(--color-white);
