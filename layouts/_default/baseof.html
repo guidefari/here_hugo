@@ -1,21 +1,24 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="p-4">
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
   {{- partial "head.html" . -}}
 
   <body class="flex flex-col w-full {{ if .Params.hide_footer }}lg:h-dvh lg:overflow-hidden min-h-dvh{{ else }}min-h-dvh{{ end }}">
     {{- partial "mobile-nav.html" . -}}
 
-    <aside class="hidden lg:flex lg:flex-col w-full lg:fixed lg:top-8 lg:bottom-8 lg:left-6 lg:z-10 lg:w-60 lg:max-w-none lg:overflow-y-auto xl:left-10">
-      {{- partial "hero.html" . -}}
-      {{- partial "nav-chips.html" . -}}
-    </aside>
+    <div class="flex grow pt-14 lg:pt-0 lg:p-6">
+      <aside class="hidden lg:flex lg:flex-col lg:shrink-0 lg:w-60 xl:w-72">
+        {{- partial "nav-chips.html" . -}}
+      </aside>
 
-    <div class="w-full lg:pl-72 xl:pl-80 grow pt-14 lg:pt-0">
-      {{- block "main" . }}{{- end }}
+      <div class="flex flex-col grow min-w-0">
+        {{- block "main" . }}{{- end }}
+        {{- if not .Params.hide_footer }}{{- partial "footer.html" . -}}{{ end -}}
+      </div>
     </div>
-
-    {{- if not .Params.hide_footer }}{{- partial "footer.html" . -}}{{ end -}}
     {{- partial "search.html" . -}}
+
+    {{ $navSound := resources.Get "js/nav-sound.js" | fingerprint }}
+    <script src="{{ $navSound.RelPermalink }}" defer></script>
   </body>
 
   {{ if .Store.Get "hasMermaid" }}
