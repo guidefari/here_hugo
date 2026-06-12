@@ -1,4 +1,6 @@
 primary:
+  - label: "home"
+    href: "/"
   - label: "now"
     href: "/now"
   - label: "notes"
