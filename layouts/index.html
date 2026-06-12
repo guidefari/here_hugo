@@ -1,5 +1,8 @@
 {{ define "main" }}
-<main class="flex flex-col mx-auto w-full max-w-3xl px-2 lg:px-6 py-8">
+<main class="flex flex-col mx-auto w-full max-w-3xl px-2 lg:px-0 py-8">
+  <div class="mb-10 lg:mb-12">
+    {{- partial "hero.html" . -}}
+  </div>
   {{ $markdown := readFile "content/frontpage.md" }}
   {{ with $markdown | markdownify }}
   <div class="mx-auto prose lg:prose-xl w-full">{{ . }}</div>
