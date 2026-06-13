@@ -8,47 +8,48 @@
   </p>
 </header>
 
-<ul class="flex flex-col gap-3">
+<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 m-0 p-0 list-none">
   {{- range .Pages.ByDate.Reverse -}}
   <li>
     <a
       href="{{ .RelPermalink }}"
-      class="flex gap-4 p-3 border rounded-sm border-text/20 bg-text/5 hover:bg-text/10 transition-colors group"
+      class="group flex flex-col h-full border border-text/20 bg-text/5 hover:border-highlight hover:bg-text/10 transition-colors rounded-sm no-underline"
     >
       {{- if and (eq .Params.media_type "youtube") .Params.youtube_id -}}
-      <div class="flex-shrink-0 w-36 h-20 overflow-hidden rounded-sm bg-black">
+      <div class="w-full aspect-video overflow-hidden bg-black rounded-t-sm">
         <img
-          src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/mqdefault.jpg"
+          src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/hqdefault.jpg"
           alt="{{ .Title }}"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
       </div>
       {{- else if .Params.images -}}
-      <div class="flex-shrink-0 w-36 h-20 overflow-hidden rounded-sm bg-black">
+      <div class="w-full aspect-video overflow-hidden bg-black rounded-t-sm">
         <img
           src="{{ index .Params.images 0 }}"
           alt="{{ .Title }}"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
       </div>
+      {{- else -}}
+      <div class="w-full aspect-video bg-text/10 rounded-t-sm flex items-center justify-center">
+        <span class="text-text/20 text-4xl font-mono">{{ if eq .Params.media_type "podcast" }}◎{{ else if eq .Params.media_type "article" }}≡{{ else }}▶{{ end }}</span>
+      </div>
       {{- end -}}
-      <div class="flex flex-col justify-between min-w-0">
-        <div>
-          <p
-            class="m-0 text-lg font-medium leading-snug group-hover:text-accentText transition-colors line-clamp-2"
-          >
-            {{ .Title }}
-          </p>
-          {{ with .Description }}
-          <p class="mt-1 text-sm text-text/60 line-clamp-2">{{ . }}</p>
-          {{ end }}
-        </div>
-        <div class="flex flex-wrap gap-2 mt-2 text-xs text-accentText/70">
-          <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
-          {{ with .Params.creator }}<span>· {{ . }}</span>{{ end }} {{ if
-          .RawContent }}<span>· has notes</span>{{ end }}
+
+      <div class="flex flex-col flex-1 p-4 gap-2">
+        <p class="m-0 text-base font-medium leading-snug group-hover:text-highlight transition-colors line-clamp-3">
+          {{ .Title }}
+        </p>
+        {{ with .Description }}
+        <p class="m-0 text-sm text-text/60 line-clamp-2 flex-1">{{ . }}</p>
+        {{ end }}
+        <div class="flex flex-wrap gap-x-2 mt-auto pt-2 text-xs text-accentText/60 border-t border-text/10">
+          <time>{{ dateFormat "Jan '06" .Date }}</time>
+          {{ with .Params.creator }}<span>· {{ . }}</span>{{ end }}
+          {{ if .RawContent }}<span class="ml-auto text-highlight/60">has notes</span>{{ end }}
         </div>
       </div>
     </a>

@@ -1,6 +1,7 @@
 ---
 title: "Three kinds of debt"
 date: 2026-04-30T00:31:29+02:00
+featured: true
 description: Technical debt, cognitive debt and a secret third thing...
 tags: ["ai"]
 images:

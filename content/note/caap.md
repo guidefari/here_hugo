@@ -1,6 +1,7 @@
 ---
 title: "Your codebase as a product"
 date: 2024-07-21T19:43:01+02:00
+featured: true
 description: Excerpt from a chat with Ibra & Vic
 tags: [strategy, refactoring, process, dx, wip]
 images:
