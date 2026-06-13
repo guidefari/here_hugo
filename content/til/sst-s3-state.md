@@ -1,23 +1,23 @@
 ---
-title: "TIL: SST stores state and secrets in S3, encrypted with AES-GCM"
+title: "TIL: SST stores state and encrypted secrets in a backend"
 date: 2026-06-11T10:00:00+02:00
-description: SST stores state, secrets, and snapshots as JSON objects in an S3 bucket (named `sst-state-{id}`), encrypted at rest with AES-GCM using a derived passphrase.
+description: SST stores state, secrets, snapshots, and event logs in its configured backend. Secrets are AES-GCM encrypted before being written to S3 or Cloudflare R2.
 tags: [til, sst, infra, aws]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=SST+S3+State']
 ---
 
-## How SST uses S3
+## Backend storage
 
-SST uses **S3** as the underlying storage for everything persistent:
+SST uses the configured home provider as the underlying storage for persistent deployment data. With the AWS home provider, this is **S3**:
 
 - **State files** at `app/<app>/<stage>.json`
 - **Secrets** at `secret/<app>/<stage>` (encrypted)
 - **Snapshots** at `snapshot/<app>/<stage>/<updateID>`
 - **Event logs** at `eventlog/<app>/<stage>/<updateID>`
 
-## Encryption
+## Secret encryption
 
-Before writing to S3, secrets are encrypted with **AES-GCM**:
+Before writing secrets to the configured backend, SST encrypts them with [**AES-GCM**](/aes-gcm-encryption). This happens in the shared provider layer, not inside the S3 or Cloudflare implementations:
 
 ```go
 // pkg/project/provider/provider.go:374
@@ -33,7 +33,9 @@ func putData(backend Home, key, app, stage string, encrypt bool, data interface{
 }
 ```
 
-The passphrase is itself stored in S3 under `passphrase/<app>/<stage>`.
+Only calls that pass `encrypt: true` through this helper get AES-GCM encryption. In this flow, that is `PutSecrets`; state, snapshots, summaries, locks, and event logs are written by their backend helpers without this AES-GCM step.
+
+The passphrase is itself stored by the configured backend under `passphrase/<app>/<stage>`. For AWS, that means S3. For Cloudflare, that means R2.
 
 ## S3 interaction
 
@@ -79,7 +81,15 @@ func (c *CloudflareHome) Bootstrap() error {
 }
 ```
 
-Data is read/written via direct R2 API calls (`putData` at line 138, `getData` at line 156) using the same `kind/app/stage` path scheme. The `provider.go` encryption layer (AES-GCM) is reused identically regardless of backend.
+Data is read/written via direct R2 API calls (`putData` at line 138, `getData` at line 156) using the same `kind/app/stage` path scheme. The `provider.go` encryption layer is reused identically regardless of backend, so Cloudflare receives already-encrypted bytes for secrets.
+
+The Cloudflare provider stores the passphrase separately in R2 under `passphrase/<app>/<stage>`:
+
+```go
+func (c *CloudflareHome) setPassphrase(app, stage string, passphrase string) error {
+    return c.putData("passphrase", app, stage, bytes.NewReader([]byte(passphrase)))
+}
+```
 
 Note the comment on `setPassphrase` (line 230):
 ```go
