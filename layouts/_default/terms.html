@@ -6,9 +6,9 @@
 {{ $postCount = add $postCount .Count }}
 {{ end }}
 
-<div class="max-w-4xl mx-auto my-10 sm:my-16">
+<div class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
 	<header class="mb-8 sm:mb-10">
-		<h1 class="mt-0 mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">All tags</h1>
+		<h1 class="text-5xl text-white m-0">All tags</h1>
 		<p class="max-w-2xl mt-0 mb-0 text-base leading-relaxed text-text/75 sm:text-lg">
 			Browse {{ $termCount }} tags across {{ $postCount }} tag uses. Bigger topics naturally rise to the top.
 		</p>

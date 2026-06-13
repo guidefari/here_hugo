@@ -1,7 +1,7 @@
 {{ define "main" }}
-<main>
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
   <div>
-    <h1 class="my-4 text-5xl">{{ .Title }}</h1>
+    <h1 class="text-5xl text-white m-0">{{ .Title }}</h1>
     <div class="flex flex-wrap gap-2 text-sm text-accentText">
       {{ if .Date }}<time>{{ dateFormat "Jan 2, 2006" .Date }}</time>{{ end }}
       {{ with .Params.creator }}<span>· via {{ . }}</span>{{ end }}

@@ -1,8 +1,9 @@
 {{ define "main" }}
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
 {{ if isset .Data "Term" }}
-<h1 class="my-10 text-5xl"><strong>#{{ .Data.Term }}</strong></h1>
+<h1 class="mb-8 text-2xl font-bold tracking-tight text-white">#{{ .Data.Term }}</h1>
 {{ else }}
-<h1 class="my-10 text-5xl">All articles</h1>
+<h1 class="mb-8 text-2xl font-bold tracking-tight text-white">All articles</h1>
 {{ end }}
 
 <ul class="posts article-list">
@@ -31,4 +32,5 @@
 <section>
 	<h4><a href="{{ "/tags" | relLangURL }}">All tags</a></h4>
 </section>
+</main>
 {{ end }}

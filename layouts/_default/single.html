@@ -1,7 +1,7 @@
 {{ define "main" }}
-<main class="px-6 py-8 lg:py-12 lg:px-6">
-	<div class="mb-6">
-		<h1 class="my-8 text-5xl">{{ .Title }}</h1>
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
+	<div class="mb-8">
+		<h1 class="text-5xl text-white m-0">{{ .Title }}</h1>
 		{{if .Date}}<time>Posted on {{ dateFormat "Jan 2, 2006" .Date }}</time>{{end}}
 		{{ if .Params.draft }} <p class="draft-label">DRAFT</p> {{ end }}
 		<div class="post-tags" data-pagefind-meta="tags">

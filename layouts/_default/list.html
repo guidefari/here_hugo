@@ -2,9 +2,9 @@
 <main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
   <div class="mb-8">
     {{ if isset .Data "Term" }}
-    <h1 class="text-2xl font-bold tracking-tight text-white m-0">#{{ .Data.Term }}</h1>
+    <h1 class="text-5xl text-white m-0">#{{ .Data.Term }}</h1>
     {{ else }}
-    <h1 class="text-2xl font-bold tracking-tight text-white m-0">{{ .Title | default "All articles" }}</h1>
+    <h1 class="text-5xl text-white m-0">{{ .Title | default "All articles" }}</h1>
     {{ end }}
   </div>
 
