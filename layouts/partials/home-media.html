@@ -1,0 +1,52 @@
+{{ with site.GetPage "media" }}
+{{ $items := .RegularPages | first 3 }}
+{{ if $items }}
+<section class="w-full">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold tracking-tight text-white m-0">Recommended Media</h2>
+  </div>
+  <ul class="flex flex-col gap-3 m-0 p-0">
+    {{ range $items }}
+    <li class="list-none">
+      <a href="{{ .RelPermalink }}" class="group flex gap-3 p-3 border border-text/15 rounded-sm bg-text/5 hover:bg-text/10 hover:border-text/30 transition-all duration-150 no-underline">
+        {{- if and (eq .Params.media_type "youtube") .Params.youtube_id -}}
+        <div class="flex-shrink-0 w-28 h-16 overflow-hidden rounded-sm bg-black">
+          <img
+            src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/mqdefault.jpg"
+            alt="{{ .Title }}"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        {{- else if .Params.images -}}
+        <div class="flex-shrink-0 w-28 h-16 overflow-hidden rounded-sm bg-black">
+          <img
+            src="{{ index .Params.images 0 }}"
+            alt="{{ .Title }}"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        {{- else -}}
+        <div class="flex-shrink-0 w-28 h-16 rounded-sm bg-text/10 flex items-center justify-center">
+          <span class="text-xs font-mono text-text/30 uppercase">{{ .Params.media_type | default "media" }}</span>
+        </div>
+        {{- end -}}
+        <div class="flex flex-col justify-between min-w-0">
+          <div>
+            <p class="post-link m-0 text-sm font-bold leading-snug text-highlight group-hover:text-white transition-colors line-clamp-2">{{ .Title }}</p>
+            {{ with .Description }}<p class="mt-1 text-xs text-text/55 line-clamp-2 leading-snug">{{ . }}</p>{{ end }}
+          </div>
+          <div class="flex gap-2 mt-1.5 text-xs font-mono text-accentText/60">
+            {{ with .Params.creator }}<span>{{ . }}</span>{{ end }}
+            <time>{{ .Date.Format "Jan '06" }}</time>
+          </div>
+        </div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  <a href="/media" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 uppercase tracking-widest">all media →</a>
+</section>
+{{ end }}
+{{ end }}

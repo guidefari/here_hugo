@@ -1,27 +1,19 @@
 {{ define "main" }}
-{{ if isset .Data "Term" }}
-<h1 class="my-10 text-5xl"><strong>#{{ .Data.Term }}</strong></h1>
-{{ else }}
-<h1 class="my-10 text-5xl">All articles</h1>
-{{ end }}
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
+  <div class="mb-8">
+    {{ if isset .Data "Term" }}
+    <h1 class="text-2xl font-bold tracking-tight text-white m-0">#{{ .Data.Term }}</h1>
+    {{ else }}
+    <h1 class="text-2xl font-bold tracking-tight text-white m-0">{{ .Title | default "All articles" }}</h1>
+    {{ end }}
+  </div>
 
-<ul class="posts article-list">
-	{{- range .Data.Pages -}}
-	{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
-	<li class="article-list-item">
-		<article>
-			<h2 class="article-list-heading text-3xl"><a class="article-list-title" href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-			<time class="article-list-date">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end
-			}}</time>
-			<div class="description article-list-description">
-			{{ if isset .Params "description" }}
-			{{ .Description }}
-			{{ end }}
-			</div>
-		</article>
-	</li>
-	{{- end -}}
-	{{- end -}}
-</ul>
-<h1 class="my-6"><a href="{{" /content"}}">View All Content Types</a></h1>
+  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
+    {{- range .Data.Pages -}}
+    {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+      {{- partial "post-list-item.html" . -}}
+    {{- end -}}
+    {{- end -}}
+  </ul>
+</main>
 {{ end }}
