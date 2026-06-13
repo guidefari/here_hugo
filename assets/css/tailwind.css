@@ -15,6 +15,26 @@
   --color-text: #c8c2b7;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 120ms ease-out both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 160ms ease-in both fade-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
 @layer base {
   *,
   ::after,
@@ -266,6 +286,10 @@
 @layer utilities {
   .prose :is(h1, h2, h3, h4) {
     max-width: none;
+  }
+
+  .post-link:visited {
+    color: var(--color-accentText);
   }
 
   .prose {
