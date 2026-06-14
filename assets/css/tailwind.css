@@ -288,6 +288,10 @@
     max-width: none;
   }
 
+  .prose :is(h1, h2, h3, h4) code {
+    color: #1a2f38;
+  }
+
   .post-link:visited {
     color: var(--color-accentText);
   }
@@ -305,6 +309,7 @@
     --tw-prose-invert-links: var(--color-highlight);
     --tw-prose-invert-bold: var(--color-white);
     --tw-prose-invert-quotes: #ccc7b8;
+    --tw-prose-code: #1a2f38;
 
     & a {
       position: relative;
