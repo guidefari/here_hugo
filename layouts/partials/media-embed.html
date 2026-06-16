@@ -6,8 +6,12 @@
       <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/{{ . }}" title="{{ $.Title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   {{- else -}}
-    {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Watch media</a></p>{{- end -}}
+    {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Watch on YouTube</a></p>{{- end -}}
   {{- end -}}
+{{- else if eq $type "podcast" -}}
+  {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Listen on Spotify</a></p>{{- end -}}
+{{- else if eq $type "article" -}}
+  {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Read article</a></p>{{- end -}}
 {{- else -}}
-  {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Open media</a></p>{{- end -}}
+  {{- with $url -}}<p><a class="highlighted-link" href="{{ . }}">Open link</a></p>{{- end -}}
 {{- end -}}

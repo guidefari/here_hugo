@@ -2,9 +2,13 @@
 title: "Podcast: Software Design with John Ousterhout"
 date: 2023-04-02T07:35:49+02:00
 description: From the Legacy Code Rocks podcast
+media_type: podcast
+media_url: https://open.spotify.com/episode/5JxTAMuVOObRIYoTvwNt1f
+creator: Legacy Code Rocks
+images: ['https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f4227aa8da6ca2f8dd2b5cd8d']
 tags: [podcast, software-design, refactoring, dx, architecture, complexity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Software%20Design%20with%20John%20Ousterhout']
 ---
+
 
 {{<spotify episode 5JxTAMuVOObRIYoTvwNt1f "100%" 232 >}}
 

@@ -1,10 +1,14 @@
 ---
 title: "Typescript & testing"
 date: 2023-03-21T17:47:08+02:00
-description: 
+description: "Notes on TypeScript and testing from a podcast episode."
+media_type: podcast
+media_url: https://open.spotify.com/episode/34nr9urOtrwVpGOJbNrNMq
+creator: Full Stack Radio
+images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f2a9993944072b14fcdb5fb8a']
 tags: [podcast, typescript, testing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
 ---
+
 
 
 {{<spotify episode 34nr9urOtrwVpGOJbNrNMq>}}

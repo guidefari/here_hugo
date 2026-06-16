@@ -40,7 +40,6 @@ Permalinks:
   til: "/:contentbasename/"
   track: "/:contentbasename/"
   book: "/:contentbasename/"
-  podcast: "/:contentbasename/"
   playlist: "/:contentbasename/"
   mix: "/:contentbasename/"
   note: "/:contentbasename/"

@@ -35,7 +35,7 @@
       </div>
       {{- else -}}
       <div class="w-full aspect-video bg-text/10 rounded-t-sm flex items-center justify-center">
-        <span class="text-text/20 text-4xl font-mono">{{ if eq .Params.media_type "podcast" }}◎{{ else if eq .Params.media_type "article" }}≡{{ else }}▶{{ end }}</span>
+        <span class="text-text/20 text-4xl font-mono">{{ if eq .Params.media_type "podcast" }}◎{{ else if eq .Params.media_type "article" }}≡{{ else if eq .Params.media_type "link" }}↗{{ else }}▶{{ end }}</span>
       </div>
       {{- end -}}
 

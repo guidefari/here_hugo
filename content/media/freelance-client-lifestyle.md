@@ -2,8 +2,13 @@
 title: "Freelance Client Lifestyle"
 date: 2021-08-16T16:01:28+02:00
 description: You might find this podcast useful, notes from Syntaxfm.
+media_type: podcast
+media_url: https://open.spotify.com/episode/6TpxTSziR1VNKbFY1vIrcH
+creator: Syntax
+images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f022aa3738b34a57c09be1410']
 tags: [podcast, freelance]
 ---
+
 
 
 # freelance client lifestyle

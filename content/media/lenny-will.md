@@ -2,9 +2,14 @@
 title: "Podcast: Lenny's podcast with Will Larson"
 date: 2024-01-06T21:11:51+02:00
 description: You might find this podcast useful👇
+media_type: youtube
+media_url: https://www.youtube.com/watch?v=Z9ftpRhRiJE
+creator: Lenny's Podcast
+youtube_id: Z9ftpRhRiJE
+images: ['https://i.ytimg.com/vi/Z9ftpRhRiJE/hqdefault.jpg']
 tags: [podcast, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Lenny+Will']
 ---
+
 
 {{<youtube Z9ftpRhRiJE>}}
 <br class='my-4'/> 

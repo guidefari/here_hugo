@@ -2,9 +2,13 @@
 title: "Angry Monkey"
 date: 2023-05-17T08:01:17+02:00
 description: Monkey brain vs Zoo Keeper brain. The Strategist vs the Executor
+media_type: article
+media_url: 
+creator: UBK Happy Fun Time Hour
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Angry+Monkey']
 tags: [podcast, notes, journal]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Angry%20Monkey']
 ---
+
 
 ## context
 these are notes from a podcast [Ronny](https://ronnypries.de/) shared with me after I ranted to him about not knowing what to do with myself on a free Saturday morning. great chat, we had.

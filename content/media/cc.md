@@ -2,9 +2,14 @@
 title: "Podcast: Aaron Dignan on complicated vs complex"
 date: 2024-05-01T17:11:27+02:00
 description: A chat about organisational debt, and systems theory
+media_type: youtube
+media_url: https://www.youtube.com/watch?v=uOiP4mJwqE0
+youtube_id: uOiP4mJwqE0
+creator: Aaron Dignan
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Podcast:+Aaron+Dignan+on+complicated+vs+complex']
 tags: [podcast, systems theory]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Complex+vs+Complicated']
 ---
+
 
 {{<spotify episode id "100%" 232 >}}
 

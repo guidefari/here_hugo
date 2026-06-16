@@ -2,9 +2,14 @@
 title: "The Business Impact of Code Quality"
 date: 2023-04-22T22:58:36+02:00
 description: A talk by Adam Tornhill
+media_type: youtube
+media_url: https://www.youtube.com/watch?v=aRR0EDazxIk
+creator: Adam Tornhill
+youtube_id: aRR0EDazxIk
+images: ['https://i.ytimg.com/vi/aRR0EDazxIk/hqdefault.jpg']
 tags: [podcast, refactoring]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=The%20Business%20Impact%20of%20Code%20Quality']
 ---
+
 
 
 {{<youtube aRR0EDazxIk>}}

@@ -2,9 +2,14 @@
 title: "Hackers Incorporated #3"
 date: 2023-04-10T22:52:20+02:00
 description: Revisiting Jason Cohen's talk "The Ideal Bootstrapped Business"
+media_type: youtube
+media_url: https://www.youtube.com/watch?v=otbnC2zE2rw
+creator: Hackers Incorporated
+youtube_id: otbnC2zE2rw
+images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1fa42ffe7ec488d9df5c1bb1ec']
 tags: [podcast]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Hackers%20Incorporated%20%233']
 ---
+
 
 {{<spotify episode 0XHHkfNNjYap6VCkMJHb7z "100%" 232 >}}
 

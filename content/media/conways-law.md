@@ -2,9 +2,13 @@
 title: "Podcast: Reckoning with the force of Conway's Law"
 date: 2022-11-19T13:16:43+02:00
 description: You might find this podcast useful👇
+media_type: podcast
+media_url: https://open.spotify.com/episode/5Gzga4LIgZy3BdFtIZragP
+creator: ThoughtWorks
+images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1ff9793b9ee540c4a721d57c08']
 tags: [podcast, architecture, leadership]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Reckoning%20with%20the%20force%20of%20Conways%20Law']
 ---
+
 
 {{<spotify episode 5Gzga4LIgZy3BdFtIZragP "100%" 232 >}}
 - [Transcript of the episode](https://www.thoughtworks.com/insights/podcasts/technology-podcasts/reckoning-with-the-force-conways-law)
