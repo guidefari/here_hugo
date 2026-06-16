@@ -1,6 +1,6 @@
 {{ $sectionLinks := dict "note" "/note" "til" "/til" "bliki" "/bliki" "book" "/book-notes" }}
 {{ $sectionHref := index $sectionLinks .Section | default (printf "/%s" .Section) }}
-<li class="list-none py-3">
+<li class="list-none py-3" data-section="{{ .Section }}">
   <div class="flex flex-col gap-1">
     <div class="flex items-start justify-between gap-2">
       <a href="{{ .RelPermalink }}" class="post-link font-bold leading-snug text-highlight hover:text-white transition-colors duration-150 no-underline">{{ .Title }}</a>
