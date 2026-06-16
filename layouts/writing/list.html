@@ -1,0 +1,110 @@
+{{ define "main" }}
+{{ $writingSections := slice "note" "til" "bliki" "book" "resource" "read" }}
+{{ $allPages := where .Site.RegularPages "Section" "in" $writingSections }}
+
+{{ $archetypes := dict
+  "note" (dict "label" "Notes" "description" "Technical notes, observations, and ideas-in-progress.")
+  "til" (dict "label" "TIL" "description" "Small, atomic things I learned today.")
+  "bliki" (dict "label" "Bliki" "description" "Blog/wiki hybrids: longer-form evolving posts.")
+  "book" (dict "label" "Book Notes" "description" "Reviews, highlights, and takeaways from books.")
+  "resource" (dict "label" "Resources" "description" "Curated links, tools, and reference collections.")
+  "read" (dict "label" "Reading List" "description" "Newsletter-style roundups of what I read and why.")
+}}
+
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
+  <header class="mb-8">
+    <h1 class="text-5xl text-white m-0">Writing</h1>
+    <p class="max-w-2xl mt-4 text-text/75">
+      Notes, book reviews, TILs, and everything in between. Filter by archetype below.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+    {{ range $key, $meta := $archetypes }}
+    <button
+      type="button"
+      data-filter="{{ $key }}"
+      class="filter-btn group flex flex-col items-start gap-1 p-3 border rounded-sm border-text/20 bg-text/5 text-left transition-colors hover:border-highlight hover:bg-text/10"
+    >
+      <span class="font-mono text-sm font-semibold text-highlight">{{ $meta.label }}</span>
+      <span class="text-xs text-text/60 leading-snug">{{ $meta.description }}</span>
+    </button>
+    {{ end }}
+    <button
+      type="button"
+      data-filter="all"
+      class="filter-btn group flex flex-col items-start justify-center gap-1 p-3 border rounded-sm border-highlight bg-text/5 text-left transition-colors hover:bg-text/10"
+    >
+      <span class="font-mono text-sm font-semibold text-highlight">All</span>
+      <span class="text-xs text-text/60 leading-snug">Everything at once.</span>
+    </button>
+  </div>
+
+  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0" id="writing-list">
+    {{- range $allPages.ByDate.Reverse -}}
+      {{- partial "post-list-item.html" . -}}
+    {{- end -}}
+  </ul>
+</main>
+
+<script>
+(function() {
+  const list = document.getElementById('writing-list');
+  if (!list) return;
+
+  const items = list.querySelectorAll('li[data-section]');
+  const buttons = document.querySelectorAll('button[data-filter]');
+
+  // If items don't have data-section, infer from the section link text
+  if (items.length > 0 && !items[0].hasAttribute('data-section')) {
+    items.forEach(function(item) {
+      const sectionLink = item.querySelector('a[href^="/"]');
+      if (sectionLink) {
+        const sectionText = sectionLink.textContent.trim().toLowerCase();
+        // Map displayed text back to section keys
+        const sectionMap = {
+          'note': 'note',
+          'til': 'til',
+          'bliki': 'bliki',
+          'book-notes': 'book',
+          'book notes': 'book',
+          'resource': 'resource',
+          'resources': 'resource',
+          'read': 'read'
+        };
+        for (const [key, val] of Object.entries(sectionMap)) {
+          if (sectionText.includes(key)) {
+            item.setAttribute('data-section', val);
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+
+      // Update active button styling
+      buttons.forEach(function(b) {
+        b.classList.remove('border-highlight');
+        b.classList.add('border-text/20');
+      });
+      this.classList.remove('border-text/20');
+      this.classList.add('border-highlight');
+
+      // Filter items
+      items.forEach(function(item) {
+        const section = item.getAttribute('data-section');
+        if (filter === 'all' || section === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
