@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ $sectionPages := .Pages }}
+{{ $allTags := slice }}
+{{ range $sectionPages }}
+  {{ $allTags = $allTags | append .Params.tags }}
+{{ end }}
+{{ $uniqueTags := $allTags | uniq | sort }}
+
+<main class="flex flex-col mx-auto w-full max-w-5xl px-2 lg:px-0 py-8">
+  <header class="mb-8">
+    <h1 class="text-5xl text-white m-0">{{ .Title }}</h1>
+    <p class="max-w-2xl mt-4 text-text/75">{{ .Description }}</p>
+  </header>
+
+  <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post"
+    target="popupwindow"
+    class="mb-6 flex flex-col sm:flex-row gap-2">
+    <label for="bd-email-read" class="sr-only">Email address</label>
+    <input type="email" name="email" id="bd-email-read" required
+      placeholder="your@email.com"
+      class="flex-1 px-3 py-2 font-mono text-sm bg-transparent border rounded-sm border-text/40 text-text placeholder:text-text/50 focus:outline-none focus:border-highlight" />
+    <button type="submit"
+      class="px-4 py-2 font-mono text-sm tracking-wide uppercase transition border rounded-sm border-text/40 text-text/80 hover:border-highlight hover:text-highlight focus:outline-none">
+      Subscribe
+    </button>
+  </form>
+
+  {{ if gt (len $uniqueTags) 0 }}
+  <div class="mb-6 flex flex-wrap gap-2">
+    <span class="text-xs font-mono text-text/40 uppercase tracking-widest py-1">#filter</span>
+    <button type="button" data-filter="all"
+      class="filter-btn text-xs font-mono px-2 py-1 border rounded-sm border-highlight text-highlight transition-colors no-underline">
+      #all
+    </button>
+    {{ range $uniqueTags }}
+      {{ if . }}
+      <button type="button" data-filter="{{ . }}"
+        class="filter-btn text-xs font-mono px-2 py-1 border rounded-sm border-text/20 text-text/60 hover:border-highlight hover:text-highlight transition-colors no-underline">
+        #{{ . }}
+      </button>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0" id="read-list">
+    {{- range $sectionPages -}}
+      {{- partial "post-list-item-read.html" . -}}
+    {{- end -}}
+  </ul>
+</main>
+
+<script>
+(function() {
+  const list = document.getElementById('read-list');
+  if (!list) return;
+  
+  const items = list.querySelectorAll('li[data-tags]');
+  const buttons = document.querySelectorAll('button[data-filter]');
+  
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      buttons.forEach(function(b) {
+        b.classList.remove('border-highlight', 'text-highlight');
+        b.classList.add('border-text/20', 'text-text/60');
+      });
+      this.classList.remove('border-text/20', 'text-text/60');
+      this.classList.add('border-highlight', 'text-highlight');
+      
+      // Filter items
+      items.forEach(function(item) {
+        const tags = item.getAttribute('data-tags');
+        if (filter === 'all' || tags.includes(filter)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
