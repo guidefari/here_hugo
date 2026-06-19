@@ -1,0 +1,55 @@
+---
+title: "Container Runtimes"
+date: 2025-10-08T01:42:31+02:00
+description: 
+tags: [docker]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Container+Runtimes']
+---
+
+This video prompted this note.
+
+<div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/DzAco4Aq3mw" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+---
+
+- Kubernetes uses containerd as its container runtime
+- Docker too, uses containerd
+- Running `Docker build` constructs an [OCI](https://opencontainers.org/) artifact, also known as an image.
+- Any OCI compliant runtime can execute or run OCI images
+- Under the hood, containerd uses [`runc`](https://github.com/opencontainers/runc), which is the reference implementation of the OCI runtime spec. many others use this
+- [`crun`](https://github.com/containers/crun) is a faster and lighter alternative to runc, written in C.
+
+The word runtime is a bit elusive here. It captures a lot. Docker cli can be referred to as a runtime, but then dockerd is also a runtime, which uses containerd, also referred to as a runtime, which uses runc, also referred to as a runtime.
+
+So instead, I'd like to spend the rest of this note talking about container daemons.
+
+---
+
+# Container Daemon
+
+A container daemon is a background process that manages the lifecycle of containers on a system. It's responsible for creating, running, monitoring, stopping, and destroying containers.
+
+Unlike a simple chroot which just changes the apparent root directory for a process, container daemons provide much more comprehensive isolation and resource management capabilities:
+
+---
+
+## Key Functions of Container Daemons
+
+- **Container lifecycle management**: Creating, starting, stopping, and removing containers
+- **Image management**: Pulling, storing, and managing container images
+- **Networking**: Setting up network namespaces, virtual interfaces, and routing for containers
+- **Storage**: Managing filesystem layers, volumes, and persistent storage
+- **Resource constraints**: Enforcing CPU, memory, and I/O limits using cgroups
+- **Security isolation**: Utilizing Linux namespaces, capabilities, and seccomp filters
+
+---
+
+## Common Container Daemons
+
+- **dockerd**: The Docker daemon (used by Docker)
+- **containerd**: A lightweight container runtime (used by Docker, Kubernetes)
+- **crio**: Container Runtime Interface for OCI (used by Kubernetes)
+- **runc**: Low-level container runtime (used by many higher-level daemons)
+- **systemd-nspawn**: Container tool that's part of systemd
+
+These daemons provide much stronger isolation than a simple chroot by leveraging Linux kernel features like namespaces, cgroups, and capabilities to create more complete containerization.

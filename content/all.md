@@ -1,4 +1,0 @@
----
-title: "All Posts"
----
-{{<all>}}

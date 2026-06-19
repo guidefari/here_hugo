@@ -1,0 +1,35 @@
+---
+title: "Database Indexing"
+date: 2023-06-15T09:00:33+02:00
+description: Today I (re)learned Database Indexing
+tags: [database, performance]
+images: ['https://images-here-hugo.vercel.app/api/og-image?title=Database%20Indexing']
+---
+
+This came up in a recent interview, the topic of indexing a database.
+
+While I know it's a concept that exists, I didn't have enough knowledge at hand to have a fluent conversation about the topic. This note is an attempt at correcting that, lol.
+
+# What is DB indexing
+Database indexing is a way to reduce lookup time of a database.
+
+> [an index **maps search keys** to corresponding **data on disk** by using different in-memory & on-disk data structures.](https://www.freecodecamp.org/news/database-indexing-at-a-glance-bb50809d48bd/)
+
+
+# When can I index?
+- You have millions/billions of rows in your tables, & lookup time has become unusable
+- You know your data access patterns
+
+
+## Types of indexes
+* B-tree
+* Function-based
+* BRIN
+* GiST
+* Clustered/Non-clustered index
+
+# Related reading
+<div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/Jemuod4wKWo" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/NZgfYbAmge8" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+- [Indexing in RavenDB Compared to MongoDB and PostgreSQL](https://ravendb.net/articles/indexing-in-ravendb-compared-to-mongodb-and-postgresql)

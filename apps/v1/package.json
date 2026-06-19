@@ -1,0 +1,10 @@
+{
+  "name": "@here/v1",
+  "private": true,
+  "scripts": {
+    "build": "bun tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --gc --minify && bun pagefind --site public",
+    "dev": "hugo --gc && bun pagefind --site public && concurrently \"hugo server --navigateToChanged --buildFuture\" \"bun run watch\"",
+    "search:dev": "bun pagefind --site public",
+    "watch": "bun tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch"
+  }
+}
