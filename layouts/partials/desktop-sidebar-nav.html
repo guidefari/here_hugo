@@ -1,23 +1,46 @@
 <nav aria-label="Site sections" class="w-full flex flex-col justify-between h-full">
-  <div class="flex items-center gap-3 mb-4">
-    <img class="w-10 h-10 rounded-full ring-2 ring-highlight/20"
-      src="https://res.cloudinary.com/hokaspokas/image/upload/v1661928720/bar_shpohc.png"
-      alt="Guide writing software in a bar" />
-    <div class="flex flex-col">
-      <span class="text-sm font-bold text-white leading-tight">Guide Fari</span>
-      <span class="text-xs font-mono text-text/50">Software Engineer</span>
+  <div>
+    {{ if .IsHome }}
+    <div class="flex flex-col items-center text-center mb-4">
+      <img class="w-24 h-24 rounded-full ring-2 ring-highlight/20 mb-3"
+        style="view-transition-name: hero-avatar;"
+        src="https://res.cloudinary.com/hokaspokas/image/upload/v1661928720/bar_shpohc.png"
+        alt="Guide writing software in a bar" />
+      <h1 class="text-lg font-bold text-white m-0 leading-tight" style="view-transition-name: hero-name;">
+        <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-black">
+          <span class="relative text-white skew-y-3">Guide Fari</span>
+        </span>
+      </h1>
+      <div class="flex items-center gap-2 text-xs font-mono mt-1">
+        <span class="text-text/60">Software Engineer</span>
+        <span class="text-text/30">&middot;</span>
+        <a class="text-highlight hover:text-white transition-colors" href="http://goosebumps.fm">Music Curator</a>
+      </div>
+      <p class="mt-3 text-xs leading-relaxed text-text/60 border-l-2 border-highlight/40 pl-3 text-left">Writing down lessons and observations along the way.</p>
     </div>
-  </div>
+    {{ else }}
+    <div class="flex items-center gap-3 mb-4">
+      <img class="w-10 h-10 rounded-full ring-2 ring-highlight/20"
+        style="view-transition-name: hero-avatar;"
+        src="https://res.cloudinary.com/hokaspokas/image/upload/v1661928720/bar_shpohc.png"
+        alt="Guide writing software in a bar" />
+      <div class="flex flex-col">
+        <span class="text-sm font-bold text-white leading-tight" style="view-transition-name: hero-name;">Guide Fari</span>
+        <span class="text-xs font-mono text-text/50">Software Engineer</span>
+      </div>
+    </div>
+    {{ end }}
 
-  <ul class="flex flex-col gap-1 p-0 m-0 list-none">
-    {{- range site.Data.nav.primary }}
-      <li>
-        <a href="{{ .href }}" class="nav-chip w-full justify-start" data-nav-sound>
-          <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{{ .label }}</span><span class="nav-chip__bracket">]</span>
-        </a>
-      </li>
-    {{- end }}
-  </ul>
+    <ul class="flex flex-col gap-1 p-0 m-0 list-none">
+      {{- range site.Data.nav.primary }}
+        <li>
+          <a href="{{ .href }}" class="nav-chip w-full justify-start" data-nav-sound>
+            <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{{ .label }}</span><span class="nav-chip__bracket">]</span>
+          </a>
+        </li>
+      {{- end }}
+    </ul>
+  </div>
 
   <div class="mt-6 pt-4 border-t border-text/20">
     <div class="flex items-center gap-2 mb-2 text-xs text-accentText/80 font-mono">
