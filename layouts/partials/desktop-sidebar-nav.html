@@ -1,4 +1,14 @@
 <nav aria-label="Site sections" class="w-full flex flex-col justify-between h-full">
+  <div class="flex items-center gap-3 mb-4">
+    <img class="w-10 h-10 rounded-full ring-2 ring-highlight/20"
+      src="https://res.cloudinary.com/hokaspokas/image/upload/v1661928720/bar_shpohc.png"
+      alt="Guide writing software in a bar" />
+    <div class="flex flex-col">
+      <span class="text-sm font-bold text-white leading-tight">Guide Fari</span>
+      <span class="text-xs font-mono text-text/50">Software Engineer</span>
+    </div>
+  </div>
+
   <ul class="flex flex-col gap-1 p-0 m-0 list-none">
     {{- range site.Data.nav.primary }}
       <li>
