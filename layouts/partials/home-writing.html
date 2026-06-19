@@ -16,27 +16,23 @@
 
 {{ $recent := $sorted | first 4 }}
 
-<section class="w-full flex flex-col gap-10">
+{{ if $featured }}
+<div class="flex-1 min-w-0">
+  <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Featured</h2>
+  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
+    {{ range $featured }}
+      {{- partial "post-list-item-compact.html" . -}}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
 
-  {{ if $featured }}
-  <div>
-    <h2 class="text-2xl font-bold tracking-tight text-white m-0 mb-6">Featured</h2>
-    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
-      {{ range $featured }}
-        {{- partial "post-list-item.html" . -}}
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
-
-  <div>
-    <h2 class="text-2xl font-bold tracking-tight text-white m-0 mb-6">Recent</h2>
-    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
-      {{ range $recent }}
-        {{- partial "post-list-item.html" . -}}
-      {{ end }}
-    </ul>
-    <a href="/note" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 uppercase tracking-widest no-underline">all notes →</a>
-  </div>
-
-</section>
+<div class="flex-1 min-w-0">
+  <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Recent</h2>
+  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
+    {{ range $recent }}
+      {{- partial "post-list-item-compact.html" . -}}
+    {{ end }}
+  </ul>
+  <a href="/note" class="inline-block mt-4 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 uppercase tracking-widest no-underline">all notes →</a>
+</div>

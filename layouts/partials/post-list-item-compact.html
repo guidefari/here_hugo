@@ -1,0 +1,6 @@
+{{ $sectionLinks := dict "note" "/note" "til" "/til" "bliki" "/bliki" "book" "/book-notes" }}
+{{ $sectionHref := index $sectionLinks .Section | default (printf "/%s" .Section) }}
+<li class="list-none py-2" data-section="{{ .Section }}">
+  <a href="{{ .RelPermalink }}" class="post-link text-sm font-bold leading-snug text-highlight hover:text-white transition-colors duration-150 no-underline">{{ .Title }}</a>
+  <a href="{{ $sectionHref }}" class="text-xs font-mono text-accentText/60 uppercase tracking-widest hover:text-accentText transition-colors no-underline">{{ .Section }}</a>
+</li>

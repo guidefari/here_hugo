@@ -37,10 +37,6 @@
             <p class="post-link m-0 text-sm font-bold leading-snug text-highlight group-hover:text-white transition-colors line-clamp-2">{{ .Title }}</p>
             {{ with .Description }}<p class="mt-1 text-xs text-text/55 line-clamp-2 leading-snug">{{ . }}</p>{{ end }}
           </div>
-          <div class="flex gap-2 mt-1.5 text-xs font-mono text-accentText/60">
-            {{ with .Params.creator }}<span>{{ . }}</span>{{ end }}
-            <time>{{ .Date.Format "Jan '06" }}</time>
-          </div>
         </div>
       </a>
     </li>
