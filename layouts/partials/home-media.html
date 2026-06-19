@@ -29,7 +29,7 @@
         </div>
         {{- else -}}
         <div class="flex-shrink-0 w-28 h-16 rounded-sm bg-text/10 flex items-center justify-center">
-          <span class="text-xs font-mono text-text/30 uppercase">{{ .Params.media_type | default "media" }}</span>
+          <span class="text-xs font-mono text-text/30 lowercase">{{ .Params.media_type | default "media" }}</span>
         </div>
         {{- end -}}
         <div class="flex flex-col justify-between min-w-0">
@@ -42,7 +42,7 @@
     </li>
     {{ end }}
   </ul>
-  <a href="/media" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 uppercase tracking-widest">all media →</a>
+  <a href="/media" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 tracking-widest">all media →</a>
 </section>
 {{ end }}
 {{ end }}

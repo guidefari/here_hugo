@@ -19,12 +19,19 @@
   navigation: auto;
 }
 
-::view-transition-old(root) {
-  animation: 120ms ease-out both fade-out;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
 }
 
-::view-transition-new(root) {
-  animation: 160ms ease-in both fade-in;
+::view-transition-old(hero-avatar),
+::view-transition-old(hero-name) {
+  animation: 200ms ease-out both fade-out;
+}
+
+::view-transition-new(hero-avatar),
+::view-transition-new(hero-name) {
+  animation: 250ms ease-in both fade-in;
 }
 
 @keyframes fade-out {
