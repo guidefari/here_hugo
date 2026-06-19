@@ -1,14 +1,24 @@
 {
   "name": "here_hugo",
   "version": "1.0.0",
+  "private": true,
+  "packageManager": "bun@1.3.14",
   "description": "- [ ] 404 page",
   "main": "index.js",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "build": "bun tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --gc --minify && bun pagefind --site public",
-    "watch": "bun tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
-    "dev": "hugo --gc && bun pagefind --site public && concurrently \"hugo server --navigateToChanged --buildFuture\" \"bun run watch\"",
-    "search:dev": "bun pagefind --site public",
-    "dev:sst": "sst dev"
+    "build": "turbo run build --filter=@here/v1 --filter=@here/v2",
+    "build:v1": "bun --cwd apps/v1 run build",
+    "build:v2": "bun --cwd apps/v2 run build",
+    "watch": "bun --cwd apps/v1 run watch",
+    "dev": "turbo run dev --filter=@here/v1 --filter=@here/v2",
+    "dev:v1": "bun --cwd apps/v1 run dev",
+    "dev:v2": "bun --cwd apps/v2 run dev",
+    "search:dev": "bun --cwd apps/v1 run search:dev",
+    "dev:sst": "sst dev",
+    "urls:compare": "bun run build && bun scripts/compare-url-manifests.mjs"
   },
   "repository": {
     "type": "git",
@@ -27,7 +37,8 @@
     "concurrently": "9.1.2",
     "pagefind": "1.4.0",
     "sst": "4.12.10",
-    "tailwindcss": "4.2.4"
+    "tailwindcss": "4.2.4",
+    "turbo": "latest"
   },
   "dependencies": {}
 }

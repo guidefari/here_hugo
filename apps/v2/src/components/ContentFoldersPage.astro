@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCanonicalUrl, getSections } from "../lib/content.mjs";
+
+const sections = getSections();
+---
+
+<BaseLayout title="Content" canonical={getCanonicalUrl("/content/")}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <h1 class="mb-4 text-2xl font-bold">The different content folders</h1>
+    <ul>
+      {sections.map((section) => <li><a href={`/${section}/`}>{section}</a></li>)}
+    </ul>
+  </main>
+</BaseLayout>

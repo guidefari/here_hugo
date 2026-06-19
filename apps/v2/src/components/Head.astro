@@ -1,0 +1,51 @@
+---
+import { site } from "../lib/site.mjs";
+
+const { title, description, image, canonical, noindex = false, refreshTarget } = Astro.props;
+const pageTitle = Astro.url.pathname === "/" ? site.title : `${title ?? site.title} | ${site.title}`;
+const desc = description || site.subtitle;
+const ogImage = image || `https://images-here-hugo.vercel.app/api/og-image?title=${encodeURIComponent(title ?? site.title)}`;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, site.url).toString();
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="color-scheme" content="dark" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={desc} />
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={desc} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={desc} />
+  <meta name="twitter:image" content={ogImage} />
+  {noindex && <meta name="robots" content="noindex" />}
+  {refreshTarget && <meta http-equiv="refresh" content={`0; url=${refreshTarget}`} />}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <link rel="alternate" type="application/rss+xml" title={`${site.title} - All Content`} href={new URL("/index.xml", site.url).toString()} />
+  <link rel="alternate" type="application/rss+xml" title={`${site.title} - Notes`} href={new URL("/note/index.xml", site.url).toString()} />
+  <link rel="alternate" type="application/rss+xml" title={`${site.title} - Media`} href={new URL("/media/index.xml", site.url).toString()} />
+
+  {import.meta.env.PROD && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.analyticsId}`}></script>
+      <script is:inline define:vars={{ analyticsId: site.analyticsId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", analyticsId);
+      </script>
+    </>
+  )}
+</head>

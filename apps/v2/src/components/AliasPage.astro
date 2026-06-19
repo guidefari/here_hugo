@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCanonicalUrl } from "../lib/content.mjs";
+
+const { target } = Astro.props;
+const canonical = getCanonicalUrl(target);
+---
+
+<BaseLayout title="Redirecting" canonical={canonical} noindex={true} refreshTarget={target}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <h1 class="text-5xl text-white m-0">Redirecting</h1>
+    <p><a class="highlighted-link" href={target}>Continue to {target}</a></p>
+  </main>
+</BaseLayout>

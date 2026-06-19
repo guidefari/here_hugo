@@ -1,0 +1,47 @@
+---
+import "../../../v1/assets/css/style.css";
+import navSoundUrl from "../../../v1/assets/js/nav-sound.js?url";
+import Head from "../components/Head.astro";
+import MobileNav from "../components/MobileNav.astro";
+import DesktopSidebarNav from "../components/DesktopSidebarNav.astro";
+import SearchModal from "../components/SearchModal.astro";
+
+const {
+  title,
+  description,
+  image,
+  canonical,
+  noindex = false,
+  hideFooter = false,
+  hasMermaid = false,
+  refreshTarget,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-us">
+  <Head title={title} description={description} image={image} canonical={canonical} noindex={noindex} refreshTarget={refreshTarget} />
+  <body class={`flex flex-col w-full ${hideFooter ? "lg:h-dvh lg:overflow-hidden min-h-dvh" : "min-h-dvh"}`}>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-highlight focus:text-black focus:rounded focus:font-medium focus:outline focus:outline-2 focus:outline-black">Skip to main content</a>
+    <MobileNav />
+
+    <div class="flex grow pt-14 lg:pt-0">
+      <aside class="hidden lg:flex lg:flex-col lg:shrink-0 lg:w-60 xl:w-72 lg:p-6 lg:sticky lg:top-0 lg:self-start lg:h-dvh lg:overflow-y-auto">
+        <DesktopSidebarNav isHome={Astro.url.pathname === "/"} />
+      </aside>
+
+      <div id="main-content" tabindex="-1" class="flex flex-col grow min-w-0 lg:pt-6">
+        <slot />
+      </div>
+    </div>
+
+    <SearchModal />
+    <script src={navSoundUrl} defer></script>
+    {hasMermaid && (
+      <script type="module" is:inline>
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+    )}
+  </body>
+</html>

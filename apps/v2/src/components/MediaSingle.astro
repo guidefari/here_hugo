@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, getCanonicalUrl, getOgImage, tagSlugify } from "../lib/content.mjs";
+import MediaEmbed from "./MediaEmbed.astro";
+
+const { entry } = Astro.props;
+const Content = entry.module.default;
+---
+
+<BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} hasMermaid={entry.hasMermaid}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <div>
+      <h1 class="text-5xl text-white m-0">{entry.title}</h1>
+      <div class="flex flex-wrap gap-2 text-sm text-accentText">
+        {entry.date && <time>{formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
+        {entry.frontmatter.creator && <span>· via {entry.frontmatter.creator}</span>}
+        {entry.frontmatter.media_url && <a href={entry.frontmatter.media_url} class="highlighted-link" target="_blank" rel="noopener">· ↗ source</a>}
+      </div>
+      <div class="post-tags" data-pagefind-meta="tags">
+        {entry.tags.length > 0 && (
+          <nav class="nav" aria-label="Tags">
+            <ul class="single-tags">
+              {entry.tags.map((tag) => (
+                <li class="single-tag"><a href={`/tags/${tagSlugify(tag)}/`}>#{tag}</a></li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </div>
+    </div>
+
+    <MediaEmbed entry={entry} />
+    {entry.hasBody && (
+      <article class="prose lg:prose-xl">
+        <Content />
+      </article>
+    )}
+  </main>
+</BaseLayout>

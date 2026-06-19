@@ -1,0 +1,14 @@
+{
+  "name": "@here/v2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --port 1414",
+    "build": "astro build && bun pagefind --site dist",
+    "preview": "astro preview --port 1414"
+  },
+  "dependencies": {
+    "@astrojs/rss": "latest",
+    "astro": "latest"
+  }
+}

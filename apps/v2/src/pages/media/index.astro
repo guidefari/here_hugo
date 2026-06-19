@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getCanonicalUrl, getEntriesBySection } from "../../lib/content.mjs";
+
+const entries = getEntriesBySection("media");
+---
+
+<BaseLayout title="Media I recommend" description="A stream of talks, videos, and other media worth your time." canonical={getCanonicalUrl("/media/")}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="text-5xl text-white m-0">Media I recommend</h1>
+      <p class="max-w-2xl mt-4 text-text/75">A stream of talks, videos, and other media worth your time. Some entries have notes; some are just a strong recommendation.</p>
+    </header>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 m-0 p-0 list-none">
+      {entries.map((entry) => {
+        const mediaType = entry.frontmatter.media_type;
+        const youtubeId = entry.frontmatter.youtube_id;
+        const image = entry.images[0];
+        return (
+          <li>
+            <a href={entry.permalink} class="group flex flex-col h-full border border-text/20 bg-text/5 hover:border-highlight hover:bg-text/10 transition-colors rounded-sm no-underline">
+              {mediaType === "youtube" && youtubeId ? (
+                <div class="w-full aspect-video overflow-hidden bg-black rounded-t-sm">
+                  <img src={`https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`} alt={entry.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                </div>
+              ) : image ? (
+                <div class="w-full aspect-video overflow-hidden bg-black rounded-t-sm">
+                  <img src={image} alt={entry.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                </div>
+              ) : (
+                <div class="w-full aspect-video bg-text/10 rounded-t-sm flex items-center justify-center">
+                  <span class="text-text/20 text-4xl font-mono">{mediaType === "podcast" ? "◎" : mediaType === "article" ? "≡" : mediaType === "link" ? "↗" : "▶"}</span>
+                </div>
+              )}
+
+              <div class="flex flex-col flex-1 p-4 gap-2">
+                <p class="m-0 text-base font-medium leading-snug group-hover:text-highlight transition-colors line-clamp-3">{entry.title}</p>
+                {entry.description && <p class="m-0 text-sm text-text/60 line-clamp-2 flex-1">{entry.description}</p>}
+                <div class="flex flex-wrap gap-x-2 mt-auto pt-2 text-xs text-accentText/60 border-t border-text/10">
+                  <time>{formatDate(entry.date, { month: "short", year: "2-digit" })}</time>
+                  {entry.frontmatter.creator && <span>· {entry.frontmatter.creator}</span>}
+                  {entry.hasBody && <span class="ml-auto text-highlight/60">has notes</span>}
+                </div>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </main>
+</BaseLayout>

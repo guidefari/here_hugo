@@ -1,0 +1,166 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCanonicalUrl, getOgImage } from "../lib/content.mjs";
+
+const { entry } = Astro.props;
+const profile = entry.frontmatter.profile ?? {};
+const bioOptions = Array.isArray(entry.frontmatter.bio_options) ? entry.frontmatter.bio_options : [];
+const portraits = Array.isArray(entry.frontmatter.portraits) ? entry.frontmatter.portraits : [];
+---
+
+<BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} hideFooter={true}>
+  <main class="flex flex-col mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6 lg:h-[calc(100dvh-5rem)] lg:px-8 lg:pt-10">
+    <div class="mb-4 shrink-0">
+      <h1 class="text-2xl font-bold text-white">{profile.name}</h1>
+      <p class="mt-1 text-sm text-accentText">{profile.role} - copy-ready bios for any context</p>
+    </div>
+
+    <div class="shrink-0 lg:hidden">
+      <div class="flex gap-2 overflow-x-auto pb-2" style="scrollbar-width: none;">
+        {bioOptions.map((option, index) => (
+          <button type="button" class="bio-option shrink-0 border px-4 py-2 text-sm font-semibold transition whitespace-nowrap" data-bio-option={option.id} aria-pressed={index === 0 ? "true" : "false"}>{option.label}</button>
+        ))}
+      </div>
+    </div>
+
+    <section class="min-h-0 grow lg:grid lg:gap-6 lg:grid-cols-[200px_minmax(0,1fr)_160px]">
+      <aside class="hidden overflow-y-auto border border-white/10 bg-[#0F1F26] p-5 lg:block">
+        <p class="text-xs uppercase tracking-[0.24em] text-accentText">Bio Length</p>
+        <div id="bio-length-options" class="mt-4 grid gap-2">
+          {bioOptions.map((option, index) => (
+            <button type="button" class="bio-option border px-4 py-3 text-left transition" data-bio-option={option.id} aria-pressed={index === 0 ? "true" : "false"}>
+              <span class="block font-semibold text-white">{option.label}</span>
+              <span class="mt-0.5 block text-xs leading-5 text-accentText">{option.use_case}</span>
+            </button>
+          ))}
+        </div>
+      </aside>
+
+      <div class="flex min-h-0 flex-col border border-white/10 bg-[#0F1F26] p-5 sm:p-6 mt-4 lg:mt-0">
+        <div class="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 pb-4">
+          <div>
+            <h2 id="bio-title" class="text-xs uppercase tracking-[0.24em]"></h2>
+            <p id="bio-use-case" class="mt-1 text-xs leading-6 text-accentText"></p>
+          </div>
+
+          <button id="copy-bio-button" type="button" class="inline-flex shrink-0 items-center gap-2 border border-highlight bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight transition hover:bg-highlight hover:text-black">
+            <span class="bio-copy-icon" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </span>
+            <span class="bio-check-icon hidden" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span id="copy-bio-label">Copy bio</span>
+          </button>
+        </div>
+
+        <div class="mt-5 min-h-0 grow overflow-y-auto pb-6 lg:pb-0">
+          <div id="bio-body" class="space-y-5 text-base leading-8 text-[#D7DDD4] whitespace-pre-line"></div>
+
+          {portraits.length > 0 && (
+            <div class="mt-8 lg:hidden">
+              <p class="mb-3 text-xs uppercase tracking-[0.24em] text-accentText">Portraits</p>
+              <div class="grid grid-cols-2 gap-3">
+                {portraits.map((portrait) => (
+                  <div class="border border-white/10 bg-[#0A1419]">
+                    <img src={portrait.src} alt={portrait.label} class="w-full object-cover" style="aspect-ratio: 1; object-position: top;" />
+                    <a href={portrait.src} download={portrait.filename} class="flex items-center justify-between border-t border-white/10 px-3 py-2 text-xs font-semibold text-accentText no-underline transition hover:text-highlight">
+                      <span>{portrait.label}</span>
+                      <svg class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {portraits.length > 0 && (
+        <aside class="hidden overflow-y-auto border border-white/10 bg-[#0F1F26] p-4 lg:block">
+          <p class="text-xs uppercase tracking-[0.24em] text-accentText">Portraits</p>
+          <div class="mt-3 grid gap-3">
+            {portraits.map((portrait) => (
+              <div class="border border-white/10 bg-[#0A1419]">
+                <img src={portrait.src} alt={portrait.label} class="w-full object-cover" style="aspect-ratio: 1; object-position: top;" />
+                <a href={portrait.src} download={portrait.filename} class="flex items-center justify-between border-t border-white/10 px-3 py-2 text-xs font-semibold text-accentText no-underline transition hover:bg-white/5 hover:text-highlight">
+                  <span>{portrait.label}</span>
+                  <svg class="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </aside>
+      )}
+    </section>
+  </main>
+
+  <script define:vars={{ options: bioOptions }}>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll("[data-bio-option]"));
+      const title = document.getElementById("bio-title");
+      const useCase = document.getElementById("bio-use-case");
+      const body = document.getElementById("bio-body");
+      const copyButton = document.getElementById("copy-bio-button");
+      const copyLabel = document.getElementById("copy-bio-label");
+      const copyIcon = copyButton?.querySelector(".bio-copy-icon");
+      const checkIcon = copyButton?.querySelector(".bio-check-icon");
+
+      if (!options.length || !copyButton || !title || !useCase || !body) return;
+
+      let activeOption = options[0];
+      let copyTimeout;
+
+      const render = () => {
+        title.textContent = activeOption.label + " bio";
+        useCase.textContent = activeOption.use_case;
+        body.textContent = activeOption.body;
+        body.parentElement.scrollTop = 0;
+
+        buttons.forEach((button) => {
+          const isActive = button.dataset.bioOption === activeOption.id;
+          button.setAttribute("aria-pressed", String(isActive));
+          button.classList.toggle("border-highlight", isActive);
+          button.classList.toggle("text-highlight", isActive);
+          button.classList.toggle("border-white/10", !isActive);
+        });
+      };
+
+      const setCopiedState = (copied) => {
+        copyIcon?.classList.toggle("hidden", copied);
+        checkIcon?.classList.toggle("hidden", !copied);
+        copyLabel.textContent = copied ? "Copied!" : "Copy bio";
+        copyButton.classList.toggle("bg-highlight", copied);
+        copyButton.classList.toggle("text-black", copied);
+        copyButton.classList.toggle("bg-highlight/10", !copied);
+        copyButton.classList.toggle("text-highlight", !copied);
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextOption = options.find((option) => option.id === button.dataset.bioOption);
+          if (!nextOption) return;
+          activeOption = nextOption;
+          render();
+          setCopiedState(false);
+          window.clearTimeout(copyTimeout);
+        });
+      });
+
+      copyButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(activeOption.body);
+          setCopiedState(true);
+          window.clearTimeout(copyTimeout);
+          copyTimeout = window.setTimeout(() => setCopiedState(false), 1800);
+        } catch {
+          copyLabel.textContent = "Copy failed";
+          window.clearTimeout(copyTimeout);
+          copyTimeout = window.setTimeout(() => setCopiedState(false), 1800);
+        }
+      });
+
+      render();
+    })();
+  </script>
+</BaseLayout>

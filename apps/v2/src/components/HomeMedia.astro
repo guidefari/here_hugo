@@ -1,0 +1,46 @@
+---
+import { getEntriesBySection } from "../lib/content.mjs";
+
+const items = getEntriesBySection("media").slice(0, 3);
+---
+
+{items.length > 0 && (
+  <section class="w-full">
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold tracking-tight text-white m-0">Recommended Media</h2>
+    </div>
+    <ul class="flex flex-col gap-3 m-0 p-0">
+      {items.map((entry) => {
+        const youtubeId = entry.frontmatter.youtube_id;
+        const mediaType = entry.frontmatter.media_type ?? "media";
+        const image = entry.images[0];
+        return (
+          <li class="list-none">
+            <a href={entry.permalink} class="group flex gap-3 p-3 border border-text/15 rounded-sm bg-text/5 hover:bg-text/10 hover:border-text/30 transition-all duration-150 no-underline">
+              {mediaType === "youtube" && youtubeId ? (
+                <div class="flex-shrink-0 w-28 h-16 overflow-hidden rounded-sm bg-black">
+                  <img src={`https://i.ytimg.com/vi/${youtubeId}/mqdefault.jpg`} alt={entry.title} class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ) : image ? (
+                <div class="flex-shrink-0 w-28 h-16 overflow-hidden rounded-sm bg-black">
+                  <img src={image} alt={entry.title} class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ) : (
+                <div class="flex-shrink-0 w-28 h-16 rounded-sm bg-text/10 flex items-center justify-center">
+                  <span class="text-xs font-mono text-text/30 lowercase">{mediaType}</span>
+                </div>
+              )}
+              <div class="flex flex-col justify-between min-w-0">
+                <div>
+                  <p class="post-link m-0 text-sm font-bold leading-snug text-highlight group-hover:text-white transition-colors line-clamp-2">{entry.title}</p>
+                  {entry.description && <p class="mt-1 text-xs text-text/55 line-clamp-2 leading-snug">{entry.description}</p>}
+                </div>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+    <a href="/media/" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 tracking-widest">all media →</a>
+  </section>
+)}

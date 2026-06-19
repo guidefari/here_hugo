@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import HomeWriting from "../components/HomeWriting.astro";
+import HomeMedia from "../components/HomeMedia.astro";
+import { getCanonicalUrl } from "../lib/content.mjs";
+import { site } from "../lib/site.mjs";
+---
+
+<BaseLayout title={site.title} description={site.subtitle} canonical={getCanonicalUrl("/")}>
+  <main class="flex flex-col w-full px-4 lg:px-6">
+    <div class="mb-6 max-w-xl lg:hidden">
+      <Hero />
+    </div>
+    <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+      <HomeWriting />
+      <div class="flex-1 min-w-0">
+        <HomeMedia />
+      </div>
+    </div>
+  </main>
+</BaseLayout>

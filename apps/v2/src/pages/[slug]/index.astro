@@ -1,0 +1,39 @@
+---
+import { getFlatEntries, getSections, legacySections } from "../../lib/content.mjs";
+import DefaultSingle from "../../components/DefaultSingle.astro";
+import MediaSingle from "../../components/MediaSingle.astro";
+import SectionList from "../../components/SectionList.astro";
+import RssPage from "../../components/RssPage.astro";
+import ContentFoldersPage from "../../components/ContentFoldersPage.astro";
+import AllPage from "../../components/AllPage.astro";
+import BioPage from "../../components/BioPage.astro";
+import ResumePage from "../../components/ResumePage.astro";
+
+export function getStaticPaths() {
+  const reservedSections = new Set(["media", "read", "writing", "tags", "categories"]);
+  const entryPaths = getFlatEntries().map((entry) => ({
+    params: { slug: entry.slug },
+    props: { kind: "entry", entry },
+  }));
+
+  const sectionPaths = [...new Set([...getSections(), ...legacySections])]
+    .filter((section) => !reservedSections.has(section))
+    .map((section) => ({
+      params: { slug: section },
+      props: { kind: "section", section },
+    }));
+
+  return [...entryPaths, ...sectionPaths];
+}
+
+const { kind, entry, section } = Astro.props;
+---
+
+{kind === "section" && <SectionList section={section} />}
+{kind === "entry" && entry.section === "media" && <MediaSingle entry={entry} />}
+{kind === "entry" && entry.layout === "rss" && <RssPage />}
+{kind === "entry" && entry.layout === "content" && <ContentFoldersPage />}
+{kind === "entry" && entry.layout === "bio" && <BioPage entry={entry} />}
+{kind === "entry" && entry.layout === "resume" && <ResumePage entry={entry} />}
+{kind === "entry" && entry.slug === "all" && <AllPage />}
+{kind === "entry" && entry.section !== "media" && entry.layout !== "rss" && entry.layout !== "content" && entry.layout !== "bio" && entry.layout !== "resume" && entry.slug !== "all" && <DefaultSingle entry={entry} />}

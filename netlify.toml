@@ -1,0 +1,6 @@
+[build]
+command = "bun run build"
+publish = "apps/v1/public"
+
+[build.environment]
+HUGO_VERSION = "0.152.2"

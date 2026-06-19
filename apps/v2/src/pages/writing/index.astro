@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getAllEntries, getCanonicalUrl } from "../../lib/content.mjs";
+import { sectionMeta, writingSections } from "../../lib/site.mjs";
+import PostListItem from "../../components/PostListItem.astro";
+
+const entries = getAllEntries().filter((entry) => writingSections.includes(entry.section));
+const filters = writingSections.map((section) => ({ section, ...sectionMeta[section] }));
+---
+
+<BaseLayout title="Writing" description="Notes, book reviews, TILs, and everything in between." canonical={getCanonicalUrl("/writing/")}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="text-5xl text-white m-0">Writing</h1>
+      <p class="max-w-2xl mt-4 text-text/75">Notes, book reviews, TILs, and everything in between. Filter by archetype below.</p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+      {filters.map((filter) => (
+        <button type="button" data-filter={filter.section} class="filter-btn group flex flex-col items-start gap-1 p-3 border rounded-sm border-text/20 bg-text/5 text-left transition-colors hover:border-highlight hover:bg-text/10">
+          <span class="font-mono text-sm font-semibold text-highlight">{filter.label}</span>
+          <span class="text-xs text-text/60 leading-snug">{filter.description}</span>
+        </button>
+      ))}
+      <button type="button" data-filter="all" class="filter-btn group flex flex-col items-start justify-center gap-1 p-3 border rounded-sm border-highlight bg-text/5 text-left transition-colors hover:bg-text/10">
+        <span class="font-mono text-sm font-semibold text-highlight">All</span>
+        <span class="text-xs text-text/60 leading-snug">Everything at once.</span>
+      </button>
+    </div>
+
+    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0" id="writing-list">
+      {entries.map((entry) => <PostListItem entry={entry} />)}
+    </ul>
+  </main>
+
+  <script is:inline>
+    (() => {
+      const list = document.getElementById("writing-list");
+      if (!list) return;
+      const items = list.querySelectorAll("li[data-section]");
+      const buttons = document.querySelectorAll("button[data-filter]");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.getAttribute("data-filter");
+
+          buttons.forEach((item) => {
+            item.classList.remove("border-highlight");
+            item.classList.add("border-text/20");
+          });
+          button.classList.remove("border-text/20");
+          button.classList.add("border-highlight");
+
+          items.forEach((item) => {
+            const section = item.getAttribute("data-section");
+            item.style.display = filter === "all" || section === filter ? "" : "none";
+          });
+        });
+      });
+    })();
+  </script>
+</BaseLayout>
