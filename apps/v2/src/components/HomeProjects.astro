@@ -1,0 +1,59 @@
+---
+const projects = [
+  {
+    title: "goosebumps.fm",
+    description: "Public archive of curated music",
+    github: "https://github.com/guidefari/gbfm",
+    website: "https://goosebumps.fm",
+  },
+  {
+    title: "opensound",
+    description: "Effect-based Spotify Web API SDK with type-safe calls, retries, batching, and OpenTelemetry tracing",
+    github: "https://github.com/planetaryescape/opensound",
+    website: "https://opensound.dev",
+  },
+  {
+    title: "pulse",
+    description: "CLI tool that recursively scans directories for Git repos and displays a status summary",
+    github: "https://github.com/planetaryescape/pulse",
+  },
+];
+---
+
+<section class="w-full">
+  <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Open Source</h2>
+  <ul class="flex flex-col gap-3 m-0 p-0">
+    {projects.map((project) => (
+      <li class="list-none">
+        <div class="flex flex-col gap-1.5 p-3 border border-text/15 rounded-sm bg-text/5">
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-highlight">{project.title}</span>
+            <div class="flex items-center gap-2 ml-auto">
+              {project.website && (
+                <a
+                  href={project.website}
+                  class="text-text/40 hover:text-highlight transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} website`}
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </a>
+              )}
+              <a
+                href={project.github}
+                class="text-text/40 hover:text-highlight transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} on GitHub`}
+              >
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="m-0 text-xs text-text/55 leading-snug">{project.description}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
