@@ -6,13 +6,11 @@
 .idea/**/shelf
 node_modules
 **/.DS_Store
-**/.hugo_build.lock
 .obsidian
 **/.smart-connections
 .sst
 .turbo
 .wrangler
-public
 apps/v2/.astro
 apps/v2/dist
 .env
