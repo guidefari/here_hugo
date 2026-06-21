@@ -10,6 +10,7 @@ export const site = {
 export const navItems = [
   { label: "home", href: "/" },
   { label: "now", href: "/now/" },
+  { label: "unoffice hours", href: "/unoffice-hours/" },
   { label: "writing", href: "/writing/" },
   { label: "media", href: "/media/" },
   { label: "rss", href: "/index.xml" },
