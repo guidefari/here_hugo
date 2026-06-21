@@ -2,9 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getEntriesBySection, tagSlugify } from "../../lib/content.mjs";
 import PostListItemRead from "../../components/PostListItemRead.astro";
+import WritingList from "../../components/WritingList.astro";
 
 const entries = await getEntriesBySection("read");
 const tags = [...new Map(entries.flatMap((entry) => entry.tags).filter(Boolean).map((tag) => [tagSlugify(tag), tag])).entries()].map(([slug, label]) => ({ slug, label })).sort((a, b) => a.label.localeCompare(b.label));
+const chips = tags.map((tag) => ({ value: tag.label, label: `#${tag.label}` }));
 ---
 
 <BaseLayout title="Newsletter" description="A curated reading list of some links I've found." canonical={getCanonicalUrl("/read/")}>
@@ -20,45 +22,8 @@ const tags = [...new Map(entries.flatMap((entry) => entry.tags).filter(Boolean).
       <button type="submit" class="px-4 py-2 font-mono text-sm tracking-wide uppercase transition border rounded-sm border-text/40 text-text/80 hover:border-highlight hover:text-highlight focus:outline-none">Subscribe</button>
     </form>
 
-    {tags.length > 0 && (
-      <div class="mb-6 flex flex-wrap gap-2">
-        <span class="text-xs font-mono text-text/40 uppercase tracking-widest py-1">#filter</span>
-        <button type="button" data-filter="all" class="filter-btn text-xs font-mono px-2 py-1 border rounded-sm border-highlight text-highlight transition-colors no-underline">#all</button>
-        {tags.map((tag) => (
-          <button type="button" data-filter={tag.label} class="filter-btn text-xs font-mono px-2 py-1 border rounded-sm border-text/20 text-text/60 hover:border-highlight hover:text-highlight transition-colors no-underline">#{tag.label}</button>
-        ))}
-      </div>
-    )}
-
-    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0" id="read-list">
+    <WritingList chips={chips} filterAttr="tags" filterSeparator="," listId="read-list">
       {entries.map((entry) => <PostListItemRead entry={entry} />)}
-    </ul>
+    </WritingList>
   </main>
-
-  <script is:inline>
-    (() => {
-      const list = document.getElementById("read-list");
-      if (!list) return;
-      const items = list.querySelectorAll("li[data-tags]");
-      const buttons = document.querySelectorAll("button[data-filter]");
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.getAttribute("data-filter");
-
-          buttons.forEach((item) => {
-            item.classList.remove("border-highlight", "text-highlight");
-            item.classList.add("border-text/20", "text-text/60");
-          });
-          button.classList.remove("border-text/20", "text-text/60");
-          button.classList.add("border-highlight", "text-highlight");
-
-          items.forEach((item) => {
-            const tags = item.getAttribute("data-tags") || "";
-            item.style.display = filter === "all" || tags.includes(filter) ? "" : "none";
-          });
-        });
-      });
-    })();
-  </script>
 </BaseLayout>

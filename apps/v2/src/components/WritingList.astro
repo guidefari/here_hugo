@@ -1,0 +1,112 @@
+---
+const {
+  chips = [],
+  defaultFilter = "all",
+  filterAttr = "",
+  filterSeparator = "",
+  listId = "filterable-list",
+} = Astro.props;
+
+const hasChips = chips.length > 0 && Boolean(filterAttr);
+const chipsId = `${listId}-chips`;
+const allChip = { value: "all", label: "all" };
+const allChips = [allChip, ...chips];
+
+function chipHref(value) {
+  if (value === "all") return "?";
+  return `?filter=${encodeURIComponent(value)}`;
+}
+---
+
+{hasChips && (
+  <div id={chipsId} class="filterable-chips flex flex-wrap gap-2 mb-6">
+    {allChips.map((chip) => (
+      <a
+        href={chipHref(chip.value)}
+        data-filter={chip.value}
+        class:list={[
+          "filter-chip",
+          "text-xs",
+          "font-mono",
+          "px-2",
+          "py-1",
+          "border",
+          "rounded-sm",
+          "transition-colors",
+          "no-underline",
+          chip.value === defaultFilter
+            ? "border-highlight text-highlight"
+            : "border-text/20 text-text/60 hover:border-highlight hover:text-highlight",
+        ]}
+      >
+        {chip.label}
+      </a>
+    ))}
+  </div>
+)}
+
+<ul id={listId} class="flex flex-col divide-y divide-text/10 m-0 p-0 list-none">
+  <slot />
+</ul>
+
+{hasChips && (
+  <script is:inline define:vars={{ listId, chipsId, filterAttr, filterSeparator }}>
+    (() => {
+      const list = document.getElementById(listId);
+      const chipsContainer = document.getElementById(chipsId);
+      if (!list || !chipsContainer) return;
+
+      const items = list.querySelectorAll("li");
+      const chips = chipsContainer.querySelectorAll("[data-filter]");
+      const knownFilters = new Set(
+        Array.from(chips, (c) => c.getAttribute("data-filter"))
+      );
+
+      function applyFilter(target) {
+        const safe = knownFilters.has(target) ? target : "all";
+        chips.forEach((c) => {
+          const isActive = c.getAttribute("data-filter") === safe;
+          c.classList.toggle("border-highlight", isActive);
+          c.classList.toggle("text-highlight", isActive);
+          c.classList.toggle("border-text/20", !isActive);
+          c.classList.toggle("text-text/60", !isActive);
+        });
+        items.forEach((item) => {
+          const raw = item.getAttribute(`data-${filterAttr}`) || "";
+          const values = filterSeparator ? raw.split(filterSeparator) : [raw];
+          const match = safe === "all" || values.includes(safe);
+          item.style.display = match ? "" : "none";
+        });
+      }
+
+      function readFilter() {
+        const url = new URL(window.location.href);
+        return url.searchParams.get("filter") || "all";
+      }
+
+      function pushFilter(target) {
+        const url = new URL(window.location.href);
+        if (!target || target === "all") url.searchParams.delete("filter");
+        else url.searchParams.set("filter", target);
+        history.pushState({ filter: target }, "", url.toString());
+      }
+
+      applyFilter(readFilter());
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", (event) => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          if (event.button !== 0) return;
+          event.preventDefault();
+          const target = chip.getAttribute("data-filter");
+          applyFilter(target);
+          pushFilter(target);
+        });
+      });
+
+      window.addEventListener("popstate", () => {
+        applyFilter(readFilter());
+      });
+    })();
+  </script>
+)}
