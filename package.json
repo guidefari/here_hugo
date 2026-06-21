@@ -9,10 +9,10 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "bun --cwd apps/v2 run build",
-    "build:v2": "bun --cwd apps/v2 run build",
-    "dev": "bun --cwd apps/v2 run dev",
-    "dev:v2": "bun --cwd apps/v2 run dev",
+    "build": "cd apps/v2 && bun run build",
+    "build:v2": "cd apps/v2 && bun run build",
+    "dev": "cd apps/v2 && bun run dev",
+    "dev:v2": "cd apps/v2 && bun run dev",
     "dev:sst": "sst dev"
   },
   "repository": {
