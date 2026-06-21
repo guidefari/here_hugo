@@ -24,15 +24,20 @@ notes:
   - "Can't make it? Cancel from the invite."
   - "I'm in SAST (UTC+2). Times shown are local to me."
 webring:
-  - label: "Previous"
+  previous:
+    label: "Previous"
     url: "https://unofficehours.com/prev.html"
-  - label: "Next"
+  next:
+    label: "Next"
     url: "https://unofficehours.com/next.html"
-  - label: "Random"
+  random:
+    label: "Random"
     url: "https://unofficehours.com/random.html"
-  - label: "All sites"
+  all_sites:
+    label: "All sites"
     url: "https://unofficehours.com"
-  - label: "Join the webring"
+  join:
+    label: "Join the webring"
     url: "https://unofficehours.com/join.html"
 ---
 

@@ -9,10 +9,8 @@ const data = entry.data ?? {};
 const goodFor = Array.isArray(data.good_for) ? data.good_for : [];
 const notFor = Array.isArray(data.not_for) ? data.not_for : [];
 const notes = Array.isArray(data.notes) ? data.notes : [];
-const webring = Array.isArray(data.webring) ? data.webring : [];
+const webring = data.webring ?? {};
 const cta = data.cta ?? {};
-const ringNav = webring.slice(0, 4);
-const joinLink = webring[4];
 ---
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)}>
@@ -55,18 +53,37 @@ const joinLink = webring[4];
       </main>
 
       <aside class="mt-10 space-y-6 lg:mt-0">
-        {webring.length > 0 && (
+        {(webring.previous || webring.next) && (
           <div class="uh-card">
             <p class="text-xs uppercase tracking-[0.24em] text-accentText">Webring</p>
             <p class="mt-3 text-sm leading-relaxed text-[#D7DDD4]">This page is part of the <a href="https://unofficehours.com" class="highlighted-link">Unoffice Hours webring</a>.</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              {ringNav.map((link) => (
-                <a href={link.url} class="uh-chip">{link.label}</a>
-              ))}
+
+            <div class="mt-5 grid grid-cols-2 gap-2">
+              {webring.previous && (
+                <a href={webring.previous.url} class="uh-webring-nav uh-webring-prev">
+                  <span class="uh-webring-arrow" aria-hidden="true">←</span>
+                  <span>{webring.previous.label}</span>
+                </a>
+              )}
+              {webring.next && (
+                <a href={webring.next.url} class="uh-webring-nav uh-webring-next">
+                  <span>{webring.next.label}</span>
+                  <span class="uh-webring-arrow" aria-hidden="true">→</span>
+                </a>
+              )}
             </div>
-            {joinLink && (
-              <a href={joinLink.url} class="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-highlight transition hover:underline">
-                {joinLink.label} <span aria-hidden="true">→</span>
+
+            {(webring.random || webring.all_sites) && (
+              <div class="mt-3 flex items-center gap-3 text-xs">
+                {webring.random && <a href={webring.random.url} class="uh-webring-secondary">{webring.random.label}</a>}
+                {webring.random && webring.all_sites && <span class="text-accentText/30">·</span>}
+                {webring.all_sites && <a href={webring.all_sites.url} class="uh-webring-secondary">{webring.all_sites.label}</a>}
+              </div>
+            )}
+
+            {webring.join && (
+              <a href={webring.join.url} class="mt-5 inline-flex items-center gap-1 text-xs font-semibold text-highlight transition hover:underline">
+                {webring.join.label} <span aria-hidden="true">→</span>
               </a>
             )}
           </div>
@@ -161,19 +178,51 @@ const joinLink = webring[4];
     transform: translateX(4px);
   }
 
-  .uh-chip {
-    display: inline-block;
-    font-size: 0.75rem;
+  .uh-webring-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.75rem 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.4rem 0.7rem;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     transition: color 0.15s, border-color 0.15s;
+    min-height: 2.75rem;
   }
 
-  .uh-chip:hover {
-    color: #F5D547;
+  .uh-webring-nav:hover {
     border-color: #F5D547;
+    color: #F5D547;
+  }
+
+  .uh-webring-prev {
+    justify-content: flex-start;
+  }
+
+  .uh-webring-next {
+    justify-content: space-between;
+  }
+
+  .uh-webring-arrow {
+    font-size: 0.95rem;
+    opacity: 0.65;
+  }
+
+  .uh-webring-nav:hover .uh-webring-arrow {
+    opacity: 1;
+  }
+
+  .uh-webring-secondary {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .uh-webring-secondary:hover {
+    color: #F5D547;
   }
 </style>
