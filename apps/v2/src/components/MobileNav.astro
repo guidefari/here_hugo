@@ -14,8 +14,8 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
   <span class="hamburger-bar block w-5 h-px bg-text transition-all duration-300"></span>
 </button>
 
-<div id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site navigation" class="mobile-nav lg:hidden fixed inset-0 z-40 flex flex-col bg-[#0F1F26] overflow-y-auto translate-y-full opacity-0 transition-[transform,opacity] duration-300 ease-out">
-  <div class="flex items-center justify-between px-5 py-4 border-b border-text/20">
+<div id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site navigation" class="mobile-nav lg:hidden fixed inset-0 z-40 flex flex-col bg-[#0F1F26] overflow-y-auto transition-[transform,opacity] duration-300 ease-out">
+  <div class="flex items-center justify-between px-5 py-3 border-b border-text/20 shrink-0">
     <div class="flex flex-col">
       <span class="font-mono text-base font-bold text-text">
         <span class="relative inline-block ml-1 before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-black">
@@ -27,8 +27,8 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     <button id="mobile-nav-close" aria-label="Close navigation" class="flex items-center justify-center w-9 h-9 border border-text/30 rounded-sm font-mono text-xs text-text/70 hover:border-highlight hover:text-highlight transition focus:outline-none focus:ring-2 focus:ring-highlight" data-nav-sound>[×]</button>
   </div>
 
-  <nav aria-label="Site sections" class="px-5 py-6">
-    <ul class="flex flex-col gap-2 p-0 m-0 list-none">
+  <nav aria-label="Site sections" class="px-5 py-4">
+    <ul class="flex flex-col gap-1.5 p-0 m-0 list-none">
       {navItems.map((item) => {
         if (item.label === "writing") {
           return (
@@ -43,7 +43,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
                   <span class="nav-chip__bracket">]</span>
                   <span class="nav-tree__caret text-text/50 text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
                 </summary>
-                <ul class="nav-tree__children flex flex-col gap-1 mt-2 pl-3 border-l border-text/15">
+                <ul class="nav-tree__children flex flex-col gap-1 mt-1.5 pl-3 border-l border-text/15">
                   {writingTree.children.map((child) => {
                     const isActive = currentPath === child.href;
                     return (
@@ -88,7 +88,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     </ul>
   </nav>
 
-  <div class="mt-auto px-5 pt-4 pb-8 border-t border-text/20">
+  <div class="mt-auto px-5 pt-4 pb-8 border-t border-text/20" id="mobile-nav-subscribe">
     <p class="mt-0 mb-3 text-sm text-text/75">Notes + reading list in your inbox.</p>
     <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post" target="popupwindow" class="flex flex-col gap-2">
       <label for="bd-email-mobile" class="sr-only">Email address</label>
@@ -100,8 +100,12 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 
 <style>
   .mobile-nav {
-    height: 100dvh;
-    height: 100vh;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  .mobile-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
   }
   #mobile-nav-open[aria-expanded="true"] {
     display: none;
@@ -119,6 +123,8 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     const openBtn = document.getElementById("mobile-nav-open");
     const closeBtn = document.getElementById("mobile-nav-close");
     const overlay = document.getElementById("mobile-nav-overlay");
+    const subscribe = document.getElementById("mobile-nav-subscribe");
+    const emailInput = document.getElementById("bd-email-mobile");
 
     if (!openBtn || !closeBtn || !overlay) return;
 
@@ -143,16 +149,14 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     }
 
     function openNav() {
-      overlay.classList.remove("translate-y-full", "opacity-0");
-      overlay.classList.add("translate-y-0", "opacity-100");
+      overlay.classList.add("is-open");
       openBtn.setAttribute("aria-expanded", "true");
       lockScroll();
       closeBtn.focus();
     }
 
     function closeNav() {
-      overlay.classList.add("translate-y-full", "opacity-0");
-      overlay.classList.remove("translate-y-0", "opacity-100");
+      overlay.classList.remove("is-open");
       openBtn.setAttribute("aria-expanded", "false");
       unlockScroll();
       openBtn.focus();
@@ -175,5 +179,17 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     overlay.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => closeNav());
     });
+
+    if (emailInput && subscribe && window.visualViewport) {
+      emailInput.addEventListener("focus", () => {
+        requestAnimationFrame(() => {
+          const subscribeRect = subscribe.getBoundingClientRect();
+          const viewportHeight = window.visualViewport.height;
+          if (subscribeRect.bottom > viewportHeight - 16) {
+            subscribe.scrollIntoView({ block: "end", behavior: "smooth" });
+          }
+        });
+      });
+    }
   })();
 </script>
