@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllTags, getCanonicalUrl } from "../lib/content.mjs";
 
-const tags = getAllTags();
+const tags = await getAllTags();
 ---
 
 <BaseLayout title="RSS Feeds" canonical={getCanonicalUrl("/rss/")}>

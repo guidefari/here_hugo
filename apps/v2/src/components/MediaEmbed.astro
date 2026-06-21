@@ -1,8 +1,8 @@
 ---
 const { entry } = Astro.props;
-const type = entry.frontmatter.media_type ?? "link";
-const url = entry.frontmatter.media_url;
-const youtubeId = entry.frontmatter.youtube_id;
+const type = entry.data.media_type ?? "link";
+const url = entry.data.media_url;
+const youtubeId = entry.data.youtube_id;
 ---
 
 {type === "youtube" && youtubeId ? (

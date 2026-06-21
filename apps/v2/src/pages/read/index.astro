@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getEntriesBySection, tagSlugify } from "../../lib/content.mjs";
 import PostListItemRead from "../../components/PostListItemRead.astro";
 
-const entries = getEntriesBySection("read");
+const entries = await getEntriesBySection("read");
 const tags = [...new Map(entries.flatMap((entry) => entry.tags).filter(Boolean).map((tag) => [tagSlugify(tag), tag])).entries()].map(([slug, label]) => ({ slug, label })).sort((a, b) => a.label.localeCompare(b.label));
 ---
 

@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getSections } from "../lib/content.mjs";
 
-const sections = getSections();
+const sections = await getSections();
 ---
 
 <BaseLayout title="Content" canonical={getCanonicalUrl("/content/")}>

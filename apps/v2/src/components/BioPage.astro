@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getOgImage } from "../lib/content.mjs";
 
 const { entry } = Astro.props;
-const profile = entry.frontmatter.profile ?? {};
-const bioOptions = Array.isArray(entry.frontmatter.bio_options) ? entry.frontmatter.bio_options : [];
-const portraits = Array.isArray(entry.frontmatter.portraits) ? entry.frontmatter.portraits : [];
+const profile = entry.data.profile ?? {};
+const bioOptions = Array.isArray(entry.data.bio_options) ? entry.data.bio_options : [];
+const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [];
 ---
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} hideFooter={true}>

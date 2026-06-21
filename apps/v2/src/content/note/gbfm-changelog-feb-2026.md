@@ -2,7 +2,7 @@
 title: "goosebumps.fm changelog - feb 2026"
 date: 2026-02-01T00:38:15+02:00
 description: "Kapil asked me what I've been doing in the goosebumps codebase lately."
-tags: [retro, strategy]
+tags: [retro, strategy, effect]
 images:
   [
     "https://images-here-hugo.vercel.app/api/og-image?title=gbfm+changelog+Feb+2026",

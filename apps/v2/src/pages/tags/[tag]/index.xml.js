@@ -2,8 +2,8 @@ import rss from "@astrojs/rss";
 import { getAllTags, getEntriesByTag, getEntryHtml } from "../../../lib/content.mjs";
 import { site } from "../../../lib/site.mjs";
 
-export function getStaticPaths() {
-  return getAllTags().map((tag) => ({
+export async function getStaticPaths() {
+  return (await getAllTags()).map((tag) => ({
     params: { tag: tag.slug },
     props: { tag },
   }));
@@ -11,7 +11,7 @@ export function getStaticPaths() {
 
 export async function GET(context) {
   const tag = context.props.tag;
-  const entries = getEntriesByTag(tag.slug);
+  const entries = await getEntriesByTag(tag.slug);
   const items = await Promise.all(entries.map(async (entry) => ({
     title: entry.title,
     link: entry.permalink,

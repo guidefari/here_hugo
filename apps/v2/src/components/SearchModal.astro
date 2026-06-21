@@ -1,76 +1,116 @@
 ---
-import searchUrl from "../../../v1/assets/js/search.js?url";
 ---
 
-<dialog id="search-modal" data-pagefind-path="/pagefind/pagefind.js" class="backdrop:bg-black/80 backdrop:backdrop-blur-xs bg-zinc-900 p-0 rounded-none border-2 border-zinc-800 shadow-[12px_12px_0_0_rgba(0,0,0,0.5)] w-full max-w-2xl focus:outline-hidden font-mono overflow-hidden">
-  <div class="flex flex-col h-[500px]">
-    <div class="flex items-center px-4 py-4 border-b-2 border-zinc-800 bg-zinc-950">
-      <svg class="w-5 h-5 text-highlight" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-      </svg>
-      <label for="search-input" class="sr-only">Search content</label>
-      <input id="search-input" type="text" placeholder="SEARCH_CONTENT" class="flex-1 ml-3 text-xl tracking-wider text-white uppercase bg-transparent border-none focus:ring-0 placeholder-zinc-600" autocomplete="off" />
-      <kbd class="hidden sm:inline-flex items-center px-2 py-1 border-2 border-zinc-800 rounded-sm bg-zinc-900 text-[10px] font-bold text-zinc-500">ESC</kbd>
-    </div>
-    <div id="search-results" class="flex-1 p-4 space-y-2 overflow-y-auto bg-zinc-900">
-      <div class="px-3 py-2 border-2 border-highlight/20 bg-highlight/5 text-highlight text-[9px] font-bold uppercase tracking-widest text-center mb-4">Still very WIP</div>
-    </div>
-    <div class="flex items-center justify-between px-4 py-3 border-t-2 border-zinc-800 bg-zinc-950">
-      <span class="text-[10px] text-zinc-600 uppercase tracking-tighter">Powered by <a href="https://pagefind.app/" target="_blank" rel="noopener noreferrer" class="no-underline transition-colors border-none hover:text-zinc-400">Pagefind</a></span>
-      <div class="flex items-center space-x-4 text-[10px] text-zinc-500 font-bold uppercase">
-        <span class="flex items-center"><kbd class="px-1 mr-1 border border-zinc-700 bg-zinc-800 text-zinc-400">ENTER</kbd> SELECT</span>
-        <span class="flex items-center"><kbd class="px-1 mr-1 border border-zinc-700 bg-zinc-800 text-zinc-400">↑↓</kbd> NAVIGATE</span>
-      </div>
-    </div>
-  </div>
+<dialog id="search-modal" aria-label="Search" class="search-modal">
+  <div id="pagefind-ui-root" data-pagefind-ui></div>
+  <noscript>
+    <p class="p-4 text-sm">JavaScript is required for search.</p>
+  </noscript>
 </dialog>
 
-<style is:global>
-  #search-modal::backdrop {
-    animation: fade-in 0.2s ease-out;
-  }
-
-  #search-modal[open] {
-    animation: zoom-in 0.2s ease-out;
-  }
-
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes zoom-in {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  #search-modal {
+<style>
+  .search-modal {
     padding: 0;
     border: none;
-    max-width: 42rem;
-  }
-
-  #search-results::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  #search-results::-webkit-scrollbar-track {
     background: transparent;
+    color-scheme: light dark;
+    max-width: 720px;
+    width: min(90vw, 720px);
+    margin: 6vh auto;
+    overflow: visible;
   }
-
-  #search-results::-webkit-scrollbar-thumb {
-    background: #3f3f46;
-    border-radius: 10px;
+  .search-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
   }
-
-  #search-results mark {
-    background-color: transparent;
-    color: #f5d547;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+  #pagefind-ui-root {
+    min-height: 4rem;
   }
 </style>
 
-<script src={searchUrl} defer></script>
+<script>
+  const dialogId = "search-modal";
+  const rootId = "pagefind-ui-root";
+  const pagefindCss = "/pagefind/pagefind-ui.css";
+  const pagefindJs = "/pagefind/pagefind-ui.js";
+
+  function init() {
+    const dialog = document.getElementById(dialogId);
+    const root = document.getElementById(rootId);
+    if (!dialog || !root) return;
+
+    let pagefindUI = null;
+    let initializing = null;
+
+    function ensurePagefind() {
+      if (pagefindUI) return pagefindUI;
+      if (initializing) return initializing;
+      initializing = (async () => {
+        try {
+          if (!document.querySelector(`link[href$="${pagefindCss}"]`)) {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = pagefindCss;
+            document.head.appendChild(link);
+          }
+          if (!window.PagefindUI) {
+            await import(/* @vite-ignore */ pagefindJs);
+          }
+          pagefindUI = new window.PagefindUI({
+            element: root,
+            showImages: false,
+            showSubResults: true,
+            resetStyles: true,
+          });
+        } catch (error) {
+          console.error("Pagefind UI failed to load", error);
+          if (root) {
+            root.innerHTML =
+              '<p style="padding: 1rem; color: #888; font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
+          }
+        }
+        return pagefindUI;
+      })();
+      return initializing;
+    }
+
+    function open() {
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      ensurePagefind();
+    }
+
+    function close() {
+      if (dialog.open) dialog.close();
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        if (dialog.open) close();
+        else open();
+        return;
+      }
+      if (event.key === "Escape" && dialog.open) {
+        close();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const trigger = event.target instanceof Element
+        ? event.target.closest("[data-search-toggle]")
+        : null;
+      if (trigger) {
+        event.preventDefault();
+        open();
+        return;
+      }
+      if (event.target === dialog) close();
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+</script>

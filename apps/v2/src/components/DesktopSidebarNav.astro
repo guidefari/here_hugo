@@ -39,14 +39,18 @@ const { isHome = false } = Astro.props;
           </a>
         </li>
       ))}
+      <li>
+        <button type="button" data-search-toggle class="nav-chip w-full justify-start" data-nav-sound aria-label="Search (Cmd+K)">
+          <span class="nav-chip__bracket">[</span>
+          <span class="nav-chip__label flex-1 text-left">search</span>
+          <kbd class="hidden xl:inline-block ml-auto text-[10px] font-mono text-text/50 border border-text/30 px-1 rounded-sm">⌘K</kbd>
+          <span class="nav-chip__bracket">]</span>
+        </button>
+      </li>
     </ul>
   </div>
 
   <div class="mt-6 pt-4 border-t border-text/20">
-    <div class="flex items-center gap-2 mb-2 text-xs text-accentText/80 font-mono">
-      <span class="inline-block w-1.5 h-1.5 rounded-full bg-highlight animate-pulse"></span>
-      <span>~/subscribe</span>
-    </div>
     <p class="mt-0 mb-3 text-sm text-text/75">Notes + reading list in your inbox.</p>
     <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post" target="popupwindow" class="flex flex-col gap-2">
       <label for="bd-email-nav" class="sr-only">Email address</label>

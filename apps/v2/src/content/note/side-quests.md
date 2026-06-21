@@ -2,7 +2,7 @@
 title: "Side Quests"
 date: 2024-06-07T12:41:00+02:00
 description:
-tags: []
+tags: [effect]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Side+Quests']
 ---
 

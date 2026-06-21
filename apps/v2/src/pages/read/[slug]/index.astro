@@ -2,8 +2,8 @@
 import { getNestedEntries } from "../../../lib/content.mjs";
 import DefaultSingle from "../../../components/DefaultSingle.astro";
 
-export function getStaticPaths() {
-  return getNestedEntries("read").map((entry) => ({
+export async function getStaticPaths() {
+  return (await getNestedEntries("read")).map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));

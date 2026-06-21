@@ -8,15 +8,16 @@ import ContentFoldersPage from "../../components/ContentFoldersPage.astro";
 import AllPage from "../../components/AllPage.astro";
 import BioPage from "../../components/BioPage.astro";
 import ResumePage from "../../components/ResumePage.astro";
+import EffectCrashCourse from "../../components/EffectCrashCourse.astro";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const reservedSections = new Set(["media", "read", "writing", "tags", "categories"]);
-  const entryPaths = getFlatEntries().map((entry) => ({
+  const entryPaths = (await getFlatEntries()).map((entry) => ({
     params: { slug: entry.slug },
     props: { kind: "entry", entry },
   }));
 
-  const sectionPaths = [...new Set([...getSections(), ...legacySections])]
+  const sectionPaths = [...new Set([...(await getSections()), ...legacySections])]
     .filter((section) => !reservedSections.has(section))
     .map((section) => ({
       params: { slug: section },
@@ -35,5 +36,6 @@ const { kind, entry, section } = Astro.props;
 {kind === "entry" && entry.layout === "content" && <ContentFoldersPage />}
 {kind === "entry" && entry.layout === "bio" && <BioPage entry={entry} />}
 {kind === "entry" && entry.layout === "resume" && <ResumePage entry={entry} />}
+{kind === "entry" && entry.layout === "effect-course" && <EffectCrashCourse entry={entry} />}
 {kind === "entry" && entry.slug === "all" && <AllPage />}
-{kind === "entry" && entry.section !== "media" && entry.layout !== "rss" && entry.layout !== "content" && entry.layout !== "bio" && entry.layout !== "resume" && entry.slug !== "all" && <DefaultSingle entry={entry} />}
+{kind === "entry" && entry.section !== "media" && entry.layout !== "rss" && entry.layout !== "content" && entry.layout !== "bio" && entry.layout !== "resume" && entry.layout !== "effect-course" && entry.slug !== "all" && <DefaultSingle entry={entry} />}

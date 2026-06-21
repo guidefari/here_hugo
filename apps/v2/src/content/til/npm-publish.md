@@ -2,7 +2,7 @@
 title: "TIL: How to publish an npm package"
 date: 2023-08-13T08:20:19+02:00
 description: Also set up an automated way to do it, leveraging Github Actions. With changelogs & versioning
-tags: [til]
+tags: [til, effect]
 ---
 
 # Context
@@ -11,7 +11,9 @@ It ain't much yet, but one of the goals in this project was learning how to publ
 
 Quite happy with the workflow so far.
 
-- [My Repo](https://github.com/txndai/spotify-effect)
+- [opensound.dev](https://opensound.dev/) — current home of the project
+- [github.com/planetaryescape/opensound](https://github.com/planetaryescape/opensound) — source
+- [spotify.opensound.dev](https://spotify.opensound.dev) — the spotify-effect tool itself
 - [npm package - (spotify-effect)](https://www.npmjs.com/package/spotify-effect?activeTab=readme)
 
 Now, onto how it's done. These are the main tools I used:

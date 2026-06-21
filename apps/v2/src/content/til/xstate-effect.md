@@ -2,7 +2,7 @@
 title: "TIL: Xstate Effect"
 date: 2024-05-20T10:43:32+02:00
 description: Something I learnt today. Maybe more than one thing👾
-tags: [til]
+tags: [til, effect]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Xstate+Effect']
 ---
 

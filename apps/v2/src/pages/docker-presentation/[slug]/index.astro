@@ -2,8 +2,8 @@
 import { getNestedEntries } from "../../../lib/content.mjs";
 import DefaultSingle from "../../../components/DefaultSingle.astro";
 
-export function getStaticPaths() {
-  return getNestedEntries("docker-presentation").map((entry) => ({
+export async function getStaticPaths() {
+  return (await getNestedEntries("docker-presentation")).map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));

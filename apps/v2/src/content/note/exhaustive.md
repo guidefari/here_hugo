@@ -2,7 +2,7 @@
 title: "Exhaustive Pattern Matching"
 date: 2026-03-22T02:25:09+02:00
 description: Why exhaustive pattern matching matters, and how it makes code safer, clearer, and easier to change.
-tags: ["typescript", "ai"]
+tags: ["typescript", "ai", "effect"]
 images:
   [
     "https://images-here-hugo.vercel.app/api/og-image?title=Exhaustive%20Pattern%20Matching",

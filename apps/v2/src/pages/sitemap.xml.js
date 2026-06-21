@@ -14,7 +14,12 @@ function absoluteUrl(pathname) {
   return new URL(pathname, site.url).toString();
 }
 
-export function GET() {
+export async function GET() {
+  const [sections, tags, entries] = await Promise.all([
+    getSections(),
+    getAllTags(),
+    getAllEntries(),
+  ]);
   const paths = new Set([
     "/",
     "/writing/",
@@ -22,9 +27,9 @@ export function GET() {
     "/read/",
     "/tags/",
     "/categories/",
-    ...[...new Set([...getSections(), ...legacySections])].map((section) => `/${section}/`),
-    ...getAllTags().map((tag) => `/tags/${tag.slug}/`),
-    ...getAllEntries().map((entry) => entry.permalink),
+    ...[...new Set([...sections, ...legacySections])].map((section) => `/${section}/`),
+    ...tags.map((tag) => `/tags/${tag.slug}/`),
+    ...entries.map((entry) => entry.permalink),
   ]);
 
   const urls = [...paths].sort().map((pathname) => `<url><loc>${escapeXml(absoluteUrl(pathname))}</loc></url>`).join("");

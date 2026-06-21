@@ -1,7 +1,7 @@
 ---
 import { getEntriesBySection } from "../lib/content.mjs";
 
-const items = getEntriesBySection("media").slice(0, 3);
+const items = (await getEntriesBySection("media")).slice(0, 3);
 ---
 
 {items.length > 0 && (
@@ -11,8 +11,8 @@ const items = getEntriesBySection("media").slice(0, 3);
     </div>
     <ul class="flex flex-col gap-3 m-0 p-0">
       {items.map((entry) => {
-        const youtubeId = entry.frontmatter.youtube_id;
-        const mediaType = entry.frontmatter.media_type ?? "media";
+        const youtubeId = entry.data.youtube_id;
+        const mediaType = entry.data.media_type ?? "media";
         const image = entry.images[0];
         return (
           <li class="list-none">

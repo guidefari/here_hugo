@@ -4,7 +4,7 @@ import { getAllEntries, getCanonicalUrl } from "../../lib/content.mjs";
 import { sectionMeta, writingSections } from "../../lib/site.mjs";
 import PostListItem from "../../components/PostListItem.astro";
 
-const entries = getAllEntries().filter((entry) => writingSections.includes(entry.section));
+const entries = (await getAllEntries()).filter((entry) => writingSections.includes(entry.section));
 const filters = writingSections.map((section) => ({ section, ...sectionMeta[section] }));
 ---
 

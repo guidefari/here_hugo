@@ -3,15 +3,15 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getAllTags, getCanonicalUrl, getEntriesByTag } from "../../../lib/content.mjs";
 import PostListItem from "../../../components/PostListItem.astro";
 
-export function getStaticPaths() {
-  return getAllTags().map((tag) => ({
+export async function getStaticPaths() {
+  return (await getAllTags()).map((tag) => ({
     params: { tag: tag.slug },
     props: { tag },
   }));
 }
 
 const { tag } = Astro.props;
-const entries = getEntriesByTag(tag.slug);
+const entries = await getEntriesByTag(tag.slug);
 ---
 
 <BaseLayout title={`#${tag.label}`} canonical={getCanonicalUrl(`/tags/${tag.slug}/`)}>

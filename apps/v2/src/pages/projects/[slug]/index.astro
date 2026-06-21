@@ -1,0 +1,15 @@
+---
+import { projects, getProject } from "../../../lib/projects.mjs";
+import ProjectSingle from "../../../components/ProjectSingle.astro";
+
+export function getStaticPaths() {
+  return projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<ProjectSingle project={project} />

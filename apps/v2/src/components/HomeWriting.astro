@@ -3,8 +3,8 @@ import { getAllEntries } from "../lib/content.mjs";
 import { homeWritingSections } from "../lib/site.mjs";
 import PostListItemCompact from "./PostListItemCompact.astro";
 
-const posts = getAllEntries().filter((entry) => homeWritingSections.includes(entry.section));
-const featured = posts.filter((entry) => entry.frontmatter.featured);
+const posts = (await getAllEntries()).filter((entry) => homeWritingSections.includes(entry.section));
+const featured = posts.filter((entry) => entry.data.featured);
 const recent = posts.slice(0, 4);
 ---
 

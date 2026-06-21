@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/site.mjs";
+---
+
+<BaseLayout
+  title={`Search · ${site.title}`}
+  description="Search the site."
+>
+  <main class="flex flex-col w-full px-4 lg:px-6 max-w-3xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold m-0">Search</h1>
+      <p class="text-text/60 text-sm mt-1 m-0">Press <kbd>⌘K</kbd> or <kbd>Ctrl K</kbd> from anywhere to open search.</p>
+    </header>
+    <div id="pagefind-ui-page" data-pagefind-ui></div>
+    <noscript>
+      <p class="text-sm text-text/70">JavaScript is required for search.</p>
+    </noscript>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  body {
+    color-scheme: light dark;
+  }
+</style>
+
+<script>
+  const pagefindCss = "/pagefind/pagefind-ui.css";
+  const pagefindJs = "/pagefind/pagefind-ui.js";
+
+  function init() {
+    const root = document.getElementById("pagefind-ui-page");
+    if (!root) return;
+
+    (async () => {
+      try {
+        if (!document.querySelector(`link[href$="${pagefindCss}"]`)) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = pagefindCss;
+          document.head.appendChild(link);
+        }
+        if (!window.PagefindUI) {
+          await import(/* @vite-ignore */ pagefindJs);
+        }
+        new window.PagefindUI({
+          element: root,
+          showImages: false,
+          showSubResults: true,
+          resetStyles: true,
+        });
+      } catch (error) {
+        console.error("Pagefind UI failed to load", error);
+        root.innerHTML =
+          '<p style="padding: 1rem; color: #888; font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
+      }
+    })();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+</script>

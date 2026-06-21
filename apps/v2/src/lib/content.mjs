@@ -1,7 +1,7 @@
+import { getCollection, getEntry } from "astro:content";
 import { flattenedSections, sectionMeta, site } from "./site.mjs";
 
-const modules = import.meta.glob("../../../v1/content/**/*.md", { eager: true });
-
+const collectionName = "entries";
 const indexPages = new Map();
 
 export function slugify(value) {
@@ -43,40 +43,7 @@ function withTrailingSlash(value) {
   return path === "/" ? path : `${path}/`;
 }
 
-function normalizePath(path) {
-  const withoutContent = path.replace(/^.*content\//, "");
-  const parts = withoutContent.split("/");
-  const filename = parts.at(-1) ?? "";
-  const basename = filename.replace(/\.md$/, "");
-  const section = parts.length > 1 ? parts[0] : "";
-  return {
-    relativePath: withoutContent,
-    section,
-    basename,
-    isIndex: basename === "_index",
-    isRootPage: parts.length === 1,
-  };
-}
-
-function permalinkFor({ section, basename, isRootPage }) {
-  const slug = slugify(basename);
-
-  if (isRootPage) return withTrailingSlash(slug);
-  if (flattenedSections.has(section)) return withTrailingSlash(slug);
-  return withTrailingSlash(`${section}/${slug}`);
-}
-
-function normalizeAliases(value) {
-  if (!value) return [];
-  const aliases = Array.isArray(value) ? value : [value];
-  return aliases
-    .filter(Boolean)
-    .map((alias) => withTrailingSlash(alias))
-    .filter((alias) => alias !== "//");
-}
-
-function readDate(frontmatter) {
-  const value = frontmatter.date ?? frontmatter.publishDate ?? frontmatter.lastmod;
+function readDate(value) {
   if (!value) return undefined;
   const date = value instanceof Date ? value : new Date(value);
   return Number.isNaN(date.valueOf()) ? undefined : date;
@@ -92,64 +59,133 @@ function normalizeTags(tags) {
   return [String(tags)];
 }
 
-function buildEntry(path, module) {
-  const file = normalizePath(path);
-  const frontmatter = module.frontmatter ?? {};
-  const slug = slugify(file.basename);
-  const permalink = permalinkFor(file);
-  const rawContent = typeof module.rawContent === "function" ? module.rawContent() : "";
+function normalizeAliases(value) {
+  if (!value) return [];
+  const aliases = Array.isArray(value) ? value : [value];
+  return aliases
+    .filter(Boolean)
+    .map((alias) => withTrailingSlash(alias))
+    .filter((alias) => alias !== "//");
+}
+
+function buildEntry(astroEntry) {
+  const id = astroEntry.id;
+  const parts = id.split("/");
+  const filename = parts.at(-1) ?? "";
+  const basename = filename;
+  const section = parts.length > 1 ? parts[0] : "";
+  const isIndex = basename === "_index";
+  const isRootPage = parts.length === 1;
+
+  const slug = slugify(basename);
+  let permalink;
+  if (isRootPage) permalink = withTrailingSlash(slug);
+  else if (flattenedSections.has(section)) permalink = withTrailingSlash(slug);
+  else permalink = withTrailingSlash(`${section}/${slug}`);
+
+  const data = astroEntry.data ?? {};
+  const body = astroEntry.body ?? "";
 
   return {
-    ...file,
-    module,
-    frontmatter,
+    id,
+    section,
+    basename,
     slug,
     permalink,
-    title: frontmatter.title ?? titleize(file.basename),
-    description: frontmatter.description ?? "",
-    date: readDate(frontmatter),
-    draft: frontmatter.draft === true,
-    tags: normalizeTags(frontmatter.tags),
-    aliases: normalizeAliases(frontmatter.aliases),
-    layout: frontmatter.layout ?? "",
-    images: Array.isArray(frontmatter.images) ? frontmatter.images : [],
-    hasMermaid: rawContent.includes("```mermaid"),
-    hasBody: rawContent.trim().length > 0,
+    isIndex,
+    isRootPage,
+    title: data.title ?? titleize(basename),
+    description: data.description ?? data.summary ?? "",
+    date: readDate(data.date ?? data.publishDate ?? data.lastmod),
+    draft: data.draft === true,
+    tags: normalizeTags(data.tags),
+    aliases: normalizeAliases(data.aliases),
+    layout: data.layout ?? "",
+    images: Array.isArray(data.images) ? data.images : [],
+    hasMermaid: body.includes("```mermaid"),
+    hasBody: body.trim().length > 0,
+    data,
+    body,
+    _entry: astroEntry,
   };
 }
 
-const allEntries = Object.entries(modules).map(([path, module]) => buildEntry(path, module));
+let cachedEntries = null;
+let cachedAll = null;
+let cachedFlat = null;
+let cachedSections = null;
 
-for (const entry of allEntries) {
-  if (entry.isIndex && entry.section) indexPages.set(entry.section, entry);
+async function loadAll() {
+  if (cachedEntries) return cachedEntries;
+  const raw = await getCollection(collectionName, ({ data }) => data?.draft !== true);
+  const entries = raw.map(buildEntry);
+  cachedEntries = entries;
+  for (const entry of entries) {
+    if (entry.isIndex && entry.section) indexPages.set(entry.section, entry);
+  }
+  return entries;
 }
 
-export function getAllEntries() {
-  return allEntries.filter((entry) => !entry.isIndex && !entry.draft).sort(sortByDateDesc);
+function allSorted() {
+  if (!cachedAll) cachedAll = [...cachedEntries].sort(sortByDateDesc);
+  return cachedAll;
 }
 
-export function getEntryByPermalink(permalink) {
+function flatEntries() {
+  if (!cachedFlat) {
+    cachedFlat = cachedEntries.filter(
+      (entry) => entry.isRootPage || flattenedSections.has(entry.section)
+    );
+  }
+  return cachedFlat;
+}
+
+function sections() {
+  if (!cachedSections) {
+    cachedSections = [
+      ...new Set(cachedEntries.map((entry) => entry.section).filter(Boolean)),
+    ].sort();
+  }
+  return cachedSections;
+}
+
+export async function getAllEntries() {
+  await loadAll();
+  return allSorted();
+}
+
+export async function getEntryByPermalink(permalink) {
+  await loadAll();
   const target = withTrailingSlash(permalink);
-  return getAllEntries().find((entry) => entry.permalink === target);
+  return allSorted().find((entry) => entry.permalink === target);
 }
 
-export function getFlatEntries() {
-  return getAllEntries().filter((entry) => entry.isRootPage || flattenedSections.has(entry.section));
+export async function getFlatEntries() {
+  await loadAll();
+  return flatEntries();
 }
 
-export function getNestedEntries(section) {
-  return getAllEntries().filter((entry) => entry.section === section && !flattenedSections.has(section));
+export async function getNestedEntries(section) {
+  await loadAll();
+  return allSorted().filter(
+    (entry) => entry.section === section && !flattenedSections.has(section)
+  );
 }
 
-export function getEntriesBySection(section) {
-  return getAllEntries().filter((entry) => entry.section === section).sort(sortByDateDesc);
+export async function getEntriesBySection(section) {
+  await loadAll();
+  return cachedEntries
+    .filter((entry) => entry.section === section)
+    .sort(sortByDateDesc);
 }
 
-export function getSections() {
-  return [...new Set(getAllEntries().map((entry) => entry.section).filter(Boolean))].sort();
+export async function getSections() {
+  await loadAll();
+  return sections();
 }
 
-export function getSectionInfo(section) {
+export async function getSectionInfo(section) {
+  await loadAll();
   const index = indexPages.get(section);
   const meta = sectionMeta[section];
   return {
@@ -158,9 +194,10 @@ export function getSectionInfo(section) {
   };
 }
 
-export function getAllTags() {
+export async function getAllTags() {
+  await loadAll();
   const tags = new Map();
-  for (const entry of getAllEntries()) {
+  for (const entry of cachedEntries) {
     for (const tag of entry.tags) {
       const slug = tagSlugify(tag);
       const current = tags.get(slug);
@@ -174,20 +211,24 @@ export function getAllTags() {
   for (const tag of legacyTags) {
     if (!tags.has(tag)) tags.set(tag, { slug: tag, label: tag, count: 0 });
   }
-  return [...tags.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  return [...tags.values()].sort(
+    (a, b) => b.count - a.count || a.label.localeCompare(b.label)
+  );
 }
 
-export function getEntriesByTag(tagSlug) {
-  return getAllEntries()
+export async function getEntriesByTag(tagSlug) {
+  await loadAll();
+  return cachedEntries
     .filter((entry) => entry.tags.some((tag) => tagSlugify(tag) === tagSlug))
     .sort(sortByDateDesc);
 }
 
-export function getAliasTargets() {
-  const reserved = new Set(getAllEntries().map((entry) => entry.permalink));
+export async function getAliasTargets() {
+  await loadAll();
+  const reserved = new Set(cachedEntries.map((entry) => entry.permalink));
   const aliases = new Map(legacyAliases);
 
-  for (const entry of getAllEntries()) {
+  for (const entry of cachedEntries) {
     for (const alias of entry.aliases) {
       if (!reserved.has(alias)) aliases.set(alias, entry.permalink);
     }
@@ -246,10 +287,12 @@ export function getCanonicalUrl(pathname) {
 }
 
 export async function getEntryHtml(entry) {
-  if (typeof entry.module.compiledContent === "function") {
-    return await entry.module.compiledContent();
-  }
-  return entry.description;
+  if (!entry?._entry) return entry?.description ?? "";
+  const { render } = await import("astro:content");
+  const { experimental_AstroContainer } = await import("astro/container");
+  const { Content } = await render(entry._entry);
+  const container = await experimental_AstroContainer.create();
+  return await container.renderToString(Content);
 }
 
 export function getOgImage(entry) {

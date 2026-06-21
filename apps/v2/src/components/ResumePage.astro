@@ -3,11 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getOgImage } from "../lib/content.mjs";
 
 const { entry } = Astro.props;
-const skills = Array.isArray(entry.frontmatter.skills) ? entry.frontmatter.skills : [];
-const experience = Array.isArray(entry.frontmatter.experience) ? entry.frontmatter.experience : [];
-const consulting = Array.isArray(entry.frontmatter.consulting) ? entry.frontmatter.consulting : [];
-const leadership = Array.isArray(entry.frontmatter.leadership) ? entry.frontmatter.leadership : [];
-const education = Array.isArray(entry.frontmatter.education) ? entry.frontmatter.education : [];
+const skills = Array.isArray(entry.data.skills) ? entry.data.skills : [];
+const experience = Array.isArray(entry.data.experience) ? entry.data.experience : [];
+const consulting = Array.isArray(entry.data.consulting) ? entry.data.consulting : [];
+const leadership = Array.isArray(entry.data.leadership) ? entry.data.leadership : [];
+const education = Array.isArray(entry.data.education) ? entry.data.education : [];
 
 function escapeHtml(value) {
   return String(value ?? "")

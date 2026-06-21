@@ -4,8 +4,8 @@ import { getCanonicalUrl, getEntriesBySection, getSectionInfo } from "../lib/con
 import PostListItem from "./PostListItem.astro";
 
 const { section } = Astro.props;
-const info = getSectionInfo(section);
-const entries = getEntriesBySection(section);
+const info = await getSectionInfo(section);
+const entries = await getEntriesBySection(section);
 const path = `/${section}/`;
 ---
 

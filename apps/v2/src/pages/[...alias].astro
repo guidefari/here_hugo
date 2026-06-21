@@ -2,8 +2,8 @@
 import { getAliasTargets } from "../lib/content.mjs";
 import AliasPage from "../components/AliasPage.astro";
 
-export function getStaticPaths() {
-  return getAliasTargets().map(({ alias, target }) => ({
+export async function getStaticPaths() {
+  return (await getAliasTargets()).map(({ alias, target }) => ({
     params: { alias: alias.replace(/^\/+|\/+$/g, "") },
     props: { target },
   }));

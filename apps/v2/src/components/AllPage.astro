@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getAllEntries, getCanonicalUrl } from "../lib/content.mjs";
 
-const entries = getAllEntries();
+const entries = await getAllEntries();
 ---
 
 <BaseLayout title="All Posts" canonical={getCanonicalUrl("/all/")}>
