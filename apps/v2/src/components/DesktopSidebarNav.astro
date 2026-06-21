@@ -1,7 +1,12 @@
 ---
-import { navItems } from "../lib/site.mjs";
+import { navItems, writingTree } from "../lib/site.mjs";
 
 const { isHome = false } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isWritingArea = writingTree.children.some(
+  (child) => currentPath === child.href || currentPath.startsWith(child.href)
+);
+const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 ---
 
 <nav aria-label="Site sections" class="w-full flex flex-col justify-between h-full">
@@ -32,13 +37,57 @@ const { isHome = false } = Astro.props;
     )}
 
     <ul class="flex flex-col gap-1 p-0 m-0 list-none">
-      {navItems.map((item) => (
-        <li>
-          <a href={item.href} class="nav-chip w-full justify-start" data-nav-sound>
-            <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{item.label}</span><span class="nav-chip__bracket">]</span>
-          </a>
-        </li>
-      ))}
+      {navItems.map((item) => {
+        if (item.label === "writing") {
+          return (
+            <li class="nav-tree" data-tree="writing">
+              <details open={isWritingArea} class="group">
+                <summary
+                  class:list={["nav-chip w-full justify-start cursor-pointer list-none", isWritingArea && "border-highlight text-highlight"]}
+                  data-nav-sound
+                >
+                  <span class="nav-chip__bracket">[</span>
+                  <span class="nav-chip__label flex-1 text-left">{item.label}</span>
+                  <span class="nav-chip__bracket">]</span>
+                  <span class="nav-tree__caret text-text/50 text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+                </summary>
+                <ul class="nav-tree__children flex flex-col gap-1 mt-1 pl-3 border-l border-text/15">
+                  {writingTree.children.map((child) => {
+                    const isActive = currentPath === child.href;
+                    return (
+                      <li>
+                        <a
+                          href={child.href}
+                          class:list={["nav-chip nav-chip--child w-full justify-start text-[0.72rem]", isActive && "border-highlight text-highlight"]}
+                          aria-current={isActive ? "page" : undefined}
+                          data-nav-sound
+                        >
+                          <span class="nav-chip__bracket">[</span>
+                          <span class="nav-chip__label">{child.label}</span>
+                          <span class="nav-chip__bracket">]</span>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </details>
+            </li>
+          );
+        }
+        const isActive = writingChildHrefs.has(item.href) && currentPath === item.href;
+        return (
+          <li>
+            <a
+              href={item.href}
+              class:list={["nav-chip w-full justify-start", isActive && "border-highlight text-highlight"]}
+              aria-current={isActive ? "page" : undefined}
+              data-nav-sound
+            >
+              <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{item.label}</span><span class="nav-chip__bracket">]</span>
+            </a>
+          </li>
+        );
+      })}
       <li>
         <button type="button" data-search-toggle class="nav-chip w-full justify-start" data-nav-sound aria-label="Search (Cmd+K)">
           <span class="nav-chip__bracket">[</span>
@@ -59,3 +108,12 @@ const { isHome = false } = Astro.props;
     </form>
   </div>
 </nav>
+
+<style>
+  .nav-tree > details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-tree > details > summary::marker {
+    content: "";
+  }
+</style>
