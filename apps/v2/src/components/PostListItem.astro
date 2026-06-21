@@ -2,14 +2,16 @@
 import { formatDate } from "../lib/content.mjs";
 import { sectionLinks } from "../lib/site.mjs";
 
-const { entry } = Astro.props;
+const { entry, showSection = true } = Astro.props;
 const sectionHref = sectionLinks[entry.section] ?? `/${entry.section}/`;
 ---
 
 <li class="list-none py-3" data-section={entry.section}>
   <div class="flex items-start gap-4">
-    <a href={sectionHref} class="w-16 shrink-0 text-xs font-mono text-accentText/60 lowercase hover:text-accentText transition-colors no-underline mt-0.5">{entry.section}</a>
-    <div class="flex flex-col gap-1 min-w-0 flex-1">
+    {showSection && (
+      <a href={sectionHref} class="w-16 shrink-0 text-xs font-mono text-accentText/60 lowercase hover:text-accentText transition-colors no-underline mt-0.5">{entry.section}</a>
+    )}
+    <div class:list={["flex flex-col gap-1 min-w-0", showSection ? "flex-1" : "w-full"]}>
       <div class="flex items-start justify-between gap-2">
         <a href={entry.permalink} class="post-link font-bold leading-snug text-highlight hover:text-white transition-colors duration-150 no-underline">{entry.title}</a>
         <time class="text-xs font-mono text-text/40 shrink-0 mt-0.5">{formatDate(entry.date, { month: "short", year: "2-digit" })}{entry.draft && <span class="text-red-400"> DRAFT</span>}</time>

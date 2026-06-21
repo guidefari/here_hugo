@@ -18,7 +18,7 @@ const path = `/${section}/`;
     </div>
 
     <WritingList listId={`section-${section}-list`}>
-      {entries.map((entry) => <PostListItem entry={entry} />)}
+      {entries.map((entry) => <PostListItem entry={entry} showSection={false} />)}
     </WritingList>
   </main>
 </BaseLayout>
