@@ -103,6 +103,9 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     height: 100dvh;
     height: 100vh;
   }
+  #mobile-nav-open[aria-expanded="true"] {
+    display: none;
+  }
   .nav-tree > details > summary::-webkit-details-marker {
     display: none;
   }
