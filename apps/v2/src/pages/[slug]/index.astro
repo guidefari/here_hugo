@@ -9,6 +9,7 @@ import AllPage from "../../components/AllPage.astro";
 import BioPage from "../../components/BioPage.astro";
 import ResumePage from "../../components/ResumePage.astro";
 import EffectCrashCourse from "../../components/EffectCrashCourse.astro";
+import UnofficeHoursPage from "../../components/UnofficeHoursPage.astro";
 
 export async function getStaticPaths() {
   const reservedSections = new Set(["media", "read", "writing", "tags", "categories"]);
@@ -37,5 +38,6 @@ const { kind, entry, section } = Astro.props;
 {kind === "entry" && entry.layout === "bio" && <BioPage entry={entry} />}
 {kind === "entry" && entry.layout === "resume" && <ResumePage entry={entry} />}
 {kind === "entry" && entry.layout === "effect-course" && <EffectCrashCourse entry={entry} />}
+{kind === "entry" && entry.layout === "unoffice-hours" && <UnofficeHoursPage entry={entry} />}
 {kind === "entry" && entry.slug === "all" && <AllPage />}
-{kind === "entry" && entry.section !== "media" && entry.layout !== "rss" && entry.layout !== "content" && entry.layout !== "bio" && entry.layout !== "resume" && entry.layout !== "effect-course" && entry.slug !== "all" && <DefaultSingle entry={entry} />}
+{kind === "entry" && entry.section !== "media" && entry.layout !== "rss" && entry.layout !== "content" && entry.layout !== "bio" && entry.layout !== "resume" && entry.layout !== "effect-course" && entry.layout !== "unoffice-hours" && entry.slug !== "all" && <DefaultSingle entry={entry} />}
