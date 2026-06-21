@@ -33,6 +33,20 @@ export const flattenedSections = new Set([
 
 export const writingSections = ["note", "til", "bliki", "book", "resource", "read"];
 
+export const writingTree = {
+  label: "writing",
+  href: "/writing/",
+  children: [
+    { label: "all", href: "/writing/" },
+    { label: "notes", href: "/note/" },
+    { label: "til", href: "/til/" },
+    { label: "bliki", href: "/bliki/" },
+    { label: "books", href: "/book/" },
+    { label: "resources", href: "/resource/" },
+    { label: "reads", href: "/read/" },
+  ],
+};
+
 export const homeWritingSections = ["note", "til", "bliki", "book"];
 
 export const sectionLinks = {
