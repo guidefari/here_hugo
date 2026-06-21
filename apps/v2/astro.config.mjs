@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import { fileURLToPath } from "node:url";
 import pagefind from "astro-pagefind";
+import tailwindcss from "@tailwindcss/vite";
 
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
 
@@ -17,6 +18,7 @@ export default defineConfig({
     syntaxHighlight: "shiki",
   },
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         bio: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),

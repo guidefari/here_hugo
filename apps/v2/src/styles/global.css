@@ -1,0 +1,210 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../../content";
+@source "../../layouts";
+
+@theme {
+  --color-highlight: #f5d547;
+  --color-calloutcolor: dodgerblue;
+  --color-hovercolor: #02394a;
+  --color-darkMaincolor: #5c8001;
+  --color-accentText: #acc196;
+  --color-text: #c8c2b7;
+  --color-bg: #1a2f38;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(hero-avatar),
+::view-transition-old(hero-name) {
+  animation: 200ms ease-out both fade-out;
+}
+
+::view-transition-new(hero-avatar),
+::view-transition-new(hero-name) {
+  animation: 250ms ease-in both fade-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@layer base {
+  html {
+    line-height: 1.6;
+    font-weight: 500;
+    scrollbar-gutter: stable;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  ::selection {
+    background: var(--color-highlight);
+    color: #000;
+  }
+
+  p {
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+@layer base {
+  blockquote {
+    margin: 50px auto;
+    font-style: italic;
+    padding: 1.2em 30px 1.2em 3.5rem;
+    border-left: 8px solid #78c0a8;
+    position: relative;
+    background: #222526;
+  }
+
+  blockquote::before {
+    font-family: Arial;
+    content: "\201C";
+    color: var(--color-highlight);
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+  }
+
+  blockquote::after {
+    content: "";
+  }
+
+  blockquote span {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+
+  figure {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  figure img {
+    max-height: 500px;
+  }
+
+  @media screen and (min-width: 600px) {
+    figure {
+      padding: 0 40px;
+    }
+  }
+
+  figure h4 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+
+  figure h4::before {
+    content: "↳ ";
+  }
+
+  code {
+    background-color: #f1f1f1;
+    color: #1a2f38;
+    padding: 0.1em 0.2em;
+  }
+
+  a code,
+  .prose a code {
+    background: transparent;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  a code:hover,
+  .prose a code:hover {
+    color: var(--color-highlight);
+    background-color: transparent;
+  }
+
+  strong {
+    color: var(--color-highlight);
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  table th,
+  table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table th {
+    font-size: large;
+  }
+
+  time {
+    color: var(--color-accentText);
+    font-size: 0.8rem;
+  }
+
+  .draft-label {
+    color: var(--color-highlight);
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: #f9f2f4;
+  }
+
+  .tldr {
+    background: rgba(245, 213, 71, 0.08);
+    border-left: 4px solid var(--color-highlight);
+    padding: 0.75rem 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .home-tag::before,
+  .tags li::before {
+    content: "🏷 ";
+  }
+
+  .home-tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-tag {
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.25rem;
+    margin-right: 1.25rem;
+  }
+}
+
+@utility social-links {
+  & svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
