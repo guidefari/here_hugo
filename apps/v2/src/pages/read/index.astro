@@ -18,7 +18,7 @@ const chips = tags.map((tag) => ({ value: tag.label, label: `#${tag.label}` }));
 
     <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post" target="popupwindow" class="mb-6 flex flex-col sm:flex-row gap-2">
       <label for="bd-email-read" class="sr-only">Email address</label>
-      <input type="email" name="email" id="bd-email-read" required placeholder="your@email.com" autocomplete="email" class="flex-1 px-3 py-2 font-mono text-sm bg-transparent border rounded-sm border-text/40 text-text placeholder:text-text/50 focus:outline-none focus:border-highlight" />
+      <input type="email" name="email" id="bd-email-read" required placeholder="your@email.com" autocomplete="email" class="flex-1 px-3 py-2 font-mono text-base bg-transparent border rounded-sm border-text/40 text-text placeholder:text-text/50 focus:outline-none focus:border-highlight" />
       <button type="submit" class="px-4 py-2 font-mono text-sm tracking-wide uppercase transition border rounded-sm border-text/40 text-text/80 hover:border-highlight hover:text-highlight focus:outline-none">Subscribe</button>
     </form>
 
