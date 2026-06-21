@@ -4,11 +4,12 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --port 1414",
-    "build": "astro build && bun pagefind --site dist",
+    "build": "astro build",
     "preview": "astro preview --port 1414"
   },
   "dependencies": {
     "@astrojs/rss": "latest",
-    "astro": "latest"
+    "astro": "latest",
+    "astro-pagefind": "^2.0.0"
   }
 }

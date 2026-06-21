@@ -24,7 +24,7 @@ export default $config({
       notFound: "404",
       build: {
         command: "bun run build",
-        output: "apps/v1/public",
+        output: "apps/v2/dist",
       },
       dev: {
         command: "bun run dev",

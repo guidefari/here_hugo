@@ -1,12 +1,14 @@
 import { defineConfig } from "astro/config";
 import { fileURLToPath } from "node:url";
+import pagefind from "astro-pagefind";
 
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
 
 export default defineConfig({
   site: "https://guidefari.com",
   output: "static",
-  trailingSlash: "always",
+  integrations: [pagefind()],
+  trailingSlash: "ignore",
   server: {
     host: "localhost",
     port: 1414,
@@ -21,6 +23,11 @@ export default defineConfig({
         resume: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
         rss: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
         content: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
+        "effect-course": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
+        effect: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
+        "effect.website": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
+        "effect.solutions": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
+        "effect.institute": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
       },
     },
     server: {

@@ -9,16 +9,11 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "turbo run build --filter=@here/v1 --filter=@here/v2",
-    "build:v1": "bun --cwd apps/v1 run build",
+    "build": "bun --cwd apps/v2 run build",
     "build:v2": "bun --cwd apps/v2 run build",
-    "watch": "bun --cwd apps/v1 run watch",
-    "dev": "turbo run dev --filter=@here/v1 --filter=@here/v2",
-    "dev:v1": "bun --cwd apps/v1 run dev",
+    "dev": "bun --cwd apps/v2 run dev",
     "dev:v2": "bun --cwd apps/v2 run dev",
-    "search:dev": "bun --cwd apps/v1 run search:dev",
-    "dev:sst": "sst dev",
-    "urls:compare": "bun run build && bun scripts/compare-url-manifests.mjs"
+    "dev:sst": "sst dev"
   },
   "repository": {
     "type": "git",
