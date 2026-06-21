@@ -8,13 +8,13 @@ const isWritingArea = writingTree.children.some(
 const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 ---
 
-<button id="mobile-nav-open" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav-overlay" class="lg:hidden fixed top-4 right-4 z-50 flex flex-col justify-center items-center w-10 h-10 gap-1.5 border border-text/30 rounded-sm bg-bg/90 backdrop-blur-sm transition hover:border-highlight focus:outline-none focus:ring-2 focus:ring-highlight" data-nav-sound>
+<button id="mobile-nav-open" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav-overlay" class="lg:hidden fixed top-4 right-4 z-50 flex flex-col justify-center items-center w-10 h-10 gap-1.5 border border-text/40 rounded-sm bg-bg transition hover:border-highlight focus:outline-none focus:ring-2 focus:ring-highlight" data-nav-sound>
   <span class="hamburger-bar block w-5 h-px bg-text transition-all duration-300"></span>
   <span class="hamburger-bar block w-5 h-px bg-text transition-all duration-300"></span>
   <span class="hamburger-bar block w-5 h-px bg-text transition-all duration-300"></span>
 </button>
 
-<div id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site navigation" class="lg:hidden fixed inset-0 z-40 flex flex-col bg-[#0F1F26] overflow-y-auto translate-y-full opacity-0 transition-[transform,opacity] duration-300 ease-out">
+<div id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Site navigation" class="mobile-nav lg:hidden fixed inset-0 z-40 flex flex-col bg-[#0F1F26] overflow-y-auto translate-y-full opacity-0 transition-[transform,opacity] duration-300 ease-out">
   <div class="flex items-center justify-between px-5 py-4 border-b border-text/20">
     <div class="flex flex-col">
       <span class="font-mono text-base font-bold text-text">
@@ -27,8 +27,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     <button id="mobile-nav-close" aria-label="Close navigation" class="flex items-center justify-center w-9 h-9 border border-text/30 rounded-sm font-mono text-xs text-text/70 hover:border-highlight hover:text-highlight transition focus:outline-none focus:ring-2 focus:ring-highlight" data-nav-sound>[×]</button>
   </div>
 
-  <nav aria-label="Site sections" class="flex-1 px-5 py-6">
-    <p class="font-mono text-xs text-text/40 mb-4 tracking-widest uppercase">~/navigate</p>
+  <nav aria-label="Site sections" class="px-5 py-6">
     <ul class="flex flex-col gap-2 p-0 m-0 list-none">
       {navItems.map((item) => {
         if (item.label === "writing") {
@@ -89,7 +88,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
     </ul>
   </nav>
 
-  <div class="px-5 pb-8 pt-4 border-t border-text/20">
+  <div class="mt-auto px-5 pt-4 pb-8 border-t border-text/20">
     <p class="mt-0 mb-3 text-sm text-text/75">Notes + reading list in your inbox.</p>
     <form action="https://buttondown.email/api/emails/embed-subscribe/guidefari" method="post" target="popupwindow" class="flex flex-col gap-2">
       <label for="bd-email-mobile" class="sr-only">Email address</label>
@@ -100,6 +99,10 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 </div>
 
 <style>
+  .mobile-nav {
+    height: 100dvh;
+    height: 100vh;
+  }
   .nav-tree > details > summary::-webkit-details-marker {
     display: none;
   }
@@ -116,11 +119,31 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 
     if (!openBtn || !closeBtn || !overlay) return;
 
+    let savedScrollY = 0;
+
+    function lockScroll() {
+      savedScrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    }
+
+    function unlockScroll() {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, savedScrollY);
+    }
+
     function openNav() {
       overlay.classList.remove("translate-y-full", "opacity-0");
       overlay.classList.add("translate-y-0", "opacity-100");
       openBtn.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
+      lockScroll();
       closeBtn.focus();
     }
 
@@ -128,7 +151,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
       overlay.classList.add("translate-y-full", "opacity-0");
       overlay.classList.remove("translate-y-0", "opacity-100");
       openBtn.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
+      unlockScroll();
       openBtn.focus();
     }
 
