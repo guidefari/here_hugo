@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { satteri } from "@astrojs/markdown-satteri";
 import { fileURLToPath } from "node:url";
 import pagefind from "astro-pagefind";
 import tailwindcss from "@tailwindcss/vite";
@@ -15,6 +16,11 @@ export default defineConfig({
     port: 1414,
   },
   markdown: {
+    processor: satteri({
+      features: {
+        smartPunctuation: false,
+      },
+    }),
     syntaxHighlight: "shiki",
   },
   vite: {
