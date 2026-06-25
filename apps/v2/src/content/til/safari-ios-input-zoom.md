@@ -7,12 +7,9 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Avoid+text-sm+o
 ---
 
 ```css
-/* Tailwind utility, expanded into real CSS */
-/* <input class="text-sm" /> */
-.text-sm { font-size: 0.875rem; line-height: 1.25rem; }   /* 14px */
-/* <input class="text-base" /> */
-.text-base { font-size: 1rem; line-height: 1.5rem; }      /* 16px */
-/* The key part is just this: keep input font-size >= 16px */
+/* <input class="text-sm" /> */  .text-sm { font-size: 0.875rem; }   /* 14px */
+/* <input class="text-base" /> */ .text-base { font-size: 1rem; }      /* 16px */
+/* The key part: keep input font-size >= 16px */
 ```
 
 ## The issue

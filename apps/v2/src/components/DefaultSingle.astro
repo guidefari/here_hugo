@@ -8,9 +8,9 @@ const { Content } = await render(entry._entry);
 ---
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} noindex={entry.data.noindex === true} hideFooter={entry.data.hide_footer === true} hasMermaid={entry.hasMermaid}>
-  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 pt-12 pb-8 lg:pt-8">
     <div class="mb-8">
-      <h1 class="text-5xl text-white m-0">{entry.title}</h1>
+      <h1 class="text-3xl lg:text-5xl text-white m-0">{entry.title}</h1>
       {entry.date && <time>Posted on {formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
       {entry.draft && <p class="draft-label">DRAFT</p>}
       <div class="post-tags" data-pagefind-meta="tags">
@@ -26,7 +26,7 @@ const { Content } = await render(entry._entry);
       </div>
     </div>
     {entry.data.tldr && <div class="tldr">{entry.data.tldr}</div>}
-    <article class="prose lg:prose-xl prose-headings:max-w-none [&_h2]:text-4xl [&_h3]:text-3xl">
+    <article class="prose lg:prose-xl prose-headings:max-w-none prose-pre:overflow-x-auto prose-pre:max-w-full [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h3]:text-xl [&_h3]:lg:text-3xl">
       <Content />
     </article>
   </main>
