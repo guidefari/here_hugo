@@ -182,18 +182,38 @@
   }
 
   table {
+    width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
-  table th,
-  table td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+  table :is(th, td) {
+    padding: 0.875rem 1.25rem;
+    text-align: left;
+    vertical-align: top;
+    border: none;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
   }
 
   table th {
-    font-size: large;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: color-mix(in oklab, var(--color-text) 6%, transparent);
+    border-bottom: 2px solid color-mix(in oklab, var(--color-highlight) 50%, transparent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  table tbody tr:hover {
+    background-color: color-mix(in oklab, var(--color-highlight) 6%, transparent);
+  }
+
+  table tr:last-child td {
+    border-bottom: none;
   }
 
   time {
