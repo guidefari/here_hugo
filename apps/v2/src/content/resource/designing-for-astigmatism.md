@@ -5,6 +5,7 @@ description: A reading-first design checklist for users with astigmatism
 tags: [accessibility, design, ux, frontend]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Designing%20for%20astigmatism']
 full_width: true
+aliases: ["/note/designing-for-astigmatism/"]
 ---
 
 I have astigmatism. Dark mode is unreadable in daylight. Light mode flashbangs me at night. This is a design checklist as I explore how to create more pleasant experiences for my fellow astigmatics🫡.
@@ -315,11 +316,117 @@ Under blur, weight 300 starts to fade into the background, the 1.2 line-height s
 
 ## Mode switching
 
-- Three states, not two: light, dark, follow ambient. The third is what astigmatic and photophobic users actually want.
+Three states, not two. Light for day, dark for indoor, warm-dim for late-night. "Follow ambient" picks the right one based on lux sensor or time-of-day, not OS preference alone.
+
+<div class="ms-section" data-mode-section>
+<div class="ms-compare" data-mode-compare>
+  <div class="ms-card ms-card-light" data-mode-card="light">
+    <div class="ms-card-head">
+      <span class="ms-icon">🌞</span>
+      <span class="ms-name">Light</span>
+    </div>
+    <div class="ms-when">9am · daylight</div>
+    <div class="ms-swatch-row">
+      <span class="cp-swatch" style="background:#121212"></span>
+      <code>#121212</code>
+      <span class="cp-sep">on</span>
+      <span class="cp-swatch" style="background:#F5F1E8;border:1px solid #888"></span>
+      <code>#F5F1E8</code>
+    </div>
+    <div class="ms-text-sample">
+      <div style="font-size:18px;line-height:1.5">Body at 18px on off-pure light.</div>
+      <div style="font-size:16px;line-height:1.5">Body at 16px. Comfortable when the room is bright.</div>
+      <div style="font-size:14px;line-height:1.5">Body at 14px. Still readable in daylight.</div>
+    </div>
+    <div class="ms-why">Off-pure pair. Bright bg matches the bright ambient, dark fg keeps contrast without the white-on-white sting.</div>
+  </div>
+
+  <div class="ms-card ms-card-dark" data-mode-card="dark">
+    <div class="ms-card-head">
+      <span class="ms-icon">🌙</span>
+      <span class="ms-name">Dark</span>
+    </div>
+    <div class="ms-when">3pm · indoor</div>
+    <div class="ms-swatch-row">
+      <span class="cp-swatch" style="background:#E8E8E8"></span>
+      <code>#E8E8E8</code>
+      <span class="cp-sep">on</span>
+      <span class="cp-swatch" style="background:#121212;border:1px solid #444"></span>
+      <code>#121212</code>
+    </div>
+    <div class="ms-text-sample">
+      <div style="font-size:18px;line-height:1.5">Body at 18px on off-pure dark.</div>
+      <div style="font-size:16px;line-height:1.5">Body at 16px. Comfortable when the room is moderate.</div>
+      <div style="font-size:14px;line-height:1.5">Body at 14px. Edges still sharp at this contrast.</div>
+    </div>
+    <div class="ms-why">Off-pure pair reversed. Dark bg cuts screen luminance, light fg keeps edges from being too sharp. Not pure black on pure white.</div>
+  </div>
+
+  <div class="ms-card ms-card-warm" data-mode-card="warm">
+    <div class="ms-card-head">
+      <span class="ms-icon">🌅</span>
+      <span class="ms-name">Warm-dim</span>
+    </div>
+    <div class="ms-when">3am · late night</div>
+    <div class="ms-swatch-row">
+      <span class="cp-swatch" style="background:#D4B896"></span>
+      <code>#D4B896</code>
+      <span class="cp-sep">on</span>
+      <span class="cp-swatch" style="background:#1F1A14;border:1px solid #444"></span>
+      <code>#1F1A14</code>
+    </div>
+    <div class="ms-text-sample">
+      <div style="font-size:18px;line-height:1.5">Body at 18px on warm-dim.</div>
+      <div style="font-size:16px;line-height:1.5">Body at 16px. Comfortable for dark-adapted eyes.</div>
+      <div style="font-size:14px;line-height:1.5">Body at 14px. No melatonin-suppressing blue spike.</div>
+    </div>
+    <div class="ms-why">Low blue + low brightness. Doesn't sting dilated pupils. <em>Not</em> the same as dark mode: dark mode is for moderate indoor light, warm-dim is for after sunset.</div>
+  </div>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Follow ambient →</span>
+  <button class="cp-btn cp-btn-active" data-ambient="day">Day (9am)</button>
+  <button class="cp-btn" data-ambient="indoor">Indoor (3pm)</button>
+  <button class="cp-btn" data-ambient="night">Late night (3am)</button>
+</div>
+</div>
+
 - Tie dark mode to ambient light (lux sensor, time-of-day fallback), not just OS preference.
 - Add a dim/warm mode for late-night reading: lower blue, lower brightness, off-white background. Not the same as dark mode.
 
 ## UI chrome
+
+Focus rings, borders, hit targets, and whitespace. Click a button to see its focus ring. Under blur, the cramped side's ring and border fade out. The generous side holds.
+
+<div class="uc-section" data-ui-section>
+<div class="uc-compare" data-ui-compare>
+  <div class="uc-card uc-card-cramped">
+    <div class="uc-card-head"><span class="uc-tag">Cramped</span></div>
+    <div class="uc-button-row">
+      <button type="button" class="uc-btn uc-btn-cramped">Save</button>
+      <button type="button" class="uc-btn uc-btn-cramped">Cancel</button>
+      <button type="button" class="uc-btn uc-btn-cramped">Apply</button>
+    </div>
+    <div class="uc-meta">28px tall · 4px 8px padding · 1px focus ring · no border · 4px gap</div>
+  </div>
+  <div class="uc-card uc-card-generous">
+    <div class="uc-card-head"><span class="uc-tag">Generous</span></div>
+    <div class="uc-button-row uc-button-row-generous">
+      <button type="button" class="uc-btn uc-btn-generous">Save</button>
+      <button type="button" class="uc-btn uc-btn-generous">Cancel</button>
+      <button type="button" class="uc-btn uc-btn-generous">Apply</button>
+    </div>
+    <div class="uc-meta">48px tall · 12px 20px padding · 2px focus ring + 2px offset · 1px border · 16px gap</div>
+  </div>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Click a button to see its focus ring. Simulate astigmatism:</span>
+  <button class="cp-btn cp-btn-active" data-uc-blur="0">Sharp</button>
+  <button class="cp-btn" data-uc-blur="0.6">Blurred</button>
+</div>
+</div>
 
 - Focus rings 2px+ in both modes.
 - Borders on interactive elements, not just color fill.
@@ -333,6 +440,76 @@ Under blur, weight 300 starts to fade into the background, the 1.2 line-height s
 - Hero images: blur, darken, or shift hue behind any caption.
 
 ## Motion
+
+Motion that doesn't ask permission: autoplay carousels, slow transitions, animations that ignore the OS's "reduce motion" setting. All three punish astigmatic eyes.
+
+### Autoplay is unreadable under blur
+
+A rotating carousel of news headlines. Toggle autoplay off, then turn on the blur to feel what the user feels. The "Reduce motion" option does what the OS preference should: stop the rotation and the cross-fade.
+
+<div class="mt-section" data-mt-section>
+<div class="mt-carousel" data-mt-carousel>
+  <div class="mt-slide mt-slide-active" data-mt-slide="0">
+    <div class="mt-slide-headline">Today's top stories</div>
+    <div class="mt-slide-meta">Updated 2 min ago · 5 stories</div>
+  </div>
+  <div class="mt-slide" data-mt-slide="1">
+    <div class="mt-slide-headline">Weather: 72°F and clear</div>
+    <div class="mt-slide-meta">Updated 8 min ago · 7-day forecast</div>
+  </div>
+  <div class="mt-slide" data-mt-slide="2">
+    <div class="mt-slide-headline">Community events this weekend</div>
+    <div class="mt-slide-meta">Updated 14 min ago · 12 events</div>
+  </div>
+  <div class="mt-dots">
+    <span class="mt-dot mt-dot-active" data-mt-dot="0"></span>
+    <span class="mt-dot" data-mt-dot="1"></span>
+    <span class="mt-dot" data-mt-dot="2"></span>
+  </div>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Autoplay:</span>
+  <button class="cp-btn cp-btn-active" data-mt-autoplay="on">On</button>
+  <button class="cp-btn" data-mt-autoplay="off">Off</button>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Motion preference:</span>
+  <button class="cp-btn cp-btn-active" data-mt-reduced="full">Full motion</button>
+  <button class="cp-btn" data-mt-reduced="reduce">Reduce motion</button>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Simulate astigmatism:</span>
+  <button class="cp-btn cp-btn-active" data-mt-blur="0">Sharp</button>
+  <button class="cp-btn" data-mt-blur="0.6">Blurred</button>
+</div>
+</div>
+
+### Transitions: light and quick
+
+Under 200ms, easing-light. Slow transitions feel sluggish; heavy easing feels like the UI is dragging. A 300ms ease-in and a 150ms ease-out look similar in a screenshot, feel completely different in use.
+
+<div class="mt-timing-section" data-mt-timing>
+<div class="mt-timing-row">
+  <div class="mt-timing-label">Slow (300ms ease-in)</div>
+  <div class="mt-timing-track">
+    <div class="mt-timing-bar" data-mt-timing-bar="slow"></div>
+  </div>
+</div>
+<div class="mt-timing-row">
+  <div class="mt-timing-label">Fast (150ms ease-out)</div>
+  <div class="mt-timing-track">
+    <div class="mt-timing-bar" data-mt-timing-bar="fast"></div>
+  </div>
+</div>
+
+<div class="cp-controls">
+  <span class="cp-controls-label">Replay:</span>
+  <button class="cp-btn" data-mt-replay>Trigger transitions</button>
+</div>
+</div>
 
 - No autoplay carousels. They're unreadable when edges blur.
 - Respect `prefers-reduced-motion`.
@@ -636,6 +813,231 @@ Presbyopia (everyone past ~40), reading in sunlight, migraine and dry-eye flares
     font-weight: 700;
     margin-right: 0.5em;
   }
+
+  .ms-section { margin: 2.5rem 0; }
+  .ms-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 900px) {
+    .ms-compare { grid-template-columns: 1fr; }
+  }
+  .ms-card {
+    border-radius: 6px;
+    padding: 1.25rem;
+    border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    font-family: 'JetBrains Mono', monospace;
+    transition: opacity 0.2s ease, filter 0.2s ease, outline 0.2s ease;
+  }
+  .ms-card[data-mode-active="false"] {
+    opacity: 0.35;
+    filter: saturate(0.5);
+  }
+  .ms-card[data-mode-active="true"] {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 2px;
+  }
+  .ms-card-light { background: #F5F1E8; color: #121212; }
+  .ms-card-dark { background: #121212; color: #E8E8E8; }
+  .ms-card-warm { background: #1F1A14; color: #D4B896; }
+  .ms-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .ms-icon { font-size: 1.3rem; line-height: 1; }
+  .ms-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    flex: 1;
+  }
+  .ms-when {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+  .ms-card .cp-swatch {
+    width: 22px;
+    height: 22px;
+  }
+  .ms-card .cp-swatch-row {
+    margin-bottom: 1rem;
+  }
+  .ms-card code { background: transparent; }
+  .ms-card-light code { color: #121212; }
+  .ms-card-dark code { color: #E8E8E8; }
+  .ms-card-warm code { color: #D4B896; }
+  .ms-text-sample {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+  }
+  .ms-why {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+    opacity: 0.85;
+  }
+  .ms-why em { font-style: normal; font-weight: 700; }
+
+  .uc-section { margin: 2.5rem 0; }
+  .uc-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    transition: filter 0.2s ease;
+  }
+  @media (max-width: 768px) {
+    .uc-compare { grid-template-columns: 1fr; }
+  }
+  .uc-card {
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    background: color-mix(in oklab, var(--text) 4%, transparent);
+  }
+  .uc-card-cramped { padding: 0.5rem; }
+  .uc-card-generous { padding: 1.5rem; }
+  .uc-card-head { margin-bottom: 0.75rem; }
+  .uc-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: color-mix(in oklab, var(--text) 70%, transparent);
+  }
+  .uc-button-row { display: flex; gap: 0.25rem; }
+  .uc-button-row.uc-button-row-generous { gap: 1rem; }
+  .uc-btn {
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 3px;
+    background: color-mix(in oklab, var(--text) 8%, transparent);
+    color: var(--text);
+    transition: background 0.15s ease, outline-color 0.15s ease;
+  }
+  .uc-btn:hover { background: color-mix(in oklab, var(--text) 16%, transparent); }
+  .uc-btn-cramped {
+    height: 28px;
+    padding: 4px 8px;
+    border: none;
+    font-size: 0.75rem;
+  }
+  .uc-btn-cramped:focus-visible {
+    outline: 1px solid #3b82f6;
+    outline-offset: 0;
+  }
+  .uc-btn-generous {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid color-mix(in oklab, var(--text) 30%, transparent);
+    font-size: 0.95rem;
+  }
+  .uc-btn-generous:hover { background: color-mix(in oklab, var(--text) 14%, transparent); }
+  .uc-btn-generous:focus-visible {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 2px;
+  }
+  .uc-meta {
+    margin-top: 0.85rem;
+    font-size: 0.72rem;
+    color: color-mix(in oklab, var(--text) 55%, transparent);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .uc-card-generous .uc-meta { margin-top: 1.25rem; font-size: 0.78rem; }
+
+  .mt-section { margin: 2.5rem 0; }
+  .mt-carousel {
+    position: relative;
+    height: 140px;
+    border-radius: 6px;
+    border: 1px solid color-mix(in oklab, var(--text) 15%, transparent);
+    background: color-mix(in oklab, var(--text) 4%, transparent);
+    overflow: hidden;
+    transition: filter 0.2s ease;
+  }
+  .mt-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .mt-slide.mt-slide-active { opacity: 1; }
+  .mt-carousel[data-mt-reduced="true"] .mt-slide { transition: none; }
+  .mt-slide-headline {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    text-align: center;
+  }
+  .mt-slide-meta {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+  }
+  .mt-dots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+  .mt-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: color-mix(in oklab, var(--text) 30%, transparent);
+    transition: background 0.2s ease;
+  }
+  .mt-dot.mt-dot-active { background: var(--color-highlight); }
+
+  .mt-timing-section { margin: 2.5rem 0; }
+  .mt-timing-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .mt-timing-label {
+    font-size: 0.78rem;
+    min-width: 190px;
+    color: color-mix(in oklab, var(--text) 80%, transparent);
+  }
+  .mt-timing-track {
+    flex: 1;
+    height: 28px;
+    background: color-mix(in oklab, var(--text) 6%, transparent);
+    border-radius: 4px;
+    border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .mt-timing-bar {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background: var(--color-highlight);
+  }
+  .mt-timing-bar[data-mt-style="slow"] { transition: width 300ms ease-in; }
+  .mt-timing-bar[data-mt-style="fast"] { transition: width 150ms ease-out; }
+  .mt-timing-bar[data-mt-active="true"] { width: 100%; }
 </style>
 
 <script>
@@ -830,5 +1232,126 @@ Presbyopia (everyone past ~40), reading in sunlight, migraine and dry-eye flares
         });
       });
     });
+
+    const modeSection = document.querySelector("[data-mode-section]");
+    if (modeSection) {
+      const buttons = modeSection.querySelectorAll("[data-ambient]");
+      const cards = modeSection.querySelectorAll("[data-mode-card]");
+      const map = { day: "light", indoor: "dark", night: "warm" };
+      function setAmbient(time) {
+        const active = map[time] ?? "light";
+        cards.forEach((card) => {
+          card.dataset.modeActive = (card.dataset.modeCard === active).toString();
+        });
+      }
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("cp-btn-active"));
+          btn.classList.add("cp-btn-active");
+          setAmbient(btn.dataset.ambient);
+        });
+      });
+      setAmbient("day");
+    }
+
+    const uiSection = document.querySelector("[data-ui-section]");
+    if (uiSection) {
+      const buttons = uiSection.querySelectorAll("[data-uc-blur]");
+      const compare = uiSection.querySelector("[data-ui-compare]");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("cp-btn-active"));
+          btn.classList.add("cp-btn-active");
+          const blur = parseFloat(btn.dataset.ucBlur);
+          compare.style.filter = blur > 0 ? `blur(${blur}px)` : "none";
+        });
+      });
+    }
+
+    const mtSection = document.querySelector("[data-mt-section]");
+    if (mtSection) {
+      const slides = mtSection.querySelectorAll("[data-mt-slide]");
+      const dots = mtSection.querySelectorAll("[data-mt-dot]");
+      const carousel = mtSection.querySelector("[data-mt-carousel]");
+      let activeIndex = 0;
+      let interval = null;
+      let autoplay = true;
+      let reduced = false;
+
+      function showSlide(i) {
+        activeIndex = i;
+        slides.forEach((s, idx) => {
+          s.classList.toggle("mt-slide-active", idx === i);
+        });
+        dots.forEach((d, idx) => {
+          d.classList.toggle("mt-dot-active", idx === i);
+        });
+      }
+
+      function startAutoplay() {
+        if (interval) clearInterval(interval);
+        interval = setInterval(() => {
+          showSlide((activeIndex + 1) % slides.length);
+        }, 1800);
+      }
+
+      function stopAutoplay() {
+        if (interval) {
+          clearInterval(interval);
+          interval = null;
+        }
+      }
+
+      function applyMotion() {
+        carousel.dataset.mtReduced = reduced.toString();
+        if (autoplay && !reduced) startAutoplay();
+        else stopAutoplay();
+      }
+
+      mtSection.querySelectorAll("[data-mt-autoplay]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          mtSection.querySelectorAll("[data-mt-autoplay]").forEach((b) => b.classList.remove("cp-btn-active"));
+          btn.classList.add("cp-btn-active");
+          autoplay = btn.dataset.mtAutoplay === "on";
+          applyMotion();
+        });
+      });
+
+      mtSection.querySelectorAll("[data-mt-reduced]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          mtSection.querySelectorAll("[data-mt-reduced]").forEach((b) => b.classList.remove("cp-btn-active"));
+          btn.classList.add("cp-btn-active");
+          reduced = btn.dataset.mtReduced === "reduce";
+          applyMotion();
+        });
+      });
+
+      mtSection.querySelectorAll("[data-mt-blur]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          mtSection.querySelectorAll("[data-mt-blur]").forEach((b) => b.classList.remove("cp-btn-active"));
+          btn.classList.add("cp-btn-active");
+          const blur = parseFloat(btn.dataset.mtBlur);
+          carousel.style.filter = blur > 0 ? `blur(${blur}px)` : "none";
+        });
+      });
+
+      applyMotion();
+    }
+
+    const timingSection = document.querySelector("[data-mt-timing]");
+    if (timingSection) {
+      const replayBtn = timingSection.querySelector("[data-mt-replay]");
+      const bars = timingSection.querySelectorAll("[data-mt-timing-bar]");
+      bars.forEach((bar) => {
+        bar.dataset.mtStyle = bar.dataset.mtTimingBar;
+      });
+      replayBtn.addEventListener("click", () => {
+        bars.forEach((bar) => {
+          bar.dataset.mtActive = "false";
+          void bar.offsetWidth;
+          bar.dataset.mtActive = "true";
+        });
+      });
+    }
   })();
 </script>
