@@ -16,26 +16,26 @@ They go deep on watching users work, firehose social feedback, partnering with s
 
 ## Chapters
 
-- 0:00 Introduction to Product Engineering
-- 0:53 Dillon's Role at Cloudflare and Agent Experience
-- 2:04 Preparing Cloudflare for Agent Users
-- 5:29 Product Taste and Building What You'd Want to Use
-- 7:09 Building Great Products for Non-Developer Users
-- 10:03 Pushing Back on Pressure to Ship Fast
-- 12:07 Getting Direct Feedback From Users
-- 14:34 Watching Users Work
-- 17:34 Support Teams as a Gold Mine of Product Signal
-- 18:42 Observability, Metrics, and Customer Escalations
-- 20:46 Rebuilding Vercel Domains
-- 22:40 Making User Pain Painful
-- 23:54 Discipline, Small Scope, and Reviewing AI-Written Code
-- 27:52 Observability as Product Engineering
-- 31:00 Delighters and Going Beyond the Basics
-- 37:04 Onboarding Friction and Feedback Loops
-- 40:36 Rewrites, Pain Reduction, and Fixing the Right Problems
-- 44:20 Cross-Functional Relationships Beyond End Users
-- 45:30 Learning Product Sense by Sitting With Support
-- 47:01 Homework: Care Deeply and Build Better Feedback Systems
+- [0:00](https://youtu.be/UCUv6vuT-h4?t=0) Introduction to Product Engineering
+- [0:53](https://youtu.be/UCUv6vuT-h4?t=53) Dillon's Role at Cloudflare and Agent Experience
+- [2:04](https://youtu.be/UCUv6vuT-h4?t=124) Preparing Cloudflare for Agent Users
+- [5:29](https://youtu.be/UCUv6vuT-h4?t=329) Product Taste and Building What You'd Want to Use
+- [7:09](https://youtu.be/UCUv6vuT-h4?t=429) Building Great Products for Non-Developer Users
+- [10:03](https://youtu.be/UCUv6vuT-h4?t=603) Pushing Back on Pressure to Ship Fast
+- [12:07](https://youtu.be/UCUv6vuT-h4?t=727) Getting Direct Feedback From Users
+- [14:34](https://youtu.be/UCUv6vuT-h4?t=874) Watching Users Work
+- [17:34](https://youtu.be/UCUv6vuT-h4?t=1054) Support Teams as a Gold Mine of Product Signal
+- [18:42](https://youtu.be/UCUv6vuT-h4?t=1122) Observability, Metrics, and Customer Escalations
+- [20:46](https://youtu.be/UCUv6vuT-h4?t=1246) Rebuilding Vercel Domains
+- [22:40](https://youtu.be/UCUv6vuT-h4?t=1360) Making User Pain Painful
+- [23:54](https://youtu.be/UCUv6vuT-h4?t=1434) Discipline, Small Scope, and Reviewing AI-Written Code
+- [27:52](https://youtu.be/UCUv6vuT-h4?t=1672) Observability as Product Engineering
+- [31:00](https://youtu.be/UCUv6vuT-h4?t=1860) Delighters and Going Beyond the Basics
+- [37:04](https://youtu.be/UCUv6vuT-h4?t=2224) Onboarding Friction and Feedback Loops
+- [40:36](https://youtu.be/UCUv6vuT-h4?t=2436) Rewrites, Pain Reduction, and Fixing the Right Problems
+- [44:20](https://youtu.be/UCUv6vuT-h4?t=2660) Cross-Functional Relationships Beyond End Users
+- [45:30](https://youtu.be/UCUv6vuT-h4?t=2730) Learning Product Sense by Sitting With Support
+- [47:01](https://youtu.be/UCUv6vuT-h4?t=2821) Homework: Care Deeply and Build Better Feedback Systems
 
 ## Notes
 
