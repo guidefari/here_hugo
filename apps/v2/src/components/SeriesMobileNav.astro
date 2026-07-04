@@ -1,0 +1,70 @@
+---
+const { series, current } = Astro.props;
+if (!series) return null;
+
+const members = series.members ?? [];
+if (members.length < 2) return null;
+
+const hub = series.hub;
+const label = hub?.title ?? series.id;
+const currentIsHub = hub ? Astro.url.pathname.replace(/\/+$/, "") === String(hub.permalink).replace(/\/+$/, "") : false;
+
+const isActive = (permalink) => {
+  const here = Astro.url.pathname.replace(/\/+$/, "");
+  const there = String(permalink ?? "").replace(/\/+$/, "");
+  return here === there;
+};
+
+let childIndex = 0;
+---
+
+<div class="lg:hidden mb-6">
+  <details open={currentIsHub} class="group border border-text/15 rounded-sm bg-black/20">
+    <summary class="flex items-center gap-2 px-3 py-2 cursor-pointer list-none">
+      <span class="text-[10px] font-mono tracking-wider text-text/45">Series</span>
+      <span class="text-sm font-semibold text-white m-0 flex-1 truncate">{label}</span>
+      <span class="text-text/50 text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+    </summary>
+    <nav class="px-2 pb-2 pt-1 border-t border-text/10">
+      <ol class="flex flex-col gap-0.5 list-none p-0 m-0">
+        {hub && (
+          <li>
+            <a
+              href={hub.permalink}
+              aria-current={isActive(hub.permalink) ? "page" : undefined}
+              class:list={[
+                "block w-full pl-3 pr-2 py-1.5 text-left text-sm leading-snug border-l-2 transition-colors no-underline",
+                isActive(hub.permalink)
+                  ? "border-highlight text-highlight bg-highlight/5"
+                  : "border-transparent text-text/70",
+              ]}
+            >
+              Overview
+            </a>
+          </li>
+        )}
+        {series.children.map((entry) => {
+          const active = isActive(entry.permalink);
+          childIndex += 1;
+          return (
+            <li>
+              <a
+                href={entry.permalink}
+                aria-current={active ? "page" : undefined}
+                class:list={[
+                  "flex gap-2 w-full pl-3 pr-2 py-1.5 text-left text-sm leading-snug border-l-2 transition-colors no-underline",
+                  active
+                    ? "border-highlight text-highlight bg-highlight/5"
+                    : "border-transparent text-text/70",
+                ]}
+              >
+                <span class="font-mono text-text/35 shrink-0">{childIndex}</span>
+                <span class="flex-1">{entry.title}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  </details>
+</div>

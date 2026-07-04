@@ -1,0 +1,67 @@
+---
+const { series, current } = Astro.props;
+if (!series) return null;
+
+const members = series.members ?? [];
+if (members.length < 2) return null;
+
+const hub = series.hub;
+const label = hub?.title ?? series.id;
+
+const isActive = (permalink) => {
+  const here = Astro.url.pathname.replace(/\/+$/, "");
+  const there = String(permalink ?? "").replace(/\/+$/, "");
+  return here === there;
+};
+
+let childIndex = 0;
+---
+
+<aside
+  class="hidden lg:flex lg:flex-col lg:shrink-0 lg:w-60 xl:w-72 lg:sticky lg:top-0 lg:self-start lg:h-dvh lg:py-6 lg:pl-4 lg:pr-2 lg:overflow-y-auto border-l border-text/15"
+  aria-label="Series contents"
+>
+  <p class="m-0 mb-1 text-[10px] font-mono tracking-wider text-text/45">Series</p>
+  <h2 class="text-sm font-bold text-white m-0 mb-3 leading-tight">{label}</h2>
+  <nav>
+    <ol class="flex flex-col gap-0.5 list-none p-0 m-0">
+      {hub && (
+        <li>
+          <a
+            href={hub.permalink}
+            aria-current={isActive(hub.permalink) ? "page" : undefined}
+            class:list={[
+              "block w-full pl-3 pr-2 py-1.5 text-left text-[0.78rem] leading-snug border-l-2 transition-colors no-underline",
+              isActive(hub.permalink)
+                ? "border-highlight text-highlight bg-highlight/5"
+                : "border-transparent text-text/70 hover:text-text",
+            ]}
+          >
+            Overview
+          </a>
+        </li>
+      )}
+      {series.children.map((entry) => {
+        const active = isActive(entry.permalink);
+        childIndex += 1;
+        return (
+          <li>
+            <a
+              href={entry.permalink}
+              aria-current={active ? "page" : undefined}
+              class:list={[
+                "flex gap-2 w-full pl-3 pr-2 py-1.5 text-left text-[0.78rem] leading-snug border-l-2 transition-colors no-underline",
+                active
+                  ? "border-highlight text-highlight bg-highlight/5"
+                  : "border-transparent text-text/70 hover:text-text",
+              ]}
+            >
+              <span class="font-mono text-text/35 shrink-0">{childIndex}</span>
+              <span class="flex-1">{entry.title}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+</aside>

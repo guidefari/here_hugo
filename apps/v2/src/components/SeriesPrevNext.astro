@@ -1,0 +1,53 @@
+---
+const { series, current } = Astro.props;
+if (!series || !current) return null;
+
+const ordered = series.members ?? [];
+if (ordered.length < 2) return null;
+
+const currentHere = String(Astro.url.pathname).replace(/\/+$/, "");
+const index = ordered.findIndex((e) => String(e.permalink).replace(/\/+$/, "") === currentHere);
+if (index === -1) return null;
+
+const prev = index > 0 ? ordered[index - 1] : undefined;
+const next = index < ordered.length - 1 ? ordered[index + 1] : undefined;
+const hub = series.hub;
+const isHub = hub ? String(hub.permalink).replace(/\/+$/, "") === currentHere : false;
+
+if (!prev && !next) return null;
+---
+
+<nav class="mt-10 pt-6 border-t border-text/15" aria-label="Series pagination">
+  {hub && !isHub && (
+    <a
+      href={hub.permalink}
+      class="inline-flex items-center gap-1 mb-4 text-xs font-mono text-text/60 hover:text-highlight transition-colors no-underline"
+    >
+      <span aria-hidden="true">←</span> Back to overview
+    </a>
+  )}
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {prev ? (
+      <a
+        href={prev.permalink}
+        class="flex flex-col gap-1 px-4 py-3 border border-text/15 hover:border-highlight/40 hover:bg-highlight/5 transition-colors no-underline"
+      >
+        <span class="text-[10px] font-mono tracking-wider text-text/45">Previous</span>
+        <span class="text-sm text-white leading-snug">{prev.title}</span>
+      </a>
+    ) : (
+      <span class="hidden sm:block" />
+    )}
+    {next ? (
+      <a
+        href={next.permalink}
+        class="flex flex-col gap-1 px-4 py-3 border border-text/15 hover:border-highlight/40 hover:bg-highlight/5 transition-colors no-underline sm:text-right"
+      >
+        <span class="text-[10px] font-mono tracking-wider text-text/45">Next</span>
+        <span class="text-sm text-white leading-snug">{next.title}</span>
+      </a>
+    ) : (
+      <span class="hidden sm:block" />
+    )}
+  </div>
+</nav>

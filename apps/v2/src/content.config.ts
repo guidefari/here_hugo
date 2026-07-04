@@ -46,6 +46,9 @@ const entries = defineCollection({
     issue: z.union([z.string(), z.number()]).optional(),
     cover: optionalString,
     tracks: z.array(z.string()).nullish(),
+    series: optionalString,
+    series_order: z.union([z.string(), z.number()]).optional(),
+    series_index: z.boolean().optional(),
   }).passthrough(),
 });
 

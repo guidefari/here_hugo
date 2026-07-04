@@ -1,9 +1,20 @@
 ---
 import { formatDate } from "../lib/content.mjs";
 import { sectionLinks } from "../lib/site.mjs";
+import { getSeries } from "../lib/series.mjs";
 
 const { entry, showSection = true } = Astro.props;
 const sectionHref = sectionLinks[entry.section] ?? `/${entry.section}/`;
+
+let seriesLabel = null;
+let seriesHref = null;
+if (entry.data?.series) {
+  const series = await getSeries(entry.data.series);
+  if (series?.hub && series.hub.permalink !== entry.permalink) {
+    seriesLabel = series.hub.title;
+    seriesHref = series.hub.permalink;
+  }
+}
 ---
 
 <li class="list-none py-3" data-section={entry.section}>
@@ -16,6 +27,11 @@ const sectionHref = sectionLinks[entry.section] ?? `/${entry.section}/`;
         <a href={entry.permalink} class="post-link font-bold leading-snug text-highlight hover:text-white transition-colors duration-150 no-underline">{entry.title}</a>
         <time class="text-xs font-mono text-text/40 shrink-0 mt-0.5">{formatDate(entry.date, { month: "short", year: "2-digit" })}{entry.draft && <span class="text-red-400"> DRAFT</span>}</time>
       </div>
+      {seriesLabel && seriesHref && (
+        <a href={seriesHref} class="text-[11px] font-mono tracking-wider text-text/40 hover:text-highlight transition-colors no-underline w-fit">
+          {seriesLabel}
+        </a>
+      )}
       {entry.description && <span class="text-sm text-text/60 leading-snug">{entry.description}</span>}
     </div>
   </div>
