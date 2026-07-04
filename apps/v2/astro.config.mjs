@@ -22,6 +22,9 @@ export default defineConfig({
       },
     }),
     syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "solarized-dark",
+    },
   },
   vite: {
     plugins: [tailwindcss()],
