@@ -1,7 +1,7 @@
 ---
 title: "Observability Tooling Canon"
 date: 2026-06-27T10:00:00+02:00
-description: the big pieces: OTel, Prometheus, Grafana, LGTM, ELK, what an exporter is, who does what
+description: "the big pieces: OTel, Prometheus, Grafana, LGTM, ELK, what an exporter is, who does what"
 tags: [observability, canon]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20Tooling%20Canon']
 ---

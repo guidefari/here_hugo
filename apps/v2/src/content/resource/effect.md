@@ -154,7 +154,7 @@ stations:
       - type: note
         title: "OpenCode References: Just Clone the Repo"
         source: "My note"
-        url: "/media/opencode-references-just-clone-repo/"
+        url: "/opencode-references/"
         note: "OpenCode 1.17.3 adds first-party support for referencing other repos. Effect is the example."
 reference_repos:
   - name: "invoicing"
