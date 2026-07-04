@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getEntriesBySection, getSectionInfo } from "../lib/content.mjs";
-import PostListItem from "./PostListItem.astro";
-import WritingList from "./WritingList.astro";
+import YearGroupedList from "./YearGroupedList.astro";
 
 const { section } = Astro.props;
 const info = await getSectionInfo(section);
@@ -17,8 +16,6 @@ const path = `/${section}/`;
       {info.description && <p class="max-w-2xl mt-4 text-text/75">{info.description}</p>}
     </div>
 
-    <WritingList listId={`section-${section}-list`}>
-      {entries.map((entry) => <PostListItem entry={entry} showSection={false} />)}
-    </WritingList>
+    <YearGroupedList entries={entries} listId={`section-${section}-list`} showSection={false} />
   </main>
 </BaseLayout>

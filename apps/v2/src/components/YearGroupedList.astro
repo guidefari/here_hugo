@@ -1,0 +1,27 @@
+---
+import PostListItem from "./PostListItem.astro";
+
+const { entries, listId = "year-grouped-list", showSection = false } = Astro.props;
+
+const grouped = entries.reduce((acc, entry) => {
+  const year = entry.date?.getFullYear?.() ?? "unknown";
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(entry);
+  return acc;
+}, {});
+
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+---
+
+<div id={listId} class="flex flex-col gap-10">
+  {years.map((year) => (
+    <section>
+      <h2 class="text-xs font-mono text-text/30 uppercase tracking-[0.15em] mb-3">{year}</h2>
+      <ul class="flex flex-col m-0 p-0 list-none">
+        {grouped[year].map((entry) => (
+          <PostListItem entry={entry} showSection={showSection} compact />
+        ))}
+      </ul>
+    </section>
+  ))}
+</div>

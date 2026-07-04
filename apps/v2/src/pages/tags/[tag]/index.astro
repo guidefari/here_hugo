@@ -1,9 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getAllTags, getCanonicalUrl, getEntriesByTag } from "../../../lib/content.mjs";
-import PostListItem from "../../../components/PostListItem.astro";
 import SectionMoreLink from "../../../components/SectionMoreLink.astro";
-import WritingList from "../../../components/WritingList.astro";
+import YearGroupedList from "../../../components/YearGroupedList.astro";
 
 export async function getStaticPaths() {
   return (await getAllTags()).map((tag) => ({
@@ -26,8 +25,6 @@ const entries = await getEntriesByTag(tag.slug);
       <SectionMoreLink href="/tags/" label="all tags" />
     </header>
 
-    <WritingList listId={`tag-${tag.slug}-list`}>
-      {entries.map((entry) => <PostListItem entry={entry} />)}
-    </WritingList>
+    <YearGroupedList entries={entries} listId={`tag-${tag.slug}-list`} showSection={true} />
   </main>
 </BaseLayout>

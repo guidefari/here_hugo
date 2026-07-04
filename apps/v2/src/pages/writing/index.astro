@@ -2,8 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getAllEntries, getCanonicalUrl } from "../../lib/content.mjs";
 import { writingSections } from "../../lib/site.mjs";
-import WritingList from "../../components/WritingList.astro";
-import PostListItem from "../../components/PostListItem.astro";
+import YearGroupedList from "../../components/YearGroupedList.astro";
 
 const entries = (await getAllEntries()).filter((entry) => writingSections.includes(entry.section));
 ---
@@ -15,8 +14,6 @@ const entries = (await getAllEntries()).filter((entry) => writingSections.includ
       <p class="max-w-2xl mt-4 text-text/75">Notes, book reviews, TILs, and everything in between. Browse by section in the side nav.</p>
     </header>
 
-    <WritingList listId="writing-list">
-      {entries.map((entry) => <PostListItem entry={entry} />)}
-    </WritingList>
+    <YearGroupedList entries={entries} listId="writing-list" showSection={true} />
   </main>
 </BaseLayout>
