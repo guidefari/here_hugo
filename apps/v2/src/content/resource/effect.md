@@ -2,13 +2,14 @@
 title: "Learning Effect"
 date: 2026-06-20T10:00:00+02:00
 layout: "effect-course"
-description: "A crash course through Effect — videos, podcasts, docs, and repos that helped me learn it, in the order I'd take them."
+description: "A crash course through Effect: videos, podcasts, docs, and repos that helped me learn it, in the order I'd take them."
+featured: true
 tags: [effect]
 noindex: false
 images: ["https://images-here-hugo.vercel.app/api/og-image?title=Learning%20Effect"]
 intro: |
   A path through the resources that helped me learn Effect. The order is roughly
-  the order I'd take them in, but every section is independent — jump to whatever
+  the order I'd take them in, but every section is independent: jump to whatever
   fits where you are.
 first_taste:
   caption: "This is the idea. The rest of the page is everything I read or watched to actually understand it."
@@ -22,12 +23,7 @@ stations:
         title: "effect.website"
         source: "Effectful"
         url: "https://effect.website/"
-        note: "The landing page. The before/after code sample alone is the reason to keep going."
-      - type: video
-        title: "Effect: Next-Generation TypeScript"
-        source: "Effect"
-        url: "https://effect.website/"
-        note: "The intro video on the landing page. Sets the tone in three minutes."
+        note: "The landing page. The before/after code sample alone is the reason to keep going. There's also a 3-min intro video on the page that sets the tone."
 
   - number: "01"
     title: "Watch & listen"
@@ -52,7 +48,47 @@ stations:
         title: "Vibe Engineering Effect Apps"
         source: "Michael Arnaldi"
         url: "/media/michael-arnaldi-vibe-engineering-effect-apps/"
-        note: "On using Effect as the substrate for AI-engineered code. I took notes on it — linked above."
+        note: "On using Effect as the substrate for AI-engineered code. I took notes on it, linked above."
+      - type: video
+        title: "The Simple Secret Behind Effect's Power"
+        source: "Kit Langton"
+        url: "https://www.youtube.com/watch?v=F5aWLtEdNjE"
+        note: "A clear explanation of what makes Effect different."
+      - type: video
+        title: "Effect is hard, but you REALLY need to try it"
+        source: "Ben Davis"
+        url: "https://www.youtube.com/watch?v=Enh5hD__hnQ"
+        note: "Honest take on the learning curve and why it's worth it."
+      - type: video
+        title: "You really need to try Effect ft. Ethan Niser"
+        source: "Ben Davis"
+        url: "https://www.youtube.com/watch?v=S1YKKpLR7XI"
+        note: "Conversation on getting started with Effect in practice."
+      - type: video
+        title: "Effect: the Good Parts, \"use workflow\", and Vercel Domains"
+        source: "swyx (with Dillon Mulroy)"
+        url: "https://www.youtube.com/watch?v=VR_MQH3opc8"
+        note: "Dillon Mulroy on the parts of Effect he actually reaches for."
+      - type: video
+        title: "#116 Infrastructure as Effects with Sam Goodwin"
+        source: "Happy Path Programming"
+        url: "https://www.youtube.com/watch?v=YEn4A7XxgF4"
+        note: "Using Effect for infrastructure concerns."
+      - type: video
+        title: "Stop agent slop with Effect"
+        source: "Mattia Manzati (Effect Milan 2026)"
+        url: "https://www.youtube.com/watch?v=88XERFAibQc"
+        note: "Using Effect to constrain and validate AI-generated code."
+      - type: video
+        title: "Structured Concurrency: The hidden power behind Effect"
+        source: "Antoine Coulon (Effect Days 2025)"
+        url: "https://www.youtube.com/watch?v=do5KCcCgS18"
+        note: "Why structured concurrency matters and how Effect implements it."
+      - type: video
+        title: "Effect at OpenCode"
+        source: "Dax Raad (Effect Miami 2026)"
+        url: "/media/effect-at-opencode/"
+        note: "Dax walks through the OpenCode codebase showing Schema, Services, PubSub, Telemetry, and HTTP patterns. I took notes on it, linked above."
 
   - number: "02"
     title: "Learn the core"
@@ -77,9 +113,9 @@ stations:
         note: "Paid, structured course if you want a guided path."
       - type: course
         title: "Effect Beginner's Complete Getting Started"
-        source: "once.dev"
-        url: "https://once.dev/course/effect-beginners-complete-getting-started"
-        note: "Free video course that walks through the fundamentals."
+        source: "typeonce.dev"
+        url: "https://typeonce.dev/course/effect-beginners-complete-getting-started"
+        note: "Free text course that walks through the fundamentals."
 
   - number: "03"
     title: "Build something"
@@ -89,7 +125,7 @@ stations:
         title: "Effect-ts, in practice"
         source: "My note"
         url: "/effective/"
-        note: "My long-form take. DI, errors, the runtime, observability — with code."
+        note: "My long-form take. DI, errors, the runtime, observability, with code."
       - type: code
         title: "invoicing"
         source: "github.com/guidefari/invoicing"
@@ -99,7 +135,7 @@ stations:
         title: "gbfm (apps/vps)"
         source: "github.com/guidefari/gbfm"
         url: "https://github.com/guidefari/gbfm"
-        note: "The production app I work on. Effect everywhere — HTTP, cron, OTel."
+        note: "The production app I work on. Effect everywhere: HTTP, cron, OTel."
 
   - number: "04"
     title: "Go deeper"
@@ -126,7 +162,7 @@ reference_repos:
     blurb: "My reference Effect app. Service + Layer + runtime, prod and test."
   - name: "gbfm (apps/vps)"
     url: "https://github.com/guidefari/gbfm"
-    blurb: "The production app I work on. Effect everywhere — HTTP, cron, OTel."
+    blurb: "The production app I work on. Effect everywhere: HTTP, cron, OTel."
   - name: "opensound"
     url: "https://opensound.dev"
     blurb: "My open source music library tooling. The first real Effect project I shipped."
@@ -164,11 +200,11 @@ A crash course through Effect, in the order I'd take it. Start at the top, jump 
 
 The full design lives in the next-gen version of this site. In the meantime, here are the links:
 
-- [effect.website](https://effect.website/) — the home base
-- [@effectts on YouTube](https://www.youtube.com/@EffectTS) — talks, deep dives
-- [Cause & Effect podcast](https://effect.website/podcast/) — hosted by Johannes Schickling
-- [effect-smol on GitHub](https://github.com/Effect-TS/effect-smol) — read the source
-- [effect.solutions](https://effect.solutions/) — community pattern directory
-- [effect.institute](https://effect.institute/) — paid guided course
+- [effect.website](https://effect.website/): the home base
+- [@effectts on YouTube](https://www.youtube.com/@EffectTS): talks, deep dives
+- [Cause & Effect podcast](https://effect.website/podcast/): hosted by Johannes Schickling
+- [effect-smol on GitHub](https://github.com/Effect-TS/effect-smol): read the source
+- [effect.solutions](https://effect.solutions/): community pattern directory
+- [effect.institute](https://effect.institute/): paid guided course
 
 
