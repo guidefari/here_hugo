@@ -52,7 +52,7 @@ Designed to overcome IPv4 shortages of addresses. The Router (NAT device) mainta
 
 ## Asymmetric
 - uses public key & private key
-- The asymmetric keys are mathematically linked. What one key encrypts, only the other can decrypt — and vice versa.
+- The asymmetric keys are mathematically linked. What one key encrypts, only the other can decrypt, and vice versa.
 - I encrypt data with my recipient's public key, I send it across the network, receiver decrypts with their mathematically linked private key (i.e the only key that can decrypt this message). 
 - **Message Signing** is another advantage asymmetric encryption brings. read [Using Asymmetric Keys](https://www.practicalnetworking.net/series/cryptography/using-asymmetric-keys/) for more insight
 - Compared to symmetric encryption, asymmetric is more expensive on resources

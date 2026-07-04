@@ -30,7 +30,7 @@ experience:
     dates: "Sept 2024 → Oct 2025"
     highlights:
       - "Building a whitelabelled, multi-tenant SaaS"
-      - "Started across 3 frontend products using React — Management Portal, E-Commerce, CRM"
+      - "Started across 3 frontend products using React: Management Portal, E-Commerce, CRM"
       - "Went deeper into the wider product stack over time, including infrastructure, deployments, and platform concerns"
       - "Worked with core backend services in C# and the operational side of shipping them"
       - "Managed Kubernetes workloads and contributed to deployments across the product environment"
@@ -61,7 +61,7 @@ experience:
       - "Multi-tenant SaaS"
     achievements_label: "Proud achievements at Flexperto"
     achievements:
-      - "Informally led a team of 2-3 migrating a 5+ year old scheduling calendar from vanilla JS to React — ensuring feature parity & no regression"
+      - "Informally led a team of 2-3 migrating a 5+ year old scheduling calendar from vanilla JS to React, ensuring feature parity & no regression"
       - "Became an [AWS Certified Solutions Architect – Associate](https://www.credly.com/badges/9342a916-83b2-489e-969a-aa43af8a0c77/public_url) while working full time"
       - "Saw positive side effects from writing efforts"
 
@@ -71,7 +71,7 @@ experience:
     dates: "Jan 2021 → May 2022"
     highlights:
       - "Bespoke software consultancy of about 20-30 employees"
-      - "Worked across multiple teams and technology stacks — VB.Net, Angular, React"
+      - "Worked across multiple teams and technology stacks: VB.Net, Angular, React"
       - "Embedded in a [Hungerrush](https://www.hungerrush.com/) team updating UI of a VB.Net app to match their 2021 Design System"
       - "Built a re-usable React component library for [Quorum](https://www.quorumsoftware.com/products)"
       - "Spent final months embedded in the internal Sigma Digital team using Next.js"

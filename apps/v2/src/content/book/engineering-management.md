@@ -65,8 +65,8 @@ There's been a running joke with dev friends over the last few days to the tone 
 > A person who can be in flow state is also capable of seeing perspectives other than their own.
 
 # Long term care of employees
-> “You can’t call yourself a leader by coming into a situation that is by nature uncertain, ambiguous—and create confusion. **You have to create clarity where none exists**.”
-> — Satya Nadella, CEO of Microsoft”
+> “You can’t call yourself a leader by coming into a situation that is by nature uncertain, ambiguous, and create confusion. **You have to create clarity where none exists**.”
+> Satya Nadella, CEO of Microsoft”
 
 > “When a person feels that their work is valued, that they have a North Star purpose both for their personal growth and for wider impact with the people and industry, it’s an incredibly powerful thing. Knowing that what you’re doing day to day is meaningful, that small tasks accumulate to a larger goal, and that you have a path forward can be extremely motivating and drive us with resilience past obstacles, into a greater outcome.
 
@@ -87,7 +87,7 @@ There's been a running joke with dev friends over the last few days to the tone 
 
 # Change management
 > “It’s not the strongest or most intelligent who will survive, but those who can best manage change.”
-> — Charles Darwin”
+> Charles Darwin”
 
 > “I have never seen a team that doesn’t need to change and evolve over time.”
 

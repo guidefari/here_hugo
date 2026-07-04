@@ -9,7 +9,7 @@ images: ['https://images-here-hugo.vercel.app/api/og-image?title=Speed+At+All+Co
 ## Context
 The style of this note is similar to "[conversations with X](https://cutlefish.substack.com/p/the-x-files-6557-of-2024-edition)".
 
-> “X” is not one person—because I’ve had these conversations many times (with slight variations). I’ve also had friends recount these conversations many, many times.
+> “X” is not one person, because I’ve had these conversations many times (with slight variations). I’ve also had friends recount these conversations many, many times.
 
 # What is speed at all cost?
 Willing to bet $3 that every software practitioner has been on a project where some form of this conversation takes place

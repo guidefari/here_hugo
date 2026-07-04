@@ -73,12 +73,12 @@ Infrastructure as Code (IaC) tools generally fall into two styles:
 ## Mutable
 
 - Traditional config management tools (Ansible, Chef, Puppet) fit this model
-- Servers are updated in place — you SSH in, run scripts, apply patches
+- Servers are updated in place, you SSH in, run scripts, apply patches
 - State drifts over time. each server's history makes it unique (aka [snowflake servers](https://martinfowler.com/bliki/SnowflakeServer.html))
 
 ## Immutable
 
-- Servers are never modified after deployment — to change anything, you replace the whole instance
+- Servers are never modified after deployment: to change anything, you replace the whole instance
 - Fits naturally with Terraform, Packer, Docker, and GitOps workflows
 
 ---

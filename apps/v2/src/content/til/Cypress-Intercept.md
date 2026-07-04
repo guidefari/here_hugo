@@ -20,5 +20,5 @@ Cypress docs explain this so well, including scenarios where you might use this 
 
 - Also a good time to understand the difference between **stubbing** & **mocking**:
   - [Differences between Stubbing and Mocking](https://www.toolsqa.com/blogs/differences-between-stubbing-and-mocking/)
-  - [Mocking and Stubbing with Cypress — Beginner to Advanced](https://medium.com/ecs-digital/mocking-and-stubbing-with-cypress-beginner-to-advanced-3d26bde2ebce)
+  - [Mocking and Stubbing with Cypress: Beginner to Advanced](https://medium.com/ecs-digital/mocking-and-stubbing-with-cypress-beginner-to-advanced-3d26bde2ebce)
   - [Martin Fowler - Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) - Pointing out **behaviour verification** (which is used by mocks) vs **state verification** (used by stubs). Worth a re-read when I have time :)

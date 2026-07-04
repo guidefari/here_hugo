@@ -65,7 +65,7 @@ Another takeaway is that a lot of what you need to learn, can be found outside o
 > *Every book should be read no more slowly than it deserves, and no more quickly than you can read it with satisfaction and comprehension*
 >
 
-— Mortimer Adler
+Mortimer Adler
 
 ## how to skim
 
@@ -103,9 +103,9 @@ A useful heuristic: **Anything easily digested is reading for information.**
 
 - Mark up the book while reading it. Questions. Thoughts. And, more important, connections to other ideas.
 - At the end of each chapter, *without looking back*, [write some notes](https://fs.blog/2013/05/how-to-retain-more-of-what-you-read/) on the main points/arguments/take-aways. Then look back through the chapter and write down anything you missed.
-- When you pick it back up, reread all of your notes/highlights/marginalia/etc. Time is a good filter — what’s still important? Note this on the inside of the cover with a reference to the page number.
+- When you pick it back up, reread all of your notes/highlights/marginalia/etc. Time is a good filter. What’s still important? Note this on the inside of the cover with a reference to the page number.
 
-> *Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius—and a lot of courage—to move in the opposite direction.*
+> *Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius, and a lot of courage, to move in the opposite direction.*
 >
 
 E.F. Schumacher

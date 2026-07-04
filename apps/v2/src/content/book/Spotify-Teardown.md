@@ -36,7 +36,7 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 #### Ownership does not equal control
 - Some quotes related to **platform**, & the challenges caused by the fact that spotify distributes copyrighted material.
 
-> Spotify’s very existence remains dependent on the willingness of the so-called Big Three—the global record companies Universal, Sony, and Warner—to renew music licensing deals... these must not demand more royalties than Spotify is able to pay” 
+> Spotify’s very existence remains dependent on the willingness of the so-called Big Three, the global record companies Universal, Sony, and Warner, to renew music licensing deals... these must not demand more royalties than Spotify is able to pay” 
 
 > Spotify has closed numerous deals with data center operators, hardware manufacturers, and telecom carriers”
 
@@ -47,9 +47,9 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 > Spotify, in other words, relies not only on investors, rights holders, and network operators but also on policymakers. Music piracy must not be too rampant, collecting societies too powerful, or privacy protections too strict if Spotify is to succeed in a country.
 
 ## History
-> In retrospect, Spotify’s early Swedish history appears in perfect sync with the legal proceedings against The Pirate Bay, which began with a police raid in May 2006—just weeks after Spotify was founded.
+> In retrospect, Spotify’s early Swedish history appears in perfect sync with the legal proceedings against The Pirate Bay, which began with a police raid in May 2006, just weeks after Spotify was founded.
 
-> This is how Lorentzon and Ek met: two Swedish multimillionaires—thirty-seven and twenty-three years old, respectively—both experiencing the boredom that may come with financial independence, as they would later explain.
+> This is how Lorentzon and Ek met: two Swedish multimillionaires, thirty-seven and twenty-three years old, respectively, both experiencing the boredom that may come with financial independence, as they would later explain.
 
 > Spotify opened its first office at Riddargatan 20 in central Stockholm, where software development begun in August 2006. The software was initially for distributing data over the internet from a central server to a large number of recipients using a peer-to-peer (P2P) network”
 
@@ -82,7 +82,7 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 - July 4 2011: US launch
 - No big advertisement, mainly relied on word of mouth, which was a strategy that played 2 roles, protect network capacity, & feed into the hype culture.
 
-> The limitation on invites not only ensured that network capacity would not be overloaded but also contributed to hype that associated Spotify with the lifestyle of those circles that were first to receive invites—primarily young, hip New Yorkers.
+> The limitation on invites not only ensured that network capacity would not be overloaded but also contributed to hype that associated Spotify with the lifestyle of those circles that were first to receive invites, primarily young, hip New Yorkers.
 
 #### Period E (2013)
 - Now they're starting to pay attention to recommending personalised music
@@ -117,7 +117,7 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 
 ## intervention: record label setup
 - Heinz Duthel: 
-> is most likely a software agent designed to mass produce literature—albeit a bot writer with a particular taste for classical historical figures, foreign politics, and new age spirituality”
+> is most likely a software agent designed to mass produce literature, albeit a bot writer with a particular taste for classical historical figures, foreign politics, and new age spirituality”
 
 > Recorded music simply needs metadata and paratextual materials, or else it is extremely difficult to find or sell. Within the ecosystem of music streaming, aggregators perform the crucial role of prompting and collecting such music metadata, thus making music and artists algorithm ready.
 
@@ -129,9 +129,9 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 
 
 # intervention: how we tracked streams
-> First, data is not technically transported—as in being moved from one location to the next—when information is streamed. Instead, data is copied and multiplied. Thus, the question of how streamed files move” is not only a matter of tracing changed data locations but an issue of tracking how data proliferates”
+> First, data is not technically transported, as in being moved from one location to the next, when information is streamed. Instead, data is copied and multiplied. Thus, the question of how streamed files move” is not only a matter of tracing changed data locations but an issue of tracking how data proliferates”
 
-> Packet sniffers thus challenge the idea that computers are under our control and only act at our request; they reveal the hidden—and sprawling—transmissions that occur within internet networks.
+> Packet sniffers thus challenge the idea that computers are under our control and only act at our request; they reveal the hidden, and sprawling, transmissions that occur within internet networks.
 
 > Since 2015, however, the company has increasingly shipped its data through Google Cloud Platform, which involves using not only Google’s global cloud/storage data centers but also other Google services, such as virtual machines and database management systems.
 
@@ -163,7 +163,7 @@ tags: [book, notes, platform, music, backend, product, ux, spotify, architecture
 
 > The Spotify client, for example, has benefitted significantly from the labor put into more than three hundred different open-source projects.31”
 
-> When looking at the codecs and software on which the service runs, it becomes obvious that Spotify is neither self-built nor self-maintained and instead relies on a vast network of actors for its service to function—another indication that the notion of an enclosed platform is inapt.
+> When looking at the codecs and software on which the service runs, it becomes obvious that Spotify is neither self-built nor self-maintained and instead relies on a vast network of actors for its service to function, another indication that the notion of an enclosed platform is inapt.
 
 > In fact, Akamai has been singled out as providing a private network infrastructure that serves to enhance the unequal distribution of global network connectivity. Because of their practice of selling high-quality internet access to selected customers, CDNs are also known for sidestepping net neutrality orders and regulations, thus counteracting the basic and open end-to-end principles of the internet.
 

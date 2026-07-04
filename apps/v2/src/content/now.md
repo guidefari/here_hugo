@@ -14,7 +14,7 @@ The idea of a [now](https://nownownow.com/about) page was introduced to me by [D
 
 Hacking away on the [Sixty60](https://www.sixty60.co.za/) app during the day, open source at night.
 
-I'm still very interested in software design, systems thinking, architecture, software delivery, and all the little decisions that make codebases feel either calm or exhausting to work in. The current rabbit hole is [Effect](https://effect.website/) — I wrote a [little crash course of what I've been reading and watching](/effect/) for anyone curious.
+I'm still very interested in software design, systems thinking, architecture, software delivery, and all the little decisions that make codebases feel either calm or exhausting to work in. The current rabbit hole is [Effect](https://effect.website/). I wrote a [little crash course of what I've been reading and watching](/effect/) for anyone curious.
 
 This site is still my main place for thinking in public. I usually write when a topic keeps poking at me for long enough, or when I notice the same idea showing up across code, teams, tools, and product work.
 

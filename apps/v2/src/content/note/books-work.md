@@ -23,7 +23,7 @@ I recently Gave Andy Matuschak's [Why Books don't work](https://andymatuschak.or
 
 > In learning sciences, we call this model “transmissionism.” It’s the notion that knowledge can be directly transmitted from teacher to student, like transcribing text from one page onto another. If only!
 
-> In summary: lectures don’t work because the medium lacks a functioning cognitive model. It’s (implicitly) built on a faulty idea about how people learn—transmissionism—which we can caricaturize as “lecturer says words describing an idea; students hear words; then they understand.”
+> In summary: lectures don’t work because the medium lacks a functioning cognitive model. It’s (implicitly) built on a faulty idea about how people learn, transmissionism, which we can caricaturize as “lecturer says words describing an idea; students hear words; then they understand.”
 
 > When lectures do work, it’s generally as part of a broader learning context (e.g. projects, problem sets) with a better cognitive model.
 
@@ -43,7 +43,7 @@ I recently Gave Andy Matuschak's [Why Books don't work](https://andymatuschak.or
 
 ### Textbooks
 
-> Let’s begin by looking at textbooks in practice. It’s striking that academic courses are often structured around textbooks, but lots of people spend the extra time and money to enroll in those courses—rather than just studying the textbooks independently.
+> Let’s begin by looking at textbooks in practice. It’s striking that academic courses are often structured around textbooks, but lots of people spend the extra time and money to enroll in those courses, rather than just studying the textbooks independently.
 
 > For example, textbook exercises are often designed to yield both a solution to that specific problem and also broader insights about the subject. Will readers notice if they solved a problem but missed the insights it was supposed to reveal?
 

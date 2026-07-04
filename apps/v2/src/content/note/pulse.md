@@ -21,11 +21,11 @@ Pulse recursively scans a directory tree, finds every git repo, and prints a sta
 Key things it surfaces:
 
 - **Clean/dirty status** with changed file counts
-- **Ahead/behind remote** — unpushed (↑) and unpulled (↓) commits vs origin
-- **Ghost detection** — repos inactive for 6+ months get flagged with a 👻
-- **Detail mode** (`--detail`) — shows recent commits and lines changed per repo
-- **Non-git detection** — flags directories sitting alongside repos that aren't git-tracked
-- **JSON output** (`--format json`) — pipe to `jq` or feed to other tools. I figure this can be useful when I'm ready to go web.
+- **Ahead/behind remote**: unpushed (↑) and unpulled (↓) commits vs origin
+- **Ghost detection**: repos inactive for 6+ months get flagged with a 👻
+- **Detail mode** (`--detail`): shows recent commits and lines changed per repo
+- **Non-git detection**: flags directories sitting alongside repos that aren't git-tracked
+- **JSON output** (`--format json`): pipe to `jq` or feed to other tools. I figure this can be useful when I'm ready to go web.
 
 ## Some technical bits
 
@@ -39,11 +39,11 @@ I initially instrumented the timing manually, before going the OTel route.
 
 ## Screenshots
 
-<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/basic-scan.png" alt="Basic scan — repo name, status, last active, branch, ahead/behind, and 7-day activity sparkline" loading="lazy"><figcaption>Basic scan — repo name, status, last active, branch, ahead/behind, and 7-day activity sparkline</figcaption></figure>
+<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/basic-scan.png" alt="Basic scan: repo name, status, last active, branch, ahead/behind, and 7-day activity sparkline" loading="lazy"><figcaption>Basic scan: repo name, status, last active, branch, ahead/behind, and 7-day activity sparkline</figcaption></figure>
 
-<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/detail.png" alt="Detail mode (`--detail`) — recent commits per repo with lines added/removed" loading="lazy"><figcaption>Detail mode (`--detail`) — recent commits per repo with lines added/removed</figcaption></figure>
+<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/detail.png" alt="Detail mode (`--detail`): recent commits per repo with lines added/removed" loading="lazy"><figcaption>Detail mode (`--detail`): recent commits per repo with lines added/removed</figcaption></figure>
 
-<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/timed.png" alt="Performance breakdown (`--time`) — OTel waterfall timeline and per-repo span tree" loading="lazy"><figcaption>Performance breakdown (`--time`) — OTel waterfall timeline and per-repo span tree</figcaption></figure>
+<figure><img src="https://d20tmfka7s58bt.cloudfront.net/pulse/timed.png" alt="Performance breakdown (`--time`): OTel waterfall timeline and per-repo span tree" loading="lazy"><figcaption>Performance breakdown (`--time`): OTel waterfall timeline and per-repo span tree</figcaption></figure>
 
 No LLMs were harmed in the building of this project 💀
 

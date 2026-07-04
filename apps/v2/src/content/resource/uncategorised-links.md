@@ -17,10 +17,10 @@ tags: [career, strategy, music]
 - [Jason Lengstorf: Use Airbnb like a pro](https://www.lengstorf.com/use-airbnb-like-a-pro/) 
   - has a sample email that can be used to contact hosts before you commit to a place.
   - has good list of bare minimums to look out for when looking for a place, and they're pretty reasonable asks.
-> - I want an entire place to myself — shared rooms are for very short stays only
-> - The wifi needs to be fast and reliable — without it, I can’t work
+> - I want an entire place to myself: shared rooms are for very short stays only
+> - The wifi needs to be fast and reliable: without it, I can’t work
 > - The bed needs to be comfortable and at least queen-sized
-> - Temperature control for the room is essential — I can’t sleep when I’m too hot or cold
+> - Temperature control for the room is essential: I can’t sleep when I’m too hot or cold
 > - The location needs to be within walking distance of both good restaurants and coffee shops with wifi
 > - Having a washing machine in the unit is ideal since I only have 5 days’ worth of clothing (in a pinch, I can do without this)
 

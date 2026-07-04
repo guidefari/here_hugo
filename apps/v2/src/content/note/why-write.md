@@ -107,7 +107,7 @@ This list isn’t exhaustive, but I think it illustrates some areas where good w
 
 Every senior engineer I’ve crossed paths with spends a decent portion of their time writing. [Sarah Drasner’s Career Ladders](https://career-ladders.dev/engineering#staff-engineer) helps to give an idea of how your writing commitments will increase as you become more senior.
 
-As a knowledge worker, writing is a skill you’ll need to rely on more and more as you work your way up in your career. I can even go as far as saying I’ve observed that clear writing and communication will become an **expected part of your job description.** [Satya Nadella says](https://www.cnbc.com/2019/02/26/mwc-microsoft-satya-nadella-on-leadership-qualities.html) "You can’t call yourself a leader by coming into a situation that is by nature uncertain, ambiguous—and create confusion. You have to create clarity where none exists."
+As a knowledge worker, writing is a skill you’ll need to rely on more and more as you work your way up in your career. I can even go as far as saying I’ve observed that clear writing and communication will become an **expected part of your job description.** [Satya Nadella says](https://www.cnbc.com/2019/02/26/mwc-microsoft-satya-nadella-on-leadership-qualities.html) "You can’t call yourself a leader by coming into a situation that is by nature uncertain, ambiguous, and create confusion. You have to create clarity where none exists."
 
 For this reason, I think writing is worth improving early on in your career when you have more time to sharpen this skill. Because you likely won’t be leading anyone yet, learning how to write early in your career gives you a chance to learn in an environment with lower pressure, where no one expects you to be great at it already. 
 

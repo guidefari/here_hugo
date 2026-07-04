@@ -2,7 +2,7 @@
 title: "Turing Completeness"
 date: 2026-02-05T17:15:12+02:00
 description: I recently learnt that the Typescript Type system is Turing complete!
-tags: [typescript, computer-science]
+tags: [typescript, computer-science, media]
 images:
   ["https://images-here-hugo.vercel.app/api/og-image?title=Turing+Completeness"]
 ---

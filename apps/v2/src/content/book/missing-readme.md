@@ -34,7 +34,7 @@ They quote [Ben Horowitz - The hard thing about hard things](https://www.amazon.
 > The primary thing that any technology startup must do is build a product that’s at least ten times better at doing something than the current prevailing way of doing that thing. Two or three times better will not be good enough to get people to switch to the new thing fast enough or in large enough volume to matter.
 
 Then go on to say 
-> the same idea applies to existing code. If you want to rewrite code or diverge from standards, your improvement must be **an order of magnitude better**. Small gains aren’t enough—the cost is too high. Most engineers underestimate the value of convention and overestimate the value of ignoring it.
+> the same idea applies to existing code. If you want to rewrite code or diverge from standards, your improvement must be **an order of magnitude better**. Small gains aren’t enough; the cost is too high. Most engineers underestimate the value of convention and overestimate the value of ignoring it.
 
 I’ve heard Will Larson say something similar [RE migrations](/migrations). It’s only valuable to engage in a migration if you have 10x more users, or 10x more engineers than when the software was first written.
 

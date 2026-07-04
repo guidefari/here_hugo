@@ -11,9 +11,9 @@ It ain't much yet, but one of the goals in this project was learning how to publ
 
 Quite happy with the workflow so far.
 
-- [opensound.dev](https://opensound.dev/) — current home of the project
-- [github.com/planetaryescape/opensound](https://github.com/planetaryescape/opensound) — source
-- [spotify.opensound.dev](https://spotify.opensound.dev) — the spotify-effect tool itself
+- [opensound.dev](https://opensound.dev/): current home of the project
+- [github.com/planetaryescape/opensound](https://github.com/planetaryescape/opensound): source
+- [spotify.opensound.dev](https://spotify.opensound.dev): the spotify-effect tool itself
 - [npm package - (spotify-effect)](https://www.npmjs.com/package/spotify-effect?activeTab=readme)
 
 Now, onto how it's done. These are the main tools I used:
