@@ -2,6 +2,8 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getAllTags, getCanonicalUrl, getEntriesByTag } from "../../../lib/content.mjs";
 import PostListItem from "../../../components/PostListItem.astro";
+import SectionMoreLink from "../../../components/SectionMoreLink.astro";
+import WritingList from "../../../components/WritingList.astro";
 
 export async function getStaticPaths() {
   return (await getAllTags()).map((tag) => ({
@@ -16,12 +18,16 @@ const entries = await getEntriesByTag(tag.slug);
 
 <BaseLayout title={`#${tag.label}`} canonical={getCanonicalUrl(`/tags/${tag.slug}/`)}>
   <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
-    <h1 class="mb-8 text-2xl font-bold tracking-tight text-white">#{tag.label}</h1>
-    <ul class="posts article-list">
+    <header class="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h1 class="text-5xl text-white m-0">#{tag.label}</h1>
+        <p class="mt-3 mb-0 text-sm font-mono text-text/50">{entries.length} {entries.length === 1 ? "post" : "posts"}</p>
+      </div>
+      <SectionMoreLink href="/tags/" label="all tags" />
+    </header>
+
+    <WritingList listId={`tag-${tag.slug}-list`}>
       {entries.map((entry) => <PostListItem entry={entry} />)}
-    </ul>
-    <section>
-      <h2 class="text-xl"><a href="/tags/">All tags</a></h2>
-    </section>
+    </WritingList>
   </main>
 </BaseLayout>
