@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCanonicalUrl } from "../../lib/content.mjs";
+import { projects } from "../../lib/projects.mjs";
+---
+
+<BaseLayout title="Open Source" description="Projects and tools I've built." canonical={getCanonicalUrl("/projects/")}>
+  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="text-5xl text-white m-0">Open Source</h1>
+      <p class="max-w-2xl mt-4 text-text/75">Projects and tools I've built.</p>
+    </header>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 p-0 m-0">
+      {projects.map((project) => (
+        <li class="list-none">
+          <ProjectCard project={project} />
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
