@@ -1,0 +1,105 @@
+---
+import { getAllEntries, getEntriesBySection, formatDate } from "../lib/content.mjs";
+import { writingSections, homeWritingSections, writingTree } from "../lib/site.mjs";
+import { projects } from "../lib/projects.mjs";
+
+const entries = await getAllEntries();
+const writing = entries.filter((entry) => writingSections.includes(entry.section));
+const featured = writing.filter((entry) => entry.data.featured).slice(0, 3);
+const featuredPermalinks = new Set(featured.map((entry) => entry.permalink));
+const recent = writing
+  .filter(
+    (entry) =>
+      homeWritingSections.includes(entry.section) &&
+      !featuredPermalinks.has(entry.permalink)
+  )
+  .slice(0, 6);
+const mediaCount = (await getEntriesBySection("media")).length;
+
+const elsewhere = [
+  { label: "open source", href: "/projects/", meta: `${projects.length} projects` },
+  { label: "recommended media", href: "/media/", meta: `${mediaCount} picks` },
+  { label: "now", href: "/now/", meta: "what i'm up to" },
+  { label: "unoffice hours", href: "/unoffice-hours/", meta: "book a chat" },
+];
+---
+
+<div class="max-w-2xl pt-2 lg:pt-10 flex flex-col gap-12 font-mono">
+  <section>
+    <h2 class="m-0 mb-4 text-xs font-normal text-text/40">featured</h2>
+    <ul class="m-0 p-0 flex flex-col gap-3">
+      {featured.map((entry) => (
+        <li class="list-none">
+          <a href={entry.permalink} class="group flex items-baseline gap-3 no-underline">
+            <span class="post-link text-base font-bold text-highlight group-hover:text-white transition-colors">{entry.title}</span>
+            <span class="grow border-b border-dotted border-text/20 translate-y-[-3px]"></span>
+            {entry.date && <span class="shrink-0 text-xs text-text/40">{formatDate(entry.date, { month: "short", year: "numeric" })}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="m-0 mb-4 text-xs font-normal text-text/40">recent</h2>
+    <ul class="m-0 p-0 flex flex-col gap-3">
+      {recent.map((entry) => (
+        <li class="list-none">
+          <a href={entry.permalink} class="group flex items-baseline gap-3 no-underline">
+            <span class="post-link text-sm text-text/85 group-hover:text-highlight transition-colors">{entry.title}</span>
+            <span class="grow border-b border-dotted border-text/15 translate-y-[-3px]"></span>
+            <span class="shrink-0 text-xs text-text/40">
+              {entry.section}
+              {entry.date && <>&nbsp;&middot;&nbsp;{formatDate(entry.date, { month: "short", day: "numeric" })}</>}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="m-0 mb-4 text-xs font-normal text-text/40">elsewhere</h2>
+    <ul class="m-0 p-0 flex flex-col gap-3">
+      <li class="list-none nav-tree" data-tree="writing">
+        <details open class="group">
+          <summary class="nav-chip w-full justify-start cursor-pointer list-none">
+            <span class="nav-chip__bracket">[</span>
+            <span class="nav-chip__label flex-1 text-left">writing</span>
+            <span class="nav-chip__bracket">]</span>
+            <span class="nav-tree__caret text-text/50 text-[10px] transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+          </summary>
+          <ul class="nav-tree__children flex flex-col gap-1 mt-1 pl-3 border-l border-text/15">
+            {writingTree.children.map((child) => (
+              <li>
+                <a href={child.href} class="nav-chip nav-chip--child w-full justify-start text-[0.72rem]">
+                  <span class="nav-chip__bracket">[</span>
+                  <span class="nav-chip__label">{child.label}</span>
+                  <span class="nav-chip__bracket">]</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </li>
+      {elsewhere.map((item) => (
+        <li class="list-none">
+          <a href={item.href} class="group flex items-baseline gap-3 no-underline">
+            <span class="text-sm text-accentText group-hover:text-highlight transition-colors">&rarr; {item.label}</span>
+            <span class="grow border-b border-dotted border-text/15 translate-y-[-3px]"></span>
+            <span class="shrink-0 text-xs text-text/40">{item.meta}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</div>
+
+<style>
+  .nav-tree > details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-tree > details > summary::marker {
+    content: "";
+  }
+</style>
