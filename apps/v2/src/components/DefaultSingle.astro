@@ -14,7 +14,7 @@ const series = entry.data?.full_width ? null : await getSeriesForEntry(entry);
 ---
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} noindex={entry.data.noindex === true} hideFooter={entry.data.hide_footer === true} hasMermaid={entry.hasMermaid}>
-  <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 pt-12 pb-8 lg:pt-8">
+  <main class="flex flex-col w-full px-4 lg:px-6 pt-12 pb-8 lg:pt-8">
     {series && <SeriesMobileNav series={series} current={entry} />}
     <div class="mb-8">
       <h1 class="text-3xl lg:text-5xl text-white m-0">{entry.title}</h1>
@@ -33,7 +33,7 @@ const series = entry.data?.full_width ? null : await getSeriesForEntry(entry);
       </div>
     </div>
     {entry.data.tldr && <div class="tldr">{entry.data.tldr}</div>}
-    <article class="prose lg:prose-xl prose-headings:max-w-none prose-pre:overflow-x-auto prose-pre:max-w-full [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h3]:text-xl [&_h3]:lg:text-3xl">
+    <article class="prose lg:prose-xl max-w-none prose-headings:max-w-none prose-pre:overflow-x-auto prose-pre:max-w-full [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h3]:text-xl [&_h3]:lg:text-3xl">
       <Content />
     </article>
     {series && <SeriesPrevNext series={series} current={entry} />}
