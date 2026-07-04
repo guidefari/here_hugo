@@ -1,0 +1,9 @@
+---
+const { href, label } = Astro.props;
+---
+
+<a href={href} class="nav-chip mt-4 text-[0.72rem]" data-nav-sound>
+  <span class="nav-chip__bracket">[</span>
+  <span class="nav-chip__label">{label} →</span>
+  <span class="nav-chip__bracket">]</span>
+</a>
