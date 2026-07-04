@@ -17,22 +17,22 @@ if (entry.data?.series) {
 }
 ---
 
-<li class="list-none py-3" data-section={entry.section}>
-  <div class="flex items-start gap-4">
+<li class="list-none" data-section={entry.section}>
+  <div class="flex items-start gap-4 py-3 px-2 -mx-2 rounded-sm transition-colors hover:bg-text/[0.04]">
     {showSection && (
       <a href={sectionHref} class="w-16 shrink-0 text-xs font-mono text-accentText/60 lowercase hover:text-accentText transition-colors no-underline mt-0.5">{entry.section}</a>
     )}
     <div class:list={["flex flex-col gap-1 min-w-0", showSection ? "flex-1" : "w-full"]}>
       <div class="flex items-start justify-between gap-2">
         <a href={entry.permalink} class="post-link font-bold leading-snug text-highlight hover:text-white transition-colors duration-150 no-underline">{entry.title}</a>
-        <time class="text-xs font-mono text-text/40 shrink-0 mt-0.5">{formatDate(entry.date, { month: "short", year: "2-digit" })}{entry.draft && <span class="text-red-400"> DRAFT</span>}</time>
+        <time class="text-xs font-mono text-text/40 shrink-0 mt-0.5" datetime={entry.date?.toISOString()}>{formatDate(entry.date, { month: "short", year: "numeric" })}{entry.draft && <span class="text-red-400"> DRAFT</span>}</time>
       </div>
       {seriesLabel && seriesHref && (
         <a href={seriesHref} class="text-[11px] font-mono tracking-wider text-text/40 hover:text-highlight transition-colors no-underline w-fit">
           {seriesLabel}
         </a>
       )}
-      {entry.description && <span class="text-sm text-text/60 leading-snug">{entry.description}</span>}
+      {entry.description && <span class="text-sm text-text/55 leading-snug line-clamp-2">{entry.description}</span>}
     </div>
   </div>
 </li>

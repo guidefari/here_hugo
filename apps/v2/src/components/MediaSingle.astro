@@ -10,7 +10,7 @@ const { Content } = await render(entry._entry);
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} hasMermaid={entry.hasMermaid}>
   <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
-    <div>
+    <div class="measure">
       <h1 class="text-5xl text-white m-0">{entry.title}</h1>
       <div class="flex flex-wrap gap-2 text-sm text-accentText">
         {entry.date && <time>{formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
@@ -30,9 +30,11 @@ const { Content } = await render(entry._entry);
       </div>
     </div>
 
-    <MediaEmbed entry={entry} />
+    <div class="measure">
+      <MediaEmbed entry={entry} />
+    </div>
     {entry.hasBody && (
-      <article class="prose lg:prose-xl">
+      <article class="prose lg:prose-xl max-w-none prose-measure prose-pre:overflow-x-auto prose-pre:max-w-full">
         <Content />
       </article>
     )}

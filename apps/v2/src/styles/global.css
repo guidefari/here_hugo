@@ -356,9 +356,16 @@
   }
 }
 
+@utility measure {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
 @utility prose-measure {
   & > :not(pre, table, figure, iframe, video) {
     max-width: 48rem;
+    margin-inline: auto;
   }
 }
 
@@ -497,6 +504,12 @@
 
   .prose p {
     text-wrap: pretty;
+  }
+
+  .prose pre {
+    background-color: color-mix(in oklab, var(--color-bg) 65%, black) !important;
+    border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
+    border-radius: 0.25rem;
   }
 
   .prose :is(h1, h2, h3, h4) code {
