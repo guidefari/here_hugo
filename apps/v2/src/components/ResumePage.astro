@@ -27,7 +27,7 @@ function inlineMarkdown(value) {
     <div class="lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
       <nav class="resume-toc hidden lg:block" aria-label="Resume sections">
         <div class="sticky top-24">
-          <p class="text-[0.6rem] uppercase tracking-[0.3em] text-white/30 mb-4">On this page</p>
+          <p class="text-[0.6rem] tracking-[0.3em] text-white/30 mb-4">On this page</p>
           <ul class="space-y-2">
             <li><a href="#skills" class="resume-toc-link" data-section="skills">Tech Experience</a></li>
             <li><a href="#experience" class="resume-toc-link" data-section="experience">Work Experience</a></li>
@@ -49,7 +49,7 @@ function inlineMarkdown(value) {
         </header>
 
         <div class="resume-toc-mobile lg:hidden mb-8 border border-white/10 bg-[#0F1F26]">
-          <button id="toc-toggle" type="button" class="w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-[0.2em] text-accentText">
+          <button id="toc-toggle" type="button" class="w-full flex items-center justify-between px-4 py-3 text-xs tracking-[0.2em] text-accentText">
             <span>On this page</span>
             <svg class="toc-chevron h-3.5 w-3.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
@@ -67,7 +67,7 @@ function inlineMarkdown(value) {
           <div class="mt-4 grid gap-3 sm:grid-cols-2">
             {skills.map((skill) => (
               <div class="resume-card">
-                <p class="text-xs uppercase tracking-[0.2em] text-accentText mb-2">{skill.category}</p>
+                <p class="text-xs tracking-[0.2em] text-accentText mb-2">{skill.category}</p>
                 <p class="text-sm text-[#D7DDD4] leading-relaxed">{skill.items}</p>
               </div>
             ))}
@@ -93,7 +93,7 @@ function inlineMarkdown(value) {
                   )}
                   {Array.isArray(job.achievements) && job.achievements.length > 0 && (
                     <div class="mt-4 border-l-2 border-highlight/30 pl-3">
-                      <p class="text-xs uppercase tracking-[0.15em] text-highlight/70 mb-2">{job.achievements_label ?? "Achievements"}</p>
+                      <p class="text-xs tracking-[0.15em] text-highlight/70 mb-2">{job.achievements_label ?? "Achievements"}</p>
                       <ul class="space-y-1.5">
                         {job.achievements.map((achievement) => <li class="resume-highlight" set:html={inlineMarkdown(achievement)} />)}
                       </ul>
@@ -152,7 +152,6 @@ function inlineMarkdown(value) {
     .resume-section-title {
       font-size: 0.6875rem;
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 0.24em;
       color: #F5D547;
       padding-bottom: 0.5rem;

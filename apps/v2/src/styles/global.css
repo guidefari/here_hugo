@@ -14,6 +14,13 @@
   --color-bg: #1a2f38;
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @view-transition {
   navigation: auto;
 }
@@ -204,7 +211,6 @@
     background-color: color-mix(in oklab, var(--color-text) 6%, transparent);
     border-bottom: 2px solid color-mix(in oklab, var(--color-highlight) 50%, transparent);
     font-size: 0.85rem;
-    text-transform: uppercase;
     letter-spacing: 0.06em;
   }
 
@@ -350,6 +356,12 @@
   }
 }
 
+@utility prose-measure {
+  & > :not(pre, table, figure, iframe, video) {
+    max-width: 48rem;
+  }
+}
+
 @utility article-list {
   display: flex;
   flex-direction: column;
@@ -480,7 +492,11 @@
 
 @layer utilities {
   .prose :is(h1, h2, h3, h4) {
-    max-width: none;
+    text-wrap: balance;
+  }
+
+  .prose p {
+    text-wrap: pretty;
   }
 
   .prose :is(h1, h2, h3, h4) code {

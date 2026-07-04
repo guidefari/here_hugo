@@ -48,25 +48,35 @@ const tabs = [
       )}
     </header>
 
-    <nav class="flex gap-1 border-b border-white/10 mb-8 overflow-x-auto" role="tablist" id="effect-tabs">
-      {tabs.map((tab, i) => (
-        <button
-          role="tab"
-          id={`tab-${tab.id}`}
-          aria-controls={`panel-${tab.id}`}
-          aria-selected={i === 0 ? "true" : "false"}
-          data-tab={tab.id}
-          class:list={[
-            "px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px cursor-pointer",
-            i === 0
-              ? "border-highlight text-highlight"
-              : "border-transparent text-accentText/60 hover:text-accentText",
-          ]}
-        >
-          {tab.label}
-        </button>
-      ))}
-    </nav>
+    <div class="relative mb-8 -mx-4 lg:-mx-6">
+      <nav
+        class="flex gap-1 border-b border-white/10 overflow-x-auto no-scrollbar scroll-px-4 snap-x px-4 lg:px-6"
+        role="tablist"
+        id="effect-tabs"
+      >
+        {tabs.map((tab, i) => (
+          <button
+            role="tab"
+            id={`tab-${tab.id}`}
+            aria-controls={`panel-${tab.id}`}
+            aria-selected={i === 0 ? "true" : "false"}
+            data-tab={tab.id}
+            class:list={[
+              "snap-start px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px cursor-pointer",
+              i === 0
+                ? "border-highlight text-highlight"
+                : "border-transparent text-accentText/60 hover:text-accentText",
+            ]}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+      <div
+        class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-bg to-transparent lg:hidden"
+        aria-hidden="true"
+      ></div>
+    </div>
 
     {tabs.map((tab, i) => (
       <div
@@ -104,7 +114,7 @@ const tabs = [
                       )}
                     </div>
                     <span
-                      class={`shrink-0 font-mono text-[9px] uppercase tracking-wider px-1.5 py-0.5 border self-start mt-0.5 ${typeClass(item.type)}`}
+                      class={`shrink-0 font-mono text-[9px] tracking-wider px-1.5 py-0.5 border self-start mt-0.5 ${typeClass(item.type)}`}
                     >
                       {item.type}
                     </span>

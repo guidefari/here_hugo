@@ -1,5 +1,6 @@
 ---
 import { projects } from "../lib/projects.mjs";
+import SectionMoreLink from "./SectionMoreLink.astro";
 ---
 
 <section class="w-full">
@@ -28,7 +29,7 @@ import { projects } from "../lib/projects.mjs";
           {project.topics.length > 0 && (
             <div class="flex flex-wrap gap-1.5 mt-1">
               {project.topics.map((topic) => (
-                <span class="text-[9px] font-mono uppercase tracking-wider text-highlight/50 bg-highlight/[0.07] px-1.5 py-px rounded-sm">
+                <span class="text-[9px] font-mono tracking-wider text-highlight/50 bg-highlight/[0.07] px-1.5 py-px rounded-sm">
                   {topic}
                 </span>
               ))}
@@ -38,4 +39,5 @@ import { projects } from "../lib/projects.mjs";
       </li>
     ))}
   </ul>
+  <SectionMoreLink href="/projects/" label="all projects" />
 </section>

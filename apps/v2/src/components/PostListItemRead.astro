@@ -14,6 +14,6 @@ const tagString = entry.tags.join(",");
       <time class="text-xs font-mono text-text/40 shrink-0 mt-0.5">{formatDate(entry.date, { month: "short", year: "2-digit" })}{entry.draft && <span class="text-red-400"> DRAFT</span>}</time>
     </div>
     {entry.description && <span class="text-sm text-text/60 leading-snug">{entry.description}</span>}
-    <a href={sectionHref} class="self-start text-xs font-mono text-accentText/60 uppercase tracking-widest hover:text-accentText transition-colors no-underline">{entry.section}</a>
+    <a href={sectionHref} class="self-start text-xs font-mono text-accentText/60 tracking-widest hover:text-accentText transition-colors no-underline">{entry.section}</a>
   </div>
 </li>

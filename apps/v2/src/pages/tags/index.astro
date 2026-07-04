@@ -14,7 +14,7 @@ const postCount = tags.reduce((total, tag) => total + tag.count, 0);
     </header>
 
     <div class="mb-6">
-      <label for="tag-filter" class="block mb-2 text-sm font-semibold tracking-[0.16em] uppercase text-accentText">Filter tags</label>
+      <label for="tag-filter" class="block mb-2 text-sm font-semibold tracking-[0.16em] text-accentText">Filter tags</label>
       <input id="tag-filter" type="search" placeholder="music, backend, writing..." autocomplete="off" class="w-full px-4 py-3 font-mono text-base bg-transparent border rounded-sm border-text/30 text-text placeholder:text-text/35 focus:outline-none focus:border-highlight focus:ring-1 focus:ring-highlight" />
       <div class="min-h-10 mt-3 overflow-x-auto">
         <div id="tag-autocomplete" class="flex gap-2 pb-1" aria-label="Tag suggestions" aria-live="polite"></div>

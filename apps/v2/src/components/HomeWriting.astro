@@ -1,26 +1,40 @@
 ---
 import { getAllEntries } from "../lib/content.mjs";
-import { homeWritingSections } from "../lib/site.mjs";
+import { homeWritingSections, writingSections } from "../lib/site.mjs";
 import PostListItemCompact from "./PostListItemCompact.astro";
+import SectionMoreLink from "./SectionMoreLink.astro";
 
-const posts = (await getAllEntries()).filter((entry) => homeWritingSections.includes(entry.section));
-const featured = posts.filter((entry) => entry.data.featured);
-const recent = posts.slice(0, 4);
+const entries = await getAllEntries();
+const featured = entries.filter(
+  (entry) => entry.data.featured && writingSections.includes(entry.section)
+);
+const featuredPermalinks = new Set(featured.map((entry) => entry.permalink));
+const recent = entries
+  .filter(
+    (entry) =>
+      homeWritingSections.includes(entry.section) &&
+      !featuredPermalinks.has(entry.permalink)
+  )
+  .slice(0, 8);
 ---
 
-{featured.length > 0 && (
-  <div class="flex-1 min-w-0">
-    <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Featured</h2>
-    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
-      {featured.map((entry) => <PostListItemCompact entry={entry} />)}
-    </ul>
-  </div>
-)}
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-10 min-w-0 items-start">
+  {featured.length > 0 && (
+    <section class="min-w-0">
+      <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Featured</h2>
+      <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
+        {featured.map((entry) => (
+          <PostListItemCompact entry={entry} dateOptions={{ month: "short", year: "numeric" }} />
+        ))}
+      </ul>
+    </section>
+  )}
 
-<div class="flex-1 min-w-0">
-  <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Recent</h2>
-  <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
-    {recent.map((entry) => <PostListItemCompact entry={entry} />)}
-  </ul>
-  <a href="/note/" class="inline-block mt-4 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 tracking-widest no-underline">all notes →</a>
+  <section class="min-w-0">
+    <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Recent</h2>
+    <ul class="flex flex-col divide-y divide-text/10 m-0 p-0">
+      {recent.map((entry) => <PostListItemCompact entry={entry} />)}
+    </ul>
+    <SectionMoreLink href="/note/" label="all notes" />
+  </section>
 </div>

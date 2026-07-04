@@ -25,7 +25,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
 
     <section class="min-h-0 grow lg:grid lg:gap-6 lg:grid-cols-[200px_minmax(0,1fr)_160px]">
       <aside class="hidden overflow-y-auto border border-white/10 bg-[#0F1F26] p-5 lg:block">
-        <p class="text-xs uppercase tracking-[0.24em] text-accentText">Bio Length</p>
+        <p class="text-xs tracking-[0.24em] text-accentText">Bio Length</p>
         <div id="bio-length-options" class="mt-4 grid gap-2">
           {bioOptions.map((option, index) => (
             <button type="button" class="bio-option border px-4 py-3 text-left transition" data-bio-option={option.id} aria-pressed={index === 0 ? "true" : "false"}>
@@ -39,7 +39,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
       <div class="flex min-h-0 flex-col border border-white/10 bg-[#0F1F26] p-5 sm:p-6 mt-4 lg:mt-0">
         <div class="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 pb-4">
           <div>
-            <h2 id="bio-title" class="text-xs uppercase tracking-[0.24em]"></h2>
+            <h2 id="bio-title" class="text-xs tracking-[0.24em]"></h2>
             <p id="bio-use-case" class="mt-1 text-xs leading-6 text-accentText"></p>
           </div>
 
@@ -59,7 +59,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
 
           {portraits.length > 0 && (
             <div class="mt-8 lg:hidden">
-              <p class="mb-3 text-xs uppercase tracking-[0.24em] text-accentText">Portraits</p>
+              <p class="mb-3 text-xs tracking-[0.24em] text-accentText">Portraits</p>
               <div class="grid grid-cols-2 gap-3">
                 {portraits.map((portrait) => (
                   <div class="border border-white/10 bg-[#0A1419]">
@@ -78,7 +78,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
 
       {portraits.length > 0 && (
         <aside class="hidden overflow-y-auto border border-white/10 bg-[#0F1F26] p-4 lg:block">
-          <p class="text-xs uppercase tracking-[0.24em] text-accentText">Portraits</p>
+          <p class="text-xs tracking-[0.24em] text-accentText">Portraits</p>
           <div class="mt-3 grid gap-3">
             {portraits.map((portrait) => (
               <div class="border border-white/10 bg-[#0A1419]">

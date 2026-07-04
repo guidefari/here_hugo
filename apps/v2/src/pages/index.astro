@@ -9,13 +9,13 @@ import { site } from "../lib/site.mjs";
 ---
 
 <BaseLayout title={site.title} description={site.subtitle} canonical={getCanonicalUrl("/")}>
-  <main class="flex flex-col w-full px-4 lg:px-6">
+  <main class="flex flex-col w-full px-4 lg:px-6 max-w-7xl">
     <div class="mb-6 max-w-xl lg:hidden">
       <Hero />
     </div>
-    <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,3fr)] gap-10 xl:gap-14 items-start">
       <HomeWriting />
-      <div class="flex-1 min-w-0 flex flex-col gap-8">
+      <div class="flex flex-col gap-10 min-w-0">
         <HomeProjects />
         <HomeMedia />
       </div>

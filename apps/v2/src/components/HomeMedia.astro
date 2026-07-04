@@ -1,14 +1,13 @@
 ---
 import { getEntriesBySection } from "../lib/content.mjs";
+import SectionMoreLink from "./SectionMoreLink.astro";
 
 const items = (await getEntriesBySection("media")).slice(0, 3);
 ---
 
 {items.length > 0 && (
   <section class="w-full">
-    <div class="mb-6">
-      <h2 class="text-2xl font-bold tracking-tight text-white m-0">Recommended Media</h2>
-    </div>
+    <h2 class="text-xl font-bold tracking-tight text-white m-0 mb-3">Recommended Media</h2>
     <ul class="flex flex-col gap-3 m-0 p-0">
       {items.map((entry) => {
         const youtubeId = entry.data.youtube_id;
@@ -41,6 +40,6 @@ const items = (await getEntriesBySection("media")).slice(0, 3);
         );
       })}
     </ul>
-    <a href="/media/" class="inline-block mt-6 text-xs font-mono text-text/40 hover:text-highlight transition-colors duration-150 tracking-widest">all media →</a>
+    <SectionMoreLink href="/media/" label="all media" />
   </section>
 )}
