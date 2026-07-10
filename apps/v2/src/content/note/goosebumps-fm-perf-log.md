@@ -55,7 +55,6 @@ run 3 (warm): TTFB 0.06s   x-cache: Hit from cloudfront
 - That removed the S3 bucket, CloudFront distribution, and ACM certificate.
 - The site now serves directly from a Cloudflare Worker with native static assets.
 
-- Cache config moved too.
 - Cloudflare static-assets defaults every file, including hashed JS/CSS, to `max-age=0, must-revalidate`.
 - Added a Cloudflare-native `_headers` file for:
   - 1-year immutable hashed assets and fonts
