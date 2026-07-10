@@ -13,7 +13,9 @@ export const navItems = [
   { label: "unoffice hours", href: "/unoffice-hours/" },
   { label: "writing", href: "/writing/" },
   { label: "media", href: "/media/" },
+  { label: "projects", href: "/projects/" },
   { label: "rss", href: "/index.xml" },
+  { label: "planetaryescape", href: "https://planetaryescape.co.za", external: true },
 ];
 
 export const flattenedSections = new Set([
