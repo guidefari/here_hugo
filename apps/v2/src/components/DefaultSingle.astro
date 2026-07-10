@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { render } from "astro:content";
 import { formatDate, getCanonicalUrl, getOgImage, tagSlugify } from "../lib/content.mjs";
 import { getSeriesForEntry } from "../lib/series.mjs";
+import { sectionMeta, writingTree } from "../lib/site.mjs";
 import SeriesNav from "./SeriesNav.astro";
 import SeriesMobileNav from "./SeriesMobileNav.astro";
 import SeriesPrevNext from "./SeriesPrevNext.astro";
@@ -11,12 +12,21 @@ const { entry } = Astro.props;
 const { Content } = await render(entry._entry);
 
 const series = entry.data?.full_width ? null : await getSeriesForEntry(entry);
+const activeWritingHref = writingTree.children.find((child) => child.href === `/${entry.section}/`)?.href ?? "";
+const activeWritingLabel = sectionMeta[entry.section]?.label ?? entry.section;
 ---
 
-<BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} noindex={entry.data.noindex === true} hideFooter={entry.data.hide_footer === true} hasMermaid={entry.hasMermaid}>
+<BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} noindex={entry.data.noindex === true} hideFooter={entry.data.hide_footer === true} hasMermaid={entry.hasMermaid} activeWritingHref={activeWritingHref}>
   <main class:list={["flex flex-col w-full px-4 lg:px-6 pt-12 pb-8 lg:pt-8", !entry.data.full_width && "max-w-6xl mx-auto"]}>
     {series && <SeriesMobileNav series={series} current={entry} />}
     <div class:list={["mb-8", !entry.data.full_width && "measure"]}>
+      {activeWritingHref && (
+        <nav aria-label="Breadcrumbs" class="mb-4 flex items-center gap-2 text-[10px] font-mono tracking-wider text-text/50 uppercase">
+          <a href="/writing/" class="hover:text-highlight transition-colors">Writing</a>
+          <span>/</span>
+          <a href={activeWritingHref} class="text-highlight">{activeWritingLabel}</a>
+        </nav>
+      )}
       <h1 class="text-3xl lg:text-5xl text-white m-0 text-balance">{entry.title}</h1>
       {entry.date && <time>Posted on {formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
       {entry.draft && <p class="draft-label">DRAFT</p>}

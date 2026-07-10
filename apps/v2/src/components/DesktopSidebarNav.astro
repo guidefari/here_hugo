@@ -1,11 +1,10 @@
 ---
 import { navItems, writingTree } from "../lib/site.mjs";
 
-const { isHome = false } = Astro.props;
+const { isHome = false, activeWritingHref = "" } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isWritingArea = writingTree.children.some(
-  (child) => currentPath === child.href || currentPath.startsWith(child.href)
-);
+const isWritingChildActive = (href) => currentPath === href || activeWritingHref === href || currentPath.startsWith(href);
+const isWritingArea = currentPath === "/writing/" || writingTree.children.some((child) => isWritingChildActive(child.href));
 const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
 ---
 
@@ -43,7 +42,10 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
             <li class="nav-tree" data-tree="writing">
               <details open={isWritingArea} class="group">
                 <summary
-                  class:list={["nav-chip w-full justify-start cursor-pointer list-none", isWritingArea && "border-highlight text-highlight"]}
+                  class:list={[
+                    "nav-chip w-full justify-start cursor-pointer list-none",
+                    isWritingArea && "border-highlight text-highlight",
+                  ]}
                   data-nav-sound
                 >
                   <span class="nav-chip__bracket">[</span>
@@ -53,7 +55,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
                 </summary>
                 <ul class="nav-tree__children flex flex-col gap-1 mt-1 pl-3 border-l border-text/15">
                   {writingTree.children.map((child) => {
-                    const isActive = currentPath === child.href;
+                    const isActive = isWritingChildActive(child.href);
                     return (
                       <li>
                         <a
@@ -74,7 +76,7 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
             </li>
           );
         }
-        const isActive = writingChildHrefs.has(item.href) && currentPath === item.href;
+        const isActive = writingChildHrefs.has(item.href) && isWritingChildActive(item.href);
         return (
           <li>
             <a
