@@ -45,6 +45,11 @@ stations:
         url: "https://www.youtube.com/watch?v=S2GChOwivwQ"
         note: "Why typed errors are a real thing, not just functional-programmer cosplay."
       - type: video
+        title: "Effect 3.0: Production-Grade TypeScript"
+        source: "Effect"
+        url: "https://www.youtube.com/watch?v=ViSiXfBKElQ"
+        note: "A broad overview of Effect as a production TypeScript toolkit."
+      - type: video
         title: "Vibe Engineering Effect Apps"
         source: "Michael Arnaldi"
         url: "/media/michael-arnaldi-vibe-engineering-effect-apps/"
@@ -206,5 +211,4 @@ The full design lives in the next-gen version of this site. In the meantime, her
 - [effect-smol on GitHub](https://github.com/Effect-TS/effect-smol): read the source
 - [effect.solutions](https://effect.solutions/): community pattern directory
 - [effect.institute](https://effect.institute/): paid guided course
-
 

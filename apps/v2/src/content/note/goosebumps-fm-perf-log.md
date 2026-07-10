@@ -69,7 +69,7 @@ run 3 (warm): TTFB 0.06s   x-cache: Hit from cloudfront
 - Deleting the CNAME by hand caused Pulumi drift, so the next deploy hit a 404.
 - `sst refresh` reconciled state and the deploy succeeded.
 - DNS cleanup and the final Custom Domain binding were verified directly against the Cloudflare API.
-- The exact commands are in the scripts note.
+- The exact commands are in [Scripts: measuring TTFB, cache headers, and Lighthouse from the CLI](/goosebumps-fm-perf-measurement-scripts/).
 
 ## Results
 
