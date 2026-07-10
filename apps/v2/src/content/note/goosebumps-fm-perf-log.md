@@ -36,7 +36,7 @@ run 3 (warm): TTFB 0.06s   x-cache: Hit from cloudfront
 
 - Lighthouse `server-response-time`: 829ms, with ~729ms possible savings.
 - Fix: set HTML to a 60-second edge TTL.
-- Hashed JS/CSS assets already had a 1-year immutable cache.
+- The main fix was HTML caching, the hashed assets were not the bottleneck here.
 
 - Problem 2: two closed-by-default dialogs were loaded eagerly on every route.
 - The homepage `<head>` had 23 `<link rel="modulepreload">` tags.
