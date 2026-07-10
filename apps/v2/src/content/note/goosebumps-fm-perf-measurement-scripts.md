@@ -6,7 +6,7 @@ tags: [performance, cloudflare, cli]
 images: ['https://images-here-hugo.vercel.app/api/og-image?title=Measuring+TTFB+and+Cache+Headers']
 ---
 
-Companion scripts for [Cutting goosebumps.fm's cold load time](/note/goosebumps-fm-perf-log). Nothing here is specific to that site — swap the URL and these work on anything.
+Companion scripts for [Cutting goosebumps.fm's cold load time](/goosebumps-fm-perf-log/). Nothing here is specific to that site — swap the URL and these work on anything.
 
 ## TTFB, repeated
 
