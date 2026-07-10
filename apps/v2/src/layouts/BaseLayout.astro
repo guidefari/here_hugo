@@ -40,11 +40,10 @@ const {
     <SearchModal />
     <script is:inline>
       (() => {
+        if (window.__navSoundBound) return;
+        window.__navSoundBound = true;
+
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const controls = document.querySelectorAll("[data-nav-sound]");
-
-        if (!controls.length) return;
-
         const AudioContext = window.AudioContext || window.webkitAudioContext;
 
         if (!AudioContext) return;
@@ -104,16 +103,18 @@ const {
           oscillator.stop(start + duration + 0.01);
         }
 
-        controls.forEach((control) => {
-          control.addEventListener("pointerdown", () => {
-            playTick();
-          });
+        document.addEventListener("pointerdown", (event) => {
+          const control = event.target instanceof Element ? event.target.closest("[data-nav-sound]") : null;
+          if (!control) return;
+          playTick();
+        });
 
-          control.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              playTick();
-            }
-          });
+        document.addEventListener("keydown", (event) => {
+          const control = event.target instanceof Element ? event.target.closest("[data-nav-sound]") : null;
+          if (!control) return;
+          if (event.key === "Enter" || event.key === " ") {
+            playTick();
+          }
         });
       })();
     </script>

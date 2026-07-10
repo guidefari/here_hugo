@@ -1,5 +1,6 @@
 ---
 import { site } from "../lib/site.mjs";
+import { ClientRouter } from "astro:transitions";
 
 const { title, description, image, canonical, noindex = false, refreshTarget } = Astro.props;
 const pageTitle = Astro.url.pathname === "/" ? site.title : `${title ?? site.title} | ${site.title}`;
@@ -28,6 +29,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, site.url).toString
   <meta name="twitter:image" content={ogImage} />
   {noindex && <meta name="robots" content="noindex" />}
   {refreshTarget && <meta http-equiv="refresh" content={`0; url=${refreshTarget}`} />}
+  <ClientRouter />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
