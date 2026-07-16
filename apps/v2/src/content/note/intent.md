@@ -33,7 +33,7 @@ Code that communicates intent simplifies:
 - collaboration
 - onboarding
 
-Simplifying all of this **reduces the cost of maintaining the codebase**. An example from Ibra:
+Simplifying all of this **reduces the cost of maintaining the codebase**. An example from Ibra related to ease of change:
 
 ```python
 item = 6
@@ -53,6 +53,18 @@ return False
 ```
 
 To change the second snippet to an array that looks like `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`, I just change `arraySize` to 10
+
+Another example from Ibra but related directly to intent:
+```python
+# Bad
+rect = [10, 20, 100, 50]
+area = rect[2] * rect[3]
+
+# Good
+rect = {"x": 10, "y": 20, "width": 100, "height": 50}
+area = rect["width"] * rect["height"]
+```
+What are index 2 and index 3? Are they the dimensions of the rectangle, or the (x, y) coordinates? We shouldn't have to guess. The dictionary keys explicitly name the components, making the code's intent immediately apparent. The second approach is clear and offers little resistance during a code review. In fact, it's *self-documenting*.
 
 # How it can be done
 
