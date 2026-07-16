@@ -5,7 +5,7 @@
 - [ ] RSS feed
   - https://gitlab.com/jgarr/blog/-/blob/main/layouts/_default/rss.xml
 
-# Post tags
+## Post tags
 
 ```html
 <div class="home-tag-wrapper">
@@ -15,7 +15,7 @@
 </div>
 ```
 
-# dark mode
+## dark mode
 
 ```html
 {{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
@@ -24,7 +24,7 @@
  {{ end }}
 ```
 
-# Raw HTML in your markdown
+## Raw HTML in your markdown
 
 add this to `config.yaml`
 
@@ -33,4 +33,15 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+```
+
+## Running v2
+Install dependencies:
+```shell
+bun install
+```
+
+Start the development server using Turbo:
+```shell
+bun run dev
 ```
