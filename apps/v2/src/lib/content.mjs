@@ -129,7 +129,7 @@ let cachedSections = null;
 
 async function loadAll() {
   if (cachedEntries) return cachedEntries;
-  const raw = await getCollection(collectionName, ({ data }) => data?.draft !== true);
+  const raw = await getCollection(collectionName);
   const entries = raw.map(buildEntry);
   cachedEntries = entries;
   for (const entry of entries) {
