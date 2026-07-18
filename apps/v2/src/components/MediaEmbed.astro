@@ -1,18 +1,10 @@
 ---
 const { entry } = Astro.props;
-const type = entry.data.media_type ?? "link";
-const url = entry.data.media_url;
 const youtubeId = entry.data.youtube_id;
 ---
 
-{type === "youtube" && youtubeId ? (
+{youtubeId && (
   <div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;">
     <iframe class="absolute inset-0 w-full h-full" src={`https://www.youtube.com/embed/${youtubeId}`} title={entry.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
-) : type === "podcast" && url ? (
-  <p><a class="highlighted-link" href={url}>Listen on Spotify</a></p>
-) : type === "article" && url ? (
-  <p><a class="highlighted-link" href={url}>Read article</a></p>
-) : url ? (
-  <p><a class="highlighted-link" href={url}>Open link</a></p>
-) : null}
+)}

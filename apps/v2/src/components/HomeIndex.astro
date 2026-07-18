@@ -34,6 +34,7 @@ const elsewhere = [
             <span class="post-link text-base font-bold text-highlight group-hover:text-white transition-colors">{entry.title}</span>
             <span class="grow border-b border-dotted border-text/20 translate-y-[-3px]"></span>
             {entry.date && <span class="shrink-0 text-xs text-text/40">{formatDate(entry.date, { month: "short", year: "numeric" })}</span>}
+            {entry.draft && <span class="text-red-400 text-xs">DRAFT</span>}
           </a>
         </li>
       ))}
@@ -52,6 +53,7 @@ const elsewhere = [
               {entry.section}
               {entry.date && <>&nbsp;&middot;&nbsp;{formatDate(entry.date, { month: "short", day: "numeric" })}</>}
             </span>
+            {entry.draft && <span class="text-red-400 text-xs">DRAFT</span>}
           </a>
         </li>
       ))}

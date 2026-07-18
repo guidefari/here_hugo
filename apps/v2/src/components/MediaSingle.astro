@@ -6,19 +6,35 @@ import MediaEmbed from "./MediaEmbed.astro";
 
 const { entry } = Astro.props;
 const { Content } = await render(entry._entry);
+
+const mediaType = entry.data.media_type ?? "link";
+const mediaUrl = entry.data.media_url;
+const ctaLabels = { podcast: "Listen", article: "Read", video: "Watch", link: "Open" };
+const ctaLabel = ctaLabels[mediaType] ?? "Open";
+const showCta = mediaUrl && mediaType !== "youtube";
 ---
 
 <BaseLayout title={entry.title} description={entry.description} image={getOgImage(entry)} canonical={getCanonicalUrl(entry.permalink)} hasMermaid={entry.hasMermaid}>
   <main class="flex flex-col mx-auto w-full max-w-5xl px-4 lg:px-6 py-8">
-    <div class="measure">
-      <h1 class="text-5xl text-white m-0">{entry.title}</h1>
-      <div class="flex flex-wrap gap-2 text-sm text-accentText">
-        {entry.date && <time>{formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
-        {entry.data.creator && <span>· via {entry.data.creator}</span>}
-        {entry.data.media_url && <a href={entry.data.media_url} class="highlighted-link" target="_blank" rel="noopener">· ↗ source</a>}
+    <div class="measure flex flex-col gap-5">
+      <div class="flex flex-col gap-2">
+        <h1 class="text-5xl text-white m-0">{entry.title}</h1>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-accentText">
+          <span class="flex flex-wrap gap-2">
+            {entry.date && <time>{formatDate(entry.date, { month: "short", day: "numeric", year: "numeric" })}</time>}
+            {entry.data.creator && <span>· via {entry.data.creator}</span>}
+          </span>
+          {showCta && (
+            <a class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold no-underline border rounded-sm border-text/30 text-highlight bg-text/4 hover:bg-highlight hover:text-black transition-colors" href={mediaUrl} target="_blank" rel="noopener">
+              <span aria-hidden="true">↗</span>
+              {ctaLabel}
+            </a>
+          )}
+        </div>
       </div>
-      <div class="post-tags" data-pagefind-meta="tags">
-        {entry.tags.length > 0 && (
+
+      {entry.tags.length > 0 && (
+        <div class="post-tags" data-pagefind-meta="tags">
           <nav class="nav" aria-label="Tags">
             <ul class="single-tags">
               {entry.tags.map((tag) => (
@@ -26,13 +42,14 @@ const { Content } = await render(entry._entry);
               ))}
             </ul>
           </nav>
-        )}
+        </div>
+      )}
+    </div>
+    {(mediaType === "youtube" && entry.data.youtube_id) && (
+      <div class="measure">
+        <MediaEmbed entry={entry} />
       </div>
-    </div>
-
-    <div class="measure">
-      <MediaEmbed entry={entry} />
-    </div>
+    )}
     {entry.hasBody && (
       <article class="prose lg:prose-xl max-w-none prose-measure prose-pre:overflow-x-auto prose-pre:max-w-full">
         <Content />
