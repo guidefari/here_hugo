@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/txndai/here_hugo.git"
+    "url": "git+https://github.com/guidefari/here_hugo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/txndai/here_hugo/issues"
+    "url": "https://github.com/guidefari/here_hugo/issues"
   },
-  "homepage": "https://github.com/txndai/here_hugo#readme",
+  "homepage": "https://github.com/guidefari/here_hugo#readme",
   "devDependencies": {
     "sst": "4.12.10"
   },
