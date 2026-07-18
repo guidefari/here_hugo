@@ -31,3 +31,11 @@ The stable, hostable URL an asset is served from — what the user copies and pa
 ### Tag
 
 A free-text label the user attaches to an asset for later filtering (e.g. `artist-photo`, `bliki-diagram`). An asset carries zero or more tags.
+
+### Presign
+
+The first step of the two-step upload. Given a filename, content type, and size, the console mints the asset's **storage key** (auto-suffixed on clash) and a signed URL the browser PUTs the bytes to. From this moment the **public URL** is known, before any bytes move.
+
+### Finalize
+
+The second step of the two-step upload. The browser confirms the PUT completed and the console creates the **asset** record, verifying against the stored object: size and type are read from the object itself, not from the client's say-so. Client-driven in place of a storage webhook. Repeating a finalize returns the existing record; it never creates a duplicate.
