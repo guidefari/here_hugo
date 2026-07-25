@@ -8,7 +8,7 @@ import * as Effect from "effect/Effect";
 
 const zoneDomain = "guidefari.com";
 const ogDomain = `og.${zoneDomain}`;
-const compatibilityDate = "2026-07-25";
+const compatibilityDate = "2026-07-11";
 
 export default Alchemy.Stack(
   "here-hugo",

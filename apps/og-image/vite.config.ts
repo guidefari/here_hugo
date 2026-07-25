@@ -9,7 +9,7 @@ export default defineConfig({
       config: {
         name: "here-hugo-og-image",
         main: "./src/index.ts",
-        compatibility_date: "2026-07-25",
+        compatibility_date: "2026-07-11",
       },
     }),
   ],
