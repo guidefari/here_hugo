@@ -3,7 +3,7 @@ title: "Bash + jq for API development & testing"
 date: 2024-09-16T21:38:22+02:00
 description: 
 tags: [bash]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Bash+Api+Testing']
+images: ['https://og.guidefari.com/og-image?title=Bash+Api+Testing']
 ---
 
 ## Acknowledgements

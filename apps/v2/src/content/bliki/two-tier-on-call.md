@@ -3,7 +3,7 @@ title: "Two Tier on Call"
 date: 2024-08-17T12:22:05+02:00
 tags: [sre, devops, process]
 images:
-  ["https://images-here-hugo.vercel.app/api/og-image?title=Two+Tier+on+Call"]
+  ["https://og.guidefari.com/og-image?title=Two+Tier+on+Call"]
 ---
 
 The idea is simple, have a primary respondent, and a secondary respondent.

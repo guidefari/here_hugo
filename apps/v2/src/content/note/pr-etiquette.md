@@ -3,7 +3,7 @@ title: "Pull Request Etiquette"
 date: 2023-08-06T07:15:54+02:00
 description: We’ll look at this from two perspectives, the pull request author, and the reviewer
 tags: [process, collaboration, communication, git]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Pull%20Request%20Etiquette']
+images: ['https://og.guidefari.com/og-image?title=Pull%20Request%20Etiquette']
 aliases: ['pr-et']
 ---
 

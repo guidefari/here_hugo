@@ -3,7 +3,7 @@ title: "Course Notes: AWS Solutions Architect Cantrill"
 date: 2022-07-04T09:18:48+02:00
 description: Some notes from the learn with Cantrill course
 tags: [resource, aws, notes]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Course%20Notes%3A%20AWS%20Solutions%20Architect%20Cantrill']
+images: ['https://og.guidefari.com/og-image?title=Course%20Notes%3A%20AWS%20Solutions%20Architect%20Cantrill']
 ---
 # Links
 - [Course](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c03)

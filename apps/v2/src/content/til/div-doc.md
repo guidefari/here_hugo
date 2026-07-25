@@ -5,7 +5,7 @@ description: The different types of documentation
 tags: [resource, writing]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Documentation+Archetypes",
+    "https://og.guidefari.com/og-image?title=Documentation+Archetypes",
   ]
 ---
 

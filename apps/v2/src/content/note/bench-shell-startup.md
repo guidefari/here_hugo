@@ -5,7 +5,7 @@ description: I tracked shell startup lag to Kiro's login-shell hooks and moved t
 tags: [zsh]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Benchmarking+Shell+Startup",
+    "https://og.guidefari.com/og-image?title=Benchmarking+Shell+Startup",
   ]
 ---
 

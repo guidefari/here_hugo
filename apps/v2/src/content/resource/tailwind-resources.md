@@ -4,7 +4,7 @@ tags: [web, tailwind]
 title: "Tailwind Resources"
 description: "A bunch of sites/resources I constantly reach out to for inspiration when using tailwind, which is like all the time"
 aliases: [tailwind]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailwind%20Resources']
+images: ['https://og.guidefari.com/og-image?title=Tailwind%20Resources']
 ---
 
 

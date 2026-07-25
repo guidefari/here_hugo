@@ -5,7 +5,7 @@ description: "OpenCode 1.17.3 adds first-party support for referencing other git
 media_type: link
 media_url: https://x.com/thdxr/status/2064785435239276761
 creator: dax
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=OpenCode+References%3A+Just+Clone+the+Repo']
+images: ['https://og.guidefari.com/og-image?title=OpenCode+References%3A+Just+Clone+the+Repo']
 tags: [media, opencode, ai, effect, git]
 ---
 

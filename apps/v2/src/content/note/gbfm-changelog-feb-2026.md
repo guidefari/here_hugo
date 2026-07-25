@@ -5,7 +5,7 @@ description: "Kapil asked me what I've been doing in the goosebumps codebase lat
 tags: [retro, strategy, effect]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=gbfm+changelog+Feb+2026",
+    "https://og.guidefari.com/og-image?title=gbfm+changelog+Feb+2026",
   ]
 ---
 

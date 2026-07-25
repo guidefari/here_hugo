@@ -3,7 +3,7 @@ title: "Nesting - Using Environmental cues"
 date: 2022-10-03T04:25:34+02:00
 description: I tend to do some of my most impactful/meaningful work whilst in PJ’s. In fact, I can confidently say I’ve generated more revenue in that outfit than any other.
 tags: [productivity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Nesting-%20Embracing%20PJ%E2%80%99s']
+images: ['https://og.guidefari.com/og-image?title=Nesting-%20Embracing%20PJ%E2%80%99s']
 ---
 
 Scott Hanselman describes this as [nesting](https://www.hanselman.com/blog/the-importance-of-nesting-when-remote-working-and-quarantine-working). Nesting is the process of creating an environment that’s comfortable, and conducive to productivity, and how that looks can be very different for each person.

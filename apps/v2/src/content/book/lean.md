@@ -3,7 +3,7 @@ title: "Implementing Lean Software Development"
 date: 2023-10-03T08:18:18+02:00
 description: Book Notes
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Implementing+Lean']
+images: ['https://og.guidefari.com/og-image?title=Implementing+Lean']
 ---
 
 ### Get the book

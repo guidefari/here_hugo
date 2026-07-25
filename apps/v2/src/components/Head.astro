@@ -1,11 +1,11 @@
 ---
-import { site } from "../lib/site.mjs";
+import { getOgImageUrl, site } from "../lib/site.mjs";
 import { ClientRouter } from "astro:transitions";
 
 const { title, description, image, canonical, noindex = false, refreshTarget } = Astro.props;
 const pageTitle = Astro.url.pathname === "/" ? site.title : `${title ?? site.title} | ${site.title}`;
 const desc = description || site.subtitle;
-const ogImage = image || `https://images-here-hugo.vercel.app/api/og-image?title=${encodeURIComponent(title ?? site.title)}`;
+const ogImage = image || getOgImageUrl(title ?? site.title);
 const canonicalUrl = canonical || new URL(Astro.url.pathname, site.url).toString();
 ---
 

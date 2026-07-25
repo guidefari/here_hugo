@@ -3,7 +3,7 @@ title: "Platform Risk"
 date: 2023-06-15T22:10:11+02:00
 description: Something to think about when engineering solutions.
 tags: [strategy, risk, devops]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Platform%20Risk']
+images: ['https://og.guidefari.com/og-image?title=Platform%20Risk']
 ---
 
 ## What is Platform Risk

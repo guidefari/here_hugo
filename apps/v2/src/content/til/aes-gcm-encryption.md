@@ -3,7 +3,7 @@ title: "TIL: AES-GCM Encryption"
 date: 2026-06-11T23:51:29+02:00
 description: AES-GCM encrypts data and authenticates it, so you can detect tampering before trusting decrypted bytes.
 tags: [til, cryptography, security]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Aes+Gcm+Encryption']
+images: ['https://og.guidefari.com/og-image?title=Aes+Gcm+Encryption']
 ---
 
 AES-GCM is an encryption mode that gives you two things at once:

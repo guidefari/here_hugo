@@ -6,7 +6,7 @@ description: "A crash course through Effect: videos, podcasts, docs, and repos t
 featured: true
 tags: [effect]
 noindex: false
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Learning%20Effect"]
+images: ["https://og.guidefari.com/og-image?title=Learning%20Effect"]
 intro: |
   A path through the resources that helped me learn Effect. The order is roughly
   the order I'd take them in, but every section is independent: jump to whatever
@@ -141,7 +141,7 @@ stations:
         source: "My note"
         url: "/effective/"
         note: "My long-form take. DI, errors, the runtime, observability, with code."
-        thumbnail: "https://images-here-hugo.vercel.app/api/og-image?title=Effect-ts%2C%20in%20practice"
+        thumbnail: "https://og.guidefari.com/og-image?title=Effect-ts%2C%20in%20practice"
       - type: code
         title: "invoicing"
         source: "github.com/guidefari/invoicing"
@@ -170,13 +170,13 @@ stations:
         source: "My note"
         url: "/exhaustive/"
         note: "Why exhaustive handling matters, especially with LLMs in the loop."
-        thumbnail: "https://images-here-hugo.vercel.app/api/og-image?title=Exhaustive%20Pattern%20Matching"
+        thumbnail: "https://og.guidefari.com/og-image?title=Exhaustive%20Pattern%20Matching"
       - type: note
         title: "OpenCode References: Just Clone the Repo"
         source: "My note"
         url: "/opencode-references/"
         note: "OpenCode 1.17.3 adds first-party support for referencing other repos. Effect is the example."
-        thumbnail: "https://images-here-hugo.vercel.app/api/og-image?title=OpenCode%20References%3A%20Just%20Clone%20the%20Repo"
+        thumbnail: "https://og.guidefari.com/og-image?title=OpenCode%20References%3A%20Just%20Clone%20the%20Repo"
 reference_repos:
   - name: "invoicing"
     url: "https://github.com/guidefari/invoicing"
@@ -189,7 +189,7 @@ reference_repos:
   - name: "opensound"
     url: "https://opensound.dev"
     blurb: "My open source music library tooling. The first real Effect project I shipped."
-    thumbnail: "https://images-here-hugo.vercel.app/api/og-image?title=opensound"
+    thumbnail: "https://og.guidefari.com/og-image?title=opensound"
   - name: "pokemon-app"
     url: "https://github.com/guidefari/pokemon-app"
     blurb: "Thanda's app. A small, clean Effect codebase to read end-to-end."
@@ -210,7 +210,7 @@ channels:
   - name: "@effectts (YouTube)"
     url: "https://www.youtube.com/@EffectTS"
     blurb: "Conference talks, deep dives, office hours."
-    thumbnail: "https://images-here-hugo.vercel.app/api/og-image?title=%40effectts%20YouTube"
+    thumbnail: "https://og.guidefari.com/og-image?title=%40effectts%20YouTube"
   - name: "Cause & Effect podcast"
     url: "https://effect.website/podcast/"
     blurb: "Hosted by Johannes Schickling."

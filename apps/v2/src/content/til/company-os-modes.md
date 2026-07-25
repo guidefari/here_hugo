@@ -4,7 +4,7 @@ date: 2025-11-13T23:44:48+02:00
 description: Exploring a few communication and operation modes in product companies
 tags: [til, process]
 images:
-  ["https://images-here-hugo.vercel.app/api/og-image?title=Company+OS+Modes"]
+  ["https://og.guidefari.com/og-image?title=Company+OS+Modes"]
 ---
 
 John Cutler hosted an AMA session to discuss ["Understanding enabling constraints using shape up"](https://cutlefish.substack.com/p/tbm-386-understanding-enabling-constraints).

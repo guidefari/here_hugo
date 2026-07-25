@@ -3,7 +3,7 @@ title: "My Week in Music #6"
 date: 2022-06-05T19:37:04+02:00
 description: Some highlights from the last 7 days or so
 tags: [music, playlist, curated, house, experimental, dub, ambient]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=My%20Week%20in%20Music%20%236']
+images: ['https://og.guidefari.com/og-image?title=My%20Week%20in%20Music%20%236']
 ---
 # Artists
 ### Move D

@@ -3,7 +3,7 @@ title: "Notes: Managing Client Relationships"
 date: 2022-07-18T07:22:14+02:00
 description:  Goldman Sachs managing director and Law School adjunct professor Jim Donovan shares his insights on the skills necessary to manage and cultivate client relationships. Donovan is responsible for advising many of the largest corporate and individual clients of Goldman Sachs. (University of Virginia School of Law, Nov. 6, 2015)
 tags: [notes, consulting, leadership]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Notes%3A%20Managing%20Client%20Relationships']
+images: ['https://og.guidefari.com/og-image?title=Notes%3A%20Managing%20Client%20Relationships']
 ---
 
 <div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/z8kqCIxXTEw" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>

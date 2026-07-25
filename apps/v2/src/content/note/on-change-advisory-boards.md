@@ -3,7 +3,7 @@ title: "On Change Advisory Boards"
 date: 2024-07-31T06:10:00+02:00
 description: Excerpts from the devops book, Accelerate
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=On+Change+Advisory+Boards']
+images: ['https://og.guidefari.com/og-image?title=On+Change+Advisory+Boards']
 ---
 
 This topic repeatedly comes up with the homies. I want to collect all my excerpts & notes in one place, ie here.

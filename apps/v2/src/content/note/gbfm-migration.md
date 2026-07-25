@@ -3,7 +3,7 @@ title: "Goosebumps.fm Platform Migration"
 date: 2025-01-13T06:50:39+02:00
 description: Reflections on my move from NextJS & Vercel to AWS via SST
 tags: [strategy, sst, infra, aws]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=GBFM+Migration']
+images: ['https://og.guidefari.com/og-image?title=GBFM+Migration']
 ---
 
 No migration is real until there’s codenames. This initiative was a migration from `nextgoose` -> `gbfm`. 

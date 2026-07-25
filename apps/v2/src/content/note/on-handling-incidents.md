@@ -3,7 +3,7 @@ title: "On Handling Incidents"
 date: 2023-12-04T08:55:02+02:00
 description: A few things I’ve learnt about handling incidents. 
 tags: [process, product, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=On+Handling+Incidents']
+images: ['https://og.guidefari.com/og-image?title=On+Handling+Incidents']
 ---
 
 # Incidents are a byproduct of complex systems 

@@ -3,7 +3,7 @@ title: "Some properties of emergent behaviours"
 date: 2024-07-31T06:07:02+02:00
 description: 
 tags: [systems theory]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Emergent+Behaviours']
+images: ['https://og.guidefari.com/og-image?title=Emergent+Behaviours']
 ---
 
 # Definition

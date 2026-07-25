@@ -3,7 +3,7 @@ title: "My Week In Music #8"
 date: 2022-06-19T08:33:48+02:00
 description: Some highlights from the last 7 days or so
 tags: [music, playlist, curated, ambient, hip-hop, experimental, neo-soul, rnb, lofi]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=My%20Week%20In%20Music%20%238']
+images: ['https://og.guidefari.com/og-image?title=My%20Week%20In%20Music%20%238']
 ---
 ### Spotify playlist
 

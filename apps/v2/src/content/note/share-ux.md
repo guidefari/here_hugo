@@ -3,7 +3,7 @@ title: "UX Case Study: Sharing music from streaming platform to Instagram Storie
 date: 2022-05-29T09:10:10+02:00
 description: Looking at how software interacts with the world around it
 tags: [ux, design, curated]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=UX%20Case%20Study%3A%20Sharing%20music%20to%20Instagram%20Stories']
+images: ['https://og.guidefari.com/og-image?title=UX%20Case%20Study%3A%20Sharing%20music%20to%20Instagram%20Stories']
 ---
 
 # Why the scope of this case study

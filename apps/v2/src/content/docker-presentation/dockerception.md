@@ -3,7 +3,7 @@ title: "Creating the environment: dockerception!"
 date: 2024-09-01
 description: "Running Docker inside Docker for development environments"
 tags: ["docker"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Creating%20the%20environment%3A%20dockerception!']
+images: ['https://og.guidefari.com/og-image?title=Creating%20the%20environment%3A%20dockerception!']
 ---
 
 All demos for this series were done inside a docker container. That's right, we hand built containers inside a container.

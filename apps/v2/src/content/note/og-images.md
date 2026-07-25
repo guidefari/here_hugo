@@ -3,7 +3,7 @@ title: "Hugo site OG Images using Node and Cloudinary"
 date: 2022-05-27T09:30:21+02:00
 description: After months of procrastinating, I finally have a solution for Open Graph Images on this site
 tags: [hugo, nextjs, node]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Hugo%20site%20OG%20Images%20using%20Node%20and%20Cloudinary']
+images: ['https://og.guidefari.com/og-image?title=Hugo%20site%20OG%20Images%20using%20Node%20and%20Cloudinary']
 ---
 
 ## Acknowledgements
@@ -108,7 +108,7 @@ title: "Hugo site OG Images using Node and Cloudinary"
 date: 2022-05-27T09:30:21+02:00
 description: After months of procrastinating, I finally have a solution for Open Graph Images on this site
 tags: [hugo, nextjs, node]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Hugo%20site%20OG%20Images%20using%20Node%20and%20Cloudinary']
+images: ['https://og.guidefari.com/og-image?title=Hugo%20site%20OG%20Images%20using%20Node%20and%20Cloudinary']
 ---
 ```
 

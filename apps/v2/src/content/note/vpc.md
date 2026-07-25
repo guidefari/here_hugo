@@ -3,7 +3,7 @@ title: "AWS VPC basics"
 date: 2023-01-04T11:07:52+02:00
 description: Networking services
 tags: [aws, cloud, vpc]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20VPC%20basics']
+images: ['https://og.guidefari.com/og-image?title=AWS%20VPC%20basics']
 ---
 
 - VPC's are regionally resilient

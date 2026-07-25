@@ -4,7 +4,7 @@ date: 2026-06-21T09:14:00+02:00
 description: "My calendar is open. Book a 30-minute call, no agenda required."
 layout: unoffice-hours
 tags: [communication]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Unoffice%20Hours"]
+images: ["https://og.guidefari.com/og-image?title=Unoffice%20Hours"]
 cta:
   label: "Book a 30-minute call"
   url: "https://cal.com/guide"

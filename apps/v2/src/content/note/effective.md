@@ -3,7 +3,7 @@ title: "Effect-ts, in practice"
 date: 2026-02-04T09:09:29+02:00
 description: "Effect has been slowly infesting my Typescript codebases, let's explore why"
 tags: [typescript, software-design, effect]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Effect-ts%2C%20in%20practice"]
+images: ["https://og.guidefari.com/og-image?title=Effect-ts%2C%20in%20practice"]
 ---
 
 ## Why I'm more willing to pay the cost now

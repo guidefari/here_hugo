@@ -3,7 +3,7 @@ title: "Designing for astigmatism"
 date: 2026-06-25
 description: A reading-first design checklist for users with astigmatism
 tags: [accessibility, design, ux, frontend]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Designing%20for%20astigmatism']
+images: ['https://og.guidefari.com/og-image?title=Designing%20for%20astigmatism']
 full_width: true
 aliases: ["/note/designing-for-astigmatism/"]
 ---

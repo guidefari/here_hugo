@@ -4,7 +4,7 @@ date: 2024-08-17T11:43:42+02:00
 description: "highlights, quotes, & other interesting bits from An Elegant Puzzle - Systems of engineering management"
 tags: [book, notes, leadership, management, culture]
 images:
-  ["https://images-here-hugo.vercel.app/api/og-image?title=An+Elegant+Puzzle"]
+  ["https://og.guidefari.com/og-image?title=An+Elegant+Puzzle"]
 ---
 
 ## How the book is laid out

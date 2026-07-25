@@ -4,7 +4,7 @@ date: 2023-09-08T03:36:23+02:00
 featured: true
 description: Exploring how writing is a tactical and strategic skill for developers to hone.
 tags: [writing, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Why+Write']
+images: ['https://og.guidefari.com/og-image?title=Why+Write']
 ---
 
 # Why Write

@@ -3,7 +3,7 @@ title: "AWS Cloudwatch"
 date: 2023-01-06T10:14:10+02:00
 description: Logs, Metrics, Alarms, Events, & Dashboards
 tags: [aws, cloudwatch]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20Cloudwatch']
+images: ['https://og.guidefari.com/og-image?title=AWS%20Cloudwatch']
 ---
 Cloudwatch collects & manages operational data. It's a public service, meaning it can be used outside of the AWS ecosystem.
 Cloudwatch operates by default when you provision some AWS resources.

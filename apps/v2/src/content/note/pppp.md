@@ -3,7 +3,7 @@ title: "Ping Pong Pair Programming"
 date: 2023-07-09T21:38:57+02:00
 description: An asynchronous pair programming method
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Ping%20Pong']
+images: ['https://og.guidefari.com/og-image?title=Ping%20Pong']
 ---
 
 # Context

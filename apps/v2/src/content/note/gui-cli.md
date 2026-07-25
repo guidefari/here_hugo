@@ -3,7 +3,7 @@ title: "GUI and CLI"
 date: 2024-12-22T09:02:45+02:00
 description: Graphics user interfaces and Command line interfaces have quite a bit in common.
 tags: [ux, design, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=GUI+and+CLI']
+images: ['https://og.guidefari.com/og-image?title=GUI+and+CLI']
 ---
 
 ## Glossary

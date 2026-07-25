@@ -3,7 +3,7 @@ title: "Ideal collaboration UX for music apps"
 date: 2022-08-21T05:33:17+02:00
 description: A friend asked me a thought provoking question a few weeks ago
 tags: [ux, design, product]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Ideal%20collaboration%20UX%20for%20music%20apps']
+images: ['https://og.guidefari.com/og-image?title=Ideal%20collaboration%20UX%20for%20music%20apps']
 ---
 
 Basically asked me what features would make collaboration on a music streaming app an overall better experience for me.

@@ -3,7 +3,7 @@ title: "TIL: Elastic Search"
 date: 2024-12-21T22:02:42+02:00
 description: Learnt a bit more about Elastic Search. Architecture overview, how to use it, and situations where you'd consider using it. 
 tags: [til, backend]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Elastic+Search']
+images: ['https://og.guidefari.com/og-image?title=Elastic+Search']
 ---
 
 Learnt a bit more about Elastic Search. Architecture overview, how to use it, and situations where you'd consider using it.

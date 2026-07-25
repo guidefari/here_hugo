@@ -3,7 +3,7 @@ title: "TIL: API Gateway and CORS preflight request"
 date: 2025-01-22T22:23:38+02:00
 description: api.example.com can be more expensive than example.com/api 👀
 tags: [til, aws]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=API+Gateway+Preflight']
+images: ['https://og.guidefari.com/og-image?title=API+Gateway+Preflight']
 ---
 
 > [Every time the browser makes a cross-origin request, it first makes a preflight request to make sure it can actually send the request. Since API Gateway charges per request, you’re billed for both the preflight and the main request.](https://x.com/theburningmonk/status/1877632427679432957)

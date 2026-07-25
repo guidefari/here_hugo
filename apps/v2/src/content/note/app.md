@@ -3,7 +3,7 @@ title: "Ambient Pair Programming"
 date: 2023-08-01T07:54:23+02:00
 description: Shared room, different tasks
 tags: [process, productivity, psychology]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Ambient%20Pair%20Programming']
+images: ['https://og.guidefari.com/og-image?title=Ambient%20Pair%20Programming']
 ---
 
 

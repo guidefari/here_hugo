@@ -3,7 +3,7 @@ title: "TIL: CSRF Tokens"
 date: 2022-08-10T17:23:38+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, security]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20CSRF%20Tokens']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20CSRF%20Tokens']
 ---
 
 CSRF tokens are a way to mitigate Cross Site Request Forgery

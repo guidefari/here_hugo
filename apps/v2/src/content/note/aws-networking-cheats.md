@@ -3,7 +3,7 @@ title: "AWS Networking Refresher"
 date: 2023-02-01T20:03:52+02:00
 description: Polishing up my knowledge on how networking is structured in AWS
 tags: [aws, networking, cloud]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20Networking%20Refresher']
+images: ['https://og.guidefari.com/og-image?title=AWS%20Networking%20Refresher']
 ---
 
 ## Also see

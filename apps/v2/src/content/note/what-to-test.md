@@ -3,7 +3,7 @@ title: "Notes: How to know what to Test"
 date: 2022-07-18T08:30:45+02:00
 description: A short talk by Kent Dodds. 
 tags: [testing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Notes%3A%20How%20to%20know%20what%20to%20Test']
+images: ['https://og.guidefari.com/og-image?title=Notes%3A%20How%20to%20know%20what%20to%20Test']
 ---
 
 # Video

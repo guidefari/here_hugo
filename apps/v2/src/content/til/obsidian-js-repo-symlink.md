@@ -7,7 +7,7 @@ tags:
   - linux
   - obsidian
 images:
-  - https://images-here-hugo.vercel.app/api/og-image?title=Obsidian+Symlink
+  - https://og.guidefari.com/og-image?title=Obsidian+Symlink
 ---
 ## Context
 - All of my blogs store content in markdown

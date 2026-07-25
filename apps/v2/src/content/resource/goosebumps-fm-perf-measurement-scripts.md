@@ -3,7 +3,7 @@ title: "Scripts: measuring TTFB, cache headers, and Lighthouse from the CLI"
 date: 2026-07-10T22:20:00+02:00
 description: The exact curl and Lighthouse commands used to measure goosebumps.fm's cold load time, kept standalone so they're reusable on any other site.
 tags: [performance, cloudflare, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Measuring+TTFB+and+Cache+Headers']
+images: ['https://og.guidefari.com/og-image?title=Measuring+TTFB+and+Cache+Headers']
 ---
 
 Companion scripts for [Cutting goosebumps.fm's cold load time](/goosebumps-fm-perf-log/). Nothing here is specific to that site — swap the URL and these work on anything.

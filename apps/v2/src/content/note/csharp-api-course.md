@@ -3,7 +3,7 @@ title: "Csharp Api Course"
 date: 2024-12-06T17:29:49+02:00
 description: 
 tags: []
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Csharp+Api+Course']
+images: ['https://og.guidefari.com/og-image?title=Csharp+Api+Course']
 draft: true
 ---
 

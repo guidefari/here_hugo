@@ -5,7 +5,7 @@ description: Someone gave me 5 minutes to do a sales pitch on the subject
 tags: [javascript]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Javascript%20Proxy%20101",
+    "https://og.guidefari.com/og-image?title=Javascript%20Proxy%20101",
   ]
 ---
 

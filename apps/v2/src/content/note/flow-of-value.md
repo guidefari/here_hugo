@@ -3,7 +3,7 @@ title: "Flow of Value through a system"
 date: 2023-04-10T23:32:42+02:00
 description: Putting together all related resources around this topic.
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Flow%20of%20Value']
+images: ['https://og.guidefari.com/og-image?title=Flow%20of%20Value']
 ---
 
 ## context

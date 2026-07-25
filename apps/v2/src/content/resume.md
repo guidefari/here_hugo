@@ -2,7 +2,7 @@
 title: "Resume"
 layout: "resume"
 full_width: true
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Resume"]
+images: ["https://og.guidefari.com/og-image?title=Resume"]
 noindex: true
 
 skills:

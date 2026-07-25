@@ -3,7 +3,7 @@ title: fix for - attempt to call local autocmd (a nil value)
 date: 2023-05-30T14:56:05+02:00
 description: An error I faced while trying to get my nvchad editor running
 tags: [til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
  
  I faced exactly the same error as seen [here](https://www.reddit.com/r/neovim/comments/v9nh4u/comment/ibxjjtt/). Here it is in full:

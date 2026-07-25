@@ -5,7 +5,7 @@ description: A lot of would be tweets end up as notes, posts etc
 media_type: article
 media_url: 
 creator: Guide Fari
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Writing+Prompts']
+images: ['https://og.guidefari.com/og-image?title=Writing+Prompts']
 tags: [writing]
 ---
 

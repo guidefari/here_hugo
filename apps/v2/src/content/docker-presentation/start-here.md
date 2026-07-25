@@ -3,7 +3,7 @@ title: "Docker Presentation"
 date: 2024-09-01
 description: "A comprehensive series covering Docker from container fundamentals to production best practices"
 tags: ["docker", "containers", "devops"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Docker%20Learning%20Series']
+images: ['https://og.guidefari.com/og-image?title=Docker%20Learning%20Series']
 ---
 
 This series of notes comes from a Docker presentation I did for Shipping mates.

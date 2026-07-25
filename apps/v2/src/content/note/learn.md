@@ -3,7 +3,7 @@ title: "How I learn"
 date: 2023-03-26T10:29:41+02:00
 description: Heuristics, mental models, practical, immersion
 tags: [learning, process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=How%20I%20learn']
+images: ['https://og.guidefari.com/og-image?title=How%20I%20learn']
 ---
 
 ## Summary

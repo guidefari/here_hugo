@@ -3,7 +3,7 @@ title: "Resource: Dx"
 date: 2023-12-05T07:16:23+02:00
 description: Exploring the many ways to Improve Developer experience in organisations.
 tags: [resource, playbook, dx, complexity, culture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dx']
+images: ['https://og.guidefari.com/og-image?title=Dx']
 ---
 
 **PS: this is a First Draft - brain dump of the sub topics I want to explore**

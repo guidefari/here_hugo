@@ -3,7 +3,7 @@ title: "Side Quests"
 date: 2024-06-07T12:41:00+02:00
 description:
 tags: [effect]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Side+Quests']
+images: ['https://og.guidefari.com/og-image?title=Side+Quests']
 ---
 
 A collection of some interesting side quests I've been on.

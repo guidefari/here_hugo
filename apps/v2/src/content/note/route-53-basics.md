@@ -3,7 +3,7 @@ title: "Route 53 Basics"
 date: 2023-01-06T13:08:58+02:00
 description: Highly available DNS Service from AWS
 tags: [route53, aws]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Route%2053%20Basics']
+images: ['https://og.guidefari.com/og-image?title=Route%2053%20Basics']
 ---
 
 - IANA delegates organisations to take care of the different registries (`.net`, `.io`, `.com` etc)

@@ -3,7 +3,7 @@ title: "Test"
 date: 2025-03-26T23:53:40+02:00
 description: 
 tags: []
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Test']
+images: ['https://og.guidefari.com/og-image?title=Test']
 draft: true
 ---
 

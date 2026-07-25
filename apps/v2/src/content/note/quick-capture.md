@@ -2,7 +2,7 @@
 title: "Quick Capture"
 date: 2024-09-16T21:08:20+02:00
 tags: [writing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Quick+Capture']
+images: ['https://og.guidefari.com/og-image?title=Quick+Capture']
 ---
 
 Essential part of the writing process is the concept of quick capture.

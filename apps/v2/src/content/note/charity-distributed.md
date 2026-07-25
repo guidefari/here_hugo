@@ -5,7 +5,7 @@ description:
 tags: []
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Charity+On+Distributed+Teams",
+    "https://og.guidefari.com/og-image?title=Charity+On+Distributed+Teams",
   ]
 ---
 

@@ -11,7 +11,7 @@
 // Additional aliases come from entry frontmatter `aliases` or the legacyAliases table below.
 
 import { getCollection, getEntry } from "astro:content";
-import { flattenedSections, sectionMeta, site } from "./site.mjs";
+import { flattenedSections, getOgImageUrl, sectionMeta, site } from "./site.mjs";
 
 const collectionName = "entries";
 const indexPages = new Map();
@@ -314,7 +314,7 @@ export async function getEntryHtml(entry) {
 export function getOgImage(entry) {
   if (entry?.images?.length) return entry.images[0];
   const title = entry?.title ?? site.title;
-  return `https://images-here-hugo.vercel.app/api/og-image?title=${encodeURIComponent(title)}`;
+  return getOgImageUrl(title);
 }
 
 export function formatDate(date, options = {}) {

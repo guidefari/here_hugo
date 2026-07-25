@@ -3,7 +3,7 @@ title: "The Value of Ubiquitous Language"
 date: 2023-10-31T08:01:19+02:00
 description: 
 tags: [ddd, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Ubiquitous+Language']
+images: ['https://og.guidefari.com/og-image?title=Ubiquitous+Language']
 ---
 
 ## Understanding the problem space

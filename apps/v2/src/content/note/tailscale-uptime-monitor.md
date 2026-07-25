@@ -3,7 +3,7 @@ title: "Tailscale uptime monitor with push notifications"
 date: 2026-07-18T14:00:00+02:00
 description: A systemd timer that pings a machine on my tailnet and pushes an ntfy.sh notification when it goes down or comes back up.
 tags: [linux, infra, monitoring, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tailscale%20uptime%20monitor%20with%20push%20notifications']
+images: ['https://og.guidefari.com/og-image?title=Tailscale%20uptime%20monitor%20with%20push%20notifications']
 ---
 
 Wanted a phone alert when `devbox` drops off my tailnet, instead of noticing hours later.

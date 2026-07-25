@@ -3,7 +3,7 @@ title: Okay you're a PM. Now what?
 date: 2023-10-04T07:24:21+02:00
 description: Course notes from Brian Holt's Complete Intro to Product Management
 tags: [resource, product]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Pm+Holt"]
+images: ["https://og.guidefari.com/og-image?title=Pm+Holt"]
 ---
 
 # Links

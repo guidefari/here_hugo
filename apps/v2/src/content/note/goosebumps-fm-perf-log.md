@@ -3,7 +3,7 @@ title: "Cutting goosebumps.fm's cold load time"
 date: 2026-07-10T22:20:00+02:00
 description: TTFB went from 1.33s to ~40ms by moving goosebumps.fm off CloudFront and edge-caching HTML on Cloudflare Workers.
 tags: [performance, cloudflare, aws, sst]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cutting+goosebumps.fm%27s+cold+load+time']
+images: ['https://og.guidefari.com/og-image?title=Cutting+goosebumps.fm%27s+cold+load+time']
 ---
 
 Public log of load-time work on [goosebumps.fm](https://goosebumps.fm).

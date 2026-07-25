@@ -6,7 +6,7 @@ description: Excerpt from a chat with Ibra & Vic
 tags: [strategy, refactoring, process, dx, wip]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Codebase+as+a+Product",
+    "https://og.guidefari.com/og-image?title=Codebase+as+a+Product",
   ]
 ---
 

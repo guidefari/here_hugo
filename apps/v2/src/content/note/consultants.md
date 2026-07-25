@@ -3,7 +3,7 @@ title: "steps to driving technological change"
 date: 2023-10-02T21:59:11+02:00
 description: Some common patterns I've noticed from consultants in tech projects.
 tags: [strategy, leadership]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Consultants']
+images: ['https://og.guidefari.com/og-image?title=Consultants']
 ---
 
 ## What I’ve witnessed consultants do

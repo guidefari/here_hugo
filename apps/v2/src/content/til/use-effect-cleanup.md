@@ -3,7 +3,7 @@ title: "Use Effect Cleanup"
 date: 2023-10-04T05:08:30+02:00
 description: 
 tags: [react]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Use+Effect+Cleanup']
+images: ['https://og.guidefari.com/og-image?title=Use+Effect+Cleanup']
 ---
 
 ## What is useEffect cleanup about?

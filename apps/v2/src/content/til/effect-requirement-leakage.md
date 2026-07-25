@@ -3,7 +3,7 @@ title: "TIL: Leaking requirements in Effect services"
 date: 2026-06-25T10:00:00+02:00
 description: A service's signature is a contract. Anything in the R of its methods becomes a requirement every consumer has to satisfy, so keep implementation deps on the Layer.
 tags: [effect, typescript, software-design]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Leaking+Requirements+in+Effect+Services']
+images: ['https://og.guidefari.com/og-image?title=Leaking+Requirements+in+Effect+Services']
 ---
 
 The Effect LSP emits `effect/leakingRequirements` on a service whose methods carry R that should have stayed on the layer. The principle: the service's signature is a contract with its callers. If a method returns `Effect<A, E, R>`, the `R` becomes a requirement for every consumer, even if it only matters to one particular implementation.

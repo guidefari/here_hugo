@@ -3,7 +3,7 @@ title: "TIL: Mongoose N Stuff"
 date: 2022-08-04T12:56:32+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, database]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Mongoose%20N%20Stuff']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Mongoose%20N%20Stuff']
 ---
 
 # Mongoose Discriminators

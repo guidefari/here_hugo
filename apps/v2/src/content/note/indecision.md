@@ -3,7 +3,7 @@ title: "Indecision"
 date: 2024-04-12T07:01:07+02:00
 description: Indecision can be more costly than making the wrong decision. 
 tags: [psychology, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Indecision']
+images: ['https://og.guidefari.com/og-image?title=Indecision']
 ---
 
 Indecision can be more costly than making the wrong decision.

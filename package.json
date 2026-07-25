@@ -11,9 +11,11 @@
   "scripts": {
     "build": "cd apps/v2 && bun run build",
     "build:v2": "cd apps/v2 && bun run build",
+    "build:og": "bun run --cwd apps/og-image build",
     "dev": "cd apps/v2 && bun run dev",
     "dev:v2": "cd apps/v2 && bun run dev",
-    "dev:sst": "sst dev"
+    "dev:cloud": "bun run build:og && alchemy dev",
+    "deploy": "bun run build:og && alchemy deploy"
   },
   "repository": {
     "type": "git",
@@ -26,8 +28,10 @@
     "url": "https://github.com/guidefari/here_hugo/issues"
   },
   "homepage": "https://github.com/guidefari/here_hugo#readme",
-  "devDependencies": {
-    "sst": "4.12.10"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "@effect/platform-bun": "4.0.0-beta.101",
+    "@effect/platform-node": "4.0.0-beta.101",
+    "alchemy": "2.0.0-beta.64",
+    "effect": "4.0.0-beta.101"
+  }
 }

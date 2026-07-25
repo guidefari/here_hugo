@@ -3,7 +3,7 @@ title: "Anatomy of a Dockerfile"
 date: 2024-09-22
 description: "Complete guide to Dockerfile instructions, multi-stage builds, and container optimization"
 tags: ["docker","containers"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Anatomy%20of%20a%20Dockerfile']
+images: ['https://og.guidefari.com/og-image?title=Anatomy%20of%20a%20Dockerfile']
 ---
 
 # Anatomy of a Dockerfile

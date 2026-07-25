@@ -10,8 +10,10 @@ node_modules
 .obsidian
 **/.smart-connections
 .sst
+.alchemy
 .turbo
 .wrangler
 apps/v2/.astro
 apps/v2/dist
+apps/og-image/dist
 .env

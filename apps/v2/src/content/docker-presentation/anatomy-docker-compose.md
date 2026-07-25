@@ -3,7 +3,7 @@ title: "Anatomy of a Docker compose file"
 date: 2024-09-01
 description: "Multi-container application orchestration with Docker Compose - pros, cons, and best practices"
 tags: ["docker", "docker-compose", "orchestration"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Anatomy%20of%20a%20Docker%20compose%20file']
+images: ['https://og.guidefari.com/og-image?title=Anatomy%20of%20a%20Docker%20compose%20file']
 ---
 
 # Anatomy of a Docker compose file

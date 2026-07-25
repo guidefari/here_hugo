@@ -3,7 +3,7 @@ title: "Minimum Lovable Product"
 date: 2024-04-14T23:25:02+02:00
 description: Chasing quality over quick and frequent releases
 tags: [product, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Minimum+Lovable+Product']
+images: ['https://og.guidefari.com/og-image?title=Minimum+Lovable+Product']
 ---
 
 **TL;DR**: The quality bar for what acceptable software looks and feels like is so much higher. Going to market with your idea ASAP isn't the easy win strategy it once was, the world has become accustomed to good UX as a bare minimum.

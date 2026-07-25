@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getOgImage } from "../lib/content.mjs";
+import { getOgImageUrl } from "../lib/site.mjs";
 
 const { entry } = Astro.props;
 const fm = entry.data ?? {};
@@ -27,7 +28,7 @@ const thumbnailForItem = (item) => {
     if (match) return `https://opengraph.githubassets.com/1/${match[1]}/${match[2].replace(/\.git$/, "")}`;
   }
   if (typeof item?.title === "string" && item.title) {
-    return `https://images-here-hugo.vercel.app/api/og-image?title=${encodeURIComponent(item.title)}`;
+    return getOgImageUrl(item.title);
   }
   return "";
 };
@@ -39,7 +40,7 @@ const thumbnailForLink = (link) => {
     if (match) return `https://opengraph.githubassets.com/1/${match[1]}/${match[2].replace(/\.git$/, "")}`;
   }
   if (typeof link?.name === "string" && link.name) {
-    return `https://images-here-hugo.vercel.app/api/og-image?title=${encodeURIComponent(link.name)}`;
+    return getOgImageUrl(link.name);
   }
   return "";
 };

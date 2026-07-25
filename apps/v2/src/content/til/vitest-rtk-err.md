@@ -3,7 +3,7 @@ title: "TIL: Vitest + RTK - Cannot read properties of undefined (reading 'reduce
 date: 2025-02-18T21:56:18+02:00
 description: Import order matters sometimes.
 tags: [til, testing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Vitest+Rtk+Err']
+images: ['https://og.guidefari.com/og-image?title=Vitest+Rtk+Err']
 ---
 
 I faced this error while trying to run a component test using vitest.

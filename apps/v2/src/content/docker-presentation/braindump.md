@@ -3,7 +3,7 @@ title: "braindump & snippets"
 date: 2024-09-01
 description: "Docker command reference, examples, and best practices collection"
 tags: ["docker", "reference", "commands"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Docker%20braindump%20%26%20snippets']
+images: ['https://og.guidefari.com/og-image?title=Docker%20braindump%20%26%20snippets']
 ---
 
 # braindump & snippets

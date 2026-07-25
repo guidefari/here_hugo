@@ -3,7 +3,7 @@ title: "TIL: Prefer h-dvh over h-screen on iOS Safari"
 date: 2026-06-14T09:59:54+02:00
 description: On iOS and iPadOS Safari, h-screen can overshoot the visible viewport. h-dvh maps better to the space users can actually see.
 tags: [til, css, tailwind, safari, ios]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Prefer+h-dvh+over+h-screen+on+iOS+Safari']
+images: ['https://og.guidefari.com/og-image?title=Prefer+h-dvh+over+h-screen+on+iOS+Safari']
 ---
 
 ```css

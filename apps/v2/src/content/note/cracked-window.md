@@ -3,7 +3,7 @@ title: "Addressing the broken window theory"
 date: 2024-05-02T12:25:10+02:00
 description: Don't live with broken windows
 tags: [dx, refactoring, culture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Broken+Windows']
+images: ['https://og.guidefari.com/og-image?title=Broken+Windows']
 ---
 
 Popularized by [Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/), this is a common piece of advice to guard against technical debt.

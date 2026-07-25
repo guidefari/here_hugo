@@ -3,7 +3,7 @@ title: "Posted from a mobile git client"
 date: 2022-07-18T08:30:45+02:00
 description: Some experiments ;)
 tags: [mobile, ux, git]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=HiFriend']
+images: ['https://og.guidefari.com/og-image?title=HiFriend']
 ---
 
 # Download here 

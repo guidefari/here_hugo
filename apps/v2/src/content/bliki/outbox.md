@@ -2,7 +2,7 @@
 title: "Outbox - A system design pattern"
 date: 2025-04-22T06:14:25+02:00
 tags: [architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Outbox']
+images: ['https://og.guidefari.com/og-image?title=Outbox']
 ---
 
 ## Core elements of the outbox pattern

@@ -3,7 +3,7 @@ title: "Now"
 date: 2026-04-25T10:00:00+02:00
 description: What I'm up to now
 tags: [communication, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Now']
+images: ['https://og.guidefari.com/og-image?title=Now']
 ---
 
 The idea of a [now](https://nownownow.com/about) page was introduced to me by [Derek Sivers](https://sive.rs/now). There's many lovely [examples](https://nownownow.com/) on the web of how these pages look.

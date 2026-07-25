@@ -3,7 +3,7 @@ title: "TIL: Typography sizing for a blog"
 date: 2024-11-07T06:17:37+02:00
 description: Fixing horizontal scroll, refactoring my typography sizing.
 tags: [til, ux, frontend, design, css]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Typography']
+images: ['https://og.guidefari.com/og-image?title=Typography']
 ---
 
 ## Context

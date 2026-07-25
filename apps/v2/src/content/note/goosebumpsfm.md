@@ -3,7 +3,7 @@ title: "Goosebumpsfm"
 date: 2022-09-13T06:32:41+02:00
 description: 
 tags: []
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 
 

@@ -3,7 +3,7 @@ title: "Metrics"
 date: 2026-06-27T10:00:00+02:00
 description: RED vs USE, the http counter, prometheus, grafana
 tags: [observability, prometheus, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20%E2%80%94%20Metrics']
+images: ['https://og.guidefari.com/og-image?title=Observability%20%E2%80%94%20Metrics']
 series: bootdev-observability
 series_order: 5
 ---

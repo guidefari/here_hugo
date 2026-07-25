@@ -5,7 +5,7 @@ description: Why exhaustive pattern matching matters, and how it makes code safe
 tags: ["typescript", "ai", "effect"]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Exhaustive%20Pattern%20Matching",
+    "https://og.guidefari.com/og-image?title=Exhaustive%20Pattern%20Matching",
   ]
 ---
 

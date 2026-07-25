@@ -3,7 +3,7 @@ title: "Gpg"
 date: 2022-09-14T03:35:38+02:00
 description: 
 tags: []
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 
 # WTF is a GPG repository key?

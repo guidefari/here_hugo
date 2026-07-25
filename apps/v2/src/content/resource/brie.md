@@ -3,7 +3,7 @@ title: "Notes from Brie Wolfson"
 date: 2024-05-16T13:59:11+02:00
 description: Company culture, writing, & effective internal communication.
 tags: [resource, culture, writing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Brie']
+images: ['https://og.guidefari.com/og-image?title=Brie']
 ---
 
 ## Company Wide Comms

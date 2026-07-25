@@ -3,7 +3,7 @@ title: "Why Git? How to git?"
 date: 2024-12-24T11:59:59+02:00
 description: Capturing notes on a recurring conversation with friends 
 tags: [git]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Why+Git']
+images: ['https://og.guidefari.com/og-image?title=Why+Git']
 ---
 
 ## Version control

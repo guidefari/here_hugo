@@ -3,7 +3,7 @@ title: "Observability Foundations"
 date: 2026-06-27T10:00:00+02:00
 description: slog, the multiwriter trick, why you need a close function, build info on every log
 tags: [observability, slog, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20Foundations']
+images: ['https://og.guidefari.com/og-image?title=Observability%20Foundations']
 series: bootdev-observability
 series_order: 1
 ---

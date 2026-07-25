@@ -3,7 +3,7 @@ title: "Past Work"
 date: 2023-07-04T06:52:31+02:00
 description: What I've done in the past.
 tags: [communication]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Past%20Work']
+images: ['https://og.guidefari.com/og-image?title=Past%20Work']
 ---
 
 # [Flexperto](https://flexperto.com/en/)

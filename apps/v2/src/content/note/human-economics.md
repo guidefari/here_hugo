@@ -2,7 +2,7 @@
 title: "Balancing Human & Economonic motivations"
 date: 2024-08-09T07:32:46+02:00
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Human%2FEconomic%20motivations']
+images: ['https://og.guidefari.com/og-image?title=Human%2FEconomic%20motivations']
 ---
 
 This has come up in enough conversations that I thought I should write it down.

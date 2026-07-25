@@ -3,7 +3,7 @@ title: "Resource: Product Engineer"
 date: 2023-06-14T08:08:28+02:00
 description: 
 tags: [resource, product]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 
 > Product-minded engineers have lots of interest in the product itself. They want to understand why decisions are made, how people use the product, and love to be involved in making product decisions. They are people who would likely make a good product manager, if they ever decide to give up the joy of engineering

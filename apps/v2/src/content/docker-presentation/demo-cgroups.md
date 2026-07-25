@@ -3,7 +3,7 @@ title: "cgroups demo"
 date: 2024-09-01
 description: "Resource management and limits using cgroups"
 tags: ["docker", "cgroups", "demo"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=cgroups%20demo']
+images: ['https://og.guidefari.com/og-image?title=cgroups%20demo']
 ---
 
 # cgroups demo

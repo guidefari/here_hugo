@@ -3,7 +3,7 @@ title: "Tidal UX Wishlist"
 date: 2023-03-19T11:11:06+02:00
 description: I'm trying to use tidal more and more. Here are some UX pain points I've been feeling.
 tags: [ux, design, frontend]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tidal%20UX%20Wishlist']
+images: ['https://og.guidefari.com/og-image?title=Tidal%20UX%20Wishlist']
 ---
 
 This commentary is guided by general UX heuristics I've picked up over the years.

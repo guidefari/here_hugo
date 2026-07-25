@@ -4,7 +4,7 @@ date: 2022-06-07T08:03:37+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, bash, cmd, resource, linux]
 tldr: I made a bash script that automates the running of a script, including automatic user input.
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Bash%20Script%20Automation']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Bash%20Script%20Automation']
 ---
 
 # [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))

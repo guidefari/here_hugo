@@ -3,7 +3,7 @@ title: "2024 Q1 Writing Retro"
 date: 2024-04-03T20:50:22+02:00
 description:
 tags: [writing, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=2024+Q1+Writing+Retro']
+images: ['https://og.guidefari.com/og-image?title=2024+Q1+Writing+Retro']
 ---
 ## Overall: Messy process
 

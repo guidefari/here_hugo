@@ -3,7 +3,7 @@ title: "goosebumps.fm, Observability"
 date: 2026-07-04T10:00:00+02:00
 description: how goosebumps.fm wires Sentry, OTel, Pino, and request ID correlation across frontend and backend
 tags: [observability, sentry, otel, effect]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=goosebumps.fm%20%E2%80%94%20Observability']
+images: ['https://og.guidefari.com/og-image?title=goosebumps.fm%20%E2%80%94%20Observability']
 ---
 
 

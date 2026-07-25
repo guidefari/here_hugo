@@ -3,7 +3,7 @@ title: "Book Notes: Refactoring UI"
 date: 2020-09-24
 description: "highlights, quotes, & other interesting bits from Refactoring UI"
 tags: [book, notes, design]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 
 

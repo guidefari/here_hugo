@@ -3,7 +3,7 @@ title: "TIL: Jest SetSystemTime"
 date: 2024-04-17T11:39:33+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, testing, jest]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Jest+SetSystemTime']
+images: ['https://og.guidefari.com/og-image?title=Jest+SetSystemTime']
 ---
 
 ## Set environment time

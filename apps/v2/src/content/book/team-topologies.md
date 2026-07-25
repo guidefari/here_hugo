@@ -3,7 +3,7 @@ title: "Book Notes: Team Topologies"
 date: 2022-10-17T07:18:01+02:00
 description: "highlights, quotes, & other interesting bits from Team Topologies"
 tags: [book, notes, leadership, process, playbook, systems theory]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Book%20Notes%3A%20Team%20Topologies']
+images: ['https://og.guidefari.com/og-image?title=Book%20Notes%3A%20Team%20Topologies']
 ---
 
 - [Get the book here](https://itrevolution.com/team-topologies/)

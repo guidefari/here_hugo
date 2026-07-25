@@ -3,7 +3,7 @@ title: "Using contrast in DJ sets"
 date: 2021-12-28T16:14:51+02:00
 description: Taylor & Ronny teach some fundamental lessons on energy management in a DJ set
 tags: [music, dj, mix]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Using%20contrast%20in%20DJ%20sets']
+images: ['https://og.guidefari.com/og-image?title=Using%20contrast%20in%20DJ%20sets']
 aliases: [contrast]
 ---
 

@@ -3,7 +3,7 @@ title: "TIL: Avoid text-sm on inputs - iOS Safari zooms on focus"
 date: 2026-06-21T20:00:00+02:00
 description: "On iOS and iPadOS Safari, an input with a computed font-size below 16px auto-zooms the viewport on focus. text-sm (14px) triggers it; text-base (16px) does not."
 tags: [til, css, tailwind, safari, ios]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Avoid+text-sm+on+inputs+-+iOS+Safari+zooms+on+focus']
+images: ['https://og.guidefari.com/og-image?title=Avoid+text-sm+on+inputs+-+iOS+Safari+zooms+on+focus']
 ---
 
 ```css

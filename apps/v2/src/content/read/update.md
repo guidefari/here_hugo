@@ -4,7 +4,7 @@ date: 2025-11-11T23:11:24+02:00
 tags: []
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Reading+list+%23Update",
+    "https://og.guidefari.com/og-image?title=Reading+list+%23Update",
   ]
 ---
 

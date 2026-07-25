@@ -5,7 +5,7 @@ description: I like to organise information in playlists, or tags. It allows me 
 tags: [ux]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Youtube+Playlist+Ux+Wishlist",
+    "https://og.guidefari.com/og-image?title=Youtube+Playlist+Ux+Wishlist",
   ]
 ---
 

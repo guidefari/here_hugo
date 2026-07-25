@@ -3,7 +3,7 @@ title: "On Refactoring"
 date: 2023-04-10T23:36:28+02:00
 description: Some musings & observations on refactoring
 tags: [process, resource, dx, architecture, complexity, refactoring]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20Refactoring']
+images: ['https://og.guidefari.com/og-image?title=On%20Refactoring']
 ---
 
 ### Refactoring, Maintenance, Tech Debt

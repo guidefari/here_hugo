@@ -3,7 +3,7 @@ title: "TIL: Docker Go"
 date: 2023-09-25T05:11:01+02:00
 description: Docker networking, containerising a Go application, the difference between expose and ports in docker compose.
 tags: [til, docker, go, dx]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Docker+Go']
+images: ['https://og.guidefari.com/og-image?title=Docker+Go']
 ---
 
 ## Context

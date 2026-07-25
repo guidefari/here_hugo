@@ -3,7 +3,7 @@ title: "On Speed at all cost"
 date: 2024-11-07T19:26:29+02:00
 description: Working theory, observations, and stuff I've read
 tags: [strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Speed+At+All+Cost']
+images: ['https://og.guidefari.com/og-image?title=Speed+At+All+Cost']
 ---
 
 ## Context

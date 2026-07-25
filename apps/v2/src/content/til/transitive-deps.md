@@ -3,7 +3,7 @@ title: "TIL: Transitive Deps"
 date: 2025-10-26T07:13:47+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, security]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Transitive+Dependencies']
+images: ['https://og.guidefari.com/og-image?title=Transitive+Dependencies']
 ---
 
 I'm fascinated by dependency resolution in npm, probably a result of all the emotional damage it's caused me over the years.

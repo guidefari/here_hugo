@@ -3,7 +3,7 @@ title: "Artist: Move D"
 date: 2022-05-30T08:56:16+02:00
 description: Fancy a new artist to listen to?😎
 tags: [music, artist, curated, dj, house, techno, acid]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Artist%3A%20Move%20D']
+images: ['https://og.guidefari.com/og-image?title=Artist%3A%20Move%20D']
 ---
 
 # Move D @ The Lot Radio

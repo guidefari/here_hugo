@@ -3,7 +3,7 @@ title: "Pulse"
 date: 2026-02-14T02:04:04+02:00
 description: a CLI tool to check on all your git repos at once
 tags: [go, cli]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Pulse"]
+images: ["https://og.guidefari.com/og-image?title=Pulse"]
 ---
 
 My brain runs an "out of sight, out of mind" policy. I come back to my laptop after a day or two away and genuinely can't remember what state things are in. Which repos have uncommitted work? Did I push that branch? What was I even working on last two nights ago?

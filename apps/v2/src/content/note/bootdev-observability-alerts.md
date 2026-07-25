@@ -3,7 +3,7 @@ title: "Alerts"
 date: 2026-06-27T10:00:00+02:00
 description: actionable rules, sane thresholds, what not to alert on
 tags: [observability, prometheus, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20%E2%80%94%20Alerts']
+images: ['https://og.guidefari.com/og-image?title=Observability%20%E2%80%94%20Alerts']
 series: bootdev-observability
 series_order: 8
 ---

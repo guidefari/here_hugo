@@ -3,7 +3,7 @@ title: "AWS Cloudtrail"
 date: 2023-01-16T08:08:23+02:00
 description: Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail. Events include actions taken in the AWS Management Console, AWS Command Line Interface, and AWS SDKs and APIs.
 tags: [aws, cloudtrail]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title%3DAWS%20Cloudtrail']
+images: ['https://og.guidefari.com/og-image?title=AWS%20Cloudtrail']
 ---
 
 - CloudTrail logs calls between AWS services

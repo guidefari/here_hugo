@@ -3,7 +3,7 @@ title: "Log Structure & Context"
 date: 2026-06-27T10:00:00+02:00
 description: structured logs, slog groups, request + user + instance context, request-logging middleware
 tags: [observability, slog, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Log%20Structure%20%26%20Context']
+images: ['https://og.guidefari.com/og-image?title=Log%20Structure%20%26%20Context']
 series: bootdev-observability
 series_order: 2
 ---

@@ -3,7 +3,7 @@ title: "Bio"
 layout: "bio"
 full_width: true
 description: "Copy-ready professional bios for Guide Fari."
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Bio"]
+images: ["https://og.guidefari.com/og-image?title=Bio"]
 hide_footer: true
 intro: "A copy-ready bio page for career pages, speaker intros, podcast notes, partner pages, and recruiter blurbs."
 profile:

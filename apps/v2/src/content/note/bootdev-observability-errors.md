@@ -3,7 +3,7 @@ title: "Error Handling & Logging"
 date: 2026-06-27T10:00:00+02:00
 description: log-and-rethrow, %w wrapping, the single-log-site rule
 tags: [observability, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Error%20Handling%20%26%20Logging']
+images: ['https://og.guidefari.com/og-image?title=Error%20Handling%20%26%20Logging']
 series: bootdev-observability
 series_order: 4
 ---

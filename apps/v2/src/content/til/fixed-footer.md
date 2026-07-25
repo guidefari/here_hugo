@@ -3,7 +3,7 @@ title: "TIL: Fixed Footer"
 date: 2024-07-21T00:52:44+02:00
 description: Time to converge on a general solution to this recurring problem🫡
 tags: [til, css]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Fixed+Footer']
+images: ['https://og.guidefari.com/og-image?title=Fixed+Footer']
 ---
 
 ```html
