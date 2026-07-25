@@ -15,7 +15,19 @@ export const navItems = [
   { label: "media", href: "/media/" },
   { label: "projects", href: "/projects/" },
   { label: "rss", href: "/index.xml" },
-  { label: "planetaryescape", href: "https://planetaryescape.co.za", external: true },
+];
+
+export const elsewhereLinks = [
+  {
+    label: "planetaryescape",
+    href: "https://planetaryescape.co.za",
+    blurb: "consultancy & OSS lab",
+  },
+  {
+    label: "goosebumps.fm",
+    href: "https://goosebumps.fm",
+    blurb: "music curation",
+  },
 ];
 
 export const flattenedSections = new Set([

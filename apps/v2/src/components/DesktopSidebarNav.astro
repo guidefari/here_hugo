@@ -1,7 +1,13 @@
 ---
 import { navItems, writingTree } from "../lib/site.mjs";
+import { getEntriesBySection } from "../lib/content.mjs";
+import { projects } from "../lib/projects.mjs";
 
 const { isHome = false, activeWritingHref = "" } = Astro.props;
+const chipCounts = {
+  media: (await getEntriesBySection("media")).length,
+  projects: projects.length,
+};
 const currentPath = Astro.url.pathname;
 const isWritingChildActive = (href) => currentPath === href || activeWritingHref === href || currentPath.startsWith(href);
 const isWritingArea = currentPath === "/writing/" || writingTree.children.some((child) => isWritingChildActive(child.href));
@@ -87,6 +93,9 @@ const writingChildHrefs = new Set(writingTree.children.map((c) => c.href));
               data-nav-sound
             >
               <span class="nav-chip__bracket">[</span><span class="nav-chip__label">{item.label}</span><span class="nav-chip__bracket">]</span>
+              {chipCounts[item.label] && (
+                <span class="ml-auto text-[10px] font-mono text-text/50">{chipCounts[item.label]}</span>
+              )}
               {item.external && (
                 <svg class="w-3 h-3 ml-auto text-text/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
               )}
