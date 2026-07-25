@@ -1,7 +1,8 @@
-import jetBrainsMonoBold from "@expo-google-fonts/jetbrains-mono/700Bold/JetBrainsMono_700Bold.ttf?arraybuffer";
+import jetBrainsMonoBold from "@expo-google-fonts/jetbrains-mono/700Bold/JetBrainsMono_700Bold.ttf?arraybuffer&base64";
 import { ImageResponse } from "@cf-wasm/og/workerd";
 import { createElement } from "react";
 import type { ReactNode } from "react";
+import cardTemplate from "./card.png?inline";
 
 const WIDTH = 1012;
 const HEIGHT = 506;
@@ -28,19 +29,18 @@ function card(title: string): ReactNode {
         display: "flex",
         width: "100%",
         height: "100%",
-        background: "#161817",
-        color: "#e9eb9e",
         fontFamily: "JetBrains Mono",
         position: "relative",
         overflow: "hidden",
       },
     },
-    createElement("div", {
+    createElement("img", {
+      src: cardTemplate,
       style: {
-        display: "flex",
         position: "absolute",
-        inset: 18,
-        border: "1px solid #313a37",
+        inset: 0,
+        width: "100%",
+        height: "100%",
       },
     }),
     createElement(
@@ -48,130 +48,36 @@ function card(title: string): ReactNode {
       {
         style: {
           display: "flex",
-          width: 328,
-          height: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
+          position: "absolute",
+          left: 374,
+          top: 128,
+          width: 600,
+          color: "#e9eb9e",
+          fontSize: titleSize(title),
+          fontWeight: 700,
+          lineHeight: 1.12,
+          letterSpacing: -2,
+          wordBreak: "break-word",
         },
       },
-      createElement(
-        "div",
-        {
-          style: {
-            display: "flex",
-            width: 232,
-            height: 232,
-            borderRadius: 116,
-            background: "linear-gradient(145deg, #b8c999 0%, #7da9b9 52%, #245f67 100%)",
-            alignItems: "center",
-            justifyContent: "center",
-            boxShadow: "0 0 0 14px #1d211f, 0 0 0 15px #536660",
-          },
-        },
-        createElement(
-          "div",
-          {
-            style: {
-              display: "flex",
-              width: 160,
-              height: 160,
-              borderRadius: 80,
-              background: "#161817",
-              color: "#e9eb9e",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 72,
-              letterSpacing: -8,
-              paddingRight: 8,
-            },
-          },
-          "GF",
-        ),
-      ),
-      createElement("div", {
-        style: {
-          display: "flex",
-          position: "absolute",
-          left: 42,
-          bottom: 56,
-          width: 84,
-          height: 4,
-          background: "#e9eb9e",
-        },
-      }),
-      createElement("div", {
-        style: {
-          display: "flex",
-          position: "absolute",
-          left: 42,
-          bottom: 42,
-          width: 48,
-          height: 4,
-          background: "#7da9b9",
-        },
-      }),
+      title,
     ),
     createElement(
       "div",
       {
         style: {
           display: "flex",
-          flex: 1,
-          minWidth: 0,
-          height: "100%",
-          padding: "108px 54px 48px 38px",
-          flexDirection: "column",
-          justifyContent: "space-between",
+          position: "absolute",
+          left: 374,
+          bottom: 53,
+          width: 600,
+          color: "#7da9b9",
+          fontSize: 48,
+          fontWeight: 700,
+          letterSpacing: -2,
         },
       },
-      createElement(
-        "div",
-        {
-          style: {
-            display: "flex",
-            color: "#e9eb9e",
-            fontSize: titleSize(title),
-            fontWeight: 700,
-            lineHeight: 1.12,
-            letterSpacing: -2,
-            wordBreak: "break-word",
-          },
-        },
-        title,
-      ),
-      createElement(
-        "div",
-        {
-          style: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          },
-        },
-        createElement(
-          "div",
-          {
-            style: {
-              display: "flex",
-              color: "#7da9b9",
-              fontSize: 34,
-              fontWeight: 700,
-              letterSpacing: -1,
-            },
-          },
-          "guidefari.com",
-        ),
-        createElement("div", {
-          style: {
-            display: "flex",
-            width: 12,
-            height: 12,
-            borderRadius: 6,
-            background: "#e9eb9e",
-          },
-        }),
-      ),
+      "guidefari.com",
     ),
   );
 }
