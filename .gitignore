@@ -14,4 +14,5 @@ node_modules
 .wrangler
 apps/v2/.astro
 apps/v2/dist
+apps/og-image/dist
 .env
