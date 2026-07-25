@@ -3,7 +3,7 @@ title: "Profiling"
 date: 2026-06-27T10:00:00+02:00
 description: pprof in prod, profile-driven dev, the five profile types
 tags: [observability, pprof, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20%E2%80%94%20Profiling']
+images: ['https://og.guidefari.com/og-image?title=Observability%20%E2%80%94%20Profiling']
 series: bootdev-observability
 series_order: 7
 ---

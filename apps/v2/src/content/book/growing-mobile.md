@@ -3,7 +3,7 @@ title: "Book Notes: Growing as a Mobile Engineer"
 date: 2023-12-23T13:08:51+02:00
 description: "highlights, quotes, & other interesting bits from Growing as a Mobile Engineer"
 tags: [book, notes]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Growing%20as%20a%20Mobile%20Engineer']
+images: ['https://og.guidefari.com/og-image?title=Growing%20as%20a%20Mobile%20Engineer']
 ---
 
 # Author Background

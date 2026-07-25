@@ -3,7 +3,7 @@ title: "AWS notes: IAM"
 date: 2022-10-11T07:42:20+02:00
 description: IAM provides Identity for anything requiring long term AWS access. Humans, services, or applications (these are referred to as principals).
 tags: [aws, iam]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20notes%3A%20IAM']
+images: ['https://og.guidefari.com/og-image?title=AWS%20notes%3A%20IAM']
 ---
 
 - [IAM docs](https://aws.amazon.com/iam/getting-started/)

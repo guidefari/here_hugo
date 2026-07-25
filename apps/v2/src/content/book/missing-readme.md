@@ -3,7 +3,7 @@ title: "Book Notes: Missing Readme"
 date: 2025-01-15T00:25:55+02:00
 description: "highlights, quotes, & other interesting bits from Missing Readme"
 tags: [book, notes]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Missing+Readme']
+images: ['https://og.guidefari.com/og-image?title=Missing+Readme']
 ---
 
 ## Housekeeping

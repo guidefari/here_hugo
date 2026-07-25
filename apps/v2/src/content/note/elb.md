@@ -3,7 +3,7 @@ title: "AWS Elastic Load Balancer"
 date: 2023-02-05T14:13:59+02:00
 description: Let's learn how to balance this load, shall we
 tags: [aws, networking]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20Elastic%20Load%20Balancer']
+images: ['https://og.guidefari.com/og-image?title=AWS%20Elastic%20Load%20Balancer']
 ---
 Distributes incoming traffic across multiple targets, such as
 

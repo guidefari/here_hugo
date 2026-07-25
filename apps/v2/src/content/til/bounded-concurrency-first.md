@@ -3,7 +3,7 @@ title: "TIL: Bounded concurrency first"
 date: 2026-06-29T21:30:00+02:00
 description: When fanning out async work, default to a bound. The four ways unbounded breaks, heuristics for picking the limit, and when unbounded is actually fine.
 tags: [til, concurrency, async]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Bounded+Concurrency+First']
+images: ['https://og.guidefari.com/og-image?title=Bounded+Concurrency+First']
 ---
 
 From [Bhekani's note](https://digitalgarden.bhekani.com/bounded-concurrency-first/): when fanning out async work, default to **bounded concurrency**. Spawning one task per item is the lazy answer that turns "many tasks" into "many simultaneous failures." The fix is small - a semaphore plus a join set, with the permit released as each task completes. At most N items in flight; new spawns block until a slot frees.

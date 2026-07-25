@@ -3,7 +3,7 @@ title: "Denis Čahuk on Estimates"
 date: 2023-06-14T06:38:52+02:00
 description: Communicating our understanding of the problem and Forecasting completion of the solution
 tags: [process, product]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Denis%20Estimates']
+images: ['https://og.guidefari.com/og-image?title=Denis%20Estimates']
 aliases: [den]
 ---
 In a recent newsletter titled ["Roadmaps don't create a product; Releases do"](https://craftingtechteams.substack.com/p/roadmaps-dont-create-a-product-releases), Denis mentioned 

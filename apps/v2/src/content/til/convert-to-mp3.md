@@ -3,7 +3,7 @@ title: "TIL: Converting audio files to MP3 using ffmpeg"
 date: 2024-11-08T06:05:10+02:00
 description: ffmpeg ftw.
 tags: [til, bash]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Convert+to+Mp3']
+images: ['https://og.guidefari.com/og-image?title=Convert+to+Mp3']
 ---
 
 I need to load up a flash stick with music for a friend.

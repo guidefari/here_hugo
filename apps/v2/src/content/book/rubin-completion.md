@@ -3,7 +3,7 @@ title: "Rick Rubin on completion"
 date: 2023-05-07T11:59:16+02:00
 description: Notes & highlights from a chapter on Completion, from The Creative Act.
 tags: [book, notes]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Rick%20Rubin%20on%20completion']
+images: ['https://og.guidefari.com/og-image?title=Rick%20Rubin%20on%20completion']
 ---
 
 

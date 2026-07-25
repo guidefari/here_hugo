@@ -3,7 +3,7 @@ title: "Retro: Crowdstrike outage"
 date: 2024-07-28T11:30:20+02:00
 description:
 tags: [devops, retro]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Crowdstrike+Outage+Retro']
+images: ['https://og.guidefari.com/og-image?title=Crowdstrike+Outage+Retro']
 aliases: [clownstrike]
 ---
 

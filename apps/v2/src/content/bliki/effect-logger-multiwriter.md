@@ -3,7 +3,7 @@ title: "Effect Logger Multi-Writer"
 date: 2026-06-27T10:00:00+02:00
 description: "how I do multi-writer logging in effect: Logger.zip, Logger.layer([...]), and the scoped file logger"
 tags: [effect, observability]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Effect%20Logger%20Multi-Writer']
+images: ['https://og.guidefari.com/og-image?title=Effect%20Logger%20Multi-Writer']
 ---
 
 

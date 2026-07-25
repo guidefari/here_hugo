@@ -3,7 +3,7 @@ title: "Flow state"
 date: 2023-04-07T09:10:16+02:00
 description: Steps I take to preserve and make time for flow state
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Flow%20state']
+images: ['https://og.guidefari.com/og-image?title=Flow%20state']
 ---
 
 - I'm most effective with large blocks of uninterrupted time, because of that, it may seem like I'm not a fan of meetings, and will opt for [async communication](/async/) as default. This seems to work well when paired with ad-hoc meetings

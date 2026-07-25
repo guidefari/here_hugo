@@ -3,7 +3,7 @@ title: "Nextgoose -> gbfm"
 date: 2024-09-16T20:37:16+02:00
 description: Moving goosebumps from Vercel to SST
 tags: [infra, sst]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Gbfm+Sst"]
+images: ["https://og.guidefari.com/og-image?title=Gbfm+Sst"]
 ---
 
 # The next iteration of goosebumps is here

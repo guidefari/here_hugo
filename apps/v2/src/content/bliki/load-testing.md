@@ -3,7 +3,7 @@ title: "Load Testing"
 date: 2025-02-11T10:20:12+02:00
 description: Some thoughts around how to handle load testing
 tags: [devops]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Load+Testing']
+images: ['https://og.guidefari.com/og-image?title=Load+Testing']
 ---
 
 ## What is load testing

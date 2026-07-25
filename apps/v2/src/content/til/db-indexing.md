@@ -3,7 +3,7 @@ title: "Database Indexing"
 date: 2023-06-15T09:00:33+02:00
 description: Today I (re)learned Database Indexing
 tags: [database, performance]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Database%20Indexing']
+images: ['https://og.guidefari.com/og-image?title=Database%20Indexing']
 ---
 
 This came up in a recent interview, the topic of indexing a database.

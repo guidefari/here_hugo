@@ -2,7 +2,7 @@
 title: "Accelerate notes cont. : Maturity vs Capabilities model"
 date: 2024-12-24T12:52:28+02:00
 tags: [book, leadership, devops]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Maturity+vs+Capability']
+images: ['https://og.guidefari.com/og-image?title=Maturity+vs+Capability']
 ---
 
 While re-reading, I felt like this topic was introduced in a bit of a confusing way for me. 

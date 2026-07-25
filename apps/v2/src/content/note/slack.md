@@ -3,7 +3,7 @@ title: "On Assigning your team to full capacity"
 date: 2023-09-13T08:15:02+02:00
 description: The title here is misleading, because I’m here to make a case for not assigning your team to full capacity.
 tags: [process]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Slack"]
+images: ["https://og.guidefari.com/og-image?title=Slack"]
 ---
 
 The title here is misleading, because I’m here to make a case for not assigning your team to full capacity. This is another one of those counter-intuitive ways of delivering software more effectively.

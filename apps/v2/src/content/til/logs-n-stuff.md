@@ -3,7 +3,7 @@ title: "TIL: Logs N Stuff"
 date: 2022-07-08T10:01:01+02:00
 description: Something I learnt today. Maybe more than one thing👾Linux infra & logging stuff
 tags: [til, linux, logs, infra, cloud, git, backend]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Logs%20N%20Stuff']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Logs%20N%20Stuff']
 ---
 
 ## use `cat` to create and write into a file

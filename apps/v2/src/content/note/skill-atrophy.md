@@ -4,7 +4,7 @@ date: 2026-04-29T23:47:24+02:00
 featured: true
 description: A few sources on fighting AI related skill atrophy.
 tags: ["ai"]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Skill+Atrophy"]
+images: ["https://og.guidefari.com/og-image?title=Skill+Atrophy"]
 ---
 
 ### Sources

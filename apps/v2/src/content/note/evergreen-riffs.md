@@ -3,7 +3,7 @@ title: "How is a riff similar to Andy’s evergreen/atomic notes?"
 date: 2023-05-17T09:01:19+02:00
 description: 
 tags: [writing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Evergreen%20Riffs']
+images: ['https://og.guidefari.com/og-image?title=Evergreen%20Riffs']
 ---
 
 # [Tom's definition of a riff](https://tomcritchlow.com/2023/02/10/riffs/)

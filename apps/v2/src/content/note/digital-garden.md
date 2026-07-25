@@ -3,7 +3,7 @@ title: "Digital Garden"
 date: 2023-04-07T12:36:05+02:00
 description: Answering the question "Why does this site exist?"
 tags: [writing, strategy, second-brain]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Digital%20Garden']
+images: ['https://og.guidefari.com/og-image?title=Digital%20Garden']
 ---
 
 > as Scott Hanselman says, email is where keystrokes goes to die

@@ -3,7 +3,7 @@ title: "React Observables"
 date: 2022-09-15T08:25:25+02:00
 description: An attempted answer to a question asked in the Frontend masters Discord
 tags: [frontend, architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=React%20Observables']
+images: ['https://og.guidefari.com/og-image?title=React%20Observables']
 ---
 
 There are a few ways to do observables in React.

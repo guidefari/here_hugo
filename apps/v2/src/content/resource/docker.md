@@ -3,7 +3,7 @@ title: "Resource: Docker"
 date: 2022-07-28T13:55:56+02:00
 description: Some docker resources
 tags: [resource, docker, linux, bash]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resource%3A%20Docker']
+images: ['https://og.guidefari.com/og-image?title=Resource%3A%20Docker']
 ---
 
 # Links

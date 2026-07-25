@@ -3,7 +3,7 @@ title: "Prometheus Node Exporter"
 date: 2026-07-04T10:00:00+02:00
 description: the standard Prometheus exporter for host-level hardware and OS metrics
 tags: [observability, prometheus]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Prometheus%20Node%20Exporter']
+images: ['https://og.guidefari.com/og-image?title=Prometheus%20Node%20Exporter']
 ---
 
 

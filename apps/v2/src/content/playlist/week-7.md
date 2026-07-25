@@ -3,7 +3,7 @@ title: "My Week In Music #7"
 date: 2022-06-12T08:33:37+02:00
 description: Some IDM, ambient, hip hop, and alternative pop
 tags: [music, playlist, curated, idm, glitch, hip-hop]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=My%20Week%20In%20Music%20%237']
+images: ['https://og.guidefari.com/og-image?title=My%20Week%20In%20Music%20%237']
 ---
 
 # Curated Albums

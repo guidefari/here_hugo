@@ -1,0 +1,28 @@
+{
+  "name": "@here/og-image",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 1415",
+    "build": "vite build",
+    "preview": "vite preview --port 1415",
+    "deploy": "bun run build && wrangler deploy",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@expo-google-fonts/jetbrains-mono": "0.4.1",
+    "@cf-wasm/og": "0.4.1",
+    "react": "19.2.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.47.0",
+    "@cloudflare/workers-types": "5.20260724.1",
+    "@types/react": "19.2.17",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "vite-plugin-arraybuffer": "0.1.4",
+    "wrangler": "4.114.0"
+  }
+}

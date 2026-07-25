@@ -3,7 +3,7 @@ title: "AWS"
 date: 2021-11-29T09:11:21+02:00
 description: Top level AWS notes & resources. Mostly focused on Solutions Architect Associate
 tags: [aws, backend, resource]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS']
+images: ['https://og.guidefari.com/og-image?title=AWS']
 ---
 
 # Resources

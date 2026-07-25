@@ -3,7 +3,7 @@ title: "TIL: Sentry"
 date: 2024-05-06T07:49:40+02:00
 description: I set up Sentry on goosebumps. 
 tags: [til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Sentry']
+images: ['https://og.guidefari.com/og-image?title=Sentry']
 ---
 
 - [PR](https://github.com/guidefari/nextgoose/pull/26) that adds Sentry to [goosebumps](https://goosebumps.fm/).

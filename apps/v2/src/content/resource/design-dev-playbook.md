@@ -3,7 +3,7 @@ title: "Resource: Design Dev Playbook"
 date: 2024-03-27T11:22:26+02:00
 description: 
 tags: [resource, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Design+Dev+Playbook']
+images: ['https://og.guidefari.com/og-image?title=Design+Dev+Playbook']
 ---
 
 ## Design systems

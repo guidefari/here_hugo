@@ -3,7 +3,7 @@ title: "TIL: Env variables & Infinite Rerender"
 date: 2024-03-22T10:56:13+02:00
 description: useEffect? more like useFootgun
 tags: [til, react]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Infinite+Loop']
+images: ['https://og.guidefari.com/og-image?title=Infinite+Loop']
 ---
 
 I might start a little series of exploring common bugs in react.

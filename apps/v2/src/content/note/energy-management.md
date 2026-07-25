@@ -3,7 +3,7 @@ title: "Energy Management"
 date: 2023-04-07T08:20:22+02:00
 description: An alternative or add on to time management
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Energy%20Management']
+images: ['https://og.guidefari.com/og-image?title=Energy%20Management']
 ---
 
 - While I find routine important, I find myself being more effective when I manage my energy, as opposed to time. This may often result in inconsistent and unpredictable working hours (but much higher quality work). Hence the prefernce for an async by default style.

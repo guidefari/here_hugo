@@ -3,7 +3,7 @@ title: "TIL: Some Docker & Linux"
 date: 2022-05-25T07:16:55+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Some%20Docker%20%26%20Linux']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Some%20Docker%20%26%20Linux']
 ---
 
 

@@ -3,7 +3,7 @@ title: "TIL: Molecular JS"
 date: 2022-08-12T10:24:48+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, backend, node, microservices]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Molecular%20JS']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Molecular%20JS']
 ---
 
 ## Resources

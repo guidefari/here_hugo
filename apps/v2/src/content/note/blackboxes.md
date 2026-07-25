@@ -3,7 +3,7 @@ title: "On Blackboxes & Open Garage Doors"
 date: 2024-08-11T23:15:55+02:00
 description: Another excerpt from a chat with Ibra & Victor.
 tags: [strategy, process]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Blackboxes"]
+images: ["https://og.guidefari.com/og-image?title=Blackboxes"]
 ---
 
 # Key takeaway

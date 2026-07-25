@@ -3,7 +3,7 @@ title: "Problem/Solution Space"
 date: 2023-11-18T07:13:55+02:00
 description: 
 tags: [ddd, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Problem+Solution+Space']
+images: ['https://og.guidefari.com/og-image?title=Problem+Solution+Space']
 ---
 
 I think having a good understanding of your problem space results in higher quality & more valuable software. 

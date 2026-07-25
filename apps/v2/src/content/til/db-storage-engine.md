@@ -3,7 +3,7 @@ title: "TIL: MySQL Storage Engines"
 date: 2023-02-03T09:51:53+02:00
 description: bits about MySQL architecture
 tags: [til, aws, db, architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20MySQL%20Storage%20Engines']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20MySQL%20Storage%20Engines']
 ---
 
 While studying [AWS RDS](https://aws.amazon.com/rds/), I read that automated backups are only supported for the **InnoDB storage engine**.

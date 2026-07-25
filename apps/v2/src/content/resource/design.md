@@ -3,7 +3,7 @@ title: "Design"
 date: 2021-10-28T12:03:16+02:00
 description: I always 'misplace' design resources
 tags: [design, resource, book, ux]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Design%20Resources']
+images: ['https://og.guidefari.com/og-image?title=Design%20Resources']
 ---
 
 - [ui design daily](https://www.uidesigndaily.com/)

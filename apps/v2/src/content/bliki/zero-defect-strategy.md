@@ -3,7 +3,7 @@ title: "Zero Defect Strategy"
 date: 2024-10-02T19:39:23+02:00
 description: At any given time, the highest priority is to eliminate bugs before writing any new code.
 tags: [strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Zero+Defect+Strategy']
+images: ['https://og.guidefari.com/og-image?title=Zero+Defect+Strategy']
 ---
 
 Popularised by Microsoft, the idea is simple: **At any given time, the highest priority is to eliminate bugs before writing any new code**.

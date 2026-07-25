@@ -3,7 +3,7 @@ title: "Node + Openai CLI app"
 date: 2024-03-07T14:41:16+02:00
 description: Notes from frontend masters course - Build AI-Powered Apps with OpenAI and Node.js
 tags: [node, ai, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Node+Openai']
+images: ['https://og.guidefari.com/og-image?title=Node+Openai']
 ---
 
 # Housekeeping

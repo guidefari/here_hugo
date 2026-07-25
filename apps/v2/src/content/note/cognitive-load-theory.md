@@ -4,7 +4,7 @@ date: 2022-10-17T08:50:21+02:00
 featured: true
 description: How can this theory can be a helpful heuristic for effective team design
 tags: [psychology, learning, dx, software-design, process, complexity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cognitive%20Load%20Theory']
+images: ['https://og.guidefari.com/og-image?title=Cognitive%20Load%20Theory']
 aliases: [clt, cognitive-load]
 ---
 

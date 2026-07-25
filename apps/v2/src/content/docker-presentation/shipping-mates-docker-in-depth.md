@@ -3,7 +3,7 @@ title: "Top level Presentation doc"
 date: 2024-09-01
 description: "Understanding container fundamentals: chroot, namespaces, cgroups, and container daemons"
 tags: ["docker", "containers", "fundamentals"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Shipping%20mates%3A%20Docker%20in%20depth']
+images: ['https://og.guidefari.com/og-image?title=Shipping%20mates%3A%20Docker%20in%20depth']
 ---
 
 ---

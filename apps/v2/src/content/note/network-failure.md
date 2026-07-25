@@ -5,7 +5,7 @@ description: Network failures are an inevitability in distributed computing. You
 tags: [ux, design, frontend]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Handling+Network+Failure",
+    "https://og.guidefari.com/og-image?title=Handling+Network+Failure",
   ]
 ---
 

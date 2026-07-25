@@ -4,7 +4,7 @@ date: 2022-07-12T07:51:06+02:00
 description: Something I learnt today. Maybe more than one thing👾Whilst trying to make use of Hugo CLI in a remix.run project that's powered by markdown content
 tldr: Learn how to make use of Hugo CLI in a remix.run project that's powered by markdown content
 tags: [til, hugo, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20How%20to%20use%20Hugo%20CLI%20in%20a%20Remix.run%20project']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20How%20to%20use%20Hugo%20CLI%20in%20a%20Remix.run%20project']
 ---
 
 ## What Hugo CLI offers 
@@ -25,7 +25,7 @@ title: "TIL: Hugo Mount Config"
 date: 2022-07-12T07:51:06+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, hugo, cli]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Hugo%20Mount%20Config']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Hugo%20Mount%20Config']
 ---
 ```
 
@@ -37,7 +37,7 @@ title: "TIL: {{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 ```
 

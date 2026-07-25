@@ -5,7 +5,7 @@ description: Books often fail not because readers are lazy or dumb, but because 
 tags: [reading, learning]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Books%20Don't%20Work%3F",
+    "https://og.guidefari.com/og-image?title=Books%20Don't%20Work%3F",
   ]
 ---
 

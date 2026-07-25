@@ -3,7 +3,7 @@ title: "Common React Render Bug"
 date: 2023-01-25T20:24:57+02:00
 description: The most common react bug I've been having to fix is caused by trying to `value.map()` an `undefined value`
 tags: [react, typescript]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Common%20React%20Render%20Bug']
+images: ['https://og.guidefari.com/og-image?title=Common%20React%20Render%20Bug']
 ---
 
 

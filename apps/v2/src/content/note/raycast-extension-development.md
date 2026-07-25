@@ -3,7 +3,7 @@ title: "Raycast Extension Development"
 date: 2025-01-20T22:58:48+02:00
 description: I worked on some raycast extensions over the holidays. This note shares some of my experiences
 tags: [dx]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Raycast+Extension+Development']
+images: ['https://og.guidefari.com/og-image?title=Raycast+Extension+Development']
 aliases: ['red']
 ---
 

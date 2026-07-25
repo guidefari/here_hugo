@@ -3,7 +3,7 @@ title: "UX Crit"
 date: 2023-03-21T17:37:31+02:00
 description: A way to train your design eye
 tags: [ux, design]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=UX%20Crit']
+images: ['https://og.guidefari.com/og-image?title=UX%20Crit']
 ---
 
 # UX crit

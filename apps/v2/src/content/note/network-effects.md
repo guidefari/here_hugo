@@ -3,7 +3,7 @@ title: "Network Effects"
 date: 2024-03-05T08:15:32+02:00
 description: When a product/business gets better with more users using it.
 tags: [product]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Network+Effects']
+images: ['https://og.guidefari.com/og-image?title=Network+Effects']
 ---
 
 > When a product gets more valuable to its users as a result of acquiring more users.

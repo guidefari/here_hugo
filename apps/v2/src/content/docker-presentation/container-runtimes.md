@@ -3,7 +3,7 @@ title: "Container Runtimes"
 date: 2025-10-08T01:42:31+02:00
 description: 
 tags: [docker]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Container+Runtimes']
+images: ['https://og.guidefari.com/og-image?title=Container+Runtimes']
 ---
 
 This video prompted this note.

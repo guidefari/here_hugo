@@ -3,7 +3,7 @@ title: "Resource: A Tour of Javascript & React Design Patterns"
 date: 2022-09-01T17:32:33+02:00
 description: 
 tags: [resource]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Resource%3A%20A%20Tour%20of%20Javascript%20%26%20React%20Design%20Patterns']
+images: ['https://og.guidefari.com/og-image?title=Resource%3A%20A%20Tour%20of%20Javascript%20%26%20React%20Design%20Patterns']
 ---
 
 # Links

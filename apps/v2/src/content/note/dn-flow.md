@@ -3,7 +3,7 @@ title: "Dan North - Value of Flow"
 date: 2023-10-03T08:06:41+02:00
 description: discusses the concepts of flow efficiency and resource efficiency and emphasizes the importance of optimizing flow to achieve real efficiency. 
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dan%20North%20-%20Value%20of%20Flow']
+images: ['https://og.guidefari.com/og-image?title=Dan%20North%20-%20Value%20of%20Flow']
 ---
 
 ## Source

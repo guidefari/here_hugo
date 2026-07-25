@@ -3,7 +3,7 @@ title: "TIL: Cloudflare Worker observability with SST"
 date: 2026-07-04T20:00:00+02:00
 description: Enabling logs and traces on a Cloudflare Worker deployed via SST, via the transform escape hatch.
 tags: [sst, cloudflare, observability, til]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Cloudflare%20Worker%20observability%20with%20SST']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Cloudflare%20Worker%20observability%20with%20SST']
 ---
 
 ## The short version

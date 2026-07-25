@@ -3,7 +3,7 @@ title: "AWS Batch"
 date: 2023-02-25T10:57:43+02:00
 description: Some services and workflows that help with Batch processing in AWS.
 tags: [aws, ml]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=AWS%20Batch']
+images: ['https://og.guidefari.com/og-image?title=AWS%20Batch']
 ---
 
 # AWS Batch

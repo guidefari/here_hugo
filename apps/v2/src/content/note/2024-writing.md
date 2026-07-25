@@ -3,7 +3,7 @@ title: "2024 Writing Strategy"
 date: 2024-01-04T20:50:22+02:00
 description:
 tags: [writing, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=2024+Writing+Strategy']
+images: ['https://og.guidefari.com/og-image?title=2024+Writing+Strategy']
 ---
 
 # 2023 retro

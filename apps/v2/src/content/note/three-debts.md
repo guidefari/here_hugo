@@ -6,7 +6,7 @@ description: Technical debt, cognitive debt and a secret third thing...
 tags: ["ai"]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=AI+Changes+the+Balance+of+Debt",
+    "https://og.guidefari.com/og-image?title=AI+Changes+the+Balance+of+Debt",
   ]
 ---
 

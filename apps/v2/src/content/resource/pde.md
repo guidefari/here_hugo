@@ -5,7 +5,7 @@ description: My personalised IDE setup
 tags: [resource, bash]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=Personal+Development+Environment",
+    "https://og.guidefari.com/og-image?title=Personal+Development+Environment",
   ]
 aliases: [vim, tmux]
 ---

@@ -4,7 +4,7 @@ date: 2023-09-12T03:39:03+02:00
 description: I can't believe how much I suffered trying to find out IP addresses and such inside my docker containers😂
 tags: [til, docker, networking, go]
 images:
-  ["https://images-here-hugo.vercel.app/api/og-image?title=Docker+Debugging"]
+  ["https://og.guidefari.com/og-image?title=Docker+Debugging"]
 ---
 
 I can't believe how much I suffered trying to find out IP addresses & such

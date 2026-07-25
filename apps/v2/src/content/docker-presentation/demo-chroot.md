@@ -3,7 +3,7 @@ title: "chroot demo"
 date: 2024-09-01
 description: "Hands-on demonstration of chroot for process isolation"
 tags: ["docker", "chroot", "demo"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=chroot%20demo']
+images: ['https://og.guidefari.com/og-image?title=chroot%20demo']
 ---
 
 # chroot demo

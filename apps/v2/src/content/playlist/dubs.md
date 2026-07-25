@@ -3,7 +3,7 @@ title: "Playlists: Dub Techno & Friends"
 date: 2022-06-15T18:02:08+02:00
 description: Here's a playlist for you... TK asked if my Dub playlist is on my site, now it is
 tags: [music, playlist, curated, dub, playlist]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Playlists%3A%20Dub%20Techno%20%26%20Friends']
+images: ['https://og.guidefari.com/og-image?title=Playlists%3A%20Dub%20Techno%20%26%20Friends']
 ---
 
 # DUB

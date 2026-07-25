@@ -3,7 +3,7 @@ title: "TIL: Cognitive Complexity"
 date: 2023-11-27T18:43:32+02:00
 description: Refactor this function to reduce its Cognitive Complexity
 tags: [til, software-design, complexity]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Cognitive+Complexity']
+images: ['https://og.guidefari.com/og-image?title=Cognitive+Complexity']
 ---
 
 I saw some nested if statements somewhere in the codebase, and [sonarlint](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarlint-vscode) said

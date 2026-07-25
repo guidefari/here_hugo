@@ -3,7 +3,7 @@ title: "K8s Crash Course"
 date: 2025-09-27T23:20:40+02:00
 description: Scribbles from the TechWorld with Nana Crash course
 tags: [k8s, containers]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=K8s+Crash+Course']
+images: ['https://og.guidefari.com/og-image?title=K8s+Crash+Course']
 ---
 
 <div class="relative w-full my-6 overflow-hidden border rounded-sm border-text/20 bg-black" style="aspect-ratio: 16 / 9;"><iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/s_o8dwzRlu4" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>

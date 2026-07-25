@@ -5,7 +5,7 @@ description: I switch off autoplay on all my streaming services. Youtube, Spotif
 media_type: article
 media_url: 
 creator: Guide Fari
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Autoplay+Opinion']
+images: ['https://og.guidefari.com/og-image?title=Autoplay+Opinion']
 tags: [ux, design, tweet]
 ---
 

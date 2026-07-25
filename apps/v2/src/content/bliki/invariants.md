@@ -3,7 +3,7 @@ title: "Invariants"
 date: 2026-07-24T09:00:00+02:00
 description: "A property that must always hold true — and what encoding them in your type system buys you."
 tags: [typescript, effect-systems, architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Invariants']
+images: ['https://og.guidefari.com/og-image?title=Invariants']
 ---
 
 An **invariant** is a property that must always hold true at a specific point in a program. When you say "this list is never empty" or "this ID was validated before use", you're describing an invariant.

@@ -3,7 +3,7 @@ title: "Tracing"
 date: 2026-06-27T10:00:00+02:00
 description: opentelemetry, spans where they matter, distributed context
 tags: [observability, otel, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Observability%20%E2%80%94%20Tracing']
+images: ['https://og.guidefari.com/og-image?title=Observability%20%E2%80%94%20Tracing']
 series: bootdev-observability
 series_order: 6
 ---

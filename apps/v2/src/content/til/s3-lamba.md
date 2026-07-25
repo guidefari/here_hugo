@@ -3,7 +3,7 @@ title: "TIL: AWS S3, Lamba, Event Notification"
 date: 2022-07-11T06:58:56+02:00
 description: Something I learnt today. Maybe more than one thing👾Been Learning AWS stuffs from Adrian Cantrill lately, been fun.
 tags: [til, aws, serverless, s3, lambda, python, iam]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL:AWS%20S3%2C%20Lamba%2C%20Event%20Notification']
+images: ['https://og.guidefari.com/og-image?title=TIL:AWS%20S3%2C%20Lamba%2C%20Event%20Notification']
 ---
 
 # Source - Adrian Cantrill

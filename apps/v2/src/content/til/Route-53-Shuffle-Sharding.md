@@ -4,7 +4,7 @@ date: 2022-03-01T11:27:17+02:00
 description: How Route 53 uses Shuffle Sharding to improve availability when assigning customers to virtual name servers.
 tldr: How Route 53 uses Shuffle Sharding when assigning customers to virtual name servers.
 tags: [til, backend, cloud, aws, route53, architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=How%20Route%2053%20uses%20Shuffle%20Sharding']
+images: ['https://og.guidefari.com/og-image?title=How%20Route%2053%20uses%20Shuffle%20Sharding']
 ---
 
 interesting [read](https://aws.amazon.com/builders-library/workload-isolation-using-shuffle-sharding/

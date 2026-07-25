@@ -5,7 +5,7 @@ description: What if you could search for music in your library by describing wh
 tags:
   - ux
 images:
-  - https://images-here-hugo.vercel.app/api/og-image?title=Visually+Indexed+Music
+  - https://og.guidefari.com/og-image?title=Visually+Indexed+Music
 ---
 
 

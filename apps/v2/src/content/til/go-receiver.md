@@ -3,7 +3,7 @@ title: "TIL: Value & Pointer Receivers in Go"
 date: 2024-05-20T06:45:01+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Go+Receiver']
+images: ['https://og.guidefari.com/og-image?title=Go+Receiver']
 ---
 
 > [Receivers allow you to associate a method with a type, and they come in two flavors: **value receivers** and **pointer receivers**. - Sidharthan Chandrasekaran Kamaraj](https://thebugshots.dev/understanding-value-and-pointer-receivers-in-golang)

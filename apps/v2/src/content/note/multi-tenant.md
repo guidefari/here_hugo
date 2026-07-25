@@ -3,7 +3,7 @@ title: "Some Patterns of Multi-Tenant SaaS"
 date: 2023-04-29T23:05:50+02:00
 description: I've had the pleasure of working on some multi-tenant products, and noticed some concerns repeat themselves. This note tries to capture some of those
 tags: [architecture]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Multi-Tenant%20SaaS']
+images: ['https://og.guidefari.com/og-image?title=Multi-Tenant%20SaaS']
 ---
 ## Disclaimer
 - There's no one blueprint for SaaS architecture. Sure there's patterns, but those are just tools for thinking.

@@ -2,7 +2,7 @@
 title: "Procrastination as a Signal"
 date: 2025-07-02T23:14:58+02:00
 tags: [psychology]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Tiny+Exp+Pro']
+images: ['https://og.guidefari.com/og-image?title=Tiny+Exp+Pro']
 ---
 
 Procrastination is often handled as a thing to get rid of as quickly as possible. Weather via brute force, or gaslighting yourself to work through the unpleasant feeling of “I don’t want to be doing this right now”

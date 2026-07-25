@@ -3,7 +3,7 @@ title: "TIL: Testable Examples in Go"
 date: 2024-05-07T07:49:50+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, go, testing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Testable+Examples']
+images: ['https://og.guidefari.com/og-image?title=Testable+Examples']
 ---
 
 - Seen while going through [Go with tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/integers).

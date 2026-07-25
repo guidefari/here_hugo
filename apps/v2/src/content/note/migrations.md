@@ -3,7 +3,7 @@ title: "On Migrations"
 date: 2024-08-17T11:43:42+02:00
 description: Will Larson on Migrations, from the book Elegant Puzzle
 tags: [strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Migrations']
+images: ['https://og.guidefari.com/og-image?title=Migrations']
 ---
 
 - Migrations are essential, and frustratingly frequent as your codebase ages and your business grows.

@@ -3,7 +3,7 @@ title: "Pid1"
 date: 2025-09-27T09:54:28+02:00
 description: 
 tags: []
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Pid1']
+images: ['https://og.guidefari.com/og-image?title=Pid1']
 ---
 
 While learning about `CMD` vs `ENTRYPOINT` patterns in Dockerfile, the importance of process ID 1 was highlighted.

@@ -3,7 +3,7 @@ title: "Audience of One"
 date: 2024-05-20T10:23:01+02:00
 description: Reminder to self - I am my main audience.
 tags: [writing, strategy]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Audience+of+One']
+images: ['https://og.guidefari.com/og-image?title=Audience+of+One']
 ---
 
 # Context

@@ -7,6 +7,15 @@ export const site = {
   analyticsId: "G-QNKPVT1XN3",
 };
 
+const ogImageUrl = new URL("/og-image", "https://og.guidefari.com");
+
+/** Returns the canonical generated social-card URL for a page title. */
+export function getOgImageUrl(title) {
+  const url = new URL(ogImageUrl);
+  url.searchParams.set("title", title || site.title);
+  return url.toString();
+}
+
 export const navItems = [
   { label: "home", href: "/" },
   { label: "now", href: "/now/" },

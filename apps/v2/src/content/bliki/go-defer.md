@@ -3,7 +3,7 @@ title: "Go, defer"
 date: 2026-07-04T10:00:00+02:00
 description: schedule a function call to run when the surrounding function returns
 tags: [go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Go%20%E2%80%94%20defer']
+images: ['https://og.guidefari.com/og-image?title=Go%20%E2%80%94%20defer']
 ---
 
 

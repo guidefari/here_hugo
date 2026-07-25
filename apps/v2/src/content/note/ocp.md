@@ -5,7 +5,7 @@ description: "Open-closed principle applied to shared/library React components -
 tags: [react, testing]
 images:
   [
-    "https://images-here-hugo.vercel.app/api/og-image?title=OCP+in+React+component+libraries",
+    "https://og.guidefari.com/og-image?title=OCP+in+React+component+libraries",
   ]
 ---
 

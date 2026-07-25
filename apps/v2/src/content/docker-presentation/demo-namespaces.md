@@ -3,7 +3,7 @@ title: "namespaces demo"
 date: 2024-09-01
 description: "Process namespace isolation demonstration using unshare"
 tags: ["docker", "namespaces", "demo"]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=namespaces%20demo']
+images: ['https://og.guidefari.com/og-image?title=namespaces%20demo']
 ---
 
 # namespaces demo

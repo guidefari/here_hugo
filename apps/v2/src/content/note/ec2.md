@@ -3,7 +3,7 @@ title: "AWS EC2 Basics"
 date: 2023-01-04T11:37:10+02:00
 description: Compute service.
 tags: [aws, ec2]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=']
+images: ['https://og.guidefari.com/og-image?title=']
 ---
 
 - Basic compute solution for AWS. runtimes, OS's

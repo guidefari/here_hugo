@@ -4,7 +4,7 @@ date: 2023-02-14T21:51:36+02:00
 description: An actionable map to help you get started with writing
 tags: [writing, documentation, strategy]
 aliases: [writing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Dev%20Writes']
+images: ['https://og.guidefari.com/og-image?title=Dev%20Writes']
 ---
 
 # Who this is for

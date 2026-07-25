@@ -3,7 +3,7 @@ title: "Resource: Terraform"
 date: 2026-02-23T16:48:43+02:00
 description:
 tags: [resource, iac, devops]
-images: ["https://images-here-hugo.vercel.app/api/og-image?title=Terraform"]
+images: ["https://og.guidefari.com/og-image?title=Terraform"]
 ---
 
 capturing notes for the [Terraform Associate (004)](https://developer.hashicorp.com/certifications/infrastructure-automation) exam.

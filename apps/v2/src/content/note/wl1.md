@@ -3,7 +3,7 @@ title: "Weekend Longreads #1"
 date: 2023-07-29T07:44:49+02:00
 description: Some long form content
 tags: [product, process, architecture, writing]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Weekend%20Longreads%20%231']
+images: ['https://og.guidefari.com/og-image?title=Weekend%20Longreads%20%231']
 ---
 
 

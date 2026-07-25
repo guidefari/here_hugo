@@ -3,7 +3,7 @@ title: "Spotify UX Wishlist"
 date: 2022-09-10T21:32:45+02:00
 description: I am somewhat of a spotify power user. Here is some commentary on the User Experience
 tags: [ux, design, frontend]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Spotify%20UX%20Wishlist']
+images: ['https://og.guidefari.com/og-image?title=Spotify%20UX%20Wishlist']
 ---
 
 # Desktop UX

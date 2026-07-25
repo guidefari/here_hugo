@@ -8,7 +8,7 @@ tags:
   - ai
   - ml
 images:
-  - https://images-here-hugo.vercel.app/api/og-image?title=AI%20%26%20ML%20Resources
+  - https://og.guidefari.com/og-image?title=AI%20%26%20ML%20Resources
 ---
 
 ## Books

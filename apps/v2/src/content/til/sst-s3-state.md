@@ -3,7 +3,7 @@ title: "TIL: SST stores state and encrypted secrets in a backend"
 date: 2026-06-11T10:00:00+02:00
 description: SST stores state, secrets, snapshots, and event logs in its configured backend. Secrets are AES-GCM encrypted before being written to S3 or Cloudflare R2.
 tags: [til, sst, infra, aws]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=SST+S3+State']
+images: ['https://og.guidefari.com/og-image?title=SST+S3+State']
 ---
 
 ## Backend storage

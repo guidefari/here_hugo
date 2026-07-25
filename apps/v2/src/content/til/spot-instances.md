@@ -3,7 +3,7 @@ title: "TIL: Spot Instances"
 date: 2025-11-10T07:31:44+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, aws]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Spot+Instances']
+images: ['https://og.guidefari.com/og-image?title=Spot+Instances']
 ---
 
 ## Where this started

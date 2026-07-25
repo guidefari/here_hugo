@@ -3,7 +3,7 @@ title: "Correlated Logging"
 date: 2026-07-04T10:00:00+02:00
 description: shared IDs across logs from one operation, so you can find every event for one request, user, or session
 tags: [observability]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Correlated%20Logging']
+images: ['https://og.guidefari.com/og-image?title=Correlated%20Logging']
 ---
 
 

@@ -3,7 +3,7 @@ title: "Blogroll"
 date: 2023-03-26T10:46:00+02:00
 description: Ongoing sources of inspiration, some blogs I like, etc
 tags: [design, ux]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Blogroll']
+images: ['https://og.guidefari.com/og-image?title=Blogroll']
 ---
 
 - [Max Böck (mxb.dev)](https://mxb.dev/)

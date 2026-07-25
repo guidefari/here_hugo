@@ -3,7 +3,7 @@ title: "On Team morale"
 date: 2024-07-10T13:57:17+02:00
 tags: [retro, leadership, strategy, process]
 images:
-  ["https://images-here-hugo.vercel.app/api/og-image?title=On+Team+Morale"]
+  ["https://og.guidefari.com/og-image?title=On+Team+Morale"]
 ---
 
 - I’ve routinely seen team morale at its highest when everyone is focused on the same goal. One task, one feature

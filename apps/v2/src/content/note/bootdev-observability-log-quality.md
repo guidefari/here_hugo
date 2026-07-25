@@ -3,7 +3,7 @@ title: "Log Quality & Hygiene"
 date: 2026-06-27T10:00:00+02:00
 description: one log per event, redact at the logger not in your head, log levels that mean something
 tags: [observability, slog, go]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Log%20Quality%20%26%20Hygiene']
+images: ['https://og.guidefari.com/og-image?title=Log%20Quality%20%26%20Hygiene']
 series: bootdev-observability
 series_order: 3
 ---

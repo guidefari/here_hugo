@@ -3,7 +3,7 @@ title: "On rest and work"
 date: 2023-04-07T09:17:40+02:00
 description: Feels weird to tag this one under productivity, lol.
 tags: [process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=On%20rest%20and%20work']
+images: ['https://og.guidefari.com/og-image?title=On%20rest%20and%20work']
 ---
 
 > I believe in “clean” downtime, as in: time off where you go firmly offline work-wise. Make sure you spend enough of your vacation days this way; it’s valuable, healthy, and important.

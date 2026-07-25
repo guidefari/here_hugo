@@ -4,7 +4,7 @@ date: 2022-11-25T08:01:50+02:00
 featured: true
 description: Optimising Mean Time To Recovery is more important than trying to minimise Mean Time Between Failures.
 tags: [monitoring, devops, cloud, process]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=MTTR%20%3E%20MTBF']
+images: ['https://og.guidefari.com/og-image?title=MTTR%20%3E%20MTBF']
 ---
 
 To paraphrase John Allspaw:

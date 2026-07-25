@@ -3,7 +3,7 @@ title: "Complicated or Complex?"
 date: 2024-07-31T05:51:35+02:00
 description: More heuristics to help you figure out if your problem is complicated, or complex.
 tags: [process, systems theory]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Complicated+or+Complex']
+images: ['https://og.guidefari.com/og-image?title=Complicated+or+Complex']
 ---
 
 ## Context

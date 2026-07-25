@@ -3,7 +3,7 @@ title: "TIL: Interactive Git Rebase"
 date: 2022-06-03T10:12:06+02:00
 description: Something I learnt today. Maybe more than one thing👾
 tags: [til, git]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=TIL%3A%20Interactive%20Git%20Rebase']
+images: ['https://og.guidefari.com/og-image?title=TIL%3A%20Interactive%20Git%20Rebase']
 ---
 
 # what for

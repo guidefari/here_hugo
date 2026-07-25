@@ -11,8 +11,11 @@
   "scripts": {
     "build": "cd apps/v2 && bun run build",
     "build:v2": "cd apps/v2 && bun run build",
+    "build:og": "bun run --cwd apps/og-image build",
     "dev": "cd apps/v2 && bun run dev",
     "dev:v2": "cd apps/v2 && bun run dev",
+    "dev:og": "bun run --cwd apps/og-image dev",
+    "deploy:og": "bun run --cwd apps/og-image deploy",
     "dev:sst": "sst dev"
   },
   "repository": {

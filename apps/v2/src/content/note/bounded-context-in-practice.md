@@ -3,7 +3,7 @@ title: "Bounded Context in Practice"
 date: 2023-11-17T17:51:46+02:00
 description: 
 tags: [ddd, playbook]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Bounded+Context+in+Practice']
+images: ['https://og.guidefari.com/og-image?title=Bounded+Context+in+Practice']
 ---
 Theory
 > a Bounded Context is a semantic contextual boundary. This means that within the boundary each component of the software model has a specific meaning and does specific things.

@@ -6,7 +6,7 @@ tags:
   - til
   - obsidian
 images:
-  - https://images-here-hugo.vercel.app/api/og-image?title=Obsidian+Workspace+Fix
+  - https://og.guidefari.com/og-image?title=Obsidian+Workspace+Fix
 ---
 
 After breaking my obsidian workspace with 2 repos with node modules, this helped `rm -R ~/Library/Application\ Support/obsidian`

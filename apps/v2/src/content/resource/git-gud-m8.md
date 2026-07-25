@@ -3,7 +3,7 @@ title: "Resource: Git Gud M8"
 date: 2025-10-10T09:27:56+02:00
 description: 
 tags: [git]
-images: ['https://images-here-hugo.vercel.app/api/og-image?title=Git+Gud+M8']
+images: ['https://og.guidefari.com/og-image?title=Git+Gud+M8']
 ---
 
 Problem: I want to be authenticated to multiple git profiles on one machine.
