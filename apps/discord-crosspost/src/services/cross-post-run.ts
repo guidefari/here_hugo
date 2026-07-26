@@ -114,6 +114,8 @@ export const layer = Layer.effect(
         }
         if (claimed.success === "claimed-pending") {
           due.add(dedupeKey);
+        } else if (claimed.success === "claimed-queued") {
+          // No-op: waits for promoteQueued to trickle it out on a later run.
         } else if (claimed.success === "already-claimed") {
           const retry = yield* Effect.result(ledger.prepareRetry(
             DedupeKey.make(source.id, entry.entryIdentity),
@@ -129,10 +131,15 @@ export const layer = Layer.effect(
         source.id,
         source.backfill.maxPerRun,
         now,
-        [...entries.keys()],
       ));
-      if (Result.isFailure(promoted)) failures.push(failure(source.id, null, promoted.failure.reason));
-      else for (const dedupeKey of promoted.success) due.add(dedupeKey);
+      if (Result.isFailure(promoted)) {
+        failures.push(failure(source.id, null, promoted.failure.reason));
+      } else {
+        for (const { dedupeKey, entry: promotedEntry } of promoted.success) {
+          entries.set(dedupeKey, promotedEntry);
+          due.add(dedupeKey);
+        }
+      }
 
       for (const dedupeKey of due) {
         const entry = entries.get(dedupeKey);

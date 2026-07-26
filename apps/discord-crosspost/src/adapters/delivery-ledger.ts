@@ -6,7 +6,7 @@ import * as Result from "effect/Result";
 import * as Schema from "effect/Schema";
 import { DedupeKey, type DedupeKey as DedupeKeyType } from "../domain/dedupe-key";
 import { LedgerUnavailable } from "../domain/errors";
-import type { MediaEntry } from "../domain/media-entry";
+import { MediaEntry } from "../domain/media-entry";
 
 export type ClaimResult = "claimed-pending" | "claimed-queued" | "already-claimed";
 
@@ -27,8 +27,7 @@ export interface DeliveryLedgerService {
     sourceId: string,
     limit: number,
     now: string,
-    availableKeys: ReadonlyArray<DedupeKeyType>,
-  ) => Effect.Effect<ReadonlyArray<DedupeKeyType>, LedgerUnavailable>;
+  ) => Effect.Effect<ReadonlyArray<{ readonly dedupeKey: DedupeKeyType; readonly entry: MediaEntry }>, LedgerUnavailable>;
   readonly beginAttempt: (
     dedupeKey: DedupeKeyType,
     now: string,
@@ -49,8 +48,26 @@ export class DeliveryLedger extends Context.Service<DeliveryLedger, DeliveryLedg
   "@here/discord-crosspost/DeliveryLedger",
 ) {}
 
-const DedupeKeyRow = Schema.Struct({ dedupe_key: Schema.String });
 const CountRow = Schema.Struct({ count: Schema.Number });
+const PayloadRow = Schema.Struct({ dedupe_key: Schema.String, payload: Schema.String });
+
+const parsePayloadRows = (
+  rows: ReadonlyArray<unknown>,
+): Result.Result<ReadonlyArray<{ dedupeKey: DedupeKeyType; entry: MediaEntry }>, string> => {
+  const parsedRows = Schema.decodeUnknownResult(Schema.Array(PayloadRow))(rows);
+  if (Result.isFailure(parsedRows)) return Result.fail(String(parsedRows.failure));
+
+  const out: Array<{ dedupeKey: DedupeKeyType; entry: MediaEntry }> = [];
+  for (const row of parsedRows.success) {
+    const dedupeKey = Schema.decodeUnknownResult(DedupeKey)(row.dedupe_key);
+    const entry = Schema.decodeUnknownResult(MediaEntry)(JSON.parse(row.payload));
+    if (Result.isFailure(dedupeKey) || Result.isFailure(entry)) {
+      return Result.fail(`corrupt ledger row for ${row.dedupe_key}`);
+    }
+    out.push({ dedupeKey: dedupeKey.success, entry: entry.success });
+  }
+  return Result.succeed(out);
+};
 
 const unavailable = (operation: string, cause: unknown): LedgerUnavailable =>
   new LedgerUnavailable({ operation, reason: String(cause) });
@@ -77,10 +94,10 @@ export const layer = (database: D1Database) =>
     claim: Effect.fn("DeliveryLedger.claim")((dedupeKey, entry, state, now) =>
       run("claim", () => database.prepare(`
         INSERT INTO discord_deliveries (
-          dedupe_key, source_id, entry_identity, entry_url, state, created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?)
+          dedupe_key, source_id, entry_identity, entry_url, payload, state, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT (dedupe_key) DO NOTHING
-      `).bind(dedupeKey, entry.sourceId, entry.entryIdentity, entry.entryUrl, state, now, now).run()).pipe(
+      `).bind(dedupeKey, entry.sourceId, entry.entryIdentity, entry.entryUrl, JSON.stringify(entry), state, now, now).run()).pipe(
         Effect.map((result) => result.meta.changes === 1
           ? state === "queued" ? "claimed-queued" : "claimed-pending"
           : "already-claimed"),
@@ -92,28 +109,25 @@ export const layer = (database: D1Database) =>
         WHERE dedupe_key = ? AND attempt_count < 3
           AND (state = 'failed' OR (state = 'pending' AND updated_at <= ?))
       `).bind(now, dedupeKey, staleBefore).run()).pipe(Effect.map((result) => result.meta.changes === 1))),
-    promoteQueued: Effect.fn("DeliveryLedger.promoteQueued")((sourceId, limit, now, availableKeys) => {
-      if (availableKeys.length === 0) return Effect.succeed([]);
-      const placeholders = availableKeys.map(() => "?").join(", ");
-      return run("promoteQueued", () => database.prepare(`
+    promoteQueued: Effect.fn("DeliveryLedger.promoteQueued")((sourceId, limit, now) =>
+      run("promoteQueued", () => database.prepare(`
         UPDATE discord_deliveries
         SET state = 'pending', updated_at = ?
         WHERE dedupe_key IN (
           SELECT dedupe_key FROM discord_deliveries
-          WHERE source_id = ? AND state = 'queued' AND dedupe_key IN (${placeholders})
+          WHERE source_id = ? AND state = 'queued'
           ORDER BY created_at ASC
           LIMIT ?
         )
-        RETURNING dedupe_key
-      `).bind(now, sourceId, ...availableKeys, limit).all()).pipe(
+        RETURNING dedupe_key, payload
+      `).bind(now, sourceId, limit).all()).pipe(
         Effect.flatMap((result) => {
-          const parsed = Schema.decodeUnknownResult(Schema.Array(DedupeKeyRow))(result.results);
+          const parsed = parsePayloadRows(result.results);
           return Result.isFailure(parsed)
             ? Effect.fail(unavailable("promoteQueued.parse", parsed.failure))
-            : Effect.succeed(parsed.success.map((row) => Schema.decodeUnknownSync(DedupeKey)(row.dedupe_key)));
+            : Effect.succeed(parsed.success);
         }),
-      );
-    }),
+      )),
     beginAttempt: Effect.fn("DeliveryLedger.beginAttempt")((dedupeKey, now) =>
       run("beginAttempt", () => database.prepare(`
         UPDATE discord_deliveries

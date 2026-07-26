@@ -28,7 +28,7 @@ export const layer = (webhookUrl: Redacted.Redacted<string>) =>
             body: JSON.stringify(payload),
             signal,
           }),
-          catch: () => new DiscordDeliveryFailed({ status: null, reason: "Discord request failed" }),
+          catch: (cause) => new DiscordDeliveryFailed({ status: null, reason: `Discord request failed: ${String(cause)}` }),
         });
         if (!response.ok) {
           return yield* Effect.fail(new DiscordDeliveryFailed({

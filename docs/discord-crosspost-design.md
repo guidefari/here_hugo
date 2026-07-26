@@ -8,15 +8,15 @@ Status: shaped and decided on the points below via PR review. Still not implemen
 
 These were open questions in the previous revision of this doc. Answers below are settled; implementation should follow them rather than re-litigate.
 
-1. **Naming** — "external feed" / "feed", not "friend feed". The feature is opt-in per feed, sourced from anyone, not specifically friends.
-2. **Parsing/validation** — Effect Schema, throughout. See [Effect shape](#effect-shape).
-3. **Channel + secrets** — the Discord webhook URL (which encodes the channel) is provided as a deploy-time secret, bound into the Worker via Alchemy. See [Secrets](#secrets).
-4. **Cron frequency** — every 5 minutes to start.
-5. **Backfill** — fixed time window on first sync, trickled out on a schedule rather than posted all at once, so enabling a feed doesn't flood the channel. Configurable at deploy time or runtime. See [Backfill](#backfill).
-6. **Feed formats** — support all of JSON Feed, RSS, and Atom from the start.
-7. **Drafts** — never post a draft. When an entry transitions from draft to published, it posts normally at that point, as a new discovery (dedupe identity is stable across the transition; see [D1 delivery ledger](#d1-delivery-ledger)).
-8. **Malformed entries** — never fail silently. Quarantine for review (persisted, visible, inspectable), not a silent skip and not a hard failure of the whole feed.
-9. **Runtime** — the Worker is an Effect application. D1 is approved as added infrastructure.
+1. **Naming**: "external feed" / "feed", not "friend feed". The feature is opt-in per feed, sourced from anyone, not specifically friends.
+2. **Parsing/validation**: Effect Schema, throughout. See [Effect shape](#effect-shape).
+3. **Channel + secrets**: the Discord webhook URL (which encodes the channel) is provided as a deploy-time secret, bound into the Worker via Alchemy. See [Secrets](#secrets).
+4. **Cron frequency**: every 5 minutes to start.
+5. **Backfill**: fixed time window on first sync, trickled out on a schedule rather than posted all at once, so enabling a feed doesn't flood the channel. Configurable at deploy time or runtime. See [Backfill](#backfill).
+6. **Feed formats**: support all of JSON Feed, RSS, and Atom from the start.
+7. **Drafts**: never post a draft. When an entry transitions from draft to published, it posts normally at that point, as a new discovery (dedupe identity is stable across the transition; see [D1 delivery ledger](#d1-delivery-ledger)).
+8. **Malformed entries**: never fail silently. Quarantine for review (persisted, visible, inspectable), not a silent skip and not a hard failure of the whole feed.
+9. **Runtime**: the Worker is an Effect application. D1 is approved as added infrastructure.
 
 ## Current constraints
 
@@ -54,30 +54,30 @@ This section sketches the module boundaries, not final code. Names are illustrat
 
 **Domain Modules** (pure, no I/O):
 
-- `MediaEntry` — the normalized Effect Schema struct every feed format decodes into: `sourceId`, `entryIdentity`, `title`, `entryUrl`, `description`, `creator`, `mediaType`, `mediaUrl`, `tags`, `thumbnailUrl`, `publishedAt`, `draft`.
-- `DedupeKey` — a branded value derived from `sourceId` + `entryIdentity`, with a pure `DedupeKey.make(sourceId, entryIdentity)` constructor.
-- `DiscordEmbedPayload` — a projection function `MediaEntry -> DiscordEmbedPayload`, pure, owns embed field mapping and truncation to Discord's limits.
-- Feed-format decoders — `JsonFeedEntry`, `RssItem`, `AtomEntry` Effect Schemas, each with a pure normalizer into `MediaEntry`. A decode failure produces a typed `MediaEntryRejected` value (not thrown), carrying enough context to quarantine.
+- `MediaEntry`: the normalized Effect Schema struct every feed format decodes into: `sourceId`, `entryIdentity`, `title`, `entryUrl`, `description`, `creator`, `mediaType`, `mediaUrl`, `tags`, `thumbnailUrl`, `publishedAt`, `draft`.
+- `DedupeKey`: a branded value derived from `sourceId` + `entryIdentity`, with a pure `DedupeKey.make(sourceId, entryIdentity)` constructor.
+- `DiscordEmbedPayload`: a projection function `MediaEntry -> DiscordEmbedPayload`, pure, owns embed field mapping and truncation to Discord's limits.
+- Feed-format decoders: `JsonFeedEntry`, `RssItem`, `AtomEntry` Effect Schemas, each with a pure normalizer into `MediaEntry`. A decode failure produces a typed `MediaEntryRejected` value (not thrown), carrying enough context to quarantine.
 
 **Service Modules** (orchestration, explicit dependencies via Effect Tags):
 
-- `FeedIngestion` — given a `FeedSource` (first-party or external), fetches and decodes it into `ReadonlyArray<Result<MediaEntry, MediaEntryRejected>>`. Depends on an `HttpClient` capability (Effect's platform HTTP client) and the per-format Domain Module decoders.
-- `CrossPostRun` — the top-level use case invoked by the Cron trigger: load enabled sources, run `FeedIngestion` across them with bounded concurrency, claim new entries via `DeliveryLedger`, send due entries via `DiscordPublisher`, apply backfill trickle policy. Depends on `SourceConfig`, `FeedIngestion`, `DeliveryLedger`, `DiscordPublisher`, `Clock`.
+- `FeedIngestion`: given a `FeedSource` (first-party or external), fetches and decodes it into `ReadonlyArray<Result<MediaEntry, MediaEntryRejected>>`. Depends on an `HttpClient` capability (Effect's platform HTTP client) and the per-format Domain Module decoders.
+- `CrossPostRun`: the top-level use case invoked by the Cron trigger: load enabled sources, run `FeedIngestion` across them with bounded concurrency, claim new entries via `DeliveryLedger`, send due entries via `DiscordPublisher`, apply backfill trickle policy. Depends on `SourceConfig`, `FeedIngestion`, `DeliveryLedger`, `DiscordPublisher`, `Clock`.
 
 **External Adapter Modules** (Cloudflare/framework/third-party translation, Layers own construction):
 
-- `DeliveryLedger` — D1-backed, exposes service-shaped methods (`claim(dedupeKey, entry): Effect<ClaimResult, LedgerUnavailable>`, `markSent(...)`, `markFailed(...)`, `dueForBackfill(now): Effect<...>`), not raw D1 queries. Parses D1 rows at the seam (`parseDeliveryRow`) per boundary-parsing standards; rejects contradictory persisted rows (e.g. `state = 'sent'` with no `sentAt`).
-- `DiscordPublisher` — wraps the webhook `fetch` call, returns `Effect<DiscordMessageId, DiscordDeliveryFailed>`. Classifies HTTP/network failures before returning; does not leak the raw webhook URL into error values.
-- `SourceConfig` — resolves first-party + external feed configuration (see [Feed configuration](#feed-configuration)) into parsed `FeedSource[]` at startup/composition, not re-read per run.
-- `QuarantineStore` — D1-backed, records rejected entries for later review (see [Malformed entries](#malformed-entries)).
+- `DeliveryLedger`: D1-backed, exposes service-shaped methods (`claim(dedupeKey, entry): Effect<ClaimResult, LedgerUnavailable>`, `markSent(...)`, `markFailed(...)`, `promoteQueued(...)`), not raw D1 queries. Parses D1 rows at the seam per boundary-parsing standards; rejects contradictory persisted rows (e.g. `state = 'sent'` with no `sentAt`).
+- `DiscordPublisher`: wraps the webhook `fetch` call, returns `Effect<DiscordMessageId, DiscordDeliveryFailed>`. Classifies HTTP/network failures before returning; does not leak the raw webhook URL into error values.
+- `SourceConfig`: resolves first-party + external feed configuration (see [Feed configuration](#feed-configuration)) into parsed `FeedSource[]` at startup/composition, not re-read per run.
+- `QuarantineStore`: D1-backed, records rejected entries for later review (see [Malformed entries](#malformed-entries)).
 
-**Composition seam** — the Cron handler (`scheduled(event, env, ctx)`) is the only place raw `Env`/D1 bindings/secrets are touched. It builds the Layer stack (`DeliveryLedgerLive`, `DiscordPublisherLive`, `SourceConfigLive`, ...) and runs `CrossPostRun` through it. No Service Module or Domain Module imports Cloudflare binding types directly.
+**Composition seam**: the Cron handler (`scheduled(event, env, ctx)`) is the only place raw `Env`/D1 bindings/secrets are touched. It builds the Layer stack (`DeliveryLedgerLive`, `DiscordPublisherLive`, `SourceConfigLive`, ...) and runs `CrossPostRun` through it. No Service Module or Domain Module imports Cloudflare binding types directly.
 
-**Errors** — each Service/Adapter method returns a precise union via `Schema.TaggedErrorClass`, e.g. `FeedUnreachable`, `FeedFormatUnsupported`, `LedgerUnavailable`, `DiscordDeliveryFailed`, `MediaEntryRejected`. `CrossPostRun`'s own surface (what the Cron handler catches to decide whether to alert) is the only place these can widen into a broader run-summary type; that summary should not be a broad `AppError`, but a `CrossPostRunFailure` struct listing which sources/entries failed and why, since a partial-source failure should not fail the whole run.
+**Errors**: each Service/Adapter method returns a precise union via `Schema.TaggedErrorClass`, e.g. `FeedUnreachable`, `FeedFormatUnsupported`, `LedgerUnavailable`, `DiscordDeliveryFailed`, `MediaEntryRejected`. `CrossPostRun`'s own surface (what the Cron handler catches to decide whether to alert) is the only place these can widen into a broader run-summary type; that summary should not be a broad `AppError`, but a `CrossPostRunFailure` struct listing which sources/entries failed and why, since a partial-source failure should not fail the whole run.
 
 ## Secrets
 
-The Discord webhook URL is provided as a deploy-time secret and bound into the Worker's `Env` through Alchemy — the equivalent of a `Secret()` resource wired into the Worker binding, matching how Alchemy is already used for the rest of this stack's Cloudflare resources. Exact Alchemy API surface (`alchemy/Secret` or the Cloudflare-provider-specific secret binding) should be confirmed against the installed Alchemy version (`2.0.0-beta.64` per root `package.json`) at implementation time, since Alchemy's secret API is not yet exercised anywhere else in this repo.
+The Discord webhook URL is provided as a deploy-time secret and bound into the Worker's `Env` through Alchemy: the equivalent of a `Secret()` resource wired into the Worker binding, matching how Alchemy is already used for the rest of this stack's Cloudflare resources. Exact Alchemy API surface (`alchemy/Secret` or the Cloudflare-provider-specific secret binding) should be confirmed against the installed Alchemy version (`2.0.0-beta.64` per root `package.json`) at implementation time, since Alchemy's secret API is not yet exercised anywhere else in this repo.
 
 Inside the Worker, the raw webhook URL is wrapped in Effect's `Redacted` immediately at the composition seam and only unwrapped inside `DiscordPublisher`, per the repo-wide secrets standard: it must never enter logs, D1 rows, quarantine records, or error values.
 
@@ -102,7 +102,9 @@ This should be an Effect Schema (`FeedSourceConfig`), parsed once at Worker star
 
 ## Backfill
 
-When a source is newly enabled, entries within a fixed lookback window (e.g. the last N days — exact window is an open question) are claimed into the ledger as `queued` rather than `pending`, instead of either posting nothing or posting the whole backlog at once. Each Cron run, a small bounded number of `queued` rows are promoted to `pending` and sent, trickling the backfill out over multiple runs rather than flooding the channel in one burst.
+When a source is newly enabled, entries within a fixed lookback window (e.g. the last N days: exact window is an open question) are claimed into the ledger as `queued` rather than `pending`, instead of either posting nothing or posting the whole backlog at once. Each Cron run, a small bounded number of `queued` rows are promoted to `pending` and sent, trickling the backfill out over multiple runs rather than flooding the channel in one burst.
+
+Promotion selects directly from the ledger by `source_id` and `state = 'queued'`, ordered by `created_at`, with no dependency on whether an entry still appears in the current run's live feed fetch. A feed only returning its most recent N items (the normal case for RSS/Atom/JSON feeds) must not be able to strand a backfilled entry that has since scrolled out of that window: the ledger, not the current poll, is the source of truth for what's still owed. To make that possible without re-fetching or re-parsing the original feed, the ledger row stores the full normalized `MediaEntry` payload at claim time (see [D1 delivery ledger](#d1-delivery-ledger)), so a promoted row carries everything needed to build its Discord embed.
 
 ```ts
 type BackfillPolicy = {
@@ -121,6 +123,7 @@ CREATE TABLE discord_deliveries (
   source_id TEXT NOT NULL,
   entry_identity TEXT NOT NULL,
   entry_url TEXT NOT NULL,
+  payload TEXT NOT NULL,
   state TEXT NOT NULL CHECK (state IN ('queued', 'pending', 'sent', 'failed')),
   attempt_count INTEGER NOT NULL DEFAULT 0,
   discord_message_id TEXT,
@@ -131,9 +134,11 @@ CREATE TABLE discord_deliveries (
 );
 ```
 
+`payload` is the claimed entry's full normalized `MediaEntry`, stored as JSON at claim time. This is what makes the ledger a genuine source of truth for promotion and delivery: a `queued` row can be promoted and sent using only what's stored on the row, without needing the entry to still be present in whatever the most recent feed poll happened to return.
+
 The dedupe key is a deterministic encoding of `source_id + entry_identity`. For the first-party source, entry identity can be the canonical URL or a stable feed ID derived from it. External feeds should prefer a feed GUID or JSON Feed item ID, falling back to the canonical item URL only when its stability is trustworthy.
 
-Because drafts are excluded from the first-party feed entirely (constraint above), a draft entry has no `entry_identity` until it's published — the draft-to-published transition is not a ledger state change, it's the entry's first appearance in the feed, claimed fresh like any new entry.
+Because drafts are excluded from the first-party feed entirely (constraint above), a draft entry has no `entry_identity` until it's published: the draft-to-published transition is not a ledger state change, it's the entry's first appearance in the feed, claimed fresh like any new entry.
 
 State meanings:
 
@@ -142,11 +147,11 @@ State meanings:
 - `sent`: Discord accepted the payload; normal polling must not send it again.
 - `failed`: the last attempt failed and may be retried under policy.
 
-The initial insert (claiming `queued` or `pending`) is the atomic guard, per the async/workflow standard on atomic transition guards — an `INSERT ... ON CONFLICT DO NOTHING` on `dedupe_key`, not a stale read followed by an unconditional write, so overlapping Cron invocations can't both claim and send the same entry.
+The initial insert (claiming `queued` or `pending`) is the atomic guard, per the async/workflow standard on atomic transition guards: an `INSERT ... ON CONFLICT DO NOTHING` on `dedupe_key`, not a stale read followed by an unconditional write, so overlapping Cron invocations can't both claim and send the same entry.
 
 ## Malformed entries
 
-A feed entry that fails `MediaEntry` schema decoding is never silently dropped and never fails the entire feed/run. It's written to a `QuarantineStore` (D1-backed) with the raw source payload, the source ID, and the schema decode error, then surfaces in an inspectable list (a small internal page, a log-based alert, or a periodic digest — the presentation is an open question below; the requirement is that it's visible, not that it's paged immediately).
+A feed entry that fails `MediaEntry` schema decoding is never silently dropped and never fails the entire feed/run. It's written to a `QuarantineStore` (D1-backed) with the raw source payload, the source ID, and the schema decode error, then surfaces in an inspectable list (a small internal page, a log-based alert, or a periodic digest: the presentation is an open question below; the requirement is that it's visible, not that it's paged immediately).
 
 A feed that is entirely unreachable or entirely unparseable (e.g. the URL 404s, or the body isn't valid XML/JSON at all) is a `FeedUnreachable`/`FeedFormatUnsupported` failure for that source only; other sources in the same run are unaffected.
 
@@ -207,9 +212,9 @@ Cloudflare could attach scheduled handling and D1 bindings to the existing site 
 
 Narrowed down from the previous revision now that the architecture and most policy choices are settled:
 
-1. Where does `FeedSource` configuration live — checked into the repo (e.g. a config file read at build/deploy time), or a runtime-editable store (D1 table, KV)? Deploy-time-only is simpler; runtime-editable makes enabling a new external feed not require a redeploy.
-2. Exact backfill lookback window (`windowDays`) and trickle rate (`maxPerRun`) — what feels right, given posts happen every 5 minutes?
-3. Where should quarantined entries actually surface — a log line picked up by existing alerting, a small internal-only page, a periodic digest, something else?
+1. Where does `FeedSource` configuration live: checked into the repo (e.g. a config file read at build/deploy time), or a runtime-editable store (D1 table, KV)? Deploy-time-only is simpler; runtime-editable makes enabling a new external feed not require a redeploy.
+2. Exact backfill lookback window (`windowDays`) and trickle rate (`maxPerRun`): what feels right, given posts happen every 5 minutes?
+3. Where should quarantined entries actually surface: a log line picked up by existing alerting, a small internal-only page, a periodic digest, something else?
 4. What retry limit and backoff should apply to `failed` deliveries before they stop retrying automatically?
-5. Should an edited entry (title/description changed after it already posted) update its Discord message via `PATCH`, post a correction, or remain unchanged? Not decided yet — only draft-to-published timing was.
-6. How should an entry that was published and cross-posted, then later deleted or reverted to draft, be handled on the Discord side — leave the message, or attempt to delete/edit it?
+5. Should an edited entry (title/description changed after it already posted) update its Discord message via `PATCH`, post a correction, or remain unchanged? Not decided yet: only draft-to-published timing was.
+6. How should an entry that was published and cross-posted, then later deleted or reverted to draft, be handled on the Discord side: leave the message, or attempt to delete/edit it?

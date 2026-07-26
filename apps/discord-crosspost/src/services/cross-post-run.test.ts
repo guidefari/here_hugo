@@ -61,7 +61,7 @@ test("CrossPostRun trickles initial backfill and quarantines malformed peers", a
       prepareRetry: () => Effect.succeed(false),
       promoteQueued: (_sourceId, limit) => {
         promotedLimit = limit;
-        return Effect.succeed([dedupeKey]);
+        return Effect.succeed([{ dedupeKey, entry }]);
       },
       beginAttempt: () => Effect.succeed(true),
       markSent: () => Effect.void,
@@ -92,4 +92,45 @@ test("CrossPostRun trickles initial backfill and quarantines malformed peers", a
   expect(promotedLimit).toBe(3);
   expect(published).toHaveLength(1);
   expect(quarantined).toHaveLength(1);
+});
+
+test("CrossPostRun delivers a promoted entry that has scrolled out of the live feed fetch", async () => {
+  const published: Array<unknown> = [];
+  const staleDedupeKey = DedupeKey.make(source.id, "backfilled-entry");
+  const staleEntry: MediaEntry = { ...entry, entryIdentity: "backfilled-entry" };
+
+  const fakes = Layer.mergeAll(
+    SourceConfig.layer([source]),
+    Layer.succeed(FeedIngestion, FeedIngestion.of({
+      ingest: () => Effect.succeed([]),
+    })),
+    Layer.succeed(DeliveryLedger, DeliveryLedger.of({
+      hasEntriesForSource: () => Effect.succeed(true),
+      claim: () => Effect.succeed("already-claimed"),
+      prepareRetry: () => Effect.succeed(false),
+      promoteQueued: () => Effect.succeed([{ dedupeKey: staleDedupeKey, entry: staleEntry }]),
+      beginAttempt: () => Effect.succeed(true),
+      markSent: () => Effect.void,
+      markFailed: () => Effect.void,
+    })),
+    Layer.succeed(DiscordPublisher, DiscordPublisher.of({
+      publish: (payload) => Effect.sync(() => {
+        published.push(payload);
+        return "discord-message-2";
+      }),
+    })),
+    Layer.succeed(QuarantineStore, QuarantineStore.of({
+      record: () => Effect.void,
+    })),
+  );
+  const application = CrossPostRunLive.pipe(Layer.provide(fakes));
+
+  const summary = await Effect.runPromise(Effect.gen(function* () {
+    const service = yield* CrossPostRun;
+    return yield* service.run();
+  }).pipe(Effect.provide(application)));
+
+  expect(summary.failures).toEqual([]);
+  expect(summary.entriesSent).toBe(1);
+  expect(published).toHaveLength(1);
 });

@@ -3,6 +3,7 @@ CREATE TABLE discord_deliveries (
   source_id TEXT NOT NULL,
   entry_identity TEXT NOT NULL,
   entry_url TEXT NOT NULL,
+  payload TEXT NOT NULL,
   state TEXT NOT NULL CHECK (state IN ('queued', 'pending', 'sent', 'failed')),
   attempt_count INTEGER NOT NULL DEFAULT 0,
   discord_message_id TEXT,
