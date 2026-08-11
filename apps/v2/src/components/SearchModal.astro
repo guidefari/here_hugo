@@ -1,8 +1,26 @@
 ---
 ---
 
-<dialog id="search-modal" aria-label="Search" class="search-modal">
-  <div id="pagefind-ui-root" data-pagefind-ui></div>
+<dialog id="search-modal" aria-labelledby="search-modal-title" class="search-modal" closedby="any" data-pagefind-ignore>
+  <header class="search-modal__header">
+    <div>
+      <p class="search-modal__eyebrow">Quick find</p>
+      <h2 id="search-modal-title">Search the garden</h2>
+    </div>
+    <form method="dialog">
+      <button class="search-modal__close" type="submit" aria-label="Close search">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+        </svg>
+      </button>
+    </form>
+  </header>
+  <div id="pagefind-ui-root" class="pagefind-shell" data-pagefind-ui></div>
+  <footer class="search-modal__footer">
+    <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+    <span><kbd>Esc</kbd> close</span>
+    <a href="/search/">Full search page <span aria-hidden="true">→</span></a>
+  </footer>
   <noscript>
     <p class="p-4 text-sm">JavaScript is required for search.</p>
   </noscript>
@@ -10,21 +28,134 @@
 
 <style>
   .search-modal {
+    width: min(calc(100vw - 2rem), 760px);
+    max-width: 760px;
+    max-height: min(88dvh, 760px);
+    margin: max(1rem, 5dvh) auto;
     padding: 0;
-    border: none;
-    background: transparent;
-    color-scheme: light dark;
-    max-width: 720px;
-    width: min(90vw, 720px);
-    margin: 6vh auto;
-    overflow: visible;
+    overflow: hidden;
+    color: var(--color-text);
+    background: color-mix(in oklab, var(--color-bg) 92%, black);
+    border: 1px solid color-mix(in oklab, var(--color-highlight) 45%, transparent);
+    border-radius: 3px;
+    box-shadow: 8px 8px 0 color-mix(in oklab, black 45%, transparent);
   }
+
+  .search-modal[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
   .search-modal::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    background: color-mix(in oklab, #071014 78%, transparent);
+    backdrop-filter: blur(5px);
   }
+
+  .search-modal__header,
+  .search-modal__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .search-modal__header {
+    flex: none;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-text) 14%, transparent);
+  }
+
+  .search-modal__eyebrow {
+    margin: 0 0 0.15rem;
+    color: var(--color-highlight);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .search-modal h2 {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .search-modal__close {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    place-items: center;
+    color: var(--color-text);
+    background: transparent;
+    border: 1px solid color-mix(in oklab, var(--color-text) 25%, transparent);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .search-modal__close:hover,
+  .search-modal__close:focus-visible {
+    color: #000;
+    background: var(--color-highlight);
+    border-color: var(--color-highlight);
+    outline: none;
+  }
+
   #pagefind-ui-root {
-    min-height: 4rem;
+    min-height: 5rem;
+    padding: 1.25rem;
+    overflow-y: auto;
+  }
+
+  .search-modal__footer {
+    flex: none;
+    padding: 0.75rem 1.25rem;
+    color: color-mix(in oklab, var(--color-text) 62%, transparent);
+    border-top: 1px solid color-mix(in oklab, var(--color-text) 14%, transparent);
+    font-size: 0.68rem;
+  }
+
+  .search-modal__footer span {
+    white-space: nowrap;
+  }
+
+  .search-modal__footer kbd {
+    margin-inline-end: 0.25rem;
+    padding: 0.05rem 0.3rem;
+    color: var(--color-text);
+    border: 1px solid color-mix(in oklab, var(--color-text) 22%, transparent);
+    border-radius: 2px;
+  }
+
+  .search-modal__footer a {
+    margin-inline-start: auto;
+    color: var(--color-highlight);
+    text-decoration: none;
+  }
+
+  @media (max-width: 520px) {
+    .search-modal {
+      width: calc(100vw - 1rem);
+      max-height: calc(100dvh - 1rem);
+      margin: 0.5rem auto;
+      box-shadow: 4px 4px 0 color-mix(in oklab, black 45%, transparent);
+    }
+
+    .search-modal__header,
+    #pagefind-ui-root,
+    .search-modal__footer {
+      padding-inline: 1rem;
+    }
+
+    .search-modal__footer > span {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .search-modal::backdrop {
+      backdrop-filter: none;
+    }
   }
 </style>
 
@@ -59,8 +190,15 @@
           pagefindUI = new window.PagefindUI({
             element: root,
             showImages: false,
-            showSubResults: true,
+            showSubResults: false,
             resetStyles: true,
+            autofocus: true,
+            excerptLength: 20,
+            translations: {
+              placeholder: "Search notes, tags, and topics…",
+              search_label: "Search the garden",
+              input_hint: "Results appear as you type",
+            },
           });
         } catch (error) {
           console.error("Pagefind UI failed to load", error);
