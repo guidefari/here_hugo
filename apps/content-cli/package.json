@@ -1,0 +1,5 @@
+{
+  "name": "@here/content-cli",
+  "private": true,
+  "type": "module"
+}

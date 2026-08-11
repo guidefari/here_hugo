@@ -39,3 +39,17 @@ The first step of the two-step upload. Given a filename, content type, and size,
 ### Finalize
 
 The second step of the two-step upload. The browser confirms the PUT completed and the console creates the **asset** record, verifying against the stored object: size and type are read from the object itself, not from the client's say-so. Client-driven in place of a storage webhook. Repeating a finalize returns the existing record; it never creates a duplicate.
+
+## Content authoring
+
+### Content path
+
+A validated path relative to the site's content root that names one Markdown file. It is not a filesystem path supplied without constraints: it cannot escape the content root.
+
+### Note archetype
+
+The Markdown template used once to create a new **note**. Its placeholders are resolved at creation time; the resulting content has no live template behaviour.
+
+### Rendered content
+
+The final Markdown file created from an archetype at a **content path**.
