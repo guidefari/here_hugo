@@ -12,6 +12,34 @@
   --color-accentText: #acc196;
   --color-text: #c8c2b7;
   --color-bg: #1a2f38;
+  --color-panel: #0f1f26;
+  --color-panel-sunken: #0a1419;
+  --color-border: rgb(255 255 255 / 0.08);
+  --color-border-strong: rgb(255 255 255 / 0.15);
+  --color-muted: rgb(255 255 255 / 0.35);
+  --color-muted-strong: rgb(255 255 255 / 0.7);
+  --color-faint: rgb(255 255 255 / 0.25);
+  --color-white: #f0f4f5;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-highlight: #b3860f;
+    --color-calloutcolor: #1c6fd0;
+    --color-hovercolor: #dbeeff;
+    --color-darkMaincolor: #5c8001;
+    --color-accentText: #4b6b32;
+    --color-text: #33302a;
+    --color-bg: #faf7f0;
+    --color-panel: #f0ece1;
+    --color-panel-sunken: #e6e0d2;
+    --color-border: rgb(0 0 0 / 0.1);
+    --color-border-strong: rgb(0 0 0 / 0.18);
+    --color-muted: rgb(0 0 0 / 0.4);
+    --color-muted-strong: rgb(0 0 0 / 0.75);
+    --color-faint: rgb(0 0 0 / 0.3);
+    --color-white: #1a1714;
+  }
 }
 
 @utility no-scrollbar {
@@ -67,6 +95,7 @@
 
   body {
     background-color: var(--color-bg);
+    color: var(--color-text);
     position: relative;
     box-sizing: border-box;
   }
@@ -119,7 +148,7 @@
     padding: 1.2em 30px 1.2em 3.5rem;
     border-left: 8px solid #78c0a8;
     position: relative;
-    background: #222526;
+    background: color-mix(in oklab, var(--color-bg) 88%, black);
   }
 
   blockquote::before {
@@ -262,6 +291,12 @@
     --darkMaincolor: var(--color-darkMaincolor);
     --accentText: var(--color-accentText);
     --text: #f0f4f5;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --text: #262420;
+    }
   }
 
   .draft-label {
@@ -525,14 +560,14 @@
     --tw-prose-headings: var(--color-white);
     --tw-prose-links: var(--color-highlight);
     --tw-prose-bold: var(--color-white);
-    --tw-prose-quotes: #ccc7b8;
+    --tw-prose-quotes: var(--text);
     --tw-prose-th-borders: var(--color-gray-200);
     --tw-prose-td-borders: var(--color-gray-200);
     --tw-prose-invert-body: var(--text);
     --tw-prose-invert-headings: var(--color-white);
     --tw-prose-invert-links: var(--color-highlight);
     --tw-prose-invert-bold: var(--color-white);
-    --tw-prose-invert-quotes: #ccc7b8;
+    --tw-prose-invert-quotes: var(--text);
     --tw-prose-code: #1a2f38;
 
     & a {
