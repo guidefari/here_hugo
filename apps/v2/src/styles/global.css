@@ -542,7 +542,7 @@
   }
 
   .prose pre {
-    background-color: color-mix(in oklab, var(--color-bg) 65%, black) !important;
+    background-color: #002b36 !important;
     border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
     border-radius: 0.25rem;
   }
