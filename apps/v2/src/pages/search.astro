@@ -7,23 +7,21 @@ import { site } from "../lib/site.mjs";
   title={`Search · ${site.title}`}
   description="Search the site."
 >
-  <main class="flex flex-col w-full px-4 lg:px-6 max-w-3xl">
-    <header class="mb-6">
-      <h1 class="text-2xl font-bold m-0">Search</h1>
-      <p class="text-text/60 text-sm mt-1 m-0">Press <kbd>⌘K</kbd> or <kbd>Ctrl K</kbd> from anywhere to open search.</p>
+  <main class="flex flex-col w-full max-w-4xl px-4 pb-12 lg:px-6" data-pagefind-ignore>
+    <header class="mb-8 border-b border-text/15 pb-6">
+      <p class="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-highlight">Find something</p>
+      <h1 class="m-0 text-3xl font-bold text-white lg:text-4xl">Search the garden</h1>
+      <p class="mt-3 mb-0 max-w-2xl text-sm leading-relaxed text-text/65">
+        Search notes, media, reading lists, and everything else I have collected here.
+        Press <kbd>⌘K</kbd> or <kbd>Ctrl K</kbd> from anywhere.
+      </p>
     </header>
-    <div id="pagefind-ui-page" data-pagefind-ui></div>
+    <div id="pagefind-ui-page" class="pagefind-shell" data-pagefind-ui></div>
     <noscript>
       <p class="text-sm text-text/70">JavaScript is required for search.</p>
     </noscript>
   </main>
 </BaseLayout>
-
-<style is:global>
-  body {
-    color-scheme: light dark;
-  }
-</style>
 
 <script>
   const pagefindCss = "/pagefind/pagefind-ui.css";
@@ -47,8 +45,15 @@ import { site } from "../lib/site.mjs";
         new window.PagefindUI({
           element: root,
           showImages: false,
-          showSubResults: true,
+          showSubResults: false,
           resetStyles: true,
+          autofocus: true,
+          excerptLength: 24,
+          translations: {
+            placeholder: "Search notes, tags, and topics…",
+            search_label: "Search the garden",
+            input_hint: "Results appear as you type",
+          },
         });
       } catch (error) {
         console.error("Pagefind UI failed to load", error);

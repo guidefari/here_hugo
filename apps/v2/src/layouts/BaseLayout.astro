@@ -30,7 +30,7 @@ const {
         <DesktopSidebarNav isHome={Astro.url.pathname === "/"} activeWritingHref={activeWritingHref} />
       </aside>
 
-      <div id="main-content" tabindex="-1" class="flex flex-col grow min-w-0 lg:pt-6">
+      <div id="main-content" tabindex="-1" class="flex flex-col grow min-w-0 lg:pt-6" data-pagefind-body>
         <slot />
       </div>
 

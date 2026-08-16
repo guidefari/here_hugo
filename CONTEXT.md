@@ -46,10 +46,10 @@ The second step of the two-step upload. The browser confirms the PUT completed a
 
 A validated path relative to the site's content root that names one Markdown file. It is not a filesystem path supplied without constraints: it cannot escape the content root.
 
-### Note archetype
+### Archetype
 
-The Markdown template used once to create a new **note**. Its placeholders are resolved at creation time; the resulting content has no live template behaviour.
+A Markdown template used once to create content for one configured top-level content section. Its placeholders are resolved at creation time; the resulting content has no live template behaviour.
 
 ### Rendered content
 
-The final Markdown file created from an archetype at a **content path**.
+The final Markdown file created from the archetype selected by its **content path**.

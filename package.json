@@ -10,6 +10,9 @@
   ],
   "scripts": {
     "build": "cd apps/v2 && bun run build",
+    "content:new": "bun run apps/content-cli/src/main.ts",
+    "content:check": "bun x tsc --project apps/content-cli/tsconfig.json",
+    "content:test": "bun x vitest run apps/content-cli/src",
     "build:v2": "cd apps/v2 && bun run build",
     "build:og": "bun run --cwd apps/og-image build",
     "dev": "cd apps/v2 && bun run dev",
@@ -29,9 +32,14 @@
   },
   "homepage": "https://github.com/guidefari/here_hugo#readme",
   "dependencies": {
-    "@effect/platform-bun": "4.0.0-beta.101",
-    "@effect/platform-node": "4.0.0-beta.101",
+    "@effect/platform-bun": "4.0.0-beta.107",
+    "@effect/platform-node": "4.0.0-beta.107",
     "alchemy": "2.0.0-beta.64",
-    "effect": "4.0.0-beta.101"
+    "effect": "4.0.0-beta.107"
+  },
+  "devDependencies": {
+    "@effect/vitest": "4.0.0-beta.107",
+    "@types/bun": "1.3.14",
+    "vitest": "4.1.0"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "contentRoot": "apps/v2/src/content",
+  "archetypes": {
+    "album": "apps/content-cli/archetypes/album.md",
+    "artist": "apps/content-cli/archetypes/artist.md",
+    "bliki": "apps/content-cli/archetypes/bliki.md",
+    "book": "apps/content-cli/archetypes/book.md",
+    "docker-presentation": "apps/content-cli/archetypes/docker-presentation.md",
+    "media": "apps/content-cli/archetypes/media.md",
+    "mix": "apps/content-cli/archetypes/mix.md",
+    "note": "apps/content-cli/archetypes/note.md",
+    "playlist": "apps/content-cli/archetypes/playlist.md",
+    "read": "apps/content-cli/archetypes/read.md",
+    "resource": "apps/content-cli/archetypes/resource.md",
+    "til": "apps/content-cli/archetypes/til.md",
+    "track": "apps/content-cli/archetypes/track.md"
+  }
+}

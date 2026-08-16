@@ -560,3 +560,172 @@
     }
   }
 }
+
+/* Pagefind ships a light default theme. Keep its layout, but make it part of the site. */
+html .pagefind-shell .pagefind-ui {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--color-highlight);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: color-mix(in oklab, var(--color-bg) 76%, black);
+  --pagefind-ui-border: color-mix(in oklab, var(--color-text) 22%, transparent);
+  --pagefind-ui-tag: color-mix(in oklab, var(--color-highlight) 12%, transparent);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 2px;
+  --pagefind-ui-font: "JetBrains Mono", monospace;
+  color: var(--color-text);
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__form::before {
+  opacity: 0.75;
+  filter: invert(88%) sepia(31%) saturate(693%) hue-rotate(358deg) brightness(103%);
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-input {
+  min-height: 3.5rem;
+  color: var(--color-white);
+  caret-color: var(--color-highlight);
+  background: color-mix(in oklab, var(--color-bg) 72%, black);
+  border-color: color-mix(in oklab, var(--color-text) 28%, transparent);
+  border-radius: 2px;
+  font-size: 1rem;
+  box-shadow: 3px 3px 0 color-mix(in oklab, black 24%, transparent);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-input::placeholder {
+  color: color-mix(in oklab, var(--color-text) 48%, transparent);
+  opacity: 1;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-input:focus {
+  border-color: var(--color-highlight);
+  outline: 2px solid transparent;
+  box-shadow: 3px 3px 0 color-mix(in oklab, var(--color-highlight) 52%, transparent);
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-clear {
+  min-width: 3rem;
+  padding-inline: 0.75rem;
+  color: var(--color-highlight);
+  background: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-clear:hover,
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-clear:focus-visible {
+  color: #000;
+  background: var(--color-highlight);
+  outline: none;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__message {
+  margin-block: 1rem 0.75rem;
+  padding: 0;
+  color: var(--color-accentText);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__results {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result {
+  padding: 1rem 1.1rem;
+  color: var(--color-text);
+  background: color-mix(in oklab, var(--color-text) 3%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-text) 16%, transparent);
+  border-radius: 2px;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result:hover {
+  background: color-mix(in oklab, var(--color-highlight) 5%, transparent);
+  border-color: color-mix(in oklab, var(--color-highlight) 48%, transparent);
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-inner {
+  width: 100%;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-title {
+  margin-block-end: 0.45rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-link {
+  color: var(--color-highlight);
+  text-decoration-color: color-mix(in oklab, var(--color-highlight) 38%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-link:hover,
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-link:focus-visible {
+  color: var(--color-white);
+  text-decoration-color: var(--color-highlight);
+  outline: none;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-excerpt {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: color-mix(in oklab, var(--color-text) 76%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) mark {
+  padding-inline: 0.12em;
+  color: #000;
+  background: var(--color-highlight);
+  border-radius: 1px;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result-tag {
+  color: var(--color-accentText);
+  background: color-mix(in oklab, var(--color-accentText) 9%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-accentText) 20%, transparent);
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__button {
+  min-height: 3rem;
+  margin-block-start: 1rem;
+  color: var(--color-highlight);
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--color-highlight) 48%, transparent);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__button:hover,
+:is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__button:focus-visible {
+  color: #000;
+  background: var(--color-highlight);
+  border-color: var(--color-highlight);
+  outline: none;
+}
+
+@media (max-width: 520px) {
+  :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-input {
+    min-height: 3.25rem;
+    padding-inline-start: 2.65rem;
+    font-size: 1rem;
+  }
+
+  :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__result {
+    padding: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(#pagefind-ui-page, #pagefind-ui-root) :is(.pagefind-ui__search-input, .pagefind-ui__result) {
+    transition: none;
+  }
+}
