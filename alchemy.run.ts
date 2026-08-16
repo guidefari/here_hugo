@@ -7,6 +7,7 @@ import * as Output from "alchemy/Output";
 import * as Effect from "effect/Effect";
 
 const zoneDomain = "guidefari.com";
+const mediaDomain = `media.${zoneDomain}`;
 const ogDomain = `og.${zoneDomain}`;
 const compatibilityDate = "2026-07-11";
 
@@ -69,8 +70,18 @@ export default Alchemy.Stack(
       },
     });
 
+    const media = yield* Cloudflare.R2.Bucket("Media", {
+      name: isProduction
+        ? "here-hugo-prod-media"
+        : `here-hugo-${stack.stage}-media`,
+      domains: isProduction
+        ? [{ name: mediaDomain, minTLS: "1.2" }]
+        : [],
+    }).pipe(Namespace.push("Media"), adopt(isProduction));
+
     return {
       ogImageUrl: ogImage.url,
+      mediaUrl: isProduction ? `https://${mediaDomain}` : undefined,
       url: site.url,
     };
   }),
