@@ -47,7 +47,7 @@
   }
 
   .search-modal::backdrop {
-    background: color-mix(in oklab, #071014 78%, transparent);
+    background: color-mix(in oklab, var(--color-bg) 78%, black);
     backdrop-filter: blur(5px);
   }
 
@@ -75,7 +75,7 @@
 
   .search-modal h2 {
     margin: 0;
-    color: white;
+    color: var(--color-white);
     font-size: 1rem;
     line-height: 1.3;
   }
@@ -204,7 +204,7 @@
           console.error("Pagefind UI failed to load", error);
           if (root) {
             root.innerHTML =
-              '<p style="padding: 1rem; color: #888; font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
+              '<p style="padding: 1rem; color: var(--color-muted-strong); font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
           }
         }
         return pagefindUI;

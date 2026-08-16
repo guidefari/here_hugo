@@ -58,7 +58,7 @@ import { site } from "../lib/site.mjs";
       } catch (error) {
         console.error("Pagefind UI failed to load", error);
         root.innerHTML =
-          '<p style="padding: 1rem; color: #888; font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
+          '<p style="padding: 1rem; color: var(--color-muted-strong); font-size: 0.875rem;">Search is not available in dev mode. Run <code>bun build</code> and serve <code>apps/v2/dist</code> to use search.</p>';
       }
     })();
   }
