@@ -27,7 +27,7 @@ function inlineMarkdown(value) {
     <div class="lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-10">
       <nav class="resume-toc hidden lg:block" aria-label="Resume sections">
         <div class="sticky top-24">
-          <p class="text-[0.6rem] tracking-[0.3em] text-white/30 mb-4">On this page</p>
+          <p class="text-[0.6rem] tracking-[0.3em] text-faint mb-4">On this page</p>
           <ul class="space-y-2">
             <li><a href="#skills" class="resume-toc-link" data-section="skills">Tech Experience</a></li>
             <li><a href="#experience" class="resume-toc-link" data-section="experience">Work Experience</a></li>
@@ -35,7 +35,7 @@ function inlineMarkdown(value) {
             {leadership.length > 0 && <li><a href="#leadership" class="resume-toc-link" data-section="leadership">Leadership</a></li>}
             {education.length > 0 && <li><a href="#education" class="resume-toc-link" data-section="education">Education</a></li>}
           </ul>
-          <div class="mt-6 pt-4 border-t border-white/5 space-y-1.5">
+          <div class="mt-6 pt-4 border-t border-border space-y-1.5">
             <a href="https://github.com/guidefari" class="resume-toc-ext">GitHub</a>
             <a href="https://www.linkedin.com/in/guide-fari-8b0063176/" class="resume-toc-ext">LinkedIn</a>
           </div>
@@ -44,11 +44,11 @@ function inlineMarkdown(value) {
 
       <main>
         <header class="mb-10">
-          <h1 class="text-2xl font-bold text-white tracking-tight sm:text-3xl">Guide Fari</h1>
+          <h1 class="text-2xl font-bold text-text tracking-tight sm:text-3xl">Guide Fari</h1>
           <p class="mt-1 text-sm text-accentText">Software Engineer</p>
         </header>
 
-        <div class="resume-toc-mobile lg:hidden mb-8 border border-white/10 bg-[#0F1F26]">
+        <div class="resume-toc-mobile lg:hidden mb-8 border border-border bg-panel">
           <button id="toc-toggle" type="button" class="w-full flex items-center justify-between px-4 py-3 text-xs tracking-[0.2em] text-accentText">
             <span>On this page</span>
             <svg class="toc-chevron h-3.5 w-3.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -68,7 +68,7 @@ function inlineMarkdown(value) {
             {skills.map((skill) => (
               <div class="resume-card">
                 <p class="text-xs tracking-[0.2em] text-accentText mb-2">{skill.category}</p>
-                <p class="text-sm text-[#D7DDD4] leading-relaxed">{skill.items}</p>
+                <p class="text-sm text-text leading-relaxed">{skill.items}</p>
               </div>
             ))}
           </div>
@@ -82,10 +82,10 @@ function inlineMarkdown(value) {
                 <div class="resume-timeline-dot"></div>
                 <div class="resume-timeline-content">
                   <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 class="text-base font-semibold text-white">{job.url ? <a href={job.url} class="hover:text-highlight transition-colors">{job.company}</a> : job.company}</h3>
+                    <h3 class="text-base font-semibold text-text">{job.url ? <a href={job.url} class="hover:text-highlight transition-colors">{job.company}</a> : job.company}</h3>
                     <span class="text-xs text-accentText">{job.role}</span>
                   </div>
-                  <p class="mt-0.5 text-xs text-white/40">{job.dates}</p>
+                  <p class="mt-0.5 text-xs text-text/40">{job.dates}</p>
                   {Array.isArray(job.highlights) && job.highlights.length > 0 && (
                     <ul class="mt-3 space-y-1.5">
                       {job.highlights.map((highlight) => <li class="resume-highlight" set:html={inlineMarkdown(highlight)} />)}
@@ -111,8 +111,8 @@ function inlineMarkdown(value) {
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
               {consulting.map((item) => (
                 <div class="resume-card">
-                  <h3 class="text-sm font-semibold text-white">{item.url ? <a href={item.url} class="hover:text-highlight transition-colors">{item.company}</a> : item.company}</h3>
-                  {item.description && <p class="mt-1.5 text-sm text-[#D7DDD4] leading-relaxed">{item.description}</p>}
+                  <h3 class="text-sm font-semibold text-text">{item.url ? <a href={item.url} class="hover:text-highlight transition-colors">{item.company}</a> : item.company}</h3>
+                  {item.description && <p class="mt-1.5 text-sm text-text leading-relaxed">{item.description}</p>}
                 </div>
               ))}
             </div>
@@ -126,10 +126,10 @@ function inlineMarkdown(value) {
               {leadership.map((item) => (
                 <div class="resume-card">
                   <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <h3 class="text-sm font-semibold text-white">{item.url ? <a href={item.url} class="hover:text-highlight transition-colors">{item.company}</a> : item.company}</h3>
-                    {item.dates && <span class="text-xs text-white/40">{item.dates}</span>}
+                    <h3 class="text-sm font-semibold text-text">{item.url ? <a href={item.url} class="hover:text-highlight transition-colors">{item.company}</a> : item.company}</h3>
+                    {item.dates && <span class="text-xs text-text/40">{item.dates}</span>}
                   </div>
-                  {item.description && <p class="mt-1.5 text-sm text-[#D7DDD4] leading-relaxed">{item.description}</p>}
+                  {item.description && <p class="mt-1.5 text-sm text-text leading-relaxed">{item.description}</p>}
                 </div>
               ))}
             </div>
@@ -153,51 +153,51 @@ function inlineMarkdown(value) {
       font-size: 0.6875rem;
       font-weight: 700;
       letter-spacing: 0.24em;
-      color: #F5D547;
+      color: var(--color-highlight);
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(245, 213, 71, 0.2);
+      border-bottom: 1px solid color-mix(in oklab, var(--color-highlight) 20%, transparent);
     }
 
     .resume-card {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #0F1F26;
+      border: 1px solid var(--color-border);
+      background: var(--color-panel);
       padding: 1rem 1.25rem;
     }
 
     .resume-toc-link {
       display: block;
       font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.35);
+      color: var(--color-muted);
       padding: 0.125rem 0 0.125rem 0.75rem;
       border-left: 2px solid transparent;
       transition: all 0.15s;
     }
 
     .resume-toc-link:hover {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--color-muted-strong);
     }
 
     .resume-toc-link.active {
-      color: #F5D547;
-      border-left-color: #F5D547;
+      color: var(--color-highlight);
+      border-left-color: var(--color-highlight);
     }
 
     .resume-toc-ext {
       display: block;
       font-size: 0.6875rem;
-      color: rgba(255, 255, 255, 0.25);
+      color: var(--color-faint);
       transition: color 0.15s;
     }
 
     .resume-toc-ext:hover {
-      color: #ACC196;
+      color: var(--color-accentText);
     }
 
     .resume-timeline-item {
       position: relative;
       padding-left: 1.5rem;
       padding-bottom: 2rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 1px solid var(--color-border);
     }
 
     .resume-timeline-item:last-child {
@@ -211,7 +211,7 @@ function inlineMarkdown(value) {
       top: 6px;
       width: 7px;
       height: 7px;
-      background: #F5D547;
+      background: var(--color-highlight);
       border-radius: 50%;
     }
 
@@ -220,14 +220,14 @@ function inlineMarkdown(value) {
       padding-left: 1rem;
       font-size: 0.8125rem;
       line-height: 1.7;
-      color: #D7DDD4;
+      color: var(--color-text);
     }
 
     .resume-highlight::before {
       content: "›";
       position: absolute;
       left: 0;
-      color: rgba(255, 255, 255, 0.25);
+      color: var(--color-faint);
       font-weight: bold;
     }
 
