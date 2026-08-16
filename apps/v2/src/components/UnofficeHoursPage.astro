@@ -19,7 +19,7 @@ const cta = data.cta ?? {};
       <div>
         <h1 class="text-xs tracking-[0.24em] text-accentText">Unoffice Hours</h1>
         {entry.hasBody && (
-          <div class="uh-intro mt-4 max-w-2xl text-base leading-relaxed text-[#D7DDD4] [&_a]:text-highlight [&_a]:no-underline hover:[&_a]:underline">
+          <div class="uh-intro mt-4 max-w-2xl text-base leading-relaxed text-text [&_a]:text-highlight [&_a]:no-underline hover:[&_a]:underline">
             <Content />
           </div>
         )}
@@ -56,7 +56,7 @@ const cta = data.cta ?? {};
         {(webring.previous || webring.next) && (
           <div class="uh-card">
             <p class="text-xs tracking-[0.24em] text-accentText">Webring</p>
-            <p class="mt-3 text-sm leading-relaxed text-[#D7DDD4]">This page is part of the <a href="https://unofficehours.com" class="highlighted-link">Unoffice Hours webring</a>.</p>
+            <p class="mt-3 text-sm leading-relaxed text-text">This page is part of the <a href="https://unofficehours.com" class="highlighted-link">Unoffice Hours webring</a>.</p>
 
             <div class="mt-5 grid grid-cols-2 gap-2">
               {webring.previous && (
@@ -92,7 +92,7 @@ const cta = data.cta ?? {};
         {notes.length > 0 && (
           <div class="uh-card">
             <p class="text-xs tracking-[0.24em] text-accentText">Notes</p>
-            <ul class="mt-3 space-y-2 text-sm text-[#D7DDD4]">
+            <ul class="mt-3 space-y-2 text-sm text-text">
               {notes.map((note) => <li class="uh-bullet">{note}</li>)}
             </ul>
           </div>
@@ -107,14 +107,14 @@ const cta = data.cta ?? {};
     font-size: 0.6875rem;
     font-weight: 700;
     letter-spacing: 0.24em;
-    color: #F5D547;
+    color: var(--color-highlight);
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(245, 213, 71, 0.2);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-highlight) 20%, transparent);
   }
 
   .uh-card {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: #0F1F26;
+    border: 1px solid var(--color-border);
+    background: var(--color-panel);
     padding: 1.25rem;
   }
 
@@ -123,14 +123,14 @@ const cta = data.cta ?? {};
     padding-left: 1rem;
     font-size: 0.875rem;
     line-height: 1.7;
-    color: #D7DDD4;
+    color: var(--color-text);
   }
 
   .uh-bullet::before {
     content: "›";
     position: absolute;
     left: 0;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-faint);
     font-weight: bold;
   }
 
@@ -138,16 +138,16 @@ const cta = data.cta ?? {};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #F5D547;
-    background: rgba(245, 213, 71, 0.06);
+    border: 1px solid var(--color-highlight);
+    background: color-mix(in oklab, var(--color-highlight) 6%, transparent);
     padding: 1.25rem 1.5rem;
     transition: background 0.15s, color 0.15s;
     text-decoration: none;
-    color: #F5D547;
+    color: var(--color-highlight);
   }
 
   .uh-cta:hover {
-    background: #F5D547;
+    background: var(--color-highlight);
     color: #000;
   }
 
@@ -180,19 +180,19 @@ const cta = data.cta ?? {};
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--color-border-strong);
     padding: 0.75rem 0.875rem;
     font-size: 0.8125rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-muted-strong);
     text-decoration: none;
     transition: color 0.15s, border-color 0.15s;
     min-height: 2.75rem;
   }
 
   .uh-webring-nav:hover {
-    border-color: #F5D547;
-    color: #F5D547;
+    border-color: var(--color-highlight);
+    color: var(--color-highlight);
   }
 
   .uh-webring-prev {
@@ -213,7 +213,7 @@ const cta = data.cta ?? {};
   }
 
   .uh-webring-secondary {
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-muted);
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 500;
@@ -221,6 +221,6 @@ const cta = data.cta ?? {};
   }
 
   .uh-webring-secondary:hover {
-    color: #F5D547;
+    color: var(--color-highlight);
   }
 </style>
