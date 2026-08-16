@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=HOIolmTVtbo
 youtube_id: HOIolmTVtbo
 creator: Effect
 tags: [media, video, effect, typescript, software, adoption, ai, agents, workflow]
-images: ['https://i.ytimg.com/vi/HOIolmTVtbo/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/effect-office-hours-typescript-production.jpg']
 ---
 
 In this episode of *Effect Office Hours*, *Dillon Mulroy*, *Mattia*, and *Max* discuss why *Effect* is often superior to standard *TypeScript* for production-grade software and offer strategies for team adoption.

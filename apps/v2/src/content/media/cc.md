@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=uOiP4mJwqE0
 youtube_id: uOiP4mJwqE0
 creator: Aaron Dignan
-images: ['https://og.guidefari.com/og-image?title=Podcast:+Aaron+Dignan+on+complicated+vs+complex']
+images: ['https://media.guidefari.com/media-covers/cc.png']
 tags: [podcast, systems theory]
 ---
 

@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=Z9ftpRhRiJE
 creator: Lenny's Podcast
 youtube_id: Z9ftpRhRiJE
-images: ['https://i.ytimg.com/vi/Z9ftpRhRiJE/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/lenny-will.jpg']
 tags: [podcast, strategy]
 ---
 

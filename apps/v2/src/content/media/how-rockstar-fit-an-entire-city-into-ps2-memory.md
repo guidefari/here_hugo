@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=cIbCxbrBCys
 youtube_id: cIbCxbrBCys
 creator: Game Maker's Toolkit
 tags: [media, video, gamedev, gta, ps2, programming]
-images: ['https://i.ytimg.com/vi/cIbCxbrBCys/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/how-rockstar-fit-an-entire-city-into-ps2-memory.jpg']
 ---
 
 This video from *Game Maker's Toolkit* explains the technical "magic trick" Rockstar North used to fit Grand Theft Auto 3's 130 MB Liberty City into the PlayStation 2's tiny 32 MB of system memory [[00:00:30](https://www.youtube.com/watch?v=cIbCxbrBCys&t=30s)].

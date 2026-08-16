@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=d_34YjXAU5Y
 creator: Robert Breedlove
 youtube_id: d_34YjXAU5Y
-images: ['https://i.ytimg.com/vi/d_34YjXAU5Y/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/philosophy-of-money.jpg']
 tags: [podcast, money, wealth]
 ---
 

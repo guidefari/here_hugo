@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=otbnC2zE2rw
 creator: Hackers Incorporated
 youtube_id: otbnC2zE2rw
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1fa42ffe7ec488d9df5c1bb1ec']
+images: ['https://media.guidefari.com/media-covers/bootstrapped.jpg']
 tags: [podcast]
 ---
 

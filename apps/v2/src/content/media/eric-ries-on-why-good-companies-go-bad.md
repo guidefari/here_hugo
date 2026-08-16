@@ -6,7 +6,7 @@ media_type: podcast
 media_url: https://softwareengineeringdaily.com/2026/07/09/eric-ries-on-why-good-companies-go-bad/
 creator: Software Engineering Daily
 tags: [podcast, startup, governance, trust]
-images: ['https://softwareengineeringdaily.com/wp-content/uploads/2026/07/Eric-Ries-on-Why-Good-Companies-Go-Bad.jpg']
+images: ['https://media.guidefari.com/media-covers/eric-ries-on-why-good-companies-go-bad.png']
 ---
 
 ## TL;DR

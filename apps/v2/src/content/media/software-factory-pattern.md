@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=lx0Eaane4Ng
 youtube_id: lx0Eaane4Ng
 creator: Jaymin West
-images: ['https://i.ytimg.com/vi/lx0Eaane4Ng/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/software-factory-pattern.jpg']
 tags: [agents, architecture]
 ---
 

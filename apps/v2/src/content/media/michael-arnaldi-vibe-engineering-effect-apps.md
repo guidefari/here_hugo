@@ -7,7 +7,7 @@ media_url: https://youtu.be/Wmp2Tku2PrI?si=8wI1I7JQBMli2iAm
 youtube_id: Wmp2Tku2PrI
 creator: Michael Arnaldi
 tags: [media, video, effect, software]
-images: ["https://i.ytimg.com/vi/Wmp2Tku2PrI/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/michael-arnaldi-vibe-engineering-effect-apps.jpg"]
 ---
 
 ## 1. Core Philosophy: "Just Clone the F\*\*\*ing Repo"

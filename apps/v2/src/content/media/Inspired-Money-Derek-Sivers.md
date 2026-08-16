@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=gxYt--CFXK0
 creator: Inspired Money
 youtube_id: gxYt--CFXK0
-images: ['https://i.ytimg.com/vi/gxYt--CFXK0/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/inspired-money-derek-sivers.jpg']
 tags: [podcast, wealth, money, strategy]
 ---
 

@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: podcast
 media_url: https://open.spotify.com/episode/0a89uldtV5tzqOAHDzK3W2
 creator: Leaders Of Consulting
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f2e31b9f0f26da1be1df128e8']
+images: ['https://media.guidefari.com/media-covers/delivering-and-packaging-expertise.jpg']
 tags: [podcast, strategy, consulting]
 ---
 

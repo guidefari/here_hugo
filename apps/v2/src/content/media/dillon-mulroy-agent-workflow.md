@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=-DKSg1-v1Gg
 youtube_id: -DKSg1-v1Gg
 creator: Dillon Mulroy
 tags: [media, video]
-images: ["https://i.ytimg.com/vi/-DKSg1-v1Gg/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/dillon-mulroy-agent-workflow.jpg"]
 ---
 
 Dillon Mulroy keeps the driver seat while using AI. The point is not to hand over the whole job. It is to keep enough shape and pressure on the work that the tool stays useful.

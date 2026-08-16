@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=aRR0EDazxIk
 creator: Adam Tornhill
 youtube_id: aRR0EDazxIk
-images: ['https://i.ytimg.com/vi/aRR0EDazxIk/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/code-quality.jpg']
 tags: [podcast, refactoring]
 ---
 

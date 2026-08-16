@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: article
 media_url: 
 creator: Guide Fari
-images: ['https://og.guidefari.com/og-image?title=Podcast:+Cozy+Org']
+images: ['https://media.guidefari.com/media-covers/cozy-org.png']
 tags: [podcast]
 ---
 

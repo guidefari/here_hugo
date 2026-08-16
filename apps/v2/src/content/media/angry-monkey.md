@@ -5,7 +5,7 @@ description: Monkey brain vs Zoo Keeper brain. The Strategist vs the Executor
 media_type: article
 media_url: 
 creator: UBK Happy Fun Time Hour
-images: ['https://og.guidefari.com/og-image?title=Angry+Monkey']
+images: ['https://media.guidefari.com/media-covers/angry-monkey.png']
 tags: [podcast, notes, journal]
 ---
 

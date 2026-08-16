@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: podcast
 media_url: https://open.spotify.com/episode/5Gzga4LIgZy3BdFtIZragP
 creator: ThoughtWorks
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1ff9793b9ee540c4a721d57c08']
+images: ['https://media.guidefari.com/media-covers/conways-law.jpg']
 tags: [podcast, architecture, leadership]
 ---
 

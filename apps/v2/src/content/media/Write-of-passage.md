@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: podcast
 media_url: https://open.spotify.com/episode/2Vbl6BWtqesc2Rf5YAJYnt
 creator: Write of Passage
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f9a7183f494097618ec1f0377']
+images: ['https://media.guidefari.com/media-covers/write-of-passage.jpg']
 tags: [podcast, second-brain]
 ---
 

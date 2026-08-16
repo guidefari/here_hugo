@@ -7,7 +7,7 @@ media_url: https://youtu.be/aZ_y2M2OuEA
 youtube_id: aZ_y2M2OuEA
 creator: DevOps Toolbox
 tags: [docker, devops, containers]
-images: ["https://i.ytimg.com/vi/aZ_y2M2OuEA/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/dockerfiles-forever.jpg"]
 ---
 
 The useful Dockerfile rules from this video:

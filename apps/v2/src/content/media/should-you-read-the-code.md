@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=k13q6ecZLrw
 youtube_id: k13q6ecZLrw
 creator: The Primeagen
 tags: [media, video]
-images: ["https://i.ytimg.com/vi/k13q6ecZLrw/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/should-you-read-the-code.jpg"]
 ---
 
 The Primeagen breaks the "read the code" debate into three cases instead of one yes-or-no answer.

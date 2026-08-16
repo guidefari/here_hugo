@@ -7,7 +7,7 @@ media_url: https://youtu.be/Ba_qaUtAvGM
 youtube_id: Ba_qaUtAvGM
 creator: Databased
 tags: [media, video, systems-design, backend, programming, testing]
-images: ['https://i.ytimg.com/vi/Ba_qaUtAvGM/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/the-six-systems-design-principles-that-agents-dont-understand.jpg']
 ---
 
 In this episode of the *Databased* podcast, hosts Jamie Turner and James Cowling (drawing from their extensive experience building infrastructure at scale, notably at Dropbox) dive into six counterintuitive principles of systems design. They discuss how real-world, large-scale systems behavior differs from theory, and why these lessons are often missed by AI agents and less experienced engineers.

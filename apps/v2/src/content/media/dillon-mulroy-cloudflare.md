@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=UCUv6vuT-h4
 youtube_id: UCUv6vuT-h4
 creator: Kent C. Dodds
 tags: [media, video, product, engineering, cloudflare]
-images: ["https://i.ytimg.com/vi/UCUv6vuT-h4/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/dillon-mulroy-cloudflare.jpg"]
 ---
 
 Kent talks with Dillon Mulroy, Principal Engineer at Cloudflare, about Agent Experience and dogfooding AI platform work: how Cloudflare closes the loop between builders and customers, why observability and support are product superpowers, and how to stay disciplined when agents tempt you to ship huge diffs overnight.

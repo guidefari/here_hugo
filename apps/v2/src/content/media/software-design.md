@@ -5,7 +5,7 @@ description: From the Legacy Code Rocks podcast
 media_type: podcast
 media_url: https://open.spotify.com/episode/5JxTAMuVOObRIYoTvwNt1f
 creator: Legacy Code Rocks
-images: ['https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1f4227aa8da6ca2f8dd2b5cd8d']
+images: ['https://media.guidefari.com/media-covers/software-design.jpg']
 tags: [podcast, software-design, refactoring, dx, architecture, complexity]
 ---
 

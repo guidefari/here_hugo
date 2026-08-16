@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: podcast
 media_url: https://open.spotify.com/episode/6wl1qdbkRFYMdZmvYQB5O6
 creator: Hanselminutes
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f2087098d3825600323de73b3']
+images: ['https://media.guidefari.com/media-covers/climbing-the-engineering-ladder.jpg']
 tags: [podcast, notes, strategy, engineering, career]
 ---
 

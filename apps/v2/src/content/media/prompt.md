@@ -5,7 +5,7 @@ description: A lot of would be tweets end up as notes, posts etc
 media_type: article
 media_url: 
 creator: Guide Fari
-images: ['https://og.guidefari.com/og-image?title=Writing+Prompts']
+images: ['https://media.guidefari.com/media-covers/prompt.png']
 tags: [writing]
 ---
 

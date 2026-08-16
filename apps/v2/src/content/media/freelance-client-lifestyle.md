@@ -5,7 +5,7 @@ description: You might find this podcast useful, notes from Syntaxfm.
 media_type: podcast
 media_url: https://open.spotify.com/episode/6TpxTSziR1VNKbFY1vIrcH
 creator: Syntax
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f022aa3738b34a57c09be1410']
+images: ['https://media.guidefari.com/media-covers/freelance-client-lifestyle.jpg']
 tags: [podcast, freelance]
 ---
 

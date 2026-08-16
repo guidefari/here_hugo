@@ -5,7 +5,7 @@ description: "Notes on TypeScript and testing from a podcast episode."
 media_type: podcast
 media_url: https://open.spotify.com/episode/34nr9urOtrwVpGOJbNrNMq
 creator: Full Stack Radio
-images: ['https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f2a9993944072b14fcdb5fb8a']
+images: ['https://media.guidefari.com/media-covers/tt.jpg']
 tags: [podcast, typescript, testing]
 ---
 

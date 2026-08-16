@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=un3Lu3AKkto
 youtube_id: un3Lu3AKkto
 creator: React Vienna
 tags: [media, video, react, performance, frontend]
-images: ['https://i.ytimg.com/vi/un3Lu3AKkto/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/how-to-show-10-million-of-something.jpg']
 ---
 
 Christopher Ehrlich's React Vienna talk on the practical UI and performance techniques behind showing millions of items without overwhelming the browser.

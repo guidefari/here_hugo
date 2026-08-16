@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=eh8bcBIAAFo
 youtube_id: eh8bcBIAAFo
 creator: Lenny's Podcast
-images: ['https://i.ytimg.com/vi/eh8bcBIAAFo/maxresdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/design-process-is-dead-jenny-wen.jpg']
 tags: [media, video, design, management, hiring, anthropic]
 ---
 
@@ -37,7 +37,7 @@ Adaptability matters alongside craft. Wen's three archetypes apply to teams whos
 
 ## The Legibility Framework
 
-<figure style="display:block;inline-size:min(100%,34rem);margin:1.5rem auto;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 350" role="img" aria-labelledby="legibility-title legibility-description" style="display:block;inline-size:100%;block-size:auto;"><title id="legibility-title">The Legibility Framework</title><desc id="legibility-description">A two-by-two matrix. Founder legibility goes from unknown to known left to right. Idea legibility goes from unclear to clear bottom to top. The quadrants are reset, execution, potential, and frontier.</desc><g font-family="ui-monospace, SFMono-Regular, Menlo, monospace"><text x="280" y="28" fill="currentColor" font-size="17" font-weight="700" text-anchor="middle">THE LEGIBILITY FRAMEWORK</text><rect x="120" y="62" width="350" height="210" fill="none" stroke="currentColor" stroke-opacity=".55"/><line x1="295" y1="62" x2="295" y2="272" stroke="currentColor" stroke-opacity=".55"/><line x1="120" y1="167" x2="470" y2="167" stroke="currentColor" stroke-opacity=".55"/><text x="207" y="119" fill="currentColor" font-size="15" text-anchor="middle">RESET</text><text x="382" y="119" fill="currentColor" font-size="15" text-anchor="middle">EXECUTION</text><text x="207" y="224" fill="currentColor" font-size="15" text-anchor="middle">POTENTIAL</text><text x="382" y="219" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">★ FRONTIER</text><text x="105" y="100" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="end">clear</text><text x="105" y="244" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="end">unclear</text><text x="207" y="291" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="middle">unknown</text><text x="382" y="291" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="middle">known</text><text x="295" y="326" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="middle">FOUNDER LEGIBILITY →</text><text transform="rotate(-90 31 167)" x="31" y="167" fill="currentColor" fill-opacity=".7" font-size="12" text-anchor="middle">IDEA LEGIBILITY →</text></g></svg><figcaption style="margin-block-start:.75rem;text-align:center;">Energy is the tie-breaker for unclear ideas.</figcaption></figure>
+<figure><img src="https://media.guidefari.com/legibility-matrix-evan-tana.webp" alt="Legibility Matrix: ideas are legible or illegible on the vertical axis, founders are illegible or legible on the horizontal axis. The quadrants are NGMI, Clear Execution Play, Hidden Potential, and Frontier Explorer." loading="lazy"><figcaption>Diagram by <a href="https://x.com/evantana/status/1927404374252269667">Evan Tana</a>, reproduced from his original thread.</figcaption></figure>
 
 [Evan Tana's framework](https://x.com/evantana/status/1927404374252269667) places ideas by founder legibility and idea legibility. The interesting area is an unclear idea with real energy: it may be frontier work, poorly explained work, or both.
 

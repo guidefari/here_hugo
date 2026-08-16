@@ -7,7 +7,7 @@ media_url: https://www.youtube.com/watch?v=hY279-A2fC4
 youtube_id: hY279-A2fC4
 creator: Dax Raad
 tags: [media, video, effect, opencode]
-images: ["https://i.ytimg.com/vi/hY279-A2fC4/hqdefault.jpg"]
+images: ["https://media.guidefari.com/media-covers/effect-at-opencode.jpg"]
 ---
 
 ## 1. Schema Design & Data Validation

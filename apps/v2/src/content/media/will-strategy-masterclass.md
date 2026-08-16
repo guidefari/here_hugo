@@ -5,7 +5,7 @@ description: You might find this podcast useful👇
 media_type: article
 media_url: 
 creator: Will Lawrence
-images: ['https://i.ytimg.com/vi/La2_IaV0icE/hqdefault.jpg']
+images: ['https://media.guidefari.com/media-covers/will-strategy-masterclass.jpg']
 tags: [podcast, strategy]
 ---
 
