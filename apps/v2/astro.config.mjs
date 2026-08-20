@@ -6,6 +6,9 @@ import pagefind from "astro-pagefind";
 import tailwindcss from "@tailwindcss/vite";
 
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
+const markdownPassthroughLayout = fileURLToPath(
+  new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url),
+);
 const { ASTRO_ALLOWED_HOST: allowedHost } = loadEnv(
   process.env.NODE_ENV ?? "development",
   workspaceRoot,
@@ -41,17 +44,20 @@ export default defineConfig({
       },
     },
     resolve: {
-      alias: {
-        bio: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        resume: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        rss: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        content: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        "effect-course": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        effect: fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        "effect.website": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        "effect.solutions": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-        "effect.institute": fileURLToPath(new URL("./src/layouts/MarkdownPassthrough.astro", import.meta.url)),
-      },
+      alias: [
+        "bio",
+        "resume",
+        "rss",
+        "content",
+        "effect-course",
+        "effect",
+        "effect.website",
+        "effect.solutions",
+        "effect.institute",
+      ].map((layout) => ({
+        find: new RegExp(`^${layout.replaceAll(".", "\\.")}$`),
+        replacement: markdownPassthroughLayout,
+      })),
     },
   },
 });

@@ -4,6 +4,7 @@ import * as Cloudflare from "alchemy/Cloudflare";
 import * as Command from "alchemy/Command";
 import * as Namespace from "alchemy/Namespace";
 import * as Output from "alchemy/Output";
+import * as Config from "effect/Config";
 import * as Effect from "effect/Effect";
 
 const zoneDomain = "guidefari.com";
@@ -78,6 +79,33 @@ export default Alchemy.Stack(
         ? [{ name: mediaDomain, minTLS: "1.2" }]
         : [],
     }).pipe(Namespace.push("Media"), adopt(isProduction));
+
+    const discordCrosspostDatabase = yield* Cloudflare.D1.Database(
+      "DiscordCrosspostDatabase",
+      {
+        name: `here-hugo-${stack.stage}-discord-crosspost`,
+        migrationsDir: "apps/discord-crosspost/migrations",
+      },
+    );
+
+    yield* Cloudflare.Worker("DiscordCrosspost", {
+      name: `here-hugo-${stack.stage}-discord-crosspost`,
+      main: "apps/discord-crosspost/src/index.ts",
+      url: false,
+      compatibility: { date: compatibilityDate },
+      crons: ["*/5 * * * *"],
+      env: {
+        DB: discordCrosspostDatabase,
+        DISCORD_WEBHOOK_URL: Config.redacted("DISCORD_WEBHOOK_URL"),
+      },
+      observability: {
+        enabled: true,
+        logs: {
+          enabled: true,
+          invocationLogs: true,
+        },
+      },
+    });
 
     return {
       ogImageUrl: ogImage.url,
