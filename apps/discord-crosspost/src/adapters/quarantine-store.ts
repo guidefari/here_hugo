@@ -23,6 +23,8 @@ export const layer = (database: D1Database) =>
           INSERT INTO discord_quarantine (source_id, raw_payload, decode_error, created_at)
           VALUES (?, ?, ?, ?)
         `).bind(rejected.sourceId, rejected.rawPayload, rejected.decodeError, now).run(),
-        catch: (cause) => new QuarantineUnavailable({ reason: String(cause) }),
+        catch: (cause) => new QuarantineUnavailable({
+          reason: cause instanceof Error ? cause.name : "quarantine write failed",
+        }),
       }).pipe(Effect.asVoid)),
   }));

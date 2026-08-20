@@ -6,7 +6,8 @@ export const sourceConfig = [
     enabled: true,
     feedUrl: "https://guidefari.com/media/discord.json",
     format: "json-feed",
-    // Provisional defaults until real posting volume informs the policy.
-    backfill: { windowDays: 14, maxPerRun: 3 },
+    // This generated feed lists every published entry, so absence is meaningful.
+    absenceMeansRemoved: true,
+    backfill: { postCount: 10, publishHourUtc: 12 },
   },
 ] satisfies ReadonlyArray<unknown>;

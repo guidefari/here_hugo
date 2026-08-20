@@ -10,7 +10,8 @@ const source = (format: FeedSource["format"]): FeedSource => ({
   enabled: true,
   feedUrl: "https://example.com/feed",
   format,
-  backfill: { windowDays: 14, maxPerRun: 3 },
+  absenceMeansRemoved: false,
+  backfill: { postCount: 10, publishHourUtc: 12 },
 });
 
 describe("feed decoders", () => {

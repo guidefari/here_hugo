@@ -48,7 +48,7 @@ export const layer = Layer.effect(
           catch: (cause) => new Unsupported({
             sourceId: source.id,
             format: source.format,
-            reason: String(cause),
+            reason: cause instanceof Error ? cause.name : "feed decoding failed",
           }),
         });
       }),

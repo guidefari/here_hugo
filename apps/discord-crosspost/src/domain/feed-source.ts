@@ -1,8 +1,11 @@
 import * as Schema from "effect/Schema";
 
 export const BackfillPolicy = Schema.Struct({
-  windowDays: Schema.Int.check(Schema.isGreaterThanOrEqualTo(1)),
-  maxPerRun: Schema.Int.check(Schema.isGreaterThanOrEqualTo(1)),
+  postCount: Schema.Int.check(Schema.isGreaterThanOrEqualTo(1)),
+  publishHourUtc: Schema.Int.check(
+    Schema.isGreaterThanOrEqualTo(0),
+    Schema.isLessThanOrEqualTo(23),
+  ),
 });
 
 export const FeedSourceConfig = Schema.Struct({
@@ -11,6 +14,7 @@ export const FeedSourceConfig = Schema.Struct({
   enabled: Schema.Boolean,
   feedUrl: Schema.NonEmptyString,
   format: Schema.Literals(["json-feed", "rss", "atom"]),
+  absenceMeansRemoved: Schema.Boolean,
   backfill: BackfillPolicy,
 });
 

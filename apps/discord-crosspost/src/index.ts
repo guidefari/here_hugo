@@ -2,6 +2,7 @@ import type { D1Database, ExecutionContext, ScheduledController } from "@cloudfl
 import * as Effect from "effect/Effect";
 import * as Layer from "effect/Layer";
 import * as Redacted from "effect/Redacted";
+import * as Result from "effect/Result";
 import * as Schema from "effect/Schema";
 import * as FetchHttpClient from "effect/unstable/http/FetchHttpClient";
 import * as DeliveryLedger from "./adapters/delivery-ledger";
@@ -18,17 +19,19 @@ interface Env {
   readonly DISCORD_WEBHOOK_URL: string;
 }
 
+const parsedSources = Schema.decodeUnknownResult(Schema.Array(FeedSourceConfig))(sourceConfig);
+
 const run = (env: Env) =>
   Effect.gen(function* () {
-    const parsedSources = yield* Schema.decodeUnknownEffect(Schema.Array(FeedSourceConfig))(sourceConfig).pipe(
-      Effect.mapError((error) => `Invalid feed source configuration: ${error}`),
-    );
+    if (Result.isFailure(parsedSources)) {
+      return yield* Effect.fail("invalid feed source configuration");
+    }
 
     const adapters = Layer.mergeAll(
       DeliveryLedger.layer(env.DB),
       QuarantineStore.layer(env.DB),
       DiscordPublisher.layer(Redacted.make(env.DISCORD_WEBHOOK_URL)),
-      SourceConfig.layer(parsedSources),
+      SourceConfig.layer(parsedSources.success),
       FeedIngestionLive.pipe(Layer.provide(FetchHttpClient.layer)),
     );
     const application = CrossPostRunLive.pipe(Layer.provide(adapters));
@@ -39,7 +42,7 @@ const run = (env: Env) =>
       yield* Effect.logInfo("Discord cross-post run complete", summary);
     }).pipe(Effect.provide(application));
   }).pipe(
-    Effect.catch((error: unknown) => Effect.logError("Discord cross-post run failed", { error })),
+    Effect.catch(() => Effect.logError("Discord cross-post run failed")),
   );
 
 export default {

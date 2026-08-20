@@ -22,10 +22,20 @@ export const CrossPostRunFailure = Schema.Struct({
 
 export interface CrossPostRunFailure extends Schema.Schema.Type<typeof CrossPostRunFailure> {}
 
+export const RemovedEntry = Schema.Struct({
+  sourceId: Schema.String,
+  entryIdentity: Schema.String,
+  reason: Schema.Literals(["missing", "draft"]),
+});
+
+export interface RemovedEntry extends Schema.Schema.Type<typeof RemovedEntry> {}
+
 export const CrossPostRunSummary = Schema.Struct({
   sourcesProcessed: Schema.Number,
   entriesSent: Schema.Number,
+  entriesUpdated: Schema.Number,
   entriesQuarantined: Schema.Number,
+  removedEntries: Schema.Array(RemovedEntry),
   failures: Schema.Array(CrossPostRunFailure),
 });
 
@@ -41,15 +51,24 @@ export class CrossPostRun extends Context.Service<CrossPostRun, CrossPostRunServ
 
 interface SourceSummary {
   readonly sent: number;
+  readonly updated: number;
   readonly quarantined: number;
+  readonly removedEntries: ReadonlyArray<RemovedEntry>;
   readonly failures: ReadonlyArray<CrossPostRunFailure>;
 }
+
+const RETRIES_PER_RUN = 10;
 
 const failure = (sourceId: string, entryIdentity: string | null, reason: unknown): CrossPostRunFailure => ({
   sourceId,
   entryIdentity,
   reason: String(reason),
 });
+
+const isBackfillReleaseTime = (nowMillis: number, publishHourUtc: number): boolean => {
+  const now = new Date(nowMillis);
+  return now.getUTCHours() === publishHourUtc && now.getUTCMinutes() === 0;
+};
 
 export const layer = Layer.effect(
   CrossPostRun,
@@ -65,78 +84,133 @@ export const layer = Layer.effect(
       nowMillis: number,
     ) {
       const failures: Array<CrossPostRunFailure> = [];
+      const removedEntries: Array<RemovedEntry> = [];
       let quarantined = 0;
       let sent = 0;
+      let updated = 0;
       const now = new Date(nowMillis).toISOString();
       const ingested = yield* Effect.result(ingestion.ingest(source));
       if (Result.isFailure(ingested)) {
-        return {
-          sent,
-          quarantined,
-          failures: [failure(source.id, null, ingested.failure.reason)],
-        } satisfies SourceSummary;
+        failures.push(failure(source.id, null, ingested.failure.reason));
       }
 
       const entries = new Map<DedupeKey.DedupeKey, MediaEntry>();
-      for (const item of ingested.success) {
+      const seenEntries = new Map<string, MediaEntry>();
+      for (const item of Result.isFailure(ingested) ? [] : ingested.success) {
         if (Result.isFailure(item)) {
           const recorded = yield* Effect.result(quarantine.record(item.failure, now));
-          if (Result.isFailure(recorded)) failures.push(failure(source.id, null, recorded.failure.reason));
-          else quarantined += 1;
+          if (Result.isFailure(recorded)) {
+            failures.push(failure(source.id, null, recorded.failure.reason));
+          } else {
+            quarantined += 1;
+            yield* Effect.logWarning("Feed entry quarantined", { sourceId: source.id });
+          }
           continue;
         }
-        if (!item.success.draft) entries.set(DedupeKey.make(source.id, item.success.entryIdentity), item.success);
+        seenEntries.set(item.success.entryIdentity, item.success);
+        if (!item.success.draft) {
+          entries.set(DedupeKey.make(source.id, item.success.entryIdentity), item.success);
+        }
       }
 
       const hasEntries = yield* Effect.result(ledger.hasEntriesForSource(source.id));
       if (Result.isFailure(hasEntries)) {
         failures.push(failure(source.id, null, hasEntries.failure.reason));
-        return { sent, quarantined, failures } satisfies SourceSummary;
+        return { sent, updated, quarantined, removedEntries, failures } satisfies SourceSummary;
       }
 
       const firstSync = !hasEntries.success;
-      const cutoff = nowMillis - source.backfill.windowDays * 86_400_000;
       const staleBefore = new Date(nowMillis - 10 * 60_000).toISOString();
       const due = new Set<DedupeKey.DedupeKey>();
-
-      for (const [dedupeKey, entry] of entries) {
-        if (firstSync && Date.parse(entry.publishedAt) < cutoff) continue;
-        const claimState = firstSync ? "queued" : "pending";
-        const claimed = yield* Effect.result(ledger.claim(
-          DedupeKey.make(source.id, entry.entryIdentity),
-          entry,
-          claimState,
-          now,
-        ));
+      const candidates = [...entries.entries()].sort(
+        ([, left], [, right]) => Date.parse(right.publishedAt) - Date.parse(left.publishedAt),
+      );
+      for (const [index, [dedupeKey, entry]] of candidates.entries()) {
+        const claimState = firstSync
+          ? index < source.backfill.postCount ? "queued" : "ignored"
+          : "pending";
+        const claimed = yield* Effect.result(ledger.claim(dedupeKey, entry, claimState, now));
         if (Result.isFailure(claimed)) {
           failures.push(failure(source.id, entry.entryIdentity, claimed.failure.reason));
           continue;
         }
         if (claimed.success === "claimed-pending") {
           due.add(dedupeKey);
-        } else if (claimed.success === "claimed-queued") {
-          // No-op: waits for promoteQueued to trickle it out on a later run.
-        } else if (claimed.success === "already-claimed") {
-          const retry = yield* Effect.result(ledger.prepareRetry(
-            DedupeKey.make(source.id, entry.entryIdentity),
-            now,
-            staleBefore,
-          ));
-          if (Result.isFailure(retry)) failures.push(failure(source.id, entry.entryIdentity, retry.failure.reason));
-          else if (retry.success) due.add(dedupeKey);
+          continue;
+        }
+        if (claimed.success === "already-claimed") {
+          const present = yield* Effect.result(ledger.markSourcePresent(dedupeKey, now));
+          if (Result.isFailure(present)) {
+            failures.push(failure(source.id, entry.entryIdentity, present.failure.reason));
+          }
+
+          const changedMessage = yield* Effect.result(ledger.sentMessageForUpdate(dedupeKey, entry));
+          if (Result.isFailure(changedMessage)) {
+            failures.push(failure(source.id, entry.entryIdentity, changedMessage.failure.reason));
+          } else if (changedMessage.success !== null) {
+            const delivered = yield* Effect.result(
+              publisher.update(changedMessage.success, fromMediaEntry(entry)),
+            );
+            if (Result.isFailure(delivered)) {
+              failures.push(failure(source.id, entry.entryIdentity, delivered.failure.reason));
+            } else {
+              const marked = yield* Effect.result(ledger.markUpdated(dedupeKey, entry, now));
+              if (Result.isFailure(marked)) {
+                failures.push(failure(source.id, entry.entryIdentity, marked.failure.reason));
+              } else {
+                updated += 1;
+              }
+            }
+          }
         }
       }
 
-      const promoted = yield* Effect.result(ledger.promoteQueued(
+      if (source.absenceMeansRemoved && Result.isSuccess(ingested)) {
+        const sentIdentities = yield* Effect.result(ledger.sentEntryIdentities(source.id));
+        if (Result.isFailure(sentIdentities)) {
+          failures.push(failure(source.id, null, sentIdentities.failure.reason));
+        } else {
+          for (const entryIdentity of sentIdentities.success) {
+            const current = seenEntries.get(entryIdentity);
+            if (current !== undefined && !current.draft) continue;
+            const reason: RemovedEntry["reason"] = current?.draft === true ? "draft" : "missing";
+            const marked = yield* Effect.result(
+              ledger.markSourceMissing(DedupeKey.make(source.id, entryIdentity), now),
+            );
+            if (Result.isFailure(marked)) {
+              failures.push(failure(source.id, entryIdentity, marked.failure.reason));
+            } else if (marked.success) {
+              const removed = { sourceId: source.id, entryIdentity, reason } satisfies RemovedEntry;
+              removedEntries.push(removed);
+              yield* Effect.logWarning("Cross-posted entry no longer published", removed);
+            }
+          }
+        }
+      }
+
+      if (isBackfillReleaseTime(nowMillis, source.backfill.publishHourUtc)) {
+        const promoted = yield* Effect.result(ledger.promoteQueued(source.id, 1, now));
+        if (Result.isFailure(promoted)) {
+          failures.push(failure(source.id, null, promoted.failure.reason));
+        } else {
+          for (const { dedupeKey, entry: promotedEntry } of promoted.success) {
+            entries.set(dedupeKey, promotedEntry);
+            due.add(dedupeKey);
+          }
+        }
+      }
+
+      const retries = yield* Effect.result(ledger.prepareRetries(
         source.id,
-        source.backfill.maxPerRun,
         now,
+        staleBefore,
+        RETRIES_PER_RUN,
       ));
-      if (Result.isFailure(promoted)) {
-        failures.push(failure(source.id, null, promoted.failure.reason));
+      if (Result.isFailure(retries)) {
+        failures.push(failure(source.id, null, retries.failure.reason));
       } else {
-        for (const { dedupeKey, entry: promotedEntry } of promoted.success) {
-          entries.set(dedupeKey, promotedEntry);
+        for (const { dedupeKey, entry } of retries.success) {
+          entries.set(dedupeKey, entry);
           due.add(dedupeKey);
         }
       }
@@ -144,10 +218,7 @@ export const layer = Layer.effect(
       for (const dedupeKey of due) {
         const entry = entries.get(dedupeKey);
         if (!entry) continue;
-        const attempt = yield* Effect.result(ledger.beginAttempt(
-          DedupeKey.make(source.id, entry.entryIdentity),
-          now,
-        ));
+        const attempt = yield* Effect.result(ledger.beginAttempt(dedupeKey, now));
         if (Result.isFailure(attempt)) {
           failures.push(failure(source.id, entry.entryIdentity, attempt.failure.reason));
           continue;
@@ -156,24 +227,22 @@ export const layer = Layer.effect(
         const delivered = yield* Effect.result(publisher.publish(fromMediaEntry(entry)));
         if (Result.isFailure(delivered)) {
           const marked = yield* Effect.result(ledger.markFailed(
-            DedupeKey.make(source.id, entry.entryIdentity),
+            dedupeKey,
             delivered.failure.reason,
             now,
           ));
           failures.push(failure(source.id, entry.entryIdentity, delivered.failure.reason));
-          if (Result.isFailure(marked)) failures.push(failure(source.id, entry.entryIdentity, marked.failure.reason));
+          if (Result.isFailure(marked)) {
+            failures.push(failure(source.id, entry.entryIdentity, marked.failure.reason));
+          }
           continue;
         }
-        const marked = yield* Effect.result(ledger.markSent(
-          DedupeKey.make(source.id, entry.entryIdentity),
-          delivered.success,
-          now,
-        ));
+        const marked = yield* Effect.result(ledger.markSent(dedupeKey, delivered.success, now));
         if (Result.isFailure(marked)) failures.push(failure(source.id, entry.entryIdentity, marked.failure.reason));
         else sent += 1;
       }
 
-      return { sent, quarantined, failures } satisfies SourceSummary;
+      return { sent, updated, quarantined, removedEntries, failures } satisfies SourceSummary;
     });
 
     return CrossPostRun.of({
@@ -188,7 +257,9 @@ export const layer = Layer.effect(
         return {
           sourcesProcessed: enabled.length,
           entriesSent: summaries.reduce((total, summary) => total + summary.sent, 0),
+          entriesUpdated: summaries.reduce((total, summary) => total + summary.updated, 0),
           entriesQuarantined: summaries.reduce((total, summary) => total + summary.quarantined, 0),
+          removedEntries: summaries.flatMap((summary) => summary.removedEntries),
           failures: summaries.flatMap((summary) => summary.failures),
         };
       }),
