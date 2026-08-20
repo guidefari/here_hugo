@@ -27,6 +27,7 @@ export interface DeliveryLedgerService {
   readonly promoteQueued: (
     sourceId: string,
     limit: number,
+    release: "initial" | "scheduled",
     now: string,
   ) => Effect.Effect<ReadonlyArray<{ readonly dedupeKey: DedupeKeyType; readonly entry: MediaEntry }>, LedgerUnavailable>;
   readonly sentMessageForUpdate: (
@@ -183,18 +184,30 @@ export const layer = (database: D1Database) =>
             : Effect.succeed(parsed.success);
         }),
       )),
-    promoteQueued: Effect.fn("DeliveryLedger.promoteQueued")((sourceId, limit, now) =>
+    promoteQueued: Effect.fn("DeliveryLedger.promoteQueued")((sourceId, limit, release, now) =>
       run("promoteQueued", () => database.prepare(`
         UPDATE discord_deliveries
-        SET state = 'pending', updated_at = ?
+        SET state = 'pending', backfill_released_at = ?, updated_at = ?
         WHERE dedupe_key IN (
           SELECT dedupe_key FROM discord_deliveries
           WHERE source_id = ? AND state = 'queued'
+            AND (
+              ? = 'scheduled'
+              OR NOT EXISTS (
+                SELECT 1 FROM discord_deliveries
+                WHERE source_id = ? AND backfill_released_at IS NOT NULL
+              )
+            )
+            AND NOT EXISTS (
+              SELECT 1 FROM discord_deliveries
+              WHERE source_id = ? AND backfill_released_at IS NOT NULL
+                AND date(backfill_released_at) = date(?)
+            )
           ORDER BY published_at ASC
           LIMIT ?
         )
         RETURNING dedupe_key, payload
-      `).bind(now, sourceId, limit).all()).pipe(
+      `).bind(now, now, sourceId, release, sourceId, sourceId, now, limit).all()).pipe(
         Effect.flatMap((result) => {
           const parsed = parsePayloadRows(result.results);
           return Result.isFailure(parsed)

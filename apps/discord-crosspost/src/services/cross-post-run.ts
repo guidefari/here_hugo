@@ -188,15 +188,18 @@ export const layer = Layer.effect(
         }
       }
 
-      if (isBackfillReleaseTime(nowMillis, source.backfill.publishHourUtc)) {
-        const promoted = yield* Effect.result(ledger.promoteQueued(source.id, 1, now));
-        if (Result.isFailure(promoted)) {
-          failures.push(failure(source.id, null, promoted.failure.reason));
-        } else {
-          for (const { dedupeKey, entry: promotedEntry } of promoted.success) {
-            entries.set(dedupeKey, promotedEntry);
-            due.add(dedupeKey);
-          }
+      const backfillRelease = isBackfillReleaseTime(nowMillis, source.backfill.publishHourUtc)
+        ? "scheduled"
+        : "initial";
+      const promoted = yield* Effect.result(
+        ledger.promoteQueued(source.id, 1, backfillRelease, now),
+      );
+      if (Result.isFailure(promoted)) {
+        failures.push(failure(source.id, null, promoted.failure.reason));
+      } else {
+        for (const { dedupeKey, entry: promotedEntry } of promoted.success) {
+          entries.set(dedupeKey, promotedEntry);
+          due.add(dedupeKey);
         }
       }
 

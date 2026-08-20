@@ -14,7 +14,7 @@ import type { MediaEntry } from "../domain/media-entry";
 import { CrossPostRun, layer as CrossPostRunLive } from "./cross-post-run";
 import { FeedIngestion } from "./feed-ingestion";
 
-const noonUtc = Date.UTC(2026, 0, 1, 12, 0);
+const sixUtc = Date.UTC(2026, 0, 1, 6, 0);
 
 const fixedClock = (time: number): Clock.Clock => ({
   currentTimeMillisUnsafe: () => time,
@@ -33,7 +33,7 @@ const source: FeedSource = {
   feedUrl: "https://example.com/feed",
   format: "json-feed",
   absenceMeansRemoved: true,
-  backfill: { postCount: 10, publishHourUtc: 12 },
+  backfill: { postCount: 10, publishHourUtc: 6 },
 };
 
 const makeEntry = (position: number): MediaEntry => ({
@@ -47,13 +47,13 @@ const makeEntry = (position: number): MediaEntry => ({
   mediaUrl: "https://example.com/video.mp4",
   tags: ["video"],
   thumbnailUrl: "",
-  publishedAt: new Date(noonUtc - position * 86_400_000).toISOString(),
+  publishedAt: new Date(sixUtc - position * 86_400_000).toISOString(),
   draft: false,
 });
 
 const runWith = (
   adapters: Layer.Layer<CrossPostRun>,
-  time = noonUtc,
+  time = sixUtc,
 ) => Effect.runPromise(Effect.gen(function* () {
   const service = yield* CrossPostRun;
   return yield* service.run();
@@ -62,12 +62,13 @@ const runWith = (
   Effect.provideService(Clock.Clock, fixedClock(time)),
 ));
 
-test("CrossPostRun queues only the latest ten entries and releases one at noon UTC", async () => {
+test("CrossPostRun queues only the latest ten entries and releases one immediately on first sync", async () => {
   const entries = Array.from({ length: 12 }, (_, index) => makeEntry(index));
   const claimed: Array<{ readonly entryIdentity: string; readonly state: string }> = [];
   const published: Array<unknown> = [];
   const quarantined: Array<MediaEntryRejected> = [];
   let promotedLimit = 0;
+  let releaseKind: "initial" | "scheduled" | undefined;
   const promotedEntry = entries[0]!;
   const promotedKey = DedupeKey.make(source.id, promotedEntry.entryIdentity);
 
@@ -94,8 +95,9 @@ test("CrossPostRun queues only the latest ten entries and releases one at noon U
             : "claimed-ignored";
       }),
       prepareRetries: () => Effect.succeed([]),
-      promoteQueued: (_sourceId, limit) => Effect.sync(() => {
+      promoteQueued: (_sourceId, limit, release) => Effect.sync(() => {
         promotedLimit = limit;
+        releaseKind = release;
         return [{ dedupeKey: promotedKey, entry: promotedEntry }];
       }),
       sentMessageForUpdate: () => Effect.succeed(null),
@@ -122,7 +124,7 @@ test("CrossPostRun queues only the latest ten entries and releases one at noon U
   );
   const application = CrossPostRunLive.pipe(Layer.provide(fakes));
 
-  const summary = await runWith(application);
+  const summary = await runWith(application, sixUtc - 55 * 60_000);
 
   expect(summary.entriesSent).toBe(1);
   expect(summary.entriesQuarantined).toBe(1);
@@ -134,23 +136,24 @@ test("CrossPostRun queues only the latest ten entries and releases one at noon U
     "entry-11",
   ]);
   expect(promotedLimit).toBe(1);
+  expect(releaseKind).toBe("initial");
   expect(published).toHaveLength(1);
   expect(quarantined).toHaveLength(1);
 });
 
-test("CrossPostRun does not release backfill outside the noon UTC run", async () => {
-  let promoted = false;
+test("CrossPostRun requests only an initial release outside the configured UTC hour", async () => {
+  let releaseKind: "initial" | "scheduled" | undefined;
   const entry = makeEntry(0);
 
   const fakes = Layer.mergeAll(
     SourceConfig.layer([source]),
     Layer.succeed(FeedIngestion, FeedIngestion.of({ ingest: () => Effect.succeed([Result.succeed(entry)]) })),
     Layer.succeed(DeliveryLedger, DeliveryLedger.of({
-      hasEntriesForSource: () => Effect.succeed(false),
-      claim: () => Effect.succeed("claimed-queued"),
+      hasEntriesForSource: () => Effect.succeed(true),
+      claim: () => Effect.succeed("already-claimed"),
       prepareRetries: () => Effect.succeed([]),
-      promoteQueued: () => Effect.sync(() => {
-        promoted = true;
+      promoteQueued: (_sourceId, _limit, release) => Effect.sync(() => {
+        releaseKind = release;
         return [];
       }),
       sentMessageForUpdate: () => Effect.succeed(null),
@@ -170,10 +173,10 @@ test("CrossPostRun does not release backfill outside the noon UTC run", async ()
   );
   const application = CrossPostRunLive.pipe(Layer.provide(fakes));
 
-  const summary = await runWith(application, noonUtc + 5 * 60_000);
+  const summary = await runWith(application, sixUtc + 5 * 60_000);
 
   expect(summary.entriesSent).toBe(0);
-  expect(promoted).toBe(false);
+  expect(releaseKind).toBe("initial");
 });
 
 test("CrossPostRun patches edited messages and logs missing published entries without deleting them", async () => {
@@ -222,7 +225,7 @@ test("CrossPostRun patches edited messages and logs missing published entries wi
   );
   const application = CrossPostRunLive.pipe(Layer.provide(fakes));
 
-  const summary = await runWith(application, noonUtc + 5 * 60_000);
+  const summary = await runWith(application, sixUtc + 5 * 60_000);
 
   expect(summary.entriesUpdated).toBe(1);
   expect(summary.entriesSent).toBe(0);
@@ -245,8 +248,9 @@ test("CrossPostRun patches edited messages and logs missing published entries wi
   ]);
 });
 
-test("CrossPostRun delivers a noon backfill entry that has scrolled out of the live feed", async () => {
+test("CrossPostRun delivers a scheduled backfill entry that has scrolled out of the live feed", async () => {
   const published: Array<unknown> = [];
+  let releaseKind: "initial" | "scheduled" | undefined;
   const staleEntry = { ...makeEntry(0), entryIdentity: "backfilled-entry" };
   const staleDedupeKey = DedupeKey.make(source.id, staleEntry.entryIdentity);
   const sourceWithoutRemovalDetection = { ...source, absenceMeansRemoved: false };
@@ -258,7 +262,10 @@ test("CrossPostRun delivers a noon backfill entry that has scrolled out of the l
       hasEntriesForSource: () => Effect.succeed(true),
       claim: () => Effect.succeed("already-claimed"),
       prepareRetries: () => Effect.succeed([]),
-      promoteQueued: () => Effect.succeed([{ dedupeKey: staleDedupeKey, entry: staleEntry }]),
+      promoteQueued: (_sourceId, _limit, release) => Effect.sync(() => {
+        releaseKind = release;
+        return [{ dedupeKey: staleDedupeKey, entry: staleEntry }];
+      }),
       sentMessageForUpdate: () => Effect.succeed(null),
       markUpdated: () => Effect.void,
       sentEntryIdentities: () => Effect.succeed([]),
@@ -283,5 +290,6 @@ test("CrossPostRun delivers a noon backfill entry that has scrolled out of the l
 
   expect(summary.failures).toEqual([]);
   expect(summary.entriesSent).toBe(1);
+  expect(releaseKind).toBe("scheduled");
   expect(published).toHaveLength(1);
 });

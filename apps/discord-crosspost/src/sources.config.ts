@@ -8,6 +8,6 @@ export const sourceConfig = [
     format: "json-feed",
     // This generated feed lists every published entry, so absence is meaningful.
     absenceMeansRemoved: true,
-    backfill: { postCount: 10, publishHourUtc: 12 },
+    backfill: { postCount: 10, publishHourUtc: 6 },
   },
 ] satisfies ReadonlyArray<unknown>;

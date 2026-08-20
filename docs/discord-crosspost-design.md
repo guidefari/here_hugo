@@ -12,7 +12,7 @@ These were open questions in the previous revision of this doc. Answers below ar
 2. **Parsing/validation**: Effect Schema, throughout. See [Effect shape](#effect-shape).
 3. **Channel + secrets**: the Discord webhook URL (which encodes the channel) is provided as a deploy-time secret, bound into the Worker via Alchemy. See [Secrets](#secrets).
 4. **Cron frequency**: every 5 minutes to start.
-5. **Backfill**: queue the latest 10 posts on first sync, then publish one queued post each day at noon UTC. See [Backfill](#backfill).
+5. **Backfill**: queue the latest 10 posts on first sync, publish one immediately, then publish one queued post each day at 06:00 UTC. See [Backfill](#backfill).
 6. **Feed formats**: support all of JSON Feed, RSS, and Atom from the start.
 7. **Drafts**: never post a draft. When an entry transitions from draft to published, it posts normally at that point, as a new discovery (dedupe identity is stable across the transition; see [D1 delivery ledger](#d1-delivery-ledger)).
 8. **Malformed entries**: never fail silently. Quarantine for review (persisted, visible, inspectable), not a silent skip and not a hard failure of the whole feed.
@@ -108,9 +108,9 @@ type FeedSource = {
 
 ## Backfill
 
-When a source is first enabled, the Worker sorts its published entries by publication date and claims the latest 10 as `queued`. It claims older entries as `ignored` so later polls do not mistake them for new posts. It does not use an age window because author cadence varies. The noon UTC Cron run promotes at most one queued row per source; all other five-minute runs leave the backfill queue alone.
+When a source is first enabled, the Worker sorts its published entries by publication date and claims the latest 10 as `queued`. It claims older entries as `ignored` so later polls do not mistake them for new posts. It then releases the oldest queued post immediately as a delivery check. It does not use an age window because author cadence varies. Later releases run at 06:00 UTC and promote at most one queued row per source each UTC day; all other five-minute runs leave the backfill queue alone.
 
-Promotion selects the oldest queued post directly from the ledger by `source_id`, `state = 'queued'`, and `published_at`, with no dependency on whether an entry still appears in the current live feed. A rolling feed must not strand a queued entry after it scrolls out of the feed. The ledger stores the full normalized `MediaEntry` payload at claim time, so a promoted row has everything needed to build its Discord embed.
+Promotion selects the oldest queued post directly from the ledger by `source_id`, `state = 'queued'`, and `published_at`, with no dependency on whether an entry still appears in the current live feed. The ledger records `backfill_released_at` when it promotes a row. An atomic date guard blocks another promotion for that source on the same UTC day, so a first sync before 06:00 cannot cause a second day-one post. A rolling feed must not strand a queued entry after it scrolls out of the feed. The ledger stores the full normalized `MediaEntry` payload at claim time, so a promoted row has everything needed to build its Discord embed.
 
 ```ts
 type BackfillPolicy = {
@@ -119,7 +119,7 @@ type BackfillPolicy = {
 };
 ```
 
-The checked-in config keeps these values explicit per source, though the initial policy uses 10 posts and noon UTC for every source.
+The checked-in config keeps these values explicit per source, though the initial policy uses 10 posts and 06:00 UTC for every source.
 
 ## D1 delivery ledger
 
@@ -138,11 +138,12 @@ CREATE TABLE discord_deliveries (
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
   sent_at TEXT,
-  source_missing_at TEXT
+  source_missing_at TEXT,
+  backfill_released_at TEXT
 );
 ```
 
-`payload` is the claimed entry's full normalized `MediaEntry`, stored as JSON at claim time. This is what makes the ledger a genuine source of truth for promotion and delivery: a `queued` row can be promoted and sent using only what's stored on the row, without needing the entry to still be present in whatever the most recent feed poll happened to return.
+`payload` is the claimed entry's full normalized `MediaEntry`, stored as JSON at claim time. This is what makes the ledger a genuine source of truth for promotion and delivery: a `queued` row can be promoted and sent using only what's stored on the row, without needing the entry to still be present in whatever the most recent feed poll happened to return. `backfill_released_at` records the UTC day consumed by an immediate or scheduled backfill release, even if Discord delivery later needs a retry.
 
 The dedupe key is a deterministic encoding of `source_id + entry_identity`. For the first-party source, entry identity can be the canonical URL or a stable feed ID derived from it. External feeds should prefer a feed GUID or JSON Feed item ID, falling back to the canonical item URL only when its stability is trustworthy.
 
