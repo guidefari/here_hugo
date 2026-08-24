@@ -1,12 +1,11 @@
 ---
 import { navItems, writingTree } from "../lib/site.mjs";
 import { getEntriesBySection } from "../lib/content.mjs";
-import { projects } from "../lib/projects.mjs";
 
 const { isHome = false, activeWritingHref = "" } = Astro.props;
 const chipCounts = {
   media: (await getEntriesBySection("media")).length,
-  projects: projects.length,
+  projects: (await getEntriesBySection("projects")).length,
 };
 const currentPath = Astro.url.pathname;
 const isWritingChildActive = (href) => currentPath === href || activeWritingHref === href || currentPath.startsWith(href);

@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 import { getCanonicalUrl } from "../../lib/content.mjs";
-import { projects } from "../../lib/projects.mjs";
+import { getEntriesBySection } from "../../lib/content.mjs";
+
+const projects = await getEntriesBySection("projects");
 ---
 
   <BaseLayout title="Projects" description="Projects and tools I've built." canonical={getCanonicalUrl("/projects/")}>
