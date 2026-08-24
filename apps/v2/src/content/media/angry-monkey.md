@@ -5,7 +5,7 @@ description: Monkey brain vs Zoo Keeper brain. The Strategist vs the Executor
 media_type: article
 media_url: 
 creator: UBK Happy Fun Time Hour
-images: ['https://media.guidefari.com/media-covers/angry-monkey.png']
+images: ['https://media.guidefari.com/media-covers/angry-monkey-ubk.jpg']
 tags: [podcast, notes, journal]
 ---
 
@@ -14,6 +14,8 @@ tags: [podcast, notes, journal]
 these are notes from a podcast [Ronny](https://ronnypries.de/) shared with me after I ranted to him about not knowing what to do with myself on a free Saturday morning. great chat, we had.
 
 - episode #89 of [this show](https://www.ubkhappyfuntimehour.com)
+
+Cover art from [The UBK Happy Funtime Hour](https://ubkhappyfuntimehour.libsyn.com/webpage/2016/10).
 
 ---
 

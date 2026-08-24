@@ -8,7 +8,7 @@ const optionalUrl = z.union([z.string(), z.null()]).optional().transform((v) => 
 
 const entries = defineCollection({
   loader: glob({
-    pattern: "**/*.md",
+    pattern: ["**/*.md", "!**/AGENTS.md"],
     base: "./src/content",
     generateId: ({ entry }) => {
       const noExt = entry.replace(/\.md$/, "");

@@ -2,10 +2,6 @@
 title: "Autoplay Opinion"
 date: 2022-02-20T21:57:47+02:00
 description: I switch off autoplay on all my streaming services. Youtube, Spotify, Netflix etc
-media_type: article
-media_url: 
-creator: Guide Fari
-images: ['https://media.guidefari.com/media-covers/autoplay-opinion.png']
 tags: [ux, design, tweet]
 ---
 

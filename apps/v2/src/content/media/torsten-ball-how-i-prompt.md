@@ -6,7 +6,7 @@ media_type: youtube
 media_url: https://www.youtube.com/watch?v=HegqGzD-kvc
 creator: Torsten Ball
 youtube_id: HegqGzD-kvc
-images: []
+images: ['https://media.guidefari.com/media-covers/torsten-ball-how-i-prompt.jpg']
 tags: [ai]
 ---
 
