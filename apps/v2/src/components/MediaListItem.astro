@@ -24,10 +24,9 @@ const image = entry.images[0];
     <div class="flex flex-col min-w-0 gap-1">
       <span class="text-base font-medium leading-snug text-text/90 group-hover:text-highlight transition-colors line-clamp-2">{entry.title}</span>
       <span class="text-xs text-accentText/60">
-        <time>{formatDate(entry.date, { month: "short", year: "2-digit" })}</time>
-        {entry.data.creator && <span> · {entry.data.creator}</span>}
-        {entry.hasBody && <span class="ml-2 text-highlight/60">has notes</span>}
+        {entry.data.creator && <span>{entry.data.creator}</span>}
       </span>
+        <time>{formatDate(entry.date, { month: "short", year: "2-digit" })}</time>
     </div>
   </a>
 </li>
