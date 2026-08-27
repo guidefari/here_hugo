@@ -21,25 +21,47 @@
   --color-faint: rgb(255 255 255 / 0.25);
   --color-white: #f0f4f5;
   --color-onDark: #f0f4f5;
+  --color-onHighlight: #000;
+  --color-codeBg: #f1f1f1;
+  --color-codeText: #1a2f38;
+  --color-wash: #f5d547;
+  --color-quote-rule: #78c0a8;
+  --color-ink: #000000;
+  --color-shadow: rgb(0 0 0 / 0.24);
+  --color-emboss: rgb(255 255 255 / 0.4);
+  --color-recessed: #0d1c22;
+  --color-codeBlockBg: #002b36;
+  --color-prose: #f0f4f5;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --color-highlight: #b3860f;
-    --color-calloutcolor: #1c6fd0;
-    --color-hovercolor: #dbeeff;
-    --color-darkMaincolor: #5c8001;
-    --color-accentText: #4b6b32;
-    --color-text: #33302a;
-    --color-bg: #faf7f0;
-    --color-panel: #f0ece1;
-    --color-panel-sunken: #e6e0d2;
-    --color-border: rgb(0 0 0 / 0.1);
-    --color-border-strong: rgb(0 0 0 / 0.18);
-    --color-muted: rgb(0 0 0 / 0.4);
-    --color-muted-strong: rgb(0 0 0 / 0.75);
-    --color-faint: rgb(0 0 0 / 0.3);
-    --color-white: #1a1714;
+    --color-highlight: hsl(213 60% 32%);
+    --color-calloutcolor: hsl(213 90% 55%);
+    --color-hovercolor: hsl(213 55% 86%);
+    --color-darkMaincolor: hsl(213 60% 26%);
+    --color-accentText: hsl(213 22% 42%);
+    --color-text: hsl(213 35% 16%);
+    --color-bg: #e8eef7;
+    --color-panel: hsl(213 30% 99%);
+    --color-panel-sunken: hsl(213 40% 88%);
+    --color-border: hsl(213 25% 84%);
+    --color-border-strong: hsl(213 28% 72%);
+    --color-muted: hsl(213 22% 42% / 0.72);
+    --color-muted-strong: hsl(213 35% 18% / 0.9);
+    --color-faint: hsl(213 22% 42% / 0.48);
+    --color-white: hsl(213 35% 14%);
+    --color-onHighlight: hsl(213 40% 97%);
+    --color-codeBg: hsl(213 40% 88%);
+    --color-codeText: hsl(213 35% 16%);
+    --color-wash: #7dd3fc;
+    --color-prose: hsl(213 35% 16%);
+    --color-quote-rule: hsl(213 60% 32%);
+    --color-ink: #111827;
+    --color-shadow: hsl(213 35% 16% / 0.16);
+    --color-emboss: rgb(255 255 255 / 0.72);
+    --color-recessed: hsl(213 35% 82%);
+    --color-codeBlockBg: #111827;
   }
 }
 
@@ -102,12 +124,12 @@
   }
 
   * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
     background: var(--color-highlight);
-    color: #000;
+    color: var(--color-onHighlight);
   }
 
   iframe {
@@ -147,9 +169,9 @@
     margin: 50px auto;
     font-style: italic;
     padding: 1.2em 30px 1.2em 3.5rem;
-    border-left: 8px solid #78c0a8;
+    border-left: 8px solid var(--color-quote-rule);
     position: relative;
-    background: color-mix(in oklab, var(--color-bg) 88%, black);
+    background: var(--color-panel-sunken);
   }
 
   blockquote::before {
@@ -201,8 +223,8 @@
   }
 
   code {
-    background-color: #f1f1f1;
-    color: #1a2f38;
+    background-color: var(--color-codeBg);
+    color: var(--color-codeText);
     padding: 0.1em 0.2em;
   }
 
@@ -263,11 +285,11 @@
 
   figure:has(a) figcaption {
     text-decoration: none;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 0 var(--color-emboss);
     background-image: linear-gradient(
       to right,
       var(--color-hovercolor) 50%,
-      black 50%
+      var(--color-ink) 50%
     );
     background-position: 0;
     background-size: 200%;
@@ -291,13 +313,7 @@
     --hovercolor: var(--color-hovercolor);
     --darkMaincolor: var(--color-darkMaincolor);
     --accentText: var(--color-accentText);
-    --text: #f0f4f5;
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root {
-      --text: #262420;
-    }
+    --text: var(--color-prose);
   }
 
   .draft-label {
@@ -306,11 +322,11 @@
     padding: 2px 4px;
     border-radius: 4px;
     margin-left: 6px;
-    background-color: #f9f2f4;
+    background-color: color-mix(in oklab, var(--color-wash) 24%, transparent);
   }
 
   .tldr {
-    background: rgba(245, 213, 71, 0.08);
+    background: color-mix(in oklab, var(--color-wash) 22%, transparent);
     border-left: 4px solid var(--color-highlight);
     padding: 0.75rem 1rem;
     margin: 0 0 1.5rem;
@@ -367,7 +383,7 @@
     content: "";
     position: absolute;
     inset: 5px;
-    background-color: rgba(245, 213, 71, 0.12);
+    background-color: color-mix(in oklab, var(--color-wash) 28%, transparent);
     transform: skewY(-2.5deg);
     transition:
       transform 0.2s ease,
@@ -384,7 +400,7 @@
 
   & a:hover,
   & a:focus-visible {
-    color: #000;
+    color: var(--color-onHighlight);
   }
 
   & a:visited {
@@ -469,7 +485,7 @@
 
   &:hover,
   &:focus-visible {
-    color: #000;
+    color: var(--color-onHighlight);
     background-color: var(--color-highlight);
     border-color: var(--color-highlight);
     transform: translate(-1px, -1px);
@@ -480,13 +496,13 @@
   &:focus-visible .nav-chip__bracket,
   &:hover .nav-chip__label,
   &:focus-visible .nav-chip__label {
-    color: #000;
+    color: var(--color-onHighlight);
     opacity: 1;
   }
 
   &:focus-visible {
     box-shadow:
-      inset 0 0 0 1px #000,
+      inset 0 0 0 1px var(--color-ink),
       2px 2px 0 0 color-mix(in oklab, var(--color-highlight) 60%, transparent);
   }
 
@@ -543,13 +559,13 @@
   }
 
   .prose pre {
-    background-color: #002b36 !important;
+    background-color: var(--color-codeBlockBg) !important;
     border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
     border-radius: 0.25rem;
   }
 
   .prose :is(h1, h2, h3, h4) code {
-    color: #1a2f38;
+    color: var(--color-codeText);
   }
 
   .post-link:visited {
@@ -569,7 +585,7 @@
     --tw-prose-invert-links: var(--color-highlight);
     --tw-prose-invert-bold: var(--color-white);
     --tw-prose-invert-quotes: var(--text);
-    --tw-prose-code: #1a2f38;
+    --tw-prose-code: var(--color-codeText);
 
     & a {
       position: relative;
@@ -586,7 +602,7 @@
     }
 
     & strong {
-      background-color: rgba(245, 213, 71, 0.14);
+      background-color: color-mix(in oklab, var(--color-wash) 30%, transparent);
       font-weight: 800;
       padding: 0 0.12em;
     }
@@ -602,9 +618,9 @@ html .pagefind-shell .pagefind-ui {
   --pagefind-ui-scale: 1;
   --pagefind-ui-primary: var(--color-highlight);
   --pagefind-ui-text: var(--color-text);
-  --pagefind-ui-background: color-mix(in oklab, var(--color-bg) 76%, black);
+  --pagefind-ui-background: color-mix(in oklab, var(--color-bg) 76%, var(--color-recessed));
   --pagefind-ui-border: color-mix(in oklab, var(--color-text) 22%, transparent);
-  --pagefind-ui-tag: color-mix(in oklab, var(--color-highlight) 12%, transparent);
+  --pagefind-ui-tag: color-mix(in oklab, var(--color-wash) 24%, transparent);
   --pagefind-ui-border-width: 1px;
   --pagefind-ui-border-radius: 2px;
   --pagefind-ui-font: "JetBrains Mono", monospace;
@@ -620,11 +636,11 @@ html .pagefind-shell .pagefind-ui {
   min-height: 3.5rem;
   color: var(--color-white);
   caret-color: var(--color-highlight);
-  background: color-mix(in oklab, var(--color-bg) 72%, black);
+  background: color-mix(in oklab, var(--color-bg) 72%, var(--color-recessed));
   border-color: color-mix(in oklab, var(--color-text) 28%, transparent);
   border-radius: 2px;
   font-size: 1rem;
-  box-shadow: 3px 3px 0 color-mix(in oklab, black 24%, transparent);
+  box-shadow: 3px 3px 0 var(--color-shadow);
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -650,7 +666,7 @@ html .pagefind-shell .pagefind-ui {
 
 :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-clear:hover,
 :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__search-clear:focus-visible {
-  color: #000;
+  color: var(--color-onHighlight);
   background: var(--color-highlight);
   outline: none;
 }
@@ -719,7 +735,7 @@ html .pagefind-shell .pagefind-ui {
 
 :is(#pagefind-ui-page, #pagefind-ui-root) mark {
   padding-inline: 0.12em;
-  color: #000;
+  color: var(--color-onHighlight);
   background: var(--color-highlight);
   border-radius: 1px;
 }
@@ -742,7 +758,7 @@ html .pagefind-shell .pagefind-ui {
 
 :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__button:hover,
 :is(#pagefind-ui-page, #pagefind-ui-root) .pagefind-ui__button:focus-visible {
-  color: #000;
+  color: var(--color-onHighlight);
   background: var(--color-highlight);
   border-color: var(--color-highlight);
   outline: none;
