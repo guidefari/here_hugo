@@ -19,14 +19,14 @@ const recent = entries
 
 <div class="home-index max-w-7xl pt-2 lg:pt-10 flex flex-col gap-12 font-mono">
   <section>
-    <h2 class="m-0 mb-4 text-xs font-normal text-text/40">featured</h2>
+    <h2 class="m-0 mb-4 text-xs font-normal text-text/70">featured</h2>
     <ul class="m-0 p-0 flex flex-col gap-3">
       {featured.map((entry) => (
         <li class="list-none">
           <a href={entry.permalink} class="group flex items-baseline gap-3 no-underline">
             <span class="post-link text-base font-bold text-highlight group-hover:text-white transition-colors">{entry.title}</span>
             <span class="grow border-b border-dotted border-text/20 translate-y-[-3px]"></span>
-            {entry.date && <span class="shrink-0 text-xs text-text/40">{formatDate(entry.date, { month: "short", year: "numeric" })}</span>}
+            {entry.date && <span class="shrink-0 text-xs text-text/70">{formatDate(entry.date, { month: "short", year: "numeric" })}</span>}
             {entry.draft && <span class="text-red-400 text-xs">DRAFT</span>}
           </a>
         </li>
@@ -35,14 +35,14 @@ const recent = entries
   </section>
 
   <section>
-    <h2 class="m-0 mb-4 text-xs font-normal text-text/40">recent</h2>
+    <h2 class="m-0 mb-4 text-xs font-normal text-text/70">recent</h2>
     <ul class="m-0 p-0 flex flex-col gap-3">
       {recent.map((entry) => (
         <li class="list-none">
           <a href={entry.permalink} class="group flex items-baseline gap-3 no-underline">
             <span class="post-link text-sm text-text/85 group-hover:text-highlight transition-colors">{entry.title}</span>
             <span class="grow border-b border-dotted border-text/15 translate-y-[-3px]"></span>
-            <span class="shrink-0 text-xs text-text/40">
+            <span class="shrink-0 text-xs text-text/70">
               {entry.section === "media" ? "media" : entry.section}
               {entry.date && <>&nbsp;&middot;&nbsp;{formatDate(entry.date, { month: "short", day: "numeric" })}</>}
             </span>
@@ -54,15 +54,15 @@ const recent = entries
   </section>
 
   <section>
-    <h2 class="m-0 mb-1 text-xs font-normal text-text/40">elsewhere</h2>
-    <p class="m-0 mb-4 text-xs text-text/40">things I make outside this site</p>
+    <h2 class="m-0 mb-1 text-xs font-normal text-text/70">elsewhere</h2>
+    <p class="m-0 mb-4 text-xs text-text/70">things I make outside this site</p>
     <ul class="m-0 p-0 flex flex-col gap-3">
       {elsewhereLinks.map((link) => (
         <li class="list-none">
           <a href={link.href} target="_blank" rel="noopener noreferrer" class="group flex items-baseline gap-3 no-underline">
             <span class="text-sm text-highlight group-hover:text-white transition-colors">&rarr; {link.label}</span>
             <span class="grow border-b border-dotted border-text/15 translate-y-[-3px]"></span>
-            <span class="shrink-0 text-xs text-text/40">{link.blurb} &#8599;</span>
+            <span class="shrink-0 text-xs text-text/70">{link.blurb} &#8599;</span>
           </a>
         </li>
       ))}
