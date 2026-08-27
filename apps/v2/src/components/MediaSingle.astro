@@ -25,7 +25,7 @@ const showCta = mediaUrl && mediaType !== "youtube";
             {entry.data.creator && <span>· via {entry.data.creator}</span>}
           </span>
           {showCta && (
-            <a class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold no-underline border rounded-sm border-text/30 text-highlight bg-text/4 hover:bg-highlight hover:text-black transition-colors" href={mediaUrl} target="_blank" rel="noopener">
+            <a class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold no-underline border rounded-sm border-text/30 text-highlight bg-text/4 hover:bg-highlight hover:text-onHighlight transition-colors" href={mediaUrl} target="_blank" rel="noopener">
               <span aria-hidden="true">↗</span>
               {ctaLabel}
             </a>

@@ -25,8 +25,8 @@ const postCount = tags.reduce((total, tag) => total + tag.count, 0);
     <ul id="tag-list" class="grid grid-cols-1 gap-3 p-0 m-0 list-none sm:grid-cols-2 lg:grid-cols-3">
       {tags.map((tag) => (
         <li data-tag-name={tag.slug}>
-          <a class="group flex items-center justify-between gap-4 px-4 py-3 font-mono text-base font-semibold no-underline transition border rounded-sm border-text/25 bg-text/[0.03] text-text hover:-translate-y-0.5 hover:border-highlight hover:bg-highlight hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight" href={`/tags/${tag.slug}/`}>
-            <span class="min-w-0 truncate"><span class="text-highlight/75 group-hover:text-black">#</span>{tag.label}</span>
+          <a class="group flex items-center justify-between gap-4 px-4 py-3 font-mono text-base font-semibold no-underline transition border rounded-sm border-text/25 bg-text/[0.03] text-text hover:-translate-y-0.5 hover:border-highlight hover:bg-highlight hover:text-onHighlight focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight" href={`/tags/${tag.slug}/`}>
+            <span class="min-w-0 truncate"><span class="text-highlight/75 group-hover:text-onHighlight">#</span>{tag.label}</span>
             <span class="shrink-0 rounded-sm border border-current px-2 py-0.5 text-xs">{tag.count}</span>
           </a>
         </li>

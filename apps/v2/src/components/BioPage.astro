@@ -43,7 +43,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
             <p id="bio-use-case" class="mt-1 text-xs leading-6 text-accentText"></p>
           </div>
 
-          <button id="copy-bio-button" type="button" class="inline-flex shrink-0 items-center gap-2 border border-highlight bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight transition hover:bg-highlight hover:text-black">
+          <button id="copy-bio-button" type="button" class="inline-flex shrink-0 items-center gap-2 border border-highlight bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight transition hover:bg-highlight hover:text-onHighlight">
             <span class="bio-copy-icon" aria-hidden="true">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             </span>
@@ -131,7 +131,7 @@ const portraits = Array.isArray(entry.data.portraits) ? entry.data.portraits : [
         checkIcon?.classList.toggle("hidden", !copied);
         copyLabel.textContent = copied ? "Copied!" : "Copy bio";
         copyButton.classList.toggle("bg-highlight", copied);
-        copyButton.classList.toggle("text-black", copied);
+        copyButton.classList.toggle("text-onHighlight", copied);
         copyButton.classList.toggle("bg-highlight/10", !copied);
         copyButton.classList.toggle("text-highlight", !copied);
       };
