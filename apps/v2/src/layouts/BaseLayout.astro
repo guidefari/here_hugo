@@ -38,6 +38,19 @@ const {
     </div>
 
     <SearchModal />
+    <script>
+      for (const heading of document.querySelectorAll("article :is(h2, h3, h4, h5, h6)[id]")) {
+        if (heading.querySelector(":scope > .heading-anchor")) continue;
+
+        const link = document.createElement("a");
+        link.className = "heading-anchor";
+        link.href = `#${heading.id}`;
+        link.setAttribute("aria-label", heading.textContent?.trim() ?? "Heading");
+
+        while (heading.firstChild) link.append(heading.firstChild);
+        heading.append(link);
+      }
+    </script>
     <script is:inline>
       (() => {
         if (window.__navSoundBound) return;

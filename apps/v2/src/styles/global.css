@@ -568,6 +568,34 @@
     color: var(--color-codeText);
   }
 
+  .prose :is(h2, h3, h4, h5, h6) > .heading-anchor {
+    color: inherit;
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+
+    &::after {
+      color: var(--color-highlight);
+      content: "#";
+      font-size: 0.65em;
+      margin-inline-start: 0.25em;
+      opacity: 0;
+      transition: opacity 100ms var(--ease-in);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-highlight);
+      outline-offset: 0.15em;
+    }
+  }
+
   .post-link:visited {
     color: var(--color-accentText);
   }

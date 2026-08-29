@@ -26,7 +26,7 @@ const image = entry.images[0];
       <span class="text-xs text-accentText/60">
         {entry.data.creator && <span>{entry.data.creator}</span>}
       </span>
-        <time>{formatDate(entry.date, { month: "short", year: "2-digit" })}</time>
+        <time>{formatDate(entry.date, { month: "short", day: "numeric" })}</time>
     </div>
   </a>
 </li>
