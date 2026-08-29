@@ -8,6 +8,7 @@ node_modules
 **/.DS_Store
 .hugo_build.lock
 .obsidian
+.pi/tasks
 **/.smart-connections
 .sst
 .alchemy

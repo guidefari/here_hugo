@@ -283,22 +283,17 @@
     @apply object-cover w-full rounded-md sm:h-32 sm:w-32;
   }
 
-  figure:has(a) figcaption {
-    text-decoration: none;
-    text-shadow: 1px 1px 0 var(--color-emboss);
-    background-image: linear-gradient(
-      to right,
-      var(--color-hovercolor) 50%,
-      var(--color-ink) 50%
-    );
-    background-position: 0;
-    background-size: 200%;
-    transition: all 0.4s;
-    @apply text-lg leading-7 rounded-tl-sm rounded-br-sm w-min;
+  figcaption {
+    color: var(--color-accentText);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    text-align: center;
   }
 
-  figure:has(a):hover figcaption {
-    background-position: -100%;
+  figcaption a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
   }
 
   figcaption h4 {
