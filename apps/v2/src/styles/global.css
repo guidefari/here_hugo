@@ -549,6 +549,12 @@
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer utilities {
   .prose :is(h1, h2, h3, h4) {
     text-wrap: balance;
