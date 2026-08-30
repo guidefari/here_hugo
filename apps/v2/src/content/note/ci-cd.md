@@ -24,9 +24,8 @@ This note captures some observations, questions, motivations etc etc.
 # Vercel/Netlify
 - Still the best for quick prototyping
 - I've been defaulting to Vercel & NextJS for a while now, and mostly have no problems. It's a set & forget type thing
-- Just keep an eye out
-<figure><img src="https://d20tmfka7s58bt.cloudfront.net/bills.png" alt="Many such cases" loading="lazy"><figcaption>Many such cases</figcaption></figure>
 - General principle is these get super pricey at scale. Keep that in mind as you build your app & you should be fine
+<figure><img src="https://d20tmfka7s58bt.cloudfront.net/bills.png" alt="Many such cases" loading="lazy"><figcaption>Many such cases</figcaption></figure>
 
 # [SST](https://sst.dev)
 - Don't even remember how I found this at this point, probs while lurking on Twitter

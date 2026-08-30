@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCanonicalUrl, getEntriesBySection, getSectionInfo } from "../lib/content.mjs";
+import { getSeries } from "../lib/series.mjs";
 import YearGroupedList from "./YearGroupedList.astro";
 
 const { section } = Astro.props;
 const info = await getSectionInfo(section);
 const entries = await getEntriesBySection(section);
+const visibleEntries = [];
+
+for (const entry of entries) {
+  const seriesId = entry.data?.series;
+  if (!seriesId) {
+    visibleEntries.push(entry);
+    continue;
+  }
+
+  const series = await getSeries(seriesId);
+  if (!series?.hub || series.hub.permalink === entry.permalink) {
+    visibleEntries.push(entry);
+  }
+}
+
 const path = `/${section}/`;
 ---
 
@@ -16,6 +32,6 @@ const path = `/${section}/`;
       {info.description && <p class="max-w-2xl mt-4 text-text/75">{info.description}</p>}
     </div>
 
-    <YearGroupedList entries={entries} listId={`section-${section}-list`} showSection={false} />
+    <YearGroupedList entries={visibleEntries} listId={`section-${section}-list`} showSection={false} />
   </main>
 </BaseLayout>
