@@ -1,7 +1,7 @@
 ---
 title: "What is an Effect fiber?"
 date: 2026-09-07T21:17:02+02:00
-description: "A fiber is a running Effect that can be joined, interrupted, and supervised."
+description: "A fiber is a running Effect that can be joined, interrupted, or stopped with its parent."
 tags: [effect, typescript, concurrency]
 ---
 
@@ -29,11 +29,9 @@ If the child fails, `Fiber.join` fails with the same error.
 
 ## Fibers are not threads
 
-Fibers run on the normal JavaScript runtime, usually its single main thread. Starting a fiber gives you concurrency, not another CPU thread.
+Fibers run on the normal JavaScript runtime, usually its single main thread. Use a Worker, Worker Thread, or separate process for parallel CPU work.
 
-While one fiber waits for I/O, a timer, or another asynchronous operation, Effect can run another. A CPU-heavy synchronous loop still blocks every fiber.
-
-Use a Worker, Worker Thread, or separate process for parallel CPU work.
+While one fiber waits for I/O, a timer, or another asynchronous operation, Effect can run another. A CPU-heavy synchronous loop blocks every fiber.
 
 ## Interrupt work that is no longer useful
 
@@ -49,13 +47,13 @@ const program = Effect.gen(function*() {
 
 `Fiber.interrupt` asks the child to stop. It waits until the child has run its cleanup before it continues.
 
-That cleanup behavior is why fibers matter in the scoped-transactions example. An interrupted fiber can stop the transaction body while `withTransaction` rolls back and releases its connection.
+In the [scoped-transactions example](/effect-scoped-transactions/), interruption stops the transaction body while `withTransaction` rolls back and releases its connection.
 
-## Fibers are structured by default
+## Child fibers stop with their parent
 
-`Effect.forkChild` creates a child of the current fiber. If the parent finishes or is interrupted, Effect supervises the child and ends it too.
+`Effect.forkChild` creates a child of the current fiber. If the parent finishes or is interrupted, Effect ends the child too.
 
-This prevents background work from silently surviving the operation that created it. Use a detached fiber only when work should outlive its caller.
+Background child work ends when the operation that started it ends. Use a detached fiber when the work should outlive its caller.
 
 ## References
 
