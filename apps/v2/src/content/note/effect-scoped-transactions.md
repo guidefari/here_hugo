@@ -6,7 +6,7 @@ tags: [effect, typescript, sql, transactions, concurrency]
 images: ["https://og.guidefari.com/og-image?title=Scoped%20transactions%20in%20Effect"]
 ---
 
-A scoped transaction ties a database transaction to a resource lifetime. Effect can interrupt the work inside the transaction while still ensuring that it commits or rolls back and releases its connection.
+A scoped transaction keeps a database transaction tied to the lifetime of its connection. Effect can interrupt the work inside the transaction while still ensuring that it commits or rolls back and releases the connection.
 
 [Effect v4 RC.112 release](https://github.com/Effect-TS/effect/releases/tag/effect%404.0.0-rc.112)
 
@@ -16,7 +16,7 @@ import { SqlClient } from "effect/unstable/sql"
 const result = sql.withTransaction(effect)
 ```
 
-There is no public `transactionScoped` or `withTransactionScoped` function. "Scoped transaction" describes how `withTransaction` manages the transaction and its connection.
+There is no public `transactionScoped` or `withTransactionScoped` function. "Scoped transaction" describes how `withTransaction` manages the transaction and connection.
 
 ## The problem with a manual transaction
 
@@ -46,13 +46,13 @@ const transfer = Effect.gen(function*() {
 }).pipe(Effect.scoped)
 ```
 
-`Effect.scoped` releases the reserved connection when the scope closes. It does not add the missing transaction rule: commit on success, rollback on every other exit.
+`Effect.scoped` releases the reserved connection when the scope closes. It does not add the missing transaction rule: commit on success and roll back on every other exit.
 
-If the [fiber](/bliki/effect-fibers/) is interrupted during the sleep or second update, this program skips `COMMIT`. It also has no exit-sensitive rollback finalizer.
+If the [fiber](/bliki/effect-fibers/) is interrupted during the sleep or second update, this program skips `COMMIT`. It also has no rollback cleanup that checks how the effect ended.
 
 ## Let `withTransaction` manage the transaction
 
-The safer version gives the transaction protocol to `SqlClient`:
+The safer version lets `SqlClient` handle the transaction steps:
 
 ```ts
 import { Effect } from "effect"
@@ -80,26 +80,26 @@ const interruptionSafeTransfer = Effect.gen(function*() {
 })
 ```
 
-At the top transaction level, `withTransaction`:
+For a top-level transaction, `withTransaction`:
 
 1. creates a private `Scope`;
 2. reserves one connection in that scope;
 3. runs `BEGIN`;
 4. makes that connection available to queries in the transaction body;
-5. runs the body and captures its full `Exit`;
+5. runs the body and records its full `Exit`;
 6. runs `COMMIT` on success or `ROLLBACK` on failure, defect, or interruption;
 7. closes the scope and releases the connection.
 
 ## Interruptible work, uninterruptible cleanup
 
-The key is not to make the whole transaction uninterruptible.
+Do not make the whole transaction uninterruptible.
 
-`withTransaction` protects setup and cleanup from interruption while keeping the transaction body interruptible.
+`withTransaction` protects setup and cleanup from interruption while leaving the transaction body interruptible.
 
-This gives the useful split:
+That means:
 
 - the body can respond to cancellation, shutdown, or a timeout;
-- once it stops, commit or rollback and connection cleanup cannot be interrupted halfway through.
+- once it stops, commit or rollback and connection cleanup cannot be interrupted halfway through;
 
 For example:
 
@@ -145,27 +145,15 @@ const badTimedTransfer = Effect.gen(function*() {
 
 After 100 milliseconds, the timeout asks Effect to interrupt `badTimedTransfer`. The uninterruptible body ignores that request, waits five seconds, and runs the second update. Only then can the pending interruption take effect and let `withTransaction` roll back. The caller waited five seconds for a timeout set to 100 milliseconds.
 
-The same problem applies to a slow query or network call. `withTransaction` instead protects only the work needed to leave the database connection in a finished state.
+The same problem applies to a slow query or network call. `withTransaction` protects only the work needed to finish the database transaction and release the connection.
 
 Nested `withTransaction` calls use savepoints rather than independent transactions. [See when that happens and how failure behaves](/note/effect-nested-transactions/).
-
-## What interruption cannot promise
-
-[Fiber](/bliki/effect-fibers/) interruption is not proof that a database command never ran.
-
-The PostgreSQL RC driver makes a best-effort cancellation request for a running query with `pg_cancel_backend`. That request can race with the query finishing, and cancellation itself can fail. Other drivers may behave differently.
-
-Cancelling the application does not guarantee that the database stopped the query. The transaction is the safety boundary: until `COMMIT`, its writes are not permanent.
-
-When the body is interrupted, `withTransaction` sends `ROLLBACK` before it releases the connection. That discards every write made in the transaction, even if the database finished a query after cancellation was requested.
-
-It cannot undo a transaction that already committed. There is also an uncertain edge near commit: once the body succeeds and the masked commit path begins, a pending interrupt does not change that chosen commit into a rollback. If a caller may retry after losing the response, use an idempotency key or a database uniqueness rule.
 
 ## The rule of thumb
 
 Use `SqlClient.withTransaction` as the transaction boundary. Keep remote calls and long waits outside it where possible.
 
-A scope handles the connection lifetime. `withTransaction` adds the database rule that the scope alone lacks: every exit ends in commit or rollback before the connection is released.
+A scope handles the connection lifetime. `withTransaction` adds the rule that the scope alone lacks: every exit commits or rolls back before the connection is released.
 
 The API is still prerelease and lives under `effect/unstable/sql`, so check it again when moving beyond `4.0.0-rc.112`.
 
