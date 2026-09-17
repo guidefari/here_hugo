@@ -566,6 +566,7 @@
   }
 
   .prose :is(h1, h2, h3, h4) code {
+    background-color: var(--color-codeBg);
     color: var(--color-codeText);
   }
 
