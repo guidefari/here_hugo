@@ -51,7 +51,7 @@ export default Alchemy.Stack(
           : `here-hugo-${stack.stage}-site`,
         main: "apps/v2/src/site-worker.ts",
         domain: isProduction ? zoneDomain : undefined,
-        url: !isProduction,
+        workersDev: !isProduction,
         compatibility: { date: compatibilityDate },
         assets: {
           directory: build.outdir,
@@ -67,7 +67,7 @@ export default Alchemy.Stack(
       main: "apps/og-image/dist/here_hugo_og_image/index.js",
       bundle: false,
       domain: isProduction ? ogDomain : undefined,
-      url: !isProduction,
+      workersDev: !isProduction,
       compatibility: { date: compatibilityDate },
       observability: {
         enabled: true,
@@ -103,7 +103,7 @@ export default Alchemy.Stack(
     const gpu = yield* Cloudflare.Worker("Gpu", {
       name: `here-hugo-${stack.stage}-gpu`,
       domain: isProduction ? gpuDomain : undefined,
-      url: !isProduction,
+      workersDev: !isProduction,
       compatibility: { date: compatibilityDate },
       assets: {
         directory: gpuBuild.outdir,
@@ -125,19 +125,19 @@ export default Alchemy.Stack(
       "DiscordCrosspostDatabase",
       {
         name: `here-hugo-${stack.stage}-discord-crosspost`,
-        migrationsDir: "apps/discord-crosspost/migrations",
+        migrations: "apps/discord-crosspost/migrations",
       },
     );
 
     yield* Cloudflare.Worker("DiscordCrosspost", {
       name: `here-hugo-${stack.stage}-discord-crosspost`,
       main: "apps/discord-crosspost/src/index.ts",
-      url: false,
+      workersDev: false,
       compatibility: { date: compatibilityDate },
       crons: ["*/5 * * * *"],
       env: {
         DB: discordCrosspostDatabase,
-        DISCORD_WEBHOOK_URL: Config.redacted("DISCORD_WEBHOOK_URL"),
+        DISCORD_WEBHOOK_URL: Config.Redacted("DISCORD_WEBHOOK_URL"),
       },
       observability: {
         enabled: true,

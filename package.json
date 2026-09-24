@@ -10,7 +10,9 @@
     "packages/*"
   ],
   "overrides": {
-    "@effect/platform-node-shared": "4.0.0-rc.109"
+    "@effect/platform-node-shared": "4.0.0-rc.116",
+    "@effect/sql-d1": "4.0.0-rc.116",
+    "@effect/sql-sqlite-do": "4.0.0-rc.116"
   },
   "scripts": {
     "build": "cd apps/v2 && bun run build",
@@ -38,13 +40,13 @@
   },
   "homepage": "https://github.com/guidefari/here_hugo#readme",
   "dependencies": {
-    "@effect/platform-bun": "4.0.0-rc.109",
-    "@effect/platform-node": "4.0.0-rc.109",
-    "alchemy": "2.0.0-beta.72",
-    "effect": "4.0.0-rc.109"
+    "@effect/platform-bun": "4.0.0-rc.116",
+    "@effect/platform-node": "4.0.0-rc.116",
+    "alchemy": "2.0.0-beta.79",
+    "effect": "4.0.0-rc.116"
   },
   "devDependencies": {
-    "@effect/vitest": "4.0.0-rc.109",
+    "@effect/vitest": "4.0.0-rc.116",
     "@types/bun": "1.3.14",
     "vitest": "4.1.0"
   }
