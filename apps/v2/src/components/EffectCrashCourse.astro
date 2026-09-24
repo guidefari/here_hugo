@@ -7,7 +7,7 @@ const { entry } = Astro.props;
 const fm = entry.data ?? {};
 const stations = Array.isArray(fm.stations) ? fm.stations : [];
 const referenceRepos = Array.isArray(fm.reference_repos) ? fm.reference_repos : [];
-const channels = Array.isArray(fm.channels) ? fm.channels : [];
+const intro = typeof fm.intro === "string" ? fm.intro : "";
 
 const isExternal = (url) => typeof url === "string" && /^https?:\/\//.test(url);
 
@@ -59,7 +59,7 @@ const typeClass = (type) => typeStyles[type] ?? typeStyles.link;
 
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-const tabs = [
+const sections = [
   ...stations.map((s) => ({ id: slugify(s.title), label: s.title, kind: "station" as const, data: s })),
   { id: "reference", label: "Reference", kind: "reference" as const, data: null },
 ];
@@ -72,249 +72,207 @@ const tabs = [
   canonical={getCanonicalUrl(entry.permalink)}
   noindex={fm.noindex === true}
 >
-  <main class="flex flex-col mx-auto w-full max-w-3xl px-4 lg:px-6 py-12">
+  <main class="mx-auto w-full max-w-5xl px-4 lg:px-6 py-12">
 
-    <header class="mb-10">
+    <header class="mb-12">
       <h1 class="text-4xl md:text-5xl font-bold text-white m-0 mb-4 tracking-tight">
         {entry.title}
       </h1>
       {entry.description && (
         <p class="text-base text-accentText max-w-2xl leading-relaxed m-0">{entry.description}</p>
       )}
+      {intro && (
+        <p class="text-sm text-accentText/70 max-w-2xl leading-relaxed mt-4 whitespace-pre-line m-0">{intro}</p>
+      )}
     </header>
 
-    <div class="relative mb-8 -mx-4 lg:-mx-6">
-      <nav
-        class="flex gap-1 border-b border-white/10 overflow-x-auto no-scrollbar scroll-px-4 snap-x px-4 lg:px-6"
-        role="tablist"
-        id="effect-tabs"
-      >
-        {tabs.map((tab, i) => (
-          <button
-            role="tab"
-            id={`tab-${tab.id}`}
-            aria-controls={`panel-${tab.id}`}
-            aria-selected={i === 0 ? "true" : "false"}
-            data-tab={tab.id}
-            class:list={[
-              "snap-start px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px cursor-pointer",
-              i === 0
-                ? "border-highlight text-highlight"
-                : "border-transparent text-accentText/60 hover:text-accentText",
-            ]}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </nav>
-      <div
-        class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-bg to-transparent lg:hidden"
-        aria-hidden="true"
-      ></div>
-    </div>
+    <div class="lg:grid lg:grid-cols-[180px_1fr] lg:gap-12">
 
-    {tabs.map((tab, i) => (
-      <div
-        role="tabpanel"
-        id={`panel-${tab.id}`}
-        aria-labelledby={`tab-${tab.id}`}
-        data-panel={tab.id}
-        class={i === 0 ? "" : "hidden"}
-      >
-        {tab.kind === "station" && (
-          <div>
-            {tab.data.blurb && (
-              <p class="text-sm text-accentText/80 mb-6 max-w-2xl leading-relaxed">{tab.data.blurb}</p>
-            )}
-            <ul class="flex flex-col gap-2 list-none p-0 m-0">
-              {tab.data.items.map((item) => {
-                const thumbnail = thumbnailForItem(item);
-                return (
-                  <li>
-                    <a
-                      href={item.url}
-                      target={isExternal(item.url) ? "_blank" : undefined}
-                      rel={isExternal(item.url) ? "noopener noreferrer" : undefined}
-                      class="flex items-start gap-3 px-4 py-3 border border-white/5 hover:border-white/15 no-underline transition-colors group"
-                    >
-                      <div class="w-24 aspect-video shrink-0 overflow-hidden rounded-sm border border-white/10 bg-white/5">
-                        {thumbnail ? (
-                          <img
-                            src={thumbnail}
-                            alt=""
-                            class="w-full h-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        ) : (
-                          <div class="w-full h-full flex items-end justify-start p-2 bg-gradient-to-br from-white/10 to-transparent">
-                            <span class="text-[10px] font-mono tracking-wider text-text/70 uppercase">
-                              {item.type}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                      <div class="flex-1 min-w-0">
-                        <h3 class="text-sm font-semibold text-white m-0 leading-snug group-hover:text-highlight transition-colors">
-                          {item.title}
-                        </h3>
-                        {item.source && (
-                          <p class="text-[11px] text-accentText/60 m-0 mt-0.5 font-mono truncate">
-                            {item.source}
-                          </p>
-                        )}
-                        {item.note && (
-                          <p class="text-[12px] text-text/70 m-0 mt-1.5 leading-snug">{item.note}</p>
-                        )}
-                      </div>
-                      <span
-                        class={`shrink-0 font-mono text-[9px] tracking-wider px-1.5 py-0.5 border self-start mt-0.5 ${typeClass(item.type)}`}
-                      >
-                        {item.type}
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        )}
+      <aside class="hidden lg:block">
+        <nav
+          class="sticky top-24 flex flex-col gap-0.5"
+          id="effect-nav"
+          aria-label="Sections"
+        >
+          {sections.map((s) => (
+            <a
+              href={`#${s.id}`}
+              data-nav={s.id}
+              class="group flex items-baseline gap-2.5 py-1.5 px-3 -mx-3 text-sm no-underline rounded-sm border-l-2 border-transparent text-accentText/50 hover:text-accentText transition-colors"
+            >
+              <span class="leading-snug">{s.label}</span>
+            </a>
+          ))}
+        </nav>
+      </aside>
 
-        {tab.kind === "reference" && (
-          <div class="flex flex-col gap-10">
-            {referenceRepos.length > 0 && (
-              <div>
-                <h2 class="text-lg font-bold text-white m-0 mb-1 tracking-tight">Repos worth reading</h2>
-                <p class="text-sm text-accentText/80 mb-4 max-w-2xl leading-relaxed">
-                  Real codebases using Effect in production.
-                </p>
-                <ul class="grid gap-2 list-none p-0 m-0 sm:grid-cols-2">
-                  {referenceRepos.map((repo) => (
-                    <li>
-                      <a
-                        href={repo.url}
-                        target={isExternal(repo.url) ? "_blank" : undefined}
-                        rel={isExternal(repo.url) ? "noopener noreferrer" : undefined}
-                        class="flex items-start gap-3 px-4 py-3 border border-white/5 hover:border-white/15 no-underline transition-colors group"
-                      >
-                        <div class="w-20 aspect-video shrink-0 overflow-hidden rounded-sm border border-white/10 bg-white/5">
-                          <img
-                            src={thumbnailForLink(repo)}
-                            alt=""
-                            class="w-full h-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
-                        <div class="flex-1 min-w-0">
-                          <h3 class="text-sm font-semibold text-white m-0 mb-1 font-mono group-hover:text-highlight transition-colors">
-                            {repo.name}
-                          </h3>
-                          {repo.blurb && (
-                            <p class="text-[12px] text-text/70 m-0 leading-relaxed">{repo.blurb}</p>
-                          )}
-                        </div>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div>
-              <h2 class="text-lg font-bold text-white m-0 mb-3 tracking-tight">
-                My Effect writing
-              </h2>
-              <a
-                href="/tags/effect"
-                class="inline-flex items-center gap-2 border border-highlight bg-highlight/10 px-4 py-2.5 text-sm font-mono font-semibold text-highlight no-underline transition hover:bg-highlight hover:text-onHighlight"
-              >
-                view all effect content
-              </a>
+      <div class="flex flex-col gap-16 min-w-0">
+        {sections.map((s) => (
+          <section id={s.id} data-section={s.id} class="scroll-mt-24">
+            <div class="flex items-baseline gap-3 mb-1">
+              <span class="h-4 w-1 bg-highlight rounded-full self-center" aria-hidden="true"></span>
+              <h2 class="text-2xl font-bold text-white m-0 tracking-tight">{s.label}</h2>
             </div>
 
-            {channels.length > 0 && (
+            {s.kind === "station" && (
               <div>
-                <h2 class="text-lg font-bold text-white mb-1 tracking-tight">Channels</h2>
-                <p class="text-sm text-accentText/80 mb-4 max-w-2xl leading-relaxed">
-                  Where the team and community live.
-                </p>
-                <ul class="grid gap-2 list-none p-0 m-0 sm:grid-cols-2">
-                  {channels.map((ch) => (
-                    <li>
-                      <a
-                        href={ch.url}
-                        target={isExternal(ch.url) ? "_blank" : undefined}
-                        rel={isExternal(ch.url) ? "noopener noreferrer" : undefined}
-                        class="flex items-start gap-3 px-4 py-3 border border-white/5 hover:border-white/15 no-underline transition-colors group"
-                      >
-                        <div class="w-20 aspect-video shrink-0 overflow-hidden rounded-sm border border-white/10 bg-white/5">
-                          <img
-                            src={thumbnailForLink(ch)}
-                            alt=""
-                            class="w-full h-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
-                        <div class="flex-1 min-w-0">
-                          <h3 class="text-sm font-semibold text-white m-0 mb-1 font-mono group-hover:text-highlight transition-colors">
-                            {ch.name}
-                          </h3>
-                          {ch.blurb && (
-                            <p class="text-[12px] text-text/70 m-0 leading-relaxed">{ch.blurb}</p>
-                          )}
-                        </div>
-                      </a>
-                    </li>
-                  ))}
+                {s.data.blurb && (
+                  <p class="text-sm text-accentText/80 mb-6 max-w-2xl leading-relaxed">{s.data.blurb}</p>
+                )}
+                <ul class="flex flex-col gap-2 list-none p-0 m-0">
+                  {s.data.items.map((item) => {
+                    const thumbnail = thumbnailForItem(item);
+                    return (
+                      <li>
+                        <a
+                          href={item.url}
+                          target={isExternal(item.url) ? "_blank" : undefined}
+                          rel={isExternal(item.url) ? "noopener noreferrer" : undefined}
+                          class="flex items-start gap-3 px-4 py-3 border border-white/5 hover:border-white/15 no-underline transition-colors group"
+                        >
+                          <div class="w-24 aspect-video shrink-0 overflow-hidden rounded-sm border border-white/10 bg-white/5">
+                            {thumbnail ? (
+                              <img
+                                src={thumbnail}
+                                alt=""
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            ) : (
+                              <div class="w-full h-full flex items-end justify-start p-2 bg-gradient-to-br from-white/10 to-transparent">
+                                <span class="text-[10px] font-mono tracking-wider text-text/70 uppercase">
+                                  {item.type}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-semibold text-white m-0 leading-snug group-hover:text-highlight transition-colors">
+                              {item.title}
+                            </h3>
+                            {item.source && (
+                              <p class="text-[11px] text-accentText/60 m-0 mt-0.5 font-mono truncate">
+                                {item.source}
+                              </p>
+                            )}
+                            {item.note && (
+                              <p class="text-[12px] text-text/70 m-0 mt-1.5 leading-snug">{item.note}</p>
+                            )}
+                          </div>
+                          <span
+                            class={`shrink-0 font-mono text-[9px] tracking-wider px-1.5 py-0.5 border self-start mt-0.5 ${typeClass(item.type)}`}
+                          >
+                            {item.type}
+                          </span>
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
+                {s.data.cta && (
+                  <a
+                    href={s.data.cta.url}
+                    class="group inline-flex items-center gap-1.5 mt-5 text-sm font-mono text-accentText/80 no-underline hover:text-highlight transition-colors"
+                  >
+                    <span>{s.data.cta.label}</span>
+                    <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+                  </a>
+                )}
               </div>
             )}
-          </div>
-        )}
+
+            {s.kind === "reference" && (
+              <div class="flex flex-col gap-10 mt-4">
+                {referenceRepos.length > 0 && (
+                  <div>
+                    <h3 class="text-base font-bold text-white m-0 mb-1 tracking-tight">Repos worth reading</h3>
+                    <p class="text-sm text-accentText/80 mb-4 max-w-2xl leading-relaxed">
+                      Real codebases using Effect in production.
+                    </p>
+                    <ul class="grid gap-2 list-none p-0 m-0 sm:grid-cols-2">
+                      {referenceRepos.map((repo) => (
+                        <li>
+                          <a
+                            href={repo.url}
+                            target={isExternal(repo.url) ? "_blank" : undefined}
+                            rel={isExternal(repo.url) ? "noopener noreferrer" : undefined}
+                            class="flex items-start gap-3 px-4 py-3 border border-white/5 hover:border-white/15 no-underline transition-colors group"
+                          >
+                            <div class="w-20 aspect-video shrink-0 overflow-hidden rounded-sm border border-white/10 bg-white/5">
+                              <img
+                                src={thumbnailForLink(repo)}
+                                alt=""
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            </div>
+                            <div class="flex-1 min-w-0">
+                              <h4 class="text-sm font-semibold text-white m-0 mb-1 font-mono group-hover:text-highlight transition-colors">
+                                {repo.name}
+                              </h4>
+                              {repo.blurb && (
+                                <p class="text-[12px] text-text/70 m-0 leading-relaxed">{repo.blurb}</p>
+                              )}
+                            </div>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div>
+                  <h3 class="text-base font-bold text-white m-0 mb-1 tracking-tight">My Effect writing</h3>
+                  <p class="text-sm text-accentText/80 mb-3 max-w-2xl leading-relaxed">
+                    Notes, deep dives, and everything else I've published on Effect.
+                  </p>
+                  <a
+                    href="/tags/effect"
+                    class="group inline-flex items-center gap-1.5 text-sm font-mono text-accentText/80 no-underline hover:text-highlight transition-colors"
+                  >
+                    <span>view all effect content</span>
+                    <span class="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            )}
+          </section>
+        ))}
       </div>
-    ))}
+    </div>
   </main>
 
   <script is:inline>
     (function () {
-      var tabs = document.querySelectorAll("[role=tab]");
-      var panels = document.querySelectorAll("[role=tabpanel]");
+      var navLinks = document.querySelectorAll("[data-nav]");
+      var byId = {};
+      navLinks.forEach(function (l) { byId[l.dataset.nav] = l; });
 
-      function activate(id) {
-        tabs.forEach(function (t) {
-          var match = t.dataset.tab === id;
-          t.setAttribute("aria-selected", match ? "true" : "false");
-          t.classList.toggle("border-highlight", match);
-          t.classList.toggle("text-highlight", match);
-          t.classList.toggle("border-transparent", !match);
-          t.classList.toggle("text-accentText/60", !match);
-        });
-        panels.forEach(function (p) {
-          p.classList.toggle("hidden", p.dataset.panel !== id);
+      var activeClasses = ["text-highlight", "border-highlight"];
+      var idleClasses = ["text-accentText/50", "border-transparent"];
+
+      function setActive(id) {
+        navLinks.forEach(function (l) {
+          var on = l.dataset.nav === id;
+          activeClasses.forEach(function (c) { l.classList.toggle(c, on); });
+          idleClasses.forEach(function (c) { l.classList.toggle(c, !on); });
         });
       }
 
-      tabs.forEach(function (t) {
-        t.addEventListener("click", function () {
-          var id = t.dataset.tab;
-          activate(id);
-          history.replaceState(null, "", "#" + id);
+      var sections = document.querySelectorAll("[data-section]");
+      var current = "";
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            current = e.target.dataset.section;
+            setActive(current);
+          }
         });
-      });
+      }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
 
-      var hash = location.hash.slice(1);
-      if (hash && document.querySelector('[data-panel="' + hash + '"]')) {
-        activate(hash);
-      }
-
-      window.addEventListener("hashchange", function () {
-        var h = location.hash.slice(1);
-        if (h && document.querySelector('[data-panel="' + h + '"]')) {
-          activate(h);
-        }
-      });
+      sections.forEach(function (s) { observer.observe(s); });
     })();
   </script>
 </BaseLayout>
