@@ -1,19 +1,18 @@
 ---
 title: "Effect-ts, in practice"
 date: 2026-02-04T09:09:29+02:00
-description: "Effect has been slowly infesting my Typescript codebases, let's explore why"
+description: "Why I'm using Effect in more of my TypeScript code"
 tags: [typescript, software-design, effect]
 images: ["https://og.guidefari.com/og-image?title=Effect-ts%2C%20in%20practice"]
 ---
 
 ## Why I'm more willing to pay the cost now
 
-[Effect](https://effect.website/) has a learning curve, and can produce code that feels more verbose than usual.
-But the barrier to entry is lower now thanks to LLMs. More expressive types, better feedback loop.
+[Effect](https://effect.website/) takes time to learn and often results in verbose code. But the barrier to entry is lower now thanks to LLMs. More expressive types, better feedback loop.
 
 ## Dependencies stop being vibes
 
-Dependency injection is a first class citizen around here.
+Effect makes dependency injection a first-class part of the code.
 
 ```ts
 import { Context, Effect, Layer } from "effect";
@@ -29,9 +28,9 @@ const DatabaseLive = Layer.succeed(Database, {
 });
 ```
 
-The service is just an identifier in the runtime's service map. The implementation lives in a `Layer`, and the program declares what it needs via the type system. Borrows some (favourable) ergonomics from a `C#` codebase.
+The service identifies an entry in the runtime's service map. A `Layer` supplies the implementation, while the program's type says what it needs. Some of this feels familiar from `C#`.
 
-The [invoicing app](https://github.com/guidefari/invoicing) is where it clicked. The same workflow runs against my live customer database in prod, and a dedicated test database in tests. Swap the layer, nothing else changes.
+The [invoicing app](https://github.com/guidefari/invoicing) is where it clicked. The same workflow runs against my live customer database in prod and a dedicated test database in tests. I swap the layer and leave the workflow alone.
 
 ```ts
 const DatabaseTest = Layer.succeed(Database, {
@@ -43,14 +42,11 @@ const result = await Effect.runPromise(
 );
 ```
 
-
 ## Errors become part of the design
 
-Plain async TypeScript hides a lot of error state if you aren't disciplined about how you handle errors. 
+Plain async TypeScript makes it easy to lose track of errors. `Promise<Invoice>` tells you what comes back when things go well. To find out what can fail, you have to read the functions it calls or wait for a failure at runtime. Matt Pocock has [a good talk on this](https://www.youtube.com/watch?v=S2GChOwivwQ).
 
-The signature `Promise<Invoice>` says nothing about what can go wrong. You find out at runtime, or by reading every function it calls. Matt Pocock has [a good talk on this](https://www.youtube.com/watch?v=S2GChOwivwQ).
-
-Every effect is `Effect<A, E, R>`: success, error, requirements. All three channels are tracked.
+An effect has the type `Effect<A, E, R>`. It tracks the result, possible errors and required services.
 
 ```ts
 class CustomerNotFound extends Data.TaggedError("CustomerNotFound")<{
@@ -73,11 +69,11 @@ In natural language, this reads as:
 - can fail with `CustomerNotFound` or `PaymentDeclined`, 
 - needs a `Database`.  
 
-Errors bubble through the `E` channel automatically. If a helper deep in the call stack adds `RateLimited` to its errors, the union widens all the way up until somebody handles it. No silent escape route.
+Errors pass through the `E` channel. If a helper deep in the call stack adds `RateLimited`, that error appears in the types above it until someone handles it.
 
 ## catchTag beats try/catch
 
-`catchTag` is where modularity wins. Each handler narrows the error union by name, and whatever you don't handle stays in the type:
+Each `catchTag` handler deals with one named error. The type keeps track of any errors left over:
 
 ```ts
 const program = createInvoice(input).pipe(
@@ -95,19 +91,15 @@ const program = createInvoice(input).pipe(
 return runtimeLive.runPromise(program);
 ```
 
-Compare to `try/catch`: one block, manual `instanceof` checks, no help from the compiler if you forget a case or if a new error tag shows up later.
+With `try/catch`, I'd check each error with `instanceof` myself. If I drop a `catchTag` handler, its error stays in the signature. A new tagged error upstream also shows up at call sites that need to handle it.
 
-With `catchTag`, drop a handler and the leftover error stays in the signature until something deals with it. Add a new tagged error upstream and every call site that doesn't handle it lights up.
-
-You deal with known failure modes at compile time instead of runtime. (`#shift-left`, as the exec's would say😆)
+I can deal with those failures while writing the code. (`#shift-left`, as the exec's would say😆)
 
 ## The runtime is where layers actually run
 
-An `Effect` is a description, not an execution. Nothing happens until you hand it to a runtime.
+Creating an `Effect` describes the work. A runtime runs it and manages the services and resources it needs, including DB pools, HTTP clients and OTel exporters.
 
-The runtime owns the service map, the scheduler, the fiber supervisor, and the lifecycle of any resources your layers acquired (DB pools, HTTP clients, OTel exporters).
-
-Before a runtime will accept a program, the `R` channel has to be empty. Forget a layer and you get a type error, not a 3am page:
+The `R` channel must be empty before a runtime can run a program. If I forget a layer, the compiler catches it:
 
 ```ts
 //        Type 'Database' is not assignable to type 'never'
@@ -117,9 +109,9 @@ Effect.runPromise(createInvoice(input));
 Effect.runPromise(createInvoice(input).pipe(Effect.provide(DatabaseLive)));
 ```
 
-Missing services show up the same way missing function arguments do. The test layer and the live layer satisfy the same constraint, so you can't ship a program that forgot one.
+Missing services show up much like missing function arguments. The test layer and live layer both satisfy the same requirement.
 
-For a one-off script, `Effect.runPromise(program.pipe(Effect.provide(MainLive)))` is enough. Effect builds an ad-hoc runtime, runs the program, tears it down. For a long-running app you want it built once and reused:
+For a one-off script, `Effect.runPromise(program.pipe(Effect.provide(MainLive)))` is enough. Effect builds a runtime for that run and tears it down afterward. In a long-running app, I build one runtime and reuse it:
 
 ```ts
 import { ManagedRuntime, Layer } from "effect";
@@ -129,11 +121,9 @@ const MainLive = Layer.mergeAll(DatabaseLive, EmailLive, ConfigLive, LoggerLive)
 export const runtimeLive = ManagedRuntime.make(MainLive);
 ```
 
-`runtimeLive.runPromise(program)` then runs the program against an already-constructed service map. The DB pool opens once at startup, not per request.
+`runtimeLive.runPromise(program)` uses that runtime. The DB pool opens once at startup. On shutdown, `runtimeLive.dispose()` runs each layer's release logic in order.
 
-On shutdown you call `runtimeLive.dispose()` and every layer's release logic runs in order.
-
-Tests skip the long-lived runtime and provide a layer inline. The program is the same, only the layer changes:
+In tests, I provide a layer inline:
 
 ```ts
 import { it, expect } from "@effect/vitest";
@@ -146,11 +136,11 @@ it.effect("creates an invoice", () =>
 );
 ```
 
-`it.effect` runs the effect for you and fails the test if the `R` channel isn't satisfied, so a test that forgot to provide `Database` doesn't compile, never mind run.
+`it.effect` runs the effect and fails the test if it fails. A test also needs to provide everything in the `R` channel, so one that forgets `Database` won't compile.
 
 I'm yet to fully lean into `it.effect`👀
 
-## Observability comes along for the ride
+## Tracing
 
 ```ts
 const sendInvoice = (invoiceId: string) =>
@@ -161,14 +151,13 @@ const sendInvoice = (invoiceId: string) =>
   );
 ```
 
-Wrapping work in spans is straightforward, and shipping those spans to a trace collector is too. The program already has a runtime, services, and a composition model. Tracing fits in instead of getting bolted on later.
+I can wrap work in spans and send them to a trace collector through the app's runtime. Tracing uses the same way of composing work that the rest of the program uses.
 
-## Some repo's to check out
+## Some repos to check out
 
 - [invoicing](https://github.com/guidefari/invoicing), the app I keep referencing
 - [gbfm](https://github.com/guidefari/gbfm), look inside `apps/vps`
 - [opensound](https://github.com/planetaryescape/opensound)
 - [Thanda's pokemon-app](https://github.com/guidefari/pokemon-app)
-
 - [lucas-barake/effect-monorepo](https://github.com/lucas-barake/effect-monorepo)
 - [overengineeringstudio/effect-utils](https://github.com/overengineeringstudio/effect-utils)
