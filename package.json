@@ -17,8 +17,9 @@
   "scripts": {
     "build": "cd apps/v2 && bun run build",
     "content:new": "bun run apps/content-cli/src/main.ts",
-    "content:check": "bun x tsc --project apps/content-cli/tsconfig.json",
-    "content:test": "bun x vitest run apps/content-cli/src",
+    "content:check": "bun x tsc --project apps/content-cli/tsconfig.json && bun run content:lint-tags",
+    "content:lint-tags": "bun run apps/content-cli/src/tag-lint-main.ts",
+    "content:test": "bun --bun x vitest run apps/content-cli/src",
     "build:v2": "cd apps/v2 && bun run build",
     "build:og": "bun run --cwd apps/og-image build",
     "build:gpu": "bun run --cwd apps/gpu build",
