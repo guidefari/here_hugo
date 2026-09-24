@@ -2,7 +2,7 @@
   "name": "here_hugo",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "bun@1.3.14",
+  "packageManager": "bun@1.4.2",
   "description": "- [ ] 404 page",
   "main": "index.js",
   "workspaces": [
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@effect/vitest": "4.0.0-rc.116",
-    "@types/bun": "1.3.14",
+    "@types/bun": "1.4.2",
     "vitest": "4.1.0"
   }
 }

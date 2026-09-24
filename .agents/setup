@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-readonly bun_version="1.3.14"
+readonly bun_version="1.4.2"
 readonly bun_bin="$HOME/.bun/bin"
 
 if [[ ! -x "$bun_bin/bun" ]] || [[ "$("$bun_bin/bun" --version)" != "$bun_version" ]]; then
