@@ -2,39 +2,26 @@
 title: "Learning Effect"
 date: 2026-06-20T10:00:00+02:00
 layout: "effect-course"
-description: "A crash course through Effect: videos, podcasts, docs, and repos that helped me learn it, in the order I'd take them."
+description: "A crash course through Effect: the videos, podcasts, docs, and repos that helped me learn it, grouped by what they're good for."
 featured: true
 tags: [effect]
 noindex: false
 images: ["https://og.guidefari.com/og-image?title=Learning%20Effect"]
 intro: |
-  A path through the resources that helped me learn Effect. The order is roughly
-  the order I'd take them in, but every section is independent: jump to whatever
-  fits where you are.
+  The resources that helped me learn Effect, grouped by what they're good for.
+  There's no set order: jump to whatever fits where you are.
 first_taste:
   caption: "This is the idea. The rest of the page is everything I read or watched to actually understand it."
   language: "ts"
 stations:
-  - number: "00"
-    title: "Orient"
-    blurb: "What Effect is, in plain language."
+  - title: "Watch & listen"
+    blurb: "The long-form stuff. Put it on in the background."
     items:
-      - type: article
-        title: "effect.website"
-        source: "Effectful"
-        url: "https://effect.website/"
-        note: "The landing page. The before/after code sample alone is the reason to keep going. There's also a 3-min intro video on the page that sets the tone."
-        thumbnail: "https://media.guidefari.com/effect-course-thumbnails/01-effect-website-og-index-png.png"
       - type: video
         title: "Effect 3.0: Production-Grade TypeScript"
         source: "Effect"
         url: "https://www.youtube.com/watch?v=ViSiXfBKElQ"
-        note: "A broad overview of Effect as a production TypeScript toolkit."
-
-  - number: "01"
-    title: "Watch & listen"
-    blurb: "The long-form stuff. Put it on in the background."
-    items:
+        note: "A broad overview of Effect as a production TypeScript toolkit. A good place to start."
       - type: podcast
         title: "Cause & Effect"
         source: "Hosted by Johannes Schickling"
@@ -100,8 +87,7 @@ stations:
         note: "Dax walks through the OpenCode codebase showing Schema, Services, PubSub, Telemetry, and HTTP patterns. I took notes on it, linked above."
         thumbnail: "https://media.guidefari.com/effect-course-thumbnails/05-i-ytimg-com-vi-hy279-a2fc4-hqdefault-jpg.jpg"
 
-  - number: "02"
-    title: "Learn the core"
+  - title: "Learn the core"
     blurb: "The handful of patterns you need before writing real code."
     items:
       - type: doc
@@ -110,11 +96,10 @@ stations:
         url: "https://effect.website/docs/v4/getting-started/introduction"
         thumbnail: "https://media.guidefari.com/effect-course-thumbnails/06-effect-website-og-docs-v4-getting-started-introduction-png.png"
       - type: code
-        title: "effect-smol (read the source)"
-        source: "github.com/Effect-TS/effect-smol"
-        url: "https://github.com/Effect-TS/effect-smol"
+        title: "Effect (read the source)"
+        source: "github.com/Effect-TS/effect"
+        url: "https://github.com/Effect-TS/effect"
         note: "The repo IS the docs. Skim the source before reaching for the website."
-        thumbnail: "https://media.guidefari.com/effect-course-thumbnails/07-opengraph-githubassets-com-1-effect-ts-effect-smol.png"
       - type: link
         title: "effect.solutions"
         url: "https://effect.solutions/"
@@ -132,9 +117,8 @@ stations:
         note: "Free text course that walks through the fundamentals."
         thumbnail: "https://media.guidefari.com/effect-course-thumbnails/10-www-typeonce-dev-static-images-course-effect-beginners-complete-getting-started-webp.webp"
 
-  - number: "03"
-    title: "Build something"
-    blurb: "Pick a project. Replace one layer at a time. See what breaks."
+  - title: "Go deeper"
+    blurb: "Longer reads and notes for once you're writing it daily. The repos to build against are in Reference."
     items:
       - type: note
         title: "Effect-ts, in practice"
@@ -142,33 +126,6 @@ stations:
         url: "/effective/"
         note: "My long-form take. DI, errors, the runtime, observability, with code."
         thumbnail: "https://media.guidefari.com/effect-course-thumbnails/11-og-guidefari-com-og-image-title-effect-ts-2c-20in-20practice.png"
-      - type: code
-        title: "invoicing"
-        source: "github.com/guidefari/invoicing"
-        url: "https://github.com/guidefari/invoicing"
-        note: "The app I keep referencing. Same workflow, swap the layer, prod and test."
-        thumbnail: "https://media.guidefari.com/effect-course-thumbnails/12-opengraph-githubassets-com-1-guidefari-invoicing.png"
-      - type: code
-        title: "gbfm (apps/vps)"
-        source: "github.com/guidefari/gbfm"
-        url: "https://github.com/guidefari/gbfm"
-        note: "The production app I work on. Effect everywhere: HTTP, cron, OTel."
-        thumbnail: "https://media.guidefari.com/effect-course-thumbnails/13-opengraph-githubassets-com-1-guidefari-gbfm.png"
-      - type: code
-        title: "Effect Module of the Week examples"
-        source: "github.com/guidefari/effect-module-of-the-week"
-        url: "https://github.com/guidefari/effect-module-of-the-week"
-        note: "Small runnable demos for PersistedQueue, RcMap, and RcRef."
-      - type: code
-        title: "efa-template"
-        source: "github.com/guidefari/efa-template"
-        url: "https://github.com/guidefari/efa-template"
-        note: "An Effect 4, Alchemy, and Foldkit starter with a Worker API and web app."
-
-  - number: "04"
-    title: "Go deeper"
-    blurb: "Once you're writing it daily, the next layer unlocks."
-    items:
       - type: article
         title: "The one weird git trick that makes coding agents more effect-ive"
         source: "Maxwell Brown"
@@ -181,12 +138,9 @@ stations:
         url: "/exhaustive/"
         note: "Why exhaustive handling matters, especially with LLMs in the loop."
         thumbnail: "https://media.guidefari.com/effect-course-thumbnails/15-og-guidefari-com-og-image-title-exhaustive-20pattern-20matching.png"
-      - type: note
-        title: "OpenCode References: Just Clone the Repo"
-        source: "My note"
-        url: "/opencode-references/"
-        note: "OpenCode 1.17.3 adds first-party support for referencing other repos. Effect is the example."
-        thumbnail: "https://media.guidefari.com/effect-course-thumbnails/16-og-guidefari-com-og-image-title-opencode-20references-3a-20just-20clone-20the-20repo.png"
+    cta:
+      label: "view all effect content"
+      url: "/tags/effect"
 reference_repos:
   - name: "invoicing"
     url: "https://github.com/guidefari/invoicing"
@@ -218,40 +172,18 @@ reference_repos:
     url: "https://github.com/overengineeringstudio/effect-utils"
     blurb: "A bag of Effect utility patterns."
     thumbnail: "https://media.guidefari.com/effect-course-thumbnails/20-opengraph-githubassets-com-1-overengineeringstudio-effect-utils.png"
-channels:
-  - name: "effect.website"
-    url: "https://effect.website/"
-    blurb: "Docs, blog, podcast, playground. The home base."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/01-effect-website-og-index-png.png"
-  - name: "@effectts (YouTube)"
-    url: "https://www.youtube.com/@EffectTS"
-    blurb: "Conference talks, deep dives, office hours."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/21-og-guidefari-com-og-image-title-40effectts-20youtube.png"
-  - name: "Cause & Effect podcast"
-    url: "https://effect.website/podcast/"
-    blurb: "Hosted by Johannes Schickling."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/02-img-youtube-com-vi-ml7vvvklgm-hqdefault-jpg.jpg"
-  - name: "github.com/Effect-TS/effect-smol"
-    url: "https://github.com/Effect-TS/effect-smol"
-    blurb: "The new, faster Effect. The source is the docs."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/07-opengraph-githubassets-com-1-effect-ts-effect-smol.png"
-  - name: "effect.solutions"
-    url: "https://effect.solutions/"
-    blurb: "Community pattern directory."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/08-www-effect-solutions-og-home-png.png"
-  - name: "effect.institute"
-    url: "https://effect.institute/"
-    blurb: "Paid guided course."
-    thumbnail: "https://media.guidefari.com/effect-course-thumbnails/09-www-effect-institute-og-home-png.png"
+  - name: "executor"
+    url: "https://github.com/UsefulSoftwareCo/executor"
+    blurb: "A production Effect codebase from Useful Software."
 ---
 
-A crash course through Effect, in the order I'd take it. Start at the top, jump to whatever fits where you are, or [browse everything I've written on the topic](/tags/effect/).
+A crash course through Effect, grouped by what each resource is good for. Jump to whatever fits where you are, or [browse everything I've written on the topic](/tags/effect/).
 
 The full design lives in the next-gen version of this site. In the meantime, here are the links:
 
 - [effect.website](https://effect.website/): the home base
 - [@effectts on YouTube](https://www.youtube.com/@EffectTS): talks, deep dives
 - [Cause & Effect podcast](https://effect.website/podcast/): hosted by Johannes Schickling
-- [effect-smol on GitHub](https://github.com/Effect-TS/effect-smol): read the source
+- [Effect on GitHub](https://github.com/Effect-TS/effect): read the source
 - [effect.solutions](https://effect.solutions/): community pattern directory
 - [effect.institute](https://effect.institute/): paid guided course
