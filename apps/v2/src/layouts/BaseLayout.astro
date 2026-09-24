@@ -20,6 +20,14 @@ const {
 
 <!doctype html>
 <html lang="en-us">
+  <script is:inline>
+    (() => {
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      const apply = () => document.documentElement.setAttribute("data-theme", mq.matches ? "dark" : "light");
+      apply();
+      mq.addEventListener("change", apply);
+    })();
+  </script>
   <Head title={title} description={description} image={image} canonical={canonical} noindex={noindex} refreshTarget={refreshTarget} />
   <body class={`flex flex-col w-full ${hideFooter ? "lg:h-dvh lg:overflow-hidden min-h-dvh" : "min-h-dvh"}`}>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-highlight focus:text-onHighlight focus:rounded focus:font-medium focus:outline focus:outline-2 focus:outline-black">Skip to main content</a>
@@ -131,11 +139,5 @@ const {
         });
       })();
     </script>
-    {hasMermaid && (
-      <script type="module" is:inline>
-        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
-        mermaid.initialize({ startOnLoad: true });
-      </script>
-    )}
   </body>
 </html>

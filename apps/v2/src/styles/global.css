@@ -535,6 +535,54 @@
     border-radius: 0.25rem;
   }
 
+  .prose pre.mermaid {
+    background-color: transparent !important;
+    border: none;
+    text-align: center;
+  }
+
+  .prose .gpu-history {
+    list-style: none;
+    margin-block: 2rem;
+    padding: 0;
+    border-left: 2px solid color-mix(in oklab, var(--color-text) 35%, transparent);
+  }
+
+  .prose .gpu-history li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 0.75rem 0 0.75rem 1.5rem;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-text) 15%, transparent);
+  }
+
+  .prose .gpu-history li::before {
+    position: absolute;
+    top: 1.35rem;
+    left: -0.4rem;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    content: "";
+  }
+
+  .prose .gpu-history-date {
+    color: var(--color-highlight);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 36rem) {
+    .prose .gpu-history li {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+  }
+
   .prose :is(h1, h2, h3, h4) code {
     background-color: var(--color-codeBg);
     color: var(--color-codeText);

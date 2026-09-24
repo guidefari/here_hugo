@@ -7,6 +7,7 @@ import { sectionMeta, writingTree } from "../lib/site.mjs";
 import SeriesNav from "./SeriesNav.astro";
 import SeriesMobileNav from "./SeriesMobileNav.astro";
 import SeriesPrevNext from "./SeriesPrevNext.astro";
+import GpuPlayground from "./GpuPlayground.astro";
 
 const { entry } = Astro.props;
 const { Content } = await render(entry._entry);
@@ -46,6 +47,7 @@ const activeWritingLabel = sectionMeta[entry.section]?.label ?? entry.section;
     <article class:list={["prose lg:prose-xl max-w-none prose-pre:overflow-x-auto prose-pre:max-w-full [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h3]:text-xl [&_h3]:lg:text-3xl", !entry.data.full_width && "prose-measure"]}>
       <Content />
     </article>
+    {entry.permalink === "/webgl-and-webgpu/" && <GpuPlayground />}
     {series && <SeriesPrevNext series={series} current={entry} />}
   </main>
 

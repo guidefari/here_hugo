@@ -3,6 +3,7 @@ import { loadEnv } from "vite";
 import { satteri } from "@astrojs/markdown-satteri";
 import { fileURLToPath } from "node:url";
 import pagefind from "astro-pagefind";
+import mermaid from "astro-mermaid";
 import tailwindcss from "@tailwindcss/vite";
 
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
@@ -18,7 +19,13 @@ const { ASTRO_ALLOWED_HOST: allowedHost } = loadEnv(
 export default defineConfig({
   site: "https://guidefari.com",
   output: "static",
-  integrations: [pagefind()],
+  integrations: [
+    mermaid({
+      theme: "neutral",
+      autoTheme: true,
+    }),
+    pagefind(),
+  ],
   trailingSlash: "ignore",
   server: {
     host: "localhost",

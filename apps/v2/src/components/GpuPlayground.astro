@@ -1,0 +1,114 @@
+<script>
+  const playground = document.querySelector("[data-gpu-playground]");
+  if (playground) {
+    const status = playground.querySelector("[data-gpu-status]");
+    const load = async () => {
+      status.textContent = "Loading examples…";
+      try {
+        const { start } = await import("../lib/gpu-examples/playground.js");
+        playground.querySelector("[data-gpu-content]").hidden = false;
+        await start(playground);
+        status.textContent = "";
+      } catch {
+        status.textContent = "Could not load the examples.";
+      }
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        void load();
+      }, { rootMargin: "200px" });
+      observer.observe(playground);
+    } else {
+      void load();
+    }
+  }
+</script>
+
+<style is:global>
+  article .gpu-playground {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 64rem;
+    margin: 2rem auto;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 0.75rem;
+    background: var(--color-panel);
+  }
+
+  .gpu-playground button {
+    cursor: pointer;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    color: var(--color-white);
+    background: var(--color-panel-sunken);
+    font: inherit;
+    font-size: 0.85rem;
+  }
+
+  .gpu-playground button:hover,
+  .gpu-playground button[aria-pressed="true"] {
+    color: var(--color-onHighlight);
+    background: var(--color-highlight);
+  }
+
+  .gpu-playground button:focus-visible {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 3px;
+  }
+
+  .gpu-playground [hidden] { display: none; }
+  .gpu-playground-switch { display: flex; gap: 0.5rem; margin: 1rem 0; }
+  .gpu-playground-panes { display: grid; gap: 1rem; min-width: 0; }
+  .gpu-playground-panes > div { min-width: 0; }
+  .gpu-playground-panes strong { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; }
+  .gpu-playground-code [data-gpu-code],
+  .gpu-playground-preview-frame { display: grid; min-width: 0; }
+  .gpu-playground-code [data-gpu-code] > pre,
+  .gpu-playground-preview-frame > canvas { grid-area: 1 / 1; }
+
+  .gpu-playground .gpu-example-layer {
+    opacity: 0;
+    transition: opacity 220ms ease-in-out;
+  }
+
+  .gpu-playground .gpu-example-layer.is-visible { opacity: 1; }
+
+  article .gpu-playground pre {
+    box-sizing: border-box;
+    height: min(32rem, 65vh);
+    margin: 0;
+    overflow: auto;
+    padding: 1rem;
+    border-radius: 0.35rem;
+    background: var(--color-codeBlockBg);
+    color: #e1e9e7;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .gpu-playground pre code { font-size: inherit; color: inherit; background: none; padding: 0; }
+
+  .gpu-playground canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 0.35rem;
+    background: #0a1f29;
+  }
+
+  .gpu-playground [role="status"] { font-size: 0.8rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gpu-playground .gpu-example-layer { transition: none; }
+  }
+
+  @media (min-width: 48rem) {
+    .gpu-playground-panes { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  }
+</style>
