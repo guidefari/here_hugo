@@ -1,0 +1,14 @@
+{
+  "name": "@here/theme",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "sideEffects": ["./styles/theme.css"],
+  "exports": {
+    ".": "./src/palette.ts",
+    "./styles.css": "./styles/theme.css"
+  },
+  "scripts": {
+    "build:css": "bun src/build-css.ts"
+  }
+}

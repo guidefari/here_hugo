@@ -1,68 +1,38 @@
 @import "tailwindcss";
+@import "../../../../packages/theme/styles/theme.css";
 @plugin "@tailwindcss/typography";
 
 @source "../../content";
 @source "../../layouts";
 
 @theme {
-  --color-highlight: #f5d547;
-  --color-calloutcolor: dodgerblue;
-  --color-hovercolor: #02394a;
-  --color-darkMaincolor: #5c8001;
-  --color-accentText: #acc196;
-  --color-text: #c8c2b7;
-  --color-bg: #1a2f38;
-  --color-panel: #0f1f26;
-  --color-panel-sunken: #0a1419;
-  --color-border: rgb(255 255 255 / 0.08);
-  --color-border-strong: rgb(255 255 255 / 0.15);
-  --color-muted: rgb(255 255 255 / 0.35);
-  --color-muted-strong: rgb(255 255 255 / 0.7);
-  --color-faint: rgb(255 255 255 / 0.25);
-  --color-white: #f0f4f5;
-  --color-onDark: #f0f4f5;
-  --color-onHighlight: #000;
-  --color-codeBg: #f1f1f1;
-  --color-codeText: #1a2f38;
-  --color-wash: #f5d547;
-  --color-quote-rule: #78c0a8;
-  --color-ink: #000000;
-  --color-shadow: rgb(0 0 0 / 0.24);
-  --color-emboss: rgb(255 255 255 / 0.4);
-  --color-recessed: #0d1c22;
-  --color-codeBlockBg: #002b36;
-  --color-prose: #f0f4f5;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-highlight: #0f3a8c;
-    --color-calloutcolor: #0f3a8c;
-    --color-hovercolor: #dfe2f0;
-    --color-darkMaincolor: #5c6b0a;
-    --color-accentText: #5e3c0c;
-    --color-text: #20242c;
-    --color-bg: #f2cc8f;
-    --color-panel: #e9c380;
-    --color-panel-sunken: #dbb46c;
-    --color-border: rgb(32 36 44 / 0.18);
-    --color-border-strong: rgb(32 36 44 / 0.32);
-    --color-muted: rgb(32 36 44 / 0.55);
-    --color-muted-strong: rgb(32 36 44 / 0.82);
-    --color-faint: rgb(32 36 44 / 0.4);
-    --color-white: #0a0e18;
-    --color-onHighlight: #eef2fc;
-    --color-codeBg: #dbb46c;
-    --color-codeText: #20242c;
-    --color-wash: #fff2c0;
-    --color-prose: #20242c;
-    --color-quote-rule: #5e3c0c;
-    --color-ink: #0a0e18;
-    --color-shadow: rgb(0 0 0 / 0.14);
-    --color-emboss: rgb(255 255 255 / 0.55);
-    --color-recessed: #ccae7d;
-    --color-codeBlockBg: #15171d;
-  }
+  --color-highlight: var(--theme-highlight);
+  --color-calloutcolor: var(--theme-calloutcolor);
+  --color-hovercolor: var(--theme-hovercolor);
+  --color-darkMaincolor: var(--theme-darkMaincolor);
+  --color-accentText: var(--theme-accentText);
+  --color-text: var(--theme-text);
+  --color-bg: var(--theme-bg);
+  --color-panel: var(--theme-panel);
+  --color-panel-sunken: var(--theme-panel-sunken);
+  --color-border: var(--theme-border);
+  --color-border-strong: var(--theme-border-strong);
+  --color-muted: var(--theme-muted);
+  --color-muted-strong: var(--theme-muted-strong);
+  --color-faint: var(--theme-faint);
+  --color-white: var(--theme-white);
+  --color-onDark: var(--theme-onDark);
+  --color-onHighlight: var(--theme-onHighlight);
+  --color-codeBg: var(--theme-codeBg);
+  --color-codeText: var(--theme-codeText);
+  --color-wash: var(--theme-wash);
+  --color-quote-rule: var(--theme-quote-rule);
+  --color-ink: var(--theme-ink);
+  --color-shadow: var(--theme-shadow);
+  --color-emboss: var(--theme-emboss);
+  --color-recessed: var(--theme-recessed);
+  --color-codeBlockBg: var(--theme-codeBlockBg);
+  --color-prose: var(--theme-prose);
 }
 
 @utility no-scrollbar {

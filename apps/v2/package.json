@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --port 1414",
-    "build": "astro build",
+    "build": "bun run --cwd ../../packages/theme build:css && astro build",
     "preview": "astro preview --port 1414"
   },
   "dependencies": {
@@ -14,7 +14,8 @@
     "@tailwindcss/vite": "4.2.4",
     "astro": "^7.0.0",
     "astro-pagefind": "^2.0.0",
-    "effect": "4.0.0-beta.107",
-    "tailwindcss": "4.2.4"
+    "effect": "4.0.0-rc.109",
+    "tailwindcss": "4.2.4",
+    "@here/theme": "workspace:*"
   }
 }

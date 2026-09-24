@@ -10,6 +10,7 @@ import * as Effect from "effect/Effect";
 const zoneDomain = "guidefari.com";
 const mediaDomain = `media.${zoneDomain}`;
 const ogDomain = `og.${zoneDomain}`;
+const gpuDomain = `gpu.${zoneDomain}`;
 const compatibilityDate = "2026-07-11";
 
 export default Alchemy.Stack(
@@ -28,7 +29,13 @@ export default Alchemy.Stack(
         command: "bun run build",
         outdir: "dist",
         memo: {
-          include: ["src/**", "public/**", "astro.config.mjs", "package.json"],
+          include: [
+            "src/**",
+            "public/**",
+            "astro.config.mjs",
+            "package.json",
+            "../../packages/theme/**",
+          ],
         },
       });
       const buildHash = Output.map(build.hash, ({ output }) => {
@@ -71,6 +78,40 @@ export default Alchemy.Stack(
       },
     });
 
+    const gpuBuild = yield* Command.Build("GpuBuild", {
+      cwd: "apps/gpu",
+      command: "bun run build",
+      outdir: "dist",
+      memo: {
+        include: [
+          "src/**",
+          "public/**",
+          "index.html",
+          "vite.config.ts",
+          "package.json",
+          "../../packages/theme/**",
+        ],
+      },
+    });
+    const gpuBuildHash = Output.map(gpuBuild.hash, ({ output }) => {
+      if (output === undefined) {
+        throw new Error("GPU build did not produce an output hash");
+      }
+      return output;
+    });
+
+    const gpu = yield* Cloudflare.Worker("Gpu", {
+      name: `here-hugo-${stack.stage}-gpu`,
+      domain: isProduction ? gpuDomain : undefined,
+      url: !isProduction,
+      compatibility: { date: compatibilityDate },
+      assets: {
+        directory: gpuBuild.outdir,
+        hash: gpuBuildHash,
+        notFoundHandling: "single-page-application",
+      },
+    });
+
     const media = yield* Cloudflare.R2.Bucket("Media", {
       name: isProduction
         ? "here-hugo-prod-media"
@@ -108,6 +149,7 @@ export default Alchemy.Stack(
     });
 
     return {
+      gpuUrl: gpu.url,
       ogImageUrl: ogImage.url,
       mediaUrl: isProduction ? `https://${mediaDomain}` : undefined,
       url: site.url,

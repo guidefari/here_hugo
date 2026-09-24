@@ -17,4 +17,5 @@ node_modules
 apps/v2/.astro
 apps/v2/dist
 apps/og-image/dist
+apps/gpu/dist
 .env
