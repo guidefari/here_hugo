@@ -1,25 +1,23 @@
 import { Schema as S } from 'effect'
-import { ts } from 'foldkit/schema'
+import { defineTaggedUnion } from 'foldkit/schema'
 
-export const GeneratingNoiseBeams = ts('GeneratingNoiseBeams')
-
-export const WaitingNoiseBeams = ts('WaitingNoiseBeams', { seed: S.Int })
-
-export const DrawingNoiseBeams = ts('DrawingNoiseBeams', {
-  seed: S.Int,
-  elapsedSeconds: S.Number,
+export const Model = defineTaggedUnion({
+  GeneratingNoiseBeams: {},
+  WaitingNoiseBeams: { seed: S.Int },
+  DrawingNoiseBeams: {
+    seed: S.Int,
+    elapsedSeconds: S.Number,
+  },
+  UnsupportedRenderer: {},
+  FailedRenderer: { reason: S.String },
 })
 
-export const UnsupportedRenderer = ts('UnsupportedRenderer')
-
-export const FailedRenderer = ts('FailedRenderer', { reason: S.String })
-
-export const Model = S.Union([
+export const {
   GeneratingNoiseBeams,
   WaitingNoiseBeams,
   DrawingNoiseBeams,
   UnsupportedRenderer,
   FailedRenderer,
-])
+} = Model
 
 export type Model = typeof Model.Type

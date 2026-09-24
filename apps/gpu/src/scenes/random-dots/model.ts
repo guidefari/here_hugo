@@ -1,5 +1,5 @@
 import { Schema as S } from 'effect'
-import { ts } from 'foldkit/schema'
+import { defineTaggedUnion } from 'foldkit/schema'
 
 export const Point = S.Struct({
   x: S.Number,
@@ -18,33 +18,27 @@ export const PanelArtwork = S.Struct({
 
 export type PanelArtwork = typeof PanelArtwork.Type
 
-export const WaitingDots = ts('WaitingDots')
-
-export const GeneratingDots = ts('GeneratingDots')
-
-export const DrawingDots = ts('DrawingDots', {
-  artworkId: S.String,
-  panels: S.Array(PanelArtwork),
-  visibleCountPerPanel: S.Number,
-  pointCountPerPanel: S.Number,
-  carryMs: S.Number,
+export const Model = defineTaggedUnion({
+  WaitingDots: {},
+  GeneratingDots: {},
+  DrawingDots: {
+    artworkId: S.String,
+    panels: S.Array(PanelArtwork),
+    visibleCountPerPanel: S.Number,
+    pointCountPerPanel: S.Number,
+    carryMs: S.Number,
+  },
+  ReadyDots: {
+    artworkId: S.String,
+    panels: S.Array(PanelArtwork),
+    pointCountPerPanel: S.Number,
+  },
+  FailedDots: {},
+  UnsupportedRenderer: {},
+  FailedRenderer: { reason: S.String },
 })
 
-export type DrawingDots = typeof DrawingDots.Type
-
-export const ReadyDots = ts('ReadyDots', {
-  artworkId: S.String,
-  panels: S.Array(PanelArtwork),
-  pointCountPerPanel: S.Number,
-})
-
-export const FailedDots = ts('FailedDots')
-
-export const UnsupportedRenderer = ts('UnsupportedRenderer')
-
-export const FailedRenderer = ts('FailedRenderer', { reason: S.String })
-
-export const Model = S.Union([
+export const {
   WaitingDots,
   GeneratingDots,
   DrawingDots,
@@ -52,6 +46,8 @@ export const Model = S.Union([
   FailedDots,
   UnsupportedRenderer,
   FailedRenderer,
-])
+} = Model
+
+export type DrawingDots = typeof DrawingDots.Type
 
 export type Model = typeof Model.Type

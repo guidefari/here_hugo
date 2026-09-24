@@ -1,6 +1,6 @@
 import { Effect, Match as M, Predicate, Random } from 'effect'
-import { Command, Runtime } from 'foldkit'
-import { evo } from 'foldkit/struct'
+import { Command, Runtime, Update } from 'foldkit'
+import { modifyFields } from 'foldkit/struct'
 
 import { CompletedGenerateNoiseSeed, Message } from './message'
 import {
@@ -24,12 +24,12 @@ export const GenerateNoiseSeed = Command.define('GenerateNoiseSeed', {
   ),
 })
 
-export const init: Runtime.ApplicationInit<Model, Message> = () => [
-  GeneratingNoiseBeams(),
-  [GenerateNoiseSeed()],
-]
+export const init: Runtime.ApplicationInit<Model, Message> = () => ({
+  model: GeneratingNoiseBeams(),
+  commands: [GenerateNoiseSeed()],
+})
 
-type UpdateReturn = readonly [Model, ReadonlyArray<Command.Command<Message>>]
+type UpdateReturn = Update.Return<Model, Message>
 
 const withUpdateReturn = M.withReturnType<UpdateReturn>()
 
@@ -41,43 +41,41 @@ export const update = (model: Model, message: Message): UpdateReturn =>
         M.value(model).pipe(
           withUpdateReturn,
           M.tagsExhaustive({
-            GeneratingNoiseBeams: () => [model, []],
-            WaitingNoiseBeams: () => [model, []],
-            DrawingNoiseBeams: drawingModel => [
-              evo(drawingModel, {
+            GeneratingNoiseBeams: () => ({ model }),
+            WaitingNoiseBeams: () => ({ model }),
+            DrawingNoiseBeams: drawingModel => ({
+              model: modifyFields(drawingModel, {
                 elapsedSeconds: elapsedSeconds =>
                   elapsedSeconds +
                   Math.min(deltaTimeMs, FRAME_DELTA_CAP_MS) / 1_000,
               }),
-              [],
-            ],
-            UnsupportedRenderer: () => [model, []],
-            FailedRenderer: () => [model, []],
+            }),
+            UnsupportedRenderer: () => ({ model }),
+            FailedRenderer: () => ({ model }),
           }),
         ),
       CompletedGenerateNoiseSeed: ({ seed }) =>
         Predicate.isTagged('GeneratingNoiseBeams')(model)
-          ? [WaitingNoiseBeams({ seed }), []]
-          : [model, []],
+          ? { model: WaitingNoiseBeams({ seed }) }
+          : { model },
       CompletedInitializeRenderer: () =>
         Predicate.isTagged('WaitingNoiseBeams')(model)
-          ? [
-              DrawingNoiseBeams({
+          ? {
+              model: DrawingNoiseBeams({
                 seed: model.seed,
                 elapsedSeconds: 0,
               }),
-              [],
-            ]
-          : [model, []],
+            }
+          : { model },
       DetectedUnsupportedRenderer: () =>
         Predicate.isTagged('UnsupportedRenderer')(model) ||
         Predicate.isTagged('FailedRenderer')(model)
-          ? [model, []]
-          : [UnsupportedRenderer(), []],
+          ? { model }
+          : { model: UnsupportedRenderer() },
       FailedInitializeRenderer: ({ reason }) =>
         Predicate.isTagged('UnsupportedRenderer')(model) ||
         Predicate.isTagged('FailedRenderer')(model)
-          ? [model, []]
-          : [FailedRenderer({ reason }), []],
+          ? { model }
+          : { model: FailedRenderer({ reason }) },
     }),
   )

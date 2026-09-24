@@ -7,8 +7,8 @@ import {
   ChangedUrl,
   GotNoiseBeamsMessage,
   GotRandomDotsMessage,
-  init,
   NoiseBeamsPage,
+  init,
   update,
 } from './app'
 import {
@@ -29,7 +29,7 @@ const modelAt = (path: string) =>
   init(
     { theme: { preference: 'System', systemColorScheme: 'Dark' } },
     urlAt(path),
-  )[0]
+  ).model
 
 describe('application update', () => {
   test('folds lifted noise beams messages into the child model', () => {
@@ -59,32 +59,32 @@ describe('application update', () => {
     const initialModel = modelAt('/scenes/noise-beams')
     const seed = 123_456
 
-    const [waitingModel] = update(
+    const waitingModel = update(
       initialModel,
       GotNoiseBeamsMessage({
         message: CompletedGenerateNoiseSeed({ seed }),
       }),
-    )
+    ).model
 
-    const [drawingModel] = update(
+    const drawingModel = update(
       waitingModel,
       GotNoiseBeamsMessage({ message: CompletedInitializeRenderer() }),
-    )
+    ).model
 
-    const [randomDotsModel] = update(
+    const randomDotsModel = update(
       drawingModel,
       ChangedUrl({ url: urlAt('/') }),
-    )
+    ).model
 
-    const [nextModel, commands] = update(
+    const nextUpdate = update(
       randomDotsModel,
       ChangedUrl({ url: urlAt('/scenes/noise-beams') }),
     )
 
-    expect(nextModel.page).toStrictEqual(
+    expect(nextUpdate.model.page).toStrictEqual(
       NoiseBeamsPage({ model: GeneratingNoiseBeams() }),
     )
-    expect(commands.map(command => command.name)).toStrictEqual([
+    expect(nextUpdate.commands?.map(command => command.name)).toStrictEqual([
       GenerateNoiseSeed.name,
     ])
   })
@@ -92,14 +92,14 @@ describe('application update', () => {
   test('ignores late child messages from an inactive scene', () => {
     const initialModel = modelAt('/scenes/noise-beams')
 
-    const [nextModel, commands] = update(
+    const nextUpdate = update(
       initialModel,
       GotRandomDotsMessage({
         message: CompletedGenerateDots({ artworkId: 'late', panels: [] }),
       }),
     )
 
-    expect(nextModel).toBe(initialModel)
-    expect(commands).toStrictEqual([])
+    expect(nextUpdate.model).toBe(initialModel)
+    expect(nextUpdate.commands).toBeUndefined()
   })
 })

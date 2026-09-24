@@ -1,7 +1,4 @@
-import type { Command } from 'foldkit'
-
 import type { Flags } from './flags'
-import type { Message as ThemeMessage } from './message'
 import type { Model } from './model'
 
 export { Flags, flags } from './flags'
@@ -35,6 +32,6 @@ export { StoreThemePreference, update } from './update'
 
 export { view } from './view'
 
-export const init = (
-  flags: Flags,
-): readonly [Model, ReadonlyArray<Command.Command<ThemeMessage>>] => [flags, []]
+export const init = (flags: Flags): Readonly<{ model: Model }> => ({
+  model: flags,
+})

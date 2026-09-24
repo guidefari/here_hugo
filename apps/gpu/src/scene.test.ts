@@ -10,7 +10,7 @@ const modelAt = (path: string) =>
   init(
     { theme: { preference: 'System', systemColorScheme: 'Dark' } },
     Option.getOrThrow(fromString(`https://effect-art.test${path}`)),
-  )[0]
+  ).model
 
 describe('application view', () => {
   test('mounts Random Dots at the root route', () => {
@@ -47,12 +47,12 @@ describe('application view', () => {
   })
 
   test('mounts the noise beams submodel at its route', () => {
-    const [seededModel] = update(
+    const seededModel = update(
       modelAt('/scenes/noise-beams'),
       GotNoiseBeamsMessage({
         message: CompletedGenerateNoiseSeed({ seed: 123_456 }),
       }),
-    )
+    ).model
 
     scene(
       { update, view },

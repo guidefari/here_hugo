@@ -1,6 +1,6 @@
 import { Array, Effect, Match as M, Predicate, Random } from 'effect'
-import { Command, Runtime } from 'foldkit'
-import { evo } from 'foldkit/struct'
+import { Command, Runtime, Update } from 'foldkit'
+import { modifyFields } from 'foldkit/struct'
 
 import {
   CANVAS_SIZE,
@@ -185,12 +185,12 @@ export const GenerateDots = Command.define('GenerateDots', {
   ),
 })
 
-export const init: Runtime.ApplicationInit<Model, Message> = () => [
-  GeneratingDots(),
-  [GenerateDots()],
-]
+export const init: Runtime.ApplicationInit<Model, Message> = () => ({
+  model: GeneratingDots(),
+  commands: [GenerateDots()],
+})
 
-type UpdateReturn = readonly [Model, ReadonlyArray<Command.Command<Message>>]
+type UpdateReturn = Update.Return<Model, Message>
 
 const withUpdateReturn = M.withReturnType<UpdateReturn>()
 
@@ -212,7 +212,7 @@ const revealPoints = (model: DrawingDots, deltaTimeMs: number): Model => {
     })
   }
 
-  return evo(model, {
+  return modifyFields(model, {
     visibleCountPerPanel: () => nextVisibleCountPerPanel,
     carryMs: () => elapsedMs % dotIntervalMs,
   })
@@ -226,16 +226,15 @@ export const update = (model: Model, message: Message): UpdateReturn =>
         M.value(model).pipe(
           withUpdateReturn,
           M.tagsExhaustive({
-            WaitingDots: () => [model, []],
-            GeneratingDots: () => [model, []],
-            DrawingDots: drawingDots => [
-              revealPoints(drawingDots, deltaTimeMs),
-              [],
-            ],
-            ReadyDots: () => [model, []],
-            FailedDots: () => [model, []],
-            UnsupportedRenderer: () => [model, []],
-            FailedRenderer: () => [model, []],
+            WaitingDots: () => ({ model }),
+            GeneratingDots: () => ({ model }),
+            DrawingDots: drawingDots => ({
+              model: revealPoints(drawingDots, deltaTimeMs),
+            }),
+            ReadyDots: () => ({ model }),
+            FailedDots: () => ({ model }),
+            UnsupportedRenderer: () => ({ model }),
+            FailedRenderer: () => ({ model }),
           }),
         ),
       CompletedGenerateDots: ({ artworkId, panels }) => {
@@ -243,7 +242,7 @@ export const update = (model: Model, message: Message): UpdateReturn =>
           Predicate.isTagged('UnsupportedRenderer')(model) ||
           Predicate.isTagged('FailedRenderer')(model)
         ) {
-          return [model, []]
+          return { model }
         }
 
         const pointCountPerPanel = Array.match(panels, {
@@ -256,24 +255,23 @@ export const update = (model: Model, message: Message): UpdateReturn =>
             ),
         })
 
-        return [
-          pointCountPerPanel === 0
-            ? ReadyDots({ artworkId, panels, pointCountPerPanel })
-            : DrawingDots({
-                artworkId,
-                panels,
-                visibleCountPerPanel: 1,
-                pointCountPerPanel,
-                carryMs: 0,
-              }),
-          [],
-        ]
+        return {
+          model:
+            pointCountPerPanel === 0
+              ? ReadyDots({ artworkId, panels, pointCountPerPanel })
+              : DrawingDots({
+                  artworkId,
+                  panels,
+                  visibleCountPerPanel: 1,
+                  pointCountPerPanel,
+                  carryMs: 0,
+                }),
+        }
       },
-      FailedGenerateDots: () => [FailedDots(), []],
-      DetectedUnsupportedRenderer: () => [UnsupportedRenderer(), []],
-      FailedInitializeRenderer: ({ reason }) => [
-        FailedRenderer({ reason }),
-        [],
-      ],
+      FailedGenerateDots: () => ({ model: FailedDots() }),
+      DetectedUnsupportedRenderer: () => ({ model: UnsupportedRenderer() }),
+      FailedInitializeRenderer: ({ reason }) => ({
+        model: FailedRenderer({ reason }),
+      }),
     }),
   )

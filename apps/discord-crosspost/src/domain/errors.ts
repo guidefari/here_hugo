@@ -1,6 +1,6 @@
 import * as Schema from "effect/Schema";
 
-export class MediaEntryRejected extends Schema.TaggedErrorClass<MediaEntryRejected>()(
+export class MediaEntryRejected extends Schema.TaggedError<MediaEntryRejected>()(
   "MediaEntryRejected",
   {
     sourceId: Schema.String,
@@ -9,7 +9,7 @@ export class MediaEntryRejected extends Schema.TaggedErrorClass<MediaEntryReject
   },
 ) {}
 
-export class FeedUnreachable extends Schema.TaggedErrorClass<FeedUnreachable>()(
+export class FeedUnreachable extends Schema.TaggedError<FeedUnreachable>()(
   "FeedUnreachable",
   {
     sourceId: Schema.String,
@@ -17,7 +17,7 @@ export class FeedUnreachable extends Schema.TaggedErrorClass<FeedUnreachable>()(
   },
 ) {}
 
-export class FeedFormatUnsupported extends Schema.TaggedErrorClass<FeedFormatUnsupported>()(
+export class FeedFormatUnsupported extends Schema.TaggedError<FeedFormatUnsupported>()(
   "FeedFormatUnsupported",
   {
     sourceId: Schema.String,
@@ -26,7 +26,7 @@ export class FeedFormatUnsupported extends Schema.TaggedErrorClass<FeedFormatUns
   },
 ) {}
 
-export class LedgerUnavailable extends Schema.TaggedErrorClass<LedgerUnavailable>()(
+export class LedgerUnavailable extends Schema.TaggedError<LedgerUnavailable>()(
   "LedgerUnavailable",
   {
     operation: Schema.String,
@@ -34,7 +34,7 @@ export class LedgerUnavailable extends Schema.TaggedErrorClass<LedgerUnavailable
   },
 ) {}
 
-export class DiscordDeliveryFailed extends Schema.TaggedErrorClass<DiscordDeliveryFailed>()(
+export class DiscordDeliveryFailed extends Schema.TaggedError<DiscordDeliveryFailed>()(
   "DiscordDeliveryFailed",
   {
     status: Schema.NullOr(Schema.Number),
@@ -42,7 +42,7 @@ export class DiscordDeliveryFailed extends Schema.TaggedErrorClass<DiscordDelive
   },
 ) {}
 
-export class QuarantineUnavailable extends Schema.TaggedErrorClass<QuarantineUnavailable>()(
+export class QuarantineUnavailable extends Schema.TaggedError<QuarantineUnavailable>()(
   "QuarantineUnavailable",
   {
     reason: Schema.String,

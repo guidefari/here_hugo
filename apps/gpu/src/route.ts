@@ -1,24 +1,20 @@
 import { Schema as S, pipe } from 'effect'
 import { Route } from 'foldkit'
-import { literal, r, slash } from 'foldkit/route'
+import { defineRouteUnion, literal, slash } from 'foldkit/route'
 
-export const RandomDotsRoute = r('RandomDots')
+export const AppRoute = defineRouteUnion({
+  RandomDots: {},
+  NoiseBeams: {},
+  NotFound: { path: S.String },
+})
 
-export const NoiseBeamsRoute = r('NoiseBeams')
+export const { RandomDots, NoiseBeams, NotFound } = AppRoute
 
-export const NotFoundRoute = r('NotFound', { path: S.String })
+export const RandomDotsRoute = RandomDots
 
-export const AppRoute = S.Union([
-  RandomDotsRoute,
-  NoiseBeamsRoute,
-  NotFoundRoute,
-])
+export const NoiseBeamsRoute = NoiseBeams
 
-export type RandomDotsRoute = typeof RandomDotsRoute.Type
-
-export type NoiseBeamsRoute = typeof NoiseBeamsRoute.Type
-
-export type NotFoundRoute = typeof NotFoundRoute.Type
+export const NotFoundRoute = NotFound
 
 export type AppRoute = typeof AppRoute.Type
 
