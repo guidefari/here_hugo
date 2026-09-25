@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly bun_version="1.4.2"
+readonly bun_bin="$HOME/.bun/bin"
+
+if [[ ! -x "$bun_bin/bun" ]] || [[ "$("$bun_bin/bun" --version)" != "$bun_version" ]]; then
+  echo "Installing Bun $bun_version"
+  curl -fsSL https://bun.sh/install | bash -s -- "bun-v$bun_version"
+fi
+
+export PATH="$bun_bin:$PATH"
+
+profile_marker="# here_hugo Bun toolchain"
+if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
+  cat >> "$HOME/.bash_profile" <<'EOF'
+
+# here_hugo Bun toolchain
+export PATH="$HOME/.bun/bin:$PATH"
+EOF
+fi
+
+echo "Installing repository dependencies"
+time bun install --frozen-lockfile

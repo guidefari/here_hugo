@@ -1,7 +1,7 @@
 {
   "name": "gpu-playground",
   "version": "0.1.0",
-  "packageManager": "bun@1.3.14",
+  "packageManager": "bun@1.4.2",
   "type": "module",
   "scripts": {
     "dev": "portless run vite",

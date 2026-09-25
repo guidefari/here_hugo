@@ -21,7 +21,6 @@ registerRandomDotsGpuElement()
 
 const application = Runtime.makeApplication({
   Flags,
-  flags,
   Model,
   init,
   update,
@@ -38,4 +37,4 @@ const application = Runtime.makeApplication({
   },
 })
 
-Runtime.run(application)
+Runtime.run(application, { flags })

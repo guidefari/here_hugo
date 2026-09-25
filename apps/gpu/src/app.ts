@@ -1,10 +1,10 @@
 import { Effect, Match as M, Predicate, Schema as S } from 'effect'
-import { Command, Runtime, Subscription } from 'foldkit'
+import { Command, Runtime, Subscription, Update } from 'foldkit'
 import { Document, Html, HtmlBuilder } from 'foldkit/html'
-import { m } from 'foldkit/message'
+import { defineMessageUnion } from 'foldkit/message'
 import { UrlRequest, load, pushUrl } from 'foldkit/navigation'
-import { ts } from 'foldkit/schema'
-import { evo } from 'foldkit/struct'
+import { defineTaggedUnion } from 'foldkit/schema'
+import { modifyFields } from 'foldkit/struct'
 import { Url, toString as urlToString } from 'foldkit/url'
 
 import {
@@ -31,17 +31,13 @@ export const Flags = S.Struct({ theme: Theme.Flags })
 
 export type Flags = typeof Flags.Type
 
-export const RandomDotsPage = ts('RandomDotsPage', { model: RandomDots.Model })
+export const ActivePage = defineTaggedUnion({
+  RandomDotsPage: { model: RandomDots.Model },
+  NoiseBeamsPage: { model: NoiseBeams.Model },
+  NotFoundPage: { path: S.String },
+})
 
-export const NoiseBeamsPage = ts('NoiseBeamsPage', { model: NoiseBeams.Model })
-
-export const NotFoundPage = ts('NotFoundPage', { path: S.String })
-
-export const ActivePage = S.Union([
-  RandomDotsPage,
-  NoiseBeamsPage,
-  NotFoundPage,
-])
+export const { RandomDotsPage, NoiseBeamsPage, NotFoundPage } = ActivePage
 
 export type ActivePage = typeof ActivePage.Type
 
@@ -52,27 +48,17 @@ export const Model = S.Struct({
 
 export type Model = typeof Model.Type
 
-export const CompletedNavigateInternal = m('CompletedNavigateInternal')
-
-export const CompletedLoadExternal = m('CompletedLoadExternal')
-
-export const ClickedLink = m('ClickedLink', { request: UrlRequest })
-
-export const ChangedUrl = m('ChangedUrl', { url: Url })
-
-export const GotThemeMessage = m('GotThemeMessage', {
-  message: Theme.Message,
+export const Message = defineMessageUnion({
+  CompletedNavigateInternal: {},
+  CompletedLoadExternal: {},
+  ClickedLink: { request: UrlRequest },
+  ChangedUrl: { url: Url },
+  GotThemeMessage: { message: Theme.Message },
+  GotRandomDotsMessage: { message: RandomDots.Message },
+  GotNoiseBeamsMessage: { message: NoiseBeams.Message },
 })
 
-export const GotRandomDotsMessage = m('GotRandomDotsMessage', {
-  message: RandomDots.Message,
-})
-
-export const GotNoiseBeamsMessage = m('GotNoiseBeamsMessage', {
-  message: NoiseBeams.Message,
-})
-
-export const Message = S.Union([
+export const {
   CompletedNavigateInternal,
   CompletedLoadExternal,
   ClickedLink,
@@ -80,16 +66,13 @@ export const Message = S.Union([
   GotThemeMessage,
   GotRandomDotsMessage,
   GotNoiseBeamsMessage,
-])
+} = Message
 
 export type Message = typeof Message.Type
 
 export const flags = Effect.map(Theme.flags, theme => ({ theme }))
 
-type PageInitReturn = readonly [
-  ActivePage,
-  ReadonlyArray<Command.Command<Message>>,
-]
+type PageInitReturn = Update.Return<ActivePage, Message>
 
 const withPageInitReturn = M.withReturnType<PageInitReturn>()
 
@@ -98,26 +81,26 @@ const initPage = (route: AppRoute): PageInitReturn =>
     withPageInitReturn,
     M.tagsExhaustive({
       RandomDots: () => {
-        const [model, commands] = RandomDots.init()
+        const childInit = RandomDots.init()
 
-        return [
-          RandomDotsPage({ model }),
-          Command.mapMessages(commands, message =>
+        return {
+          model: RandomDotsPage({ model: childInit.model }),
+          commands: Command.mapMessages(childInit.commands ?? [], message =>
             GotRandomDotsMessage({ message }),
           ),
-        ]
+        }
       },
       NoiseBeams: () => {
-        const [model, commands] = NoiseBeams.init()
+        const childInit = NoiseBeams.init()
 
-        return [
-          NoiseBeamsPage({ model }),
-          Command.mapMessages(commands, message =>
+        return {
+          model: NoiseBeamsPage({ model: childInit.model }),
+          commands: Command.mapMessages(childInit.commands ?? [], message =>
             GotNoiseBeamsMessage({ message }),
           ),
-        ]
+        }
       },
-      NotFound: ({ path }) => [NotFoundPage({ path }), []],
+      NotFound: ({ path }) => ({ model: NotFoundPage({ path }) }),
     }),
   )
 
@@ -125,18 +108,13 @@ export const init: Runtime.RoutingApplicationInit<Model, Message, Flags> = (
   { theme: themeFlags },
   url: Url,
 ) => {
-  const [theme, themeCommands] = Theme.init(themeFlags)
-  const [page, pageCommands] = initPage(urlToAppRoute(url))
+  const themeInit = Theme.init(themeFlags)
+  const pageInit = initPage(urlToAppRoute(url))
 
-  return [
-    { page, theme },
-    [
-      ...Command.mapMessages(themeCommands, message =>
-        GotThemeMessage({ message }),
-      ),
-      ...pageCommands,
-    ],
-  ]
+  return {
+    model: { page: pageInit.model, theme: themeInit.model },
+    commands: pageInit.commands ?? [],
+  }
 }
 
 const NavigateInternal = Command.define('NavigateInternal', {
@@ -152,7 +130,7 @@ const LoadExternal = Command.define('LoadExternal', {
   execute: ({ href }) => load(href).pipe(Effect.as(CompletedLoadExternal())),
 })
 
-type UpdateReturn = readonly [Model, ReadonlyArray<Command.Command<Message>>]
+type UpdateReturn = Update.Return<Model, Message>
 
 const withUpdateReturn = M.withReturnType<UpdateReturn>()
 
@@ -160,28 +138,31 @@ export const update = (model: Model, message: Message): UpdateReturn =>
   M.value(message).pipe(
     withUpdateReturn,
     M.tagsExhaustive({
-      CompletedNavigateInternal: () => [model, []],
-      CompletedLoadExternal: () => [model, []],
+      CompletedNavigateInternal: () => ({ model }),
+      CompletedLoadExternal: () => ({ model }),
       ClickedLink: ({ request }) =>
         M.value(request).pipe(
           withUpdateReturn,
           M.tagsExhaustive({
-            Internal: ({ url }) => [
+            Internal: ({ url }) => ({
               model,
-              [NavigateInternal({ url: urlToString(url) })],
-            ],
-            External: ({ href }) => [model, [LoadExternal({ href })]],
+              commands: [NavigateInternal({ url: urlToString(url) })],
+            }),
+            External: ({ href }) => ({
+              model,
+              commands: [LoadExternal({ href })],
+            }),
           }),
         ),
       GotThemeMessage: ({ message: childMessage }) => {
-        const [theme, commands] = Theme.update(model.theme, childMessage)
+        const childUpdate = Theme.update(model.theme, childMessage)
 
-        return [
-          evo(model, { theme: () => theme }),
-          Command.mapMessages(commands, message =>
+        return {
+          model: modifyFields(model, { theme: () => childUpdate.model }),
+          commands: Command.mapMessages(childUpdate.commands ?? [], message =>
             GotThemeMessage({ message }),
           ),
-        ]
+        }
       },
       ChangedUrl: ({ url }) => {
         const route = urlToAppRoute(url)
@@ -193,46 +174,47 @@ export const update = (model: Model, message: Message): UpdateReturn =>
             Predicate.isTagged('NoiseBeamsPage')(model.page))
 
         if (remainsOnPage) {
-          return [model, []]
+          return { model }
         }
 
-        const [page, commands] = initPage(route)
+        const pageInit = initPage(route)
 
-        return [evo(model, { page: () => page }), commands]
+        return {
+          model: modifyFields(model, { page: () => pageInit.model }),
+          commands: pageInit.commands ?? [],
+        }
       },
       GotRandomDotsMessage: ({ message: childMessage }) => {
         if (!Predicate.isTagged('RandomDotsPage')(model.page)) {
-          return [model, []]
+          return { model }
         }
 
-        const [childModel, commands] = RandomDots.update(
-          model.page.model,
-          childMessage,
-        )
+        const childUpdate = RandomDots.update(model.page.model, childMessage)
 
-        return [
-          evo(model, { page: () => RandomDotsPage({ model: childModel }) }),
-          Command.mapMessages(commands, message =>
+        return {
+          model: modifyFields(model, {
+            page: () => RandomDotsPage({ model: childUpdate.model }),
+          }),
+          commands: Command.mapMessages(childUpdate.commands ?? [], message =>
             GotRandomDotsMessage({ message }),
           ),
-        ]
+        }
       },
       GotNoiseBeamsMessage: ({ message: childMessage }) => {
         if (!Predicate.isTagged('NoiseBeamsPage')(model.page)) {
-          return [model, []]
+          return { model }
         }
 
-        const [childModel, commands] = NoiseBeams.update(
-          model.page.model,
-          childMessage,
-        )
+        const childUpdate = NoiseBeams.update(model.page.model, childMessage)
 
-        return [
-          evo(model, { page: () => NoiseBeamsPage({ model: childModel }) }),
-          Command.mapMessages(commands, message =>
+        return {
+          model: modifyFields(model, {
+            page: () => NoiseBeamsPage({ model: childUpdate.model }),
+          }),
+          commands: Command.mapMessages(childUpdate.commands ?? [], message =>
             GotNoiseBeamsMessage({ message }),
           ),
-        ]
+        }
       },
     }),
   )

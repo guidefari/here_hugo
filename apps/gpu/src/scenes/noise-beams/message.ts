@@ -1,28 +1,20 @@
 import { Schema as S } from 'effect'
-import { m } from 'foldkit/message'
+import { defineMessageUnion } from 'foldkit/message'
 
-export const TickedFrame = m('TickedFrame', {
-  deltaTimeMs: S.Number,
+export const Message = defineMessageUnion({
+  TickedFrame: { deltaTimeMs: S.Number },
+  CompletedGenerateNoiseSeed: { seed: S.Int },
+  CompletedInitializeRenderer: {},
+  DetectedUnsupportedRenderer: {},
+  FailedInitializeRenderer: { reason: S.String },
 })
 
-export const CompletedGenerateNoiseSeed = m('CompletedGenerateNoiseSeed', {
-  seed: S.Int,
-})
-
-export const CompletedInitializeRenderer = m('CompletedInitializeRenderer')
-
-export const DetectedUnsupportedRenderer = m('DetectedUnsupportedRenderer')
-
-export const FailedInitializeRenderer = m('FailedInitializeRenderer', {
-  reason: S.String,
-})
-
-export const Message = S.Union([
+export const {
   TickedFrame,
   CompletedGenerateNoiseSeed,
   CompletedInitializeRenderer,
   DetectedUnsupportedRenderer,
   FailedInitializeRenderer,
-])
+} = Message
 
 export type Message = typeof Message.Type

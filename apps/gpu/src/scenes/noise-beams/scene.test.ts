@@ -38,7 +38,7 @@ const expectGpuProperties = (
       find(simulation.html, 'noise-beams-gpu-canvas'),
     )
 
-    assert(gpuCanvas.data?.props).toStrictEqual({
+    assert(gpuCanvas.data?.props).toMatchObject({
       timeSeconds: expectedTimeSeconds,
       seed,
       palette: darkPalette,

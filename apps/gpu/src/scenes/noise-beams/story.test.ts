@@ -26,10 +26,10 @@ const drawing = (elapsedSeconds: number) =>
 
 describe('noise beams update', () => {
   test('init generates a fresh noise seed before mounting the renderer', () => {
-    expect(init()).toStrictEqual([
-      GeneratingNoiseBeams(),
-      [GenerateNoiseSeed()],
-    ])
+    expect(init()).toStrictEqual({
+      model: GeneratingNoiseBeams(),
+      commands: [GenerateNoiseSeed()],
+    })
   })
 
   test('generated seed is preserved when the renderer starts drawing', () => {

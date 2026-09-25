@@ -25,7 +25,7 @@ If `foldkit-skills` is installed as a Claude Code plugin, the `generate-program`
 - Foldkit is tightly coupled to the Effect ecosystem. Do not suggest solutions outside of Effect-TS.
 - Model fields must be Schema types (the model is a schema). Plain TypeScript types are fine elsewhere (function return types, local variables, etc.).
 - Use full names like `Message` (not `Msg`), and `withReturnType` (not `as const` or type casting).
-- Use `m()` for message schemas, `ts()` for tagged structs (model states, field validation), and `r()` for route schemas.
+- Use `defineMessageUnion()` for message schemas, `defineTaggedUnion()` for model states, `taggedStruct()` when variants cannot be declared together, and `defineRouteUnion()` for route schemas.
 - Push back on any direction that violates Elm Architecture principles: unidirectional data flow, messages as facts (not commands), model as single source of truth, side effects confined to commands. If a prompt suggests mutating state, imperative event handlers, or two-way bindings, flag the issue and propose the idiomatic Foldkit approach.
 - Never use `NoOp`. Every message must describe what happened. A command's result message is named from the command, not from the fact it reports, whether or not it carries a payload: `LockScroll` → `CompletedLockScroll`, `DetermineStartTime` → `CompletedDetermineStartTime` (never `DeterminedStartTime`).
 
@@ -33,22 +33,24 @@ If `foldkit-skills` is installed as a Claude Code plugin, the `generate-program`
 
 ### Update
 
-`init` and `update` both return `[Model, ReadonlyArray<Command<Message>>]`:
+`init` and `update` both return `Update.Return<Model, Message>` records:
 
 ```ts
-type UpdateReturn = readonly [Model, ReadonlyArray<Command<Message>>]
+type UpdateReturn = Update.Return<Model, Message>
 const withUpdateReturn = M.withReturnType<UpdateReturn>()
 
 const update = (model: Model, message: Message): UpdateReturn =>
   M.value(message).pipe(
     withUpdateReturn,
     M.tagsExhaustive({
-      ClickedIncrement: () => [evo(model, { count: count => count + 1 }), []],
+      ClickedIncrement: () => ({
+        model: modifyFields(model, { count: count => count + 1 }),
+      }),
     }),
   )
 ```
 
-Use `evo()` from `foldkit/struct` for immutable model updates. Never spread or `Object.assign`.
+Use `modifyFields()` from `foldkit/struct` for immutable model updates. Never spread or `Object.assign`.
 
 ### View
 
@@ -99,17 +101,17 @@ Scene runs at any level, since a page's own `update`/`view` pair drops into `sce
 
 ## Message Layout
 
-Group all `m()` declarations together, then put `S.Union([...])` and `type Message = typeof Message.Type` on adjacent lines:
+Declare message variants together with `defineMessageUnion()`, then put `type Message = typeof Message.Type` directly after it:
 
 ```ts
-const ClickedSubmit = m('ClickedSubmit')
-const UpdatedEmail = m('UpdatedEmail', { value: S.String })
-
-const Message = S.Union([ClickedSubmit, UpdatedEmail])
+const Message = defineMessageUnion({
+  ClickedSubmit: {},
+  UpdatedEmail: { value: S.String },
+})
 type Message = typeof Message.Type
 ```
 
-Keep the declarations in one unbroken block while the union is small, up to roughly a dozen Messages. Past that, blank-line thematic clusters (navigation, session, one per feature) are equally fine, so pick whichever reads better for the union at hand. The `S.Union([...])` and `type Message` pair stays adjacent, directly after the declarations, either way.
+Keep the `defineMessageUnion()` declaration and `type Message` pair adjacent.
 
 Messages are verb-first past-tense. Common prefixes: `Clicked*`, `Updated*` (input changes and external state updates), `Submitted*`, `Pressed*`, `Selected*`, `Succeeded*` / `Failed*` (paired async results), `Completed*` (every other Command result), `Got*` (child OutMessage in the Submodel pattern).
 
