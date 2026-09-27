@@ -13,6 +13,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry._entry);
 
 const series = entry.data?.full_width ? null : await getSeriesForEntry(entry);
+const gpuPlaygroundUrl = import.meta.env.DEV ? "https://gpu.localhost/" : "https://gpu.guidefari.com/";
 const activeWritingHref = writingTree.children.find((child) => child.href === `/${entry.section}/`)?.href ?? "";
 const activeWritingLabel = sectionMeta[entry.section]?.label ?? entry.section;
 ---
@@ -44,6 +45,11 @@ const activeWritingLabel = sectionMeta[entry.section]?.label ?? entry.section;
       </div>
     </div>
     {entry.data.tldr && <div class:list={["tldr", !entry.data.full_width && "measure"]}>{entry.data.tldr}</div>}
+    {entry.data.series === "browser-gpu-tools" && entry.data.series_index && (
+      <p class="measure mb-8 text-sm text-text/80">
+        I also use WebGPU and TypeGPU to make animated art. <a class="text-highlight underline underline-offset-4 hover:text-white" href={gpuPlaygroundUrl}>See my GPU experiments ↗</a>
+      </p>
+    )}
     <article class:list={["prose lg:prose-xl max-w-none prose-pre:overflow-x-auto prose-pre:max-w-full [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h3]:text-xl [&_h3]:lg:text-3xl", !entry.data.full_width && "prose-measure"]}>
       <Content />
     </article>

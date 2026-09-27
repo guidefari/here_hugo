@@ -27,6 +27,10 @@ const navigationItems: ReadonlyArray<NavigationItem> = [
   },
 ]
 
+const blogUrl = import.meta.env.DEV
+  ? 'http://localhost:1414/webgpu-webgl-typegpu-threejs-shaders/'
+  : 'https://guidefari.com/webgpu-webgl-typegpu-threejs-shaders/'
+
 const navigationLinkView = <Message>(
   item: NavigationItem,
   route: AppRoute,
@@ -82,13 +86,39 @@ export const navigationView = <Message>(
                   'shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl',
               ),
             ],
-            navigationItems.map(item =>
-              h.keyed('li')(
-                item.routeTag,
-                [],
-                [navigationLinkView(item, route, h)],
+            [
+              ...navigationItems.map(item =>
+                h.keyed('li')(
+                  item.routeTag,
+                  [],
+                  [navigationLinkView(item, route, h)],
+                ),
               ),
-            ),
+              h.li(
+                [],
+                [
+                  h.a(
+                    [
+                      h.Href(blogUrl),
+                      h.AriaLabel('Read the graphics series'),
+                      h.Class(
+                        'block whitespace-nowrap rounded-full px-3 py-2 text-[11px] font-medium ' +
+                          'uppercase tracking-[0.14em] text-[var(--theme-muted)] ' +
+                          'hover:bg-[var(--theme-elevated)] hover:text-[var(--theme-text)] ' +
+                          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-cyan)]',
+                      ),
+                    ],
+                    [
+                      h.span([h.Class('sm:hidden')], ['Read ↗']),
+                      h.span(
+                        [h.Class('hidden sm:inline')],
+                        ['Read the series ↗'],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ],
       ),

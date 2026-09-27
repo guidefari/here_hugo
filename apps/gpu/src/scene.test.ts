@@ -30,6 +30,10 @@ describe('application view', () => {
       { update, view },
       given(modelAt('/scenes/noise-beams')),
       expect(role('navigation', { name: 'Scene navigation' })).toExist(),
+      expect(role('link', { name: 'Read the graphics series' })).toHaveAttr(
+        'href',
+        'http://localhost:1414/webgpu-webgl-typegpu-threejs-shaders/',
+      ),
       expect(role('link', { name: 'Random Dots' })).toHaveAttr(
         'href',
         '/scenes/random-dots',
