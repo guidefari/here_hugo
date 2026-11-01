@@ -1,12 +1,12 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { defineMessageUnion } from 'foldkit/message'
 
 export const Message = defineMessageUnion({
-  TickedFrame: { deltaTimeMs: S.Number },
-  CompletedGenerateNoiseSeed: { seed: S.Int },
+  TickedFrame: { deltaTimeMs: Schema.Number },
+  CompletedGenerateNoiseSeed: { seed: Schema.Int },
   CompletedInitializeRenderer: {},
   DetectedUnsupportedRenderer: {},
-  FailedInitializeRenderer: { reason: S.String },
+  FailedInitializeRenderer: { reason: Schema.String },
 })
 
 export const {

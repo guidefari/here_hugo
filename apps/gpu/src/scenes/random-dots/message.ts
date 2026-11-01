@@ -1,17 +1,17 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { defineMessageUnion } from 'foldkit/message'
 
 import { PanelArtwork } from './model'
 
 export const Message = defineMessageUnion({
-  TickedFrame: { deltaTimeMs: S.Number },
+  TickedFrame: { deltaTimeMs: Schema.Number },
   CompletedGenerateDots: {
-    artworkId: S.String,
-    panels: S.Array(PanelArtwork),
+    artworkId: Schema.String,
+    panels: Schema.Array(PanelArtwork),
   },
   FailedGenerateDots: {},
   DetectedUnsupportedRenderer: {},
-  FailedInitializeRenderer: { reason: S.String },
+  FailedInitializeRenderer: { reason: Schema.String },
 })
 
 export const {

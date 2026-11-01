@@ -1,5 +1,4 @@
 import type { Flags } from './flags'
-import type { Model } from './model'
 
 export { Flags, flags } from './flags'
 
@@ -32,6 +31,6 @@ export { StoreThemePreference, update } from './update'
 
 export { view } from './view'
 
-export const init = (flags: Flags): Readonly<{ model: Model }> => ({
+export const init = (flags: Flags) => ({
   model: flags,
 })

@@ -1,4 +1,4 @@
-import { Effect, Match as M } from 'effect'
+import { Effect, Match } from 'effect'
 import { Command, Update } from 'foldkit'
 import { modifyFields } from 'foldkit/struct'
 
@@ -22,12 +22,12 @@ export const StoreThemePreference = Command.define('StoreThemePreference', {
 
 type UpdateReturn = Update.Return<Model, Message>
 
-const withUpdateReturn = M.withReturnType<UpdateReturn>()
+const withUpdateReturn = Match.withReturnType<UpdateReturn>()
 
 export const update = (model: Model, message: Message): UpdateReturn =>
-  M.value(message).pipe(
+  Match.value(message).pipe(
     withUpdateReturn,
-    M.tagsExhaustive({
+    Match.tagsExhaustive({
       SelectedThemePreference: ({ preference }) => ({
         model: modifyFields(model, { preference: () => preference }),
         commands: [StoreThemePreference({ preference })],

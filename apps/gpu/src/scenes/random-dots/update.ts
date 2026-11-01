@@ -1,4 +1,4 @@
-import { Array, Effect, Match as M, Predicate, Random } from 'effect'
+import { Array, Effect, Match, Predicate, Random } from 'effect'
 import { Command, Runtime, Update } from 'foldkit'
 import { modifyFields } from 'foldkit/struct'
 
@@ -110,8 +110,8 @@ const generatePanelPoints = (
   dotCount: number,
   dotRadius: number,
 ): Effect.Effect<ReadonlyArray<Point>> =>
-  M.value(definition.distribution).pipe(
-    M.tagsExhaustive({
+  Match.value(definition.distribution).pipe(
+    Match.tagsExhaustive({
       Grid: grid => generateGridPoints(grid, dotCount, panel.size, dotRadius),
       Uniform: uniform =>
         Effect.all(
@@ -192,7 +192,7 @@ export const init: Runtime.ApplicationInit<Model, Message> = () => ({
 
 type UpdateReturn = Update.Return<Model, Message>
 
-const withUpdateReturn = M.withReturnType<UpdateReturn>()
+const withUpdateReturn = Match.withReturnType<UpdateReturn>()
 
 const revealPoints = (model: DrawingDots, deltaTimeMs: number): Model => {
   const dotIntervalMs = DOT_REVEAL_DURATION_MS / model.pointCountPerPanel
@@ -219,13 +219,13 @@ const revealPoints = (model: DrawingDots, deltaTimeMs: number): Model => {
 }
 
 export const update = (model: Model, message: Message): UpdateReturn =>
-  M.value(message).pipe(
+  Match.value(message).pipe(
     withUpdateReturn,
-    M.tagsExhaustive({
+    Match.tagsExhaustive({
       TickedFrame: ({ deltaTimeMs }) =>
-        M.value(model).pipe(
+        Match.value(model).pipe(
           withUpdateReturn,
-          M.tagsExhaustive({
+          Match.tagsExhaustive({
             WaitingDots: () => ({ model }),
             GeneratingDots: () => ({ model }),
             DrawingDots: drawingDots => ({

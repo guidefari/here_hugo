@@ -1,19 +1,19 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { defineTaggedUnion } from 'foldkit/schema'
 
-export const Point = S.Struct({
-  x: S.Number,
-  y: S.Number,
+export const Point = Schema.Struct({
+  x: Schema.Number,
+  y: Schema.Number,
 })
 
 export type Point = typeof Point.Type
 
-export const PanelArtwork = S.Struct({
-  id: S.String,
+export const PanelArtwork = Schema.Struct({
+  id: Schema.String,
   origin: Point,
-  size: S.Number,
-  dotRadius: S.Number,
-  points: S.Array(Point),
+  size: Schema.Number,
+  dotRadius: Schema.Number,
+  points: Schema.Array(Point),
 })
 
 export type PanelArtwork = typeof PanelArtwork.Type
@@ -22,20 +22,20 @@ export const Model = defineTaggedUnion({
   WaitingDots: {},
   GeneratingDots: {},
   DrawingDots: {
-    artworkId: S.String,
-    panels: S.Array(PanelArtwork),
-    visibleCountPerPanel: S.Number,
-    pointCountPerPanel: S.Number,
-    carryMs: S.Number,
+    artworkId: Schema.String,
+    panels: Schema.Array(PanelArtwork),
+    visibleCountPerPanel: Schema.Number,
+    pointCountPerPanel: Schema.Number,
+    carryMs: Schema.Number,
   },
   ReadyDots: {
-    artworkId: S.String,
-    panels: S.Array(PanelArtwork),
-    pointCountPerPanel: S.Number,
+    artworkId: Schema.String,
+    panels: Schema.Array(PanelArtwork),
+    pointCountPerPanel: Schema.Number,
   },
   FailedDots: {},
   UnsupportedRenderer: {},
-  FailedRenderer: { reason: S.String },
+  FailedRenderer: { reason: Schema.String },
 })
 
 export const {

@@ -1,9 +1,9 @@
-import { Effect, Option, Schema as S } from 'effect'
+import { Effect, Option, Schema } from 'effect'
 
 import { THEME_PREFERENCE_STORAGE_KEY } from './constants'
 import { ColorScheme, ThemePreference } from './model'
 
-export const Flags = S.Struct({
+export const Flags = Schema.Struct({
   preference: ThemePreference,
   systemColorScheme: ColorScheme,
 })
@@ -16,7 +16,7 @@ const readThemePreference = Effect.try({
 }).pipe(
   Effect.map(rawPreference =>
     Option.getOrElse(
-      S.decodeUnknownOption(ThemePreference)(rawPreference),
+      Schema.decodeUnknownOption(ThemePreference)(rawPreference),
       (): ThemePreference => 'System',
     ),
   ),

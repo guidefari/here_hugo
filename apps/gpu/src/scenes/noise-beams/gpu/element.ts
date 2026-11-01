@@ -1,4 +1,4 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { CustomElement } from 'foldkit'
 
 import * as Theme from '../../../theme'
@@ -11,14 +11,14 @@ const ELEMENT_TAG = 'noise-beams-gpu-canvas'
 export const noiseBeamsGpuCanvas = CustomElement.define({
   tag: ELEMENT_TAG,
   properties: {
-    timeSeconds: S.Number,
-    seed: S.Int,
+    timeSeconds: Schema.Number,
+    seed: Schema.Int,
     palette: Theme.Palette,
   },
   events: {
-    'renderer-ready': S.Struct({}),
-    'renderer-unsupported': S.Struct({}),
-    'renderer-failed': S.Struct({ reason: S.String }),
+    'renderer-ready': Schema.Struct({}),
+    'renderer-unsupported': Schema.Struct({}),
+    'renderer-failed': Schema.Struct({ reason: Schema.String }),
   },
 })
 

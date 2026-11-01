@@ -1,4 +1,4 @@
-import { Array, Data, Match as M, Number as Num } from 'effect'
+import { Array, Data, Match, Number } from 'effect'
 
 export type NormalizedPoint = Readonly<{
   x: number
@@ -44,11 +44,11 @@ const validateConcentration = ({
   strength,
   background,
 }: Concentration): void => {
-  if (!Number.isFinite(spread) || spread <= 0) {
+  if (!globalThis.Number.isFinite(spread) || spread <= 0) {
     throw new RangeError('spread must be greater than 0')
   }
 
-  if (!Number.isFinite(strength) || strength <= 0) {
+  if (!globalThis.Number.isFinite(strength) || strength <= 0) {
     throw new RangeError('strength must be greater than 0')
   }
 
@@ -60,7 +60,11 @@ const validateConcentration = ({
 export const Uniform = Distribution.Uniform
 
 export const Grid = ({ divisions, weights }: Omit<Grid, '_tag'>): Grid => {
-  if (!Number.isInteger(divisions) || divisions < 1 || divisions > 32) {
+  if (
+    !globalThis.Number.isInteger(divisions) ||
+    divisions < 1 ||
+    divisions > 32
+  ) {
     throw new RangeError('divisions must be an integer between 1 and 32')
   }
 
@@ -73,8 +77,11 @@ export const Grid = ({ divisions, weights }: Omit<Grid, '_tag'>): Grid => {
   }
 
   if (
-    Array.some(weights, weight => !Number.isFinite(weight) || weight < 0) ||
-    Array.reduce(weights, 0, Num.sum) <= 0
+    Array.some(
+      weights,
+      weight => !globalThis.Number.isFinite(weight) || weight < 0,
+    ) ||
+    Array.reduce(weights, 0, Number.sum) <= 0
   ) {
     throw new RangeError(
       'grid weights must be finite, non-negative, and contain a positive weight',
@@ -137,8 +144,8 @@ export const relativeDensityAt = (
   distribution: DotDistribution,
   point: NormalizedPoint,
 ): number =>
-  M.value(distribution).pipe(
-    M.tagsExhaustive({
+  Match.value(distribution).pipe(
+    Match.tagsExhaustive({
       Uniform: () => 1,
       Grid: grid => gridDensityAt(grid, point),
       Edge: edge =>

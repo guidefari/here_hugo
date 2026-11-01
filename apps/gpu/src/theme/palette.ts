@@ -1,17 +1,18 @@
-import { Schema as S } from 'effect'
-import { darkColors, lightColors, type ThemeColors } from '@here/theme'
+import { Schema } from 'effect'
+
+import { type ThemeColors, darkColors, lightColors } from '@here/theme'
 
 import type { ColorScheme, Model } from './model'
 
-export const Color = S.Struct({
-  red: S.Number,
-  green: S.Number,
-  blue: S.Number,
+export const Color = Schema.Struct({
+  red: Schema.Number,
+  green: Schema.Number,
+  blue: Schema.Number,
 })
 
 export type Color = typeof Color.Type
 
-export const Palette = S.Struct({
+export const Palette = Schema.Struct({
   page: Color,
   surface: Color,
   elevated: Color,
@@ -57,9 +58,17 @@ const fromTheme = (colors: ThemeColors, warning: Color): Palette => {
   }
 }
 
-export const darkPalette: Palette = fromTheme(darkColors, { red: 235, green: 111, blue: 102 })
+export const darkPalette: Palette = fromTheme(darkColors, {
+  red: 235,
+  green: 111,
+  blue: 102,
+})
 
-export const lightPalette: Palette = fromTheme(lightColors, { red: 160, green: 55, blue: 48 })
+export const lightPalette: Palette = fromTheme(lightColors, {
+  red: 160,
+  green: 55,
+  blue: 48,
+})
 
 export const resolveColorScheme = (model: Model): ColorScheme =>
   model.preference === 'System' ? model.systemColorScheme : model.preference

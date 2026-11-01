@@ -1,14 +1,14 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 
-export const ThemePreference = S.Literals(['System', 'Light', 'Dark'])
+export const ThemePreference = Schema.Literals(['System', 'Light', 'Dark'])
 
 export type ThemePreference = typeof ThemePreference.Type
 
-export const ColorScheme = S.Literals(['Light', 'Dark'])
+export const ColorScheme = Schema.Literals(['Light', 'Dark'])
 
 export type ColorScheme = typeof ColorScheme.Type
 
-export const Model = S.Struct({
+export const Model = Schema.Struct({
   preference: ThemePreference,
   systemColorScheme: ColorScheme,
 })

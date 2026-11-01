@@ -1,4 +1,4 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { CustomElement } from 'foldkit'
 
 import * as Theme from '../../../theme'
@@ -11,15 +11,15 @@ const ELEMENT_TAG = 'random-dots-gpu-canvas'
 export const randomDotsGpuCanvas = CustomElement.define({
   tag: ELEMENT_TAG,
   properties: {
-    artworkId: S.String,
-    panels: S.Array(PanelArtwork),
-    visibleCountPerPanel: S.Number,
-    pointCountPerPanel: S.Number,
+    artworkId: Schema.String,
+    panels: Schema.Array(PanelArtwork),
+    visibleCountPerPanel: Schema.Number,
+    pointCountPerPanel: Schema.Number,
     palette: Theme.Palette,
   },
   events: {
-    'renderer-unsupported': S.Struct({}),
-    'renderer-failed': S.Struct({ reason: S.String }),
+    'renderer-unsupported': Schema.Struct({}),
+    'renderer-failed': Schema.Struct({ reason: Schema.String }),
   },
 })
 

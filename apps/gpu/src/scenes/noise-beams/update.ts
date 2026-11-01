@@ -1,4 +1,4 @@
-import { Effect, Match as M, Predicate, Random } from 'effect'
+import { Effect, Match, Predicate, Random } from 'effect'
 import { Command, Runtime, Update } from 'foldkit'
 import { modifyFields } from 'foldkit/struct'
 
@@ -31,16 +31,16 @@ export const init: Runtime.ApplicationInit<Model, Message> = () => ({
 
 type UpdateReturn = Update.Return<Model, Message>
 
-const withUpdateReturn = M.withReturnType<UpdateReturn>()
+const withUpdateReturn = Match.withReturnType<UpdateReturn>()
 
 export const update = (model: Model, message: Message): UpdateReturn =>
-  M.value(message).pipe(
+  Match.value(message).pipe(
     withUpdateReturn,
-    M.tagsExhaustive({
+    Match.tagsExhaustive({
       TickedFrame: ({ deltaTimeMs }) =>
-        M.value(model).pipe(
+        Match.value(model).pipe(
           withUpdateReturn,
-          M.tagsExhaustive({
+          Match.tagsExhaustive({
             GeneratingNoiseBeams: () => ({ model }),
             WaitingNoiseBeams: () => ({ model }),
             DrawingNoiseBeams: drawingModel => ({

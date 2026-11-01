@@ -142,12 +142,12 @@ export const PerlinWaveField = (
 
   return Object.freeze(
     WaveField.PerlinWaveField({
-    cellSize: waveField.cellSize,
-    baseAzimuthRadians: waveField.baseAzimuthRadians,
-    azimuthAmplitudeRadians: waveField.azimuthAmplitudeRadians,
-    tiltAmplitudeRadians: waveField.tiltAmplitudeRadians,
-    azimuthDrift: definePoint('azimuth drift', waveField.azimuthDrift),
-    tiltDrift: definePoint('tilt drift', waveField.tiltDrift),
+      cellSize: waveField.cellSize,
+      baseAzimuthRadians: waveField.baseAzimuthRadians,
+      azimuthAmplitudeRadians: waveField.azimuthAmplitudeRadians,
+      tiltAmplitudeRadians: waveField.tiltAmplitudeRadians,
+      azimuthDrift: definePoint('azimuth drift', waveField.azimuthDrift),
+      tiltDrift: definePoint('tilt drift', waveField.tiltDrift),
     }),
   )
 }

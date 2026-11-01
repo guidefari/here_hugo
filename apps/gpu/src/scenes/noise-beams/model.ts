@@ -1,15 +1,15 @@
-import { Schema as S } from 'effect'
+import { Schema } from 'effect'
 import { defineTaggedUnion } from 'foldkit/schema'
 
 export const Model = defineTaggedUnion({
   GeneratingNoiseBeams: {},
-  WaitingNoiseBeams: { seed: S.Int },
+  WaitingNoiseBeams: { seed: Schema.Int },
   DrawingNoiseBeams: {
-    seed: S.Int,
-    elapsedSeconds: S.Number,
+    seed: Schema.Int,
+    elapsedSeconds: Schema.Number,
   },
   UnsupportedRenderer: {},
-  FailedRenderer: { reason: S.String },
+  FailedRenderer: { reason: Schema.String },
 })
 
 export const {
