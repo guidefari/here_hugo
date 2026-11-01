@@ -1,0 +1,31 @@
+name: GPU checks
+
+on:
+  pull_request:
+    paths:
+      - apps/gpu/**
+      - packages/theme/**
+      - package.json
+      - bun.lock
+      - .github/workflows/gpu-ci.yml
+  push:
+    paths:
+      - apps/gpu/**
+      - packages/theme/**
+      - package.json
+      - bun.lock
+      - .github/workflows/gpu-ci.yml
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.4.2"
+      - run: bun install --frozen-lockfile
+      - run: bun run --cwd apps/gpu lint
+      - run: bun run --cwd apps/gpu typecheck
+      - run: bun run --cwd apps/gpu test
+      - run: bun run build:gpu
