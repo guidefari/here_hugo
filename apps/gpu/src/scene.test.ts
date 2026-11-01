@@ -1,9 +1,19 @@
 import { Option } from 'effect'
-import { expect, given, role, scene } from 'foldkit/scene'
+import {
+  Command,
+  changeFiles,
+  click,
+  expect,
+  given,
+  role,
+  scene,
+} from 'foldkit/scene'
 import { fromString } from 'foldkit/url'
 import { describe, test } from 'vitest'
 
 import { GotNoiseBeamsMessage, init, update, view } from './app'
+import { FailedLoadImage } from './scenes/image-mosaic/message'
+import { LoadImage } from './scenes/image-mosaic/update'
 import { CompletedGenerateNoiseSeed } from './scenes/noise-beams/message'
 
 const modelAt = (path: string) =>
@@ -13,6 +23,47 @@ const modelAt = (path: string) =>
   ).model
 
 describe('application view', () => {
+  test('mounts the mirror and lifts camera controls without prompting on arrival', () => {
+    scene(
+      { update, view },
+      given(modelAt('/scenes/mosaic-mirror')),
+      expect(role('heading', { name: 'Mosaic Mirror', level: 1 })).toExist(),
+      expect(role('link', { name: 'Mosaic Mirror' })).toHaveAttr(
+        'aria-current',
+        'page',
+      ),
+      expect(role('status')).toHaveText('Camera off'),
+      click(role('button', { name: 'Start camera' })),
+      expect(role('button', { name: 'Stop camera' })).toExist(),
+      click(role('button', { name: 'Stop camera' })),
+      expect(role('status')).toHaveText('Camera off'),
+    )
+  })
+  test('lifts image selection commands and handles their results', () => {
+    const file = new File(['not an image'], 'broken.txt')
+    scene(
+      { update, view },
+      given(modelAt('/scenes/image-mosaic')),
+      changeFiles('#mosaic-file', [file]),
+      expect(role('status')).toHaveText('Decoding image…'),
+      Command.resolve(
+        LoadImage,
+        FailedLoadImage({ file, revision: 1, reason: 'Unsupported image' }),
+      ),
+      expect(role('alert')).toHaveText('Unsupported image'),
+    )
+  })
+  test('mounts the image mosaic scene at its route', () => {
+    scene(
+      { update, view },
+      given(modelAt('/scenes/image-mosaic')),
+      expect(role('heading', { name: 'Image Mosaic', level: 1 })).toExist(),
+      expect(role('link', { name: 'Image Mosaic' })).toHaveAttr(
+        'aria-current',
+        'page',
+      ),
+    )
+  })
   test('mounts Random Dots at the root route', () => {
     scene(
       { update, view },

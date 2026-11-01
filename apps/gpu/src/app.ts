@@ -1,4 +1,4 @@
-import { Effect, Match as M, Predicate, Schema as S } from 'effect'
+import { Effect, Match, Predicate, Schema } from 'effect'
 import { Command, Runtime, Subscription, Update } from 'foldkit'
 import { Document, Html, HtmlBuilder } from 'foldkit/html'
 import { defineMessageUnion } from 'foldkit/message'
@@ -9,12 +9,16 @@ import { Url, toString as urlToString } from 'foldkit/url'
 
 import {
   AppRoute,
+  ImageMosaicRoute,
+  MosaicMirrorRoute,
   NoiseBeamsRoute,
   NotFoundRoute,
   RandomDotsRoute,
   randomDotsRouter,
   urlToAppRoute,
 } from './route'
+import * as ImageMosaic from './scenes/image-mosaic'
+import * as MosaicMirror from './scenes/mosaic-mirror'
 import * as NoiseBeams from './scenes/noise-beams'
 import * as RandomDots from './scenes/random-dots'
 import * as Theme from './theme'
@@ -27,21 +31,29 @@ export {
   RandomDotsRoute,
 } from './route'
 
-export const Flags = S.Struct({ theme: Theme.Flags })
+export const Flags = Schema.Struct({ theme: Theme.Flags })
 
 export type Flags = typeof Flags.Type
 
 export const ActivePage = defineTaggedUnion({
   RandomDotsPage: { model: RandomDots.Model },
   NoiseBeamsPage: { model: NoiseBeams.Model },
-  NotFoundPage: { path: S.String },
+  ImageMosaicPage: { model: ImageMosaic.Model },
+  MosaicMirrorPage: { model: MosaicMirror.Model },
+  NotFoundPage: { path: Schema.String },
 })
 
-export const { RandomDotsPage, NoiseBeamsPage, NotFoundPage } = ActivePage
+export const {
+  RandomDotsPage,
+  NoiseBeamsPage,
+  ImageMosaicPage,
+  MosaicMirrorPage,
+  NotFoundPage,
+} = ActivePage
 
 export type ActivePage = typeof ActivePage.Type
 
-export const Model = S.Struct({
+export const Model = Schema.Struct({
   page: ActivePage,
   theme: Theme.Model,
 })
@@ -56,6 +68,8 @@ export const Message = defineMessageUnion({
   GotThemeMessage: { message: Theme.Message },
   GotRandomDotsMessage: { message: RandomDots.Message },
   GotNoiseBeamsMessage: { message: NoiseBeams.Message },
+  GotImageMosaicMessage: { message: ImageMosaic.Message },
+  GotMosaicMirrorMessage: { message: MosaicMirror.Message },
 })
 
 export const {
@@ -66,6 +80,8 @@ export const {
   GotThemeMessage,
   GotRandomDotsMessage,
   GotNoiseBeamsMessage,
+  GotImageMosaicMessage,
+  GotMosaicMirrorMessage,
 } = Message
 
 export type Message = typeof Message.Type
@@ -74,19 +90,19 @@ export const flags = Effect.map(Theme.flags, theme => ({ theme }))
 
 type PageInitReturn = Update.Return<ActivePage, Message>
 
-const withPageInitReturn = M.withReturnType<PageInitReturn>()
+const withPageInitReturn = Match.withReturnType<PageInitReturn>()
 
 const initPage = (route: AppRoute): PageInitReturn =>
-  M.value(route).pipe(
+  Match.value(route).pipe(
     withPageInitReturn,
-    M.tagsExhaustive({
+    Match.tagsExhaustive({
       RandomDots: () => {
         const childInit = RandomDots.init()
 
         return {
           model: RandomDotsPage({ model: childInit.model }),
           commands: Command.mapMessages(childInit.commands ?? [], message =>
-            GotRandomDotsMessage({ message }),
+            Message.GotRandomDotsMessage({ message }),
           ),
         }
       },
@@ -96,11 +112,31 @@ const initPage = (route: AppRoute): PageInitReturn =>
         return {
           model: NoiseBeamsPage({ model: childInit.model }),
           commands: Command.mapMessages(childInit.commands ?? [], message =>
-            GotNoiseBeamsMessage({ message }),
+            Message.GotNoiseBeamsMessage({ message }),
           ),
         }
       },
       NotFound: ({ path }) => ({ model: NotFoundPage({ path }) }),
+      ImageMosaic: () => {
+        const childInit = ImageMosaic.init()
+
+        return {
+          model: ImageMosaicPage({ model: childInit.model }),
+          commands: Command.mapMessages(childInit.commands ?? [], message =>
+            Message.GotImageMosaicMessage({ message }),
+          ),
+        }
+      },
+      MosaicMirror: () => {
+        const childInit = MosaicMirror.init()
+
+        return {
+          model: MosaicMirrorPage({ model: childInit.model }),
+          commands: Command.mapMessages(childInit.commands ?? [], message =>
+            Message.GotMosaicMirrorMessage({ message }),
+          ),
+        }
+      },
     }),
   )
 
@@ -118,32 +154,32 @@ export const init: Runtime.RoutingApplicationInit<Model, Message, Flags> = (
 }
 
 const NavigateInternal = Command.define('NavigateInternal', {
-  args: { url: S.String },
+  args: { url: Schema.String },
   messages: [CompletedNavigateInternal],
   execute: ({ url }) =>
     pushUrl(url).pipe(Effect.as(CompletedNavigateInternal())),
 })
 
 const LoadExternal = Command.define('LoadExternal', {
-  args: { href: S.String },
+  args: { href: Schema.String },
   messages: [CompletedLoadExternal],
   execute: ({ href }) => load(href).pipe(Effect.as(CompletedLoadExternal())),
 })
 
 type UpdateReturn = Update.Return<Model, Message>
 
-const withUpdateReturn = M.withReturnType<UpdateReturn>()
+const withUpdateReturn = Match.withReturnType<UpdateReturn>()
 
 export const update = (model: Model, message: Message): UpdateReturn =>
-  M.value(message).pipe(
+  Match.value(message).pipe(
     withUpdateReturn,
-    M.tagsExhaustive({
+    Match.tagsExhaustive({
       CompletedNavigateInternal: () => ({ model }),
       CompletedLoadExternal: () => ({ model }),
       ClickedLink: ({ request }) =>
-        M.value(request).pipe(
+        Match.value(request).pipe(
           withUpdateReturn,
-          M.tagsExhaustive({
+          Match.tagsExhaustive({
             Internal: ({ url }) => ({
               model,
               commands: [NavigateInternal({ url: urlToString(url) })],
@@ -160,7 +196,7 @@ export const update = (model: Model, message: Message): UpdateReturn =>
         return {
           model: modifyFields(model, { theme: () => childUpdate.model }),
           commands: Command.mapMessages(childUpdate.commands ?? [], message =>
-            GotThemeMessage({ message }),
+            Message.GotThemeMessage({ message }),
           ),
         }
       },
@@ -168,6 +204,10 @@ export const update = (model: Model, message: Message): UpdateReturn =>
         const route = urlToAppRoute(url)
 
         const remainsOnPage =
+          (Predicate.isTagged('ImageMosaic')(route) &&
+            Predicate.isTagged('ImageMosaicPage')(model.page)) ||
+          (Predicate.isTagged('MosaicMirror')(route) &&
+            Predicate.isTagged('MosaicMirrorPage')(model.page)) ||
           (Predicate.isTagged('RandomDots')(route) &&
             Predicate.isTagged('RandomDotsPage')(model.page)) ||
           (Predicate.isTagged('NoiseBeams')(route) &&
@@ -196,7 +236,39 @@ export const update = (model: Model, message: Message): UpdateReturn =>
             page: () => RandomDotsPage({ model: childUpdate.model }),
           }),
           commands: Command.mapMessages(childUpdate.commands ?? [], message =>
-            GotRandomDotsMessage({ message }),
+            Message.GotRandomDotsMessage({ message }),
+          ),
+        }
+      },
+      GotImageMosaicMessage: ({ message: childMessage }) => {
+        if (!Predicate.isTagged('ImageMosaicPage')(model.page)) {
+          return { model }
+        }
+
+        const childUpdate = ImageMosaic.update(model.page.model, childMessage)
+
+        return {
+          model: modifyFields(model, {
+            page: () => ImageMosaicPage({ model: childUpdate.model }),
+          }),
+          commands: Command.mapMessages(childUpdate.commands ?? [], message =>
+            Message.GotImageMosaicMessage({ message }),
+          ),
+        }
+      },
+      GotMosaicMirrorMessage: ({ message: childMessage }) => {
+        if (!Predicate.isTagged('MosaicMirrorPage')(model.page)) {
+          return { model }
+        }
+
+        const childUpdate = MosaicMirror.update(model.page.model, childMessage)
+
+        return {
+          model: modifyFields(model, {
+            page: () => MosaicMirrorPage({ model: childUpdate.model }),
+          }),
+          commands: Command.mapMessages(childUpdate.commands ?? [], message =>
+            Message.GotMosaicMirrorMessage({ message }),
           ),
         }
       },
@@ -212,7 +284,7 @@ export const update = (model: Model, message: Message): UpdateReturn =>
             page: () => NoiseBeamsPage({ model: childUpdate.model }),
           }),
           commands: Command.mapMessages(childUpdate.commands ?? [], message =>
-            GotNoiseBeamsMessage({ message }),
+            Message.GotNoiseBeamsMessage({ message }),
           ),
         }
       },
@@ -240,7 +312,7 @@ const themeSubscriptions = Subscription.lift(Theme.subscriptions)<
   Message
 >({
   toChildModel: model => model.theme,
-  toParentMessage: message => GotThemeMessage({ message }),
+  toParentMessage: message => Message.GotThemeMessage({ message }),
 })
 
 const randomDotsSubscriptions = Subscription.lift(RandomDots.subscriptions)<
@@ -248,7 +320,7 @@ const randomDotsSubscriptions = Subscription.lift(RandomDots.subscriptions)<
   Message
 >({
   toChildModel: randomDotsModel,
-  toParentMessage: message => GotRandomDotsMessage({ message }),
+  toParentMessage: message => Message.GotRandomDotsMessage({ message }),
   when: model => Predicate.isTagged('RandomDotsPage')(model.page),
 })
 
@@ -257,29 +329,49 @@ const noiseBeamsSubscriptions = Subscription.lift(NoiseBeams.subscriptions)<
   Message
 >({
   toChildModel: noiseBeamsModel,
-  toParentMessage: message => GotNoiseBeamsMessage({ message }),
+  toParentMessage: message => Message.GotNoiseBeamsMessage({ message }),
   when: model => Predicate.isTagged('NoiseBeamsPage')(model.page),
 })
 
+const mirrorSubscriptions = Subscription.lift(MosaicMirror.subscriptions)<
+  Model,
+  Message
+>({
+  toChildModel: model => {
+    if (!Predicate.isTagged('MosaicMirrorPage')(model.page)) {
+      throw new Error('Mirror subscriptions evaluated while inactive')
+    }
+
+    return model.page.model
+  },
+  toParentMessage: message => Message.GotMosaicMirrorMessage({ message }),
+  when: model => Predicate.isTagged('MosaicMirrorPage')(model.page),
+})
+
 export const subscriptions = Subscription.aggregate<Model, Message>()(
+  mirrorSubscriptions,
   themeSubscriptions,
   randomDotsSubscriptions,
   noiseBeamsSubscriptions,
 )
 
 const pageRoute = (page: ActivePage): AppRoute =>
-  M.value(page).pipe(
-    M.tagsExhaustive({
+  Match.value(page).pipe(
+    Match.tagsExhaustive({
       RandomDotsPage: () => RandomDotsRoute(),
+      ImageMosaicPage: () => ImageMosaicRoute(),
+      MosaicMirrorPage: () => MosaicMirrorRoute(),
       NoiseBeamsPage: () => NoiseBeamsRoute(),
       NotFoundPage: ({ path }) => NotFoundRoute({ path }),
     }),
   )
 
 const pageTitle = (page: ActivePage): string =>
-  M.value(page).pipe(
-    M.tagsExhaustive({
+  Match.value(page).pipe(
+    Match.tagsExhaustive({
       RandomDotsPage: () => 'Random Dots · GPU Playground',
+      ImageMosaicPage: () => 'Image Mosaic · GPU Playground',
+      MosaicMirrorPage: () => 'Mosaic Mirror · GPU Playground',
       NoiseBeamsPage: () => 'Noise Beams · GPU Playground',
       NotFoundPage: () => 'Not Found · GPU Playground',
     }),
@@ -288,15 +380,33 @@ const pageTitle = (page: ActivePage): string =>
 export const view = (model: Model, h: HtmlBuilder<Message>): Document => {
   const palette = Theme.resolvePalette(model.theme)
 
-  const routeContent: Html = M.value(model.page).pipe(
-    M.tagsExhaustive({
+  const routeContent: Html = Match.value(model.page).pipe(
+    Match.tagsExhaustive({
       RandomDotsPage: ({ model: childModel }) =>
         h.submodel({
           slotId: 'random-dots',
           model: childModel,
           view: RandomDots.view,
           viewInputs: { palette },
-          toParentMessage: message => GotRandomDotsMessage({ message }),
+          toParentMessage: message => Message.GotRandomDotsMessage({ message }),
+        }),
+      ImageMosaicPage: ({ model: childModel }) =>
+        h.submodel({
+          slotId: 'image-mosaic',
+          model: childModel,
+          view: ImageMosaic.view,
+          viewInputs: { palette },
+          toParentMessage: message =>
+            Message.GotImageMosaicMessage({ message }),
+        }),
+      MosaicMirrorPage: ({ model: childModel }) =>
+        h.submodel({
+          slotId: 'mosaic-mirror',
+          model: childModel,
+          view: MosaicMirror.view,
+          viewInputs: { palette },
+          toParentMessage: message =>
+            Message.GotMosaicMirrorMessage({ message }),
         }),
       NoiseBeamsPage: ({ model: childModel }) =>
         h.submodel({
@@ -304,18 +414,21 @@ export const view = (model: Model, h: HtmlBuilder<Message>): Document => {
           model: childModel,
           view: NoiseBeams.view,
           viewInputs: { palette },
-          toParentMessage: message => GotNoiseBeamsMessage({ message }),
+          toParentMessage: message => Message.GotNoiseBeamsMessage({ message }),
         }),
       NotFoundPage: ({ path }) =>
         h.div(
           [
             h.Class(
               'flex min-h-screen flex-col items-center justify-center bg-[var(--theme-page)] ' +
-                'px-8 pb-8 pt-24 text-[var(--theme-text)] font-mono',
+                'px-8 pb-8 pt-36 sm:pt-24 text-[var(--theme-text)]',
             ),
           ],
           [
-            h.h1([h.Class('mb-4 text-2xl')], ['Scene not found']),
+            h.h1(
+              [h.Class('mb-4 text-2xl font-semibold tracking-tight')],
+              ['Scene not found'],
+            ),
             h.p(
               [h.Class('mb-6 text-[var(--theme-muted)]')],
               [`No scene at "${path}".`],
@@ -345,7 +458,7 @@ export const view = (model: Model, h: HtmlBuilder<Message>): Document => {
         navigationView(
           pageRoute(model.page),
           model.theme,
-          message => GotThemeMessage({ message }),
+          message => Message.GotThemeMessage({ message }),
           h,
         ),
         routeContent,

@@ -7,6 +7,22 @@ and future rendering/export capabilities.
 The playground is deployed at [gpu.guidefari.com](https://gpu.guidefari.com).
 Its light and dark palettes come from `packages/theme`, shared with the main site.
 
+`apps/gpu` is the source of truth for the work previously developed in
+`effect-art-studio`, migrated through commit `3077a7d`. Keep new work here.
+
+## Scenes
+
+- `/` and `/scenes/random-dots`: four generated dot fields rendered with TypeGPU.
+- `/scenes/noise-beams`: animated three-dimensional noise beams.
+- `/scenes/image-mosaic`: local image sampling, density and movement controls,
+  background selection, and SVG/PNG export.
+- `/scenes/mosaic-mirror`: an opt-in camera silhouette mosaic with TypeGPU
+  rendering and a Canvas fallback. Camera frames stay on the device. The
+  segmentation worker, WASM runtime, and licensed model ship with the app.
+
+See [the mirror architecture](docs/mosaic-mirror-architecture.md) for its camera
+lifecycle, sampling, and rendering design.
+
 ## Architecture
 
 The app is a URL-routed collection of independent visual scenes, browsable

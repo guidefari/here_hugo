@@ -1,14 +1,21 @@
-import { Schema as S, pipe } from 'effect'
+import { Schema, pipe } from 'effect'
 import { Route } from 'foldkit'
 import { defineRouteUnion, literal, slash } from 'foldkit/route'
 
 export const AppRoute = defineRouteUnion({
   RandomDots: {},
   NoiseBeams: {},
-  NotFound: { path: S.String },
+  ImageMosaic: {},
+  MosaicMirror: {},
+  NotFound: { path: Schema.String },
 })
 
-export const { RandomDots, NoiseBeams, NotFound } = AppRoute
+export const { RandomDots, NoiseBeams, ImageMosaic, MosaicMirror, NotFound } =
+  AppRoute
+
+export const ImageMosaicRoute = ImageMosaic
+
+export const MosaicMirrorRoute = MosaicMirror
 
 export const RandomDotsRoute = RandomDots
 
@@ -32,7 +39,21 @@ export const noiseBeamsRouter = pipe(
   Route.mapTo(NoiseBeamsRoute),
 )
 
+export const imageMosaicRouter = pipe(
+  literal('scenes'),
+  slash(literal('image-mosaic')),
+  Route.mapTo(ImageMosaicRoute),
+)
+
+export const mosaicMirrorRouter = pipe(
+  literal('scenes'),
+  slash(literal('mosaic-mirror')),
+  Route.mapTo(MosaicMirrorRoute),
+)
+
 const routeParser = Route.oneOf(
+  mosaicMirrorRouter,
+  imageMosaicRouter,
   noiseBeamsRouter,
   randomDotsRouter,
   rootRandomDotsRouter,

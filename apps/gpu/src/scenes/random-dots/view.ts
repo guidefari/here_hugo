@@ -1,8 +1,9 @@
-import { Match as M } from 'effect'
+import { Match } from 'effect'
 import { Submodel } from 'foldkit'
 import { Html } from 'foldkit/html'
 
 import * as Theme from '../../theme'
+import { sceneHeader, sceneMain } from '../../ui/scene'
 import { randomDotsGpuCanvas } from './gpu/element'
 import {
   DetectedUnsupportedRenderer,
@@ -28,8 +29,8 @@ const emptyGpuCanvasInput: GpuCanvasInput = {
 }
 
 const gpuCanvasInput = (model: Model): GpuCanvasInput =>
-  M.value(model).pipe(
-    M.tagsExhaustive({
+  Match.value(model).pipe(
+    Match.tagsExhaustive({
       WaitingDots: () => emptyGpuCanvasInput,
       GeneratingDots: () => emptyGpuCanvasInput,
       DrawingDots: ({
@@ -56,8 +57,8 @@ const gpuCanvasInput = (model: Model): GpuCanvasInput =>
   )
 
 const statusText = (model: Model): string =>
-  M.value(model).pipe(
-    M.tagsExhaustive({
+  Match.value(model).pipe(
+    Match.tagsExhaustive({
       WaitingDots: () => 'Waiting to draw',
       GeneratingDots: () => 'Choosing random dot fields…',
       DrawingDots: ({ visibleCountPerPanel, pointCountPerPanel }) =>
@@ -84,7 +85,9 @@ export const view = Submodel.defineView<Model, Message, ViewInputs>(
           h.AriaLabel(
             'Four animated random dot distribution studies on a white square canvas',
           ),
-          h.Class('w-[600px] max-w-full border border-[var(--theme-border)]'),
+          h.Class(
+            'w-[600px] max-w-full overflow-hidden rounded-surface border border-[var(--theme-border)]',
+          ),
         ],
         [
           gpuCanvas([
@@ -118,8 +121,8 @@ export const view = Submodel.defineView<Model, Message, ViewInputs>(
         [`WebGPU could not start: ${reason}`],
       )
 
-    const sceneContent = M.value(model).pipe(
-      M.tagsExhaustive({
+    const sceneContent = Match.value(model).pipe(
+      Match.tagsExhaustive({
         WaitingDots: gpuArtworkView,
         GeneratingDots: gpuArtworkView,
         DrawingDots: gpuArtworkView,
@@ -131,27 +134,20 @@ export const view = Submodel.defineView<Model, Message, ViewInputs>(
     )
 
     return h.main(
+      [h.Class(sceneMain)],
       [
-        h.Class(
-          'flex min-h-screen flex-col items-center justify-center bg-[var(--theme-page)] px-8 pb-8 pt-24 ' +
-            'font-mono text-[var(--theme-text)]',
+        sceneHeader(
+          {
+            number: '01',
+            title: 'Random Dots',
+            description:
+              'Four random dot fields, drawn point by point on a square canvas.',
+            status: statusText(model),
+            announcesStatus: false,
+          },
+          h,
         ),
-      ],
-      [
-        h.header(
-          [h.Class('mb-6 text-center')],
-          [
-            h.h1(
-              [h.Class('text-2xl font-medium tracking-[0.2em] uppercase')],
-              ['Random Dots'],
-            ),
-            h.p(
-              [h.Class('mt-2 text-sm text-[var(--theme-muted)]')],
-              [statusText(model)],
-            ),
-          ],
-        ),
-        sceneContent,
+        h.div([h.Class('flex flex-col items-center')], [sceneContent]),
       ],
     )
   },

@@ -12,12 +12,18 @@ import {
   update,
   view,
 } from './app'
+import { registerMosaicWheelControl } from './scenes/image-mosaic'
+import { registerMirrorElement } from './scenes/mosaic-mirror'
 import { registerNoiseBeamsGpuElement } from './scenes/noise-beams'
 import { registerRandomDotsGpuElement } from './scenes/random-dots'
 
 registerNoiseBeamsGpuElement()
 
 registerRandomDotsGpuElement()
+
+registerMosaicWheelControl()
+
+registerMirrorElement()
 
 const application = Runtime.makeApplication({
   Flags,
@@ -33,7 +39,12 @@ const application = Runtime.makeApplication({
   },
   devTools: {
     Message,
-    excludeFromHistory: ['GotRandomDotsMessage', 'GotNoiseBeamsMessage'],
+    excludeFromHistory: [
+      'GotRandomDotsMessage',
+      'GotNoiseBeamsMessage',
+      'GotImageMosaicMessage',
+      'GotMosaicMirrorMessage',
+    ],
   },
 })
 
