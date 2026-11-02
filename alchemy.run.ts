@@ -7,6 +7,8 @@ import * as Output from "alchemy/Output";
 import * as Config from "effect/Config";
 import * as Effect from "effect/Effect";
 
+import { existingStateStore } from "./infra/state-store.ts";
+
 const zoneDomain = "guidefari.com";
 const mediaDomain = `media.${zoneDomain}`;
 const ogDomain = `og.${zoneDomain}`;
@@ -17,7 +19,7 @@ export default Alchemy.Stack(
   "here-hugo",
   {
     providers: Cloudflare.providers(),
-    state: Cloudflare.state(),
+    state: existingStateStore,
   },
   Effect.gen(function* () {
     const stack = yield* Alchemy.Stack;

@@ -20,6 +20,8 @@
     "content:check": "bun x tsc --project apps/content-cli/tsconfig.json && bun run content:lint-tags",
     "content:lint-tags": "bun run apps/content-cli/src/tag-lint-main.ts",
     "content:test": "bun --bun x vitest run apps/content-cli/src",
+    "state:test": "bun --bun x vitest run infra/state-store.test.ts",
+    "state:backup": "bun run scripts/backup-state.mts",
     "build:v2": "cd apps/v2 && bun run build",
     "build:og": "bun run --cwd apps/og-image build",
     "build:gpu": "bun run --cwd apps/gpu build",
@@ -50,5 +52,8 @@
     "@effect/vitest": "4.0.0-rc.116",
     "@types/bun": "1.4.2",
     "vitest": "4.1.0"
+  },
+  "patchedDependencies": {
+    "alchemy@2.0.0-beta.79": "patches/alchemy@2.0.0-beta.79.patch"
   }
 }

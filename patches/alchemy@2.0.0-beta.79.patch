@@ -1,0 +1,29 @@
+diff --git a/lib/Cloudflare/StateStore/index.d.ts b/lib/Cloudflare/StateStore/index.d.ts
+index bbfd254cf92a82f754c153f5a24a0fc5d3415a4c..496941aad63318af61a41a7901aca01d1959184a 100644
+--- a/lib/Cloudflare/StateStore/index.d.ts
++++ b/lib/Cloudflare/StateStore/index.d.ts
+@@ -1,2 +1,4 @@
+-export { bootstrap, state, type BootstrapOptions } from "./State.ts";
++export { bootstrap, state, loginWithCloudflare, type BootstrapOptions } from "./State.ts";
++export { STATE_STORE_VERSION } from "./Api.ts";
++export { StoredStateStoreCredentials } from "./CredentialsFile.ts";
+ //# sourceMappingURL=index.d.ts.map
+diff --git a/lib/Cloudflare/StateStore/index.js b/lib/Cloudflare/StateStore/index.js
+index 0ea28cd40dcf2fce7c22ef5e0e33dd42b93f8a1e..2c5ec969d47dc27877b8ca2a8f668c2b0fcf31ff 100644
+--- a/lib/Cloudflare/StateStore/index.js
++++ b/lib/Cloudflare/StateStore/index.js
+@@ -1,2 +1,4 @@
+-export { bootstrap, state } from "./State.js";
++export { bootstrap, state, loginWithCloudflare } from "./State.js";
++export { STATE_STORE_VERSION } from "./Api.js";
++export { StoredStateStoreCredentials } from "./CredentialsFile.js";
+ //# sourceMappingURL=index.js.map
+diff --git a/src/Cloudflare/StateStore/index.ts b/src/Cloudflare/StateStore/index.ts
+index 9a4c16349cc008eb5d3f84ce06fe7b5cc78e9a3f..2187d2771be2d99674cd8513384325d10b97be82 100644
+--- a/src/Cloudflare/StateStore/index.ts
++++ b/src/Cloudflare/StateStore/index.ts
+@@ -1 +1,3 @@
+-export { bootstrap, state, type BootstrapOptions } from "./State.ts";
++export { bootstrap, state, loginWithCloudflare, type BootstrapOptions } from "./State.ts";
++export { STATE_STORE_VERSION } from "./Api.ts";
++export { StoredStateStoreCredentials } from "./CredentialsFile.ts";

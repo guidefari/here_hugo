@@ -26,6 +26,8 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
+      - run: bun run state:test
+
       - run: bun run build:og
 
       - name: Deploy
