@@ -541,6 +541,43 @@
     text-align: center;
   }
 
+  .prose .code-output {
+    container-type: inline-size;
+    display: block;
+    width: 100%;
+    margin-block: 2rem;
+    padding: 0;
+  }
+
+  .code-output-panes {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .code-output-pane {
+    min-width: 0;
+  }
+
+  .prose .code-output-label {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+
+  .prose .code-output pre {
+    margin: 0;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  @container (min-width: 50rem) {
+    .code-output-panes {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+  }
+
   .prose .gpu-history {
     list-style: none;
     margin-block: 2rem;
