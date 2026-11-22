@@ -13,6 +13,7 @@ const zoneDomain = "guidefari.com";
 const mediaDomain = `media.${zoneDomain}`;
 const ogDomain = `og.${zoneDomain}`;
 const gpuDomain = `gpu.${zoneDomain}`;
+const researchDomain = `research.${zoneDomain}`;
 const compatibilityDate = "2026-07-11";
 
 export default Alchemy.Stack(
@@ -114,6 +115,39 @@ export default Alchemy.Stack(
       },
     });
 
+    const researchBuild = yield* Command.Build("ResearchBuild", {
+      cwd: "apps/research",
+      command: "bun run build",
+      outdir: "dist",
+      memo: {
+        include: [
+          "src/**",
+          "public/**",
+          "astro.config.ts",
+          "package.json",
+          "../../packages/theme/**",
+        ],
+      },
+    });
+    const researchBuildHash = Output.map(researchBuild.hash, ({ output }) => {
+      if (output === undefined) {
+        throw new Error("Research build did not produce an output hash");
+      }
+      return output;
+    });
+
+    const research = yield* Cloudflare.Worker("Research", {
+      name: `here-hugo-${stack.stage}-research`,
+      domain: isProduction ? researchDomain : undefined,
+      workersDev: !isProduction,
+      compatibility: { date: compatibilityDate },
+      assets: {
+        directory: researchBuild.outdir,
+        hash: researchBuildHash,
+        notFoundHandling: "404-page",
+      },
+    });
+
     const media = yield* Cloudflare.R2.Bucket("Media", {
       name: isProduction
         ? "here-hugo-prod-media"
@@ -152,6 +186,7 @@ export default Alchemy.Stack(
 
     return {
       gpuUrl: gpu.url,
+      researchUrl: research.url,
       ogImageUrl: ogImage.url,
       mediaUrl: isProduction ? `https://${mediaDomain}` : undefined,
       url: site.url,

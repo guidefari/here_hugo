@@ -1,0 +1,55 @@
+# Research
+
+A separate Astro reading room at `research.guidefari.com`, managed by the root
+Alchemy stack. It shares the main blog's palette, not its content or navigation.
+
+```sh
+bun run dev:research
+bun run build:research
+```
+
+Development runs at `http://localhost:1415`.
+
+## Add a report
+
+Copy `src/content/reports/example.md` to a descriptive filename. Keep `draft: true`
+while reviewing it. Set `draft: false` only when it is approved for public release.
+The default is draft when the field is omitted. Drafts have no generated page and
+are excluded from the library and RSS, including in development.
+
+Each report needs a title, description, and research date. Optional fields are
+`updated` and `tags`. Use headings starting at `##`: the page supplies the title
+and generates a table of contents from second-level headings.
+
+Supporting source notes can set `parent` to the main report's ID. They have their
+own reading pages and a link back to the report, but do not appear as separate
+library or RSS entries. The main report lists them under "Supporting research".
+
+Keep citations, evidence cutoffs, limitations, and AI attribution intact. Convert
+Obsidian wikilinks to ordinary Markdown links and include only approved public
+attachments. The site never reads `~/notes` directly. Do not copy private or
+employer material into this repository, even as a draft.
+
+## Imported collections
+
+- Cloudflare/npm: two main reports, 19 source notes, and four source guides.
+  Evidence cutoff: 8 November 2026. Earlier working outlines remain in the vault.
+- Docker on macOS: the preserved agent-written explainer and interactive diagrams.
+- Effect services and layers: the preserved agent-written explainer.
+
+These were copied from the approved research collections in the notes vault.
+Original notes were left unchanged. Vault links were converted to site links;
+links to the main blog use its full domain. Importing does not reverify claims.
+The SOPS explainer is also included, with a visual of the decryption boundary
+and call trees for local and Flux deployments. Its local deployment appendix stays
+in the notes vault, not in this repository.
+
+## Visual explanations
+
+The repository's `research` skill references `show-me`. Load both when authoring
+reports and choose a small diagram, call tree, comparison, or HTML figure that
+makes the central mechanism clear. See `AGENTS.md` for the authoring workflow.
+
+The production domain is declared on the `Research` Worker in `alchemy.run.ts`.
+Review the Alchemy plan before deploying. The root stack also owns the main blog,
+GPU app, media, and Discord crossposting, so a whole-stack deploy may update them.

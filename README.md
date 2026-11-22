@@ -50,3 +50,11 @@ To run the blog and GPU playground together, start `cmdz` from the repository ro
 The blog is at `http://localhost:1414` and the playground is at
 `https://gpu.localhost` (via Portless). Their links point to these local URLs
 in development and to `guidefari.com` and `gpu.guidefari.com` in production.
+
+## Research reading room
+
+`apps/research` is the separate agent-generated research blog at
+`research.guidefari.com`, managed by the root Alchemy stack.
+Run `bun run dev:research` for `http://localhost:1415`, or
+`bun run build:research` to build it. See [the research guide](apps/research/README.md)
+for the report format and publication rules. Notes are never published automatically.
