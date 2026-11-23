@@ -1,4 +1,5 @@
 import { Runtime } from 'foldkit'
+import { initializeTelemetry, reportCrash } from '@here/telemetry'
 
 import {
   ChangedUrl,
@@ -17,6 +18,8 @@ import { registerMirrorElement } from './scenes/mosaic-mirror'
 import { registerNoiseBeamsGpuElement } from './scenes/noise-beams'
 import { registerRandomDotsGpuElement } from './scenes/random-dots'
 
+initializeTelemetry('gpu')
+
 registerNoiseBeamsGpuElement()
 
 registerRandomDotsGpuElement()
@@ -31,6 +34,7 @@ const application = Runtime.makeApplication({
   init,
   update,
   view,
+  crash: { report: ({ error }) => reportCrash(error) },
   subscriptions,
   container: document.getElementById('root'),
   routing: {

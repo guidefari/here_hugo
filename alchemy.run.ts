@@ -38,6 +38,7 @@ export default Alchemy.Stack(
             "astro.config.mjs",
             "package.json",
             "../../packages/theme/**",
+            "../../packages/telemetry/**",
           ],
         },
       });
@@ -93,6 +94,7 @@ export default Alchemy.Stack(
           "vite.config.ts",
           "package.json",
           "../../packages/theme/**",
+          "../../packages/telemetry/**",
         ],
       },
     });
@@ -129,6 +131,7 @@ export default Alchemy.Stack(
           "tsconfig.json",
           "package.json",
           "../../packages/theme/**",
+          "../../packages/telemetry/**",
         ],
       },
     });

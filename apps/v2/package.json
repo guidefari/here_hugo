@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@here/theme": "workspace:*",
+    "@here/telemetry": "workspace:*",
     "@astrojs/markdown-satteri": "0.3.2",
     "@astrojs/rss": "4.0.18",
     "@tailwindcss/typography": "0.5.19",

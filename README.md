@@ -58,3 +58,10 @@ in development and to `guidefari.com` and `gpu.guidefari.com` in production.
 Run `bun run dev:research` for `http://localhost:1415`, or
 `bun run build:research` to build it. See [the research guide](apps/research/README.md)
 for the report format and publication rules. Notes are never published automatically.
+
+## Browser observability
+
+The blog, research reader, and GPU playground share Sentry error reporting and
+sampled performance traces through [`@here/telemetry`](packages/telemetry/README.md).
+Development is disabled; production uses the `here-hugo` Sentry project.
+There is no separate OTEL exporter or session replay.

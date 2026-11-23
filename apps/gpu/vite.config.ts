@@ -5,6 +5,7 @@ import { foldkit } from '@foldkit/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  build: { sourcemap: true },
   plugins: [typegpu(), tailwindcss(), foldkit({ devToolsMcpPort: 43988 })],
   resolve: {
     dedupe: ['effect'],

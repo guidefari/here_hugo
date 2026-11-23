@@ -11,6 +11,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
+    env:
+      VITE_APP_VERSION: ${{ github.sha }}
 
     steps:
       - uses: actions/checkout@v5
@@ -29,6 +31,10 @@ jobs:
       - run: bun run state:test
 
       - run: bun run --cwd apps/research verify
+
+      - run: bun run --cwd packages/telemetry test
+
+      - run: bun run --cwd packages/telemetry typecheck
 
       - run: bun run build:og
 
