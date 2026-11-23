@@ -7,7 +7,7 @@
     "dev": "bun run content:build && vite",
     "build": "bun run --cwd ../../packages/theme build:css && bun run content:build && vite build",
     "preview": "vite preview --port 1415",
-    "typecheck": "bun run content:build && bun check",
+    "typecheck": "bun run content:build && tsc --noEmit",
     "test": "bun run content:build && vitest run",
     "verify": "bun run test && bun run typecheck && bun run build"
   },
