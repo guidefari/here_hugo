@@ -12,6 +12,8 @@ describe("research reader", () => {
   test("lists the five main reports and filters by title without promoting source notes", () => {
     Scene.scene({ update, view },
       Scene.given(modelAt("/")),
+      Scene.inside(Scene.role("banner"),
+        Scene.expect(Scene.role("link", { name: "Skip to content" })).toHaveAttr("href", "#main-content")),
       Scene.expect(Scene.role("status")).toHaveText("5 of 5 reports"),
       Scene.type(Scene.label("Find a report"), "sops"),
       Scene.expect(Scene.role("status")).toHaveText("1 of 5 reports"),

@@ -8,8 +8,8 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
   return {
     title: `${report?.title ?? "Research library"} | Guide Fari Research`,
     body: h.div([], [
-      h.a([h.Class("skip-link"), h.Href("#main-content")], ["Skip to content"]),
       h.header([h.Class("site-header")], [
+        h.a([h.Class("skip-link"), h.Href("#main-content")], ["Skip to content"]),
         h.a([h.Class("brand"), h.Href("/")], ["Guide Fari ", h.span([], ["Research"])]),
         h.nav([h.AriaLabel("Primary")], [
           h.a([h.Href("/")], ["Library"]),
