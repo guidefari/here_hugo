@@ -1,6 +1,6 @@
 # Research
 
-A separate Astro reading room at `research.guidefari.com`, managed by the root
+A Foldkit reading app at `research.guidefari.com`, managed by the root
 Alchemy stack. It shares the main blog's palette, not its content or navigation.
 
 ```sh
@@ -9,6 +9,16 @@ bun run build:research
 ```
 
 Development runs at `http://localhost:1415`.
+
+`bun run verify` checks the content compiler, Foldkit scenes, types, and production
+build. The build compiles the approved Markdown into a browser content bundle and
+generates RSS. The Markdown compiler retains heading anchors, citations, Shiki
+highlighting, and embedded HTML figures without an Astro application runtime.
+
+The Foldkit model owns the current URL and library filter. Direct report links,
+browser back/forward, and contents anchors work through Foldkit navigation.
+Cloudflare serves the app shell for deep links. There is no backend or database.
+Only committed, reviewed Markdown enters the trusted HTML rendering boundary.
 
 ## Add a report
 

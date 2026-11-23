@@ -123,7 +123,10 @@ export default Alchemy.Stack(
         include: [
           "src/**",
           "public/**",
-          "astro.config.ts",
+          "scripts/**",
+          "index.html",
+          "vite.config.ts",
+          "tsconfig.json",
           "package.json",
           "../../packages/theme/**",
         ],
@@ -144,7 +147,7 @@ export default Alchemy.Stack(
       assets: {
         directory: researchBuild.outdir,
         hash: researchBuildHash,
-        notFoundHandling: "404-page",
+        notFoundHandling: "single-page-application",
       },
     });
 

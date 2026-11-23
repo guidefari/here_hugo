@@ -13,6 +13,8 @@ body { margin: 0; overflow-wrap: break-word; }
 a { color: var(--theme-highlight); text-underline-offset: 0.2em; }
 a:hover { text-decoration-thickness: 0.15em; }
 a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+input { display: block; inline-size: 100%; margin-block: 0.5rem 1.5rem; padding: 0.75rem; border: 1px solid var(--theme-border-strong); border-radius: 0.25rem; background: var(--theme-panel); color: var(--theme-text); font: inherit; }
+label { display: block; margin-block-start: 1.5rem; }
 h1, h2, h3, h4 { color: var(--theme-white); line-height: 1.2; text-wrap: balance; }
 h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.04em; }
 h2 { font-size: 1.5rem; }

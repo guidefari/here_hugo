@@ -28,6 +28,8 @@ jobs:
 
       - run: bun run state:test
 
+      - run: bun run --cwd apps/research verify
+
       - run: bun run build:og
 
       - name: Deploy

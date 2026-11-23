@@ -1,5 +1,9 @@
 # Research authoring
 
+- This is a Foldkit application. Keep init/update/view pure, express side effects
+  as Commands, and keep runtime boot in `src/entry.ts`. Follow the conventions in
+  `apps/gpu/AGENTS.md` at the repository root when changing Foldkit code.
+
 - Use the repository's `research` skill for primary-source investigation.
 - Load `show-me` when writing or substantially updating reports. Include a small
   visual that explains the mechanism, ownership boundary, or comparison better

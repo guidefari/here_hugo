@@ -21,4 +21,6 @@ apps/og-image/dist
 apps/gpu/dist
 apps/research/.astro
 apps/research/dist
+apps/research/.generated
+apps/research/public/rss.xml
 .env
