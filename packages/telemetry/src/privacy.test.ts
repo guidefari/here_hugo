@@ -64,16 +64,20 @@ describe("browser telemetry privacy", () => {
       is_segment: true,
       attributes: { "sentry.op": "navigation", "http.url": secret, query: secret },
     };
-    const result = scrubSpan(span, "research");
+    const result = scrubSpan(span, "research", "test-revision");
     expect(JSON.stringify(result)).not.toContain(secret);
     expect(result.name).toBe("/reports/:report");
     expect(result.parent_span_id).toBe(span.parent_span_id);
     expect(result.end_timestamp).toBe(2);
+    expect(result.attributes["sentry.environment"]).toBe("production");
+    expect(result.attributes["sentry.release"]).toBe("here-hugo@test-revision");
   });
 
   test("uses bounded route names and explicitly samples production performance", () => {
     expect(routeName("blog", "/private-page?query=sensitive")).toBe("/:page");
     expect(routeName("gpu", "/scenes/noise-beams")).toBe("/scenes/:scene");
+    expect(routeName("research", "https://research.guidefari.com/reports/sops/?private=sensitive")).toBe("/reports/:report");
+    expect(routeName("blog", "https://guidefari.com/")).toBe("/");
     expect(browserOptions("research").tracesSampleRate).toBe(0.1);
     expect(browserOptions("research").dataCollection?.userInfo).toBe(false);
     expect(browserOptions("research").tracePropagationTargets).toEqual([]);

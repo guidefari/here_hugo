@@ -45,12 +45,12 @@ export function browserOptions(application: Application, release?: string): Brow
         beforeStartSpan: (options) => ({
           ...options,
           name: routeName(application, options.name ?? "/"),
-          attributes: { "sentry.op": options.op ?? "navigation", "sentry.source": "route" },
+          attributes: { "sentry.op": options.op ?? "navigation", "sentry.segment.name.source": "route" },
         }),
       }),
     ],
     beforeSend: (event) => scrubError(event, application),
-    beforeSendSpan: (span) => scrubSpan(span, application),
+    beforeSendSpan: (span) => scrubSpan(span, application, release),
     beforeBreadcrumb: () => null,
   };
 }

@@ -10,7 +10,8 @@ const errorTypes = new Set([
 const operations = new Set(["pageload", "navigation", "ui.render", "resource.script", "resource.css"]);
 
 export function routeName(application: Application, path: string) {
-  const pathname = path.split(/[?#]/)[0] ?? "/";
+  const base = "https://here-hugo.invalid";
+  const pathname = URL.canParse(path, base) ? new URL(path, base).pathname : "/";
   if (pathname === "/") return "/";
   if (application === "research" && pathname.startsWith("/reports/")) return "/reports/:report";
   if (application === "gpu" && pathname.startsWith("/scenes/")) return "/scenes/:scene";
@@ -52,7 +53,7 @@ function scrubFrame(frame: StackFrame): StackFrame {
   };
 }
 
-export function scrubSpan(span: BrowserSpan, application: Application): BrowserSpan {
+export function scrubSpan(span: BrowserSpan, application: Application, release?: string): BrowserSpan {
   const operation = span.attributes["sentry.op"];
   const safeOperation = typeof operation === "string" && operations.has(operation) ? operation : "ui.render";
   return {
@@ -67,6 +68,9 @@ export function scrubSpan(span: BrowserSpan, application: Application): BrowserS
     attributes: {
       "sentry.op": safeOperation,
       "sentry.origin": "auto",
+      "sentry.environment": "production",
+      "sentry.segment.name.source": "route",
+      ...(release ? { "sentry.release": `here-hugo@${release}` } : {}),
       application,
     },
   };
