@@ -100,18 +100,18 @@ function reportView(model: Model, report: Report, h: HtmlBuilder<Message>) {
   const parent = model.reports.find((entry) => entry.id === report.parent);
   const supporting = model.reports.filter((entry) => entry.parent === report.id)
     .sort((a, b) => a.title.localeCompare(b.title));
+  const header = h.header([h.Class("report-header")], [
+    h.a([h.Href("/")], ["← Research library"]),
+    parent ? h.p([], [h.a([h.Href(`/reports/${parent.id}/`)], [`Part of: ${parent.title}`])]) : h.empty,
+    h.p([h.Class("eyebrow")], [`Agent-generated research · ${formatDate(report.date)}`]),
+    h.h1([], [report.title]),
+    h.p([h.Class("lede")], [report.description]),
+    report.updated ? h.p([], [`Updated ${formatDate(report.updated)}`]) : h.empty,
+    tagsView(report, h),
+    h.p([h.Class("notice")], ["Generated with AI assistance. Claims may be incomplete or out of date. Check the linked sources before relying on them."]),
+  ]);
   return h.article([], [
-    h.header([h.Class("report-header")], [
-      h.a([h.Href("/")], ["← Research library"]),
-      parent ? h.p([], [h.a([h.Href(`/reports/${parent.id}/`)], [`Part of: ${parent.title}`])]) : h.empty,
-      h.p([h.Class("eyebrow")], [`Agent-generated research · ${formatDate(report.date)}`]),
-      h.h1([], [report.title]),
-      h.p([h.Class("lede")], [report.description]),
-      report.updated ? h.p([], [`Updated ${formatDate(report.updated)}`]) : h.empty,
-      tagsView(report, h),
-      h.p([h.Class("notice")], ["Generated with AI assistance. Claims may be incomplete or out of date. Check the linked sources before relying on them."]),
-    ]),
-    readerView(model, report, h),
+    readerView(model, report, header, h),
     Array.match(supporting, {
       onEmpty: () => h.empty,
       onNonEmpty: (notes) => h.details([h.Class("supporting-notes")], [
