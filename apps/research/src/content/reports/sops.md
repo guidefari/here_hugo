@@ -40,14 +40,18 @@ The credentials problem follows directly. If Git is the desired state, database
 passwords and API tokens are part of that state too. Committing them as plaintext
 gives them to everyone who can read the repository and its history.
 
-<figure class="sops-flow" aria-labelledby="gitops-context-caption">
-<p class="sops-flow-title">From a Git change to a running cluster</p>
-<ol>
-<li><span class="sops-flow-label">1 · Declare</span><strong>Git holds the desired configuration</strong><p>Review and version changes to workloads and their configuration. Secret values can be SOPS-encrypted.</p></li>
-<li><span class="sops-flow-label">2 · Reconcile</span><strong>Flux pulls and applies that state</strong><p>Its SOPS integration can decrypt the secret manifests using an identity supplied separately to the cluster.</p></li>
-<li><span class="sops-flow-label">3 · Consume</span><strong>Kubernetes runs the workloads</strong><p>Applications consume ordinary Kubernetes Secrets. The Git encryption does not protect every runtime copy.</p></li>
+<figure class="diagram" aria-labelledby="gitops-context-caption">
+<p class="diagram-title">The GitOps loop, and what sits outside it</p>
+<ol class="d-flow has-edges">
+<li class="d-node"><em class="d-tag">Desired state</em><b>Git repository</b><span>Manifests and config, including credentials</span></li>
+<li class="d-edge">pulled by</li>
+<li class="d-node"><em class="d-tag">Agent</em><b>Flux controllers</b><span>Compare Git with the cluster, apply the difference</span></li>
+<li class="d-edge">applies to</li>
+<li class="d-node"><em class="d-tag">Actual state</em><b>Kubernetes cluster</b><span>Running workloads</span></li>
 </ol>
-<figcaption id="gitops-context-caption">A simplified GitOps flow, not a live cluster audit. Bootstrap access and the private decryption identity must exist outside this loop.</figcaption>
+<p class="d-loop">Reconciliation repeats on an interval, so the cluster keeps converging on what Git says.</p>
+<div class="d-outside"><b>Bootstrap, once, outside the loop</b><span>Create the server and Kubernetes, install Flux, and hand the cluster anything it needs before it can read Git. A private decryption key is one of those things.</span></div>
+<figcaption id="gitops-context-caption">Simplified, not an audit of a real cluster. The loop can only manage what the bootstrap has already made possible.</figcaption>
 </figure>
 
 **SOPS** is the file-encryption tool in that flow, not the GitOps controller or a
@@ -73,35 +77,31 @@ values. The age integration encrypts the data key, not the whole YAML document.
 [age integration](https://getsops.io/docs/usage/identities/age/),
 [implementation](https://github.com/getsops/sops/blob/main/age/keysource.go))
 
-<figure class="sops-flow" aria-labelledby="key-layers-caption">
-<p class="sops-flow-title">Two locks, two responsibilities</p>
-<ol>
-<li><span class="sops-flow-label">Outer lock · age or KMS</span><strong>Private identity → data key</strong><p>Your identity unlocks the encrypted copy of the file's data key. A public recipient alone cannot do this.</p></li>
-<li><span class="sops-flow-label">Inner lock · SOPS</span><strong>Data key → secret values</strong><p>The recovered data key decrypts the values using AES-256-GCM. It is not the application's password.</p></li>
-</ol>
-<figcaption id="key-layers-caption">The identity protects the key; the key protects the values. Changing one is not automatically changing the other.</figcaption>
-</figure>
+<figure class="diagram" aria-labelledby="key-layers-caption">
+<p class="diagram-title">One file, two locks</p>
 
-<figure class="sops-flow" aria-labelledby="sops-flow-caption">
-<p class="sops-flow-title">Where the secret becomes plaintext</p>
-<ol>
-<li>
-<span class="sops-flow-label">1 · Stored in Git</span>
-<strong>Encrypted values + encrypted data key</strong>
-<p>Public recipients and readable document structure may be present. The private identity is kept elsewhere.</p>
-</li>
-<li>
-<span class="sops-flow-label">2 · Trusted decryption process</span>
-<strong>Unlock the data key, then decrypt the values</strong>
-<p>An age private identity or authorized KMS access arrives through a separate, secured path.</p>
-</li>
-<li>
-<span class="sops-flow-label">3 · Deployment or runtime</span>
-<strong>Plaintext credentials reach their consumer</strong>
-<p>The runner, application, or Kubernetes Secret needs its own access controls. SOPS no longer protects this copy.</p>
-</li>
+```yaml
+stringData:
+  API_TOKEN: ENC[AES256_GCM,data:...,iv:...,tag:...,type:str]
+sops:
+  age:
+    - recipient: age1...
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        ...
+        -----END AGE ENCRYPTED FILE-----
+  mac: ENC[AES256_GCM,data:...,iv:...,tag:...,type:str]
+  version: ...
+```
+
+<ol class="d-flow has-edges">
+<li class="d-node is-sealed"><em class="d-tag">Outside Git</em><b>age identity</b><span>Private. Matches the public <code>recipient</code></span></li>
+<li class="d-edge">unlocks</li>
+<li class="d-node is-sealed"><em class="d-tag">sops.age[].enc</em><b>Data key</b><span>Stored in the file, encrypted once per recipient</span></li>
+<li class="d-edge">decrypts</li>
+<li class="d-node is-plain"><em class="d-tag">Result</em><b>Plaintext values</b><span>Each <code>ENC[...]</code> field, decrypted with AES-256-GCM</span></li>
 </ol>
-<figcaption id="sops-flow-caption">Git holds the encrypted document. A separately authorized process decrypts it. Protection after that boundary is the consumer's responsibility.</figcaption>
+<figcaption id="key-layers-caption">Abbreviated file: ciphertext and some metadata fields are elided. The identity protects the data key, and the data key protects the values, so replacing one does not replace the other.</figcaption>
 </figure>
 
 An **age recipient** is public: it identifies who a file can be encrypted for.
@@ -189,27 +189,30 @@ Kubernetes authorization and encryption at rest remain separate concerns.
 
 The two paths differ in **who decrypts**, not in the basic encryption:
 
-<figure class="sops-flow" aria-labelledby="deployment-lanes-caption">
-<p class="sops-flow-title">Same encrypted starting point, different plaintext destinations</p>
-<div class="deployment-lanes">
-<section>
-<h3>Local deployment</h3>
-<ol>
-<li><strong>Bun runner starts SOPS</strong><p>A private age identity arrives separately from Git.</p></li>
-<li><strong>Plaintext JSON crosses a pipe</strong><p>The runner validates it and selects the credentials the deployment needs.</p></li>
-<li><strong>Deployment subprocess</strong><p>Receives credentials in its environment. The runner and child process must both be trusted.</p></li>
+<figure class="diagram" aria-labelledby="deployment-lanes-caption">
+<p class="diagram-title">Same encrypted file, two places plaintext appears</p>
+<p class="d-legend" aria-hidden="true"><span class="is-sealed">Encrypted</span><span class="is-boundary">Decryption, needs the private identity</span><span class="is-plain">Plaintext, protected by something other than SOPS</span></p>
+<div class="d-lanes">
+<section class="d-lane" aria-label="Local deployment runner">
+<p class="d-lane-name">Local runner</p>
+<ol class="d-flow">
+<li class="d-node is-sealed"><em class="d-tag">Encrypted</em><b>File in Git</b></li>
+<li class="d-boundary">identity from the operator's machine</li>
+<li class="d-node is-plain"><em class="d-tag">Plaintext</em><b>Runner process</b><span>Reads SOPS output from a pipe</span></li>
+<li class="d-node is-plain"><em class="d-tag">Plaintext</em><b>Deploy subprocess</b><span>Gets only what it needs, in its environment</span></li>
 </ol>
 </section>
-<section>
-<h3>Flux reconciliation</h3>
-<ol>
-<li><strong>Flux fetches Git content</strong><p>A separately bootstrapped cluster identity enables decryption.</p></li>
-<li><strong>Plaintext manifest is applied</strong><p>The result is an ordinary Kubernetes Secret, not SOPS-encrypted storage.</p></li>
-<li><strong>Workload consumes the Secret</strong><p>Cluster authorization and storage encryption protect this next stage.</p></li>
+<section class="d-lane" aria-label="Flux reconciliation">
+<p class="d-lane-name">Flux</p>
+<ol class="d-flow">
+<li class="d-node is-sealed"><em class="d-tag">Encrypted</em><b>Manifest in Git</b></li>
+<li class="d-boundary">identity from a bootstrapped cluster Secret</li>
+<li class="d-node is-plain"><em class="d-tag">Plaintext</em><b>Kubernetes Secret</b><span>Applied during reconciliation</span></li>
+<li class="d-node is-plain"><em class="d-tag">Plaintext</em><b>Workload</b><span>Reads the Secret</span></li>
 </ol>
 </section>
 </div>
-<figcaption id="deployment-lanes-caption">Follow the plaintext boundary: a pipe avoids an output file, but neither path avoids handling plaintext.</figcaption>
+<figcaption id="deployment-lanes-caption">The paths differ in who decrypts and where the identity comes from, not in the encryption. Everything right of the dashed line relies on process trust, Kubernetes authorization, and storage encryption.</figcaption>
 </figure>
 
 ## CI does not get access just by checking out Git
@@ -228,30 +231,25 @@ of a SOPS file does not prove that the CI workflow decrypts it.
 
 ## Editing, updating recipients, and rotating are not the same
 
-These examples describe operations, not commands to run against production
-without reviewing their impact.
+<figure class="diagram d-matrix" aria-labelledby="rotation-caption">
+<p class="diagram-title">Which operation changes what</p>
+<div class="d-matrix-scroll" tabindex="0" role="region" aria-labelledby="rotation-caption">
 
-| Operation | Example | What changes |
-| --- | --- | --- |
-| Edit content | `sops edit secrets/example.yaml` | The secret values you edit. Ordinary editing is not data-key rotation. |
-| Update recipients | `sops updatekeys secrets/example.yaml` | Which recipients protect copies of the existing data key, based on config. |
-| Rotate the data key | `sops rotate --in-place secrets/example.yaml` | The file's data key and the values encrypted with it. |
-| Rotate an application credential | Replace a token or password at its provider, then update consumers | The actual credential accepted by the service. |
+| Operation | Who can unlock | Data key | Values in the file | Credential the service accepts |
+| --- | --- | --- | --- | --- |
+| Edit content<br>`sops edit` | Same | Same | **Changes** | Same |
+| Update recipients<br>`sops updatekeys` | **Changes** | Same | Same | Same |
+| Rotate the data key<br>`sops rotate --in-place` | Same | **Changes** | Re-encrypted, same plaintext | Same |
+| Rotate an application credential<br>Replace it at the provider, then edit the file | Same | Same | **Changes** | **Changes** |
+
+</div>
+<figcaption id="rotation-caption">Example commands describe operations; review their impact before running them against real secrets. Only the last row changes what an attacker who already read the old value can use.</figcaption>
+</figure>
 
 Updating recipients does not rotate the data key. Rotating the data key does not
 change the password or API token inside the file.
 ([SOPS key management](https://getsops.io/docs/usage/key-management/),
 [edit implementation](https://github.com/getsops/sops/blob/main/cmd/sops/edit.go))
-
-<figure class="sops-flow" aria-labelledby="rotation-caption">
-<p class="sops-flow-title">Three separate things you may need to replace</p>
-<ol>
-<li><span class="sops-flow-label">Access</span><strong>Recipient set</strong><p>Who can unlock the current file? Update the encrypted copies of its data key.</p></li>
-<li><span class="sops-flow-label">Encryption</span><strong>File data key</strong><p>What encrypts the values? Rotate it to re-encrypt the file.</p></li>
-<li><span class="sops-flow-label">Service</span><strong>Actual credential</strong><p>What does the provider accept? Revoke or replace that credential at the provider.</p></li>
-</ol>
-<figcaption id="rotation-caption">These are separate controls, not interchangeable fixes. Old Git revisions and already-learned credentials remain part of recovery.</figcaption>
-</figure>
 
 If an identity is compromised, removing its recipient does not make old Git
 revisions unreadable to someone who already has that identity. Nor does fresh
