@@ -117,6 +117,18 @@ Required payers = fixed annual budget ÷ (annual price × 80%), rounded up.
 | $12,000/enterprise | 53 enterprises | 209 enterprises | 1,042 enterprises |
 | $25,000/sponsor | 25 sponsors | 100 sponsors | 500 sponsors |
 
+<figure class="diagram" aria-labelledby="payers-caption">
+<p class="diagram-title">Hypothetical: payers needed for a $2 million fixed budget</p>
+<ol class="d-bars">
+<li><span class="d-bar-label">$84 per seat</span><span class="d-bar-track"><span class="d-bar" style="--v: 1.0000" aria-hidden="true"></span><span class="d-bar-value">29,762 seats</span></span></li>
+<li><span class="d-bar-label">$600 per org</span><span class="d-bar-track"><span class="d-bar" style="--v: 0.1400" aria-hidden="true"></span><span class="d-bar-value">4,167 orgs</span></span></li>
+<li><span class="d-bar-label">$1,200 per org</span><span class="d-bar-track"><span class="d-bar" style="--v: 0.0700" aria-hidden="true"></span><span class="d-bar-value">2,084 orgs</span></span></li>
+<li><span class="d-bar-label">$12,000 per enterprise</span><span class="d-bar-track"><span class="d-bar" style="--v: 0.0070" aria-hidden="true"></span><span class="d-bar-value">209 enterprises</span></span></li>
+<li><span class="d-bar-label">$25,000 per sponsor</span><span class="d-bar-track"><span class="d-bar" style="--v: 0.0034" aria-hidden="true"></span><span class="d-bar-value">100 sponsors</span></span></li>
+</ol>
+<figcaption id="payers-caption">Same arithmetic as the $2 million column above, at an assumed 80% contribution margin. Prices, budget and margin are all assumptions, not npm's figures. The bar lengths are to scale.</figcaption>
+</figure>
+
 At $12,000/year and a $2 million fixed budget, break-even changes from 209 buyers at 80% contribution margin to 278 at 60%, or 186 at 90%. A model that instead puts all delivery and service costs inside its operating budget must not apply the same variable-cost deduction again.
 
 The conclusion is not that enterprise pricing is guaranteed to work. It is that an enterprise model can be evaluated with hundreds of buyers, while low-price seats need tens of thousands. The next question is whether buyers value the offer enough to sign contracts.

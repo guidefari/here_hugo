@@ -66,7 +66,7 @@
 .d-bars li { display: grid; grid-template-columns: minmax(6.5rem, 9rem) minmax(0, 1fr); align-items: center; gap: 0.75rem; }
 .d-bars .d-bar-label { font-size: 0.8rem; color: var(--theme-text); }
 .d-bars .d-bar-track { display: flex; align-items: center; gap: 0.5rem; }
-.d-bars .d-bar { flex: none; inline-size: var(--value); min-inline-size: 3px; block-size: 0.9rem; border-radius: 0 4px 4px 0; background: var(--theme-highlight); }
+.d-bars .d-bar { flex: none; inline-size: calc((100% - 8rem) * var(--v)); min-inline-size: 3px; block-size: 0.9rem; border-radius: 0 4px 4px 0; background: var(--theme-highlight); }
 .d-bars .d-bar-value { flex: none; font-size: 0.8rem; font-variant-numeric: tabular-nums; color: var(--theme-white); font-weight: 600; }
 
 @container (min-width: 34rem) {
