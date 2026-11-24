@@ -48,7 +48,7 @@
 .d-band.is-unknown { border: 2px dashed var(--theme-border-strong); text-align: start; color: var(--theme-muted-strong); }
 .d-band.is-unknown b { color: var(--theme-text); }
 .d-band-edge { margin: -0.25rem 0; text-align: center; font-size: 0.75rem; color: var(--theme-muted-strong); }
-.d-stack { display: flex; flex-direction: column; padding: 0.75rem; border: 1px solid var(--theme-border-strong); border-radius: 0.375rem; background: var(--theme-panel); }
+.diagram .d-stack { display: flex; flex-direction: column; padding: 0.75rem; border: 1px solid var(--theme-border-strong); border-radius: 0.375rem; background: var(--theme-panel); }
 .d-stack > .d-stack-name { margin-block-end: 0.6rem; font-size: 0.95rem; font-weight: 700; color: var(--theme-white); }
 .d-stack > li:not(.d-stack-name, .d-edge) { padding: 0.45rem 0.6rem; border: 1px solid var(--theme-border); border-radius: 0.25rem; background: var(--theme-bg); }
 .d-stack > li:last-child { border-color: var(--theme-highlight); }
@@ -74,10 +74,10 @@
   .d-flow > .d-node { flex: 1 1 0; min-inline-size: 0; }
   .d-flow:not(.has-edges) > li + li { margin-block-start: 0; margin-inline-start: 1.5rem; }
   .d-flow:not(.has-edges) > li:not(:last-child, .d-boundary)::after { content: "→"; inset-block: 50% auto; inset-inline: auto -1.2rem; inset-block-end: auto; translate: 0 -50%; }
-  .d-edge { flex: 0 0 5.5rem; flex-direction: column; justify-content: center; gap: 0.1rem; padding: 0 0.35rem; text-align: center; }
-  .d-edge::before { content: "→"; order: 1; }
-  .d-boundary { flex: 0 0 5.5rem; flex-direction: column; justify-content: center; padding: 0 0.25rem; text-align: center; }
-  .d-boundary::before, .d-boundary::after { flex: 1; border-block-start: 0; border-inline-start: 2px dashed var(--theme-highlight); min-block-size: 0.75rem; }
+  .d-flow > .d-edge { flex: 0 0 5.5rem; flex-direction: column; justify-content: center; gap: 0.1rem; padding: 0 0.35rem; text-align: center; }
+  .d-flow > .d-edge::before { content: "→"; order: 1; }
+  .d-flow > .d-boundary { flex: 0 0 5.5rem; flex-direction: column; justify-content: center; padding: 0 0.25rem; text-align: center; }
+  .d-flow > .d-boundary::before, .d-flow > .d-boundary::after { flex: 1; border-block-start: 0; border-inline-start: 2px dashed var(--theme-highlight); min-block-size: 0.75rem; }
   .d-stacks { grid-template-columns: repeat(var(--d-cols, 3), minmax(0, 1fr)); }
   .d-stacks > :is(.d-band, .d-band-edge) { grid-column: 1 / -1; }
 }
@@ -85,3 +85,41 @@
 
 .d-boundary::before, .d-boundary::after { min-inline-size: 1.25rem; }
 .d-matrix th:first-child, .d-matrix td:first-child { position: sticky; inset-inline-start: 0; z-index: 1; background: var(--theme-bg); }
+
+.docker-map { --dm-amber: #c26a2e; container-type: inline-size; margin: 2.25rem 0; padding: 1.25rem clamp(0.75rem, 3vw, 1.5rem) 1rem; border: 1px solid var(--theme-border-strong); border-radius: 0.5rem; font-size: 0.875rem; line-height: 1.45; }
+.docker-map .dm-eyebrow { margin: 0 0 1rem; font-size: 0.7rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--theme-muted-strong); }
+.docker-map strong { color: var(--theme-white); }
+.docker-map fieldset { border: 0; padding: 0; margin: 0 0 1.25rem; min-inline-size: 0; }
+.docker-map legend { margin-block-end: 0.5rem; font-size: 0.8rem; color: var(--theme-muted-strong); }
+.docker-map .dm-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.docker-map label { display: flex; align-items: center; gap: 0.5rem; margin: 0; padding: 0.6rem 0.9rem; min-block-size: 2.75rem; border: 1px solid var(--theme-border-strong); border-radius: 0.375rem; font: 600 0.8rem/1.4 ui-monospace, monospace; cursor: pointer; }
+.docker-map label:has(input:checked) { border-color: var(--theme-highlight); background: var(--theme-panel); }
+.docker-map input { display: inline; inline-size: 1rem; block-size: 1rem; margin: 0; padding: 0; accent-color: var(--theme-highlight); }
+.docker-map label:focus-within { outline: 2px solid var(--theme-highlight); outline-offset: 3px; }
+.docker-map .dm-host { padding: clamp(0.75rem, 3vw, 1.25rem); border: 1px solid var(--theme-border-strong); border-radius: 0.5rem; }
+.docker-map .dm-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-block-end: 0.75rem; }
+.docker-map .dm-label { font-weight: 700; color: var(--theme-white); }
+.docker-map .dm-badge { padding: 0.15rem 0.45rem; border: 1px solid var(--theme-border-strong); border-radius: 0.25rem; font: 600 0.7rem/1.5 ui-monospace, monospace; color: var(--theme-muted-strong); }
+.docker-map .dm-cli { padding: 0.6rem 0.75rem; border-radius: 0.375rem; background: var(--theme-codeBlockBg); color: #e8eef0; font: 0.8rem/1.6 ui-monospace, monospace; overflow-wrap: anywhere; }
+.docker-map .dm-link { margin-inline-start: 1rem; padding: 0.6rem 0.9rem; border-inline-start: 2px dashed var(--theme-border-strong); font-size: 0.75rem; color: var(--theme-muted-strong); }
+.docker-map .dm-vm { padding: clamp(0.75rem, 3vw, 1rem); border: 1px solid var(--theme-border-strong); border-radius: 0.5rem; background: var(--theme-panel); }
+.docker-map .dm-engine { margin: 0 0 0.75rem; font-size: 0.8rem; color: var(--theme-muted-strong); }
+.docker-map .dm-container { padding: 0.75rem; border: 1px solid var(--theme-highlight); border-radius: 0.375rem; background: var(--theme-bg); }
+.docker-map .dm-container p { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--theme-muted-strong); }
+.docker-map .dm-translation { margin-block-start: 0.6rem; padding: 0.6rem 0.75rem; border: 1px dashed var(--dm-amber); border-radius: 0.375rem; font-size: 0.8rem; }
+.docker-map .dm-translation strong { color: var(--dm-amber); }
+.docker-map .dm-kernel { margin-block-start: 0.6rem; padding: 0.5rem; border-radius: 0.375rem; background: var(--theme-highlight); color: var(--theme-onHighlight); text-align: center; font: 600 0.8rem/1.5 ui-monospace, monospace; }
+.docker-map .dm-hardware { display: flex; gap: 0.75rem; align-items: center; margin-block-start: 0.25rem; }
+.docker-map .dm-chip { padding: 0.6rem; border: 2px solid var(--theme-text); border-radius: 0.375rem; font: 700 0.8rem/1.2 ui-monospace, monospace; color: var(--theme-white); }
+.docker-map .dm-hardware p { margin: 0; font-size: 0.8rem; color: var(--theme-muted-strong); }
+.docker-map .dm-conclusion { margin: 1rem 0 0; font-size: 0.875rem; }
+.docker-map .dm-amd { display: none; }
+.docker-map:has(#dm-amd:checked) .dm-arm { display: none; }
+.docker-map:has(#dm-amd:checked) .dm-amd { display: block; }
+.docker-map:has(#dm-amd:checked) .dm-cli .dm-amd { display: inline; }
+.docker-map:has(#dm-amd:checked) .dm-container { border-color: var(--dm-amber); border-style: dashed; }
+.docker-map figcaption { margin-block-start: 1rem; padding-block-start: 0.75rem; border-block-start: 1px solid var(--theme-border); font-size: 0.8rem; line-height: 1.55; color: var(--theme-muted-strong); }
+
+@media (prefers-color-scheme: light) {
+  .docker-map { --dm-amber: #8a431c; }
+}

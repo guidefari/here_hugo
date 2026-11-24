@@ -50,17 +50,37 @@ Kubernetes sits at a different level: it orchestrates workloads across nodes. It
 
 **OCI is the shared container standards family. CRI is Kubernetes' interface to its container runtime.** Kubernetes doesn't need Docker Engine to run images built with Docker.
 
-<figure class="docker-map not-prose">
-<p class="dm-eyebrow">The ecosystem / different tools, shared contracts</p>
-<h3 class="dm-title">Docker isn't the container standard.</h3>
-<div class="dm-ecosystem">
-<div class="dm-vm"><h4>Docker</h4><p>Docker CLI</p><div class="dm-link">↓ engine API</div><p>dockerd + containerd</p><div class="dm-link">↓ delegates execution</div><p><strong>runc</strong></p></div>
-<div class="dm-vm"><h4>Podman</h4><p>Podman CLI</p><div class="dm-link">↓ local engine, or remote service on Mac</div><p>Podman / libpod</p><div class="dm-link">↓ delegates execution</div><p><strong>crun or runc</strong></p></div>
-<div class="dm-vm"><h4>Kubernetes</h4><p>kubelet on each node</p><div class="dm-link">↓ CRI</div><p>containerd or CRI-O</p><div class="dm-link">↓ delegates execution</div><p><strong>OCI runtime, e.g. runc</strong></p></div>
+<figure class="diagram" aria-labelledby="oci-stacks-caption">
+<p class="diagram-title">Three tools, two shared contracts</p>
+<div class="d-stacks">
+<p class="d-band">OCI image and distribution specifications: the same image can be pulled by all three</p>
+<ol class="d-stack" aria-label="Docker">
+<li class="d-stack-name">Docker</li>
+<li>Docker CLI</li>
+<li class="d-edge">engine API</li>
+<li>dockerd + containerd</li>
+<li class="d-edge">delegates execution</li>
+<li><b>runc</b></li>
+</ol>
+<ol class="d-stack" aria-label="Podman">
+<li class="d-stack-name">Podman</li>
+<li>Podman CLI</li>
+<li class="d-edge">local engine, or remote service on a Mac</li>
+<li>Podman / libpod</li>
+<li class="d-edge">delegates execution</li>
+<li><b>crun or runc</b></li>
+</ol>
+<ol class="d-stack" aria-label="Kubernetes">
+<li class="d-stack-name">Kubernetes</li>
+<li>kubelet on each node</li>
+<li class="d-edge">CRI</li>
+<li>containerd or CRI-O</li>
+<li class="d-edge">delegates execution</li>
+<li><b>OCI runtime, e.g. runc</b></li>
+</ol>
+<p class="d-band is-strong">OCI runtime specification: the shared execution contract</p>
 </div>
-<div class="dm-kernel">OCI runtime specification · shared execution contract</div>
-<div class="dm-container" style="margin-block-start: 12px;"><strong>Images can move between these tools.</strong><p>OCI image and distribution specifications define the package and registry exchange. Platform compatibility still matters.</p></div>
-<figcaption>Common Linux execution paths, simplified. These are alternatives, not stages in one pipeline. On a Mac, Docker Desktop and Podman Machine put their Linux-side engine and runtime inside a VM. Kubernetes may run on remote nodes or a local cluster; it is not a required part of either desktop setup.</figcaption>
+<figcaption id="oci-stacks-caption">Common Linux execution paths, simplified. These are alternatives, not stages in one pipeline. Images still need a compatible platform. On a Mac, Docker Desktop and Podman Machine put their Linux-side engine and runtime inside a VM. Kubernetes may run on remote nodes or a local cluster; it is not a required part of either desktop setup.</figcaption>
 </figure>
 
 ## What changes on an Apple Silicon Mac?
@@ -69,48 +89,8 @@ Now there are two questions: **which operating system does this program need, an
 
 Switch the image architecture below. The Linux VM stays in place in both cases. What changes is whether the container's machine instructions need translation.
 
-<style>
-.docker-map { --dm-ink: #202c2c; --dm-muted: #4e6261; --dm-green: #1c6554; --dm-amber: #8a431c; color: var(--dm-ink); background: #f4f1e8; border: 1px solid #c4c9bc; border-radius: 20px; padding: clamp(16px, 4vw, 32px); margin-block: 28px; font-family: system-ui, sans-serif; }
-.docker-map * { box-sizing: border-box; }
-.docker-map .dm-eyebrow { font: 600 11px/1.5 ui-monospace, monospace; letter-spacing: .13em; text-transform: uppercase; color: var(--dm-muted); margin: 0 0 8px; }
-.docker-map .dm-title { font-size: clamp(24px, 4vw, 34px); font-weight: 700; line-height: 1.15; letter-spacing: -.04em; margin: 0 0 24px; color: var(--dm-ink); }
-.docker-map strong { color: inherit; background: transparent; padding: 0; }
-.docker-map .dm-ecosystem { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 12px; margin-block-end: 12px; }
-.docker-map .dm-ecosystem h4 { font-size: 20px; color: var(--dm-green); margin: 0 0 18px; }
-.docker-map .dm-ecosystem p { font-size: 13px; margin: 0; overflow-wrap: anywhere; }
-.docker-map fieldset { border: 0; padding: 0; margin: 0 0 24px; min-inline-size: 0; }
-.docker-map legend { font-size: 13px; margin-block-end: 10px; color: var(--dm-muted); }
-.docker-map .dm-options { display: flex; flex-wrap: wrap; gap: 10px; }
-.docker-map label { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #fffdf7; border: 1px solid #9ba9a0; border-radius: 10px; font: 600 13px/1.4 ui-monospace, monospace; cursor: pointer; }
-.docker-map label:has(input:checked) { background: #dcece3; border-color: var(--dm-green); }
-.docker-map input { accent-color: var(--dm-green); inline-size: 16px; block-size: 16px; margin: 0; }
-.docker-map label:focus-within { outline: 3px solid var(--dm-green); outline-offset: 3px; }
-.docker-map .dm-host { border: 2px solid #8c9f98; background: #e6e9df; border-radius: 16px; padding: clamp(12px, 3vw, 22px); box-shadow: 0 8px 0 #c7cec2; }
-.docker-map .dm-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-block-end: 16px; }
-.docker-map .dm-label { font-size: 17px; font-weight: 700; }
-.docker-map .dm-badge { font: 600 11px/1.5 ui-monospace, monospace; border: 1px solid #9ba9a0; border-radius: 5px; padding: 3px 7px; background: #f4f1e8; }
-.docker-map .dm-cli { padding: 12px 14px; border-radius: 8px; background: #263a36; color: #f4f1e8; font: 13px/1.6 ui-monospace, monospace; overflow-wrap: anywhere; }
-.docker-map .dm-link { border-inline-start: 2px dashed #789087; margin-inline-start: 18px; padding: 12px 16px; color: var(--dm-muted); font-size: 12px; }
-.docker-map .dm-vm { border: 2px solid #327664; background: #f9fbf4; border-radius: 12px; padding: clamp(12px, 3vw, 20px); }
-.docker-map .dm-engine { margin: 0 0 16px; font-size: 12px; color: var(--dm-muted); }
-.docker-map .dm-container { padding: 16px; border: 1px solid #74a390; border-radius: 9px; background: #e0eee3; }
-.docker-map .dm-container p { margin: 6px 0 0; font-size: 13px; color: var(--dm-muted); }
-.docker-map .dm-translation { border: 1px dashed #ad6634; border-radius: 8px; padding: 12px; background: #fff0dc; color: var(--dm-amber); font-size: 13px; margin-block-start: 12px; }
-.docker-map .dm-kernel { margin-block-start: 12px; padding: 12px; border-radius: 8px; background: #286451; color: #fffdf7; text-align: center; font: 600 13px/1.5 ui-monospace, monospace; }
-.docker-map .dm-hardware { border-block-start: 1px solid #a5b3a7; margin-block-start: 18px; padding-block-start: 14px; display: flex; gap: 12px; align-items: center; }
-.docker-map .dm-chip { background: #263a36; color: #f4f1e8; padding: 12px; border-radius: 8px; font: 700 13px/1.2 ui-monospace, monospace; box-shadow: 3px 3px 0 #92a99b; }
-.docker-map .dm-hardware p { margin: 0; font-size: 13px; color: var(--dm-muted); }
-.docker-map .dm-conclusion { margin: 26px 0 0; font-size: 14px; line-height: 1.6; }
-.docker-map .dm-amd { display: none; }
-.docker-map:has(#dm-amd:checked) .dm-arm { display: none; }
-.docker-map:has(#dm-amd:checked) .dm-amd { display: block; }
-.docker-map:has(#dm-amd:checked) .dm-container { background: #fff0dc; border-color: #ad6634; }
-.docker-map figcaption { color: var(--dm-muted); font-size: 12px; margin-block-start: 18px; line-height: 1.6; }
-</style>
-
-<figure class="docker-map not-prose">
-<p class="dm-eyebrow">Under the hood / Apple Silicon</p>
-<h3 class="dm-title">Same Mac. Different instructions.</h3>
+<figure class="docker-map">
+<p class="dm-eyebrow">Apple Silicon: same Mac, different instructions</p>
 <fieldset>
 <legend>Choose the Linux image architecture</legend>
 <div class="dm-options">
