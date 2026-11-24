@@ -15,6 +15,10 @@ encryption and editing tool, not a hosted password manager or a deployment syste
 The useful question is not just "is this file encrypted?" It is also "who can
 decrypt it, and where does the plaintext go next?"
 
+Read this as a journey: **unlock the file → follow the plaintext → plan recovery**.
+Each chapter answers one question. Use the reading map to jump straight to the
+part you need.
+
 ## SOPS and age do different jobs
 
 There are two layers of encryption:
@@ -29,6 +33,15 @@ values. The age integration encrypts the data key, not the whole YAML document.
 ([Encryption protocol](https://getsops.io/docs/reference/#encryption-protocol),
 [age integration](https://getsops.io/docs/usage/identities/age/),
 [implementation](https://github.com/getsops/sops/blob/main/age/keysource.go))
+
+<figure class="sops-flow" aria-labelledby="key-layers-caption">
+<p class="sops-flow-title">Two locks, two responsibilities</p>
+<ol>
+<li><span class="sops-flow-label">Outer lock · age or KMS</span><strong>Private identity → data key</strong><p>Your identity unlocks the encrypted copy of the file's data key. A public recipient alone cannot do this.</p></li>
+<li><span class="sops-flow-label">Inner lock · SOPS</span><strong>Data key → secret values</strong><p>The recovered data key decrypts the values using AES-256-GCM. It is not the application's password.</p></li>
+</ol>
+<figcaption id="key-layers-caption">The identity protects the key; the key protects the values. Changing one is not automatically changing the other.</figcaption>
+</figure>
 
 <figure class="sops-flow" aria-labelledby="sops-flow-caption">
 <p class="sops-flow-title">Where the secret becomes plaintext</p>
@@ -81,6 +94,21 @@ For Kubernetes manifests, a common rule encrypts values beneath `data` and
 intentional partial visibility, not confidentiality for the entire document.
 ([Flux SOPS guide](https://fluxcd.io/flux/guides/mozilla-sops/))
 
+For example, the stored shape can still tell you **what** the resource is while
+hiding its value. This is an abbreviated illustration, not a usable encrypted
+manifest: the ciphertext and required SOPS metadata are omitted.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: example-service
+stringData:
+  API_TOKEN: ENC[AES256_GCM,data:...,iv:...,tag:...,type:str]
+```
+
+The resource name is visible. The token is not.
+
 `.sops.yaml` defines creation rules such as which filenames match and which
 public recipients should receive access. Rules are evaluated in order, with the
 first matching rule selected. Existing encrypted files carry their own recipient
@@ -122,21 +150,28 @@ Kubernetes authorization and encryption at rest remain separate concerns.
 
 The two paths differ in **who decrypts**, not in the basic encryption:
 
-```text
-Local deployment
-  Bun runner
-    SOPS + separately supplied age identity
-      decrypted JSON through a pipe
-        validated credentials
-          deployment subprocess environment
-
-Flux deployment
-  Git reconciliation
-    SOPS + separately bootstrapped cluster identity
-      decrypted manifest
-        Kubernetes Secret
-          workload
-```
+<figure class="sops-flow" aria-labelledby="deployment-lanes-caption">
+<p class="sops-flow-title">Same encrypted starting point, different plaintext destinations</p>
+<div class="deployment-lanes">
+<section>
+<h3>Local deployment</h3>
+<ol>
+<li><strong>Bun runner starts SOPS</strong><p>A private age identity arrives separately from Git.</p></li>
+<li><strong>Plaintext JSON crosses a pipe</strong><p>The runner validates it and selects the credentials the deployment needs.</p></li>
+<li><strong>Deployment subprocess</strong><p>Receives credentials in its environment. The runner and child process must both be trusted.</p></li>
+</ol>
+</section>
+<section>
+<h3>Flux reconciliation</h3>
+<ol>
+<li><strong>Flux fetches Git content</strong><p>A separately bootstrapped cluster identity enables decryption.</p></li>
+<li><strong>Plaintext manifest is applied</strong><p>The result is an ordinary Kubernetes Secret, not SOPS-encrypted storage.</p></li>
+<li><strong>Workload consumes the Secret</strong><p>Cluster authorization and storage encryption protect this next stage.</p></li>
+</ol>
+</section>
+</div>
+<figcaption id="deployment-lanes-caption">Follow the plaintext boundary: a pipe avoids an output file, but neither path avoids handling plaintext.</figcaption>
+</figure>
 
 ## CI does not get access just by checking out Git
 
@@ -168,6 +203,16 @@ Updating recipients does not rotate the data key. Rotating the data key does not
 change the password or API token inside the file.
 ([SOPS key management](https://getsops.io/docs/usage/key-management/),
 [edit implementation](https://github.com/getsops/sops/blob/main/cmd/sops/edit.go))
+
+<figure class="sops-flow" aria-labelledby="rotation-caption">
+<p class="sops-flow-title">Three separate things you may need to replace</p>
+<ol>
+<li><span class="sops-flow-label">Access</span><strong>Recipient set</strong><p>Who can unlock the current file? Update the encrypted copies of its data key.</p></li>
+<li><span class="sops-flow-label">Encryption</span><strong>File data key</strong><p>What encrypts the values? Rotate it to re-encrypt the file.</p></li>
+<li><span class="sops-flow-label">Service</span><strong>Actual credential</strong><p>What does the provider accept? Revoke or replace that credential at the provider.</p></li>
+</ol>
+<figcaption id="rotation-caption">These are separate controls, not interchangeable fixes. Old Git revisions and already-learned credentials remain part of recovery.</figcaption>
+</figure>
 
 If an identity is compromised, removing its recipient does not make old Git
 revisions unreadable to someone who already has that identity. Nor does fresh

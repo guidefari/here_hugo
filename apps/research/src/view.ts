@@ -2,6 +2,7 @@ import { Array } from "effect";
 import { Document, HtmlBuilder } from "foldkit/html";
 import { ChangedQuery, Message, Model } from "./app";
 import { Report, formatDate } from "./report";
+import { readerView } from "./reader-view";
 
 export function view(model: Model, h: HtmlBuilder<Message>): Document {
   const report = model.reports.find((entry) => `/reports/${entry.id}/` === `${model.path.replace(/\/$/, "")}/`);
@@ -17,7 +18,7 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
           h.a([h.Href("https://guidefari.com")], ["Main blog ↗"]),
         ]),
       ]),
-      h.main([h.Id("main-content"), h.Tabindex(-1)], [
+      h.main([h.Id("main-content"), h.Tabindex(-1), h.Class(report ? "report-page" : "library-page")], [
         pageView(model, report, h),
       ]),
       h.footer([h.Class("site-footer")], [
@@ -73,7 +74,6 @@ function libraryView(model: Model, h: HtmlBuilder<Message>) {
 
 function reportView(model: Model, report: Report, h: HtmlBuilder<Message>) {
   const parent = model.reports.find((entry) => entry.id === report.parent);
-  const sections = report.headings.filter((heading) => heading.depth === 2);
   const supporting = model.reports.filter((entry) => entry.parent === report.id)
     .sort((a, b) => a.title.localeCompare(b.title));
   return h.article([], [
@@ -87,16 +87,7 @@ function reportView(model: Model, report: Report, h: HtmlBuilder<Message>) {
       tagsView(report, h),
       h.p([h.Class("notice")], ["Generated with AI assistance. Claims may be incomplete or out of date. Check the linked sources before relying on them."]),
     ]),
-    Array.match(sections, {
-      onEmpty: () => h.empty,
-      onNonEmpty: (headings) => h.nav([h.Class("contents"), h.AriaLabel("On this page")], [
-        h.h2([], ["On this page"]),
-        h.ol([], headings.map((heading) => h.keyed("li")(heading.slug, [], [
-          h.a([h.Href(`#${heading.slug}`)], [heading.text]),
-        ]))),
-      ]),
-    }),
-    h.div([h.Class("prose"), h.InnerHTML(report.html)]),
+    readerView(model, report, h),
     Array.match(supporting, {
       onEmpty: () => h.empty,
       onNonEmpty: (notes) => h.details([h.Class("supporting-notes")], [

@@ -11,6 +11,8 @@ export const Model = Schema.Struct({
   reports: Schema.Array(Report),
   path: Schema.String,
   query: Schema.String,
+  anchor: Schema.String,
+  contents: Schema.Literals(["Collapsed", "Expanded"]),
 });
 export type Model = typeof Model.Type;
 
@@ -18,6 +20,7 @@ export const Message = defineMessageUnion({
   ClickedLink: { request: Navigation.UrlRequest },
   ChangedUrl: { url: Url.Url },
   ChangedQuery: { value: Schema.String },
+  ClickedContents: {},
   CompletedNavigate: {},
   FailedNavigate: {},
   CompletedLoadExternal: {},
@@ -26,7 +29,7 @@ export const Message = defineMessageUnion({
   FailedFocusTarget: {},
 });
 export const {
-  ClickedLink, ChangedUrl, ChangedQuery,
+  ClickedLink, ChangedUrl, ChangedQuery, ClickedContents,
   CompletedNavigate, FailedNavigate,
   CompletedLoadExternal, FailedLoadExternal,
   CompletedFocusTarget, FailedFocusTarget,
@@ -65,7 +68,7 @@ const LoadExternal = Command.define("LoadExternal", {
 });
 
 export const init: Runtime.RoutingApplicationInit<Model, Message, typeof Flags.Type> = (flags, url) => ({
-  model: { reports: flags.reports, path: url.pathname, query: "" },
+  model: { reports: flags.reports, path: url.pathname, query: "", anchor: Option.getOrElse(url.hash, () => ""), contents: "Collapsed" },
   commands: [FocusTarget({ id: Option.getOrElse(url.hash, () => "main-content") })],
 });
 
@@ -76,8 +79,14 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
       ChangedQuery: ({ value }) => ({
         model: Struct.modifyFields(model, { query: () => value }),
       }),
+      ClickedContents: () => ({
+        model: Struct.modifyFields(model, { contents: (state) => state === "Collapsed" ? "Expanded" : "Collapsed" }),
+      }),
       ChangedUrl: ({ url }) => ({
-        model: Struct.modifyFields(model, { path: () => url.pathname, query: () => "" }),
+        model: Struct.modifyFields(model, {
+          path: () => url.pathname, query: () => "",
+          anchor: () => Option.getOrElse(url.hash, () => ""), contents: () => "Collapsed",
+        }),
         commands: [FocusTarget({ id: Option.getOrElse(url.hash, () => "main-content") })],
       }),
       ClickedLink: ({ request }) => Match.value(request).pipe(

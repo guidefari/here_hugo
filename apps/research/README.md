@@ -17,6 +17,10 @@ highlighting, and embedded HTML figures without an Astro application runtime.
 
 The Foldkit model owns the current URL and library filter. Direct report links,
 browser back/forward, and contents anchors work through Foldkit navigation.
+Major headings become short chapters with previous/next links. The reading map
+stays beside the text on wide screens and collapses into a sticky button on
+narrow screens. Existing subsection links select their containing chapter.
+Printing includes the complete report, not just the selected chapter.
 Cloudflare serves the app shell for deep links. There is no backend or database.
 Only committed, reviewed Markdown enters the trusted HTML rendering boundary.
 

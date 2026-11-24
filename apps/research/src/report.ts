@@ -16,6 +16,13 @@ export const Report = Schema.Struct({
   parent: Schema.optional(Schema.String),
   html: Schema.String,
   headings: Schema.Array(Heading),
+  chapters: Schema.Array(Schema.Struct({
+    slug: Schema.String,
+    title: Schema.String,
+    start: Schema.Number,
+    end: Schema.Number,
+    anchors: Schema.Array(Schema.String),
+  })),
 });
 
 export type Report = typeof Report.Type;

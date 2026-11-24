@@ -1,5 +1,6 @@
 import { createMarkdownProcessor, parseFrontmatter } from "@astrojs/markdown-remark";
 import { Schema } from "effect";
+import { compileChapters } from "./chapters";
 
 const Frontmatter = Schema.Struct({
   title: Schema.String.check(Schema.isMinLength(1)),
@@ -31,6 +32,7 @@ export async function compileReports(files: ReadonlyArray<{ id: string; text: st
       tags: data.tags ?? [],
       html: rendered.code,
       headings: rendered.metadata.headings,
+      chapters: compileChapters(rendered.code, rendered.metadata.headings),
     }];
   }));
   const published = reports.flat().sort((a, b) => b.date.localeCompare(a.date));
