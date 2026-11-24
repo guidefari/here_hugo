@@ -1,0 +1,72 @@
+.immersive-host { inline-size: 100%; margin: 0; padding: 0; min-block-size: 100dvh; }
+.immersive-host:focus, .cover-room:focus { outline: none; }
+.cover-room { position: relative; isolation: isolate; overflow: clip; min-block-size: 100dvh; background: var(--room-field); color: var(--room-ink); display: grid; grid-template-rows: auto 1fr auto; padding: 1.75rem 2.5rem; font-family: system-ui, sans-serif; }
+.cover-room a { color: inherit; text-decoration: none; }
+.cover-room a:hover { text-decoration: underline; }
+.cover-room :is(a, section):focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.room-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; z-index: 2; }
+.room-header h1 { margin: 0; font: 500 clamp(.85rem, 1.3vw, 1rem)/1.5 system-ui, sans-serif; color: inherit; letter-spacing: -.02em; }
+.room-header h1 span { font: italic 400 1em Georgia, serif; white-space: nowrap; }
+.room-exit { font-size: .75rem; min-block-size: 2.75rem; display: inline-flex; align-items: center; }
+.cover-dock { position: absolute; inset-inline-start: 2rem; inset-block-start: 50%; translate: 0 -50%; display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: .65rem; border: 1px solid #ffffff24; border-radius: 1.2rem; background: #111b; color: #fff; box-shadow: 0 .75rem 2.5rem #0002; z-index: 3; }
+.dock-arrow { display: grid; place-items: center; inline-size: 3rem; min-block-size: 2rem; font-size: 1rem; }
+.dock-cover { position: relative; display: grid; place-items: center; inline-size: 3rem; block-size: 4rem; border: 1px solid transparent; border-radius: .3rem; padding: .3rem; opacity: .55; }
+.dock-cover img { display: block; block-size: 100%; max-inline-size: 100%; object-fit: contain; box-shadow: 0 .2rem .4rem #0005; }
+.dock-cover[aria-current="true"] { opacity: 1; border-color: #fffd; background: #ffffff18; }
+.dock-cover:hover, .dock-cover:focus-visible { opacity: 1; }
+.dock-tooltip { pointer-events: none; position: absolute; inset-inline-start: calc(100% + 1.25rem); inline-size: max-content; max-inline-size: 16rem; background: #111; color: #fff; border-radius: .4rem; padding: .6rem .8rem; font-size: .7rem; line-height: 1.4; opacity: 0; }
+.dock-cover:hover .dock-tooltip, .dock-cover:focus-visible .dock-tooltip { opacity: 1; }
+.room-stage { min-inline-size: 0; display: grid; grid-template-rows: 1fr auto; align-self: center; margin: 1rem 14rem 1rem 7rem; }
+.room-slides { display: grid; place-items: center; }
+.room-slide { grid-area: 1 / 1; opacity: 0; transform: translateX(var(--slide-offset)) scale(.96); pointer-events: none; }
+.room-slide.is-active { opacity: 1; transform: translateX(0) scale(1); pointer-events: auto; z-index: 1; }
+.room-slide a { display: block; }
+.room-slide img { display: block; max-inline-size: 100%; inline-size: auto; block-size: auto; max-block-size: 72dvh; box-shadow: 0 1.5rem 3.5rem #0004, 0 .15rem .35rem #0003; }
+.room-caption { text-align: center; margin-block-start: 1.5rem; }
+.room-caption h2 { color: inherit; margin: 0; font: 500 .9rem/1.4 system-ui, sans-serif; letter-spacing: -.015em; }
+.room-caption p { margin: .35rem 0 0; font-size: .75rem; }
+.room-palette { position: absolute; inset-inline-end: 2.5rem; inset-block-end: 6rem; inline-size: 12rem; }
+.palette-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.palette-heading h3 { color: inherit; font: 500 .65rem system-ui, sans-serif; text-transform: uppercase; letter-spacing: .14em; margin: 0; }
+.palette-heading a { display: inline-flex; align-items: center; min-block-size: 2.75rem; font-size: .65rem; }
+.room-palette ul { display: grid; gap: .65rem; padding: 0; margin: .5rem 0; list-style: none; }
+.room-palette li { display: flex; gap: .75rem; align-items: center; }
+.palette-chip { inline-size: 3rem; block-size: 1.75rem; border: 1px solid #ffffff50; box-shadow: 0 1px 3px #0002; }
+.room-palette code { font: .65rem ui-monospace, monospace; }
+.palette-note { font-size: .6rem; }
+.room-footer { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-block-start: 1rem; font: .65rem ui-monospace, monospace; }
+.room-footer a { min-block-size: 2.75rem; display: inline-flex; align-items: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .cover-room { transition: background-color .55s ease, color .55s ease; }
+  .room-slide { transition: opacity .38s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
+  .dock-cover { transition: opacity .2s, background-color .2s; }
+}
+@media (max-width: 56rem) {
+  .moodboard-entry { flex-wrap: wrap; }
+  .cover-room { padding: 1rem 1.25rem 8rem; min-block-size: 100dvh; }
+  .room-header { align-items: baseline; }
+  .room-header h1 { max-inline-size: 17rem; }
+  .room-stage { margin: 1rem 0; }
+  .room-slide img { max-block-size: 46dvh; max-inline-size: min(100%, 27rem); }
+  .room-caption { margin-block-start: 1.25rem; }
+  .cover-dock { position: absolute; flex-direction: row; inset-inline-start: 50%; inset-block-start: auto; inset-block-end: 1.25rem; translate: -50% 0; gap: .25rem; padding: .5rem; border-radius: 1rem; }
+  .dock-cover { inline-size: 2.5rem; block-size: 3.5rem; }
+  .dock-arrow { inline-size: 1.5rem; min-block-size: 2.75rem; }
+  .dock-tooltip { display: none; }
+  .room-palette { position: static; inline-size: min(100%, 25rem); margin: .5rem auto; }
+  .room-palette ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
+  .room-palette li { display: flex; flex-direction: column; align-items: start; gap: .4rem; }
+  .palette-chip { inline-size: 100%; block-size: 1.3rem; }
+  .palette-note { display: none; }
+  .room-footer { margin-block-start: .5rem; }
+  .room-keyboard-hint { display: none; }
+}
+@media (max-height: 42rem) and (min-width: 56.01rem) {
+  .cover-dock { gap: .15rem; padding-block: .25rem; }
+  .dock-cover { block-size: 3rem; }
+  .room-slide img { max-block-size: 62dvh; }
+}
+.moodboard-entry { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem; margin-block: 0 3rem; border: 1px solid var(--theme-border-strong); background: var(--theme-panel); }
+.moodboard-entry h2 { font-size: 1.25rem; max-inline-size: 24ch; }
+.moodboard-entry-covers { display: flex; gap: .5rem; flex-shrink: 0; }
+.moodboard-entry-covers img { inline-size: 3.5rem; block-size: 5.25rem; object-fit: contain; box-shadow: 0 .2rem .4rem #0003; }

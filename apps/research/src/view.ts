@@ -3,8 +3,17 @@ import { Document, HtmlBuilder } from "foldkit/html";
 import { ChangedQuery, Message, Model } from "./app";
 import { Report, formatDate } from "./report";
 import { readerView } from "./reader-view";
+import { moodboardView } from "./moodboard/view";
 
 export function view(model: Model, h: HtmlBuilder<Message>): Document {
+  if (model.path.replace(/\/$/, "") === "/moodboard") {
+    return {
+      title: "Judging books by their covers (jk jk)",
+      body: h.main([h.Id("main-content"), h.Tabindex(-1), h.Class("immersive-host")], [
+        moodboardView(model.anchor, h),
+      ]),
+    };
+  }
   const report = model.reports.find((entry) => `/reports/${entry.id}/` === `${model.path.replace(/\/$/, "")}/`);
   return {
     title: `${report?.title ?? "Research library"} | Guide Fari Research`,
@@ -14,6 +23,7 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
         h.a([h.Class("brand"), h.Href("/")], ["Guide Fari ", h.span([], ["Research"])]),
         h.nav([h.AriaLabel("Primary")], [
           h.a([h.Href("/")], ["Library"]),
+          h.a([h.Href("/moodboard/")], ["Moodboard"]),
           h.a([h.Href("/rss.xml")], ["RSS"]),
           h.a([h.Href("https://guidefari.com")], ["Main blog ↗"]),
         ]),
@@ -47,6 +57,20 @@ function libraryView(model: Model, h: HtmlBuilder<Message>) {
       h.p([h.Class("eyebrow")], ["The research shelf"]),
       h.h1([], ["A place to read the research."]),
       h.p([h.Class("lede")], ["Evidence, source notes, and open questions from my agents. Kept separate from the articles I write myself."]),
+    ]),
+    h.section([h.Class("moodboard-entry"), h.AriaLabelledBy("moodboard-heading")], [
+      h.div([], [
+        h.p([h.Class("eyebrow")], ["Visual research"]),
+        h.h2([h.Id("moodboard-heading")], [
+          h.a([h.Href("/moodboard/")], ["Judging books by their covers (jk jk)"]),
+        ]),
+        h.p([], ["An interactive cover moodboard."]),
+      ]),
+      h.a([h.Href("/moodboard/"), h.Class("moodboard-entry-covers"), h.AriaLabel("Explore the cover moodboard")], [
+        ...["cover-1", "cover-4", "cover-9"].map((id) => h.keyed("img")(id, [
+          h.Src(`/moodboard/${id}.jpg`), h.Alt(""), h.Loading("lazy"),
+        ])),
+      ]),
     ]),
     h.section([h.AriaLabelledBy("reports-heading")], [
       h.div([h.Class("section-heading")], [

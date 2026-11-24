@@ -3,6 +3,7 @@ import { Command, Dom, Navigation, Runtime, Struct, Update, Url } from "foldkit"
 import { defineMessageUnion } from "foldkit/message";
 import { Report } from "./report";
 import { view } from "./view";
+import { selectedCover } from "./moodboard/covers";
 
 export { view };
 
@@ -21,6 +22,7 @@ export const Message = defineMessageUnion({
   ChangedUrl: { url: Url.Url },
   ChangedQuery: { value: Schema.String },
   ClickedContents: {},
+  PressedCoverArrow: { href: Schema.String },
   CompletedNavigate: {},
   FailedNavigate: {},
   CompletedLoadExternal: {},
@@ -30,6 +32,7 @@ export const Message = defineMessageUnion({
 });
 export const {
   ClickedLink, ChangedUrl, ChangedQuery, ClickedContents,
+  PressedCoverArrow,
   CompletedNavigate, FailedNavigate,
   CompletedLoadExternal, FailedLoadExternal,
   CompletedFocusTarget, FailedFocusTarget,
@@ -69,7 +72,7 @@ const LoadExternal = Command.define("LoadExternal", {
 
 export const init: Runtime.RoutingApplicationInit<Model, Message, typeof Flags.Type> = (flags, url) => ({
   model: { reports: flags.reports, path: url.pathname, query: "", anchor: Option.getOrElse(url.hash, () => ""), contents: "Collapsed" },
-  commands: [FocusTarget({ id: Option.getOrElse(url.hash, () => "main-content") })],
+  commands: [FocusTarget({ id: focusTargetId(url) })],
 });
 
 export const update = (model: Model, message: Message): Update.Return<Model, Message> =>
@@ -82,12 +85,16 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
       ClickedContents: () => ({
         model: Struct.modifyFields(model, { contents: (state) => state === "Collapsed" ? "Expanded" : "Collapsed" }),
       }),
+      PressedCoverArrow: ({ href }) => ({
+        model,
+        commands: [Navigate({ href })],
+      }),
       ChangedUrl: ({ url }) => ({
         model: Struct.modifyFields(model, {
           path: () => url.pathname, query: () => "",
           anchor: () => Option.getOrElse(url.hash, () => ""), contents: () => "Collapsed",
         }),
-        commands: [FocusTarget({ id: Option.getOrElse(url.hash, () => "main-content") })],
+        commands: [FocusTarget({ id: focusTargetId(url) })],
       }),
       ClickedLink: ({ request }) => Match.value(request).pipe(
         Match.withReturnType<Update.Return<Model, Message>>(),
@@ -109,3 +116,11 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
       FailedFocusTarget: () => ({ model }),
     }),
   );
+
+function focusTargetId(url: Url.Url): string {
+  const anchor = Option.getOrElse(url.hash, () => "");
+  if (url.pathname.replace(/\/$/, "") === "/moodboard") {
+    return selectedCover(anchor).id;
+  }
+  return anchor || "main-content";
+}
