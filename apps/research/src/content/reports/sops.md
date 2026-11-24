@@ -2,22 +2,61 @@
 title: "SOPS, age, and the secret's journey from Git to deployment"
 description: "How SOPS encrypts configuration, how age or KMS controls decryption, and what happens when deployment tooling consumes the plaintext."
 date: 2026-11-23
+updated: "2026-11-24"
 tags: [sops, age, secrets, deployments]
 draft: false
 ---
 
-SOPS lets you store encrypted configuration alongside code. A deployment tool can
-then decrypt it where the secrets are needed, provided that tool has access to the
-right key. SOPS supports YAML, JSON, ENV, INI, and binary files. It is a file
-encryption and editing tool, not a hosted password manager or a deployment system.
-([SOPS documentation](https://getsops.io/docs/))
+<aside class="context-note" aria-labelledby="context-note-label">
+<p class="context-note-label" id="context-note-label">Why this note exists</p>
+<p>Guide ran into SOPS while building an observability cluster hosted on Hetzner
+and working out how to manage it with GitOps. The search started with FluxCD,
+which a workmate had mentioned about a year earlier. This is Guide's own
+recollection, shared on 24 November 2026. The rest of the note is agent research.</p>
+</aside>
 
-The useful question is not just "is this file encrypted?" It is also "who can
-decrypt it, and where does the plaintext go next?"
+That gives SOPS a concrete job: **how can a cluster follow configuration in Git
+when some of that configuration contains credentials that must not sit there as
+plaintext?**
 
-Read this as a journey: **unlock the file → follow the plaintext → plan recovery**.
-Each chapter answers one question. Use the reading map to jump straight to the
-part you need.
+Encrypting the file answers half of it. The other half is "who can decrypt it,
+and where does the plaintext go next?"
+
+## The GitOps problem, before the encryption
+
+**GitOps** treats versioned, declarative configuration in Git as the **desired
+state**. Instead of someone running deploy commands, an automated agent compares
+that desired state with what is running and corrects the difference. That
+repeated compare-and-correct step is **reconciliation**.
+
+**Flux** is one such agent. Its controllers run inside the Kubernetes cluster,
+pull from Git, and apply what they find. Someone still has to create the server,
+Kubernetes, and Flux itself before any of that can happen. That one-time setup
+is the **bootstrap**, and it sits outside the loop it starts.
+([GitOps principles](https://opengitops.dev/),
+[Flux bootstrap](https://fluxcd.io/flux/installation/bootstrap/))
+
+The credentials problem follows directly. If Git is the desired state, database
+passwords and API tokens are part of that state too. Committing them as plaintext
+gives them to everyone who can read the repository and its history.
+
+<figure class="sops-flow" aria-labelledby="gitops-context-caption">
+<p class="sops-flow-title">From a Git change to a running cluster</p>
+<ol>
+<li><span class="sops-flow-label">1 · Declare</span><strong>Git holds the desired configuration</strong><p>Review and version changes to workloads and their configuration. Secret values can be SOPS-encrypted.</p></li>
+<li><span class="sops-flow-label">2 · Reconcile</span><strong>Flux pulls and applies that state</strong><p>Its SOPS integration can decrypt the secret manifests using an identity supplied separately to the cluster.</p></li>
+<li><span class="sops-flow-label">3 · Consume</span><strong>Kubernetes runs the workloads</strong><p>Applications consume ordinary Kubernetes Secrets. The Git encryption does not protect every runtime copy.</p></li>
+</ol>
+<figcaption id="gitops-context-caption">A simplified GitOps flow, not a live cluster audit. Bootstrap access and the private decryption identity must exist outside this loop.</figcaption>
+</figure>
+
+**SOPS** is the file-encryption tool in that flow, not the GitOps controller or a
+hosted password manager. It supports YAML, JSON, ENV, INI, and binary files.
+**age** is one way to control who can unlock the file's data key. Flux's SOPS
+integration connects these pieces without requiring Git to store plaintext
+credential values.
+([SOPS documentation](https://getsops.io/docs/),
+[Flux SOPS guide](https://fluxcd.io/flux/guides/mozilla-sops/))
 
 ## SOPS and age do different jobs
 

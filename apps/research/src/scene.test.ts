@@ -42,12 +42,12 @@ describe("research reader", () => {
   test("opens the reading map, selects a chapter, and closes the compact map", () => {
     Scene.scene({ update, view },
       Scene.given(modelAt("/reports/sops/")),
-      Scene.expect(Scene.role("button", { name: "1 / 8 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
-      Scene.click(Scene.role("button", { name: "1 / 8 · Reading map ↓" })),
-      Scene.expect(Scene.role("button", { name: "1 / 8 · Reading map ↑" })).toHaveAttr("aria-expanded", "true"),
+      Scene.expect(Scene.role("button", { name: "1 / 9 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
+      Scene.click(Scene.role("button", { name: "1 / 9 · Reading map ↓" })),
+      Scene.expect(Scene.role("button", { name: "1 / 9 · Reading map ↑" })).toHaveAttr("aria-expanded", "true"),
       Scene.Subscription.emit(ChangedUrl({ url: url("/reports/sops/#why-keep-an-encrypted-file-in-git") })),
       Scene.Command.resolve(FocusTarget, CompletedFocusTarget()),
-      Scene.expect(Scene.role("button", { name: "3 / 8 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
+      Scene.expect(Scene.role("button", { name: "4 / 9 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
       Scene.expect(Scene.role("link", { name: "Why keep an encrypted file in Git?" })).toHaveAttr("aria-current", "step"),
       Scene.expect(Scene.role("link", { name: "Next: Two ways deployment tools can consume it →" })).toHaveAttr("href", "#two-ways-deployment-tools-can-consume-it"),
     );
