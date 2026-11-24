@@ -73,6 +73,20 @@ describe("browser telemetry privacy", () => {
     expect(result.attributes["sentry.release"]).toBe("here-hugo@test-revision");
   });
 
+  test("oracle regression: bounds routes when URL.canParse is unavailable", () => {
+    const descriptor = Object.getOwnPropertyDescriptor(URL, "canParse");
+    try {
+      Reflect.deleteProperty(URL, "canParse");
+      expect(() => routeName("research", "/reports/private?token=secret")).not.toThrow();
+      expect(routeName("research", "/reports/private?token=secret")).toBe("/reports/:report");
+      expect(routeName("gpu", "/scenes/private?token=secret")).toBe("/scenes/:scene");
+      expect(routeName("blog", "/private?token=secret")).toBe("/:page");
+      expect(routeName("blog", "https://[invalid")).toBe("/");
+    } finally {
+      if (descriptor) Object.defineProperty(URL, "canParse", descriptor);
+    }
+  });
+
   test("uses bounded route names and explicitly samples production performance", () => {
     expect(routeName("blog", "/private-page?query=sensitive")).toBe("/:page");
     expect(routeName("gpu", "/scenes/noise-beams")).toBe("/scenes/:scene");
