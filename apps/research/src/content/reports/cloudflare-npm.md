@@ -34,32 +34,47 @@ The registry is distinct from its clients. **Replacing npm's registry does not r
 
 The following diagram separates documented interfaces from unknown implementation details. The read path follows npm's archived protocol documentation, the replication path follows its newer migration guide, and the publication path summarizes current authorization and scanning documentation. ([Metadata protocol](https://github.com/npm/registry/blob/main/docs/responses/package-metadata.md); [replication migration](https://github.com/orgs/community/discussions/152515); [trusted publishing](https://docs.npmjs.com/trusted-publishers/); [publish-time scanning](https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata))
 
-```text
-INSTALLATION
-npm / pnpm / Yarn / Bun
-  -> registry metadata, optionally abbreviated
-     [versions, dependency ranges, mutable dist-tags, tarball URL, integrity]
-  -> versioned compressed tarball at the returned URL
-  -> client installation and local caching
-
-PUBLIC METADATA FOLLOWER
-replicate.npmjs.com/registry/_changes?since=...
-  -> change IDs and sequence cursor
-  -> separate registry.npmjs.org/<package> metadata fetches
-  -> separate tarball fetches if building an artifact mirror
-  -> reconciliation of missing packages, removals, and policy changes
-
-PUBLICATION
-maintainer / CI identity
-  -> authorization, owner permissions, configured trust, applicable 2FA
-  -> upload or staged publication and approval
-  -> malware scanning, possible review or blocking
-  -> publicly installable version and associated metadata
-
-UNKNOWN FROM THESE SOURCES
-complete current origin topology, database fleet, storage replication,
-worldwide cache policy, vendor contracts, and operating bill
-```
+<figure class="diagram" aria-labelledby="npm-paths-caption">
+<p class="diagram-title">Three documented paths through the registry</p>
+<div class="d-stacks">
+<ol class="d-stack" aria-label="Installation">
+<li class="d-stack-name">Installation</li>
+<li>npm / pnpm / Yarn / Bun</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Registry metadata, optionally abbreviated<br><small>versions, dependency ranges, mutable dist-tags, tarball URL, integrity</small></li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Versioned compressed tarball at the returned URL</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Client installation and local caching</li>
+</ol>
+<ol class="d-stack" aria-label="Public metadata follower">
+<li class="d-stack-name">Public metadata follower</li>
+<li><code>replicate.npmjs.com/registry/_changes?since=...</code></li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Change IDs and sequence cursor</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Separate <code>registry.npmjs.org/&lt;package&gt;</code> metadata fetches</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Separate tarball fetches if building an artifact mirror</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Reconciliation of missing packages, removals, and policy changes</li>
+</ol>
+<ol class="d-stack" aria-label="Publication">
+<li class="d-stack-name">Publication</li>
+<li>Maintainer / CI identity</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Authorization, owner permissions, configured trust, applicable 2FA</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Upload or staged publication and approval</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Malware scanning, possible review or blocking</li>
+<li class="d-edge" aria-hidden="true"></li>
+<li>Publicly installable version and associated metadata</li>
+</ol>
+<p class="d-band is-unknown"><b>Unknown from these sources:</b> complete current origin topology, database fleet, storage replication, worldwide cache policy, vendor contracts, and operating bill.</p>
+</div>
+<figcaption id="npm-paths-caption">Documented interfaces only, not a map of npm's private infrastructure. Installation and replication read what the publication path admits, which is why that path is where registry authority sits.</figcaption>
+</figure>
 
 Metadata is not the same workload as tarballs. A package document, often called a packument, contains changing versions and tags as well as distribution information; immutable version artifacts are better suited to long-lived caches. The protocol's `dist.unpackedSize` measures extracted files, not compressed transfer bytes. npm removed README content from version metadata in July 2024 to reduce packument size, another reason not to treat old examples as the unchanged current payload. ([Archived metadata specification](https://github.com/npm/registry/blob/main/docs/responses/package-metadata.md); [2024 metadata change](https://github.blog/changelog/2024-07-09-leaner-npm-packument-metadata-contents))
 

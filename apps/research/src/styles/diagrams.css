@@ -123,3 +123,5 @@
 @media (prefers-color-scheme: light) {
   .docker-map { --dm-amber: #8a431c; }
 }
+.d-stack small { display: block; margin-block-start: 0.2rem; font-size: 0.75rem; color: var(--theme-muted-strong); }
+.d-stack .d-edge:empty { min-block-size: 1.25rem; }
