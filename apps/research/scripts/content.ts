@@ -26,13 +26,14 @@ export async function compileReports(files: ReadonlyArray<{ id: string; text: st
     });
     if (data.draft !== false) return [];
     const rendered = await markdown.render(parsed.content);
+    const html = wrapTables(rendered.code);
     return [{
       ...data,
       id: file.id,
       tags: data.tags ?? [],
-      html: rendered.code,
+      html,
       headings: rendered.metadata.headings,
-      chapters: compileChapters(rendered.code, rendered.metadata.headings),
+      chapters: compileChapters(html, rendered.metadata.headings),
     }];
   }));
   const published = reports.flat().sort((a, b) => b.date.localeCompare(a.date));
@@ -41,4 +42,10 @@ export async function compileReports(files: ReadonlyArray<{ id: string; text: st
     if (report.parent && !ids.has(report.parent)) throw new Error(`Missing published parent: ${report.id}`);
   });
   return published;
+}
+
+function wrapTables(html: string) {
+  return html
+    .replaceAll("<table>", '<div class="table-scroll" tabindex="0" role="group" aria-label="Table, scrolls sideways"><table>')
+    .replaceAll("</table>", "</table></div>");
 }

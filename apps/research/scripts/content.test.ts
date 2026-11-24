@@ -1,4 +1,6 @@
 import { describe, expect, test } from "vitest";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { compileReports } from "./content";
 
 function report(id: string, extra = "") {
@@ -32,6 +34,13 @@ describe("research publication", () => {
     expect(compiled?.html).toContain("astro-code");
   });
 
+  test("lets keyboard users scroll wide tables", async () => {
+    const input = report("tables", "draft: false");
+    const [compiled] = await compileReports([{ ...input, text: `${input.text}\n\n| A | B |\n| --- | --- |\n| 1 | 2 |` }]);
+    expect(compiled?.html).toContain('<div class="table-scroll" tabindex="0" role="group" aria-label="Table, scrolls sideways"><table>');
+    expect(compiled?.html).toContain("</table></div>");
+  });
+
   test("keeps introductory prose as an overview before the first chapter", async () => {
     const input = report("overview", "draft: false");
     const [compiled] = await compileReports([{
@@ -50,5 +59,18 @@ describe("research publication", () => {
   test("rejects source notes whose parent is not published", async () => {
     await expect(compileReports([report("orphan", "draft: false\nparent: missing")]))
       .rejects.toThrow("Missing published parent: orphan");
+  });
+});
+
+describe("published reports", () => {
+  test("render every markdown table inside embedded figures", async () => {
+    const directory = join(process.cwd(), "src/content/reports");
+    const names = readdirSync(directory, { recursive: true, encoding: "utf8" }).filter((name) => name.endsWith(".md"));
+    const reports = await compileReports(names.map((name) => ({
+      id: name.replace(/\.md$/, ""),
+      text: readFileSync(join(directory, name), "utf8"),
+    })));
+    const unrendered = reports.filter((report) => /\| --- \|/.test(report.html)).map((report) => report.id);
+    expect(unrendered).toEqual([]);
   });
 });

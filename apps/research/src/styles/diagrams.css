@@ -54,8 +54,7 @@
 .d-stack > li:last-child { border-color: var(--theme-highlight); }
 .d-stack > .d-edge { min-block-size: 1.75rem; padding-inline-start: 0.6rem; }
 
-.d-matrix table { display: table; inline-size: 100%; font-size: 0.8rem; }
-.d-matrix-scroll { overflow-x: auto; }
+.d-matrix table { inline-size: 100%; font-size: 0.8rem; }
 .d-matrix th { font-weight: 650; color: var(--theme-white); vertical-align: bottom; }
 .d-matrix td { color: var(--theme-muted-strong); }
 .d-matrix td:first-child { color: var(--theme-text); }

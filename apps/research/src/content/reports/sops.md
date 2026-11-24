@@ -233,7 +233,6 @@ of a SOPS file does not prove that the CI workflow decrypts it.
 
 <figure class="diagram d-matrix" aria-labelledby="rotation-caption">
 <p class="diagram-title">Which operation changes what</p>
-<div class="d-matrix-scroll" tabindex="0" role="region" aria-labelledby="rotation-caption">
 
 | Operation | Who can unlock | Data key | Values in the file | Credential the service accepts |
 | --- | --- | --- | --- | --- |
@@ -242,7 +241,6 @@ of a SOPS file does not prove that the CI workflow decrypts it.
 | Rotate the data key<br>`sops rotate --in-place` | Same | **Changes** | Re-encrypted, same plaintext | Same |
 | Rotate an application credential<br>Replace it at the provider, then edit the file | Same | Same | **Changes** | **Changes** |
 
-</div>
 <figcaption id="rotation-caption">Example commands describe operations; review their impact before running them against real secrets. Only the last row changes what an attacker who already read the old value can use.</figcaption>
 </figure>
 

@@ -100,7 +100,9 @@ nav a { display: inline-flex; align-items: center; min-block-size: 1.5rem; }
 .prose pre { max-inline-size: 100%; overflow-x: auto; padding: 1.25rem; border-radius: 0.25rem; font-size: 0.875rem; }
 .prose :not(pre) > code { background: var(--theme-panel); padding: 0.1em 0.3em; font-size: 0.85em; }
 .prose blockquote { margin-inline: 0; border-inline-start: 3px solid var(--theme-quote-rule); padding-inline-start: 1.25rem; }
-.prose table { display: block; max-inline-size: 100%; overflow-x: auto; border-collapse: collapse; font-size: 0.9rem; }
+.prose .table-scroll { max-inline-size: 100%; overflow-x: auto; }
+.prose .table-scroll:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.prose table { border-collapse: collapse; font-size: 0.9rem; }
 .prose :is(th, td) { padding: 0.65rem; border: 1px solid var(--theme-border-strong); text-align: start; }
 .context-note { margin-block: 0 2rem; padding: 1rem 1.25rem; border-inline-start: 3px solid var(--theme-quote-rule); background: var(--theme-panel); border-radius: 0 0.375rem 0.375rem 0; }
 .context-note p { margin-block: 0; }
