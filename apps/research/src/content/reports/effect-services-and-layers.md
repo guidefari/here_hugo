@@ -21,6 +21,25 @@ That's the distinction behind services and layers:
 
 The code that needs to send an email asks for the service. A layer supplies an implementation backed by your email provider. For a test, you could supply one that records the emails instead of sending them.
 
+<figure class="diagram" aria-labelledby="effect-contract-caption">
+<p class="diagram-title">One contract, two implementations</p>
+<div class="d-stacks" style="--d-cols: 2">
+<p class="d-band"><b>Code that sends an email</b>Asks for the email service. Never imports a provider.</p>
+<p class="d-band-edge" aria-hidden="true">↓ depends on</p>
+<p class="d-band is-strong">Email service contract: who to send to, what to send, what can go wrong</p>
+<p class="d-band-edge" aria-hidden="true">↑ supplied by a layer</p>
+<ol class="d-stack" aria-label="Production layer">
+<li class="d-stack-name">Production layer</li>
+<li>Sends through your email provider's API</li>
+</ol>
+<ol class="d-stack" aria-label="Test layer">
+<li class="d-stack-name">Test layer</li>
+<li>Records emails instead of sending them</li>
+</ol>
+</div>
+<figcaption id="effect-contract-caption">The calling code is the same in both cases. Swapping the layer changes the implementation without touching the code that depends on the contract, as long as the replacement honours it.</figcaption>
+</figure>
+
 I covered the mechanics in [Effect-ts, in practice](https://guidefari.com/effective/), where the same invoicing workflow uses different database layers in production and tests.
 
 ## Thinking about the boundaries
