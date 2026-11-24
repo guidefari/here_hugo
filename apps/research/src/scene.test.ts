@@ -40,16 +40,31 @@ describe("research reader", () => {
   });
 
   test("opens the reading map, selects a chapter, and closes the compact map", () => {
+    const map = (chapter: string) => ({ name: `Reading map, chapter ${chapter}` });
     Scene.scene({ update, view },
       Scene.given(modelAt("/reports/sops/")),
-      Scene.expect(Scene.role("button", { name: "1 / 9 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
-      Scene.click(Scene.role("button", { name: "1 / 9 · Reading map ↓" })),
-      Scene.expect(Scene.role("button", { name: "1 / 9 · Reading map ↑" })).toHaveAttr("aria-expanded", "true"),
+      Scene.expect(Scene.role("button", map("1 of 9: Overview"))).toHaveAttr("aria-expanded", "false"),
+      Scene.click(Scene.role("button", map("1 of 9: Overview"))),
+      Scene.expect(Scene.role("button", map("1 of 9: Overview"))).toHaveAttr("aria-expanded", "true"),
       Scene.Subscription.emit(ChangedUrl({ url: url("/reports/sops/#why-keep-an-encrypted-file-in-git") })),
       Scene.Command.resolve(FocusTarget, CompletedFocusTarget()),
-      Scene.expect(Scene.role("button", { name: "4 / 9 · Reading map ↓" })).toHaveAttr("aria-expanded", "false"),
+      Scene.expect(Scene.role("button", map("4 of 9: Why keep an encrypted file in Git?"))).toHaveAttr("aria-expanded", "false"),
       Scene.expect(Scene.role("link", { name: "Why keep an encrypted file in Git?" })).toHaveAttr("aria-current", "step"),
-      Scene.expect(Scene.role("link", { name: "Next: Two ways deployment tools can consume it →" })).toHaveAttr("href", "#two-ways-deployment-tools-can-consume-it"),
+      Scene.expect(Scene.text("Chapter 4 of 9")).toExist(),
+      Scene.expect(Scene.role("link", { name: "Next chapter: Two ways deployment tools can consume it" })).toHaveAttr("href", "#two-ways-deployment-tools-can-consume-it"),
+      Scene.expect(Scene.role("link", { name: "Previous chapter: SOPS and age do different jobs" })).toHaveAttr("href", "#sops-and-age-do-different-jobs"),
+    );
+  });
+
+  test("keeps the full report introduction on the overview and a compact title on later chapters", () => {
+    Scene.scene({ update, view },
+      Scene.given(modelAt("/reports/sops/")),
+      Scene.expect(Scene.selector(".report-header.is-full")).toExist(),
+      Scene.Subscription.emit(ChangedUrl({ url: url("/reports/sops/#what-sops-does-not-protect") })),
+      Scene.Command.resolve(FocusTarget, CompletedFocusTarget()),
+      Scene.expect(Scene.selector(".report-header.is-compact")).toExist(),
+      Scene.expect(Scene.role("heading", { level: 1, name: "SOPS, age, and the secret's journey from Git to deployment" })).toExist(),
+      Scene.expect(Scene.text("Generated with AI assistance. Claims may be incomplete or out of date. Check the linked sources before relying on them.")).toExist(),
     );
   });
 

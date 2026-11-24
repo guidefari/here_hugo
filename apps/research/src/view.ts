@@ -2,7 +2,7 @@ import { Array } from "effect";
 import { Document, HtmlBuilder } from "foldkit/html";
 import { ChangedQuery, Message, Model } from "./app";
 import { Report, formatDate } from "./report";
-import { readerView } from "./reader-view";
+import { HeaderVariant, readerView } from "./reader-view";
 import { moodboardView } from "./moodboard/view";
 
 export function view(model: Model, h: HtmlBuilder<Message>): Document {
@@ -100,13 +100,15 @@ function reportView(model: Model, report: Report, h: HtmlBuilder<Message>) {
   const parent = model.reports.find((entry) => entry.id === report.parent);
   const supporting = model.reports.filter((entry) => entry.parent === report.id)
     .sort((a, b) => a.title.localeCompare(b.title));
-  const header = h.header([h.Class("report-header")], [
+  const header = (variant: HeaderVariant) => h.header([h.Class(`report-header is-${variant.toLowerCase()}`)], [
     h.a([h.Href("/")], ["← Research library"]),
     parent ? h.p([], [h.a([h.Href(`/reports/${parent.id}/`)], [`Part of: ${parent.title}`])]) : h.empty,
-    h.p([h.Class("eyebrow")], [`Agent-generated research · ${formatDate(report.date)}`]),
+    h.p([h.Class("eyebrow")], [
+      `Agent-generated research · ${formatDate(report.date)}`,
+      report.updated ? ` · updated ${formatDate(report.updated)}` : "",
+    ]),
     h.h1([], [report.title]),
     h.p([h.Class("lede")], [report.description]),
-    report.updated ? h.p([], [`Updated ${formatDate(report.updated)}`]) : h.empty,
     tagsView(report, h),
     h.p([h.Class("notice")], ["Generated with AI assistance. Claims may be incomplete or out of date. Check the linked sources before relying on them."]),
   ]);
