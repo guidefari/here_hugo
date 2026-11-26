@@ -11,7 +11,12 @@ const operations = new Set(["pageload", "navigation", "ui.render", "resource.scr
 
 export function routeName(application: Application, path: string) {
   const base = "https://here-hugo.invalid";
-  const pathname = URL.canParse(path, base) ? new URL(path, base).pathname : "/";
+  let pathname: string;
+  try {
+    pathname = new URL(path, base).pathname;
+  } catch {
+    pathname = "/";
+  }
   if (pathname === "/") return "/";
   if (application === "research" && pathname.startsWith("/reports/")) return "/reports/:report";
   if (application === "gpu" && pathname.startsWith("/scenes/")) return "/scenes/:scene";
