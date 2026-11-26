@@ -24,3 +24,4 @@ apps/research/dist
 apps/research/.generated
 apps/research/public/rss.xml
 .env
+apps/research/public/wheels/

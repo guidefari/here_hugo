@@ -67,3 +67,28 @@ makes the central mechanism clear. See `AGENTS.md` for the authoring workflow.
 The production domain is declared on the `Research` Worker in `alchemy.run.ts`.
 Review the Alchemy plan before deploying. The root stack also owns the main blog,
 GPU app, media, and Discord crossposting, so a whole-stack deploy may update them.
+
+## Wheel atlas media
+
+The wheel atlas uses the existing Alchemy-managed R2 bucket
+`here-hugo-prod-media`, served at `https://media.guidefari.com`. Image binaries
+are not stored in Git. `src/wheels/assets.json` records each immutable URL,
+SHA-256 fingerprint, byte length and content type. Source credits, licences and
+identification limits remain in the catalogue and its Sources panel.
+
+Keep local upload inputs under the ignored `public/wheels/` directory. With
+Cloudflare credentials supplied securely in the environment, run from the
+repository root:
+
+```sh
+bun run scripts/upload-wheel-media.ts
+```
+
+The uploader uses `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (or
+`CLOUDFLARE_DEFAULT_ACCOUNT_ID`). If no account is configured, discovery must
+return exactly one account. It never replaces different bytes at an existing
+key. Each successful upload is downloaded and checked before the manifest is
+saved. Objects carry a one-year immutable cache policy.
+
+The Deploy workflow supports `plan_only: true` for reviewing the production
+plan with the existing CI secrets before dispatching a deployment.
