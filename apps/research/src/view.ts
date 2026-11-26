@@ -4,8 +4,12 @@ import { ChangedQuery, Message, Model } from "./app";
 import { Report, formatDate } from "./report";
 import { HeaderVariant, readerView } from "./reader-view";
 import { moodboardView } from "./moodboard/view";
+import { wheelAtlasView } from "./wheels/view";
 
 export function view(model: Model, h: HtmlBuilder<Message>): Document {
+  if (model.path === "/wheels" || model.path.startsWith("/wheels/")) {
+    return wheelAtlasView(model, h);
+  }
   if (model.path.replace(/\/$/, "") === "/moodboard") {
     return {
       title: "Judging books by their covers (jk jk)",
@@ -24,6 +28,7 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
         h.nav([h.AriaLabel("Primary")], [
           h.a([h.Href("/")], ["Library"]),
           h.a([h.Href("/moodboard/")], ["Moodboard"]),
+          h.a([h.Href("/wheels/")], ["Wheels"]),
           h.a([h.Href("/rss.xml")], ["RSS"]),
           h.a([h.Href("https://guidefari.com")], ["Main blog ↗"]),
         ]),
@@ -71,6 +76,12 @@ function libraryView(model: Model, h: HtmlBuilder<Message>) {
           h.Src(`/moodboard/${id}.jpg`), h.Alt(""), h.Loading("lazy"),
         ])),
       ]),
+    ]),
+    h.section([h.Class("wheel-library-entry"), h.AriaLabelledBy("wheels-heading")], [
+      h.p([h.Class("eyebrow")], ["Visual research / Automotive"]),
+      h.h2([h.Id("wheels-heading")], [h.a([h.Href("/wheels/")], ["All stylings at a glance."])]),
+      h.p([], ["A field guide to BMW wheels. From the catalogue to the cars that wear them."]),
+      h.a([h.Href("/wheels/")], ["Explore the wheel atlas ↗"]),
     ]),
     h.section([h.AriaLabelledBy("reports-heading")], [
       h.div([h.Class("section-heading")], [

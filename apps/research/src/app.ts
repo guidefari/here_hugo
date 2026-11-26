@@ -4,8 +4,12 @@ import { defineMessageUnion } from "foldkit/message";
 import { Report } from "./report";
 import { view } from "./view";
 import { selectedCover } from "./moodboard/covers";
+import { findWheel, tileId } from "./wheels/catalogue";
 
 export { view };
+
+export const WheelView = Schema.Literals(["Auto", "Closeup", "OnCar"]);
+export type WheelView = typeof WheelView.Type;
 
 export const Flags = Schema.Struct({ reports: Schema.Array(Report) });
 export const Model = Schema.Struct({
@@ -14,6 +18,8 @@ export const Model = Schema.Struct({
   query: Schema.String,
   anchor: Schema.String,
   contents: Schema.Literals(["Collapsed", "Expanded"]),
+  wheelView: WheelView,
+  wheelPhoto: Schema.Number,
 });
 export type Model = typeof Model.Type;
 
@@ -23,6 +29,12 @@ export const Message = defineMessageUnion({
   ChangedQuery: { value: Schema.String },
   ClickedContents: {},
   PressedCoverArrow: { href: Schema.String },
+  PressedWheelKey: { href: Schema.String },
+  ClickedWheelView: { view: WheelView },
+  ClickedWheelPhoto: { index: Schema.Number },
+  PressedWheelPhotoKey: { index: Schema.Number },
+  CompletedFocusWheel: {},
+  FailedFocusWheel: {},
   CompletedNavigate: {},
   FailedNavigate: {},
   CompletedLoadExternal: {},
@@ -32,7 +44,8 @@ export const Message = defineMessageUnion({
 });
 export const {
   ClickedLink, ChangedUrl, ChangedQuery, ClickedContents,
-  PressedCoverArrow,
+  PressedCoverArrow, PressedWheelKey, ClickedWheelView, ClickedWheelPhoto, PressedWheelPhotoKey,
+  CompletedFocusWheel, FailedFocusWheel,
   CompletedNavigate, FailedNavigate,
   CompletedLoadExternal, FailedLoadExternal,
   CompletedFocusTarget, FailedFocusTarget,
@@ -48,6 +61,19 @@ export const FocusTarget = Command.define("FocusTarget", {
       Effect.andThen(Dom.focus(selector, { preventScroll: true, makeFocusable: true })),
       Effect.as(CompletedFocusTarget()),
       Effect.catch(() => Effect.succeed(FailedFocusTarget())),
+    );
+  },
+});
+
+export const FocusWheel = Command.define("FocusWheel", {
+  args: { id: Schema.String },
+  messages: [CompletedFocusWheel, FailedFocusWheel],
+  execute: ({ id }) => {
+    const selector = `#${CSS.escape(id)}`;
+    return Dom.scrollIntoViewIfNotVisible(selector, { block: "nearest" }).pipe(
+      Effect.andThen(Dom.focus(selector, { preventScroll: true, makeFocusable: true })),
+      Effect.as(CompletedFocusWheel()),
+      Effect.catch(() => Effect.succeed(FailedFocusWheel())),
     );
   },
 });
@@ -71,8 +97,11 @@ const LoadExternal = Command.define("LoadExternal", {
 });
 
 export const init: Runtime.RoutingApplicationInit<Model, Message, typeof Flags.Type> = (flags, url) => ({
-  model: { reports: flags.reports, path: url.pathname, query: "", anchor: Option.getOrElse(url.hash, () => ""), contents: "Collapsed" },
-  commands: [FocusTarget({ id: focusTargetId(url) })],
+  model: {
+    reports: flags.reports, path: url.pathname, query: "", anchor: Option.getOrElse(url.hash, () => ""),
+    contents: "Collapsed", wheelView: "Auto", wheelPhoto: 0,
+  },
+  commands: [focusCommand(url)],
 });
 
 export const update = (model: Model, message: Message): Update.Return<Model, Message> =>
@@ -89,12 +118,27 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
         model,
         commands: [Navigate({ href })],
       }),
+      PressedWheelKey: ({ href }) => ({
+        model,
+        commands: [Navigate({ href })],
+      }),
+      ClickedWheelView: ({ view }) => ({
+        model: Struct.modifyFields(model, { wheelView: () => view, wheelPhoto: () => 0 }),
+      }),
+      ClickedWheelPhoto: ({ index }) => ({
+        model: Struct.modifyFields(model, { wheelPhoto: () => index }),
+      }),
+      PressedWheelPhotoKey: ({ index }) => ({
+        model: Struct.modifyFields(model, { wheelPhoto: () => index }),
+      }),
       ChangedUrl: ({ url }) => ({
         model: Struct.modifyFields(model, {
           path: () => url.pathname, query: () => "",
           anchor: () => Option.getOrElse(url.hash, () => ""), contents: () => "Collapsed",
+          wheelView: (view) => isWheelPath(model.path) && isWheelPath(url.pathname) ? view : "Auto",
+          wheelPhoto: () => 0,
         }),
-        commands: [FocusTarget({ id: focusTargetId(url) })],
+        commands: [focusCommand(url)],
       }),
       ClickedLink: ({ request }) => Match.value(request).pipe(
         Match.withReturnType<Update.Return<Model, Message>>(),
@@ -113,9 +157,24 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
       CompletedLoadExternal: () => ({ model }),
       FailedLoadExternal: () => ({ model }),
       CompletedFocusTarget: () => ({ model }),
+      CompletedFocusWheel: () => ({ model }),
+      FailedFocusWheel: () => ({ model }),
       FailedFocusTarget: () => ({ model }),
     }),
   );
+
+function isWheelPath(path: string): boolean {
+  return path === "/wheels" || path.startsWith("/wheels/");
+}
+
+function focusCommand(url: Url.Url) {
+  if (isWheelPath(url.pathname)) {
+    return FocusWheel({
+      id: Option.match(findWheel(url.pathname), { onNone: () => "atlas-title", onSome: tileId }),
+    });
+  }
+  return FocusTarget({ id: focusTargetId(url) });
+}
 
 function focusTargetId(url: Url.Url): string {
   const anchor = Option.getOrElse(url.hash, () => "");
