@@ -5,6 +5,8 @@ import { Report, formatDate } from "./report";
 import { HeaderVariant, readerView } from "./reader-view";
 import { moodboardView } from "./moodboard/view";
 import { wheelAtlasView } from "./wheels/view";
+import { foundationsTitle, foundationsView } from "./foundations/view";
+import { foundationsHref, isFoundationsPath } from "./foundations/map";
 
 export function view(model: Model, h: HtmlBuilder<Message>): Document {
   if (model.path === "/wheels" || model.path.startsWith("/wheels/")) {
@@ -19,14 +21,16 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
     };
   }
   const report = model.reports.find((entry) => `/reports/${entry.id}/` === `${model.path.replace(/\/$/, "")}/`);
+  const foundations = isFoundationsPath(model.path);
   return {
-    title: `${report?.title ?? "Research library"} | Guide Fari Research`,
+    title: foundations ? foundationsTitle(model.path) : `${report?.title ?? "Research library"} | Guide Fari Research`,
     body: h.div([], [
       h.header([h.Class("site-header")], [
         h.a([h.Class("skip-link"), h.Href("#main-content")], ["Skip to content"]),
         h.a([h.Class("brand"), h.Href("/")], ["Guide Fari ", h.span([], ["Research"])]),
         h.nav([h.AriaLabel("Primary")], [
           h.a([h.Href("/")], ["Library"]),
+          h.a([h.Href(foundationsHref), h.AriaCurrent(foundations ? "page" : "false")], ["Foundations"]),
           h.a([h.Href("/moodboard/")], ["Moodboard"]),
           h.a([h.Href("/wheels/")], ["Wheels"]),
           h.a([h.Href("/gpu/")], ["GPU lab"]),
@@ -34,8 +38,8 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
           h.a([h.Href("https://guidefari.com")], ["Main blog ↗"]),
         ]),
       ]),
-      h.main([h.Id("main-content"), h.Tabindex(-1), h.Class(report ? "report-page" : "library-page")], [
-        pageView(model, report, h),
+      h.main([h.Id("main-content"), h.Tabindex(-1), h.Class(foundations ? "foundations-page" : report ? "report-page" : "library-page")], [
+        foundations ? foundationsView(model, h) : pageView(model, report, h),
       ]),
       h.footer([h.Class("site-footer")], [
         h.p([], ["Agent-generated research, collected by ", h.a([h.Href("https://guidefari.com")], ["Guide Fari"]), "."]),
@@ -83,6 +87,12 @@ function libraryView(model: Model, h: HtmlBuilder<Message>) {
       h.h2([h.Id("wheels-heading")], [h.a([h.Href("/wheels/")], ["All stylings at a glance."])]),
       h.p([], ["A field guide to BMW wheels. From the catalogue to the cars that wear them."]),
       h.a([h.Href("/wheels/")], ["Explore the wheel atlas ↗"]),
+    ]),
+    h.section([h.Class("wheel-library-entry"), h.AriaLabelledBy("foundations-heading")], [
+      h.p([h.Class("eyebrow")], ["Interactive research / Computer science"]),
+      h.h2([h.Id("foundations-heading")], [h.a([h.Href(foundationsHref)], ["A computer science foundations map"])]),
+      h.p([], ["Sixteen study modules in four strands, breadth beyond systems, and project questions that route through the concepts."]),
+      h.a([h.Href(foundationsHref)], ["Explore the foundations map"]),
     ]),
     h.section([h.Class("wheel-library-entry"), h.AriaLabelledBy("gpu-heading")], [
       h.p([h.Class("eyebrow")], ["Interactive research / Graphics"]),

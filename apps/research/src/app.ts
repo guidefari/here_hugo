@@ -5,8 +5,11 @@ import { Report } from "./report";
 import { view } from "./view";
 import { selectedCover } from "./moodboard/covers";
 import { findWheel, tileId } from "./wheels/catalogue";
+import { detailHeadingId, isFoundationsPath, selectionFromPath } from "./foundations/map";
 
 export { view };
+
+export const foundationsQueryId = "foundations-query";
 
 export const WheelView = Schema.Literals(["Auto", "Closeup", "OnCar"]);
 export type WheelView = typeof WheelView.Type;
@@ -20,6 +23,7 @@ export const Model = Schema.Struct({
   contents: Schema.Literals(["Collapsed", "Expanded"]),
   wheelView: WheelView,
   wheelPhoto: Schema.Number,
+  foundationsQuery: Schema.String,
 });
 export type Model = typeof Model.Type;
 
@@ -28,6 +32,8 @@ export const Message = defineMessageUnion({
   ChangedUrl: { url: Url.Url },
   ChangedQuery: { value: Schema.String },
   ClickedContents: {},
+  ChangedFoundationsQuery: { value: Schema.String },
+  ClickedClearFoundationsQuery: {},
   PressedCoverArrow: { href: Schema.String },
   PressedWheelKey: { href: Schema.String },
   ClickedWheelView: { view: WheelView },
@@ -41,14 +47,18 @@ export const Message = defineMessageUnion({
   FailedLoadExternal: {},
   CompletedFocusTarget: {},
   FailedFocusTarget: {},
+  CompletedFocusFoundation: {},
+  FailedFocusFoundation: {},
 });
 export const {
   ClickedLink, ChangedUrl, ChangedQuery, ClickedContents,
+  ChangedFoundationsQuery, ClickedClearFoundationsQuery,
   PressedCoverArrow, PressedWheelKey, ClickedWheelView, ClickedWheelPhoto, PressedWheelPhotoKey,
   CompletedFocusWheel, FailedFocusWheel,
   CompletedNavigate, FailedNavigate,
   CompletedLoadExternal, FailedLoadExternal,
   CompletedFocusTarget, FailedFocusTarget,
+  CompletedFocusFoundation, FailedFocusFoundation,
 } = Message;
 export type Message = typeof Message.Type;
 
@@ -78,6 +88,19 @@ export const FocusWheel = Command.define("FocusWheel", {
   },
 });
 
+export const FocusFoundation = Command.define("FocusFoundation", {
+  args: { id: Schema.String },
+  messages: [CompletedFocusFoundation, FailedFocusFoundation],
+  execute: ({ id }) => {
+    const selector = `#${CSS.escape(id)}`;
+    return Dom.scrollIntoViewIfNotVisible(selector, { block: "start" }).pipe(
+      Effect.andThen(Dom.focus(selector, { preventScroll: true, makeFocusable: true })),
+      Effect.as(CompletedFocusFoundation()),
+      Effect.catch(() => Effect.succeed(FailedFocusFoundation())),
+    );
+  },
+});
+
 export const Navigate = Command.define("Navigate", {
   args: { href: Schema.String },
   messages: [CompletedNavigate, FailedNavigate],
@@ -99,7 +122,7 @@ const LoadExternal = Command.define("LoadExternal", {
 export const init: Runtime.RoutingApplicationInit<Model, Message, typeof Flags.Type> = (flags, url) => ({
   model: {
     reports: flags.reports, path: url.pathname, query: "", anchor: Option.getOrElse(url.hash, () => ""),
-    contents: "Collapsed", wheelView: "Auto", wheelPhoto: 0,
+    contents: "Collapsed", wheelView: "Auto", wheelPhoto: 0, foundationsQuery: "",
   },
   commands: [focusCommand(url)],
 });
@@ -110,6 +133,13 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
     Match.tagsExhaustive({
       ChangedQuery: ({ value }) => ({
         model: Struct.modifyFields(model, { query: () => value }),
+      }),
+      ChangedFoundationsQuery: ({ value }) => ({
+        model: Struct.modifyFields(model, { foundationsQuery: () => value }),
+      }),
+      ClickedClearFoundationsQuery: () => ({
+        model: Struct.modifyFields(model, { foundationsQuery: () => "" }),
+        commands: [FocusFoundation({ id: foundationsQueryId })],
       }),
       ClickedContents: () => ({
         model: Struct.modifyFields(model, { contents: (state) => state === "Collapsed" ? "Expanded" : "Collapsed" }),
@@ -160,6 +190,8 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
       CompletedFocusWheel: () => ({ model }),
       FailedFocusWheel: () => ({ model }),
       FailedFocusTarget: () => ({ model }),
+      CompletedFocusFoundation: () => ({ model }),
+      FailedFocusFoundation: () => ({ model }),
     }),
   );
 
@@ -172,6 +204,9 @@ function focusCommand(url: Url.Url) {
     return FocusWheel({
       id: Option.match(findWheel(url.pathname), { onNone: () => "atlas-title", onSome: tileId }),
     });
+  }
+  if (isFoundationsPath(url.pathname) && Option.isNone(url.hash) && selectionFromPath(url.pathname)._tag !== "Overview") {
+    return FocusFoundation({ id: detailHeadingId });
   }
   return FocusTarget({ id: focusTargetId(url) });
 }
