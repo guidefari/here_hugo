@@ -3,7 +3,7 @@ title: "How does an Android emulator stream into a terminal?"
 description: "What H.264 compresses, what Rex actually draws, and how a click gets back to Android."
 date: "2026-11-24"
 tags: ["android", "video", "terminal"]
-draft: true
+draft: false
 ---
 
 > Agent-written working note. The screenshots are decoded frames from a synthetic test clip, not captures of a work app or the Rex desktop.

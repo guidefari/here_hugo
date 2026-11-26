@@ -23,14 +23,15 @@ describe("research reader", () => {
     }]);
   });
 
-  test("lists the five main reports and filters by title without promoting source notes", () => {
+  test("lists the main reports and filters by title without promoting source notes", () => {
     Scene.scene({ update, view },
       Scene.given(modelAt("/")),
       Scene.inside(Scene.role("banner"),
         Scene.expect(Scene.role("link", { name: "Skip to content" })).toHaveAttr("href", "#main-content")),
-      Scene.expect(Scene.role("status")).toHaveText("5 of 5 reports"),
+      Scene.expect(Scene.role("status")).toHaveText("6 of 6 reports"),
+      Scene.expect(Scene.role("link", { name: "How does an Android emulator stream into a terminal?" })).toHaveAttr("href", "/reports/android-emulator-stream/"),
       Scene.type(Scene.label("Find a report"), "sops"),
-      Scene.expect(Scene.role("status")).toHaveText("1 of 5 reports"),
+      Scene.expect(Scene.role("status")).toHaveText("1 of 6 reports"),
       Scene.expect(Scene.role("link", { name: "SOPS, age, and the secret's journey from Git to deployment" })).toExist(),
     );
   });
