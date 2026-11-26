@@ -4,7 +4,9 @@ An Effect-first laboratory for learning and making GPU art. Foldkit
 controls the studio UI; Effect services own generation, randomness, resources,
 and future rendering/export capabilities.
 
-The playground is deployed at [gpu.guidefari.com](https://gpu.guidefari.com).
+The playground is part of [Guide Fari Research](https://research.guidefari.com/gpu/).
+Old `gpu.guidefari.com` links permanently redirect to the matching Research URL,
+preserving scene paths and query parameters.
 Its light and dark palettes come from `packages/theme`, shared with the main site.
 
 `apps/gpu` is the source of truth for the work previously developed in
@@ -12,11 +14,11 @@ Its light and dark palettes come from `packages/theme`, shared with the main sit
 
 ## Scenes
 
-- `/` and `/scenes/random-dots`: four generated dot fields rendered with TypeGPU.
-- `/scenes/noise-beams`: animated three-dimensional noise beams.
-- `/scenes/image-mosaic`: local image sampling, density and movement controls,
+- `/gpu/` and `/gpu/scenes/random-dots`: four generated dot fields rendered with TypeGPU.
+- `/gpu/scenes/noise-beams`: animated three-dimensional noise beams.
+- `/gpu/scenes/image-mosaic`: local image sampling, density and movement controls,
   background selection, and SVG/PNG export.
-- `/scenes/mosaic-mirror`: an opt-in camera silhouette mosaic with TypeGPU
+- `/gpu/scenes/mosaic-mirror`: an opt-in camera silhouette mosaic with TypeGPU
   rendering and a Canvas fallback. Camera frames stay on the device. The
   segmentation worker, WASM runtime, and licensed model ship with the app.
 
@@ -92,6 +94,16 @@ one instanced GPU draw.
 bun install
 bun dev
 ```
+
+Portless serves the development app at `https://gpu.localhost/gpu/`.
+The Research development server proxies `/gpu/` to that app. A local preview
+can set `GPU_PROXY_TARGET` to a separately running GPU preview server.
+
+In production, the Research Worker forwards `/gpu/*` through a service binding
+to the existing GPU Worker. The GPU Worker strips the public prefix for its
+asset binding and serves its app shell for scene documents. Its public legacy
+domain redirects instead. Both Workers and their assets remain independently
+built; no GPU runtime or WebGPU code is bundled into the research reader.
 
 ## Checks
 

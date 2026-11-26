@@ -37,6 +37,12 @@ jobs:
 
       - run: bun run --cwd apps/research verify
 
+      - run: bun run --cwd apps/gpu lint
+
+      - run: bun run --cwd apps/gpu typecheck
+
+      - run: bun run --cwd apps/gpu test
+
       - run: bun run --cwd packages/telemetry test
 
       - run: bun run --cwd packages/telemetry typecheck

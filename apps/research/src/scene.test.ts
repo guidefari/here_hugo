@@ -1,14 +1,28 @@
 import { Option, Schema } from "effect";
-import { Scene, Url } from "foldkit";
-import { describe, test } from "vitest";
+import { Navigation, Scene, Url } from "foldkit";
+import { describe, expect, test } from "vitest";
 import generated from "../.generated/reports.json";
-import { ChangedUrl, CompletedFocusTarget, Flags, FocusTarget, init, update, view } from "./app";
+import { ChangedUrl, ClickedLink, CompletedFocusTarget, Flags, FocusTarget, init, update, view } from "./app";
 
 const flags = Schema.decodeUnknownSync(Flags)({ reports: generated });
 const url = (path: string) => Option.getOrThrow(Url.fromString(`https://research.test${path}`));
 const modelAt = (path: string) => init(flags, url(path)).model;
 
 describe("research reader", () => {
+  test("the library links to the GPU app and hands same-origin navigation to its separate runtime", () => {
+    Scene.scene({ update, view },
+      Scene.given(modelAt("/")),
+      Scene.expect(Scene.role("link", { name: "The GPU lab" })).toHaveAttr("href", "/gpu/"),
+    );
+    const next = update(modelAt("/"), ClickedLink({
+      request: Navigation.UrlRequest.Internal({ url: url("/gpu/scenes/image-mosaic") }),
+    }));
+    expect(next.commands).toMatchObject([{
+      name: "LoadExternal",
+      args: { href: "https://research.test/gpu/scenes/image-mosaic" },
+    }]);
+  });
+
   test("lists the five main reports and filters by title without promoting source notes", () => {
     Scene.scene({ update, view },
       Scene.given(modelAt("/")),

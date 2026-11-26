@@ -182,7 +182,11 @@ export const update = (model: Model, message: Message): UpdateReturn =>
           Match.tagsExhaustive({
             Internal: ({ url }) => ({
               model,
-              commands: [NavigateInternal({ url: urlToString(url) })],
+              commands: [
+                url.pathname === '/gpu' || url.pathname.startsWith('/gpu/')
+                  ? NavigateInternal({ url: urlToString(url) })
+                  : LoadExternal({ href: urlToString(url) }),
+              ],
             }),
             External: ({ href }) => ({
               model,

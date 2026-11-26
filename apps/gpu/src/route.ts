@@ -25,28 +25,32 @@ export const NotFoundRoute = NotFound
 
 export type AppRoute = typeof AppRoute.Type
 
-const rootRandomDotsRouter = pipe(Route.root, Route.mapTo(RandomDotsRoute))
+const rootRandomDotsRouter = pipe(literal('gpu'), Route.mapTo(RandomDotsRoute))
 
 export const randomDotsRouter = pipe(
-  literal('scenes'),
+  literal('gpu'),
+  slash(literal('scenes')),
   slash(literal('random-dots')),
   Route.mapTo(RandomDotsRoute),
 )
 
 export const noiseBeamsRouter = pipe(
-  literal('scenes'),
+  literal('gpu'),
+  slash(literal('scenes')),
   slash(literal('noise-beams')),
   Route.mapTo(NoiseBeamsRoute),
 )
 
 export const imageMosaicRouter = pipe(
-  literal('scenes'),
+  literal('gpu'),
+  slash(literal('scenes')),
   slash(literal('image-mosaic')),
   Route.mapTo(ImageMosaicRoute),
 )
 
 export const mosaicMirrorRouter = pipe(
-  literal('scenes'),
+  literal('gpu'),
+  slash(literal('scenes')),
   slash(literal('mosaic-mirror')),
   Route.mapTo(MosaicMirrorRoute),
 )

@@ -26,7 +26,7 @@ describe('application view', () => {
   test('mounts the mirror and lifts camera controls without prompting on arrival', () => {
     scene(
       { update, view },
-      given(modelAt('/scenes/mosaic-mirror')),
+      given(modelAt('/gpu/scenes/mosaic-mirror')),
       expect(role('heading', { name: 'Mosaic Mirror', level: 1 })).toExist(),
       expect(role('link', { name: 'Mosaic Mirror' })).toHaveAttr(
         'aria-current',
@@ -43,7 +43,7 @@ describe('application view', () => {
     const file = new File(['not an image'], 'broken.txt')
     scene(
       { update, view },
-      given(modelAt('/scenes/image-mosaic')),
+      given(modelAt('/gpu/scenes/image-mosaic')),
       changeFiles('#mosaic-file', [file]),
       expect(role('status')).toHaveText('Decoding image…'),
       Command.resolve(
@@ -56,7 +56,7 @@ describe('application view', () => {
   test('mounts the image mosaic scene at its route', () => {
     scene(
       { update, view },
-      given(modelAt('/scenes/image-mosaic')),
+      given(modelAt('/gpu/scenes/image-mosaic')),
       expect(role('heading', { name: 'Image Mosaic', level: 1 })).toExist(),
       expect(role('link', { name: 'Image Mosaic' })).toHaveAttr(
         'aria-current',
@@ -67,7 +67,7 @@ describe('application view', () => {
   test('mounts Random Dots at the root route', () => {
     scene(
       { update, view },
-      given(modelAt('/')),
+      given(modelAt('/gpu/')),
       expect(role('heading', { name: 'Random Dots', level: 1 })).toExist(),
       expect(role('link', { name: 'Random Dots' })).toHaveAttr(
         'aria-current',
@@ -79,7 +79,7 @@ describe('application view', () => {
   test('shows focused scene navigation and a separate theme control', () => {
     scene(
       { update, view },
-      given(modelAt('/scenes/noise-beams')),
+      given(modelAt('/gpu/scenes/noise-beams')),
       expect(role('navigation', { name: 'Scene navigation' })).toExist(),
       expect(role('link', { name: 'Read the graphics series' })).toHaveAttr(
         'href',
@@ -87,13 +87,17 @@ describe('application view', () => {
       ),
       expect(role('link', { name: 'Random Dots' })).toHaveAttr(
         'href',
-        '/scenes/random-dots',
+        '/gpu/scenes/random-dots',
       ),
       expect(role('link', { name: 'Noise Beams' })).toHaveAttr(
         'aria-current',
         'page',
       ),
       expect(role('group', { name: 'Color theme' })).toExist(),
+      expect(role('link', { name: 'Research library' })).toHaveAttr(
+        'href',
+        'http://localhost:1415/',
+      ),
       expect(role('button', { name: 'System' })).toHaveAttr(
         'aria-pressed',
         'true',
@@ -103,7 +107,7 @@ describe('application view', () => {
 
   test('mounts the noise beams submodel at its route', () => {
     const seededModel = update(
-      modelAt('/scenes/noise-beams'),
+      modelAt('/gpu/scenes/noise-beams'),
       GotNoiseBeamsMessage({
         message: CompletedGenerateNoiseSeed({ seed: 123_456 }),
       }),

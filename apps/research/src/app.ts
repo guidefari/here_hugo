@@ -145,7 +145,7 @@ export const update = (model: Model, message: Message): Update.Return<Model, Mes
         Match.tagsExhaustive({
           Internal: ({ url }) => ({
             model,
-            commands: [url.pathname === "/rss.xml"
+            commands: [url.pathname === "/rss.xml" || url.pathname === "/gpu" || url.pathname.startsWith("/gpu/")
               ? LoadExternal({ href: Url.toString(url) })
               : Navigate({ href: Url.toString(url) })],
           }),

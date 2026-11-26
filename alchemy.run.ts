@@ -107,6 +107,7 @@ export default Alchemy.Stack(
 
     const gpu = yield* Cloudflare.Worker("Gpu", {
       name: `here-hugo-${stack.stage}-gpu`,
+      main: "apps/gpu/src/site-worker.ts",
       domain: isProduction ? gpuDomain : undefined,
       workersDev: !isProduction,
       compatibility: { date: compatibilityDate },
@@ -114,6 +115,7 @@ export default Alchemy.Stack(
         directory: gpuBuild.outdir,
         hash: gpuBuildHash,
         notFoundHandling: "single-page-application",
+        runWorkerFirst: true,
       },
     });
 
@@ -144,13 +146,16 @@ export default Alchemy.Stack(
 
     const research = yield* Cloudflare.Worker("Research", {
       name: `here-hugo-${stack.stage}-research`,
+      main: "apps/research/src/site-worker.ts",
       domain: isProduction ? researchDomain : undefined,
       workersDev: !isProduction,
       compatibility: { date: compatibilityDate },
+      env: { GPU: gpu },
       assets: {
         directory: researchBuild.outdir,
         hash: researchBuildHash,
         notFoundHandling: "single-page-application",
+        runWorkerFirst: ["/gpu", "/gpu/*"],
       },
     });
 
@@ -191,7 +196,7 @@ export default Alchemy.Stack(
     });
 
     return {
-      gpuUrl: gpu.url,
+      gpuUrl: isProduction ? `https://${researchDomain}/gpu/` : Output.map(gpu.url, (url) => `${url}/gpu/`),
       researchUrl: research.url,
       ogImageUrl: ogImage.url,
       mediaUrl: isProduction ? `https://${mediaDomain}` : undefined,

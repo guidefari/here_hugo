@@ -21,7 +21,7 @@ const initialize = Effect.tryPromise({
       {
         baseOptions: {
           modelAssetPath: new URL(
-            '/models/selfie_segmenter.tflite',
+            `${import.meta.env.BASE_URL}models/selfie_segmenter.tflite`,
             self.location.origin,
           ).href,
           delegate: 'CPU',

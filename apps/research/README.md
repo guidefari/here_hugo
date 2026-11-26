@@ -24,6 +24,16 @@ Printing includes the complete report, not just the selected chapter.
 Cloudflare serves the app shell for deep links. There is no backend or database.
 Only committed, reviewed Markdown enters the trusted HTML rendering boundary.
 
+The GPU lab lives at `/gpu/`, with its scene links under `/gpu/scenes/`.
+The Research Worker forwards those requests through the existing GPU Worker's
+service binding; reports and the wheel atlas still use Research's own assets.
+The reader and GPU app perform a full document navigation when crossing this
+boundary so each keeps its own Foldkit runtime.
+
+During development, `/gpu/` proxies to `https://gpu.localhost`. Start the GPU
+app separately with `bun run dev:gpu`. `GPU_PROXY_TARGET` can point the Research
+development or preview server at another local GPU server.
+
 ## Add a report
 
 Copy `src/content/reports/example.md` to a descriptive filename. Keep `draft: true`

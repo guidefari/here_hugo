@@ -29,6 +29,7 @@ export function view(model: Model, h: HtmlBuilder<Message>): Document {
           h.a([h.Href("/")], ["Library"]),
           h.a([h.Href("/moodboard/")], ["Moodboard"]),
           h.a([h.Href("/wheels/")], ["Wheels"]),
+          h.a([h.Href("/gpu/")], ["GPU lab"]),
           h.a([h.Href("/rss.xml")], ["RSS"]),
           h.a([h.Href("https://guidefari.com")], ["Main blog ↗"]),
         ]),
@@ -82,6 +83,12 @@ function libraryView(model: Model, h: HtmlBuilder<Message>) {
       h.h2([h.Id("wheels-heading")], [h.a([h.Href("/wheels/")], ["All stylings at a glance."])]),
       h.p([], ["A field guide to BMW wheels. From the catalogue to the cars that wear them."]),
       h.a([h.Href("/wheels/")], ["Explore the wheel atlas ↗"]),
+    ]),
+    h.section([h.Class("wheel-library-entry"), h.AriaLabelledBy("gpu-heading")], [
+      h.p([h.Class("eyebrow")], ["Interactive research / Graphics"]),
+      h.h2([h.Id("gpu-heading")], [h.a([h.Href("/gpu/")], ["The GPU lab"])]),
+      h.p([], ["Dots, noise beams, image mosaics and a camera mirror. Hands-on experiments with WebGPU and TypeGPU."]),
+      h.a([h.Href("/gpu/")], ["Explore the GPU experiments ↗"]),
     ]),
     h.section([h.AriaLabelledBy("reports-heading")], [
       h.div([h.Class("section-heading")], [

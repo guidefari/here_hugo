@@ -49,6 +49,8 @@ const blogUrl = import.meta.env.DEV
   ? 'http://localhost:1414/webgpu-webgl-typegpu-threejs-shaders/'
   : 'https://guidefari.com/webgpu-webgl-typegpu-threejs-shaders/'
 
+const researchUrl = import.meta.env.DEV ? 'http://localhost:1415/' : '/'
+
 const navigationLinkView = <Message>(
   item: NavigationItem,
   route: AppRoute,
@@ -103,6 +105,21 @@ export const navigationView = <Message>(
                   [],
                   [navigationLinkView(item, route, h)],
                 ),
+              ),
+              h.li(
+                [],
+                [
+                  h.a(
+                    [
+                      h.Href(researchUrl),
+                      h.AriaLabel('Research library'),
+                      h.Class(
+                        `block whitespace-nowrap py-2 type-label ${segmentedItem(false)}`,
+                      ),
+                    ],
+                    ['Research ↗'],
+                  ),
+                ],
               ),
               h.li(
                 [],

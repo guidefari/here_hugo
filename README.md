@@ -48,8 +48,9 @@ bun run dev
 
 To run the blog and GPU playground together, start `cmdz` from the repository root.
 The blog is at `http://localhost:1414` and the playground is at
-`https://gpu.localhost` (via Portless). Their links point to these local URLs
-in development and to `guidefari.com` and `gpu.guidefari.com` in production.
+`https://gpu.localhost/gpu/` (via Portless). Their links point to these local URLs
+in development and to `guidefari.com` and `research.guidefari.com/gpu/` in production.
+Existing `gpu.guidefari.com` links redirect to the corresponding Research paths.
 
 ## Research reading room
 

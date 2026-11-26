@@ -1,10 +1,12 @@
 import { Option } from 'effect'
+import { UrlRequest } from 'foldkit/navigation'
 import { given, message, model, story } from 'foldkit/story'
 import { fromString } from 'foldkit/url'
 import { describe, expect, test } from 'vitest'
 
 import {
   ChangedUrl,
+  ClickedLink,
   GotNoiseBeamsMessage,
   GotRandomDotsMessage,
   NoiseBeamsPage,
@@ -32,8 +34,24 @@ const modelAt = (path: string) =>
   ).model
 
 describe('application update', () => {
+  test('leaving the GPU app for Research loads the other runtime rather than a missing scene', () => {
+    const next = update(
+      modelAt('/gpu/scenes/noise-beams'),
+      ClickedLink({
+        request: UrlRequest.Internal({ url: urlAt('/') }),
+      }),
+    )
+
+    expect(next.commands).toMatchObject([
+      {
+        name: 'LoadExternal',
+        args: { href: 'https://effect-art.test/' },
+      },
+    ])
+  })
+
   test('folds lifted noise beams messages into the child model', () => {
-    const initialModel = modelAt('/scenes/noise-beams')
+    const initialModel = modelAt('/gpu/scenes/noise-beams')
     const seed = 123_456
 
     story(
@@ -56,7 +74,7 @@ describe('application update', () => {
   })
 
   test('reinitializes noise beams only when entering its route', () => {
-    const initialModel = modelAt('/scenes/noise-beams')
+    const initialModel = modelAt('/gpu/scenes/noise-beams')
     const seed = 123_456
 
     const waitingModel = update(
@@ -73,12 +91,12 @@ describe('application update', () => {
 
     const randomDotsModel = update(
       drawingModel,
-      ChangedUrl({ url: urlAt('/') }),
+      ChangedUrl({ url: urlAt('/gpu/') }),
     ).model
 
     const nextUpdate = update(
       randomDotsModel,
-      ChangedUrl({ url: urlAt('/scenes/noise-beams') }),
+      ChangedUrl({ url: urlAt('/gpu/scenes/noise-beams') }),
     )
 
     expect(nextUpdate.model.page).toStrictEqual(
@@ -90,7 +108,7 @@ describe('application update', () => {
   })
 
   test('ignores late child messages from an inactive scene', () => {
-    const initialModel = modelAt('/scenes/noise-beams')
+    const initialModel = modelAt('/gpu/scenes/noise-beams')
 
     const nextUpdate = update(
       initialModel,

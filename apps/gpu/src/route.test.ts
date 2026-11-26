@@ -19,26 +19,31 @@ const routeAt = (path: string) =>
 
 describe('application routes', () => {
   test('parses and builds the mirror route', () => {
-    expect(mosaicMirrorRouter()).toBe('/scenes/mosaic-mirror')
-    expect(routeAt('/scenes/mosaic-mirror')).toStrictEqual(MosaicMirrorRoute())
+    expect(mosaicMirrorRouter()).toBe('/gpu/scenes/mosaic-mirror')
+    expect(routeAt('/gpu/scenes/mosaic-mirror')).toStrictEqual(
+      MosaicMirrorRoute(),
+    )
   })
   test('parses and builds the image mosaic route', () => {
-    expect(imageMosaicRouter()).toBe('/scenes/image-mosaic')
-    expect(routeAt('/scenes/image-mosaic')).toStrictEqual(ImageMosaicRoute())
+    expect(imageMosaicRouter()).toBe('/gpu/scenes/image-mosaic')
+    expect(routeAt('/gpu/scenes/image-mosaic')).toStrictEqual(
+      ImageMosaicRoute(),
+    )
   })
   test('uses Random Dots as the root scene', () => {
-    expect(routeAt('/')).toStrictEqual(RandomDotsRoute())
-    expect(routeAt('/scenes/random-dots')).toStrictEqual(RandomDotsRoute())
-    expect(routeAt('/scenes/noise-beams')).toStrictEqual(NoiseBeamsRoute())
+    expect(routeAt('/gpu')).toStrictEqual(RandomDotsRoute())
+    expect(routeAt('/gpu/')).toStrictEqual(RandomDotsRoute())
+    expect(routeAt('/gpu/scenes/random-dots')).toStrictEqual(RandomDotsRoute())
+    expect(routeAt('/gpu/scenes/noise-beams')).toStrictEqual(NoiseBeamsRoute())
   })
 
   test('builds the noise beams route and preserves unknown paths', () => {
-    expect(noiseBeamsRouter()).toBe('/scenes/noise-beams')
-    expect(routeAt('/scenes/prism-field')).toStrictEqual(
-      NotFoundRoute({ path: '/scenes/prism-field' }),
+    expect(noiseBeamsRouter()).toBe('/gpu/scenes/noise-beams')
+    expect(routeAt('/gpu/scenes/prism-field')).toStrictEqual(
+      NotFoundRoute({ path: '/gpu/scenes/prism-field' }),
     )
-    expect(routeAt('/scenes/unknown')).toStrictEqual(
-      NotFoundRoute({ path: '/scenes/unknown' }),
+    expect(routeAt('/gpu/scenes/unknown')).toStrictEqual(
+      NotFoundRoute({ path: '/gpu/scenes/unknown' }),
     )
   })
 })
